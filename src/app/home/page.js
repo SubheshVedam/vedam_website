@@ -1,8 +1,9 @@
 import React from 'react'
+import Home from './client/Home'
 
 const page = () => {
   return (
-    <div>Home / 1</div>
+    <Home/>
   )
 }
 
