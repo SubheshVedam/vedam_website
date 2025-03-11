@@ -1,17 +1,17 @@
 // src/app/layout.js (or _app.js)
-import Navbar from '@/components/Navbar';
-import EmotionCacheProvider from '../components/EmotionCacheProvider';
-import Footer from '@/components/Footer';
-import './globals.css'
+import Navbar from "@/components/Navbar";
+import EmotionCacheProvider from "../components/EmotionCacheProvider";
+import Footer from "@/components/Footer";
+import "./globals.css";
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
         <EmotionCacheProvider>
-          <Navbar/>
+          <Navbar />
           {children}
-          <Footer/>
+          <Footer />
         </EmotionCacheProvider>
       </body>
     </html>
