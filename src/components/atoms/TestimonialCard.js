@@ -5,12 +5,15 @@ import Typography from "@mui/material/Typography";
 import { Box } from "@mui/material";
 import Image from "next/image";
 
-export default function TestimonialCard({image,text,name,designation}) {
+export default function TestimonialCard({ image, text, name, designation }) {
   return (
     <Card
       sx={{
-        maxWidth: { xs: 274, sm: 333 },
-        minHeight:392,
+        width: "100%",
+        minHeight: 392,
+        width: { xs: 274, sm: 333 },
+        maxWidth: "100%",
+        minWidth: { xs: 274, sm: 333 },
         borderRadius: "16px",
         padding: " 20px 20px 0 20px",
         boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
@@ -23,9 +26,9 @@ export default function TestimonialCard({image,text,name,designation}) {
           display: "flex",
           flexDirection: "column",
           padding: 0,
-          minHeight:392,
-          height:'100%',
-          justifyContent:'space-between'
+          minHeight: 392,
+          height: "100%",
+          justifyContent: "space-between",
         }}
       >
         <Box sx={{ display: "flex", flexDirection: "column" }}>
@@ -39,7 +42,7 @@ export default function TestimonialCard({image,text,name,designation}) {
             }}
           >
             <Image
-              src={"/img/linkedInIcon.png"}
+              src={image}
               objectFit="cover"
               alt="profile icon"
               width={60}
@@ -54,29 +57,26 @@ export default function TestimonialCard({image,text,name,designation}) {
               fontSize: { xs: 14, sm: 16 },
             }}
           >
-            "I wasted countless hours on DSA resources before landing under the
-            guidance of Subhesh sir. He is an experienced teacher and one who
-            makes learning a delightful experience. Really mind-blowing. I wish
-            the team Algoprep all the best"
+            {text}
           </Typography>
         </Box>
         <Box>
-        <Typography
-          variant="h6"
-          sx={{
-            color: "#6C10BC",
-            fontWeight: "bold",
-            fontSize: { xs: 14, sm: 16 },
-          }}
-        >
-          Pranjal Sharma
-        </Typography>
-        <Typography
-          variant="body2"
-          sx={{ color: "text.secondary", fontSize: { xs: 10, sm: 12 } }}
-        >
-          Software Development Engineer 1, Amazon
-        </Typography>
+          <Typography
+            variant="h6"
+            sx={{
+              color: "#6C10BC",
+              fontWeight: "bold",
+              fontSize: { xs: 14, sm: 16 },
+            }}
+          >
+            {name}{" "}
+          </Typography>
+          <Typography
+            variant="body2"
+            sx={{ color: "text.secondary", fontSize: { xs: 10, sm: 12 } }}
+          >
+            {designation}{" "}
+          </Typography>
         </Box>
       </CardContent>
     </Card>
