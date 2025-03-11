@@ -7,28 +7,28 @@ const Home = () => {
     {
       imageUrl: "https://placehold.co/245x203", // Example image URL
       name: "John Doe",
-      logo: "https://placehold.co/80x30", // Example logo URL
+      logo: "/next.svg",
       designation: "Software Engineer",
       info: "Specializes in front-end development and UI/UX design.",
     },
     {
       imageUrl: "https://placehold.co/245x203",
       name: "Jane Smith",
-      logo: "https://placehold.co/80x30",
+      logo: "/next.svg",
       designation: "Data Scientist",
       info: "Expert in machine learning and data analysis.",
     },
     {
       imageUrl: "https://placehold.co/245x203",
       name: "Alice Johnson",
-      logo: "https://placehold.co/80x30",
+      logo: "/next.svg",
       designation: "DevOps Engineer",
       info: "Focuses on CI/CD pipelines and cloud infrastructure.",
     },
     {
       imageUrl: "https://placehold.co/245x203",
       name: "Bob Brown",
-      logo: "https://placehold.co/80x30",
+      logo: "/next.svg",
       designation: "Backend Developer",
       info: "Experienced in building scalable APIs and databases.",
     },
@@ -39,6 +39,7 @@ const Home = () => {
       <Box sx={{display:'flex',flexDirection:{xs:'column',sm:'row'},gap:'20px'}}>
         {expertsData.map((expert, index) => (
           <ExpertCard
+            key={`expertsCard-${index}`}
             imageUrl={expert.imageUrl}
             name={expert.name}
             logo={expert.logo}
