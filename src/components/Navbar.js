@@ -3,7 +3,6 @@
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Link from "next/link";
 import Image from "next/image";
@@ -37,15 +36,25 @@ export default function Navbar() {
   return (
     <AppBar
       position="static"
-      sx={{ backgroundColor: "transparent", boxShadow: "none" }}>
+      sx={{
+        backgroundColor: "transparent",
+        boxShadow: "none",
+        width: "100vw", // Ensure AppBar spans the full viewport width
+        maxWidth: "100%", // Prevent overflow
+        overflowX: "hidden", // Hide horizontal overflow
+        paddingX:'1rem',
+        borderBottom: "1px solid #ccc",
+
+      }}
+    >
       <Toolbar
         sx={{
-          width: { xs: "320px", sm: "1280px" },
           height: { xs: "40px", sm: "80px" },
-          borderBottom: "1px solid #ccc",
           justifyContent: "space-between",
-          padding: { xs: "8px 20px", sm: "0px 120px" },
-        }}>
+          padding:0,
+          boxSizing: "border-box", // Include padding in width calculation
+        }}
+      >
         {/* Logo */}
         <Image
           src="/img/Navbar Logo.png"
@@ -65,7 +74,8 @@ export default function Navbar() {
             display: { xs: "none", sm: "flex" },
             gap: "32px",
             alignItems: "center",
-          }}>
+          }}
+        >
           {navLinks.map((link, index) => (
             <Link key={index} href={link.path} passHref>
               <Button
@@ -84,7 +94,8 @@ export default function Navbar() {
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                   },
-                }}>
+                }}
+              >
                 {link.label}
               </Button>
             </Link>
@@ -94,21 +105,23 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <IconButton
           sx={{ display: { xs: "block", sm: "none" } }}
-          onClick={handleDrawerToggle}>
+          onClick={handleDrawerToggle}
+        >
           <MenuIcon />
         </IconButton>
       </Toolbar>
 
       {/* Drawer for Mobile Navigation */}
       <Drawer anchor="right" open={mobileOpen} onClose={handleDrawerToggle}>
-        <List sx={{ width: 250 }}>
+        <List sx={{ width: "250px" }}>
           {navLinks.map((link, index) => (
             <ListItem
               button
               key={index}
               component={Link}
               href={link.path}
-              onClick={handleDrawerToggle}>
+              onClick={handleDrawerToggle}
+            >
               <ListItemText
                 sx={{
                   color: "#1F1F1F",
