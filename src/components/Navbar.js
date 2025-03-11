@@ -19,12 +19,7 @@ export default function Navbar() {
         <Link href="/about" passHref>
           <Button color="inherit">About</Button>
         </Link>
-        <Link href="/services" passHref>
-          <Button color="inherit">Services</Button>
-        </Link>
-        <Link href="/contact" passHref>
-          <Button color="inherit">Contact</Button>
-        </Link>
+
       </Toolbar>
     </AppBar>
   );
