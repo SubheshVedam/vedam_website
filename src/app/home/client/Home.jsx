@@ -1,4 +1,5 @@
 import ExpertCard from "@/components/atoms/ExpertCard";
+import TestimonialCard from "@/components/atoms/TestimonialCard";
 import { Box } from "@mui/material";
 import React from "react";
 
@@ -54,16 +55,17 @@ const Home = () => {
       }}
     >
       {expertsData.map((expert, index) => (
-        <ExpertCard
-          key={`expertsCard-${index}`}
-          imageUrl={expert.imageUrl}
-          name={expert.name}
-          logo={expert.logo}
-          designation={expert.designation}
-          info={expert.info}
-          rating={expert.rating}
-          linkedIn={expert.linkedIn}
-        />
+        // <ExpertCard
+        //   key={`expertsCard-${index}`}
+        //   imageUrl={expert.imageUrl}
+        //   name={expert.name}
+        //   logo={expert.logo}
+        //   designation={expert.designation}
+        //   info={expert.info}
+        //   rating={expert.rating}
+        //   linkedIn={expert.linkedIn}
+        // />
+        <TestimonialCard key={`expertsCard-${index}`} />
       ))}
     </Box>
   );
