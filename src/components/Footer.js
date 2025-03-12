@@ -1,116 +1,134 @@
 import * as React from "react";
 import { Box, Typography, Link, Stack } from "@mui/material";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import YouTubeIcon from "@mui/icons-material/YouTube";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import Image from "next/image";
 
 export default function Footer() {
   return (
     <Box
       component="footer"
       sx={{
-        height: { xs: "284px", sm: "410px" }, // Added 'px' unit
-        width: "100%", // Changed from '100vw' to '100%'
+        width: "100vw",
+        display: "flex",
         backgroundColor: "#6C10BC",
-        color: "white",
-        textAlign: { xs: "center", sm: "left" },
-        paddingX: "1rem", // Added horizontal padding
-        boxSizing: "border-box", // Include padding in width calculation
-        overflowX: "hidden", // Hide horizontal overflow
-      }}
-    >
+        maxWidth: "100%",
+        alignItems: "center",
+        paddingX: "1rem",
+        paddingY: "40px",
+      }}>
       <Box
         sx={{
-          backgroundColor: "#6C10BC",
+          width: { xs: "100%", sm: "80%" },
           color: "white",
-          textAlign: "center",
-          padding: "20px",
-          marginTop: "auto",
-          boxSizing: "border-box", // Include padding in width calculation
-        }}
-      >
-        <Stack spacing={3} sx={{ width: "100%", textAlign: "center" }}>
-          <Box>
-            <Typography
-              variant="body2"
-              sx={{ fontWeight: 500, fontSize: { xs: "14px", sm: "16px" } }}
-            >
-              Contact us
-            </Typography>
+          display: "flex",
+          flexDirection: "column",
+          gap: 3,
+        }}>
+        {/* Contact Section */}
+        <Box
+          sx={{ textAlign: "start", marginBottom: { xs: "40px", sm: "60px" } }}>
+          <Typography
+            variant="body2"
+            sx={{ fontWeight: 700, fontSize: { xs: "14px", sm: "16px" } }}>
+            Contact us
+          </Typography>
 
-            <Typography
-              variant="h6"
-              sx={{
-                fontWeight: 700,
-                fontSize: { xs: "20px", sm: "28px" },
-              }}
-            >
-              connect
-              <Box component="span" sx={{ color: "#FB7F05" }}>
-                @vedam.org
-              </Box>
-            </Typography>
-          </Box>
-          <Stack
-            direction={{ xs: "column", sm: "row" }}
-            spacing={{ xs: 2, sm: 4 }}
-            alignItems="center"
-            justifyContent="center"
-            sx={{ width: "100%" }}
-          >
-            <Box>
-              <Typography
-                variant="body2"
-                sx={{ fontSize: { xs: "14px", sm: "16px" } }}
-              >
-                Get latest updates here
-              </Typography>
-            </Box>
-            <Box
-              sx={{
-                width: { xs: "100%", sm: "150px" },
-                height: "1px",
-                backgroundColor: "white",
-              }}
-            />
-            <Stack direction="row" spacing={2}>
-              <Link href="#" color="inherit">
-                <YouTubeIcon />
-              </Link>
-              <Link href="#" color="inherit">
-                <InstagramIcon />
-              </Link>
-              <Link href="#" color="inherit">
-                <LinkedInIcon />
-              </Link>
-            </Stack>
+          <Typography
+            variant="h6"
+            sx={{
+              fontWeight: 700,
+              fontSize: { xs: "24px", sm: "64px" },
+              backgroundImage:
+                "linear-gradient(90deg, #FFFFFF 25%, #FFA41A 75%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              display: "inline-block",
+            }}>
+            connect@vedam.org
+          </Typography>
+        </Box>
+
+        {/* Middle Section */}
+        <Stack
+          direction={{ xs: "column", sm: "row" }}
+          spacing={{ xs: 2, sm: 4 }}
+          alignItems="center"
+          justifyContent="space-between"
+          sx={{
+            width: "100%",
+            textAlign: { xs: "center", sm: "start" },
+            flexWrap: "wrap",
+          }}>
+          <Typography
+            variant="body2"
+            sx={{
+              fontSize: { xs: "14px", sm: "16px" },
+              fontWeight: 700,
+              whiteSpace: "nowrap", // Ensures text stays in one line
+            }}>
+            Get latest updates here
+          </Typography>
+
+          <Box
+            sx={{
+              flexGrow: 1,
+              width: { xs: "100%", sm: "auto" }, // Full width on xs, auto on sm+
+              maxWidth: "79%",
+              height: "1px",
+              backgroundColor: "white",
+            }}
+          />
+
+          <Stack direction="row" spacing={2}>
+            <Link href="#" color="inherit">
+              <Image
+                src="/img/Frame.png"
+                alt="YouTube"
+                width={24}
+                height={24}
+              />
+            </Link>
+            <Link href="#" color="inherit">
+              <Image
+                src="/img/Frame (1).png"
+                alt="Instagram"
+                width={24}
+                height={24}
+              />
+            </Link>
+            <Link href="#" color="inherit">
+              <Image
+                src="/img/Frame (2).png"
+                alt="LinkedIn"
+                width={24}
+                height={24}
+              />
+            </Link>
           </Stack>
         </Stack>
-      </Box>
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: { xs: "column", sm: "row" },
-          justifyContent: "space-between",
-          alignItems: "center",
-          marginTop: "20px",
-          fontSize: { xs: "12px", sm: "14px" },
-          paddingX: "1rem", // Added horizontal padding
-          boxSizing: "border-box", // Include padding in width calculation
-        }}
-      >
-        <Typography variant="caption">
-          Copyright © SET Education Technology Pvt. Ltd. 2025
-        </Typography>
-        <Typography variant="caption">
-          <Link href="#" color="inherit" underline="hover">
-            Terms of use
-          </Link>{" "}
-          |{" "}
-          <Link href="#" color="inherit" underline="hover">
-            Privacy Policy
-          </Link>
-        </Typography>
+
+        {/* Bottom Section */}
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            justifyContent: "space-between",
+            alignItems: "center",
+            fontSize: { xs: "12px", sm: "14px" },
+            textAlign: "center",
+          }}>
+          <Typography variant="caption">
+            Copyright © SET Education Technology Pvt. Ltd. 2025
+          </Typography>
+          <Typography variant="caption">
+            <Link href="#" color="inherit" underline="hover">
+              Terms of use
+            </Link>{" "}
+            |{" "}
+            <Link href="#" color="inherit" underline="hover">
+              Privacy Policy
+            </Link>
+          </Typography>
+        </Box>
       </Box>
     </Box>
   );
