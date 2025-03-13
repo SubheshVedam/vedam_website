@@ -1,11 +1,12 @@
+import DetailsCard from "@/components/atoms/DetailsCard";
 import ExpertCard from "@/components/atoms/ExpertCard";
 import TestimonialCard from "@/components/atoms/TestimonialCard";
-import { testimonialData } from "@/constants/data";
+import WhyVedam from "@/components/WhyVedam";
+import { detailsData, testimonialData } from "@/constants/data";
 import { Box } from "@mui/material";
 import React from "react";
 
 const Home = () => {
-
   return (
     <Box
       sx={{
@@ -18,7 +19,7 @@ const Home = () => {
         paddingBottom: "16px", // Add padding to prevent scrollbar overlap
       }}
     >
-      {testimonialData.map((testimonial, index) => (
+      {/* {detailsData.map((item, index) => (
         // <ExpertCard
         //   key={`expertsCard-${index}`}
         //   imageUrl={expert.imageUrl}
@@ -29,13 +30,15 @@ const Home = () => {
         //   rating={expert.rating}
         //   linkedIn={expert.linkedIn}
         // />
-        <TestimonialCard
-        key={`testimonial-${index}`}
-        image={testimonial.image}
-        text={testimonial.text}
-        name={testimonial.name}
-        designation={testimonial.designation}
-      />      ))}
+        //   <TestimonialCard
+        //   key={`testimonial-${index}`}
+        //   image={testimonial.image}
+        //   text={testimonial.text}
+        //   name={testimonial.name}
+        //   designation={testimonial.designation}
+        // />
+      ))} */}
+      <WhyVedam/>
     </Box>
   );
 };

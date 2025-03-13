@@ -1,26 +1,150 @@
-// src/components/Navbar.js
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import Link from 'next/link';
+"use client";
+
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Button from "@mui/material/Button";
+import Link from "next/link";
+import Image from "next/image";
+import {
+  Box,
+  Drawer,
+  IconButton,
+  List,
+  ListItem,
+  ListItemText,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+
+// Navigation Links Array
+const navLinks = [
+  { label: "Home", path: "/" },
+  { label: "Admission & Fees", path: "/about" },
+  { label: "Life @ Vedam", path: "/services" },
+  { label: "FAQs", path: "/contact" },
+  { label: "Login", path: "/login" },
+  { label: "Register Now", path: "/register" },
+];
 
 export default function Navbar() {
-  return (
-    <AppBar position="static">
-      <Toolbar>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          My Next.js App
-        </Typography>
-        <Link href="/" passHref>
-          <Button color="inherit">Home</Button>
-        </Link>
-        <Link href="/about" passHref>
-          <Button color="inherit">About</Button>
-        </Link>
+  const [mobileOpen, setMobileOpen] = React.useState(false);
 
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
+
+  return (
+    <AppBar
+      position="static"
+      sx={{
+        backgroundColor: "transparent",
+        boxShadow: "none",
+        width: "100vw", // Ensure AppBar spans the full viewport width
+        maxWidth: "100%", // Prevent overflow
+        overflowX: "hidden", // Hide horizontal overflow
+        paddingX:'1rem',
+        borderBottom: "1px solid #ccc",
+
+      }}
+    >
+      <Toolbar
+        sx={{
+          height: { xs: "40px", sm: "80px" },
+          justifyContent: "space-between",
+          padding:0,
+          boxSizing: "border-box", // Include padding in width calculation
+        }}
+      >
+        {/* Logo */}
+        <Image
+          src="/img/Navbar Logo.png"
+          alt="Navbar Logo"
+          width={88}
+          height={34}
+          style={{ objectFit: "contain", maxWidth: "100%" }}
+          sx={{
+            width: { xs: "51px", sm: "88px" },
+            height: { xs: "20px", sm: "34px" },
+          }}
+        />
+
+        {/* Desktop Navigation */}
+        <Box
+          sx={{
+            display: { xs: "none", sm: "flex" },
+            gap: "32px",
+            alignItems: "center",
+          }}
+        >
+          {navLinks.map((link, index) => (
+            <Link key={index} href={link.path} passHref>
+              <Button
+                color="inherit"
+                sx={{
+                  color: "#1F1F1F",
+                  fontWeight: 500,
+                  fontSize: "14px",
+                  lineHeight: "100%",
+                  letterSpacing: "-2%",
+                  textTransform: "none",
+                  transition: "all 0.3s ease-in-out",
+                  "&:hover": {
+                    background:
+                      "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  },
+                }}
+              >
+                {link.label}
+              </Button>
+            </Link>
+          ))}
+        </Box>
+
+        {/* Mobile Menu Button */}
+        <IconButton
+          sx={{ display: { xs: "block", sm: "none" } }}
+          onClick={handleDrawerToggle}
+        >
+          <MenuIcon />
+        </IconButton>
       </Toolbar>
+
+      {/* Drawer for Mobile Navigation */}
+      <Drawer anchor="right" open={mobileOpen} onClose={handleDrawerToggle}>
+        <List sx={{ width: "250px" }}>
+          {navLinks.map((link, index) => (
+            <ListItem
+              button
+              key={index}
+              component={Link}
+              href={link.path}
+              onClick={handleDrawerToggle}
+            >
+              <ListItemText
+                sx={{
+                  color: "#1F1F1F",
+                  fontFamily: "var(--font-inter)",
+                  fontWeight: 600,
+                  fontSize: "14px",
+                  lineHeight: "100%",
+                  letterSpacing: "-2%",
+                  textTransform: "none",
+                  transition: "all 0.3s ease-in-out",
+                  "&:hover": {
+                    background:
+                      "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  },
+                }}
+                primary={link.label}
+              />
+            </ListItem>
+          ))}
+        </List>
+      </Drawer>
     </AppBar>
   );
 }
