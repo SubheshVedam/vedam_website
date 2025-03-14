@@ -2,5 +2,5 @@ import React from "react";
 import { Chip } from "@mui/material";
 
 export default function SkillTag({ skill }) {
-  return <Chip label={skill} sx={{ m: 0.5, bgcolor: "#F5F5F5" }} />;
+  return <Chip label={skill} sx={{ m: 0.1, bgcolor: "#FFFFFF" }} />;
 }

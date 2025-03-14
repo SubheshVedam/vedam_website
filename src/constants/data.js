@@ -27,7 +27,7 @@ export const testimonialData = [
 
 export const expertsData = [
   {
-    imageUrl: "https://placehold.co/245x203", // Example image URL
+    imageUrl: "https://placehold.co/245x203", 
     name: "John Doe",
     logo: "/next.svg",
     designation: "Software Engineer",
