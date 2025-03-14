@@ -1,8 +1,13 @@
-import DetailsCard from "@/components/atoms/DetailsCard";
-import ExpertCard from "@/components/atoms/ExpertCard";
-import TestimonialCard from "@/components/atoms/TestimonialCard";
+import {
+  CardContainer,
+  ImageGrid,
+  InCollaborationWith,
+  InvestorWhoTrustUs,
+  VideoWithText,
+  WidthContainer,
+} from "@/components/atoms";
 import WhyVedam from "@/components/WhyVedam";
-import { detailsData, testimonialData } from "@/constants/data";
+import { detailsData, homeScreenData, testimonialData } from "@/constants/data";
 import { Box } from "@mui/material";
 import React from "react";
 
@@ -11,14 +16,59 @@ const Home = () => {
     <Box
       sx={{
         display: "flex",
-        flexDirection: { xs: "column", sm: "row" },
+        flexDirection: "column",
         gap: "20px",
         alignItems: "center",
-        width: "100%",
-        overflow: "auto", // Enable horizontal scrolling
-        paddingBottom: "16px", // Add padding to prevent scrollbar overlap
+        overflowX: "hidden",
+        paddingBottom: "16px",
       }}
     >
+      <VideoWithText />
+      <WidthContainer
+        childrenStyle={{
+          display: "flex",
+          gap: "20px",
+          flexDirection: "column",
+        }}
+      >
+        <CardContainer
+          title={homeScreenData.fromEducationToEntrance.title}
+          subtitle={homeScreenData.fromEducationToEntrance.subtitle}
+          linearGradientSubtitle="linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)"
+        >
+          <ImageGrid />
+        </CardContainer>
+        <CardContainer
+          title={homeScreenData.inCollaborationWith.title}
+          subtitle={homeScreenData.inCollaborationWith.subtitle}
+          linearGradientSubtitle="linear-gradient(90deg, #FB7F05 0%, #6C10BC 42.11%)"
+        >
+          <InCollaborationWith />
+        </CardContainer>
+        <CardContainer
+          title={homeScreenData.techTeam.title}
+          subtitle={homeScreenData.techTeam.subtitle}
+          linearGradientSubtitle="linear-gradient(90deg, #FB7F05 0%, #6C10BC 42.11%)"
+        >
+          <img
+            src={homeScreenData.techTeam.image}
+            width={"100%"}
+            height={200}
+            style={{ objectFit: "fill" }}
+            className="techTeamImage"
+            loading="lazy"
+          />
+        </CardContainer>
+        <WhyVedam />
+        <CardContainer
+          subtitle={"Investor who trust us"}
+          linearGradientSubtitle={
+            "linear-gradient(90deg, #FB7F05 0%, #6C10BC 42.11%)"
+          }
+        >
+          <InvestorWhoTrustUs />
+        </CardContainer>
+      </WidthContainer>
       {/* {detailsData.map((item, index) => (
         // <ExpertCard
         //   key={`expertsCard-${index}`}
@@ -38,7 +88,7 @@ const Home = () => {
         //   designation={testimonial.designation}
         // />
       ))} */}
-      <WhyVedam/>
+      {/* <WhyVedam /> */}
     </Box>
   );
 };

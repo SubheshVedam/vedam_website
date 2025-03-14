@@ -87,7 +87,117 @@ export const detailsData = [
   {
     image: "/img/linkedInIcon.png",
     title: "Project Delta",
-    description: "It's your key to a hands-on, immersive and collaborative learning experience in Computer Science and AI.",
+    description:
+      "It's your key to a hands-on, immersive and collaborative learning experience in Computer Science and AI.",
     isFeatured: true,
   },
 ];
+
+export const navLinks = [
+  { label: "Home", path: "/" },
+  { label: "Admission & Fees", path: "/about" },
+  { label: "Life @ Vedam", path: "/services" },
+  { label: "FAQs", path: "/contact" },
+  { label: "Login", path: "/login" },
+  { label: "Register Now", path: "/register" },
+];
+
+export const homeScreenData = {
+  hero: {
+    background_video:
+      "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+    title: "More Than a Degree\nBuild Innovate & Lead",
+    subtitle:
+      "Vedam's 4-year BTech program prepares you for startups, innovation, and leadership with industry driven coursework and hands-on projects.",
+  },
+  fromEducationToEntrance: {
+    title: "From education to entrance",
+    subtitle: "Our Students at Top companies",
+    imagesGrid: [
+      {
+        id: 0,
+        imageUrl: "/img/companies/adobe.webp",
+      },
+      {
+        id: 1,
+        imageUrl: "/img/companies/flipkart.webp",
+      },
+      {
+        id: 2,
+        imageUrl: "/img/companies/phonepe.webp",
+      },
+      {
+        id: 3,
+        imageUrl: "/img/companies/meta.webp",
+      },
+      {
+        id: 4,
+        imageUrl: "/img/companies/amazon.webp",
+      },
+      {
+        id: 5,
+        imageUrl: "/img/companies/paypal.webp",
+      },
+      {
+        id: 6,
+        imageUrl: "/img/companies/walmart.webp",
+      },
+      {
+        id: 7,
+        imageUrl: "/img/companies/razorpay.webp",
+      },
+      {
+        id: 8,
+        imageUrl: "/img/companies/paytm.webp",
+      },
+      {
+        id: 9,
+        imageUrl: "/img/companies/google.webp",
+      },
+    ],
+    bottomText:
+      "*outcome through companies whom the founders built before Vedam ",
+  },
+  inCollaborationWith: {
+    title: "We are launching",
+    subtitle: "In Collaboration with",
+    leftSideImage: "/img/college.webp",
+    rightSideText1: "Ajinkya DY Patil University",
+    data: [
+      {
+        id: 0,
+        image: "/img/branch.webp",
+        text: "B.Tech in Computer Science (AI)",
+      },
+      {
+        id: 1,
+        image: "/img/location.webp",
+        text: "Pune, Maharashtra",
+      },
+    ],
+    buttonText: "Download Brochure",
+    buttonIcon: "/img/brochure.webp",
+  },
+  techTeam: {
+    title: "Brilliant Mind who works",
+    subtitle: "Tech team behind Vedam",
+    image: "/img/tech_team.webp",
+  },
+  investorWhoTrustUs: {
+    subtitle: "Investor who trust us",
+    data: [
+      { id: 0, img: "/img/digital_capital.webp" },
+      { id: 1, img: "/img/saama.webp" },
+      { id: 2, img: "/img/westbridge.webp" },
+      { id: 3, img: "/img/companies/adobe.webp" },
+      { id: 4, img: "/img/companies/flipkart.webp" },
+      { id: 5, img: "/img/companies/phonepe.webp" },
+      { id: 6, img: "/img/companies/meta.webp" },
+      { id: 7, img: "/img/companies/amazon.webp" },
+      { id: 8, img: "/img/companies/paypal.webp" },
+      { id: 9, img: "/img/companies/paypal.webp" },
+      { id: 10, img: "/img/companies/walmart.webp" },
+      { id: 11, img: "/img/companies/razorpay.webp" },
+    ],
+  },
+};

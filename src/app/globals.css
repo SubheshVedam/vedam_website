@@ -1,6 +1,7 @@
 html {
   margin: 0;
   box-sizing: border-box !important;
+  scroll-behavior: smooth;
 }
 body {
   margin: 0;
@@ -8,4 +9,22 @@ body {
 }
 * {
   box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .responsive-video {
+    height: 670px !important;
+  }
+  .singleImageGrid {
+    width: 133px;
+    height: 33px;
+    object-fit: cover;
+  }
+  .iconStyle {
+    width: 20px;
+    height: 20px;
+  }
+  .techTeamImage {
+    height: 600px;
+  }
 }

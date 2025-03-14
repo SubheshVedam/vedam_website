@@ -6,15 +6,20 @@ export default function Footer() {
   return (
     <Box
       component="footer"
-      sx={{
-        width: "100vw",
+      style={{
+        width: "auto",
         display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
         backgroundColor: "#6C10BC",
-        maxWidth: "100%",
+      }}
+      sx={{
+        display: "flex",
         alignItems: "center",
         paddingX: "1rem",
         paddingY: "40px",
-      }}>
+      }}
+    >
       <Box
         sx={{
           width: { xs: "100%", sm: "80%" },
@@ -22,13 +27,19 @@ export default function Footer() {
           display: "flex",
           flexDirection: "column",
           gap: 3,
-        }}>
+        }}
+      >
         {/* Contact Section */}
         <Box
-          sx={{ textAlign: "start", marginBottom: { xs: "40px", sm: "60px" } }}>
+          sx={{
+            textAlign: "start",
+            marginBottom: { xs: "40px", sm: "60px" },
+          }}
+        >
           <Typography
             variant="body2"
-            sx={{ fontWeight: 700, fontSize: { xs: "14px", sm: "16px" } }}>
+            sx={{ fontWeight: 700, fontSize: { xs: "14px", sm: "16px" } }}
+          >
             Contact us
           </Typography>
 
@@ -42,7 +53,8 @@ export default function Footer() {
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               display: "inline-block",
-            }}>
+            }}
+          >
             connect@vedam.org
           </Typography>
         </Box>
@@ -57,14 +69,16 @@ export default function Footer() {
             width: "100%",
             textAlign: { xs: "center", sm: "start" },
             flexWrap: "wrap",
-          }}>
+          }}
+        >
           <Typography
             variant="body2"
             sx={{
               fontSize: { xs: "14px", sm: "16px" },
               fontWeight: 700,
               whiteSpace: "nowrap", // Ensures text stays in one line
-            }}>
+            }}
+          >
             Get latest updates here
           </Typography>
 
@@ -115,7 +129,8 @@ export default function Footer() {
             alignItems: "center",
             fontSize: { xs: "12px", sm: "14px" },
             textAlign: "center",
-          }}>
+          }}
+        >
           <Typography variant="caption">
             Copyright © SET Education Technology Pvt. Ltd. 2025
           </Typography>
