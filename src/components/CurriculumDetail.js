@@ -8,7 +8,7 @@ import OutcomeCard from "./OutcomeCard";
 import SwipeableViews from "react-swipeable-views";
 
 const CurriculumDetail = ({ data }) => {
-  const isMobile = useMediaQuery("(max-width: 768px)");
+  const isMobile = useMediaQuery("(max-width: 1200px)");
   const isXs = useMediaQuery("(max-width: 480px)");
 
   return (
@@ -26,7 +26,7 @@ const CurriculumDetail = ({ data }) => {
         color="#6C10BC"
         sx={{
           fontWeight: "bold",
-          fontSize: "20px", 
+          fontSize: "20px",
         }}>
         {data.title}
       </Typography>
@@ -36,7 +36,7 @@ const CurriculumDetail = ({ data }) => {
         color="#848484"
         sx={{
           mb: 2,
-          fontSize: "14px", 
+          fontSize: "14px",
         }}>
         {data.description}
       </Typography>
@@ -72,7 +72,8 @@ const CurriculumDetail = ({ data }) => {
         sx={{ mt: 3, fontWeight: "bold" }}>
         Outcomes
       </Typography>
-      {isMobile ? (
+
+      {isXs ? (
         <SwipeableViews
           style={{
             overflowX: "auto",
@@ -88,10 +89,31 @@ const CurriculumDetail = ({ data }) => {
             />
           ))}
         </SwipeableViews>
+      ) : isMobile ? (
+        <Box
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 2,
+            justifyContent: "center",
+          }}>
+          {data.outcomes.map((outcome, index) => (
+            <OutcomeCard
+              key={index}
+              image={outcome.image}
+              title={outcome.title}
+              sx={{
+                width: "calc(33.33% - 16px)",
+                minWidth: "200px",
+                maxWidth: "250px",
+              }}
+            />
+          ))}
+        </Box>
       ) : (
         <Grid2 container spacing={2}>
           {data.outcomes.map((outcome, index) => (
-            <Grid2 key={index}>
+            <Grid2 key={index} xs={6} sm={4} md={3}>
               <OutcomeCard image={outcome.image} title={outcome.title} />
             </Grid2>
           ))}
