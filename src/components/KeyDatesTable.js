@@ -34,7 +34,7 @@ const KeyDatesTable = () => {
       }}>
       {/* Heading */}
       <Typography
-        variant={isMobile ? "h5" : "h3"}
+        variant={isMobile ? "h5" : "h4"}
         sx={{ fontWeight: 700, display: "inline-block", mb: 2 }}>
         <Box
           component="span"
