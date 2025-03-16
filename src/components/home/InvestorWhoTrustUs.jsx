@@ -24,7 +24,7 @@ export const InvestorWhoTrustUs = () => {
           alignItems: "center",
           gap: "20px",
           minWidth: "200%",
-          animation: "scroll 10s linear infinite",
+          animation: "scroll 15s linear infinite",
           "@keyframes scroll": {
             from: { transform: "translateX(0)" },
             to: { transform: "translateX(-50%)" },

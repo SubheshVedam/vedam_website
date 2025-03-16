@@ -28,3 +28,71 @@ body {
     height: 600px;
   }
 }
+
+.payment-container {
+  position: relative;
+  max-width: 1080px;
+  height: 400vh; /* Ensure the parent container has enough height */
+}
+
+.sticky-section {
+  position: sticky;
+  top: 10vh; /* Stick to the top of the viewport */
+  display: flex;
+  height: 80vh; /* Full viewport height */
+  background: #fff;
+  border: 1px solid #ccc;
+}
+
+.progress-bar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #f9f9f9;
+}
+
+.progress-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ccc;
+  transition: background 0.3s ease;
+}
+
+.dot.active {
+  background: #000;
+}
+
+.connector {
+  width: 2px;
+  height: 50px;
+  background: #ccc;
+  transition: background 0.3s ease;
+}
+
+.connector.active {
+  background: #000;
+}
+
+.content-box {
+  flex: 3;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.scroll-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+}

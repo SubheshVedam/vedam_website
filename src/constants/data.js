@@ -200,4 +200,8 @@ export const homeScreenData = {
       { id: 11, img: "/img/companies/razorpay.webp" },
     ],
   },
+  whyVedam: {
+    title: "It is a edge for you",
+    subtitle: "Why Vedam",
+  },
 };

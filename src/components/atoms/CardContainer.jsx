@@ -5,7 +5,7 @@ export const CardContainer = ({
   title,
   subtitle,
   children,
-  linearGradientSubtitle,
+  linearGradientSubtitle = "linear-gradient(90deg, #FB7F05 0%, #6C10BC 42.11%)",
 }) => {
   return (
     <Box

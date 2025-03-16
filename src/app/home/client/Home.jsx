@@ -1,11 +1,12 @@
 import {
+  AIFirstCurriculum,
   CardContainer,
   ImageGrid,
   InCollaborationWith,
   InvestorWhoTrustUs,
   VideoWithText,
   WidthContainer,
-} from "@/components/atoms";
+} from "@/components";
 import WhyVedam from "@/components/WhyVedam";
 import { detailsData, homeScreenData, testimonialData } from "@/constants/data";
 import { Box } from "@mui/material";
@@ -19,7 +20,6 @@ const Home = () => {
         flexDirection: "column",
         gap: "20px",
         alignItems: "center",
-        overflowX: "hidden",
         paddingBottom: "16px",
       }}
     >
@@ -41,14 +41,12 @@ const Home = () => {
         <CardContainer
           title={homeScreenData.inCollaborationWith.title}
           subtitle={homeScreenData.inCollaborationWith.subtitle}
-          linearGradientSubtitle="linear-gradient(90deg, #FB7F05 0%, #6C10BC 42.11%)"
         >
           <InCollaborationWith />
         </CardContainer>
         <CardContainer
           title={homeScreenData.techTeam.title}
           subtitle={homeScreenData.techTeam.subtitle}
-          linearGradientSubtitle="linear-gradient(90deg, #FB7F05 0%, #6C10BC 42.11%)"
         >
           <img
             src={homeScreenData.techTeam.image}
@@ -59,16 +57,30 @@ const Home = () => {
             loading="lazy"
           />
         </CardContainer>
-        <WhyVedam />
         <CardContainer
-          subtitle={"Investor who trust us"}
-          linearGradientSubtitle={
-            "linear-gradient(90deg, #FB7F05 0%, #6C10BC 42.11%)"
-          }
+          title={homeScreenData.whyVedam.title}
+          subtitle={homeScreenData.whyVedam.subtitle}
         >
-          <InvestorWhoTrustUs />
+          <WhyVedam />
         </CardContainer>
+        {/* <CardContainer
+          title={"Future proof learning"}
+          subtitle={"AI First Curriculum"}
+        >
+          <AIFirstCurriculum />
+        </CardContainer> */}
+        {/* <CardContainer subtitle={"Investor who trust us"}>
+          <InvestorWhoTrustUs />
+        </CardContainer> */}
       </WidthContainer>
+      <Box>
+        <CardContainer
+          title={"Future proof learning"}
+          subtitle={"AI First Curriculum"}
+        >
+          <AIFirstCurriculum />
+        </CardContainer>
+      </Box>
       {/* {detailsData.map((item, index) => (
         // <ExpertCard
         //   key={`expertsCard-${index}`}

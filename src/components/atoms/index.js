@@ -1,9 +1,0 @@
-export { VideoWithText } from "../home/VideoWithText";
-export { WidthContainer } from "../home/WidthContainer";
-export { TestimonialCard } from "./TestimonialCard";
-export { ExpertCard } from "./ExpertCard";
-export { DetailsCard } from "./DetailsCard";
-export { InCollaborationWith } from "../home/InCollaborationWith";
-export { CardContainer } from "./CardContainer";
-export { ImageGrid } from "../home/ImageGrid";
-export { InvestorWhoTrustUs } from "../home/InvestorWhoTrustUs";
