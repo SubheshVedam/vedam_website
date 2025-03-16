@@ -1,6 +1,6 @@
 "use client";
 
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
 
 const sections = [
@@ -50,25 +50,60 @@ export const AIFirstCurriculum = () => {
           padding: { xs: "10px 20px" },
         }}
       >
-        <div ref={sectionRef} className="payment-container">
-          {/* Sticky Container */}
+        <div ref={sectionRef} className="curriculum-container">
           <div className="sticky-section">
-            {/* Left Side (Dots) */}
             <div className="progress-bar">
               {sections.map((section, index) => (
-                <div key={section.id} className="progress-item">
-                  <div
-                    className={`dot ${
-                      activeStep >= section.id ? "active" : ""
-                    }`}
-                  ></div>
-                  {index !== sections.length - 1 && (
+                <div
+                  key={index}
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "flex-start",
+                    gap: "16px",
+                  }}
+                >
+                  <div key={section.id} className="progress-item">
                     <div
-                      className={`connector ${
-                        activeStep > section.id ? "active" : ""
+                      className={`dot ${
+                        activeStep >= section.id ? "active" : ""
                       }`}
                     ></div>
-                  )}
+                    {index !== sections.length - 1 && (
+                      <div
+                        className={`connector ${
+                          activeStep > section.id ? "active" : ""
+                        }`}
+                      ></div>
+                    )}
+                  </div>
+                  <div>
+                    <Typography
+                      variant="subtitle1"
+                      sx={{
+                        fontFamily: "Inter, sans-serif",
+                        fontSize: 14,
+                        fontWeight: "500",
+                        lineHeight: "100%",
+                        color: "rgba(30, 30, 30, 1)",
+                      }}
+                    >
+                      year 1
+                    </Typography>
+                    <Typography
+                      variant="subtitle2"
+                      style={{ marginTop: 4 }}
+                      sx={{
+                        fontFamily: "Inter, sans-serif",
+                        fontSize: 16,
+                        fontWeight: "700",
+                        lineHeight: "100%",
+                        color: "rgba(108, 16, 188, 1)",
+                      }}
+                    >
+                      Foundation
+                    </Typography>
+                  </div>
                 </div>
               ))}
             </div>

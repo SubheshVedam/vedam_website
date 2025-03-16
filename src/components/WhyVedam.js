@@ -8,6 +8,7 @@ const WhyVedam = () => {
     <Fragment>
       <Box
         sx={{
+          width: "100%",
           display: "grid",
           gridTemplateColumns: {
             xs: "1fr", // 1 card per row in xs view

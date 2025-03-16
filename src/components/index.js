@@ -8,3 +8,5 @@ export { CardContainer } from "./atoms/CardContainer";
 export { ImageGrid } from "./home/ImageGrid";
 export { InvestorWhoTrustUs } from "./home/InvestorWhoTrustUs";
 export { AIFirstCurriculum } from "./home/AIFirstCurriculum";
+export { FeeStructure } from "./home/FeeStructure";
+export { VedamVs } from "./home/VedamVs";

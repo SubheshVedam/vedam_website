@@ -29,18 +29,17 @@ body {
   }
 }
 
-.payment-container {
+.curriculum-container {
   position: relative;
   max-width: 1080px;
-  height: 400vh; /* Ensure the parent container has enough height */
+  height: 400vh;
 }
 
 .sticky-section {
   position: sticky;
-  top: 10vh; /* Stick to the top of the viewport */
+  top: 10vh;
   display: flex;
-  height: 80vh; /* Full viewport height */
-  background: #fff;
+  height: 80vh;
   border: 1px solid #ccc;
 }
 
@@ -51,7 +50,6 @@ body {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background: #f9f9f9;
 }
 
 .progress-item {
@@ -64,23 +62,23 @@ body {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #ccc;
+  background: rgba(108, 16, 188, 0.3);
   transition: background 0.3s ease;
 }
 
 .dot.active {
-  background: #000;
+  background: rgba(108, 16, 188, 1);
 }
 
 .connector {
   width: 2px;
   height: 50px;
-  background: #ccc;
+  background: transparent;
   transition: background 0.3s ease;
 }
 
 .connector.active {
-  background: #000;
+  background: rgba(108, 16, 188, 0.3);
 }
 
 .content-box {

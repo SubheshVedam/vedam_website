@@ -66,27 +66,31 @@ export const expertsData = [
 export const detailsData = [
   {
     image: "/img/linkedInIcon.png", // Updated image path
-    title: "Project Alpha",
-    description: "A cutting-edge project focused on AI and machine learning.",
+    title: "Code From Day 1",
+    description:
+      "From Day 1, you'll be writing real code, building projects, and solving industry-relevant problems.",
   },
   {
     image: "/img/linkedInIcon.png",
-    title: "Project Beta",
-    description: "Revolutionizing the way we think about renewable energy.",
+    title: "AI First Curriculum",
+    description:
+      "Our AI-First Curriculum is designed to equip students with the skills, tools, and mindset needed to thrive in an AI-powered world.",
   },
   {
     image: "/img/linkedInIcon.png",
-    title: "Project Gamma",
-    description: "Transforming healthcare with advanced data analytics.",
+    title: "Mentorships",
+    description:
+      "Get personalized career guidance from experienced professionals.",
   },
   {
     image: "/img/linkedInIcon.png",
-    title: "Project Delta",
-    description: "Building the future of smart cities with IoT technology.",
+    title: "Top Instructors",
+    description:
+      "At Vedam, you’ll learn from the best minds in tech—engineers, researchers, and industry leaders from Google, Microsoft, Amazon, and top startups. Our faculty doesn’t just teach theory; they bring real-world experience into the classroom.",
   },
   {
     image: "/img/linkedInIcon.png",
-    title: "Project Delta",
+    title: "Personal Macbook Pro ",
     description:
       "It's your key to a hands-on, immersive and collaborative learning experience in Computer Science and AI.",
     isFeatured: true,
@@ -203,5 +207,99 @@ export const homeScreenData = {
   whyVedam: {
     title: "It is a edge for you",
     subtitle: "Why Vedam",
+  },
+  vedamVs: {
+    subtitle: "Vedam vs Traditional CS Education",
+    leftSideData: {
+      headerText: "",
+      textArray: [
+        { id: 0, text: "Learning & Assignments" },
+        { id: 1, text: "Curriculum" },
+        { id: 2, text: "Global Exposures" },
+        { id: 3, text: "Mentors" },
+        { id: 4, text: "Employability" },
+      ],
+    },
+    middleSideData: {
+      headerText: "Vedam Advantage",
+      textArray: [
+        {
+          id: 0,
+          icon: "/img/vedamvs/middle/first.webp",
+          text: "Coding from Day 1, Prepares for Jobs of 2029",
+        },
+        {
+          id: 1,
+          icon: "/img/vedamvs/middle/second.webp",
+          text: "Learn through building real world projects",
+        },
+        {
+          id: 2,
+          icon: "/img/vedamvs/middle/third.webp",
+          text: "Prepration for Global competitions like GSoC and Tech confrences",
+        },
+        {
+          id: 3,
+          icon: "/img/vedamvs/middle/fourth.webp",
+          text: "Personal 1:1 dedicated support",
+        },
+        {
+          id: 4,
+          icon: "/img/vedamvs/middle/fifth.webp",
+          text: "Placement ready for top tech companies",
+        },
+      ],
+    },
+    rightSideData: {
+      headerText: "Traditional Education",
+      textArray: [
+        { id: 0, icon: "/img/vedamvs/right/first.webp", text: "outdated" },
+        {
+          id: 1,
+          icon: "/img/vedamvs/right/second.webp",
+          text: "theoritical approach",
+        },
+        {
+          id: 2,
+          icon: "/img/vedamvs/right/first.webp",
+          text: "Lack industry exposure",
+        },
+        {
+          id: 3,
+          icon: "/img/vedamvs/right/first.webp",
+          text: "no dedicated support",
+        },
+        {
+          id: 4,
+          icon: "/img/vedamvs/right/first.webp",
+          text: "require training",
+        },
+      ],
+    },
+  },
+  FeeStructure: {
+    subtitle: "Fee Structure",
+    headerLeftTitle: "Semester wise break-up of course fee",
+    headerRightLocation: `ADY, Pune`,
+    leftSideYearTable: [
+      { id: "0", year1: "Year 1", amount1: "268,750", amount2: "218,750" },
+      { id: "1", year1: "Year 2", amount1: "218,750", amount2: "218,750" },
+      { id: "2", year1: "Year 3", amount1: "218,750", amount2: "218,750" },
+      { id: "3", year1: "Year 4", amount1: "218,750", amount2: "218,750" },
+    ],
+    rightSideText: [
+      {
+        id: 1,
+        text: "Seat blocking fee of INR 50,000 will be adjusted against the 1st semester fee",
+      },
+      {
+        id: 2,
+        text: "The total fee mentioned above includes both the tuition fee and the upskilling fee.",
+      },
+      {
+        id: 3,
+        text: "Hostel and mess services are available on the ADYPU campus, subject to availability and offered on a first-come, first-served basis.",
+      },
+    ],
   },
 };

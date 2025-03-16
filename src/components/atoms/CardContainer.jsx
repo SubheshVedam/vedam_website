@@ -13,7 +13,7 @@ export const CardContainer = ({
         display: "flex",
         flexDirection: "column",
         width: "100%",
-        marginTop: { xs: "20px", md: "32px" },
+        marginTop: { xs: "1.4rem", md: "2rem" },
       }}
     >
       <Box
@@ -21,7 +21,7 @@ export const CardContainer = ({
           display: "flex",
           flexDirection: "column",
           alignItems: "flex-start",
-          marginBottom: "1rem",
+          marginBottom: "2rem",
         }}
       >
         {title && (

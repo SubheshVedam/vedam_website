@@ -14,7 +14,7 @@ export default function DetailsCard({ image, title, description, isFeatured }) {
         minHeight: { xs: 200, sm: 300 },
         maxHeight: { xs: "auto", sm: 300 },
         width: "100%",
-        maxWidth: { xs: 280, sm: "none" },
+        maxWidth: { xs: "100%", sm: "none" },
         borderRadius: "16px",
         padding: " 20px 20px 20px 20px",
         boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
@@ -30,37 +30,53 @@ export default function DetailsCard({ image, title, description, isFeatured }) {
           minHeight: { xs: 200, sm: 280 },
           height: "100%",
           justifyContent: "space-between",
-          alignItems: isFeatured ?"center" : 'normal',
+          alignItems: isFeatured ? "center" : "normal",
           "&:last-child": {
-            paddingBottom: { xs: 0, sm: "20px" }, // Remove padding for the last child
+            paddingBottom: { xs: 0, sm: "20px" },
           },
         }}
       >
         {isFeatured ? (
-          <Box sx={{maxHeight:169,width:'100%'}}>
-          <Image
-            src={"/img/macBook.png"}
-            alt="profile icon"
-            fill={true}
-            
-          />
+          <Box
+            sx={{
+              maxHeight: 169,
+              width: "100%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Image
+              src={"/img/macBook.png"}
+              alt="profile icon"
+              width={260}
+              height={180}
+              sx={{
+                width: {
+                  xs: "260px",
+                  md: "340px",
+                  md: "404px",
+                },
+                objectFit: "contain",
+              }}
+            />
           </Box>
         ) : (
           <Box
             sx={{
               width: "42px",
               height: "42px",
-              mb:"16px",
+              mb: "16px",
               border: "1px solid",
               borderRadius: 100,
             }}
           >
             <Image
               src={image}
-              objectFit="cover"
               alt="profile icon"
               width={42}
               height={42}
+              sx={{ objectFit: "cover" }}
             />
           </Box>
         )}
@@ -71,7 +87,7 @@ export default function DetailsCard({ image, title, description, isFeatured }) {
               color: isFeatured ? "white" : "text.primary",
               fontWeight: "bold",
               fontSize: isFeatured ? { xs: 20, sm: 32 } : { xs: 14, sm: 20 },
-              marginBottom: isFeatured ? 0 :{ xs: "8px", sm: "16px" },
+              marginBottom: isFeatured ? 0 : { xs: "8px", sm: "16px" },
             }}
           >
             {title}{" "}
