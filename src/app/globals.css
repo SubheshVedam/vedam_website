@@ -27,12 +27,15 @@ body {
   .techTeamImage {
     height: 600px;
   }
+  .macbookStyle {
+    height: 180px;
+  }
 }
 
 .curriculum-container {
   position: relative;
   max-width: 1080px;
-  height: 280vh;
+  height: 360vh;
 }
 
 .sticky-section {

@@ -1,3 +1,8 @@
+import { AIYear1 } from "@/components/home/AIFirstCurriculum/AIYear1";
+import { AIYear2 } from "@/components/home/AIFirstCurriculum/AIYear2";
+import { AIYear3 } from "@/components/home/AIFirstCurriculum/AIYear3";
+import { AIYear4 } from "@/components/home/AIFirstCurriculum/AIYear4";
+
 export const testimonialData = [
   {
     image: "/img/linkedInIcon.png",
@@ -312,6 +317,31 @@ export const homeScreenData = {
   },
   whatPeople: {
     subtitle: "What people says about us",
+  },
+  aiFirst: {
+    title: "Future proof learning",
+    subtitle: "AI First Curriculum",
+    data: [
+      { id: 1, title: "Year 1", subtitle: "Foundation", content: <AIYear1 /> },
+      {
+        id: 2,
+        title: "Year 2",
+        subtitle: "Full Stack Mastery",
+        content: <AIYear2 />,
+      },
+      {
+        id: 3,
+        title: "Year 3",
+        subtitle: "AI Expertise",
+        content: <AIYear3 />,
+      },
+      {
+        id: 4,
+        title: "Year 4",
+        subtitle: "Specialised AI Tracks",
+        content: <AIYear4 />,
+      },
+    ],
   },
   year1: {
     title: "Programming Foundation",

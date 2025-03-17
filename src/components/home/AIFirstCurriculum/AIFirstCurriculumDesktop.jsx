@@ -2,50 +2,50 @@
 
 import { Box, Typography } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
-import { AIYear1 } from "./AIYear1";
-import { AIYear2 } from "./AIYear2";
-import { AIYear3 } from "./AIYear3";
-import { AIYear4 } from "./AIYear4";
-
-const sections = [
-  { id: 1, title: "Year 1", subtitle: "Foundation", content: <AIYear1 /> },
-  {
-    id: 2,
-    title: "Year 2",
-    subtitle: "Full Stack Mastery",
-    content: <AIYear2 />,
-  },
-  { id: 3, title: "Year 3", subtitle: "AI Expertise", content: <AIYear3 /> },
-  {
-    id: 4,
-    title: "Year 4",
-    subtitle: "Specialised AI Tracks",
-    content: <AIYear4 />,
-  },
-];
+import { homeScreenData } from "@/constants/data";
 
 export const AIFirstCurriculumDesktop = () => {
   const sectionRef = useRef(null);
   const [activeStep, setActiveStep] = useState(1);
+
+  const sectionData = homeScreenData.aiFirst.data;
 
   useEffect(() => {
     const handleScroll = () => {
       if (!sectionRef.current) return;
 
       const rect = sectionRef.current.getBoundingClientRect();
-      const sectionHeight = rect.height / sections.length;
+      const sectionHeight = rect.height / sectionData.length;
 
       const scrollY = window.scrollY - sectionRef.current.offsetTop;
-      const newStep = Math.min(
-        sections.length,
-        Math.max(1, Math.floor(scrollY / sectionHeight) + 1)
-      );
-      setActiveStep(newStep);
+
+      let newStep = Math.floor(scrollY / sectionHeight) + 1;
+
+      newStep = Math.min(sectionData.length, Math.max(1, newStep));
+
+      const maxScrollTop =
+        sectionRef.current.offsetTop + (sectionData.length - 1) * sectionHeight;
+
+      const buffer = 50;
+
+      if (newStep === sectionData.length) {
+        if (activeStep !== sectionData.length) {
+          setActiveStep(newStep);
+        }
+
+        if (scrollY >= maxScrollTop - buffer) {
+          window.scrollTo({ top: maxScrollTop, behavior: "smooth" });
+        }
+      } else {
+        if (activeStep !== newStep) {
+          setActiveStep(newStep);
+        }
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [activeStep]);
 
   return (
     <Box
@@ -102,7 +102,7 @@ export const AIFirstCurriculumDesktop = () => {
             <Box sx={{ display: "flex", flexDirection: "row" }}>
               <Box sx={{ flex: "0 30%" }}>
                 <div className="progress-bar">
-                  {sections.map((section, index) => (
+                  {sectionData.map((section, index) => (
                     <div
                       key={index}
                       style={{
@@ -118,7 +118,7 @@ export const AIFirstCurriculumDesktop = () => {
                             activeStep >= section.id ? "active" : ""
                           }`}
                         ></div>
-                        {index !== sections.length - 1 && (
+                        {index !== sectionData.length - 1 && (
                           <div
                             className={`connector ${
                               activeStep >= section.id ? "active" : ""
@@ -158,7 +158,7 @@ export const AIFirstCurriculumDesktop = () => {
                 </div>
               </Box>
               <Box sx={{ flex: "0 70%" }}>
-                {sections[activeStep - 1].content}
+                {sectionData[activeStep - 1].content}
               </Box>
             </Box>
           </div>

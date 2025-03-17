@@ -79,6 +79,7 @@ export const VideoWithText = () => {
               "linear-gradient(95.22deg, #FB7F05 2.91%, #6C10BC 99.18%)",
             borderRadius: "8px",
             padding: "10px 20px",
+            boxShadow: "0px 0px 11.2px rgba(255, 255, 255, 0.25)",
           }}
         >
           Apply Now

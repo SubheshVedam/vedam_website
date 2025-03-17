@@ -23,7 +23,7 @@ const Home = () => {
         sx={{
           display: "flex",
           flexDirection: "column",
-          gap: "20px",
+          gap: { xs: "1rem", md: "1.5rem" },
           alignItems: "center",
           paddingBottom: "16px",
           backgroundColor: "#F9F9F9",

@@ -9,15 +9,16 @@ export default function DetailsCard({ image, title, description, isFeatured }) {
   return (
     <Card
       sx={{
-        backgroundColor: isFeatured ? "#6C10BC" : "none",
+        background: isFeatured
+          ? "linear-gradient(160.16deg, #BA6BFF -29.47%, #6C10BC 39.76%, #1E1E1E 101.6%), #6C10BC"
+          : "#FFFFFF",
         width: "100%",
-        minHeight: { xs: 200, sm: 300 },
-        maxHeight: { xs: "auto", sm: 300 },
+        height: { xs: isFeatured ? 243 : 197, md: 300 },
+        maxHeight: { xs: isFeatured ? 243 : 197, md: 300 },
         width: "100%",
-        maxWidth: { xs: "100%", sm: "none" },
         borderRadius: "16px",
-        padding: " 20px 20px 20px 20px",
-        boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
+        padding: "20px",
+        boxShadow: "none",
       }}
     >
       <CardContent
@@ -29,7 +30,6 @@ export default function DetailsCard({ image, title, description, isFeatured }) {
           padding: 0,
           minHeight: { xs: 200, sm: 280 },
           height: "100%",
-          justifyContent: "space-between",
           alignItems: isFeatured ? "center" : "normal",
           "&:last-child": {
             paddingBottom: { xs: 0, sm: "20px" },
@@ -39,7 +39,6 @@ export default function DetailsCard({ image, title, description, isFeatured }) {
         {isFeatured ? (
           <Box
             sx={{
-              maxHeight: 169,
               width: "100%",
               display: "flex",
               alignItems: "center",
@@ -50,15 +49,9 @@ export default function DetailsCard({ image, title, description, isFeatured }) {
               src={"/img/macBook.png"}
               alt="profile icon"
               width={260}
-              height={180}
-              sx={{
-                width: {
-                  xs: "260px",
-                  md: "340px",
-                  md: "404px",
-                },
-                objectFit: "contain",
-              }}
+              height={100}
+              style={{ objectFit: "contain" }}
+              className="macbookStyle"
             />
           </Box>
         ) : (
@@ -66,17 +59,11 @@ export default function DetailsCard({ image, title, description, isFeatured }) {
             sx={{
               width: "42px",
               height: "42px",
-              mb: "16px",
               borderRadius: 100,
+              marginBottom: { xs: "2rem", md: "80px" },
             }}
           >
-            <Image
-              src={image}
-              alt="profile icon"
-              width={42}
-              height={42}
-              sx={{ objectFit: "cover" }}
-            />
+            <Image src={image} alt="profile icon" width={42} height={42} />
           </Box>
         )}
         <Box sx={{ textAlign: isFeatured ? "center" : "left" }}>

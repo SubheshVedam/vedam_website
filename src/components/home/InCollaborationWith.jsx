@@ -102,7 +102,7 @@ export const InCollaborationWith = () => {
             icon={data.buttonIcon}
             text={data.buttonText}
             flexDirection="row-reverse"
-            textColor={"rgba(249, 249, 249, 1)"}
+            textColor={"#F9F9F9"}
           />
         </Button>
       </Box>

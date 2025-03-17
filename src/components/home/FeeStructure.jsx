@@ -55,7 +55,7 @@ const SingleCountText = ({ count, text }) => {
         >
           <Typography
             sx={{
-              color: "rgba(249, 249, 249, 1)",
+              color: "#F9F9F9",
               fontSize: "14px",
               fontFamily: "Inter, sans-serif",
             }}

@@ -9,16 +9,18 @@ const WhyVedam = () => {
       <Box
         sx={{
           width: "100%",
-          display: "grid",
-          gridTemplateColumns: {
-            xs: "1fr",
-            sm: "repeat(3, 1fr)",
-          },
+          display: "flex",
           gap: 2,
+          overflowX: { xs: "auto", md: "hidden" },
+          "&::-webkit-scrollbar": { display: "none" },
+          scrollbarWidth: "none",
         }}
       >
         {detailsData.slice(0, 3).map((item, index) => (
-          <Box key={`testimonial-${index}`}>
+          <Box
+            sx={{ flex: { xs: "0 0 60%", md: "0 0 30%" } }}
+            key={`testimonial-${index}`}
+          >
             <DetailsCard
               image={item.image}
               description={item.description}
@@ -31,7 +33,7 @@ const WhyVedam = () => {
         sx={{
           display: "grid",
           gridTemplateColumns: {
-            xs: "1fr",
+            xs: "repeat(1, 1fr)",
             sm: "repeat(2, 1fr)",
           },
           gap: 2,

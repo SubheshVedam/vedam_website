@@ -132,6 +132,7 @@ export default function ExpertCard({
             <Image
               src={linkedIn}
               layout="fill"
+              sizes="32"
               objectFit="contain"
               alt="icon"
             />

@@ -110,7 +110,7 @@ export const AIYear1 = () => {
           <Box
             key={index}
             sx={{
-              backgroundColor: "rgba(249, 249, 249, 1)",
+              backgroundColor: "#F9F9F9",
               paddingX: { xs: "10px", md: "20px" },
               paddingY: { xs: "5px", md: "10px" },
               borderRadius: "40px",
@@ -152,6 +152,10 @@ export const AIYear1 = () => {
           flexDirection: "row",
           alignItems: "flex-start",
           gap: "10px",
+          width: "100%",
+          overflowX: { xs: "auto", md: "hidden" },
+          "&::-webkit-scrollbar": { display: "none" },
+          scrollbarWidth: "none",
         }}
       >
         {homeScreenData.year1.outcomeArray.map((item) => (
