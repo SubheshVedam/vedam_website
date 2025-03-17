@@ -16,7 +16,7 @@ export default function TestimonialCard({ image, text, name, designation }) {
         minWidth: { xs: 274, sm: 333 },
         borderRadius: "16px",
         padding: " 20px 20px 0 20px",
-        boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
+        boxShadow: "none",
       }}
     >
       <CardContent
@@ -55,6 +55,7 @@ export default function TestimonialCard({ image, text, name, designation }) {
               color: "text.primary",
               marginBottom: "16px",
               fontSize: { xs: 14, sm: 16 },
+              fontFamily: "Inter, sans-serif",
             }}
           >
             {text}
@@ -67,15 +68,20 @@ export default function TestimonialCard({ image, text, name, designation }) {
               color: "#6C10BC",
               fontWeight: "bold",
               fontSize: { xs: 14, sm: 16 },
+              fontFamily: "Inter, sans-serif",
             }}
           >
-            {name}{" "}
+            {name}
           </Typography>
           <Typography
             variant="body2"
-            sx={{ color: "text.secondary", fontSize: { xs: 10, sm: 12 } }}
+            sx={{
+              color: "text.secondary",
+              fontSize: { xs: 10, sm: 12 },
+              fontFamily: "Inter, sans-serif",
+            }}
           >
-            {designation}{" "}
+            {designation}
           </Typography>
         </Box>
       </CardContent>

@@ -4,7 +4,6 @@ import { homeScreenData } from "@/constants/data";
 import { Box, Typography } from "@mui/material";
 
 const Card = ({
-  width,
   data,
   containerStyle = {},
   showBorder = false,
@@ -16,13 +15,12 @@ const Card = ({
   return (
     <Box
       sx={{
-        width: width,
         paddingTop: "20px",
         paddingBottom: "20px",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
-        height: "465px",
+        height: { xs: "300px", md: "465px" },
         ...containerStyle,
       }}
     >
@@ -100,12 +98,15 @@ export const VedamVs = () => {
         width: "100%",
         display: "flex",
         flexDirection: "row",
+        overflowX: { xs: "auto", md: "hidden" },
+        "&::-webkit-scrollbar": { display: "none" },
+        scrollbarWidth: "none",
       }}
     >
       <Card
-        width={"30%"}
         data={homeScreenData.vedamVs.leftSideData}
         containerStyle={{
+          flex: { xs: "0 0 40%", md: "0 0 30%" },
           dispaly: "flex",
           alignItems: "flex-start",
           marginTop: "1rem",
@@ -122,7 +123,7 @@ export const VedamVs = () => {
       />
       <Box
         sx={{
-          width: "45%",
+          flex: { xs: "0 0 80%", md: "0 0 40%" },
           paddingTop: "1rem",
           paddingBottom: "1rem",
           background:
@@ -147,9 +148,9 @@ export const VedamVs = () => {
         />
       </Box>
       <Card
-        width="35%"
         data={homeScreenData.vedamVs.rightSideData}
         containerStyle={{
+          flex: { xs: "0 0 60%", md: "0 0 30%" },
           borderTop: "1px solid rgba(108, 16, 188, 1)",
           borderRight: "1px solid rgba(108, 16, 188, 1)",
           borderBottom: "1px solid rgba(108, 16, 188, 1)",
@@ -161,7 +162,7 @@ export const VedamVs = () => {
         }}
         textArrayStyle={{
           width: "100%",
-          paddingLeft: { sm: "10px", md: "40px" },
+          paddingLeft: { xs: "20px", md: "40px" },
           alignItems: "center",
           justifyContent: "flex-start",
         }}

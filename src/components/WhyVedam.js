@@ -11,8 +11,8 @@ const WhyVedam = () => {
           width: "100%",
           display: "grid",
           gridTemplateColumns: {
-            xs: "1fr", // 1 card per row in xs view
-            sm: "repeat(3, 1fr)", // 3 cards per row in sm view
+            xs: "1fr",
+            sm: "repeat(3, 1fr)",
           },
           gap: 2,
         }}
@@ -31,11 +31,11 @@ const WhyVedam = () => {
         sx={{
           display: "grid",
           gridTemplateColumns: {
-            xs: "1fr", // 1 card per row in xs view
-            sm: "repeat(2, 1fr)", // 2 cards per row in sm view
+            xs: "1fr",
+            sm: "repeat(2, 1fr)",
           },
-          gap: 2, // Add spacing between cards
-          mt: 2, // Add margin-top to separate the two rows
+          gap: 2,
+          mt: 2,
         }}
       >
         {detailsData.slice(3).map((item, index) => (

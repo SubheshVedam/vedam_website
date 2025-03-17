@@ -67,7 +67,6 @@ export default function DetailsCard({ image, title, description, isFeatured }) {
               width: "42px",
               height: "42px",
               mb: "16px",
-              border: "1px solid",
               borderRadius: 100,
             }}
           >

@@ -5,12 +5,14 @@ import {
   ImageGrid,
   InCollaborationWith,
   InvestorWhoTrustUs,
+  LearnFrom,
   VedamVs,
   VideoWithText,
+  WhatPeople,
   WidthContainer,
 } from "@/components";
 import WhyVedam from "@/components/WhyVedam";
-import { detailsData, homeScreenData, testimonialData } from "@/constants/data";
+import { detailsData, homeScreenData } from "@/constants/data";
 import { Box } from "@mui/material";
 import React, { Fragment } from "react";
 
@@ -67,6 +69,20 @@ const Home = () => {
           >
             <WhyVedam />
           </CardContainer>
+        </WidthContainer>
+      </Box>
+      <AIFirstCurriculum />
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "20px",
+          alignItems: "center",
+          paddingBottom: "16px",
+          backgroundColor: "#F9F9F9",
+        }}
+      >
+        <WidthContainer>
           <CardContainer
             subtitle={homeScreenData.vedamVs.subtitle}
             linearGradientSubtitle="linear-gradient(90deg, #FB7F05 0%, #6C10BC 42.11%)"
@@ -76,44 +92,20 @@ const Home = () => {
           <CardContainer subtitle={homeScreenData.FeeStructure.subtitle}>
             <FeeStructure />
           </CardContainer>
+          <CardContainer
+            title={homeScreenData.learnFrom.title}
+            subtitle={homeScreenData.learnFrom.subtitle}
+          >
+            <LearnFrom />
+          </CardContainer>
+          <CardContainer subtitle={homeScreenData.whatPeople.subtitle}>
+            <WhatPeople />
+          </CardContainer>
+          <CardContainer subtitle={homeScreenData.learnFrom.subtitle}>
+            <InvestorWhoTrustUs />
+          </CardContainer>
         </WidthContainer>
-        {/* {detailsData.map((item, index) => (
-        // <ExpertCard
-        //   key={`expertsCard-${index}`}
-        //   imageUrl={expert.imageUrl}
-        //   name={expert.name}
-        //   logo={expert.logo}
-        //   designation={expert.designation}
-        //   info={expert.info}
-        //   rating={expert.rating}
-        //   linkedIn={expert.linkedIn}
-        // />
-        //   <TestimonialCard
-        //   key={`testimonial-${index}`}
-        //   image={testimonial.image}
-        //   text={testimonial.text}
-        //   name={testimonial.name}
-        //   designation={testimonial.designation}
-        // />
-      ))} */}
-        {/* <WhyVedam /> */}
       </Box>
-      {/* <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          background:
-            "radial-gradient(74.32% 74.32% at 50% 100%, rgba(255, 152, 26, 0.4) 0%, rgba(255, 255, 255, 0) 100%)",
-          maxWidth: "1080px",
-        }}
-      >
-        <CardContainer
-          title={"Future proof learning"}
-          subtitle={"AI First Curriculum"}
-        >
-          <AIFirstCurriculum />
-        </CardContainer>
-      </div> */}
     </Fragment>
   );
 };

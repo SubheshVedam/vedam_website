@@ -6,6 +6,8 @@ export const CardContainer = ({
   subtitle,
   children,
   linearGradientSubtitle = "linear-gradient(90deg, #FB7F05 0%, #6C10BC 42.11%)",
+  containerStyle,
+  titleChildContainer,
 }) => {
   return (
     <Box
@@ -14,6 +16,7 @@ export const CardContainer = ({
         flexDirection: "column",
         width: "100%",
         marginTop: { xs: "1.4rem", md: "2rem" },
+        ...containerStyle,
       }}
     >
       <Box
@@ -22,6 +25,7 @@ export const CardContainer = ({
           flexDirection: "column",
           alignItems: "flex-start",
           marginBottom: "2rem",
+          ...titleChildContainer,
         }}
       >
         {title && (

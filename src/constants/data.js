@@ -27,7 +27,8 @@ export const testimonialData = [
 
 export const expertsData = [
   {
-    imageUrl: "https://placehold.co/245x203", // Example image URL
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/c/c1/Lionel_Messi_20180626.jpg", // Example image URL
     name: "John Doe",
     logo: "/next.svg",
     designation: "Software Engineer",
@@ -36,7 +37,8 @@ export const expertsData = [
     linkedIn: "/img/linkedInIcon.png",
   },
   {
-    imageUrl: "https://placehold.co/245x203",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/c/c1/Lionel_Messi_20180626.jpg",
     name: "Jane Smith",
     logo: "/next.svg",
     designation: "Data Scientist",
@@ -45,7 +47,8 @@ export const expertsData = [
     linkedIn: "/img/linkedInIcon.png",
   },
   {
-    imageUrl: "https://placehold.co/245x203",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/c/c1/Lionel_Messi_20180626.jpg",
     name: "Alice Johnson",
     logo: "/next.svg",
     designation: "DevOps Engineer",
@@ -54,7 +57,8 @@ export const expertsData = [
     linkedIn: "/img/linkedInIcon.png",
   },
   {
-    imageUrl: "https://placehold.co/245x203",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/c/c1/Lionel_Messi_20180626.jpg",
     name: "Bob Brown",
     logo: "/next.svg",
     designation: "Backend Developer",
@@ -65,31 +69,31 @@ export const expertsData = [
 ];
 export const detailsData = [
   {
-    image: "/img/linkedInIcon.png", // Updated image path
+    image: "/img/whyvedam/first.webp",
     title: "Code From Day 1",
     description:
       "From Day 1, you'll be writing real code, building projects, and solving industry-relevant problems.",
   },
   {
-    image: "/img/linkedInIcon.png",
+    image: "/img/whyvedam/second.webp",
     title: "AI First Curriculum",
     description:
       "Our AI-First Curriculum is designed to equip students with the skills, tools, and mindset needed to thrive in an AI-powered world.",
   },
   {
-    image: "/img/linkedInIcon.png",
+    image: "/img/whyvedam/third.webp",
     title: "Mentorships",
     description:
       "Get personalized career guidance from experienced professionals.",
   },
   {
-    image: "/img/linkedInIcon.png",
+    image: "/img/whyvedam/fourth.webp",
     title: "Top Instructors",
     description:
       "At Vedam, you’ll learn from the best minds in tech—engineers, researchers, and industry leaders from Google, Microsoft, Amazon, and top startups. Our faculty doesn’t just teach theory; they bring real-world experience into the classroom.",
   },
   {
-    image: "/img/linkedInIcon.png",
+    image: "/img/whyvedam/fifth.webp",
     title: "Personal Macbook Pro ",
     description:
       "It's your key to a hands-on, immersive and collaborative learning experience in Computer Science and AI.",
@@ -299,6 +303,45 @@ export const homeScreenData = {
       {
         id: 3,
         text: "Hostel and mess services are available on the ADYPU campus, subject to availability and offered on a first-come, first-served basis.",
+      },
+    ],
+  },
+  learnFrom: {
+    title: "The people who build for world",
+    subtitle: "Learn from MAANG Experts",
+  },
+  whatPeople: {
+    subtitle: "What people says about us",
+  },
+  year1: {
+    title: "Programming Foundation",
+    subtitle: "Learn the basics for AI and Programming by building from year 1",
+    secondTitle: "Skills & Technologies",
+    secondArray: [
+      "JavaScript",
+      "Python",
+      "JAVA",
+      "Unlearning & Learning how to Learn",
+      "Soft skill",
+      "Probability & Statistics",
+      "UNIX",
+    ],
+    Outcomes: "Outcomes",
+    outcomeArray: [
+      {
+        id: 0,
+        text: "Building Hotstar like Feed with Search and Categories",
+        icon: "/img/outcomes/first.webp",
+      },
+      {
+        id: 1,
+        text: "Build a Portfolio Website like GitHub Pages",
+        icon: "/img/outcomes/second.webp",
+      },
+      {
+        id: 2,
+        text: "Develop an Online Resume Builder like Canva",
+        icon: "/img/outcomes/third.webp",
       },
     ],
   },

@@ -15,20 +15,22 @@ export default function ExpertCard({
   designation,
   info,
   rating,
-  linkedIn
+  linkedIn,
 }) {
   return (
     <Card
       sx={{
         display: "flex",
         flexDirection: { xs: "column", sm: "row" },
-        width:{ xs: 280, sm: 426 },
+        width: { xs: 280, sm: 426 },
         maxWidth: "100%",
         minWidth: { xs: 280, sm: 426 },
         borderRadius: "16px",
         padding: "20px",
-        overflow: "hidden", // Prevent overflow
-        boxSizing: "border-box", // Ensure padding is included in width
+        overflow: "hidden",
+        boxSizing: "border-box",
+        border: "0.5px solid rgba(132, 132, 132, 0.2)",
+        boxShadow: "none",
       }}
     >
       <CardMedia
@@ -50,24 +52,24 @@ export default function ExpertCard({
           padding: { xs: "8px 0 0 0", sm: "0 0 0 16px" },
           width: "100%",
           "&:last-child": {
-            paddingBottom: 0, // Remove padding for the last child
+            paddingBottom: 0,
           },
         }}
       >
         <Box>
-        <Typography
-          variant="h6"
-          component="div"
-          sx={{ color: "text.primary", fontWeight: "bold", fontSize: 20 }}
-        >
-          {name}
-        </Typography>
-        <Typography
-          variant="body2"
-          sx={{ color: "text.secondary", fontSize: 12 }}
-        >
-          {designation}
-        </Typography>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ color: "text.primary", fontWeight: "bold", fontSize: 20 }}
+          >
+            {name}
+          </Typography>
+          <Typography
+            variant="body2"
+            sx={{ color: "text.secondary", fontSize: 12 }}
+          >
+            {designation}
+          </Typography>
         </Box>
         <Box sx={{ width: 80, height: 30, position: "relative" }}>
           <Image src={logo} layout="fill" objectFit="contain" alt="logo" />
@@ -83,7 +85,7 @@ export default function ExpertCard({
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            mt:{xs:2,sm:0}
+            mt: { xs: 2, sm: 0 },
           }}
         >
           <Box
@@ -116,7 +118,14 @@ export default function ExpertCard({
                 <StarBorder fontSize="16px" sx={{ color: "#6C10BC" }} />
               }
               icon={<Star fontSize="16px" sx={{ color: "#6C10BC" }} />}
-              sx={{ position: "relative", zIndex: 100, fontSize: "16px",display:'flex',justifyContent:'space-between',width:'100%' }}
+              sx={{
+                position: "relative",
+                zIndex: 100,
+                fontSize: "16px",
+                display: "flex",
+                justifyContent: "space-between",
+                width: "100%",
+              }}
             />
           </Box>
           <Box sx={{ width: 32, height: 32, position: "relative" }}>
