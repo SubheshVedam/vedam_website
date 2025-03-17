@@ -4,7 +4,7 @@ import { Box, Typography } from "@mui/material";
 import { homeScreenData } from "@/constants/data";
 import Button from "@mui/material/Button";
 
-export const VideoWithText = () => {
+export const VideoWithText = ({ title, subtitle }) => {
   return (
     <Box
       sx={{
@@ -59,7 +59,7 @@ export const VideoWithText = () => {
             marginBottom: "1rem",
           }}
         >
-          {homeScreenData.hero.title}
+          {title}
         </Typography>
         <Typography
           variant="subtitle2"
@@ -69,7 +69,7 @@ export const VideoWithText = () => {
             fontSize: "14px",
           }}
         >
-          {homeScreenData.hero.subtitle}
+          {subtitle}
         </Typography>
         <Button
           sx={{

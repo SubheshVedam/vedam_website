@@ -108,7 +108,7 @@ export const detailsData = [
 
 export const navLinks = [
   { label: "Home", path: "/" },
-  { label: "Admission & Fees", path: "/about" },
+  { label: "Admission & Fees", path: "/admission" },
   { label: "Life @ Vedam", path: "/services" },
   { label: "FAQs", path: "/contact" },
   { label: "Login", path: "/login" },
@@ -374,5 +374,41 @@ export const homeScreenData = {
         icon: "/img/outcomes/third.webp",
       },
     ],
+  },
+};
+
+export const admissionScreenData = {
+  hero: {
+    background_video:
+      "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+    title: "Top 5% will make it\nto the Vedam batch.",
+    subtitle: "Apply Now for 2025 admission",
+  },
+  admissionAndFees: {
+    subtitle: "Admission & Fees",
+    description:
+      "We look forward to welcoming students who value a talented peer group. Only the top 5% will make it to the Vedam batch. The group study and peer to peer learning increases greatly in such a batch.",
+    applyNow: "Apply Now for 2025 admission",
+    eligibilityStrong: "Eligibility Criteria: ",
+    eligibilityText:
+      "2024, 2025 12th student with PCM (>50% in PCM & 12th boards Overall)",
+  },
+  keyDates: {
+    subtitle: "Key Dates",
+  },
+  admissionProcess: {
+    subtitle: "Admission Process",
+  },
+  facilityAndAmenities: {
+    subtitle: "Facilities & Amenities",
+  },
+  feeStructure: {
+    subtitle: "Fee Structure",
+  },
+  scholarshipProgram: {
+    subtitle: "Scholarship Program",
+  },
+  financingOption: {
+    subtitle: "Financing Options",
   },
 };

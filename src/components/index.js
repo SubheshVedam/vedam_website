@@ -13,3 +13,4 @@ export { FeeStructure } from "./home/FeeStructure";
 export { VedamVs } from "./home/VedamVs";
 export { LearnFrom } from "./home/LearnFrom";
 export { WhatPeople } from "./home/WhatPeople";
+export { AdmissionAndFees } from "./admission/AdmissionAndFees";

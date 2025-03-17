@@ -29,7 +29,10 @@ const Home = () => {
           backgroundColor: "#F9F9F9",
         }}
       >
-        <VideoWithText />
+        <VideoWithText
+          title={homeScreenData.hero.title}
+          subtitle={homeScreenData.hero.subtitle}
+        />
         <WidthContainer
           childrenStyle={{
             display: "flex",

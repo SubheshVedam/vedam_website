@@ -2,12 +2,13 @@ import React from "react";
 import { Box, Typography } from "@mui/material";
 
 export const CardContainer = ({
-  title,
-  subtitle,
+  title = "",
+  subtitle = "",
   children,
   linearGradientSubtitle = "linear-gradient(90deg, #FB7F05 0%, #6C10BC 42.11%)",
-  containerStyle,
-  titleChildContainer,
+  containerStyle = {},
+  titleChildContainer = {},
+  showSubtitleBottomBorder = false,
 }) => {
   return (
     <Box
@@ -55,6 +56,17 @@ export const CardContainer = ({
           >
             {subtitle}
           </Typography>
+        )}
+        {showSubtitleBottomBorder && (
+          <Box
+            sx={{
+              borderBottom: showSubtitleBottomBorder
+                ? "1px solid rgba(0, 0, 0, 0.3)"
+                : "none",
+              marginTop: showSubtitleBottomBorder ? "20px" : 0,
+              width: "100%",
+            }}
+          ></Box>
         )}
       </Box>
       {children}
