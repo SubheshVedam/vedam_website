@@ -30,6 +30,27 @@ body {
   .macbookStyle {
     height: 180px;
   }
+  .financeImage {
+    width: 120px;
+    height: 40px;
+  }
+  .ap-sticky-container {
+    position: sticky;
+    top: 0vh;
+    height: 100vh;
+    padding: 10px 20px;
+  }
+  .infoImage {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+  }
+}
+
+.infoImage {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
 }
 
 .curriculum-container {
@@ -91,4 +112,17 @@ body {
   align-items: center;
   justify-content: center;
   background: #f0f0f0;
+}
+
+.admission-process-container {
+  position: relative;
+  max-width: 1080px;
+  height: 450vh;
+}
+
+.ap-sticky-container {
+  position: sticky;
+  top: 1vh;
+  height: 80vh;
+  padding: 10px 20px;
 }

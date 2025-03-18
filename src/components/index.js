@@ -14,3 +14,8 @@ export { VedamVs } from "./home/VedamVs";
 export { LearnFrom } from "./home/LearnFrom";
 export { WhatPeople } from "./home/WhatPeople";
 export { AdmissionAndFees } from "./admission/AdmissionAndFees";
+export { KeyDates } from "./admission/KeyDates";
+export { FinancingOptions } from "./admission/FinancingOptions";
+export { ScholarshipProgram } from "./admission/ScholarshipProgram";
+export { FacilityAndAmenities } from "./admission/FacilityAndAmenities";
+export { AdmissionProcess } from "./admission/AdmissionProcess";

@@ -54,7 +54,7 @@ export const VideoWithText = ({ title, subtitle }) => {
           sx={{
             fontWeight: "bold",
             whiteSpace: "pre-line",
-            fontFamily: "Inter, sans-serif",
+            fontFamily: "Inter",
             fontSize: { xs: "1.5rem", md: "2rem", lg: "3rem" },
             marginBottom: "1rem",
           }}
@@ -65,7 +65,7 @@ export const VideoWithText = ({ title, subtitle }) => {
           variant="subtitle2"
           sx={{
             marginBottom: "0.5rem",
-            fontFamily: "Inter, sans-serif",
+            fontFamily: "Inter",
             fontSize: "14px",
           }}
         >

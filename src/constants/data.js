@@ -395,20 +395,128 @@ export const admissionScreenData = {
   },
   keyDates: {
     subtitle: "Key Dates",
+    headerText: "March Intake Dates",
+    firstArray: [
+      "VSAT Test",
+      "Last Date to Apply",
+      "VSAT Result",
+      "Personal Interview",
+      "Final Offer",
+    ],
+    secondArray: [
+      "21 March 2025",
+      "20 March 2025",
+      "Immediatly After Exam",
+      "Within 10 Days of the Exam",
+      "To be Announced",
+    ],
   },
   admissionProcess: {
     subtitle: "Admission Process",
+    leftSideArray: [
+      { id: 0, text: "Apply Online" },
+      { id: 1, text: "Appear for Test" },
+      { id: 2, text: "Personal Interview" },
+      { id: 3, text: "Results" },
+      { id: 4, text: "Block Your seat" },
+    ],
+    rightSideArray: [
+      {
+        id: 0,
+        step: "Step 1",
+        title: "Apply Online",
+        subtitle:
+          "Complete your profile and reserve your slot for the Vedam Scholastic Aptitude Test (VSAT).",
+        subtitle1: "Last Date to Register is 20 March 2025",
+        showButton: true,
+      },
+      {
+        id: 1,
+        step: "Step 2",
+        title: "Take the VSAT",
+        subtitle:
+          "It is an entrance test conducted online. Early intake round on 21st March, 2025.",
+        showButton: false,
+      },
+      {
+        id: 2,
+        step: "Step 3",
+        title: "Appear for Personal Interview",
+        subtitle:
+          "This will be conducted online by industry experts to understand more about you and your critical thinking skills.",
+        showButton: false,
+      },
+      {
+        id: 3,
+        step: "Step 4",
+        title: "Recieve your Admission Results",
+        subtitle:
+          "Result shall be announced in 7 - 10 days time of your interview, along with scholarships, in case you are eligible for any.",
+        showButton: false,
+      },
+      {
+        id: 4,
+        step: "Step 5",
+        title: "Block your seat",
+        subtitle:
+          "If selected, you will need to block your seat within a stipulated period of time.",
+        showButton: false,
+        infoText:
+          "Seat Blocking fees of INR 50,000 will be adjusted against the 1st semester fee ",
+      },
+    ],
   },
   facilityAndAmenities: {
     subtitle: "Facilities & Amenities",
+    image: "/img/audi.webp",
+    imageTitle: "Auditorium and Amphitheater",
+    subtitleDescription:
+      "Premier auditorium and amphitheatre are ideal for events and performances.",
+    imageArray: [
+      { id: 0, imageUrl: "/img/amenities/first.webp" },
+      { id: 1, imageUrl: "/img/amenities/second.webp" },
+      { id: 2, imageUrl: "/img/amenities/third.webp" },
+      { id: 3, imageUrl: "/img/amenities/fourth.webp" },
+      { id: 4, imageUrl: "/img/amenities/fifth.webp" },
+    ],
   },
   feeStructure: {
     subtitle: "Fee Structure",
   },
   scholarshipProgram: {
     subtitle: "Scholarship Program",
+    description:
+      "Empowering students with the resources to compete in the new age program. Upto 100% scholarships are available",
+    data: [
+      {
+        image: "/img/scholarship/first.webp",
+        title: "Merit Based Scholarship",
+        description:
+          "Recognizes academic excellence, unique talent and leadership potential.",
+      },
+      {
+        image: "/img/scholarship/second.webp",
+        title: "Women in Tech Scholarship",
+        description: "To promote and support Women in Tech.",
+      },
+      {
+        image: "/img/scholarship/third.webp",
+        title: "Need Based Scholarship",
+        description:
+          "Focused on specific fields of study or demonstrating financial needs.",
+      },
+    ],
   },
   financingOption: {
     subtitle: "Financing Options",
+    description:
+      "Easy EMI available through our financing partners, subject to meeting financial eligibility criteria. The following financial partners can provide loans for up to 95% of the programme fees to the admitted students.",
+    imageArray: [
+      { id: 0, image: "/img/companies/adobe.webp" },
+      { id: 1, image: "/img/companies/amazon.webp" },
+      { id: 2, image: "/img/companies/flipkart.webp" },
+      { id: 3, image: "/img/companies/google.webp" },
+      { id: 4, image: "/img/companies/meta.webp" },
+    ],
   },
 };

@@ -55,7 +55,7 @@ export default function TestimonialCard({ image, text, name, designation }) {
               color: "text.primary",
               marginBottom: "16px",
               fontSize: { xs: 14, sm: 16 },
-              fontFamily: "Inter, sans-serif",
+              fontFamily: "Inter",
             }}
           >
             {text}
@@ -68,7 +68,7 @@ export default function TestimonialCard({ image, text, name, designation }) {
               color: "#6C10BC",
               fontWeight: "bold",
               fontSize: { xs: 14, sm: 16 },
-              fontFamily: "Inter, sans-serif",
+              fontFamily: "Inter",
             }}
           >
             {name}
@@ -78,7 +78,7 @@ export default function TestimonialCard({ image, text, name, designation }) {
             sx={{
               color: "text.secondary",
               fontSize: { xs: 10, sm: 12 },
-              fontFamily: "Inter, sans-serif",
+              fontFamily: "Inter",
             }}
           >
             {designation}

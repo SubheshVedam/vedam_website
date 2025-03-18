@@ -1,16 +1,16 @@
 import { admissionScreenData } from "@/constants/data";
 import { Box, Button, Typography } from "@mui/material";
-import React from "react";
+import React, { Fragment } from "react";
 import { Eligibility } from "../svg/Eligibility";
 
 export const AdmissionAndFees = () => {
   return (
-    <Box>
+    <Fragment>
       <Typography
         variant="subtitle1"
         sx={{
           fontSize: { xs: "14px", md: "1rem" },
-          fontFamily: "Inter, sans-serif",
+          fontFamily: "Inter",
           fontWeight: "500",
           lineHeight: "150%",
           color: "rgba(30, 30, 30, 1)",
@@ -20,7 +20,7 @@ export const AdmissionAndFees = () => {
       </Typography>
       <Box
         sx={{
-          padding: { xs: "25px 10px", md: "30px 20px" },
+          padding: { xs: "25px 14px", md: "30px 20px" },
           display: "flex",
           flexDirection: { xs: "column", md: "row" },
           alignItems: { xs: "flex-start", md: "flex-start" },
@@ -29,13 +29,14 @@ export const AdmissionAndFees = () => {
           background: "rgba(108, 16, 188, 0.1)",
           borderRadius: "16px",
           marginTop: "1rem",
+          gap: "1rem",
         }}
       >
         <Box>
           <Typography
             variant="h1"
             sx={{
-              fontSize: "clamp(1rem, 2vw, 40px)",
+              fontSize: "clamp(1.4rem, 2vw, 40px)",
               color: "rgba(108, 16, 188, 1)",
               fontWeight: "700",
               lineHeight: "100%",
@@ -46,17 +47,34 @@ export const AdmissionAndFees = () => {
           <Box
             sx={{
               display: "flex",
+              alignItems: "flex-start",
               gap: "10px",
               marginTop: { xs: "1rem", md: "2rem" },
             }}
           >
             <Eligibility />
-            <Typography>
-              <strong>
-                {admissionScreenData.admissionAndFees.eligibilityStrong}
-              </strong>
-              {admissionScreenData.admissionAndFees.eligibilityText}
-            </Typography>
+            <Box sx={{ display: "flex", flexDirection: "row" }}>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontWeight: "500",
+                  fontFamily: "Inter",
+                  fontSize: "clamp(14px, 2vw, 16px)",
+                }}
+              >
+                <strong
+                  style={{
+                    fontWeight: "700",
+                    fontFamily: "Inter",
+                    fontSize: "clamp(14px, 2vw, 16px)",
+                    lineHeight: "150%",
+                  }}
+                >
+                  {admissionScreenData.admissionAndFees.eligibilityStrong}
+                </strong>
+                {admissionScreenData.admissionAndFees.eligibilityText}
+              </Typography>
+            </Box>
           </Box>
         </Box>
         <Button
@@ -72,7 +90,7 @@ export const AdmissionAndFees = () => {
             sx={{
               fontSize: "clamp(12px, 2vw, 16px)",
               color: "#FFFFFF",
-              fontFamily: "Inter, sans-serif",
+              fontFamily: "Inter",
               lineHeight: "100%",
               textTransform: "none",
             }}
@@ -81,6 +99,6 @@ export const AdmissionAndFees = () => {
           </Typography>
         </Button>
       </Box>
-    </Box>
+    </Fragment>
   );
 };

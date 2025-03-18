@@ -57,7 +57,7 @@ const SingleCountText = ({ count, text }) => {
             sx={{
               color: "#F9F9F9",
               fontSize: "14px",
-              fontFamily: "Inter, sans-serif",
+              fontFamily: "Inter",
             }}
           >
             {count}
@@ -70,7 +70,7 @@ const SingleCountText = ({ count, text }) => {
           sx={{
             color: "rgba(30, 30, 30, 1)",
             fontSize: "12px",
-            fontFamily: "Inter, sans-serif",
+            fontFamily: "Inter",
             lineHeight: "150%",
           }}
         >
@@ -102,7 +102,7 @@ export const FeeStructure = () => {
         <Typography
           variant="body1"
           sx={{
-            fontFamily: "Inter, sans-serif",
+            fontFamily: "Inter",
             fontWeight: { xs: "400", md: "700" },
             marginTop: { xs: "8px", md: 0 },
           }}
@@ -209,7 +209,7 @@ export const FeeStructure = () => {
               gap: "1rem",
               alignItems: "flex-start",
               justifyContent: "space-between",
-              paddingBottom: "16px",
+              paddingBottom: { md: "16px" },
             }}
           >
             {homeScreenData.FeeStructure.rightSideText.map((item) => (

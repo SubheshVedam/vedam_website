@@ -130,7 +130,7 @@ export const AIFirstCurriculumDesktop = () => {
                         <Typography
                           variant="subtitle1"
                           sx={{
-                            fontFamily: "Inter, sans-serif",
+                            fontFamily: "Inter",
                             fontSize: 14,
                             fontWeight: "500",
                             lineHeight: "100%",
@@ -143,7 +143,7 @@ export const AIFirstCurriculumDesktop = () => {
                           variant="subtitle2"
                           style={{ marginTop: 4 }}
                           sx={{
-                            fontFamily: "Inter, sans-serif",
+                            fontFamily: "Inter",
                             fontSize: 16,
                             fontWeight: "700",
                             lineHeight: "100%",

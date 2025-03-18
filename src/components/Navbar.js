@@ -87,7 +87,7 @@ export default function Navbar() {
                     letterSpacing: "-2%",
                     textTransform: "none",
                     transition: "all 0.3s ease-in-out",
-                    fontFamily: "Inter, sans-serif",
+                    fontFamily: "Inter",
                     "&:hover": {
                       background:
                         "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)",
@@ -114,7 +114,7 @@ export default function Navbar() {
                 paddingX: "20px",
                 paddingY: "10px",
                 borderRadius: "8px",
-                fontFamily: "Inter, sans-serif",
+                fontFamily: "Inter",
                 "&:hover": {
                   background:
                     "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)",
@@ -140,7 +140,7 @@ export default function Navbar() {
                 paddingX: "20px",
                 paddingY: "10px",
                 borderRadius: "8px",
-                fontFamily: "Inter, sans-serif",
+                fontFamily: "Inter",
                 "&:hover": {
                   background:
                     "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)",

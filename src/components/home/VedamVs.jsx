@@ -32,7 +32,7 @@ const Card = ({
             fontSize: "clamp(14px, 2vw, 1.5rem)",
             fontWeight: "700",
             lineHeight: "120%",
-            fontFamily: "Inter, sans-serif",
+            fontFamily: "Inter",
             ...headerTextStyle,
           }}
         >

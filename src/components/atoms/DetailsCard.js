@@ -5,7 +5,13 @@ import Typography from "@mui/material/Typography";
 import { Box } from "@mui/material";
 import Image from "next/image";
 
-export default function DetailsCard({ image, title, description, isFeatured }) {
+export default function DetailsCard({
+  image,
+  title,
+  description,
+  isFeatured,
+  height = 300,
+}) {
   return (
     <Card
       sx={{
@@ -13,8 +19,8 @@ export default function DetailsCard({ image, title, description, isFeatured }) {
           ? "linear-gradient(160.16deg, #BA6BFF -29.47%, #6C10BC 39.76%, #1E1E1E 101.6%), #6C10BC"
           : "#FFFFFF",
         width: "100%",
-        height: { xs: isFeatured ? 243 : 197, md: 300 },
-        maxHeight: { xs: isFeatured ? 243 : 197, md: 300 },
+        height: { xs: isFeatured ? 243 : 197, md: height },
+        maxHeight: { xs: isFeatured ? 243 : 197, md: height },
         width: "100%",
         borderRadius: "16px",
         padding: "20px",
