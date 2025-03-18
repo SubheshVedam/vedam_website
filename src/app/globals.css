@@ -45,6 +45,24 @@ body {
     height: 20px;
     object-fit: contain;
   }
+  .investorsImage {
+    height: 50px !important;
+  }
+  .financeStyle {
+    height: 70px !important;
+  }
+}
+
+.financeStyle {
+  width: 100%;
+  height: 30px;
+  object-fit: contain;
+  margin-top: 1rem;
+}
+
+.investorsImage {
+  width: 100%;
+  height: 25px;
 }
 
 .infoImage {

@@ -20,26 +20,19 @@ export const InvestorWhoTrustUs = () => {
     >
       <Box
         sx={{
-          display: "flex",
-          alignItems: "center",
+          display: "grid",
+          gridTemplateColumns: "repeat(4, 1fr)",
           gap: "20px",
-          minWidth: "200%",
-          animation: "scroll 15s linear infinite",
-          "@keyframes scroll": {
-            from: { transform: "translateX(0)" },
-            to: { transform: "translateX(-50%)" },
-          },
         }}
       >
         {...homeScreenData.investorWhoTrustUs.data.map((item) => (
-          <Image
+          <img
             key={item.id}
             src={item.img}
             alt={"image"}
-            width={135}
-            height={60}
             loading="lazy"
-            style={{ objectFit: "contain", aspectRatio: 1 }}
+            style={{ objectFit: "contain" }}
+            className="investorsImage"
           />
         ))}
       </Box>

@@ -199,18 +199,10 @@ export const homeScreenData = {
   investorWhoTrustUs: {
     subtitle: "Investor who trust us",
     data: [
-      { id: 0, img: "/img/digital_capital.webp" },
-      { id: 1, img: "/img/saama.webp" },
-      { id: 2, img: "/img/westbridge.webp" },
-      { id: 3, img: "/img/companies/adobe.webp" },
-      { id: 4, img: "/img/companies/flipkart.webp" },
-      { id: 5, img: "/img/companies/phonepe.webp" },
-      { id: 6, img: "/img/companies/meta.webp" },
-      { id: 7, img: "/img/companies/amazon.webp" },
-      { id: 8, img: "/img/companies/paypal.webp" },
-      { id: 9, img: "/img/companies/paypal.webp" },
-      { id: 10, img: "/img/companies/walmart.webp" },
-      { id: 11, img: "/img/companies/razorpay.webp" },
+      { id: 0, img: "/img/investors/alteria.webp" },
+      { id: 1, img: "/img/investors/saama.webp" },
+      { id: 2, img: "/img/investors/westbridge.webp" },
+      { id: 3, img: "/img/investors/prime.webp" },
     ],
   },
   whyVedam: {
@@ -511,12 +503,5 @@ export const admissionScreenData = {
     subtitle: "Financing Options",
     description:
       "Easy EMI available through our financing partners, subject to meeting financial eligibility criteria. The following financial partners can provide loans for up to 95% of the programme fees to the admitted students.",
-    imageArray: [
-      { id: 0, image: "/img/companies/adobe.webp" },
-      { id: 1, image: "/img/companies/amazon.webp" },
-      { id: 2, image: "/img/companies/flipkart.webp" },
-      { id: 3, image: "/img/companies/google.webp" },
-      { id: 4, image: "/img/companies/meta.webp" },
-    ],
   },
 };
