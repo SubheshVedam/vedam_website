@@ -8,6 +8,7 @@ export const VideoWithText = ({ title, subtitle }) => {
   return (
     <Box
       sx={{
+        width:{xs: 'auto',lg:'100%'},
         position: "relative",
         display: "flex",
         alignItems: "center",
@@ -28,7 +29,7 @@ export const VideoWithText = ({ title, subtitle }) => {
         playsInline
         style={{
           width: "100%",
-          height: "370px",
+          height: "95vh",
           objectFit: "cover",
         }}
         className="responsive-video"

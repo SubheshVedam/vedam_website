@@ -5,8 +5,8 @@ export const WidthContainer = ({ children, childrenStyle }) => {
   return (
     <Box
       sx={{
-        maxWidth: "1080px",
-        width: { xs: "100%", md: "1080px" },
+        maxWidth: "1280px",
+        width: { xs: "100%", md: "1280px" },
       }}
     >
       <Box

@@ -13,7 +13,7 @@ body {
 
 @media (min-width: 768px) {
   .responsive-video {
-    height: 670px !important;
+    height: 100vh !important;
   }
   .singleImageGrid {
     width: 133px;
