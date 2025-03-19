@@ -33,7 +33,7 @@ export const FacilityAndAmenities = () => {
             variant="subtitle1"
             sx={{
               color: "#FFFFFF",
-              fontSize: "clamp(14px, 20vw, 24px)",
+              fontSize: "clamp(14px, 2vw, 24px)",
               lineHeight: "150%",
               fontFamily: "Inter",
               fontWeight: "700",
@@ -45,8 +45,8 @@ export const FacilityAndAmenities = () => {
             variant="subtitle2"
             sx={{
               color: "#FFFFFF",
-              fontSize: "clamp(12px, 20vw, 16px)",
-              lineHeight: "150%",
+              fontSize: "clamp(12px, 2vw, 16px)",
+              lineHeight: "100%",
               fontFamily: "Inter",
               fontWeight: "600",
             }}

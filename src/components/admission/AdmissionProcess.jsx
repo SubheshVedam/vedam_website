@@ -213,7 +213,7 @@ export const AdmissionProcess = () => {
                           sx={{
                             marginTop: "4px",
                             fontWeight: "600",
-                            fontSize: "clamp(0.8rem, 2vw, 1.2rem)",
+                            fontSize: "clamp(1rem, 2vw, 1.2rem)",
                             color: "rgba(31, 31, 31, 1)",
                             fontFamily: "Inter",
                             lineHeight: "100%",
@@ -251,7 +251,7 @@ export const AdmissionProcess = () => {
                           sx={{
                             marginTop: "0.5rem",
                             fontWeight: "500",
-                            fontSize: "16px",
+                            fontSize: { xs: "12px", md: "16px" },
                             color: "rgba(31, 31, 31, 1)",
                             fontFamily: "Inter",
                           }}
