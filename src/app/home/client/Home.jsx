@@ -23,9 +23,8 @@ const Home = () => {
         sx={{
           display: "flex",
           flexDirection: "column",
-          gap: { xs: "1rem", md: "1.5rem" },
+          gap: { xs: "1rem", md: "2rem", lg: "3rem" },
           alignItems: "center",
-          paddingBottom: "16px",
           backgroundColor: "#F9F9F9",
         }}
       >
@@ -36,7 +35,6 @@ const Home = () => {
         <WidthContainer
           childrenStyle={{
             display: "flex",
-            gap: "20px",
             flexDirection: "column",
           }}
         >
@@ -104,7 +102,7 @@ const Home = () => {
           <CardContainer subtitle={homeScreenData.whatPeople.subtitle}>
             <WhatPeople />
           </CardContainer>
-          <CardContainer subtitle={homeScreenData.learnFrom.subtitle}>
+          <CardContainer subtitle={homeScreenData.investorWhoTrustUs.subtitle}>
             <InvestorWhoTrustUs />
           </CardContainer>
         </WidthContainer>

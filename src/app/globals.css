@@ -34,12 +34,7 @@ body {
     width: 120px;
     height: 40px;
   }
-  .ap-sticky-container {
-    position: sticky;
-    top: 0vh;
-    height: 100vh;
-    padding: 10px 20px;
-  }
+
   .infoImage {
     width: 20px;
     height: 20px;
@@ -74,14 +69,6 @@ body {
 .curriculum-container {
   position: relative;
   max-width: 1080px;
-  height: 360vh;
-}
-
-.sticky-section {
-  position: sticky;
-  top: 5vh;
-  height: 90vh;
-  padding: 10px 20px;
 }
 
 .progress-bar {
@@ -91,7 +78,8 @@ body {
   align-items: flex-start;
   justify-content: center;
   height: 100%;
-  padding: 20px;
+  padding: 0px 20px;
+  margin: 20px 0px;
 }
 
 .progress-item {
@@ -122,25 +110,4 @@ body {
 
 .connector.active {
   background: rgba(108, 16, 188, 1);
-}
-
-.scroll-section {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #f0f0f0;
-}
-
-.admission-process-container {
-  position: relative;
-  max-width: 1080px;
-  height: 450vh;
-}
-
-.ap-sticky-container {
-  position: sticky;
-  top: 0vh;
-  height: 80vh;
-  padding: 10px 20px;
 }

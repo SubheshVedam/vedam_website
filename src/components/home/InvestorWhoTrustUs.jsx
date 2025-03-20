@@ -7,10 +7,7 @@ export const InvestorWhoTrustUs = () => {
   return (
     <Box
       sx={{
-        display: "flex",
-        flexDirection: "row",
-        gap: 10,
-        overflowX: "auto",
+        overflowX: "hidden",
         whiteSpace: "nowrap",
         "&::-webkit-scrollbar": { display: "none" },
         scrollbarWidth: "none",
@@ -20,9 +17,15 @@ export const InvestorWhoTrustUs = () => {
     >
       <Box
         sx={{
-          display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)",
+          display: "flex",
+          flexDirection: "row",
           gap: "20px",
+          flexWrap: "nowrap",
+          animation: "scroll 10s linear infinite",
+          "@keyframes scroll": {
+            "0%": { transform: "translateX(0%)" },
+            "100%": { transform: "translateX(-50%)" },
+          },
         }}
       >
         {...homeScreenData.investorWhoTrustUs.data.map((item) => (

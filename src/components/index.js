@@ -1,7 +1,5 @@
 export { VideoWithText } from "./home/VideoWithText";
 export { WidthContainer } from "./home/WidthContainer";
-export { TestimonialCard } from "./atoms/TestimonialCard";
-export { ExpertCard } from "./atoms/ExpertCard";
 export { DetailsCard } from "./atoms/DetailsCard";
 export { InCollaborationWith } from "./home/InCollaborationWith";
 export { CardContainer } from "./atoms/CardContainer";

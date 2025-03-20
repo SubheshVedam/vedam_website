@@ -6,13 +6,10 @@ export const WidthContainer = ({ children, childrenStyle }) => {
     <Box
       sx={{
         maxWidth: "1280px",
-        width: { xs: "100%", md: "1280px" },
+        width: { xs: "100%", md: "1080px", xl: "1280px" },
       }}
     >
-      <Box
-        style={childrenStyle}
-        sx={{ width: "100%", padding: { xs: "10px 20px" } }}
-      >
+      <Box style={childrenStyle} sx={{ width: "100%", padding: "20px 10px" }}>
         {children}
       </Box>
     </Box>

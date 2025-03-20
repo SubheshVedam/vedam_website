@@ -16,7 +16,7 @@ export const CardContainer = ({
         display: "flex",
         flexDirection: "column",
         width: "100%",
-        marginTop: "1rem",
+        marginBottom: { xs: "1rem", md: "2rem", lg: "3rem" },
         ...containerStyle,
       }}
     >
@@ -25,7 +25,7 @@ export const CardContainer = ({
           display: "flex",
           flexDirection: "column",
           alignItems: "flex-start",
-          marginBottom: { xs: "1rem", md: "2rem" },
+          marginBottom: "1rem",
           ...titleChildContainer,
         }}
       >
