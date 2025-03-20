@@ -231,7 +231,7 @@ export const AdmissionProcess = () => {
                   <Typography
                     sx={{
                       color: "#FFFFFF",
-                      fontSize: "clamp(20px, 2vw, 14px)",
+                      fontSize: "clamp(14px, 2vw, 20px)",
                       fontFamily: "Inter",
                     }}
                   >
