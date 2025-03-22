@@ -9,7 +9,7 @@ export const WidthContainer = ({ children, childrenStyle }) => {
         width: { xs: "100%", md: "1080px", xl: "1280px" },
       }}
     >
-      <Box style={childrenStyle} sx={{ width: "100%", padding: {xs:"20px 30px", sm:"20px 10px"} }}>
+      <Box sx={{ width: "100%", padding: "20px 10px", ...childrenStyle }}>
         {children}
       </Box>
     </Box>

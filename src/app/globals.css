@@ -46,6 +46,41 @@ body {
   .financeStyle {
     height: 70px !important;
   }
+  .edgeAtVedamImage {
+    height: 194px !important;
+  }
+  .innovationImageStyle {
+    height: 313px !important;
+  }
+  .clubsAtVstImage {
+    height: 240px !important;
+  }
+
+  .clubsIconImage {
+    width: 60px !important;
+    height: 60px !important;
+  }
+}
+
+.clubsIconImage {
+  width: 40px !important;
+  height: 40px !important;
+}
+
+.clubsAtVstImage {
+  object-fit: fill;
+  width: 100%;
+  height: 200px;
+}
+
+.innovationImageStyle {
+  height: 200px;
+}
+
+.edgeAtVedamImage {
+  width: 100%;
+  height: 150px;
+  border-radius: 10px;
 }
 
 .financeStyle {

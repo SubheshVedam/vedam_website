@@ -1,7 +1,4 @@
 import { AIYear1 } from "@/components/home/AIFirstCurriculum/AIYear1";
-import { AIYear2 } from "@/components/home/AIFirstCurriculum/AIYear2";
-import { AIYear3 } from "@/components/home/AIFirstCurriculum/AIYear3";
-import { AIYear4 } from "@/components/home/AIFirstCurriculum/AIYear4";
 
 export const testimonialData = [
   {
@@ -131,7 +128,7 @@ export const detailsData = [
 export const navLinks = [
   { label: "Home", path: "/" },
   { label: "Admission & Fees", path: "/admission" },
-  { label: "Life @ Vedam", path: "/services" },
+  { label: "Life @ Vedam", path: "/life" },
   { label: "FAQs", path: "/contact" },
   { label: "Login", path: "/login" },
   { label: "Register Now", path: "/register" },
@@ -528,5 +525,52 @@ export const admissionScreenData = {
     subtitle: "Financing Options",
     description:
       "Easy EMI available through our financing partners, subject to meeting financial eligibility criteria. The following financial partners can provide loans for up to 95% of the programme fees to the admitted students.",
+  },
+};
+
+export const lifeAtVedam = {
+  hero: {
+    background_video:
+      "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+    title: "Life@VST",
+    subtitle: "make memories, learn, grow, and\ncherish every moment joyfully.",
+  },
+  clubsAtVst: {
+    leftSideTitle: "Clubs at VST",
+    description:
+      "Explore VST Clubs! From coding to robotics, esports to innovation—connect, compete, learn, and grow with passionate like-minded individuals",
+    rightSideText: "Robotics Club",
+    rightSideText2: "Open Source club",
+  },
+  vedamLab: {
+    linearGradientText: "Vedam Innovation Lab",
+    description:
+      "Vedam Innovation Lab is a cutting-edge incubator driving innovation in AR/VR, AI & ML, IoT, Robotics, and Drones. Empowering creators, fostering breakthroughs, and shaping the future of technology through research and collaboration.",
+  },
+  edgeAtVedam: {
+    subtitle: "Edge at Vedam",
+    data: [
+      {
+        id: 0,
+        image: "/img/edgeAtVedam/first.webp",
+        title: "Shadow a CTO",
+        subtitle:
+          "Spend a day at leading tech StartUps and know a day in the life of tech leaders and software engineers.",
+      },
+      {
+        id: 1,
+        image: "/img/edgeAtVedam/second.webp",
+        title: "Global Exposure",
+        subtitle:
+          "Travel and participate in global tech conferences, hackathons and international coding competitions.",
+      },
+      {
+        id: 2,
+        image: "/img/edgeAtVedam/third.webp",
+        title: "Vedam Venture Fund",
+        subtitle:
+          "Get seed funding up to Rs. 1 Cr for your tech startup that solve problems of future.",
+      },
+    ],
   },
 };
