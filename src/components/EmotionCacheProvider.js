@@ -1,13 +1,13 @@
 // src/components/EmotionCacheProvider.js
-'use client'; // Mark this as a Client Component
-import * as React from 'react';
-import createCache from '@emotion/cache';
-import { CacheProvider } from '@emotion/react';
-import { useServerInsertedHTML } from 'next/navigation';
+"use client"; // Mark this as a Client Component
+import * as React from "react";
+import createCache from "@emotion/cache";
+import { CacheProvider } from "@emotion/react";
+import { useServerInsertedHTML } from "next/navigation";
 
 export default function EmotionCacheProvider({ children }) {
   const [cache] = React.useState(() => {
-    const cache = createCache({ key: 'css' });
+    const cache = createCache({ key: "css" });
     cache.compat = true;
     return cache;
   });
@@ -15,9 +15,9 @@ export default function EmotionCacheProvider({ children }) {
   useServerInsertedHTML(() => {
     return (
       <style
-        data-emotion={`${cache.key} ${Object.keys(cache.inserted).join(' ')}`}
+        data-emotion={`${cache.key} ${Object.keys(cache.inserted).join(" ")}`}
         dangerouslySetInnerHTML={{
-          __html: Object.values(cache.inserted).join(' '),
+          __html: Object.values(cache.inserted).join(" "),
         }}
       />
     );

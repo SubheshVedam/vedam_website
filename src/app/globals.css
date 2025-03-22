@@ -1,4 +1,113 @@
+html {
+  margin: 0;
+  box-sizing: border-box !important;
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
+  box-sizing: border-box !important;
+}
+* {
   box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .responsive-video {
+    height: 100vh !important;
+  }
+  .singleImageGrid {
+    width: 133px;
+    height: 33px;
+    object-fit: cover;
+  }
+  .iconStyle {
+    width: 20px;
+    height: 20px;
+  }
+  .techTeamImage {
+    height: 600px;
+  }
+  .macbookStyle {
+    height: 180px;
+  }
+  .financeImage {
+    width: 120px;
+    height: 40px;
+  }
+
+  .infoImage {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+  }
+  .investorsImage {
+    height: 50px !important;
+  }
+  .financeStyle {
+    height: 70px !important;
+  }
+}
+
+.financeStyle {
+  width: 100%;
+  height: 30px;
+  object-fit: contain;
+  margin-top: 1rem;
+}
+
+.investorsImage {
+  width: 100%;
+  height: 25px;
+}
+
+.infoImage {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.curriculum-container {
+  position: relative;
+  max-width: 1080px;
+}
+
+.progress-bar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100%;
+  padding: 0px 20px;
+  margin: 20px 0px;
+}
+
+.progress-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(108, 16, 188, 0.3);
+  transition: background 0.3s ease;
+}
+
+.dot.active {
+  background: rgba(108, 16, 188, 1);
+}
+
+.connector {
+  width: 2px;
+  height: 70px;
+  background: transparent;
+  transition: background 0.3s ease;
+  flex-grow: 1;
+}
+
+.connector.active {
+  background: rgba(108, 16, 188, 1);
 }
