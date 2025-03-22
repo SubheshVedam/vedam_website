@@ -18,8 +18,6 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import { navLinks } from "@/constants/data";
 
-// Navigation Links Array
-
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -28,179 +26,188 @@ export default function Navbar() {
   };
 
   return (
-    <Container sx={{width:'100%', display:'flex',justifyContent:'center'}}>
-    <Box
+    <Container
       sx={{
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        maxWidth:'1280px',
-        paddingX:'10px'
+        width: "100%",
+        height: { xs: "auto", sm: "0px" },
       }}
     >
-      <AppBar
-        position="static"
+      <Box
         sx={{
-          backgroundColor: "transparent",
-          boxShadow: "none",
-          width: "100vw", // Ensure AppBar spans the full viewport width
-          maxWidth: "100%", // Prevent overflow
-          overflowX: "hidden", // Hide horizontal overflow
-          paddingX: 0,
-          borderBottom: "1px solid #ccc",
+          height: "0px",
+          maxWidth: "1040px",
+          width: "100%",
+          position: { xs: "inherit", sm: "relative" },
+          top: "20px",
+          height: { xs: "auto", sm: "10px" },
         }}
       >
-        <Toolbar
+        <AppBar
           sx={{
-            height: { xs: "40px", sm: "80px" },
-            justifyContent: "space-between",
-            padding: '0 !important',
-            boxSizing: "border-box", // Include padding in width calculation
+            boxShadow: "none",
+            backgroundColor: "#FFFFFF",
+            width: "100%", // 80% width for desktop, 100% for mobile
+            paddingX: { xs: 0, sm: "20px" },
+            borderRadius: { xs: 0, sm: "15px" },
+            opacity: { xs: 1, sm: 0.7 },
+            borderBottom: "1px solid #ccc",
+            position: { xs: "static", sm: "absolute" }, // Fixed only for desktop (sm and up)
           }}
         >
-          {/* Logo */}
-          <Image
-            src="/img/vedam_logo.webp"
-            alt="Navbar Logo"
-            width={88}
-            height={34}
-            style={{ objectFit: "contain", maxWidth: "100%" }}
+          <Toolbar
             sx={{
-              width: { xs: "51px", sm: "88px" },
-              height: { xs: "20px", sm: "34px" },
-            }}
-          />
-
-          {/* Desktop Navigation */}
-          <Box
-            sx={{
-              display: { xs: "none", sm: "flex" },
-              gap: "32px",
-              alignItems: "center",
+              height: { xs: "40px", sm: "80px" },
+              justifyContent: "space-between",
+              padding: "0 !important",
+              boxSizing: "border-box", // Include padding in width calculation
             }}
           >
-            {navLinks.slice(0, 4).map((link, index) => (
-              <Link key={index} href={link.path} passHref>
-                <Button
-                  color="inherit"
-                  sx={{
-                    color: "#1F1F1F",
-                    fontWeight: 500,
-                    fontSize: "14px",
-                    lineHeight: "100%",
-                    letterSpacing: "-2%",
-                    textTransform: "none",
-                    transition: "all 0.3s ease-in-out",
-                    fontFamily: "Inter",
-                    "&:hover": {
-                      background:
-                        "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                    },
-                  }}
-                >
-                  {link.label}
-                </Button>
-              </Link>
-            ))}
-            <Button
-              color="inherit"
+            {/* Logo */}
+            <Image
+              src="/img/vedam_logo.webp"
+              alt="Navbar Logo"
+              width={88}
+              height={34}
+              style={{ objectFit: "contain", maxWidth: "100%" }}
               sx={{
-                color: "#6C10BC",
-                fontWeight: 400,
-                fontSize: "14px",
-                lineHeight: "100%",
-                letterSpacing: "-2%",
-                textTransform: "none",
-                transition: "all 0.3s ease-in-out",
-                backgroundColor: "rgba(108, 16, 188, 0.1)",
-                paddingX: "20px",
-                paddingY: "10px",
-                borderRadius: "8px",
-                fontFamily: "Inter",
-                "&:hover": {
-                  background:
-                    "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                },
+                width: { xs: "51px", sm: "88px" },
+                height: { xs: "20px", sm: "34px" },
+              }}
+            />
+
+            {/* Desktop Navigation */}
+            <Box
+              sx={{
+                display: { xs: "none", sm: "flex" },
+                gap: "32px",
+                alignItems: "center",
               }}
             >
-              {"Login"}
-            </Button>
-
-            <Button
-              color="inherit"
-              sx={{
-                color: "#FFFFFF",
-                fontWeight: 400,
-                fontSize: "14px",
-                lineHeight: "100%",
-                letterSpacing: "-2%",
-                textTransform: "none",
-                transition: "all 0.3s ease-in-out",
-                backgroundColor: "#6C10BC",
-                paddingX: "20px",
-                paddingY: "10px",
-                borderRadius: "8px",
-                fontFamily: "Inter",
-                "&:hover": {
-                  background:
-                    "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                },
-              }}
-            >
-              {"Register Now"}
-            </Button>
-          </Box>
-
-          {/* Mobile Menu Button */}
-          <IconButton
-            sx={{ display: { xs: "block", sm: "none" } }}
-            onClick={handleDrawerToggle}
-          >
-            <MenuIcon />
-          </IconButton>
-        </Toolbar>
-
-        {/* Drawer for Mobile Navigation */}
-        <Drawer anchor="right" open={mobileOpen} onClose={handleDrawerToggle}>
-          <List sx={{ width: "250px" }}>
-            {navLinks.map((link, index) => (
-              <ListItem
-                button
-                key={index}
-                component={Link}
-                href={link.path}
-                onClick={handleDrawerToggle}
+              {navLinks.slice(0, 4).map((link, index) => (
+                <Link key={index} href={link.path} passHref>
+                  <Button
+                    color="inherit"
+                    sx={{
+                      color: "#1F1F1F",
+                      fontWeight: 500,
+                      fontSize: "14px",
+                      lineHeight: "100%",
+                      letterSpacing: "-2%",
+                      textTransform: "none",
+                      transition: "all 0.3s ease-in-out",
+                      fontFamily: "Inter",
+                      "&:hover": {
+                        background:
+                          "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                      },
+                    }}
+                  >
+                    {link.label}
+                  </Button>
+                </Link>
+              ))}
+              <Button
+                color="inherit"
+                sx={{
+                  color: "#6C10BC",
+                  fontWeight: 400,
+                  fontSize: "14px",
+                  lineHeight: "100%",
+                  letterSpacing: "-2%",
+                  textTransform: "none",
+                  transition: "all 0.3s ease-in-out",
+                  backgroundColor: "rgba(108, 16, 188, 0.1)",
+                  paddingX: "20px",
+                  paddingY: "10px",
+                  borderRadius: "8px",
+                  fontFamily: "Inter",
+                  "&:hover": {
+                    background:
+                      "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  },
+                }}
               >
-                <ListItemText
-                  sx={{
-                    color: "#1F1F1F",
-                    fontWeight: 600,
-                    fontSize: "14px",
-                    lineHeight: "100%",
-                    letterSpacing: "-2%",
-                    textTransform: "none",
-                    transition: "all 0.3s ease-in-out",
-                    "&:hover": {
-                      background:
-                        "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                    },
-                  }}
-                  primary={link.label}
-                />
-              </ListItem>
-            ))}
-          </List>
-        </Drawer>
-      </AppBar>
-    </Box>
+                {"Login"}
+              </Button>
+
+              <Button
+                color="inherit"
+                sx={{
+                  color: "#FFFFFF",
+                  fontWeight: 400,
+                  fontSize: "14px",
+                  lineHeight: "100%",
+                  letterSpacing: "-2%",
+                  textTransform: "none",
+                  transition: "all 0.3s ease-in-out",
+                  backgroundColor: "#6C10BC",
+                  paddingX: "20px",
+                  paddingY: "10px",
+                  borderRadius: "8px",
+                  fontFamily: "Inter",
+                  "&:hover": {
+                    background:
+                      "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  },
+                }}
+              >
+                {"Register Now"}
+              </Button>
+            </Box>
+
+            {/* Mobile Menu Button */}
+            <IconButton
+              sx={{ display: { xs: "block", sm: "none" } }}
+              onClick={handleDrawerToggle}
+            >
+              <MenuIcon />
+            </IconButton>
+          </Toolbar>
+
+          {/* Drawer for Mobile Navigation */}
+          <Drawer anchor="right" open={mobileOpen} onClose={handleDrawerToggle}>
+            <List sx={{ width: "250px" }}>
+              {navLinks.map((link, index) => (
+                <ListItem
+                  button
+                  key={index}
+                  component={Link}
+                  href={link.path}
+                  onClick={handleDrawerToggle}
+                >
+                  <ListItemText
+                    sx={{
+                      color: "#1F1F1F",
+                      fontWeight: 600,
+                      fontSize: "14px",
+                      lineHeight: "100%",
+                      letterSpacing: "-2%",
+                      textTransform: "none",
+                      transition: "all 0.3s ease-in-out",
+                      "&:hover": {
+                        background:
+                          "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                      },
+                    }}
+                    primary={link.label}
+                  />
+                </ListItem>
+              ))}
+            </List>
+          </Drawer>
+        </AppBar>
+      </Box>
     </Container>
   );
 }
