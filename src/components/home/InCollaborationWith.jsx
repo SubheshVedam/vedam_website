@@ -53,7 +53,7 @@ export const InCollaborationWith = () => {
           src={data.leftSideImage}
           width={"100%"}
           height={260}
-          style={{ objectFit: "fill" }}
+          style={{ objectFit: "cover",aspectRatio:"2.07:1" }}
         />
       </Box>
       <Box

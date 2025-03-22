@@ -52,8 +52,7 @@ const Home = () => {
             <img
               src={homeScreenData.techTeam.image}
               width={"100%"}
-              height={200}
-              style={{ objectFit: "fill" }}
+              style={{ objectFit: "cover",aspectRatio:"1.73:1",borderRadius:'16px' }}
               className="techTeamImage"
               loading="lazy"
             />
@@ -98,7 +97,7 @@ const Home = () => {
             title={homeScreenData.learnFrom.title}
             subtitle={homeScreenData.learnFrom.subtitle}
           >
-            <LearnFrom />
+             <LearnFrom /> 
           </CardContainer>
           
           <CardContainer subtitle={homeScreenData.whatPeople.subtitle}>

@@ -24,6 +24,8 @@ export default function ExpertCard({
         flexDirection: { xs: "column", sm: "row" },
         width: { xs: 280, sm: 426 },
         maxWidth: "100%",
+        height:{xs:436,sm:'auto'},
+        maxHeight:436,
         minWidth: { xs: 280, sm: 426 },
         borderRadius: "16px",
         padding: "20px",
@@ -45,7 +47,7 @@ export default function ExpertCard({
         alt="green iguana"
       />
       <CardContent
-        sx={{
+        sx={{height:'100%',
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
