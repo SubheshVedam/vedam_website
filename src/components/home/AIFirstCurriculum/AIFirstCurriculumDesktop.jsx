@@ -40,6 +40,7 @@ export const AIFirstCurriculumDesktop = () => {
             <CardContainer
               title=" Future proof learning"
               subtitle=" AI First Curriculum"
+              containerStyle={{'paddingTop':'20px'}}
             >
               <Box sx={{ display: "flex", flexDirection: "row" }}>
                 <Box sx={{ flex: "0 30%" }}>

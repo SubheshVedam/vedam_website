@@ -18,9 +18,9 @@ export default function DetailsCard({
         background: isFeatured
           ? "linear-gradient(160.16deg, #BA6BFF -29.47%, #6C10BC 39.76%, #1E1E1E 101.6%), #6C10BC"
           : "#FFFFFF",
-        width: "100%",
-        height: { xs: isFeatured ? 243 : 197, md: height },
-        maxHeight: { xs: isFeatured ? 243 : 197, md: height },
+        maxWidth:  "100%" ,
+        height: { xs: "auto", md: height },
+        maxHeight: { xs: 220, md: height },
         width: "100%",
         borderRadius: "16px",
         padding: "20px",
@@ -36,9 +36,10 @@ export default function DetailsCard({
           padding: 0,
           minHeight: { xs: 200, sm: 280 },
           height: "100%",
+          justifyContent:'space-between',
           alignItems: isFeatured ? "center" : "normal",
           "&:last-child": {
-            paddingBottom: { xs: 0, sm: "20px" },
+            paddingBottom:  "20px" ,
           },
         }}
       >

@@ -8,6 +8,7 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   Box,
+  Container,
   Drawer,
   IconButton,
   List,
@@ -27,11 +28,14 @@ export default function Navbar() {
   };
 
   return (
+    <Container sx={{width:'100%', display:'flex',justifyContent:'center'}}>
     <Box
       sx={{
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        maxWidth:'1280px',
+        paddingX:'10px'
       }}
     >
       <AppBar
@@ -42,7 +46,7 @@ export default function Navbar() {
           width: "100vw", // Ensure AppBar spans the full viewport width
           maxWidth: "100%", // Prevent overflow
           overflowX: "hidden", // Hide horizontal overflow
-          paddingX: "1rem",
+          paddingX: 0,
           borderBottom: "1px solid #ccc",
         }}
       >
@@ -50,7 +54,7 @@ export default function Navbar() {
           sx={{
             height: { xs: "40px", sm: "80px" },
             justifyContent: "space-between",
-            padding: 0,
+            padding: '0 !important',
             boxSizing: "border-box", // Include padding in width calculation
           }}
         >
@@ -197,5 +201,6 @@ export default function Navbar() {
         </Drawer>
       </AppBar>
     </Box>
+    </Container>
   );
 }
