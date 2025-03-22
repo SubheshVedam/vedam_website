@@ -107,14 +107,12 @@ body {
 }
 
 .progress-bar {
-  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   height: 100%;
   padding: 0px 20px;
-  margin: 20px 0px;
 }
 
 .progress-item {
@@ -137,7 +135,6 @@ body {
 
 .connector {
   width: 2px;
-  height: 70px;
   background: transparent;
   transition: background 0.3s ease;
   flex-grow: 1;

@@ -38,7 +38,6 @@ const Home = () => {
             flexDirection: "column",
           }}
         >
-
           <CardContainer
             title={homeScreenData.inCollaborationWith.title}
             subtitle={homeScreenData.inCollaborationWith.subtitle}
@@ -80,6 +79,9 @@ const Home = () => {
         <WidthContainer>
           <CardContainer
             subtitle={homeScreenData.vedamVs.subtitle}
+            titleChildContainer={{
+              marginBottom: { xs: "1rem", md: "2.5rem" },
+            }}
             linearGradientSubtitle="linear-gradient(90deg, #FB7F05 0%, #6C10BC 42.11%)"
           >
             <VedamVs />
@@ -100,11 +102,11 @@ const Home = () => {
           >
             <LearnFrom />
           </CardContainer>
-          
+
           <CardContainer subtitle={homeScreenData.whatPeople.subtitle}>
             <WhatPeople />
           </CardContainer>
-          
+
           <CardContainer subtitle={homeScreenData.investorWhoTrustUs.subtitle}>
             <InvestorWhoTrustUs />
           </CardContainer>
