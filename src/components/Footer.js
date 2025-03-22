@@ -22,7 +22,8 @@ export default function Footer() {
     >
       <Box
         sx={{
-          width: { xs: "100%", sm: "80%" },
+          paddingX:'10px',
+          width: { xs: "100%", md: "1024px", xl: "1280px" },
           color: "white",
           display: "flex",
           flexDirection: "column",
