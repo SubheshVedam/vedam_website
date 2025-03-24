@@ -134,8 +134,9 @@ export const navLinks = [
   { label: "Admission & Fees", path: "/admission" },
   { label: "Life @ Vedam", path: "/life" },
   { label: "FAQs", path: "/faqs" },
-  { label: "Login", path: "/login" },
-  { label: "Register Now", path: "/register" },
+  { label: "About Us", path: "/about" },
+  { label: "Login", path: "/login" }, //Don't reorder login 
+  { label: "Register Now", path: "/register" }, //Don't reorder register 
 ];
 
 export const homeScreenData = {
