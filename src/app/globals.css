@@ -47,10 +47,7 @@ body {
     height: 194px !important;
   }
   .innovationImageStyle {
-    height: 313px !important;
-  }
-  .clubsAtVstImage {
-    height: 240px !important;
+    height: 280px !important;
   }
 
   .clubsIconImage {
@@ -67,15 +64,13 @@ body {
 .clubsAtVstImage {
   object-fit: fill;
   width: 100%;
-  height: 200px;
 }
 
 .innovationImageStyle {
-  height: 200px;
-}
+  object-fit: fill;
+  width: 100%;}
 
 .edgeAtVedamImage {
-  width: 100%;
   height: 150px;
   border-radius: 10px;
 }
