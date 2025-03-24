@@ -80,7 +80,7 @@ const Faqs = () => {
                   {item.title}
                 </Typography>
                 <div
-                  class={`plusminus ${
+                  className={`plusminus ${
                     expandedButton === item.id ? "active" : ""
                   }  `}
                 ></div>

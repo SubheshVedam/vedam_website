@@ -1,9 +1,13 @@
+'use client'
 import React from "react";
 import Image from "next/image";
-import { Box, ImageListItem, Typography } from "@mui/material";
+import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
 import { homeScreenData } from "@/constants/data";
 
 export const ImageGrid = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <Box
       sx={{
@@ -11,6 +15,7 @@ export const ImageGrid = () => {
         marginBottom: { xs: "0.5rem", md: "2rem" },
       }}
     >
+      {/* First Row */}
       <Box
         sx={{
           display: "grid",
@@ -23,18 +28,29 @@ export const ImageGrid = () => {
         {homeScreenData.fromEducationToEntrance.imagesGrid
           .slice(0, 5)
           .map((item) => (
-            <Image
+            <Box
               key={item.id}
-              src={item.imageUrl}
-              alt={"image"}
-              width={200}
-              height={100}
-              loading="lazy"
-              style={{ objectFit: "contain" }}
-              className="singleImageGrid"
-            />
+              sx={{
+                position: "relative",
+                width: isMobile ? 44 : 140,
+                height: isMobile ? 14 : 40,
+              }}
+            >
+              <Image
+                src={item.imageUrl}
+                alt={"image"}
+                fill
+                loading="lazy"
+                style={{ 
+                  objectFit: "contain",
+                }}
+                className="singleImageGrid"
+              />
+            </Box>
           ))}
       </Box>
+
+      {/* Second Row */}
       <Box
         sx={{
           display: "grid",
@@ -46,18 +62,28 @@ export const ImageGrid = () => {
         {homeScreenData.fromEducationToEntrance.imagesGrid
           .slice(5, 10)
           .map((item) => (
-            <Image
+            <Box
               key={item.id}
-              src={item.imageUrl}
-              alt={"image"}
-              width={200}
-              height={100}
-              loading="lazy"
-              style={{ objectFit: "contain" }}
-              className="singleImageGrid"
-            />
+              sx={{
+                position: "relative",
+                width: isMobile ? 44 : 140,
+                height: isMobile ? 14 : 40,
+              }}
+            >
+              <Image
+                src={item.imageUrl}
+                alt={"image"}
+                fill
+                loading="lazy"
+                style={{ 
+                  objectFit: "contain",
+                }}
+                className="singleImageGrid"
+              />
+            </Box>
           ))}
       </Box>
+
       <Typography
         variant={"subtitle1"}
         textAlign={"center"}
@@ -66,9 +92,8 @@ export const ImageGrid = () => {
           fontSize: { xs: "10px", md: "12px" },
           fontFamily: "Inter",
           color: "#1E1E1E",
+          lineHeight: "150%",
         }}
-        lineHeight={"150%"}
-        fontFamily="Inter"
       >
         {homeScreenData.fromEducationToEntrance.bottomText}
       </Typography>

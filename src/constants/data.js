@@ -94,24 +94,28 @@ export const expertsData = [
 export const detailsData = [
   {
     image: "/img/whyvedam/first.webp",
+    bgImage: "/img/whyvedam/code_day1.jpeg",
     title: "Code From Day 1",
     description:
       "From Day 1, you'll be writing real code, building projects, and solving industry-relevant problems.",
   },
   {
     image: "/img/whyvedam/second.webp",
+    bgImage: "/img/whyvedam/ai_img.jpeg",
     title: "AI First Curriculum",
     description:
       "Our AI-First Curriculum is designed to equip students with the skills, tools, and mindset needed to thrive in an AI-powered world.",
   },
   {
     image: "/img/whyvedam/third.webp",
+    bgImage: "/img/whyvedam/mentor.jpeg",
     title: "Mentorships",
     description:
       "Get personalized career guidance from experienced professionals.",
   },
   {
     image: "/img/whyvedam/fourth.webp",
+    bgImage: "/img/whyvedam/top_trainer.png",
     title: "Top Instructors",
     description:
       "At Vedam, you’ll learn from the best minds in tech—engineers, researchers, and industry leaders from Google, Microsoft, Amazon, and top startups. Our faculty doesn’t just teach theory; they bring real-world experience into the classroom.",
@@ -185,7 +189,6 @@ export const homeScreenData = {
       {
         id: 9,
         imageUrl: "/img/companies/Intuit_Logo.png",
-
       },
     ],
     bottomText:

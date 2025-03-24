@@ -40,7 +40,7 @@ export const AIFirstCurriculumDesktop = () => {
     >
       <Box
         sx={{
-          maxWidth: "1080px",
+          maxWidth: "1024px",
           width: "100%",
         }}
       >

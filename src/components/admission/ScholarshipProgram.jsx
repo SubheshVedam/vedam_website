@@ -35,6 +35,7 @@ export const ScholarshipProgram = () => {
             key={`testimonial-${index}`}
           >
             <DetailsCard
+              isScholarshipCard={true}
               image={item.image}
               description={item.description}
               title={item.title}
