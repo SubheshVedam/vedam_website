@@ -24,9 +24,6 @@ body {
     width: 20px;
     height: 20px;
   }
-  .techTeamImage {
-    height: 600px;
-  }
   .macbookStyle {
     height: 180px;
   }
@@ -46,6 +43,41 @@ body {
   .financeStyle {
     height: 70px !important;
   }
+  .edgeAtVedamImage {
+    height: 194px !important;
+  }
+  .innovationImageStyle {
+    height: 313px !important;
+  }
+  .clubsAtVstImage {
+    height: 240px !important;
+  }
+
+  .clubsIconImage {
+    width: 60px !important;
+    height: 60px !important;
+  }
+}
+
+.clubsIconImage {
+  width: 40px !important;
+  height: 40px !important;
+}
+
+.clubsAtVstImage {
+  object-fit: fill;
+  width: 100%;
+  height: 200px;
+}
+
+.innovationImageStyle {
+  height: 200px;
+}
+
+.edgeAtVedamImage {
+  width: 100%;
+  height: 150px;
+  border-radius: 10px;
 }
 
 .financeStyle {
@@ -72,14 +104,12 @@ body {
 }
 
 .progress-bar {
-  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   height: 100%;
   padding: 0px 20px;
-  margin: 20px 0px;
 }
 
 .progress-item {
@@ -102,7 +132,6 @@ body {
 
 .connector {
   width: 2px;
-  height: 70px;
   background: transparent;
   transition: background 0.3s ease;
   flex-grow: 1;
@@ -110,4 +139,42 @@ body {
 
 .connector.active {
   background: rgba(108, 16, 188, 1);
+}
+
+.plusminus {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+
+  &.active {
+    &:before {
+      transform: translatey(-50%) rotate(-90deg);
+      opacity: 0;
+    }
+    &:after {
+      transform: translatey(-50%) rotate(0);
+    }
+  }
+
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    background-color: #333;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transition: 0.35s;
+    width: 100%;
+    height: 3px;
+  }
+
+  &:before {
+    transform: translatey(-50%);
+  }
+
+  &:after {
+    transform: translatey(-50%) rotate(90deg);
+  }
 }

@@ -39,13 +39,6 @@ const Home = () => {
           }}
         >
           <CardContainer
-            title={homeScreenData.fromEducationToEntrance.title}
-            subtitle={homeScreenData.fromEducationToEntrance.subtitle}
-            linearGradientSubtitle="linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)"
-          >
-            <ImageGrid />
-          </CardContainer>
-          <CardContainer
             title={homeScreenData.inCollaborationWith.title}
             subtitle={homeScreenData.inCollaborationWith.subtitle}
           >
@@ -58,8 +51,7 @@ const Home = () => {
             <img
               src={homeScreenData.techTeam.image}
               width={"100%"}
-              height={200}
-              style={{ objectFit: "fill" }}
+              style={{ objectFit: "cover",aspectRatio:"1.73:1",borderRadius:'16px' }}
               className="techTeamImage"
               loading="lazy"
             />
@@ -86,22 +78,34 @@ const Home = () => {
         <WidthContainer>
           <CardContainer
             subtitle={homeScreenData.vedamVs.subtitle}
+            titleChildContainer={{
+              marginBottom: { xs: "1rem", md: "2.5rem" },
+            }}
             linearGradientSubtitle="linear-gradient(90deg, #FB7F05 0%, #6C10BC 42.11%)"
           >
             <VedamVs />
           </CardContainer>
-          <CardContainer subtitle={homeScreenData.FeeStructure.subtitle}>
+          {/* <CardContainer subtitle={homeScreenData.FeeStructure.subtitle}>
             <FeeStructure />
+          </CardContainer> */}
+          <CardContainer
+            title={homeScreenData.fromEducationToEntrance.title}
+            subtitle={homeScreenData.fromEducationToEntrance.subtitle}
+            linearGradientSubtitle="linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)"
+          >
+            <ImageGrid />
           </CardContainer>
           <CardContainer
             title={homeScreenData.learnFrom.title}
             subtitle={homeScreenData.learnFrom.subtitle}
           >
-            <LearnFrom />
+             <LearnFrom /> 
           </CardContainer>
+
           <CardContainer subtitle={homeScreenData.whatPeople.subtitle}>
             <WhatPeople />
           </CardContainer>
+
           <CardContainer subtitle={homeScreenData.investorWhoTrustUs.subtitle}>
             <InvestorWhoTrustUs />
           </CardContainer>

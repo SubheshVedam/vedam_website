@@ -8,7 +8,7 @@ export const VideoWithText = ({ title, subtitle }) => {
   return (
     <Box
       sx={{
-        width:{xs: 'auto',lg:'100%'},
+        width: { xs: "auto", lg: "100%" },
         position: "relative",
         display: "flex",
         alignItems: "center",
@@ -67,7 +67,8 @@ export const VideoWithText = ({ title, subtitle }) => {
           sx={{
             marginBottom: "0.5rem",
             fontFamily: "Inter",
-            fontSize: "14px",
+            fontSize: "clamp(10px, 2vw, 20px)",
+            whiteSpace: "pre-line",
           }}
         >
           {subtitle}

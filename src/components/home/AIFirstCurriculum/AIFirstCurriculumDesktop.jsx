@@ -1,14 +1,22 @@
 "use client";
 
 import { Box, Typography } from "@mui/material";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { homeScreenData } from "@/constants/data";
 import { CardContainer } from "@/components";
 
 export const AIFirstCurriculumDesktop = () => {
+  const firstContentRef = useRef(null);
+  const [leftBoxHeight, setLeftBoxHeight] = useState("auto");
   const [activeStep, setActiveStep] = useState(1);
 
   const sectionData = homeScreenData.aiFirst.data;
+
+  useEffect(() => {
+    if (firstContentRef.current) {
+      setLeftBoxHeight(`${firstContentRef.current.offsetHeight}px`);
+    }
+  }, [sectionData]);
 
   const handleScroll = (e) => {
     const { scrollTop, clientHeight, scrollHeight } = e.target;
@@ -27,6 +35,7 @@ export const AIFirstCurriculumDesktop = () => {
         justifyContent: "center",
         background:
           "radial-gradient(74.32% 74.32% at 50% 100%, rgba(255, 152, 26, 0.4) 0%, rgba(255, 255, 255, 0) 100%)",
+        marginBottom: "2rem",
       }}
     >
       <Box
@@ -38,19 +47,27 @@ export const AIFirstCurriculumDesktop = () => {
         <div className="curriculum-container">
           <div>
             <CardContainer
-              title=" Future proof learning"
+              title="Future proof learning"
               subtitle=" AI First Curriculum"
-              containerStyle={{'paddingTop':'20px'}}
+              containerStyle={{ padding: "20px 10px" }}
             >
-              <Box sx={{ display: "flex", flexDirection: "row" }}>
-                <Box sx={{ flex: "0 30%" }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  height: "100%",
+                  marginTop: "1.5rem",
+                }}
+              >
+                <Box sx={{ flex: "0 30%", height: "auto" }}>
                   <div
                     className="progress-bar"
                     style={{
                       display: "flex",
                       alignItems: "flex-start",
-                      height: "360px",
                       position: "relative",
+                      height: leftBoxHeight,
+                      justifyContent: "space-around",
                     }}
                   >
                     {sectionData.map((section, index) => (
@@ -72,8 +89,14 @@ export const AIFirstCurriculumDesktop = () => {
                           {index !== sectionData.length - 1 && (
                             <div
                               className={`connector ${
-                                activeStep >= section.id ? "active" : ""
+                                activeStep > section.id ? "active" : ""
                               }`}
+                              style={{
+                                height: `${
+                                  firstContentRef?.current?.offsetHeight / 4 +
+                                  10
+                                }px`,
+                              }}
                             ></div>
                           )}
                         </div>
@@ -110,7 +133,7 @@ export const AIFirstCurriculumDesktop = () => {
                 </Box>
                 <Box
                   sx={{
-                    height: "70vh",
+                    height: leftBoxHeight,
                     flex: "0 70%",
                     display: "flex",
                     flexDirection: "column",
@@ -121,8 +144,15 @@ export const AIFirstCurriculumDesktop = () => {
                   }}
                   onScroll={handleScroll}
                 >
-                  {sectionData.map((item) => {
-                    return <div key={item.id}>{item.content}</div>;
+                  {sectionData.map((item, index) => {
+                    return (
+                      <div
+                        key={item.id}
+                        ref={index === 0 ? firstContentRef : null}
+                      >
+                        {item.content}
+                      </div>
+                    );
                   })}
                 </Box>
               </Box>
