@@ -13,10 +13,12 @@ import {
   IconButton,
   List,
   ListItem,
+  ListItemIcon,
   ListItemText,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { navLinks } from "@/constants/data";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -24,7 +26,9 @@ export default function Navbar() {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-
+  const isAuthLink = (label) => {
+    return label.includes("Login") || label.includes("Register");
+  };
   return (
     <Container
       sx={{
@@ -129,8 +133,8 @@ export default function Navbar() {
                     borderRadius: "8px",
                     fontFamily: "Inter",
                     "&:hover": {
-                    background:
-                      "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)",
+                      background:
+                        "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)",
                       WebkitBackgroundClip: "text",
                       WebkitTextFillColor: "transparent",
                     },
@@ -209,6 +213,11 @@ export default function Navbar() {
                     }}
                     primary={link.label}
                   />
+                  {isAuthLink(link.label) && (
+                    <ListItemIcon sx={{ minWidth: "24px", marginLeft: "8px" }}>
+                      <ArrowForwardIcon fontSize="small" />
+                    </ListItemIcon>
+                  )}
                 </ListItem>
               ))}
             </List>
