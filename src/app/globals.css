@@ -61,12 +61,14 @@ body {
   }
 }
 
+
 .founderImage {
   width: 100%;
   height: 324px;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
 }
+
 
 .clubsIconImage {
   width: 40px !important;

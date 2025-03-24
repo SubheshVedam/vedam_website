@@ -61,7 +61,7 @@ const TeamVedam = () => {
                 sx={{
                   display: "flex",
                   flexDirection: { xs: "column", md: "row" },
-                  gap: { xs: "1rem", md: "2rem" },
+                  // gap: { xs: "1rem", md: "2rem" },
                   alignItems: "center",
                   justifyContent: "space-between",
                   width: "100%",
@@ -73,11 +73,16 @@ const TeamVedam = () => {
                     flex: "0 0 40%",
                     borderTopLeftRadius: "20px",
                     borderBottomLeftRadius: "20px",
+                    height: {
+                      xs: "250px",
+                      md: "324px",
+                    },
                   }}
                 >
                   <img
                     src={item.imageUrl}
                     alt="founder-image"
+                    style={{ objectFit: "fill" }}
                     className="founderImage"
                   />
                 </Box>
@@ -101,8 +106,13 @@ const TeamVedam = () => {
                       borderBottomRightRadius: "8px",
                       backgroundColor: "#FFFFFF",
                       position: "relative",
+                      paddingLeft:{xs:0,sm:'20px'},
                       zIndex: 1,
-                    }}
+                      height: {
+                        xs: "250px",
+                        md: "324px",
+
+                      },                    }}
                   >
                     <Typography
                       variant="h5"
