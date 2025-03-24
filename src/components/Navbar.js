@@ -13,10 +13,12 @@ import {
   IconButton,
   List,
   ListItem,
+  ListItemIcon,
   ListItemText,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { navLinks } from "@/constants/data";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -24,7 +26,9 @@ export default function Navbar() {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-
+  const isAuthLink = (label) => {
+    return label.includes("Login") || label.includes("Register");
+  };
   return (
     <Container
       sx={{
@@ -62,7 +66,8 @@ export default function Navbar() {
               height: { xs: "40px", sm: "80px" },
               justifyContent: "space-between",
               padding: "0 !important",
-              boxSizing: "border-box", // Include padding in width calculation
+              boxSizing: "border-box",
+              gap: "2rem",
             }}
           >
             {/* Logo */}
@@ -86,7 +91,7 @@ export default function Navbar() {
                 alignItems: "center",
               }}
             >
-              {navLinks.slice(0, 4).map((link, index) => (
+              {navLinks.slice(0, 5).map((link, index) => (
                 <Link key={index} href={link.path} passHref>
                   <Button
                     color="inherit"
@@ -111,57 +116,63 @@ export default function Navbar() {
                   </Button>
                 </Link>
               ))}
-              <Button
-                color="inherit"
-                sx={{
-                  color: "#6C10BC",
-                  fontWeight: 400,
-                  fontSize: "14px",
-                  lineHeight: "100%",
-                  letterSpacing: "-2%",
-                  textTransform: "none",
-                  transition: "all 0.3s ease-in-out",
-                  backgroundColor: "rgba(108, 16, 188, 0.1)",
-                  paddingX: "20px",
-                  paddingY: "10px",
-                  borderRadius: "8px",
-                  fontFamily: "Inter",
-                  "&:hover": {
-                    background:
-                      "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                  },
-                }}
-              >
-                {"Login"}
-              </Button>
+              <Box sx={{ display: "flex", gap: "1rem" }}>
+                <Button
+                  color="inherit"
+                  sx={{
+                    color: "#6C10BC",
+                    fontWeight: 400,
+                    fontSize: "14px",
+                    lineHeight: "100%",
+                    letterSpacing: "-2%",
+                    textTransform: "none",
+                    transition: "all 0.3s ease-in-out",
+                    backgroundColor: "rgba(108, 16, 188, 0.1)",
+                    paddingX: "20px",
+                    paddingY: "10px",
+                    borderRadius: "8px",
+                    fontFamily: "Inter",
+                    "&:hover": {
+                      background:
+                        "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                    },
+                  }}
+                  target="_blank"
+                  href={navLinks[navLinks.length - 2].path}
+                >
+                  {navLinks[navLinks.length - 2].label}
+                </Button>
 
-              <Button
-                color="inherit"
-                sx={{
-                  color: "#FFFFFF",
-                  fontWeight: 400,
-                  fontSize: "14px",
-                  lineHeight: "100%",
-                  letterSpacing: "-2%",
-                  textTransform: "none",
-                  transition: "all 0.3s ease-in-out",
-                  backgroundColor: "#6C10BC",
-                  paddingX: "20px",
-                  paddingY: "10px",
-                  borderRadius: "8px",
-                  fontFamily: "Inter",
-                  "&:hover": {
-                    background:
-                      "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                  },
-                }}
-              >
-                {"Register Now"}
-              </Button>
+                <Button
+                  color="inherit"
+                  sx={{
+                    color: "#FFFFFF",
+                    fontWeight: 400,
+                    fontSize: "14px",
+                    lineHeight: "100%",
+                    letterSpacing: "-2%",
+                    textTransform: "none",
+                    transition: "all 0.3s ease-in-out",
+                    backgroundColor: "#6C10BC",
+                    paddingX: "20px",
+                    paddingY: "10px",
+                    borderRadius: "8px",
+                    fontFamily: "Inter",
+                    "&:hover": {
+                      background:
+                        "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                    },
+                  }}
+                  target="_blank"
+                  href={navLinks[navLinks.length - 1].path}
+                >
+                  {navLinks[navLinks.length - 1].label}
+                </Button>
+              </Box>
             </Box>
 
             {/* Mobile Menu Button */}
@@ -202,6 +213,11 @@ export default function Navbar() {
                     }}
                     primary={link.label}
                   />
+                  {isAuthLink(link.label) && (
+                    <ListItemIcon sx={{ minWidth: "24px", marginLeft: "8px" }}>
+                      <ArrowForwardIcon fontSize="small" />
+                    </ListItemIcon>
+                  )}
                 </ListItem>
               ))}
             </List>

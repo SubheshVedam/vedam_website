@@ -1,8 +1,8 @@
 import React from "react";
-import About from "./About";
+import TeamVedam from "./TeamVedam";
 
 const page = () => {
-  return <About />;
+  return <TeamVedam />;
 };
 
 export default page;

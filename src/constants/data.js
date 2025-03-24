@@ -134,8 +134,9 @@ export const navLinks = [
   { label: "Admission & Fees", path: "/admission" },
   { label: "Life @ Vedam", path: "/life" },
   { label: "FAQs", path: "/faqs" },
-  { label: "Login", path: "/login" },
-  { label: "Register Now", path: "/register" },
+  { label: "About Us", path: "/about" },
+  { label: "Login", path: "/login" }, //Don't reorder login 
+  { label: "Register Now", path: "/register" }, //Don't reorder register 
 ];
 
 export const homeScreenData = {
@@ -605,6 +606,39 @@ export const faqsScreenData = {
       title: "What is the fee for the Vedam Scholastic Aptitude Test (VSAT)?",
       description:
         "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.",
+    },
+  ],
+};
+
+export const teamVedamScreenData = {
+  subtitle: "Team Vedam",
+  description:
+    "Vedam School of Technology is an initiative by entrepreneurs - Ashish Munjal, Piyush Nangru and Ankur Jain. They come with an experience of running a Series C funded higher education company for the past 6 years that has already skilled more than 10,000 students through its education for the masses approach.",
+
+  data: [
+    {
+      id: 0,
+      name: "Ashish Munjal",
+      imageUrl: "/img/teamVedam/ashish_munjal.webp",
+      designation: "Co-Founder & CEO",
+      description:
+        "With a great appetite for startups, Ashish is currently the Co-Founder and CEO of Sunstone and Vedam. Earlier, he was the Co-Founder at Crownit where he headed Consumer and Business growth. An MBA from IMT Ghaziabad and a certified CFA, Ashish has diverse experience in various roles with Bank of America and handled Sales and Operations at Knowlarity.",
+    },
+    {
+      id: 1,
+      name: "Piyush Nangru",
+      imageUrl: "/img/teamVedam/pitush_nangru.webp",
+      designation: "Co-Founder & COO",
+      description:
+        "With a passion for startups, Piyush is currently the Co-Founder and COO at Sunstone and Vedam. Piyush joined Crownit as a founding member and headed the marketing and business development aspect of the business. An engineer from NSIT and an MBA from IMT Ghaziabad, Piyush started his venture in the Cultural Tourism spac",
+    },
+    {
+      id: 2,
+      name: "Ankur Jain",
+      imageUrl: "/img/teamVedam/ankur_jain.webp",
+      designation: "Co-Founder & CBO",
+      description:
+        "Ankur’s exposure to the education industry makes him an ideal fit for taking charge of Sunstone and Vedam’s growth and expansion as a Chief Business Officer. More than 15 years of demonstrated expertise in Sales, Marketing and Business Development, he has previously worked with Amazon, Airtel and YourStory and is the founder of HostelFund",
     },
   ],
 };
