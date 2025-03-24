@@ -51,9 +51,8 @@ const Faqs = () => {
           }}
         >
           {faqsScreenData.questions.map((item) => (
-            <Fragment>
+            <Fragment key={`faq-item-${item.id}`}>
               <Button
-                key={item.id}
                 color="inherit"
                 sx={{
                   width: "100%",

@@ -178,7 +178,7 @@ export default function Navbar() {
             <List sx={{ width: "250px" }}>
               {navLinks.map((link, index) => (
                 <ListItem
-                  button
+                  button={true}
                   key={index}
                   component={Link}
                   href={link.path}

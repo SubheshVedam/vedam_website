@@ -141,7 +141,7 @@ export const navLinks = [
 export const homeScreenData = {
   hero: {
     background_video:
-      "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+      "/vid/videoBg.mp4",
     title: "More Than a Degree\nBuild Innovate & Lead",
     subtitle:
       "Vedam's 4-year BTech program prepares you for startups, innovation, and leadership with industry driven coursework and hands-on projects.",
@@ -515,7 +515,7 @@ export const admissionScreenData = {
       {
         image: "/img/scholarship/second.webp",
         title: "Women in Tech Scholarship",
-        description: "To promote and support Women in Tech.",
+        description: "Empowering and supporting women in tech for growth and success.",
       },
       {
         image: "/img/scholarship/third.webp",

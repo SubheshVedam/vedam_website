@@ -40,8 +40,9 @@ export const AIFirstCurriculumDesktop = () => {
     >
       <Box
         sx={{
-          maxWidth: "1024px",
-          width: "100%",
+          maxWidth: "1280px",
+          width: { xs: "100%", md: "1024px", xl: "1280px" },
+          
         }}
       >
         <div className="curriculum-container">
@@ -59,7 +60,7 @@ export const AIFirstCurriculumDesktop = () => {
                   marginTop: "1.5rem",
                 }}
               >
-                <Box sx={{ flex: "0 30%", height: "auto" }}>
+                <Box sx={{ flex: "0 25%", height: "auto" }}>
                   <div
                     className="progress-bar"
                     style={{
@@ -134,7 +135,7 @@ export const AIFirstCurriculumDesktop = () => {
                 <Box
                   sx={{
                     height: leftBoxHeight,
-                    flex: "0 70%",
+                    flex: "0 79%",
                     display: "flex",
                     flexDirection: "column",
                     gap: "2rem",
@@ -148,6 +149,7 @@ export const AIFirstCurriculumDesktop = () => {
                     return (
                       <div
                         key={item.id}
+                        style={{width:'100%'}}
                         ref={index === 0 ? firstContentRef : null}
                       >
                         {item.content}

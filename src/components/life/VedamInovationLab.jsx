@@ -64,6 +64,8 @@ export const VedamInovationLab = () => {
             padding: "10px 20px",
             borderRadius: "0.5rem",
           }}
+          href="https://apply.vedam.org/"
+          target="_blank"
         >
           <Typography
             variant="h6"
