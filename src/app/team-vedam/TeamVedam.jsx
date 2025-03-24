@@ -16,7 +16,10 @@ const TeamVedam = () => {
       }}
     >
       <WidthContainer>
-        <CardContainer subtitle={teamVedamScreenData.subtitle}>
+        <CardContainer
+          subtitle={teamVedamScreenData.subtitle}
+          linearGradientSubtitle="linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)"
+        >
           <Box
             sx={{
               borderBottom: "1px solid rgba(0, 0, 0, 0.3)",
