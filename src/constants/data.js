@@ -152,11 +152,11 @@ export const homeScreenData = {
       },
       {
         id: 1,
-        imageUrl: "/img/companies/flipkart.webp",
+        imageUrl: "/img/companies/microsoft-logo.png",
       },
       {
         id: 2,
-        imageUrl: "/img/companies/phonepe.webp",
+        imageUrl: "/img/companies/google.webp",
       },
       {
         id: 3,
@@ -184,7 +184,8 @@ export const homeScreenData = {
       },
       {
         id: 9,
-        imageUrl: "/img/companies/google.webp",
+        imageUrl: "/img/companies/Intuit_Logo.png",
+
       },
     ],
     bottomText:

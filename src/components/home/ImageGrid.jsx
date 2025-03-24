@@ -27,10 +27,10 @@ export const ImageGrid = () => {
               key={item.id}
               src={item.imageUrl}
               alt={"image"}
-              width={44}
-              height={11}
+              width={200}
+              height={100}
               loading="lazy"
-              style={{ objectFit: "contain", aspectRatio: 1 }}
+              style={{ objectFit: "contain" }}
               className="singleImageGrid"
             />
           ))}
@@ -50,10 +50,10 @@ export const ImageGrid = () => {
               key={item.id}
               src={item.imageUrl}
               alt={"image"}
-              width={44}
-              height={11}
+              width={200}
+              height={100}
               loading="lazy"
-              style={{ objectFit: "fill", aspectRatio: 1 }}
+              style={{ objectFit: "contain" }}
               className="singleImageGrid"
             />
           ))}
