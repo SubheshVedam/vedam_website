@@ -1,9 +1,14 @@
+"use client";
+
+import React from "react";
+import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { CardContainer, WidthContainer } from "@/components";
 import { teamVedamScreenData } from "@/constants/data";
-import { Box, Typography } from "@mui/material";
-import React from "react";
 
 const TeamVedam = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
     <Box
       sx={{
@@ -55,7 +60,7 @@ const TeamVedam = () => {
                 key={item.id}
                 sx={{
                   display: "flex",
-                  flexDirection: "row",
+                  flexDirection: { xs: "column", md: "row" },
                   gap: { xs: "1rem", md: "2rem" },
                   alignItems: "center",
                   justifyContent: "space-between",
@@ -129,21 +134,24 @@ const TeamVedam = () => {
                         fontSize: { xs: "14px", md: "20px" },
                         lineHeight: "150%",
                         fontFamily: "Inter",
+                        paddingBottom: { xs: "10px", md: "0px" },
                       }}
                     >
                       {item.description}
                     </Typography>
                   </Box>
-                  <Box
-                    sx={{
-                      position: "absolute",
-                      inset: 0,
-                      height: "324px",
-                      backgroundColor: "#6C10BC",
-                      borderTopRightRadius: "15px",
-                      borderBottomRightRadius: "15px",
-                    }}
-                  />
+                  {!isMobile && (
+                    <Box
+                      sx={{
+                        position: "absolute",
+                        inset: 0,
+                        height: "324px",
+                        backgroundColor: "#6C10BC",
+                        borderTopRightRadius: "15px",
+                        borderBottomRightRadius: "15px",
+                      }}
+                    />
+                  )}
                 </Box>
               </Box>
             ))}

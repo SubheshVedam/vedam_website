@@ -59,12 +59,16 @@ body {
   }
   .founderImage {
     height: 324px !important;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
   }
 }
 
 .founderImage {
   width: 100%;
-  height: 100%;
+  height: 324px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .clubsIconImage {
