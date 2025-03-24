@@ -227,6 +227,8 @@ export const AdmissionProcess = () => {
                     backgroundColor: "rgba(251, 127, 5, 1)",
                     borderRadius: "8px",
                   }}
+                  href="https://apply.vedam.org/"
+                  target="_blank"
                 >
                   <Typography
                     sx={{

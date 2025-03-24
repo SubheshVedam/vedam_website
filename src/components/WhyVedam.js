@@ -26,6 +26,7 @@ const WhyVedam = () => {
         >
           <DetailsCard
             image={item.image}
+            bgImage={item.bgImage}
             description={item.description}
             title={item.title}
           />
@@ -44,6 +45,7 @@ const WhyVedam = () => {
         >
           <DetailsCard
             image={item.image}
+            bgImage={item.bgImage}
             description={item.description}
             title={item.title}
             isFeatured={item.isFeatured}

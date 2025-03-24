@@ -83,7 +83,9 @@ export const VideoWithText = ({ title, subtitle }) => {
             padding: "10px 20px",
             boxShadow: "0px 0px 11.2px rgba(255, 255, 255, 0.25)",
           }}
-        >
+          href="https://apply.vedam.org/"
+          target="_blank"
+                  >
           Apply Now
         </Button>
       </Box>

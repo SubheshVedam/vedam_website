@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import { lifeAtVedam } from "@/constants/data";
+import Image from "next/image";
 
 export const EdgeAtVedam = () => {
   return (
@@ -9,7 +10,7 @@ export const EdgeAtVedam = () => {
         display: "grid",
         gridTemplateColumns: { xs: "repeat(1, 1fr)", md: "repeat(3, 1fr)" },
         flexDirection: "row",
-        gap: { xs: "10px", md: "20px" },
+        gap: { xs: "10px", md: "50px" },
       }}
     >
       {lifeAtVedam.edgeAtVedam.data.map((item) => (
@@ -21,7 +22,14 @@ export const EdgeAtVedam = () => {
             alignItems: "flex-start",
           }}
         >
-          <img src={item.image} className="edgeAtVedamImage" />
+          <Image
+            src={item.image}
+            className="edgeAtVedamImage"
+            width={333}
+            height={194}
+            style={{ objectFit: "contain" }}
+            alt="edgeAtVedamImage"
+          />
           <Typography
             variant="body1"
             sx={{

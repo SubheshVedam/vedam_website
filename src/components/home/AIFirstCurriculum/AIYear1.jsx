@@ -49,9 +49,10 @@ export const AIYear1 = () => {
     <Box
       sx={{
         display: "flex",
+        width:'100%',
         flexDirection: "column",
         alignItems: "flex-start",
-        padding: { xs: "10px", md: "30px" },
+        padding: { xs: "10px", md: "20px" },
         backgroundColor: "rgba(255, 255, 255, 1)",
         borderRadius: "30px",
       }}
@@ -146,6 +147,8 @@ export const AIYear1 = () => {
         {homeScreenData.year1.Outcomes}
       </Typography>
       <Box
+                id="check"
+
         sx={{
           flex: { xs: "0 0 40%", md: "0 0 30%" },
           display: "flex",

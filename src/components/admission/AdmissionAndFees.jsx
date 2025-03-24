@@ -84,6 +84,8 @@ export const AdmissionAndFees = () => {
             borderRadius: "8px",
             padding: { xs: "10px 20px", md: "15px 25px" },
           }}
+          href="https://apply.vedam.org/"
+          target="_blank"
         >
           <Typography
             variant="button"
