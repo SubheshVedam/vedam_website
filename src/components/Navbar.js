@@ -19,16 +19,30 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import { navLinks } from "@/constants/data";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const pathname = usePathname();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
+  
   const isAuthLink = (label) => {
     return label.includes("Login") || label.includes("Register");
   };
+
+  const isActive = (path) => {
+    return pathname === path;
+  };
+
+  const activeStyle = {
+    background: "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+  };
+
   return (
     <Container
       sx={{
@@ -53,12 +67,12 @@ export default function Navbar() {
           sx={{
             boxShadow: "none",
             backgroundColor: "#FFFFFF",
-            width: "100%", // 80% width for desktop, 100% for mobile
+            width: "100%",
             paddingX: { xs: 0, sm: "20px" },
             borderRadius: { xs: 0, sm: "15px" },
             opacity: { xs: 1, sm: 0.7 },
             borderBottom: "1px solid #ccc",
-            position: { xs: "static", sm: "absolute" }, // Fixed only for desktop (sm and up)
+            position: { xs: "static", sm: "absolute" },
           }}
         >
           <Toolbar
@@ -104,12 +118,8 @@ export default function Navbar() {
                       textTransform: "none",
                       transition: "all 0.3s ease-in-out",
                       fontFamily: "Inter",
-                      "&:hover": {
-                        background:
-                          "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)",
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
-                      },
+                      "&:hover": activeStyle,
+                      ...(isActive(link.path) && activeStyle),
                     }}
                   >
                     {link.label}
@@ -132,12 +142,11 @@ export default function Navbar() {
                     paddingY: "10px",
                     borderRadius: "8px",
                     fontFamily: "Inter",
-                    "&:hover": {
-                      background:
-                        "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                    },
+                    "&:hover": activeStyle,
+                    ...(isActive(navLinks[navLinks.length - 2].path) && {
+                      ...activeStyle,
+                      backgroundColor: "transparent",
+                    }),
                   }}
                   target="_blank"
                   href={navLinks[navLinks.length - 2].path}
@@ -160,11 +169,10 @@ export default function Navbar() {
                     paddingY: "10px",
                     borderRadius: "8px",
                     fontFamily: "Inter",
-                    "&:hover": {
-                      background:
-                        "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
+                    "&:hover": activeStyle,
+                    ...(isActive(navLinks[navLinks.length - 1].path)) && {
+                      ...activeStyle,
+                      backgroundColor: "transparent",
                     },
                   }}
                   target="_blank"
@@ -194,6 +202,9 @@ export default function Navbar() {
                   component={Link}
                   href={link.path}
                   onClick={handleDrawerToggle}
+                  sx={{
+                    ...(isActive(link.path)) && activeStyle,
+                  }}
                 >
                   <ListItemText
                     sx={{
@@ -204,12 +215,8 @@ export default function Navbar() {
                       letterSpacing: "-2%",
                       textTransform: "none",
                       transition: "all 0.3s ease-in-out",
-                      "&:hover": {
-                        background:
-                          "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)",
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
-                      },
+                      "&:hover": activeStyle,
+                      ...(isActive(link.path)) && activeStyle,
                     }}
                     primary={link.label}
                   />

@@ -130,7 +130,7 @@ export const detailsData = [
 ];
 
 export const navLinks = [
-  { label: "Home", path: "/" },
+  { label: "Home", path: "/home" },
   { label: "Admission & Fees", path: "/admission" },
   { label: "Life @ Vedam", path: "/life" },
   { label: "FAQs", path: "/faqs" },
