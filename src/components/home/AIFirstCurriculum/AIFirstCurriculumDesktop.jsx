@@ -36,13 +36,13 @@ export const AIFirstCurriculumDesktop = () => {
         background:
           "radial-gradient(74.32% 74.32% at 50% 100%, rgba(255, 152, 26, 0.4) 0%, rgba(255, 255, 255, 0) 100%)",
         marginBottom: "2rem",
+        
       }}
     >
       <Box
         sx={{
           maxWidth: "1280px",
           width: { xs: "100%", md: "1024px", xl: "1280px" },
-          
         }}
       >
         <div className="curriculum-container">

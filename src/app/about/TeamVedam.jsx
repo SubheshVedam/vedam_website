@@ -76,13 +76,14 @@ const TeamVedam = () => {
                     height: {
                       xs: "250px",
                       md: "324px",
+                      xl: "380px",
                     },
                   }}
                 >
                   <img
                     src={item.imageUrl}
                     alt="founder-image"
-                    style={{ objectFit: "fill" }}
+                    style={{ objectFit: "fill",aspectRatio:'1.17/1',height:'100%' }}
                     className="founderImage"
                   />
                 </Box>
@@ -92,12 +93,14 @@ const TeamVedam = () => {
                     height: {
                       xs: "250px",
                       md: "324px",
+                      xl: "380px",
                     },
                     width: "98%",
                     position: "relative",
                     display: "flex",
                     gap: 0,
                   }}
+                  id="praz"
                 >
                   <Box
                     sx={{
@@ -106,13 +109,14 @@ const TeamVedam = () => {
                       borderBottomRightRadius: "8px",
                       backgroundColor: "#FFFFFF",
                       position: "relative",
-                      paddingLeft:{xs:0,sm:'20px'},
+                      paddingLeft: { xs: 0, sm: "20px" },
                       zIndex: 1,
                       height: {
                         xs: "250px",
                         md: "324px",
-
-                      },                    }}
+                        xl: "380px",
+                      },
+                    }}
                   >
                     <Typography
                       variant="h5"
@@ -155,7 +159,11 @@ const TeamVedam = () => {
                       sx={{
                         position: "absolute",
                         inset: 0,
-                        height: "324px",
+                        height: {
+                          xs: "250px",
+                          md: "324px",
+                          xl: "380px",
+                        },
                         backgroundColor: "#6C10BC",
                         borderTopRightRadius: "15px",
                         borderBottomRightRadius: "15px",
