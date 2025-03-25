@@ -218,7 +218,8 @@ export const homeScreenData = {
   techTeam: {
     title: "Brilliant Mind who works",
     subtitle: "Tech team behind Vedam",
-    image: "/img/tech_team.webp",
+    image: "/img/tech_team.jpeg",
+    // image: "/img/tech_team.webp",
   },
   investorWhoTrustUs: {
     subtitle: "Investor who trust us",
