@@ -5,6 +5,7 @@ import { lifeAtVedam } from "@/constants/data";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Image from "next/image";
 
 const IconTitle = ({ src, title }) => {
   return (
@@ -59,13 +60,13 @@ export const ClubsAtVst = () => {
       sx={{
         display: "flex",
         flexDirection: { xs: "column", sm: "row" },
-        gap: { xs: "1.5rem", md: "2.5rem" },
+        gap: { xs: "1.5rem", sm: "2.5rem" },
         alignItems: "center",
         borderRadius: "30px",
         justifyContent: "space-between",
         background:
           "radial-gradient(101.43% 227.29% at 100% 0%, rgba(186, 107, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%)",
-        padding: { xs: "1rem", md: "2.5rem" },
+        padding: { xs: "0", sm: "2rem" },
         position: "relative",
         minHeight: "500px",
       }}
@@ -137,9 +138,11 @@ export const ClubsAtVst = () => {
                   margin: "1.5rem 0",
                 }}
               >
-                <img
+                <Image
                   src={"/img/clubsAtVst.webp"}
                   alt="clubs"
+                  width={300}
+                  height={200}
                   className="clubsAtVstImage"
                   style={{ width: "100%", height: "auto" }}
                 />
