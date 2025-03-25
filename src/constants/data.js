@@ -135,14 +135,13 @@ export const navLinks = [
   { label: "Life @ Vedam", path: "/life" },
   { label: "FAQs", path: "/faqs" },
   { label: "About Us", path: "/about" },
-  { label: "Login", path: "/login" }, //Don't reorder login 
-  { label: "Register Now", path: "/register" }, //Don't reorder register 
+  { label: "Login", path: "https://apply.vedam.org/" }, //Don't reorder login
+  { label: "Register Now", path: "https://apply.vedam.org/" }, //Don't reorder register
 ];
 
 export const homeScreenData = {
   hero: {
-    background_video:
-      "/vid/videoBg.mp4",
+    background_video: "/vid/videoBg.mp4",
     title: "More Than a Degree\nBuild Innovate & Lead",
     subtitle:
       "Vedam's 4-year BTech program prepares you for startups, innovation, and leadership with industry driven coursework and hands-on projects.",
@@ -517,7 +516,8 @@ export const admissionScreenData = {
       {
         image: "/img/scholarship/second.webp",
         title: "Women in Tech Scholarship",
-        description: "Empowering and supporting women in tech for growth and success.",
+        description:
+          "Empowering and supporting women in tech for growth and success.",
       },
       {
         image: "/img/scholarship/third.webp",
@@ -541,13 +541,36 @@ export const lifeAtVedam = {
     title: "Life@VST",
     subtitle: "make memories, learn, grow, and\ncherish every moment joyfully.",
   },
-  clubsAtVst: {
-    leftSideTitle: "Clubs at VST",
-    description:
-      "Explore VST Clubs! From coding to robotics, esports to innovation—connect, compete, learn, and grow with passionate like-minded individuals",
-    rightSideText: "Robotics Club",
-    rightSideText2: "Open Source club",
-  },
+  clubsAtVst: [
+    {
+      leftSideTitle: "Clubs at VST",
+      description:
+        "Explore VST Clubs! From coding to robotics, esports to innovation—connect, compete, learn, and grow with passionate like-minded individuals",
+      rightSideText: "Robotics Club",
+      rightSideText2: "Open Source club",
+    },
+    {
+      leftSideTitle: "Clubs at VST",
+      description:
+        "Join our Esports community! Compete in tournaments, improve your skills, and connect with fellow gaming enthusiasts",
+      rightSideText: "Esports Club",
+      rightSideText2: "Gaming Hub",
+    },
+    {
+      leftSideTitle: "Clubs at VST",
+      description:
+        "Dive into the world of artificial intelligence and machine learning with hands-on projects and workshops",
+      rightSideText: "AI & ML Club",
+      rightSideText2: "Data Science",
+    },
+    {
+      leftSideTitle: "Clubs at VST",
+      description:
+        "Express your creativity through photography, videography, and digital art with our media club",
+      rightSideText: "Media Club",
+      rightSideText2: "Creative Hub",
+    },
+  ],
   vedamLab: {
     linearGradientText: "Vedam Innovation Lab",
     description:

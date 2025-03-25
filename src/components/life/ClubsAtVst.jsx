@@ -1,6 +1,10 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { Box, Typography } from "@mui/material";
 import { lifeAtVedam } from "@/constants/data";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const IconTitle = ({ src, title }) => {
   return (
@@ -30,28 +34,54 @@ const IconTitle = ({ src, title }) => {
 };
 
 export const ClubsAtVst = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [sliderRef, setSliderRef] = useState(null);
+  const clubs = lifeAtVedam.clubsAtVst;
+
+  // Carousel settings
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 1000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    pauseOnHover: false,
+    vertical: true, // Enable vertical sliding
+    arrows: false,
+    beforeChange: (current, next) => setActiveIndex(next),
+    cssEase: "cubic-bezier(0.645, 0.045, 0.355, 1)",
+  };
+
   return (
     <Box
       sx={{
         display: "flex",
-        flexDirection: { xs: "column", md: "row" },
-        gap: { xs: "1.5rem" },
+        flexDirection: { xs: "column", sm: "row" },
+        gap: { xs: "1.5rem", md: "2.5rem" },
         alignItems: "center",
         borderRadius: "30px",
         justifyContent: "space-between",
         background:
           "radial-gradient(101.43% 227.29% at 100% 0%, rgba(186, 107, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%)",
         padding: { xs: "1rem", md: "2.5rem" },
+        position: "relative",
+        minHeight: "500px",
       }}
     >
+      {/* Left Side - Description */}
       <Box
         sx={{
-          flex: 0.45,
+          width: { xs: "100%", sm: "30%" },
           display: "flex",
           flexDirection: "column",
           alignItems: "flex-start",
           justifyContent: "center",
           gap: { xs: "1rem", md: "20px" },
+          position: { md: "sticky" },
+          top: 0,
+          height: "fit-content",
         }}
       >
         <Typography
@@ -67,7 +97,7 @@ export const ClubsAtVst = () => {
             fontFamily: "Inter",
           }}
         >
-          {lifeAtVedam.clubsAtVst.leftSideTitle}
+          {clubs[activeIndex].leftSideTitle}
         </Typography>
         <Typography
           variant="subtitle1"
@@ -78,40 +108,45 @@ export const ClubsAtVst = () => {
             fontFamily: "Inter",
           }}
         >
-          {lifeAtVedam.clubsAtVst.description}
+          {clubs[activeIndex].description}
         </Typography>
       </Box>
+
+      {/* Right Side - Carousel */}
       <Box
         sx={{
-          flex: 0.45,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "flex-start",
-          justifyContent: "center",
+          width: { xs: "100%", sm: "50%" },
+          position: "relative",
         }}
       >
-        <IconTitle
-          src={"/img/robotics.webp"}
-          title={lifeAtVedam.clubsAtVst.rightSideText2}
-        />
-        <Box
-          sx={{
-            width: "100%",
-            borderBottom: "1px solid rgba(0, 0, 0, 0.2)",
-            padding: "20px 0px",
-            marginBottom: { xs: "1.5rem", md: "2.5rem" },
-          }}
-        >
-          <img
-            src="/img/clubsAtVst.webp"
-            alt="clubs"
-            className="clubsAtVstImage"
-          />
-        </Box>
-        <IconTitle
-          src={"/img/openSource.webp"}
-          title={lifeAtVedam.clubsAtVst.rightSideText2}
-        />
+        <Slider ref={setSliderRef} {...settings}>
+          {clubs.map((club, index) => (
+            <Box key={index} sx={{padding:'20px' }}>
+              <IconTitle
+                src={
+                  index % 2 === 0
+                    ? "/img/robotics.webp"
+                    : "/img/openSource.webp"
+                }
+                title={club.rightSideText}
+              />
+              <Box
+                sx={{
+                  width: "100%",
+                  padding: "20px 0px",
+                  margin: "1.5rem 0",
+                }}
+              >
+                <img
+                  src={"/img/clubsAtVst.webp"}
+                  alt="clubs"
+                  className="clubsAtVstImage"
+                  style={{ width: "100%", height: "auto" }}
+                />
+              </Box>
+            </Box>
+          ))}
+        </Slider>
       </Box>
     </Box>
   );
