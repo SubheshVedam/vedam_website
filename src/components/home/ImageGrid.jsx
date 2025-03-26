@@ -10,7 +10,7 @@ export const ImageGrid = () => {
   const [activeIndices, setActiveIndices] = useState([]);
   const [fadeStates, setFadeStates] = useState({});
 
-  // Initialize with 5 random images from the 10 available
+  // Initialize with 5 random images from the available ones
   useEffect(() => {
     const initialIndices = getRandomIndices(10, homeScreenData.fromEducationToEntrance.imagesGrid.length);
     setActiveIndices(initialIndices);
@@ -37,46 +37,67 @@ export const ImageGrid = () => {
     if (activeIndices.length === 0) return;
 
     const interval = setInterval(() => {
-      // Randomly select which position to replace (0-4)
-      const positionToReplace = Math.floor(Math.random() * 5);
-      const currentIndex = activeIndices[positionToReplace];
+      // Select 3 random positions to replace (0-4)
+      const positionsToReplace = [];
+      while (positionsToReplace.length < 3) {
+        const randomPos = Math.floor(Math.random() * 10);
+        if (!positionsToReplace.includes(randomPos)) {
+          positionsToReplace.push(randomPos);
+        }
+      }
 
-      // Start fade out
-      setFadeStates(prev => ({
-        ...prev,
-        [currentIndex]: false
-      }));
+      // Start fade out for the selected images
+      setFadeStates(prev => {
+        const newFadeStates = {...prev};
+        positionsToReplace.forEach(pos => {
+          const currentIndex = activeIndices[pos];
+          newFadeStates[currentIndex] = false;
+        });
+        return newFadeStates;
+      });
 
-      // After fade out completes, replace with new image
+      // After fade out completes, replace with new images
       setTimeout(() => {
-        // Get a new random index that's not currently active
-        let newIndex;
-        do {
-          newIndex = Math.floor(Math.random() * homeScreenData.fromEducationToEntrance.imagesGrid.length);
-        } while (activeIndices.includes(newIndex));
-
-        // Update active indices
-        setActiveIndices(prev => {
-          const newArr = [...prev];
-          newArr[positionToReplace] = newIndex;
-          return newArr;
+        // Get new random indices that aren't currently active
+        const newIndices = [...activeIndices];
+        const usedIndices = new Set(activeIndices);
+        
+        positionsToReplace.forEach(pos => {
+          let newIndex;
+          do {
+            newIndex = Math.floor(Math.random() * homeScreenData.fromEducationToEntrance.imagesGrid.length);
+          } while (usedIndices.has(newIndex));
+          
+          newIndices[pos] = newIndex;
+          usedIndices.add(newIndex);
         });
 
-        // Start fade in for new image
-        setFadeStates(prev => ({
-          ...prev,
-          [newIndex]: false // Start invisible
-        }));
+        // Update active indices
+        setActiveIndices(newIndices);
+
+        // Start fade in for new images (initially invisible)
+        setFadeStates(prev => {
+          const newFadeStates = {...prev};
+          positionsToReplace.forEach(pos => {
+            const newIndex = newIndices[pos];
+            newFadeStates[newIndex] = false;
+          });
+          return newFadeStates;
+        });
 
         // Then fade in after a small delay
         setTimeout(() => {
-          setFadeStates(prev => ({
-            ...prev,
-            [newIndex]: true
-          }));
+          setFadeStates(prev => {
+            const newFadeStates = {...prev};
+            positionsToReplace.forEach(pos => {
+              const newIndex = newIndices[pos];
+              newFadeStates[newIndex] = true;
+            });
+            return newFadeStates;
+          });
         }, 10);
       }, 500); // Match fade duration
-    }, 500); // Change images every 1.5 seconds
+    }, 2000); // Change images every 2 seconds
 
     return () => clearInterval(interval);
   }, [activeIndices]);
