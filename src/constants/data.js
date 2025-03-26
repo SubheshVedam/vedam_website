@@ -190,6 +190,34 @@ export const homeScreenData = {
         id: 9,
         imageUrl: "/img/companies/Intuit_Logo.png",
       },
+      {
+        id: 10,
+        imageUrl: "/img/companies/Intuit_Logo.png",
+      },
+      {
+        id: 11,
+        imageUrl: "/img/companies/Intuit_Logo.png",
+      },
+      {
+        id: 12,
+        imageUrl: "/img/companies/Intuit_Logo.png",
+      },
+      {
+        id: 13,
+        imageUrl: "/img/companies/Intuit_Logo.png",
+      },
+      {
+        id: 14,
+        imageUrl: "/img/companies/Intuit_Logo.png",
+      },
+      {
+        id: 15,
+        imageUrl: "/img/companies/Intuit_Logo.png",
+      },
+      {
+        id: 16,
+        imageUrl: "/img/companies/Intuit_Logo.png",
+      },
     ],
     bottomText:
       "*outcome through companies whom the founders built before Vedam ",
