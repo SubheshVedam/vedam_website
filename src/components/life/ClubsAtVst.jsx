@@ -60,13 +60,13 @@ export const ClubsAtVst = () => {
       sx={{
         display: "flex",
         flexDirection: { xs: "column", sm: "row" },
-        gap: { xs: "1.5rem", sm: "2.5rem" },
+        gap: { xs: "1.5rem", md: "2.5rem" },
         alignItems: "center",
         borderRadius: "30px",
         justifyContent: "space-between",
         background:
           "radial-gradient(101.43% 227.29% at 100% 0%, rgba(186, 107, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%)",
-        padding: { xs: "0", sm: "2rem" },
+        padding: { xs: "1rem", md: "2rem" },
         position: "relative",
         minHeight: "500px",
       }}
