@@ -26,6 +26,7 @@ const Life = () => {
         titleLinearGradient="linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)"
         subtitle={lifeAtVedam.hero.subtitle}
         showApplyNowButton={false}
+        isImg={true}
       />
       <WidthContainer
         childrenStyle={{

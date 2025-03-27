@@ -4,7 +4,7 @@ import { Box, Typography } from "@mui/material";
 import { homeScreenData } from "@/constants/data";
 import Button from "@mui/material/Button";
 
-export const VideoWithText = ({ title, subtitle }) => {
+export const VideoWithText = ({ title, subtitle, isImg }) => {
   return (
     <Box
       sx={{
@@ -22,21 +22,34 @@ export const VideoWithText = ({ title, subtitle }) => {
           backgroundColor: "rgba(0, 0, 0, 0.6)",
         }}
       ></Box>
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        style={{
-          width: "100%",
-          height: "95vh",
-          objectFit: "cover",
-        }}
-        className="responsive-video"
-      >
-        <source src={homeScreenData.hero.background_video} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      {!isImg ? (
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{
+            width: "100%",
+            height: "95vh",
+            objectFit: "cover",
+          }}
+          className="responsive-video"
+        >
+          <source src={homeScreenData.hero.background_video} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      ) : (
+        <img
+          src={"/img/life_vedam_bg.jpeg"} // Assuming you have a background_image property
+          alt="Background"
+          style={{
+            width: "100%",
+            height: "95vh",
+            objectFit: "cover",
+          }}
+          className="responsive-video" // You might want to rename this class to something like "responsive-image"
+        />
+      )}
       <Box
         sx={{
           position: "absolute",
@@ -85,7 +98,7 @@ export const VideoWithText = ({ title, subtitle }) => {
           }}
           href="https://apply.vedam.org/"
           target="_blank"
-                  >
+        >
           Apply Now
         </Button>
       </Box>
