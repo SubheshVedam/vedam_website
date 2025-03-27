@@ -45,53 +45,83 @@ export const testimonialData = [
 export const expertsData = [
   {
     imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/c/c1/Lionel_Messi_20180626.jpg", // Example image URL
-    name: "John Doe",
+      "https://upload.wikimedia.org/wikipedia/commons/c/c1/Lionel_Messi_20180626.jpg",
+    name: "Ramachandra Nalam",
+    logo: "/next.svg",
+    designation: "Data and ML Engineer",
+    info: "Masters from University of Buffalo, Ex Amazon",
+    rating: 3.7,
+    linkedIn: "https://www.linkedin.com/in/ramachandra-nalam/",
+  },
+  {
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/c/c1/Lionel_Messi_20180626.jpg",
+    name: "Gaurav Dawra",
     logo: "/next.svg",
     designation: "Software Engineer",
-    info: "Specializes in front-end development and UI/UX design.Specializes in front-end development and UI/UX design.",
-    rating: 4.5,
-    linkedIn: "/img/linkedInIcon.png",
+    info: "ICPC World Finalist 2022-23, 6 Star on Code Chef",
+    rating: 4.2,
+    linkedIn: "https://www.linkedin.com/in/gaurav-dawra-a2a935200/",
   },
   {
     imageUrl:
       "https://upload.wikimedia.org/wikipedia/commons/c/c1/Lionel_Messi_20180626.jpg",
-    name: "Jane Smith",
+    name: "Bradford Tuckfield",
+    logo: "/next.svg",
+    designation: "PhD",
+    info: "Founder, Author and Instructor ; Ex American Express and Accenture",
+    rating: 4.9,
+    linkedIn: "https://www.linkedin.com/in/bradford-tuckfield-80565b25/",
+  },
+  {
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/c/c1/Lionel_Messi_20180626.jpg",
+    name: "Amanpreet Singh",
+    logo: "/next.svg",
+    designation: "Software Engineer",
+    info: "NSIT, Ex Mentor Graphics & OYO",
+    rating: 4.9,
+    linkedIn: "https://www.linkedin.com/in/amanpreet-singh-b79598a3/?originalSubdomain=in",
+  },
+  {
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/c/c1/Lionel_Messi_20180626.jpg",
+    name: "M Senthurpandian",
+    logo: "/next.svg",
+    designation: "Senior Software Engineer",
+    info: "13+ Years of Experience, Amazon Interview Panel Member",
+    rating: 4.9,
+    linkedIn: "https://www.linkedin.com/in/manivannan21/",
+  },
+  {
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/c/c1/Lionel_Messi_20180626.jpg",
+    name: "Ekta Shah",
+    logo: "/next.svg",
+    designation: "Data Scientist ",
+    info: "Board Member-Board of Studies at NMIMS, Visiting Faculty at MU",
+    rating: 4.9,
+    linkedIn: "https://www.linkedin.com/in/ekta-shah30/",
+  },
+  {
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/c/c1/Lionel_Messi_20180626.jpg",
+    name: "Basant Rawat",
+    logo: "/next.svg",
+    designation: "SDE 2",
+    info: "Mentored over 20,000 Minutes, Ex Hexaware",
+    rating: 4.9,
+    linkedIn: "https://www.linkedin.com/in/basant-rawat/",
+  },
+  {
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/c/c1/Lionel_Messi_20180626.jpg",
+    name: "Nishchay Agrawal",
     logo: "/next.svg",
     designation: "Data Scientist",
-    info: "Expert in machine learning and data analysis.",
-    rating: 3.7,
-    linkedIn: "/img/linkedInIcon.png",
-  },
-  {
-    imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/c/c1/Lionel_Messi_20180626.jpg",
-    name: "Alice Johnson",
-    logo: "/next.svg",
-    designation: "DevOps Engineer",
-    info: "Focuses on CI/CD pipelines and cloud infrastructure.",
-    rating: 4.2,
-    linkedIn: "/img/linkedInIcon.png",
-  },
-  {
-    imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/c/c1/Lionel_Messi_20180626.jpg",
-    name: "Bob Brown",
-    logo: "/next.svg",
-    designation: "Backend Developer",
-    info: "Experienced in building scalable APIs and databases.",
+    info: "University Gold Medalist, Ex Meesho",
     rating: 4.9,
-    linkedIn: "/img/linkedInIcon.png",
-  },
-  {
-    imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/c/c1/Lionel_Messi_20180626.jpg",
-    name: "Bob Brown",
-    logo: "/next.svg",
-    designation: "Backend Developer",
-    info: "Experienced in building scalable APIs and databases.",
-    rating: 4.9,
-    linkedIn: "/img/linkedInIcon.png",
+    linkedIn: "https://www.linkedin.com/in/nishchay-agrawal-157404170/",
   },
 ];
 export const detailsData = [
@@ -100,7 +130,7 @@ export const detailsData = [
     bgImage: "/img/whyvedam/code_day1.jpeg",
     title: "Code From Day 1",
     description:
-      "From Day 1, you'll be writing real code, building projects, and solving industry-relevant problems.",
+    "From Day 1, you'll be writing real code, building projects, and solving industry-relevant problems.",
   },
   {
     image: "/img/whyvedam/second.webp",
@@ -230,9 +260,11 @@ export const homeScreenData = {
       { id: 1, img: "/img/investors/saama.webp" },
       { id: 2, img: "/img/investors/westbridge.webp" },
       { id: 3, img: "/img/investors/prime.webp" },
-      { id: 4, img: "/img/investors/westbridge.webp" },
-      { id: 5, img: "/img/investors/prime.webp" },
+      { id: 4, img: "/img/investors/alteria.webp" },
+      { id: 5, img: "/img/investors/saama.webp" },
       { id: 6, img: "/img/investors/westbridge.webp" },
+      { id: 7, img: "/img/investors/prime.webp" },
+
     ],
   },
   whyVedam: {
@@ -244,11 +276,14 @@ export const homeScreenData = {
     leftSideData: {
       headerText: "",
       textArray: [
-        { id: 0, text: "Learning & Assignments" },
-        { id: 1, text: "Curriculum" },
+        { id: 0, text: "Curriculum" },
+        { id: 1, text: "Learning & Assignments" },
         { id: 2, text: "Global Exposures" },
-        { id: 3, text: "Mentors" },
-        { id: 4, text: "Employability" },
+        { id: 3, text: "Instructors & Mentors" },
+        { id: 4, text: "Internships" },
+        { id: 5, text: "Placements" },
+        { id: 6, text: "Entrepreneurship" },
+      
       ],
     },
     middleSideData: {
@@ -262,7 +297,7 @@ export const homeScreenData = {
         {
           id: 1,
           icon: "/img/vedamvs/middle/second.webp",
-          text: "Learn through building real world projects",
+          text: "Learn through writing over 100,000 lines of code",
         },
         {
           id: 2,
@@ -272,38 +307,58 @@ export const homeScreenData = {
         {
           id: 3,
           icon: "/img/vedamvs/middle/fourth.webp",
-          text: "Personal 1:1 dedicated support",
+          text: "Practicioner from top tech companies like MS & Google",
         },
         {
           id: 4,
           icon: "/img/vedamvs/middle/fifth.webp",
+          text: "6 months internship twice in 4 years with a tech product company",
+        },
+        {
+          id: 5,
+          icon: "/img/vedamvs/middle/fourth.webp",
           text: "Placement ready for top tech companies",
+        },
+        {
+          id: 6,
+          icon: "/img/vedamvs/middle/first.webp",
+          text: "Seed funding upto one crore",
         },
       ],
     },
     rightSideData: {
       headerText: "Traditional Education",
       textArray: [
-        { id: 0, icon: "/img/vedamvs/right/first.webp", text: "outdated" },
+        { id: 0, icon: "/img/vedamvs/right/first.webp", text: "Outdated" },
         {
           id: 1,
           icon: "/img/vedamvs/right/second.webp",
-          text: "theoritical approach",
+          text: "Theoritical approach",
         },
         {
           id: 2,
           icon: "/img/vedamvs/right/first.webp",
-          text: "Lack industry exposure",
+          text: "No such exposure",
         },
         {
           id: 3,
           icon: "/img/vedamvs/right/first.webp",
-          text: "no dedicated support",
+          text: "Lack industry exposure",
         },
         {
           id: 4,
           icon: "/img/vedamvs/right/first.webp",
-          text: "require training",
+          text: "Minimal support",
+        },
+        {
+          id: 5,
+          icon: "/img/vedamvs/right/first.webp",
+          text: "Non employable",
+        },
+        {
+          id: 6,
+          icon: "/img/vedamvs/right/first.webp",
+          text: "Lack startup support",
         },
       ],
     },
