@@ -10,14 +10,14 @@ export const ImageGrid = () => {
   const [activeIndices, setActiveIndices] = useState([]);
   const [fadeStates, setFadeStates] = useState({});
 
-  // Initialize with 5 random images from the available ones
+  // Initialize with 5 random images
   useEffect(() => {
     const initialIndices = getRandomIndices(10, homeScreenData.fromEducationToEntrance.imagesGrid.length);
     setActiveIndices(initialIndices);
     
     const initialFadeStates = {};
     initialIndices.forEach(index => {
-      initialFadeStates[index] = true; // true means visible/faded in
+      initialFadeStates[index] = { opacity: 1, transitioning: false };
     });
     setFadeStates(initialFadeStates);
   }, []);
@@ -32,33 +32,35 @@ export const ImageGrid = () => {
     return Array.from(indices);
   };
 
-  // Animation effect
+  // Subtle fade animation effect
   useEffect(() => {
     if (activeIndices.length === 0) return;
 
     const interval = setInterval(() => {
-      // Select 3 random positions to replace (0-4)
+      // Choose 1-2 random logos to replace (for subtlety)
       const positionsToReplace = [];
-      while (positionsToReplace.length < 3) {
+      const changeCount = 4; // 50% chance for 1 or 2 changes
+      
+      while (positionsToReplace.length < changeCount) {
         const randomPos = Math.floor(Math.random() * 10);
-        if (!positionsToReplace.includes(randomPos)) {
+        if (!positionsToReplace.includes(randomPos) && 
+            !fadeStates[activeIndices[randomPos]]?.transitioning) {
           positionsToReplace.push(randomPos);
         }
       }
 
-      // Start fade out for the selected images
+      // Start fade out
       setFadeStates(prev => {
-        const newFadeStates = {...prev};
+        const newStates = {...prev};
         positionsToReplace.forEach(pos => {
           const currentIndex = activeIndices[pos];
-          newFadeStates[currentIndex] = false;
+          newStates[currentIndex] = { opacity: 0, transitioning: true };
         });
-        return newFadeStates;
+        return newStates;
       });
 
-      // After fade out completes, replace with new images
+      // After fade out, replace with new images
       setTimeout(() => {
-        // Get new random indices that aren't currently active
         const newIndices = [...activeIndices];
         const usedIndices = new Set(activeIndices);
         
@@ -72,35 +74,34 @@ export const ImageGrid = () => {
           usedIndices.add(newIndex);
         });
 
-        // Update active indices
         setActiveIndices(newIndices);
 
-        // Start fade in for new images (initially invisible)
+        // Start fade in (starting transparent)
         setFadeStates(prev => {
-          const newFadeStates = {...prev};
+          const newStates = {...prev};
           positionsToReplace.forEach(pos => {
             const newIndex = newIndices[pos];
-            newFadeStates[newIndex] = false;
+            newStates[newIndex] = { opacity: 0, transitioning: true };
           });
-          return newFadeStates;
+          return newStates;
         });
 
-        // Then fade in after a small delay
+        // Complete fade in
         setTimeout(() => {
           setFadeStates(prev => {
-            const newFadeStates = {...prev};
+            const newStates = {...prev};
             positionsToReplace.forEach(pos => {
               const newIndex = newIndices[pos];
-              newFadeStates[newIndex] = true;
+              newStates[newIndex] = { opacity: 1, transitioning: false };
             });
-            return newFadeStates;
+            return newStates;
           });
-        }, 10);
-      }, 500); // Match fade duration
-    }, 2000); // Change images every 2 seconds
+        }, 500);
+      }, 500); // Fade out duration
+    }, 2000); // Change interval
 
     return () => clearInterval(interval);
-  }, [activeIndices]);
+  }, [activeIndices, fadeStates]);
 
   return (
     <Box
@@ -128,8 +129,9 @@ export const ImageGrid = () => {
                 position: "relative",
                 width: isMobile ? 44 : 140,
                 height: isMobile ? 14 : 40,
-                opacity: fadeStates[index] ? 1 : 0,
-                transition: 'opacity 0.5s ease',
+                opacity: fadeStates[index]?.opacity ?? 1,
+                transition: 'opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+                filter: fadeStates[index]?.opacity < 1 ? 'grayscale(20%)' : 'none',
               }}
             >
               <Image
