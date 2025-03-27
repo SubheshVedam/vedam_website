@@ -40,6 +40,7 @@ export const ScholarshipProgram = () => {
               description={item.description}
               title={item.title}
               height={260}
+              bgImage={item.bgImage}
             />
           </Box>
         ))}

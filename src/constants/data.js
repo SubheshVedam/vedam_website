@@ -44,8 +44,7 @@ export const testimonialData = [
 
 export const expertsData = [
   {
-    imageUrl:
-      "/img/experts/first.webp",
+    imageUrl: "/img/experts/first.webp",
     name: "Ramachandra Nalam",
     logo: "/next.svg",
     designation: "Data and ML Engineer",
@@ -54,8 +53,7 @@ export const expertsData = [
     linkedIn: "https://www.linkedin.com/in/ramachandra-nalam/",
   },
   {
-    imageUrl:
-    "/img/experts/second.webp",
+    imageUrl: "/img/experts/second.webp",
     name: "Gaurav Dawra",
     logo: "/next.svg",
     designation: "Software Engineer",
@@ -64,8 +62,7 @@ export const expertsData = [
     linkedIn: "https://www.linkedin.com/in/gaurav-dawra-a2a935200/",
   },
   {
-    imageUrl:
-    "/img/experts/third.webp",
+    imageUrl: "/img/experts/third.webp",
     name: "Bradford Tuckfield",
     logo: "/next.svg",
     designation: "PhD",
@@ -74,18 +71,17 @@ export const expertsData = [
     linkedIn: "https://www.linkedin.com/in/bradford-tuckfield-80565b25/",
   },
   {
-    imageUrl:
-    "/img/experts/fourth.webp",
+    imageUrl: "/img/experts/fourth.webp",
     name: "Amanpreet Singh",
     logo: "/next.svg",
     designation: "Software Engineer",
     info: "NSIT, Ex Mentor Graphics & OYO",
     rating: 4.9,
-    linkedIn: "https://www.linkedin.com/in/amanpreet-singh-b79598a3/?originalSubdomain=in",
+    linkedIn:
+      "https://www.linkedin.com/in/amanpreet-singh-b79598a3/?originalSubdomain=in",
   },
   {
-    imageUrl:
-    "/img/experts/fifth.webp",
+    imageUrl: "/img/experts/fifth.webp",
     name: "M Senthurpandian",
     logo: "/next.svg",
     designation: "Senior Software Engineer",
@@ -94,8 +90,7 @@ export const expertsData = [
     linkedIn: "https://www.linkedin.com/in/manivannan21/",
   },
   {
-    imageUrl:
-    "/img/experts/seventh.webp",
+    imageUrl: "/img/experts/seventh.webp",
     name: "Ekta Shah",
     logo: "/next.svg",
     designation: "Data Scientist ",
@@ -104,8 +99,7 @@ export const expertsData = [
     linkedIn: "https://www.linkedin.com/in/ekta-shah30/",
   },
   {
-    imageUrl:
-    "/img/experts/eighth.webp",
+    imageUrl: "/img/experts/eighth.webp",
     name: "Basant Rawat",
     logo: "/next.svg",
     designation: "SDE 2",
@@ -114,8 +108,7 @@ export const expertsData = [
     linkedIn: "https://www.linkedin.com/in/basant-rawat/",
   },
   {
-    imageUrl:
-    "/img/experts/ninth.webp",
+    imageUrl: "/img/experts/ninth.webp",
     name: "Nishchay Agrawal",
     logo: "/next.svg",
     designation: "Data Scientist",
@@ -130,7 +123,7 @@ export const detailsData = [
     bgImage: "/img/whyvedam/code_day1_m.jpeg",
     title: "Code From Day 1",
     description:
-    "From Day 1, you'll be writing real code, building projects, and solving industry-relevant problems.",
+      "From Day 1, you'll be writing real code, building projects, and solving industry-relevant problems.",
   },
   {
     image: "/img/whyvedam/second.webp",
@@ -264,7 +257,6 @@ export const homeScreenData = {
       { id: 5, img: "/img/investors/saama.webp" },
       { id: 6, img: "/img/investors/westbridge.webp" },
       { id: 7, img: "/img/investors/prime.webp" },
-
     ],
   },
   whyVedam: {
@@ -283,7 +275,6 @@ export const homeScreenData = {
         { id: 4, text: "Internships" },
         { id: 5, text: "Placements" },
         { id: 6, text: "Entrepreneurship" },
-      
       ],
     },
     middleSideData: {
@@ -521,7 +512,8 @@ export const homeScreenData = {
   },
   year4: {
     title: "Programming Foundation44",
-    subtitle: "Learn the basics for AI 4and Programming by building from year 1",
+    subtitle:
+      "Learn the basics for AI 4and Programming by building from year 1",
     secondTitle: "Skills & Technologies",
     secondArray: [
       "HTML",
@@ -667,18 +659,21 @@ export const admissionScreenData = {
     data: [
       {
         image: "/img/scholarship/first.webp",
+        bgImage: "/img/scholarship/img1.jpeg",
         title: "Merit Based Scholarship",
         description:
           "Recognizes academic excellence, unique talent and leadership potential.",
       },
       {
         image: "/img/scholarship/second.webp",
+        bgImage: "/img/scholarship/img2.jpeg",
         title: "Women in Tech Scholarship",
         description:
           "Empowering and supporting women in tech for growth and success.",
       },
       {
         image: "/img/scholarship/third.webp",
+        bgImage: "/img/scholarship/img3.jpeg",
         title: "Need Based Scholarship",
         description:
           "Focused on specific fields of study or demonstrating financial needs.",
