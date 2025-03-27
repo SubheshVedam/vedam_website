@@ -1,21 +1,49 @@
 import * as React from "react";
-import { Box, Typography, Link, Stack } from "@mui/material";
+import { Box, Typography, Link, Stack, Grid } from "@mui/material";
 import Image from "next/image";
+
+// Dummy data for footer columns
+const FOOTER_LINKS = [
+  {
+    title: "Quick Links",
+    links: [
+      { label: "About Us", href: "#" },
+      { label: "Careers", href: "#" },
+      { label: "Contact", href: "#" },
+      { label: "Blog", href: "#" },
+    ],
+  },
+  {
+    title: "Contact",
+    links: [
+      { label: "Courses", href: "#" },
+      { label: "Tutorials", href: "#" },
+      { label: "Webinars", href: "#" },
+      { label: "Docs", href: "#" },
+    ],
+  },
+];
+
+const SOCIAL_LINKS = [
+  { name: "YouTube", url: "https://youtube.com", icon: "/img/Frame.png" },
+  {
+    name: "Instagram",
+    url: "https://instagram.com",
+    icon: "/img/Frame (1).png",
+  },
+  { name: "LinkedIn", url: "https://linkedin.com", icon: "/img/Frame (2).png" },
+];
 
 export default function Footer() {
   return (
     <Box
       component="footer"
-      style={{
+      sx={{
         width: "auto",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         backgroundColor: "#6C10BC",
-      }}
-      sx={{
-        display: "flex",
-        alignItems: "center",
         paddingX: "1rem",
         paddingY: "40px",
       }}
@@ -27,111 +55,85 @@ export default function Footer() {
           color: "white",
           display: "flex",
           flexDirection: "column",
-          gap: 3,
+          gap: 4,
         }}
       >
-        {/* Contact Section */}
-        <Box
-          sx={{
-            textAlign: "start",
-            marginBottom: { xs: "40px", sm: "60px" },
-          }}
-        >
-          <Typography
-            variant="body2"
-            sx={{ fontWeight: 700, fontSize: { xs: "14px", sm: "16px" } }}
-          >
-            Contact us
-          </Typography>
-
-          <Typography
-            variant="h6"
-            sx={{
-              fontWeight: 700,
-              fontSize: { xs: "24px", sm: "64px" },
-              backgroundImage:
-                "linear-gradient(90deg, #FFFFFF 25%, #FFA41A 75%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              display: "inline-block",
-            }}
-          >
-            connect@vedam.org
-          </Typography>
-        </Box>
-
-        {/* Middle Section */}
-        <Stack
-          direction={{ xs: "column", sm: "row" }}
-          spacing={{ xs: 2, sm: 4 }}
-          alignItems="center"
-          justifyContent="space-between"
-          sx={{
-            width: "100%",
-            textAlign: { xs: "center", sm: "start" },
-            flexWrap: "wrap",
-          }}
-        >
-          <Typography
-            variant="body2"
-            sx={{
-              fontSize: { xs: "14px", sm: "16px" },
-              fontWeight: 700,
-              whiteSpace: "nowrap", // Ensures text stays in one line
-            }}
-          >
-            Get latest updates here
-          </Typography>
-
-          <Box
-            sx={{
-              flexGrow: 1,
-              width: { xs: "100%", sm: "auto" }, // Full width on xs, auto on sm+
-              maxWidth: "79%",
-              height: "1px",
-              backgroundColor: "white",
-            }}
-          />
-
-          <Stack direction="row" spacing={2}>
-            <Link
-              href="https://www.youtube.com/@VedamSchoolofTech_Official"
-              color="inherit"
-              target="_blank"
-            >
+        {/* Main Footer Columns */}
+        <Grid container spacing={{xs:2,sm:4}}>
+          <Grid item xs={12} sm={6} md={3}>
+            <Stack spacing={1}>
+              <Box sx={{width:'100%',display:'flex',justifyContent:'flex-start'}}>
+              <Box sx={{width:{xs:170,sm:200},ml:"-10px"}}>
               <Image
-                src="/img/Frame.png"
-                alt="YouTube"
-                width={24}
-                height={24}
+                src="/img/Vedam_Final_Logo_White.png"
+                alt="Navbar Logo"
+                width={200}
+                height={200}
+                style={{ objectFit: "cover", width: "100%",height:"100%" }}
               />
-            </Link>
-            <Link
-              href="https://www.instagram.com/vedamschooloftech_official/?igsh=MTRscTNtdGxnNG1yMQ%3D%3D#"
-              color="inherit"
-              target="_blank"
-            >
-              <Image
-                src="/img/Frame (1).png"
-                alt="Instagram"
-                width={24}
-                height={24}
-              />
-            </Link>
-            <Link
-              href="https://www.linkedin.com/company/vedam-school-of-technology/"
-              color="inherit"
-              target="_blank"
-            >
-              <Image
-                src="/img/Frame (2).png"
-                alt="LinkedIn"
-                width={24}
-                height={24}
-              />
-            </Link>
-          </Stack>
-        </Stack>
+              </Box>
+              </Box>
+            </Stack>
+          </Grid>
+          {FOOTER_LINKS.map((column) => (
+            <Grid item xs={6} sm={6} md={3} key={column.title}>
+              <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>
+                {column.title}
+              </Typography>
+              <Stack spacing={1}>
+                {column.links.map((link) => (
+                  <Link
+                    key={link.label}
+                    href={link.href}
+                    color="inherit"
+                    underline="hover"
+                    sx={{
+                      "&:hover": {
+                        color: "#FFA41A",
+                      },
+                    }}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </Stack>
+            </Grid>
+          ))}
+
+          {/* Social Links Column */}
+          <Grid item xs={12} sm={6} md={3}>
+            <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>
+              Follow Us
+            </Typography>
+            <Stack direction={{xs: "row", sm:"column"}} spacing={2}>
+              {SOCIAL_LINKS.map((social) => (
+                <Link
+                  key={social.name}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  display="flex"
+                  gap="10px"
+                  alignItems="center"
+                >
+                  <Image
+                    src={social.icon}
+                    alt={social.name}
+                    width={32}
+                    height={32}
+                    style={{
+                      filter: "brightness(0) invert(1)",
+                      transition: "transform 0.3s",
+                    }}
+                    className="hover:scale-110"
+                  /><Typography fontSize={{xs:0, sm:16}} color="white">
+                    {social.name}
+                  </Typography>
+                </Link>
+              ))}
+            </Stack>
+          </Grid>
+        </Grid>
 
         {/* Bottom Section */}
         <Box
@@ -140,22 +142,21 @@ export default function Footer() {
             flexDirection: { xs: "column", md: "row" },
             justifyContent: "space-between",
             alignItems: "center",
-            fontSize: { xs: "12px", sm: "14px" },
-            textAlign: "center",
+            borderTop: "1px solid rgba(255, 255, 255, 0.2)",
+            paddingTop: 3,
           }}
         >
-          <Typography variant="caption">
+          <Typography variant="body2">
             Copyright © SET Education Technology Pvt. Ltd. 2025
           </Typography>
-          <Typography variant="caption">
+          <Stack direction="row" spacing={2}>
             <Link href="#" color="inherit" underline="hover">
               Terms of use
-            </Link>{" "}
-            |{" "}
+            </Link>
             <Link href="#" color="inherit" underline="hover">
               Privacy Policy
             </Link>
-          </Typography>
+          </Stack>
         </Box>
       </Box>
     </Box>

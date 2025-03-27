@@ -155,7 +155,7 @@ export const detailsData = [
   },
   {
     image: "/img/whyvedam/fifth.webp",
-    title: "Personal Macbook Pro ",
+    title: "Personal Macbook ",
     description:
       "It's your key to a hands-on, immersive and collaborative learning experience in Computer Science and AI.",
     isFeatured: true,
