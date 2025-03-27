@@ -13,22 +13,73 @@ import { admissionScreenData } from "@/constants/data";
 export const AdmissionProcess = () => {
   const [activeStep, setActiveStep] = useState(0);
   const containerRef = useRef(null);
+  const stepRefs = useRef([]);
 
   const theme = useTheme();
   const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
 
-  const handleScroll = (e) => {
-    const { scrollTop, clientHeight, scrollHeight } = e.target;
-    const scrollPosition = scrollTop + clientHeight;
-    const contentHeight = scrollHeight / 5;
+  // Initialize step refs array
+  useEffect(() => {
+    stepRefs.current = Array(admissionScreenData.admissionProcess.rightSideArray.length)
+      .fill()
+      .map((_, i) => stepRefs.current[i] || null);
+  }, []);
 
-    const newActiveContent = Math.floor(scrollPosition / contentHeight);
-    setActiveStep(newActiveContent);
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!containerRef.current) return;
+
+      const container = containerRef.current;
+      const containerRect = container.getBoundingClientRect();
+      const containerTop = containerRect.top;
+      const containerHeight = containerRect.height;
+      const viewportHeight = window.innerHeight;
+
+      // Calculate the visible area of the container
+      const visibleStart = Math.max(0, -containerTop);
+      const visibleEnd = Math.min(containerHeight, viewportHeight - containerTop);
+
+      // Find which step is most visible
+      let mostVisibleStep = 0;
+      let maxVisibility = 0;
+
+      stepRefs.current.forEach((step, index) => {
+        if (!step) return;
+        
+        const stepRect = step.getBoundingClientRect();
+        const stepTop = stepRect.top - containerTop;
+        const stepBottom = stepRect.bottom - containerTop;
+
+        // Calculate visible height of the step
+        const visibleHeight = Math.min(stepBottom, visibleEnd) - Math.max(stepTop, visibleStart);
+        const visibility = visibleHeight / stepRect.height;
+
+        if (visibility > maxVisibility) {
+          maxVisibility = visibility;
+          mostVisibleStep = index;
+        }
+      });
+
+      setActiveStep(mostVisibleStep);
+    };
+
+    const container = containerRef.current;
+    if (container) {
+      container.addEventListener('scroll', handleScroll);
+      window.addEventListener('resize', handleScroll);
+      handleScroll(); // Initial check
+    }
+
+    return () => {
+      if (container) {
+        container.removeEventListener('scroll', handleScroll);
+      }
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, []);
 
   return (
     <Box
-      ref={containerRef}
       sx={{
         marginTop: { xs: "1rem", md: "2rem" },
         width: "100%",
@@ -38,59 +89,88 @@ export const AdmissionProcess = () => {
         justifyContent: "space-between",
         marginBottom: "2rem",
         gap: { xs: 0, md: "1rem" },
+        position: "relative",
       }}
     >
+      {/* Left Side Navigation - Progress Indicator */}
       {isMdUp && (
         <Box
           sx={{
-            flex: {
-              md: "0 0 20%",
-              display: "flex",
-              flexDirection: "column",
-              gap: "1rem",
-            },
+            flex: "0 0 20%",
+            display: "flex",
+            flexDirection: "column",
+            gap: "1rem",
+            top: "100px",
+            alignSelf: "flex-start",
           }}
         >
-          {admissionScreenData.admissionProcess.leftSideArray.map((item) => (
-            <Typography
+          {admissionScreenData.admissionProcess.leftSideArray.map((item, index) => (
+            <Box
               key={item.id}
-              variant="inherit"
               sx={{
-                fontWeight: "600",
-                lineHeight: "100%",
-                fontSize: "1rem",
-                color: activeStep > item.id ? "#6C10BC" : "#8F8F8F",
-                whiteSpace: "nowrap",
+                display: "flex",
+                alignItems: "center",
+                gap: "1rem",
+                cursor: "pointer",
+                "&:hover": {
+                  opacity: 0.8,
+                },
+              }}
+              onClick={() => {
+                stepRefs.current[index]?.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start"
+                });
               }}
             >
-              {item.text}
-            </Typography>
+              <Box
+                sx={{
+                  width: "12px",
+                  height: "12px",
+                  borderRadius: "50%",
+                  backgroundColor: activeStep >= index ? "#6C10BC" : "#8F8F8F",
+                  transition: "background-color 0.3s ease",
+                }}
+              />
+              <Typography
+                variant="inherit"
+                sx={{
+                  fontWeight: "600",
+                  lineHeight: "100%",
+                  fontSize: "1rem",
+                  color: activeStep >= index ? "#6C10BC" : "#8F8F8F",
+                  whiteSpace: "nowrap",
+                  transition: "color 0.3s ease",
+                }}
+              >
+                {item.text}
+              </Typography>
+            </Box>
           ))}
         </Box>
       )}
 
+      {/* Right Side Content */}
       <Box
+        ref={containerRef}
         sx={{
           flex: {
             xs: "0 0 100%",
             md: "0 0 80%",
           },
           paddingRight: { xs: "0px", md: "20px" },
-          height: "100%",
-          display: "flex",
-          flexDirection: "column",
-          height: "80vh",
+          height: {xs:"40vh",sm:"50vh"},
           overflowY: "auto",
           "&::-webkit-scrollbar": { display: "none" },
           scrollbarWidth: "none",
           position: "relative",
           paddingRight: { xs: "0px", md: "20px", lg: "40px" },
         }}
-        onScroll={handleScroll}
       >
-        {admissionScreenData.admissionProcess.rightSideArray.map((item) => (
+        {admissionScreenData.admissionProcess.rightSideArray.map((item, index) => (
           <Box
             key={item.id}
+            ref={el => (stepRefs.current[index] = el)}
             sx={{
               display: "flex",
               flexDirection: "row",
@@ -99,8 +179,11 @@ export const AdmissionProcess = () => {
               gap: { xs: "1rem", md: "1.5rem" },
               paddingBottom: { xs: "1rem", md: "1.5rem" },
               paddingRight: { xs: "10px", md: "20px", lg: "60px" },
+              minHeight: {xs:'20vh',sm:"30vh"},
+              scrollSnapAlign: "start",
             }}
           >
+            {/* Vertical line between steps */}
             {item.id !==
               admissionScreenData.admissionProcess.rightSideArray.length -
                 1 && (
@@ -114,12 +197,13 @@ export const AdmissionProcess = () => {
                   height: "100%",
                   width: "1.5px",
                   backgroundColor: "#6C10BC",
-                  opacity: activeStep > item.id ? 1 : 0,
-                  transition: "opacity 0.5s ease",
+                  opacity: activeStep > item.id ? 1 : 0.3,
+                  transition: "opacity 0.3s ease",
                 }}
               />
             )}
 
+            {/* Step indicator circle */}
             <Box
               sx={{
                 position: "relative",
@@ -132,9 +216,12 @@ export const AdmissionProcess = () => {
                 maxHeight: { xs: "16px", md: "30px" },
                 borderRadius: "50%",
                 backgroundColor:
-                  activeStep > item.id ? "#6C10BC" : "rgba(108, 16, 188, 0.3)",
+                  activeStep >= item.id ? "#6C10BC" : "rgba(108, 16, 188, 0.3)",
+                transition: "background-color 0.3s ease",
               }}
             />
+            
+            {/* Step content */}
             <Box
               sx={{
                 height: "20%",
@@ -226,6 +313,9 @@ export const AdmissionProcess = () => {
                     padding: { xs: "8px 16px", md: "10px 20px" },
                     backgroundColor: "rgba(251, 127, 5, 1)",
                     borderRadius: "8px",
+                    "&:hover": {
+                      backgroundColor: "rgba(251, 127, 5, 0.8)",
+                    },
                   }}
                   href="https://apply.vedam.org/"
                   target="_blank"
