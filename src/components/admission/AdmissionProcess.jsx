@@ -119,7 +119,7 @@ export const AdmissionProcess = () => {
               onClick={() => {
                 stepRefs.current[index]?.scrollIntoView({
                   behavior: "smooth",
-                  block: "start"
+                  block: "center"
                 });
               }}
             >

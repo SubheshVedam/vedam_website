@@ -97,6 +97,8 @@ export const InCollaborationWith = () => {
               transform: "scale(1.05)",
             },
           }}
+          href="https://apply.vedam.org/"
+          target="_blank"
         >
           <SingleIconText
             icon={data.buttonIcon}

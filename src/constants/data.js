@@ -142,7 +142,7 @@ export const navLinks = [
 export const homeScreenData = {
   hero: {
     background_video: "/vid/videoBg.mp4",
-    title: "More Than a Degree\nBuild Innovate & Lead",
+    title: "Learn Tech by Building It",
     subtitle:
       "Vedam's 4-year BTech program prepares you for startups, innovation, and leadership with industry driven coursework and hands-on projects.",
   },
