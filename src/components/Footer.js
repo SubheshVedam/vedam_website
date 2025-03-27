@@ -7,31 +7,37 @@ const FOOTER_LINKS = [
   {
     title: "Quick Links",
     links: [
-      { label: "About Us", href: "#" },
-      { label: "Careers", href: "#" },
-      { label: "Contact", href: "#" },
-      { label: "Blog", href: "#" },
+      { label: "Home", href: "/home" },
+      { label: "Admission", href: "/admission" },
+      { label: "Life@VST", href: "/life" },
+      { label: "Team", href: "/about" },
     ],
   },
   {
     title: "Contact",
     links: [
-      { label: "Courses", href: "#" },
-      { label: "Tutorials", href: "#" },
-      { label: "Webinars", href: "#" },
-      { label: "Docs", href: "#" },
+      { label: "connect@vedam.org", href:"mailto:connect@vedam.org"  },
+      { label: "+91 9212XXXX69", href: "tel:100" },
     ],
   },
 ];
 
 const SOCIAL_LINKS = [
-  { name: "YouTube", url: "https://youtube.com", icon: "/img/Frame.png" },
+  {
+    name: "YouTube",
+    url: "https://www.youtube.com/@VedamSchoolofTech_Official",
+    icon: "/img/Frame.png",
+  },
   {
     name: "Instagram",
-    url: "https://instagram.com",
+    url: "https://www.instagram.com/vedamschooloftech_official/?igsh=MTRscTNtdGxnNG1yMQ%3D%3D#",
     icon: "/img/Frame (1).png",
   },
-  { name: "LinkedIn", url: "https://linkedin.com", icon: "/img/Frame (2).png" },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/company/vedam-school-of-technology/",
+    icon: "/img/Frame (2).png",
+  },
 ];
 
 export default function Footer() {
@@ -59,28 +65,41 @@ export default function Footer() {
         }}
       >
         {/* Main Footer Columns */}
-        <Grid container spacing={{xs:2,sm:4}}>
+        <Grid container spacing={{ xs: 2, sm: 4 }}>
           <Grid item xs={12} sm={6} md={3}>
             <Stack spacing={1}>
-              <Box sx={{width:'100%',display:'flex',justifyContent:'flex-start'}}>
-              <Box sx={{width:{xs:170,sm:200},ml:"-10px"}}>
-              <Image
-                src="/img/Vedam_Final_Logo_White.png"
-                alt="Navbar Logo"
-                width={200}
-                height={200}
-                style={{ objectFit: "cover", width: "100%",height:"100%" }}
-              />
-              </Box>
+              <Box
+                sx={{
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "flex-start",
+                }}
+              >
+                <Box sx={{ width: { xs: 170, sm: 200 }, ml: "-10px" }}>
+                  <Image
+                    src="/img/Vedam_Final_Logo_White.png"
+                    alt="Navbar Logo"
+                    width={200}
+                    height={200}
+                    style={{
+                      objectFit: "cover",
+                      width: "100%",
+                      height: "100%",
+                    }}
+                  />
+                </Box>
               </Box>
             </Stack>
           </Grid>
           {FOOTER_LINKS.map((column) => (
             <Grid item xs={6} sm={6} md={3} key={column.title}>
-              <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>
+              <Typography
+                variant="h6"
+                sx={{ fontWeight: 700, mb: { xs: 1, sm: 2 } }}
+              >
                 {column.title}
               </Typography>
-              <Stack spacing={1}>
+              <Stack spacing={{ xs: 1, sm: 2 }}>
                 {column.links.map((link) => (
                   <Link
                     key={link.label}
@@ -105,7 +124,7 @@ export default function Footer() {
             <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>
               Follow Us
             </Typography>
-            <Stack direction={{xs: "row", sm:"column"}} spacing={2}>
+            <Stack direction={{ xs: "row", sm: "column" }} spacing={2}>
               {SOCIAL_LINKS.map((social) => (
                 <Link
                   key={social.name}
@@ -114,7 +133,9 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   display="flex"
                   gap="10px"
+                  color="#FFA41A"
                   alignItems="center"
+                  underline="hover"
                 >
                   <Image
                     src={social.icon}
@@ -126,7 +147,16 @@ export default function Footer() {
                       transition: "transform 0.3s",
                     }}
                     className="hover:scale-110"
-                  /><Typography fontSize={{xs:0, sm:16}} color="white">
+                  />
+                  <Typography
+                    fontSize={{ xs: 0, sm: 16 }}
+                    color="white"
+                    sx={{
+                      "&:hover": {
+                        color: "#FFA41A",
+                      },
+                    }}
+                  >
                     {social.name}
                   </Typography>
                 </Link>
