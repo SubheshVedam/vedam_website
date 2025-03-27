@@ -214,7 +214,7 @@ export const homeScreenData = {
       },
       {
         id: 9,
-        imageUrl: "/img/companies/Intuit_Logo.png",
+        imageUrl: "/img/companies/flipkart.webp",
       },
       {
         id: 10,
