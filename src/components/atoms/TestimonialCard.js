@@ -10,7 +10,7 @@ export default function TestimonialCard({ image, text, name, designation }) {
     <Card
       sx={{
         width: "100%",
-        minHeight: 392,
+        minHeight: { xs: 340, sm: 392 },
         width: { xs: 274, sm: 333 },
         maxWidth: "100%",
         minWidth: { xs: 274, sm: 333 },
@@ -26,7 +26,7 @@ export default function TestimonialCard({ image, text, name, designation }) {
           display: "flex",
           flexDirection: "column",
           padding: 0,
-          minHeight: 392,
+          minHeight: { xs: 340, sm: 392 },
           height: "100%",
           justifyContent: "space-between",
         }}
@@ -34,10 +34,9 @@ export default function TestimonialCard({ image, text, name, designation }) {
         <Box sx={{ display: "flex", flexDirection: "column" }}>
           <Box
             sx={{
-              width: "60px",
-              height: "60px",
+              width: { xs: "40px", sm: "60px" },
+              height: { xs: "40px", sm: "60px" },
               mb: "16px",
-              border: "1px solid",
               borderRadius: 100,
             }}
           >
@@ -45,8 +44,9 @@ export default function TestimonialCard({ image, text, name, designation }) {
               src={image}
               objectFit="cover"
               alt="profile icon"
-              width={60}
-              height={60}
+              width={100}
+              height={100}
+              style={{ borderRadius: 100, width: "100%", height: "100%" }}
             />
           </Box>
           <Typography

@@ -3,43 +3,46 @@ import Image from "next/image";
 import { Box, Typography } from "@mui/material";
 import { homeScreenData } from "@/constants/data";
 
-const SingleCard = ({ icon, text }) => {
+const SingleCard = ({ icon, text, isCurriculum }) => {
   return (
     <Box
       sx={{
         border: "1px solid rgba(12, 38, 81, 0.2)",
         borderRadius: "10px",
-        padding: "10px",
+        padding: isCurriculum ? 0 : "10px",
         display: "flex",
         flexDirection: "column",
         alignItems: "flex-start",
         justifyContent: "center",
-        flex: "0 0 30%",
+        flex: { xs: "0 0 60%", sm: "0 0 29%" },
       }}
     >
       <Image
         src={icon}
         alt="icon"
-        width={212}
+        width={250}
         height={114}
         objectFit="cover"
-        sx={{
-          width: { xs: "100px", md: "212px" },
-          height: { xs: "80px", md: "114" },
-          marginBottom: "0.5rem",
+        style={{
+          width: "100%",
+          height: "100%",
+          aspectRatio: "1.51:1.",
+          borderRadius: "10px 10px 0 0",
         }}
       />
-      <Typography
-        variant="subtitle1"
-        sx={{
-          fontFamily: "Inter",
-          fontSize: "12px",
-          fontWeight: "600",
-          color: "rgba(0, 0, 0, 1)",
-        }}
-      >
-        {text}
-      </Typography>
+      <Box sx={{ padding: "5px 10px 10px 10px" }}>
+        <Typography
+          variant="subtitle1"
+          sx={{
+            fontFamily: "Inter",
+            fontSize: "12px",
+            fontWeight: "600",
+            color: "rgba(0, 0, 0, 1)",
+          }}
+        >
+          {text}
+        </Typography>
+      </Box>
     </Box>
   );
 };
@@ -49,7 +52,7 @@ export const AIYear1 = () => {
     <Box
       sx={{
         display: "flex",
-        width:'100%',
+        width: "100%",
         flexDirection: "column",
         alignItems: "flex-start",
         padding: { xs: "10px", md: "20px" },
@@ -147,8 +150,7 @@ export const AIYear1 = () => {
         {homeScreenData.year1.Outcomes}
       </Typography>
       <Box
-                id="check"
-
+        id="check"
         sx={{
           flex: { xs: "0 0 40%", md: "0 0 30%" },
           display: "flex",
@@ -162,7 +164,12 @@ export const AIYear1 = () => {
         }}
       >
         {homeScreenData.year1.outcomeArray.map((item) => (
-          <SingleCard key={item.id} icon={item.icon} text={item.text} />
+          <SingleCard
+            key={item.id}
+            icon={item.icon}
+            text={item.text}
+            isCurriculum={true}
+          />
         ))}
       </Box>
     </Box>

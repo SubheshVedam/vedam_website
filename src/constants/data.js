@@ -1,38 +1,41 @@
 import { AIYear1 } from "@/components/home/AIFirstCurriculum/AIYear1";
+import { AIYear2 } from "@/components/home/AIFirstCurriculum/AIYear2";
+import { AIYear3 } from "@/components/home/AIFirstCurriculum/AIYear3";
+import { AIYear4 } from "@/components/home/AIFirstCurriculum/AIYear4";
 
 export const testimonialData = [
   {
-    image: "/img/linkedInIcon.png",
+    image: "/img/testimonials/sarthak.webp",
     text: `"I can't praise Subhesh's DSA course enough. His unique teaching approach and comprehensive content gave me the edge to crack Google Warsaw. His dedication and support were truly invaluable. I would definitely recommend this course."`,
     name: "Sarthak Bhatia",
     designation: "Software Engineer 3, Google",
   },
   {
-    image: "/img/linkedInIcon.png",
+    image: "/img/testimonials/pranjal.webp",
     text: `"I wasted countless hours on DSA resources before landing under the guidance of Subhesh sir. He is an experienced teacher and one who makes learning a delightful experience. Really mind-blowing. I wish the team all the best"`,
     name: "Pranjal Sharma",
     designation: "Software Development Engineer 1, Amazon",
   },
   {
-    image: "/img/linkedInIcon.png",
+    image: "/img/testimonials/kunal.webp",
     text: `"Algorprep transformed my career with its comprehensive curriculum and expert instructors. The hands-on projects offered practical experience, boosting my confidence and job prospects. If you're serious about coding, Nishant and Subhesh are a top-notch choice."`,
     name: "Kunal Trivedi",
     designation: "Software Engineer, Bosch",
   },
   {
-    image: "/img/linkedInIcon.png",
+    image: "/img/testimonials/harshit.webp",
     text: `"The curriculum is comprehensive, instructor is experienced, and in-depth learning helped me gain confidence. I started as a beginner and cracked multiple offers ultimately. Nishant and Subhesh make a great team. Kudos to them for taking this initiative"`,
     name: "Harshit Trehan",
     designation: "Software Development Engineer 2, Atlassian",
   },
   {
-    image: "/img/linkedInIcon.png",
+    image: "/img/testimonials/divya.webp",
     text: `"I loved the way this coding course was structured. He started with the basics and then gradually built on our knowledge. This made it easy to learn and retain the information. I also appreciate the fact that he provided us with plenty of practice exercises."`,
     name: "Divya Chopra",
     designation: "Software Engineer 2, Google",
   },
   {
-    image: "/img/linkedInIcon.png",
+    image: "/img/testimonials/jaivin.webp",
     text: `"I am really grateful that I had the opportunity to explore DSA with Subhesh sir. His methodology and guidance were exceptional. The course started from if else and at last we were solving really Hard Leetcode Problems. Had a lot of learning with fun."`,
     name: "Jaivin Phogaat",
     designation: "Software Development Engineer, DP World",
@@ -42,87 +45,117 @@ export const testimonialData = [
 export const expertsData = [
   {
     imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/c/c1/Lionel_Messi_20180626.jpg", // Example image URL
-    name: "John Doe",
+      "/img/experts/first.webp",
+    name: "Ramachandra Nalam",
+    logo: "/next.svg",
+    designation: "Data and ML Engineer",
+    info: "Masters from University of Buffalo, Ex Amazon",
+    rating: 3.7,
+    linkedIn: "https://www.linkedin.com/in/ramachandra-nalam/",
+  },
+  {
+    imageUrl:
+    "/img/experts/second.webp",
+    name: "Gaurav Dawra",
     logo: "/next.svg",
     designation: "Software Engineer",
-    info: "Specializes in front-end development and UI/UX design.Specializes in front-end development and UI/UX design.",
-    rating: 4.5,
-    linkedIn: "/img/linkedInIcon.png",
+    info: "ICPC World Finalist 2022-23, 6 Star on Code Chef",
+    rating: 4.2,
+    linkedIn: "https://www.linkedin.com/in/gaurav-dawra-a2a935200/",
   },
   {
     imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/c/c1/Lionel_Messi_20180626.jpg",
-    name: "Jane Smith",
+    "/img/experts/third.webp",
+    name: "Bradford Tuckfield",
+    logo: "/next.svg",
+    designation: "PhD",
+    info: "Founder, Author and Instructor ; Ex American Express and Accenture",
+    rating: 4.9,
+    linkedIn: "https://www.linkedin.com/in/bradford-tuckfield-80565b25/",
+  },
+  {
+    imageUrl:
+    "/img/experts/fourth.webp",
+    name: "Amanpreet Singh",
+    logo: "/next.svg",
+    designation: "Software Engineer",
+    info: "NSIT, Ex Mentor Graphics & OYO",
+    rating: 4.9,
+    linkedIn: "https://www.linkedin.com/in/amanpreet-singh-b79598a3/?originalSubdomain=in",
+  },
+  {
+    imageUrl:
+    "/img/experts/fifth.webp",
+    name: "M Senthurpandian",
+    logo: "/next.svg",
+    designation: "Senior Software Engineer",
+    info: "13+ Years of Experience, Amazon Interview Panel Member",
+    rating: 4.9,
+    linkedIn: "https://www.linkedin.com/in/manivannan21/",
+  },
+  {
+    imageUrl:
+    "/img/experts/seventh.webp",
+    name: "Ekta Shah",
+    logo: "/next.svg",
+    designation: "Data Scientist ",
+    info: "Board Member-Board of Studies at NMIMS, Visiting Faculty at MU",
+    rating: 4.9,
+    linkedIn: "https://www.linkedin.com/in/ekta-shah30/",
+  },
+  {
+    imageUrl:
+    "/img/experts/eighth.webp",
+    name: "Basant Rawat",
+    logo: "/next.svg",
+    designation: "SDE 2",
+    info: "Mentored over 20,000 Minutes, Ex Hexaware",
+    rating: 4.9,
+    linkedIn: "https://www.linkedin.com/in/basant-rawat/",
+  },
+  {
+    imageUrl:
+    "/img/experts/ninth.webp",
+    name: "Nishchay Agrawal",
     logo: "/next.svg",
     designation: "Data Scientist",
-    info: "Expert in machine learning and data analysis.",
-    rating: 3.7,
-    linkedIn: "/img/linkedInIcon.png",
-  },
-  {
-    imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/c/c1/Lionel_Messi_20180626.jpg",
-    name: "Alice Johnson",
-    logo: "/next.svg",
-    designation: "DevOps Engineer",
-    info: "Focuses on CI/CD pipelines and cloud infrastructure.",
-    rating: 4.2,
-    linkedIn: "/img/linkedInIcon.png",
-  },
-  {
-    imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/c/c1/Lionel_Messi_20180626.jpg",
-    name: "Bob Brown",
-    logo: "/next.svg",
-    designation: "Backend Developer",
-    info: "Experienced in building scalable APIs and databases.",
+    info: "University Gold Medalist, Ex Meesho",
     rating: 4.9,
-    linkedIn: "/img/linkedInIcon.png",
-  },
-  {
-    imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/c/c1/Lionel_Messi_20180626.jpg",
-    name: "Bob Brown",
-    logo: "/next.svg",
-    designation: "Backend Developer",
-    info: "Experienced in building scalable APIs and databases.",
-    rating: 4.9,
-    linkedIn: "/img/linkedInIcon.png",
+    linkedIn: "https://www.linkedin.com/in/nishchay-agrawal-157404170/",
   },
 ];
 export const detailsData = [
   {
     image: "/img/whyvedam/first.webp",
-    bgImage: "/img/whyvedam/code_day1.jpeg",
+    bgImage: "/img/whyvedam/code_day1_m.jpeg",
     title: "Code From Day 1",
     description:
-      "From Day 1, you'll be writing real code, building projects, and solving industry-relevant problems.",
+    "From Day 1, you'll be writing real code, building projects, and solving industry-relevant problems.",
   },
   {
     image: "/img/whyvedam/second.webp",
-    bgImage: "/img/whyvedam/ai_img.jpeg",
+    bgImage: "/img/whyvedam/ai_img_m.jpeg",
     title: "AI First Curriculum",
     description:
       "Our AI-First Curriculum is designed to equip students with the skills, tools, and mindset needed to thrive in an AI-powered world.",
   },
   {
     image: "/img/whyvedam/third.webp",
-    bgImage: "/img/whyvedam/mentor.jpeg",
+    bgImage: "/img/whyvedam/mentor_m.jpeg",
     title: "Mentorships",
     description:
       "Get personalized career guidance from experienced professionals.",
   },
   {
     image: "/img/whyvedam/fourth.webp",
-    bgImage: "/img/whyvedam/top_trainer.png",
+    bgImage: "/img/whyvedam/top_trainer_m.jpeg",
     title: "Top Instructors",
     description:
       "At Vedam, you’ll learn from the best minds in tech—engineers, researchers, and industry leaders from Google, Microsoft, Amazon, and top startups. Our faculty doesn’t just teach theory; they bring real-world experience into the classroom.",
   },
   {
     image: "/img/whyvedam/fifth.webp",
-    title: "Personal Macbook Pro ",
+    title: "Personal Macbook ",
     description:
       "It's your key to a hands-on, immersive and collaborative learning experience in Computer Science and AI.",
     isFeatured: true,
@@ -142,7 +175,7 @@ export const navLinks = [
 export const homeScreenData = {
   hero: {
     background_video: "/vid/videoBg.mp4",
-    title: "More Than a Degree\nBuild Innovate & Lead",
+    title: "Learn Tech by Building It",
     subtitle:
       "Vedam's 4-year BTech program prepares you for startups, innovation, and leadership with industry driven coursework and hands-on projects.",
   },
@@ -255,9 +288,11 @@ export const homeScreenData = {
       { id: 1, img: "/img/investors/saama.webp" },
       { id: 2, img: "/img/investors/westbridge.webp" },
       { id: 3, img: "/img/investors/prime.webp" },
-      { id: 4, img: "/img/investors/westbridge.webp" },
-      { id: 5, img: "/img/investors/prime.webp" },
+      { id: 4, img: "/img/investors/alteria.webp" },
+      { id: 5, img: "/img/investors/saama.webp" },
       { id: 6, img: "/img/investors/westbridge.webp" },
+      { id: 7, img: "/img/investors/prime.webp" },
+
     ],
   },
   whyVedam: {
@@ -269,11 +304,14 @@ export const homeScreenData = {
     leftSideData: {
       headerText: "",
       textArray: [
-        { id: 0, text: "Learning & Assignments" },
-        { id: 1, text: "Curriculum" },
+        { id: 0, text: "Curriculum" },
+        { id: 1, text: "Learning & Assignments" },
         { id: 2, text: "Global Exposures" },
-        { id: 3, text: "Mentors" },
-        { id: 4, text: "Employability" },
+        { id: 3, text: "Instructors & Mentors" },
+        { id: 4, text: "Internships" },
+        { id: 5, text: "Placements" },
+        { id: 6, text: "Entrepreneurship" },
+      
       ],
     },
     middleSideData: {
@@ -287,7 +325,7 @@ export const homeScreenData = {
         {
           id: 1,
           icon: "/img/vedamvs/middle/second.webp",
-          text: "Learn through building real world projects",
+          text: "Learn through writing over 100,000 lines of code",
         },
         {
           id: 2,
@@ -297,38 +335,58 @@ export const homeScreenData = {
         {
           id: 3,
           icon: "/img/vedamvs/middle/fourth.webp",
-          text: "Personal 1:1 dedicated support",
+          text: "Practicioner from top tech companies like MS & Google",
         },
         {
           id: 4,
           icon: "/img/vedamvs/middle/fifth.webp",
+          text: "6 months internship twice in 4 years with a tech product company",
+        },
+        {
+          id: 5,
+          icon: "/img/vedamvs/middle/fourth.webp",
           text: "Placement ready for top tech companies",
+        },
+        {
+          id: 6,
+          icon: "/img/vedamvs/middle/first.webp",
+          text: "Seed funding upto one crore",
         },
       ],
     },
     rightSideData: {
       headerText: "Traditional Education",
       textArray: [
-        { id: 0, icon: "/img/vedamvs/right/first.webp", text: "outdated" },
+        { id: 0, icon: "/img/vedamvs/right/first.webp", text: "Outdated" },
         {
           id: 1,
           icon: "/img/vedamvs/right/second.webp",
-          text: "theoritical approach",
+          text: "Theoritical approach",
         },
         {
           id: 2,
           icon: "/img/vedamvs/right/first.webp",
-          text: "Lack industry exposure",
+          text: "No such exposure",
         },
         {
           id: 3,
           icon: "/img/vedamvs/right/first.webp",
-          text: "no dedicated support",
+          text: "Lack industry exposure",
         },
         {
           id: 4,
           icon: "/img/vedamvs/right/first.webp",
-          text: "require training",
+          text: "Minimal support",
+        },
+        {
+          id: 5,
+          icon: "/img/vedamvs/right/first.webp",
+          text: "Non employable",
+        },
+        {
+          id: 6,
+          icon: "/img/vedamvs/right/first.webp",
+          text: "Lack startup support",
         },
       ],
     },
@@ -374,19 +432,19 @@ export const homeScreenData = {
         id: 2,
         title: "Year 2",
         subtitle: "Full Stack Mastery",
-        content: <AIYear1 />,
+        content: <AIYear2 />,
       },
       {
         id: 3,
         title: "Year 3",
         subtitle: "AI Expertise",
-        content: <AIYear1 />,
+        content: <AIYear3 />,
       },
       {
         id: 4,
         title: "Year 4",
         subtitle: "Specialised AI Tracks",
-        content: <AIYear1 />,
+        content: <AIYear4 />,
       },
     ],
   },
@@ -395,30 +453,130 @@ export const homeScreenData = {
     subtitle: "Learn the basics for AI and Programming by building from year 1",
     secondTitle: "Skills & Technologies",
     secondArray: [
-      "JavaScript",
+      "HTML",
+      "CSS",
+      "Javascript",
       "Python",
-      "JAVA",
-      "Unlearning & Learning how to Learn",
-      "Soft skill",
-      "Probability & Statistics",
-      "UNIX",
+      "DSA",
+      "Maths for CS",
+      "Probability and Statistics",
+      "Soft skills",
     ],
     Outcomes: "Outcomes",
     outcomeArray: [
       {
         id: 0,
         text: "Building Hotstar like Feed with Search and Categories",
-        icon: "/img/outcomes/first.webp",
+        icon: "/img/outcomes/year1.jpg",
       },
       {
         id: 1,
         text: "Build a Portfolio Website like GitHub Pages",
-        icon: "/img/outcomes/second.webp",
+        icon: "/img/outcomes/year1_2.jpg",
       },
       {
         id: 2,
         text: "Develop an Online Resume Builder like Canva",
-        icon: "/img/outcomes/third.webp",
+        icon: "/img/outcomes/year1_3.jpg",
+      },
+    ],
+  },
+  year2: {
+    title: "Full Stack Mastery",
+    subtitle: "Learn the basics for AI and Programming by building from year 1",
+    secondTitle: "Skills & Technologies",
+    secondArray: [
+      "HTML2",
+      "CSS2",
+      "Javascrip2t",
+      "Python",
+      "DSA",
+      "Maths for CS",
+      "Probability and Statistics",
+      "Soft skills",
+    ],
+    Outcomes: "Outcomes",
+    outcomeArray: [
+      {
+        id: 0,
+        text: "Building Hotstar like Feed with Search and Categories",
+        icon: "/img/outcomes/year1.jpg",
+      },
+      {
+        id: 1,
+        text: "Build a Portfolio Website like GitHub Pages",
+        icon: "/img/outcomes/year1_2.jpg",
+      },
+      {
+        id: 2,
+        text: "Develop an Online Resume Builder like Canva",
+        icon: "/img/outcomes/year1_3.jpg",
+      },
+    ],
+  },
+  year3: {
+    title: "Programming 333Foundation",
+    subtitle: "Learn the basics for AI and Programming by building from year 1",
+    secondTitle: "Skills & Technologies",
+    secondArray: [
+      "HTML3",
+      "CSS3",
+      "Javascript",
+      "Python",
+      "DSA",
+      "Maths for CS",
+      "Probability and Statistics",
+      "Soft skills",
+    ],
+    Outcomes: "Outcomes",
+    outcomeArray: [
+      {
+        id: 0,
+        text: "Building Hotstar like Feed with Search and Categories",
+        icon: "/img/outcomes/year1.jpg",
+      },
+      {
+        id: 1,
+        text: "Build a Portfolio Website like GitHub Pages",
+        icon: "/img/outcomes/year1_2.jpg",
+      },
+      {
+        id: 2,
+        text: "Develop an Online Resume Builder like Canva",
+        icon: "/img/outcomes/year1_3.jpg",
+      },
+    ],
+  },
+  year4: {
+    title: "Programming Foundation44",
+    subtitle: "Learn the basics for AI 4and Programming by building from year 1",
+    secondTitle: "Skills & Technologies",
+    secondArray: [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Python",
+      "DSA",
+      "Maths for CS",
+      "Probability and Statistics",
+      "Soft skills",
+    ],
+    Outcomes: "Outcomes",
+    outcomeArray: [
+      {
+        id: 0,
+        text: "Building Hotstar like Feed with Search and Categories",
+        icon: "/img/outcomes/year1.jpg",
+      },
+      {
+        id: 1,
+        text: "Build a Portfolio Website like GitHub Pages",
+        icon: "/img/outcomes/year1_2.jpg",
+      },
+      {
+        id: 2,
+        text: "Develop an Online Resume Builder like Canva",
+        icon: "/img/outcomes/year1_3.jpg",
       },
     ],
   },

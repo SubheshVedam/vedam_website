@@ -20,7 +20,7 @@ const Card = ({
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
-        height: { xs: "300px", md: "465px" },
+        height: { xs: "380px", sm: "550px" },
         ...containerStyle,
       }}
     >
@@ -54,12 +54,12 @@ const Card = ({
             key={index}
             sx={{
               display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
+              alignItems: "flex-start",
+              justifyContent: "flex-start",
               borderBottom: showBorder
                 ? "1px solid rgba(132, 132, 132, 0.2)"
                 : "",
-              height: { xs: "48px", md: "70px" },
+              height: { xs: "48px", sm: "70px" },
               "&:last-child": {
                 borderWidth: 0,
               },
@@ -74,9 +74,9 @@ const Card = ({
               )}
               <Typography
                 sx={{
-                  textAlign: "center",
+                  textAlign: "left",
                   lineHeight: "120%",
-                  fontSize: "clamp(12px, 2vw, 16px)",
+                  fontSize: "clamp(11px, 2vw, 16px)",
                   fontWeight: "500",
                   ...textArrayTextStyle,
                 }}
@@ -163,7 +163,6 @@ export const VedamVs = () => {
         textArrayStyle={{
           width: "100%",
           paddingLeft: { xs: "20px", md: "40px" },
-          alignItems: "center",
           justifyContent: "flex-start",
         }}
         headerTextStyle={{ color: "rgba(12, 38, 81, 1)" }}

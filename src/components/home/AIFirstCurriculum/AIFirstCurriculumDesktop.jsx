@@ -7,14 +7,14 @@ import { CardContainer } from "@/components";
 
 export const AIFirstCurriculumDesktop = () => {
   const firstContentRef = useRef(null);
-  const [leftBoxHeight, setLeftBoxHeight] = useState("auto");
+  const [leftBoxHeight, setLeftBoxHeight] = useState(0);
   const [activeStep, setActiveStep] = useState(1);
 
   const sectionData = homeScreenData.aiFirst.data;
 
   useEffect(() => {
     if (firstContentRef.current) {
-      setLeftBoxHeight(`${firstContentRef.current.offsetHeight}px`);
+      setLeftBoxHeight(firstContentRef.current.offsetHeight);
     }
   }, [sectionData]);
 
@@ -134,7 +134,7 @@ export const AIFirstCurriculumDesktop = () => {
                 </Box>
                 <Box
                   sx={{
-                    height: leftBoxHeight,
+                    height: leftBoxHeight + 100,
                     flex: "0 79%",
                     display: "flex",
                     flexDirection: "column",

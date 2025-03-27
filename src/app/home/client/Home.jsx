@@ -1,3 +1,4 @@
+'use client'
 import {
   AIFirstCurriculum,
   CardContainer,
@@ -13,10 +14,13 @@ import {
 } from "@/components";
 import WhyVedam from "@/components/WhyVedam";
 import { detailsData, homeScreenData } from "@/constants/data";
-import { Box } from "@mui/material";
+import { Box, useMediaQuery, useTheme } from "@mui/material";
 import React, { Fragment } from "react";
 
 const Home = () => {
+  const theme = useTheme();
+  const isLarge = useMediaQuery(theme.breakpoints.up("xl"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Fragment>
       <Box
@@ -48,13 +52,27 @@ const Home = () => {
             title={homeScreenData.techTeam.title}
             subtitle={homeScreenData.techTeam.subtitle}
           >
-            <img
-              src={homeScreenData.techTeam.image}
+            {/* <img
+              src={"https://www.youtube.com/embed/sDn7tw1P5x8"}
+              // src={homeScreenData.techTeam.image}
               width={"100%"}
               style={{ objectFit: "cover",aspectRatio:"1.73:1",borderRadius:'16px' }}
               className="techTeamImage"
               loading="lazy"
-            />
+            /> */}
+            <iframe
+              width="100%"
+              height={isMobile ? "220px" : isLarge ? "680px" : "580px"}
+              style={{
+                borderRadius: "16px",
+                border: "none",
+              }}
+              src="https://www.youtube.com/embed/zHquRUSxP8o?si=MjqF-PfmelA2too8"
+              title="YouTube video player"
+              // allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              loading="lazy"
+              className="techTeamImage"
+            ></iframe>
           </CardContainer>
           <CardContainer
             title={homeScreenData.whyVedam.title}
@@ -99,7 +117,7 @@ const Home = () => {
             title={homeScreenData.learnFrom.title}
             subtitle={homeScreenData.learnFrom.subtitle}
           >
-             <LearnFrom /> 
+            <LearnFrom />
           </CardContainer>
 
           <CardContainer subtitle={homeScreenData.whatPeople.subtitle}>

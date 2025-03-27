@@ -19,9 +19,9 @@ export const InvestorWhoTrustUs = () => {
         sx={{
           display: "flex",
           flexDirection: "row",
-          gap: "20px",
+          gap: "40px",
           flexWrap: "nowrap",
-          animation: "scroll 10s linear infinite",
+          animation: "scroll 15s linear infinite",
           "@keyframes scroll": {
             "0%": { transform: "translateX(0%)" },
             "100%": { transform: "translateX(-50%)" },
@@ -34,7 +34,7 @@ export const InvestorWhoTrustUs = () => {
             src={item.img}
             alt={"image"}
             loading="lazy"
-            style={{ objectFit: "contain" }}
+            style={{ objectFit: "contain",width:'30%' }}
             className="investorsImage"
           />
         ))}

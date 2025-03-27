@@ -132,13 +132,19 @@ export default function ExpertCard({
             />
           </Box>
           <Box sx={{ width: 32, height: 32, position: "relative" }}>
-            <Image
-              src={linkedIn}
-              layout="fill"
-              sizes="32"
-              objectFit="contain"
-              alt="icon"
-            />
+            <a
+              href={linkedIn}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src={"/img/linkedInIcon.png"}
+                layout="fill"
+                sizes="32"
+                objectFit="contain"
+                alt="icon"
+              />
+            </a>
           </Box>
         </Box>
       </CardContent>
