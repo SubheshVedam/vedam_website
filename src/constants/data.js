@@ -1,4 +1,7 @@
 import { AIYear1 } from "@/components/home/AIFirstCurriculum/AIYear1";
+import { AIYear2 } from "@/components/home/AIFirstCurriculum/AIYear2";
+import { AIYear3 } from "@/components/home/AIFirstCurriculum/AIYear3";
+import { AIYear4 } from "@/components/home/AIFirstCurriculum/AIYear4";
 
 export const testimonialData = [
   {
@@ -346,19 +349,19 @@ export const homeScreenData = {
         id: 2,
         title: "Year 2",
         subtitle: "Full Stack Mastery",
-        content: <AIYear1 />,
+        content: <AIYear2 />,
       },
       {
         id: 3,
         title: "Year 3",
         subtitle: "AI Expertise",
-        content: <AIYear1 />,
+        content: <AIYear3 />,
       },
       {
         id: 4,
         title: "Year 4",
         subtitle: "Specialised AI Tracks",
-        content: <AIYear1 />,
+        content: <AIYear4 />,
       },
     ],
   },
@@ -367,30 +370,130 @@ export const homeScreenData = {
     subtitle: "Learn the basics for AI and Programming by building from year 1",
     secondTitle: "Skills & Technologies",
     secondArray: [
-      "JavaScript",
+      "HTML",
+      "CSS",
+      "Javascript",
       "Python",
-      "JAVA",
-      "Unlearning & Learning how to Learn",
-      "Soft skill",
-      "Probability & Statistics",
-      "UNIX",
+      "DSA",
+      "Maths for CS",
+      "Probability and Statistics",
+      "Soft skills",
     ],
     Outcomes: "Outcomes",
     outcomeArray: [
       {
         id: 0,
         text: "Building Hotstar like Feed with Search and Categories",
-        icon: "/img/outcomes/first.webp",
+        icon: "/img/outcomes/year1.jpg",
       },
       {
         id: 1,
         text: "Build a Portfolio Website like GitHub Pages",
-        icon: "/img/outcomes/second.webp",
+        icon: "/img/outcomes/year1_2.jpg",
       },
       {
         id: 2,
         text: "Develop an Online Resume Builder like Canva",
-        icon: "/img/outcomes/third.webp",
+        icon: "/img/outcomes/year1_3.jpg",
+      },
+    ],
+  },
+  year2: {
+    title: "Full Stack Mastery",
+    subtitle: "Learn the basics for AI and Programming by building from year 1",
+    secondTitle: "Skills & Technologies",
+    secondArray: [
+      "HTML2",
+      "CSS2",
+      "Javascrip2t",
+      "Python",
+      "DSA",
+      "Maths for CS",
+      "Probability and Statistics",
+      "Soft skills",
+    ],
+    Outcomes: "Outcomes",
+    outcomeArray: [
+      {
+        id: 0,
+        text: "Building Hotstar like Feed with Search and Categories",
+        icon: "/img/outcomes/year1.jpg",
+      },
+      {
+        id: 1,
+        text: "Build a Portfolio Website like GitHub Pages",
+        icon: "/img/outcomes/year1_2.jpg",
+      },
+      {
+        id: 2,
+        text: "Develop an Online Resume Builder like Canva",
+        icon: "/img/outcomes/year1_3.jpg",
+      },
+    ],
+  },
+  year3: {
+    title: "Programming 333Foundation",
+    subtitle: "Learn the basics for AI and Programming by building from year 1",
+    secondTitle: "Skills & Technologies",
+    secondArray: [
+      "HTML3",
+      "CSS3",
+      "Javascript",
+      "Python",
+      "DSA",
+      "Maths for CS",
+      "Probability and Statistics",
+      "Soft skills",
+    ],
+    Outcomes: "Outcomes",
+    outcomeArray: [
+      {
+        id: 0,
+        text: "Building Hotstar like Feed with Search and Categories",
+        icon: "/img/outcomes/year1.jpg",
+      },
+      {
+        id: 1,
+        text: "Build a Portfolio Website like GitHub Pages",
+        icon: "/img/outcomes/year1_2.jpg",
+      },
+      {
+        id: 2,
+        text: "Develop an Online Resume Builder like Canva",
+        icon: "/img/outcomes/year1_3.jpg",
+      },
+    ],
+  },
+  year4: {
+    title: "Programming Foundation44",
+    subtitle: "Learn the basics for AI 4and Programming by building from year 1",
+    secondTitle: "Skills & Technologies",
+    secondArray: [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Python",
+      "DSA",
+      "Maths for CS",
+      "Probability and Statistics",
+      "Soft skills",
+    ],
+    Outcomes: "Outcomes",
+    outcomeArray: [
+      {
+        id: 0,
+        text: "Building Hotstar like Feed with Search and Categories",
+        icon: "/img/outcomes/year1.jpg",
+      },
+      {
+        id: 1,
+        text: "Build a Portfolio Website like GitHub Pages",
+        icon: "/img/outcomes/year1_2.jpg",
+      },
+      {
+        id: 2,
+        text: "Develop an Online Resume Builder like Canva",
+        icon: "/img/outcomes/year1_3.jpg",
       },
     ],
   },

@@ -67,7 +67,7 @@ const Home = () => {
                 borderRadius: "16px",
                 border: "none",
               }}
-              src="https://www.youtube.com/embed/sDn7tw1P5x8"
+              src="https://www.youtube.com/embed/zHquRUSxP8o?si=MjqF-PfmelA2too8"
               title="YouTube video player"
               // allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               loading="lazy"
