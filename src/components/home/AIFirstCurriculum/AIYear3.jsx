@@ -5,47 +5,45 @@ import { homeScreenData } from "@/constants/data";
 
 const SingleCard = ({ icon, text, isCurriculum }) => {
   return (
-    <Box
-      sx={{
-        border: "1px solid rgba(12, 38, 81, 0.2)",
-        borderRadius: "10px",
-        padding: isCurriculum ? 0 : "10px",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "flex-start",
-        justifyContent: "center",
-        flex: "0 0 29%",
-      }}
-    >
-      <Box sx={{ borderRadius: "10px" }}>
-        <Image
-          src={icon}
-          alt="icon"
-          width={212}
-          height={114}
-          objectFit="contain"
-          style={{
-            // width: "100%",
-            height:'100%'
-,            aspectRatio:'1.51:1.',
-            borderRadius: "10px 10px 0 0",
+     <Box
+         sx={{
+           border: "1px solid rgba(12, 38, 81, 0.2)",
+           borderRadius: "10px",
+           padding: isCurriculum ? 0 : "10px",
+           display: "flex",
+           flexDirection: "column",
+           alignItems: "flex-start",
+           justifyContent: "center",
+           flex: {xs:"0 0 60%" ,sm:"0 0 29%"},
           }}
-        />
-      </Box>
-      <Box sx={{ padding: "5px 10px 10px 10px" }}>
-        <Typography
-          variant="subtitle1"
-          sx={{
-            fontFamily: "Inter",
-            fontSize: "12px",
-            fontWeight: "600",
-            color: "rgba(0, 0, 0, 1)",
-          }}
-        >
-          {text}
-        </Typography>
-      </Box>
-    </Box>
+       >
+           <Image
+             src={icon}
+             alt="icon"
+             width={250}
+             height={114}
+             objectFit="contain"
+             style={{
+               width: "100%",
+               height:'100%'
+   ,            aspectRatio:'1.57:1.',
+               borderRadius: "10px 10px 0 0",
+             }}
+           />
+         <Box sx={{ padding: "5px 10px 10px 10px" }}>
+           <Typography
+             variant="subtitle1"
+             sx={{
+               fontFamily: "Inter",
+               fontSize: "12px",
+               fontWeight: "600",
+               color: "rgba(0, 0, 0, 1)",
+             }}
+           >
+             {text}
+           </Typography>
+         </Box>
+       </Box>
   );
 };
 

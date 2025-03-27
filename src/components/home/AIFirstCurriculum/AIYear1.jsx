@@ -14,24 +14,22 @@ const SingleCard = ({ icon, text, isCurriculum }) => {
         flexDirection: "column",
         alignItems: "flex-start",
         justifyContent: "center",
-        flex: "0 0 29%",
+        flex: { xs: "0 0 60%", sm: "0 0 29%" },
       }}
     >
-      <Box sx={{ borderRadius: "10px" }}>
-        <Image
-          src={icon}
-          alt="icon"
-          width={212}
-          height={114}
-          objectFit="contain"
-          style={{
-            // width: "100%",
-            height:'100%'
-,            aspectRatio:'1.51:1.',
-            borderRadius: "10px 10px 0 0",
-          }}
-        />
-      </Box>
+      <Image
+        src={icon}
+        alt="icon"
+        width={250}
+        height={114}
+        objectFit="cover"
+        style={{
+          width: "100%",
+          height: "100%",
+          aspectRatio: "1.51:1.",
+          borderRadius: "10px 10px 0 0",
+        }}
+      />
       <Box sx={{ padding: "5px 10px 10px 10px" }}>
         <Typography
           variant="subtitle1"

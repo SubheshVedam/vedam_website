@@ -22,7 +22,7 @@ export default function Footer() {
     >
       <Box
         sx={{
-          paddingX:'10px',
+          paddingX: "10px",
           width: { xs: "100%", md: "1024px", xl: "1280px" },
           color: "white",
           display: "flex",
@@ -94,7 +94,11 @@ export default function Footer() {
           />
 
           <Stack direction="row" spacing={2}>
-            <Link href="#" color="inherit">
+            <Link
+              href="https://www.youtube.com/@VedamSchoolofTech_Official"
+              color="inherit"
+              target="_blank"
+            >
               <Image
                 src="/img/Frame.png"
                 alt="YouTube"
@@ -102,7 +106,11 @@ export default function Footer() {
                 height={24}
               />
             </Link>
-            <Link href="#" color="inherit">
+            <Link
+              href="https://www.instagram.com/vedamschooloftech_official/?igsh=MTRscTNtdGxnNG1yMQ%3D%3D#"
+              color="inherit"
+              target="_blank"
+            >
               <Image
                 src="/img/Frame (1).png"
                 alt="Instagram"
@@ -110,7 +118,11 @@ export default function Footer() {
                 height={24}
               />
             </Link>
-            <Link href="#" color="inherit">
+            <Link
+              href="https://www.linkedin.com/company/vedam-school-of-technology/"
+              color="inherit"
+              target="_blank"
+            >
               <Image
                 src="/img/Frame (2).png"
                 alt="LinkedIn"
