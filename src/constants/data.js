@@ -45,7 +45,7 @@ export const testimonialData = [
 export const expertsData = [
   {
     imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/c/c1/Lionel_Messi_20180626.jpg",
+      "/img/experts/first.webp",
     name: "Ramachandra Nalam",
     logo: "/next.svg",
     designation: "Data and ML Engineer",
@@ -55,7 +55,7 @@ export const expertsData = [
   },
   {
     imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/c/c1/Lionel_Messi_20180626.jpg",
+    "/img/experts/second.webp",
     name: "Gaurav Dawra",
     logo: "/next.svg",
     designation: "Software Engineer",
@@ -65,7 +65,7 @@ export const expertsData = [
   },
   {
     imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/c/c1/Lionel_Messi_20180626.jpg",
+    "/img/experts/third.webp",
     name: "Bradford Tuckfield",
     logo: "/next.svg",
     designation: "PhD",
@@ -75,7 +75,7 @@ export const expertsData = [
   },
   {
     imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/c/c1/Lionel_Messi_20180626.jpg",
+    "/img/experts/fourth.webp",
     name: "Amanpreet Singh",
     logo: "/next.svg",
     designation: "Software Engineer",
@@ -85,7 +85,7 @@ export const expertsData = [
   },
   {
     imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/c/c1/Lionel_Messi_20180626.jpg",
+    "/img/experts/fifth.webp",
     name: "M Senthurpandian",
     logo: "/next.svg",
     designation: "Senior Software Engineer",
@@ -95,7 +95,7 @@ export const expertsData = [
   },
   {
     imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/c/c1/Lionel_Messi_20180626.jpg",
+    "/img/experts/seventh.webp",
     name: "Ekta Shah",
     logo: "/next.svg",
     designation: "Data Scientist ",
@@ -105,7 +105,7 @@ export const expertsData = [
   },
   {
     imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/c/c1/Lionel_Messi_20180626.jpg",
+    "/img/experts/eighth.webp",
     name: "Basant Rawat",
     logo: "/next.svg",
     designation: "SDE 2",
@@ -115,7 +115,7 @@ export const expertsData = [
   },
   {
     imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/c/c1/Lionel_Messi_20180626.jpg",
+    "/img/experts/ninth.webp",
     name: "Nishchay Agrawal",
     logo: "/next.svg",
     designation: "Data Scientist",

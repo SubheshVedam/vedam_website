@@ -10,7 +10,7 @@ export default function TestimonialCard({ image, text, name, designation }) {
     <Card
       sx={{
         width: "100%",
-        minHeight: {xs:340,sm:392},
+        minHeight: { xs: 340, sm: 392 },
         width: { xs: 274, sm: 333 },
         maxWidth: "100%",
         minWidth: { xs: 274, sm: 333 },
@@ -26,7 +26,7 @@ export default function TestimonialCard({ image, text, name, designation }) {
           display: "flex",
           flexDirection: "column",
           padding: 0,
-          minHeight: {xs:340,sm:392},
+          minHeight: { xs: 340, sm: 392 },
           height: "100%",
           justifyContent: "space-between",
         }}
