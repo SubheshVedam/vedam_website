@@ -410,7 +410,7 @@ export const homeScreenData = {
       },
       {
         id: 4,
-        text: "TODO TODO TODO on the first-served basis.Hostel and mess services are available on the first-served basis.",
+        text: "TODO TODO on the first-served basis.Hostel and mess services are available on the first-served basis.",
       },
     ],
   },
