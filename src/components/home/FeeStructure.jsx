@@ -11,7 +11,7 @@ import {
 import { homeScreenData } from "@/constants/data";
 import Image from "next/image";
 
-const SingleTableCell = ({ text, isHead = false }) => {
+const SingleTableCell = ({ text, isHead = false, isFirst = false }) => {
   return (
     <TableCell
       align="right"
@@ -26,7 +26,7 @@ const SingleTableCell = ({ text, isHead = false }) => {
         color: isHead ? "rgba(108, 16, 188, 1)" : "rgba(30, 30, 30, 1)",
       }}
     >
-      {text}
+      {isFirst || isHead ? text : "₹" + text}
     </TableCell>
   );
 };
@@ -41,7 +41,7 @@ const SingleCountText = ({ count, text }) => {
         width: "100%",
       }}
     >
-      <Box sx={{ width: "10%" }}>
+      <Box sx={{ width: { xs: "10%", xl: "7%" } }}>
         <Box
           sx={{
             backgroundColor: "rgba(186, 107, 255, 1)",
@@ -188,14 +188,16 @@ export const FeeStructure = () => {
                   <SingleTableCell text="Year" isHead />
                   <SingleTableCell text="Sem 1" isHead />
                   <SingleTableCell text="Sem 2" isHead />
+                  <SingleTableCell text="Total" isHead />{" "}
                 </TableRow>
               </TableHead>
               <TableBody>
                 {homeScreenData.FeeStructure.leftSideYearTable.map((row) => (
                   <TableRow key={row.id}>
-                    <SingleTableCell text={row.year1} />
+                    <SingleTableCell text={row.year1} isFirst={true} />
                     <SingleTableCell text={row.amount1} />
                     <SingleTableCell text={row.amount2} />
+                    <SingleTableCell text={row.total} />
                   </TableRow>
                 ))}
               </TableBody>

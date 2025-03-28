@@ -359,10 +359,41 @@ export const homeScreenData = {
     headerLeftTitle: "Semester wise break-up of course fee",
     headerRightLocation: `ADY, Pune`,
     leftSideYearTable: [
-      { id: "0", year1: "Year 1", amount1: "268,750", amount2: "218,750" },
-      { id: "1", year1: "Year 2", amount1: "218,750", amount2: "218,750" },
-      { id: "2", year1: "Year 3", amount1: "218,750", amount2: "218,750" },
-      { id: "3", year1: "Year 4", amount1: "218,750", amount2: "218,750" },
+      {
+        id: "0",
+        year1: "Year 1",
+        amount1: "268,750",
+        amount2: "218,750",
+        total: "487,500",
+      },
+      {
+        id: "1",
+        year1: "Year 2",
+        amount1: "218,750",
+        amount2: "218,750",
+        total: "437,500",
+      },
+      {
+        id: "2",
+        year1: "Year 3",
+        amount1: "218,750",
+        amount2: "218,750",
+        total: "437,500",
+      },
+      {
+        id: "3",
+        year1: "Year 4",
+        amount1: "218,750",
+        amount2: "218,750",
+        total: "437,500",
+      },
+      {
+        id: "4",
+        year1: "Total",
+        amount1: "925,000",
+        amount2: "875,000",
+        total: "1,800,000",
+      },
     ],
     rightSideText: [
       {
@@ -376,6 +407,10 @@ export const homeScreenData = {
       {
         id: 3,
         text: "Hostel and mess services are available on the ADYPU campus, subject to availability and offered on a first-come, first-served basis.",
+      },
+      {
+        id: 4,
+        text: "TODO TODO TODO on the first-served basis.Hostel and mess services are available on the first-served basis.",
       },
     ],
   },
