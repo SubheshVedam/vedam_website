@@ -17,7 +17,7 @@ const FOOTER_LINKS = [
     title: "Contact",
     links: [
       { label: "connect@vedam.org", href:"mailto:connect@vedam.org"  },
-      { label: "+91 9212XXXX69", href: "tel:100" },
+      { label: "+91 92010 10176", href: "tel:9201010176" },
     ],
   },
 ];
