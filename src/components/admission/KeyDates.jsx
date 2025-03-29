@@ -38,9 +38,14 @@ export const KeyDates = () => {
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
             backgroundColor: "rgba(251, 127, 5, 0.3)",
-            justifyContent: { xs: "space-evenly", md: "" },
-            // gap: { xs: "2.5rem", sm: 0 },
+            gap: { xs: "2.5rem", sm: 0 },
             borderBottomLeftRadius: { xs: "16px", md: 0 },
+            "& > *:nth-last-of-type(3)": {
+              marginBottom: { xs: "1rem", md: 0 }, // Applies only to the second last child
+            },
+            "& > *:nth-last-of-type(2)": {
+              marginBottom: { xs: "0.5rem", md: 0 }, // Applies only to the second last child
+            },
           }}
         >
           {admissionScreenData.keyDates.firstArray.map((item, index) => (
