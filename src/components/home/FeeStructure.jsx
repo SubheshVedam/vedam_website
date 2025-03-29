@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import { homeScreenData } from "@/constants/data";
 import Image from "next/image";
+import Link from "next/link";
 
 const SingleTableCell = ({ text, isHead = false, isFirst = false }) => {
   return (
@@ -31,7 +32,7 @@ const SingleTableCell = ({ text, isHead = false, isFirst = false }) => {
   );
 };
 
-const SingleCountText = ({ count, text }) => {
+const SingleCountText = ({ count, text, isHref }) => {
   return (
     <Box
       sx={{
@@ -74,8 +75,24 @@ const SingleCountText = ({ count, text }) => {
             lineHeight: "150%",
           }}
         >
-          {text}
+          {text}       {isHref && (
+          <Link
+            style={{
+              color: "rgba(30, 30, 30, 1)",
+              fontSize: "12px",
+              fontFamily: "Inter",
+              lineHeight: "150%",
+            }}
+            href={
+              "https://drive.google.com/file/d/1ZH3snXOpdKxTdClmm-OWHo4bbc8zk61-/view?usp=drive_link"
+            }
+            target="_blank"
+          >
+            here
+          </Link>
+        )}.
         </Typography>
+ 
       </Box>
     </Box>
   );
@@ -192,14 +209,30 @@ export const FeeStructure = () => {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {homeScreenData.FeeStructure.leftSideYearTable.map((row) => (
-                  <TableRow key={row.id}>
-                    <SingleTableCell text={row.year1} isFirst={true} />
-                    <SingleTableCell text={row.amount1} />
-                    <SingleTableCell text={row.amount2} />
-                    <SingleTableCell text={row.total} />
-                  </TableRow>
-                ))}
+                {homeScreenData.FeeStructure.leftSideYearTable.map(
+                  (row, idx) => (
+                    <TableRow key={row.id}>
+                      <SingleTableCell isFirst={true} text={row.year1} />
+                      <SingleTableCell
+                        text={row.amount1}
+                        isFirst={
+                          idx ==
+                          homeScreenData.FeeStructure.leftSideYearTable.length -
+                            1
+                        }
+                      />
+                      <SingleTableCell
+                        text={row.amount2}
+                        isFirst={
+                          idx ==
+                          homeScreenData.FeeStructure.leftSideYearTable.length -
+                            1
+                        }
+                      />
+                      <SingleTableCell text={row.total} />
+                    </TableRow>
+                  )
+                )}
               </TableBody>
             </Table>
           </Box>
@@ -215,7 +248,12 @@ export const FeeStructure = () => {
             }}
           >
             {homeScreenData.FeeStructure.rightSideText.map((item) => (
-              <SingleCountText key={item.id} count={item.id} text={item.text} />
+              <SingleCountText
+                key={item.id}
+                count={item.id}
+                text={item.text}
+                isHref={item.id === 4}
+              />
             ))}
           </Box>
         </Box>

@@ -438,7 +438,7 @@ export const homeScreenData = {
       },
       {
         id: 4,
-        text: "Download the complete details of hostel rooms and charges: ",
+        text: "Download the complete details of hostel rooms and charges ",
       },
     ],
   },
