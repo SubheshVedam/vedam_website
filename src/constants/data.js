@@ -893,27 +893,27 @@ export const faqsScreenData = [
       {
         id: 0,
         title: "What is the admission and Selection process?",
-        description: "The B.Tech program is a 4-year full-time course.",
+        description: "Visit vedam.org/admission for detailed admission and selection process",
       },
       {
         id: 1,
         title: "How Many attempts can I give?",
-        description: "We currently offer specialization in Computer Science and AI.",
+        description: "At Vedam School of Technology, candidates can attempt the Vedam Scholastic Aptitude Test (VSAT) up to three times to improve their scores.",
       },
       {
         id: 2,
         title: "Is VSAT an online exam? Is it proctored?",
-        description: "We currently offer specialization in Computer Science and AI.",
+        description: "Yes, VSAT (Vedam Scholastic Aptitude Test) is an online exam that can be taken from the comfort of your home. Yes, It is a proctored exam.",
       },
       {
         id: 3,
         title: "Can I take VSAT from my Phone?",
-        description: "We currently offer specialization in Computer Science and AI.",
+        description: "No, you cannot take the VSAT (Vedam Scholastic Aptitude Test) on a phone. VSAT is a proctored online exam that requires: A laptop or desktop with a webcam and microphone",
       },
       {
         id: 4,
         title: "If I clear VSAT, Personal Interview is going to be online or offline?",
-        description: "We currently offer specialization in Computer Science and AI.",
+        description: "If you clear VSAT, the Personal Interview (PI) will be conducted in online mode over Gmeet or Zoom",
       },
       // Add more questions as needed
     ],
