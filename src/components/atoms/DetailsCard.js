@@ -13,7 +13,7 @@ export default function DetailsCard({
   description,
   bgImage,
   isFeatured,
-  height = 300,
+  height = 320,
 }) {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
