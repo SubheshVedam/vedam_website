@@ -162,6 +162,8 @@ body {
   position: relative;
   width: 14px;
   height: 14px;
+  min-width: 14px;
+  min-height: 14px;
   cursor: pointer;
 
   &.active {

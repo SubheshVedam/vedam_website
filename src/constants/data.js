@@ -865,22 +865,22 @@ export const faqsScreenData = [
     title: "Eligibility",
     questions: [
       {
-        id: 0,
+        id: 10,
         title: "What is the eligibility criteria?",
         description: "All the students who appeared for 12th exam in 2024, 2025 with PCM (>50% in PCM & 12th boards Overall) are eligible.",
       },
       {
-        id: 1,
+        id: 11,
         title: "My Board results are not out yet, Can I still Apply to VST?",
         description: "Yes, you can still apply to Vedam School of Technology (VST) even if your board exam results are not out yet. If you meet the eligibility criteria after your results are declared, your admission will be confirmed.",
       },
       {
-        id: 2,
+        id: 12,
         title: "I am in the first year of my Btech, Am i eligible to join this program?",
         description: "Yes, if you are currently in the first year of your B.Tech program, you are eligible to join the Vedam School of Technology program. However, please note that you would need to take admission in the first Semester or Year 1 of the four-year Undergraduate program as the credits earned in your current B.Tech program may not be transferable to the Vedam school of technology.",
       },
       {
-        id: 3,
+        id: 13,
         title: "I did my 12th in 2023 or before, Am I eligible to apply?",
         description: "To enroll at Vedam School of Technology, you must meet specific eligibility criteria. You should have completed your 12th grade education in 2024 or 2025 with more than 50% Marks in PCM and 12th board overall and be under the age of 20 at the time of admission. If you meet these requirements, we invite you to join us and embark on an exciting journey toward a future in technology.",
       },
@@ -891,31 +891,30 @@ export const faqsScreenData = [
     title: "Selection Process",
     questions: [
       {
-        id: 0,
+        id: 20,
         title: "What is the admission and Selection process?",
         description: "Visit vedam.org/admission for detailed admission and selection process",
       },
       {
-        id: 1,
+        id: 21,
         title: "How Many attempts can I give?",
         description: "At Vedam School of Technology, candidates can attempt the Vedam Scholastic Aptitude Test (VSAT) up to three times to improve their scores.",
       },
       {
-        id: 2,
+        id: 22,
         title: "Is VSAT an online exam? Is it proctored?",
         description: "Yes, VSAT (Vedam Scholastic Aptitude Test) is an online exam that can be taken from the comfort of your home. Yes, It is a proctored exam.",
       },
       {
-        id: 3,
+        id: 23,
         title: "Can I take VSAT from my Phone?",
         description: "No, you cannot take the VSAT (Vedam Scholastic Aptitude Test) on a phone. VSAT is a proctored online exam that requires: A laptop or desktop with a webcam and microphone",
       },
       {
-        id: 4,
+        id: 24,
         title: "If I clear VSAT, Personal Interview is going to be online or offline?",
         description: "If you clear VSAT, the Personal Interview (PI) will be conducted in online mode over Gmeet or Zoom",
       },
-      // Add more questions as needed
     ],
   },
 
@@ -923,26 +922,25 @@ export const faqsScreenData = [
     title: "Program",
     questions: [
       {
-        id: 0,
+        id: 30,
         title: "What curriculum will all be covered in this Undergrad program?",
         description: "For detailed curriculum visit https://vedam.org/home",
       },
       {
-        id: 1,
+        id: 31,
         title: "Who will be the faculty of the course?",
         description: "At Vedam School of Technology, the faculty comprises industry experts, renowned academicians, and experienced engineers from top tech companies.",
       },
       {
-        id: 2,
+        id: 32,
         title: "What happens if I dont get Internship in 3rd and 4th Year?",
         description: "We currently offer specialization in Computer Science and AI.",
       },
       {
-        id: 3,
+        id: 33,
         title: "What happens if I dont get a Job after 4 years at Vedam?",
         description: "We currently offer specialization in Computer Science and AI.",
       },
-      // Add more questions as needed
     ],
   },
 
@@ -950,29 +948,27 @@ export const faqsScreenData = [
     title: "Scholarship and Financing",
     questions: [
       {
-        id: 0,
+        id: 40,
         title: "What is the fees structure of the program?",
         description: "The B.Tech program is a 4-year full-time course.",
       },
       {
-        id: 1,
+        id: 41,
         title: "What financing options are available for paying the college fees?",
         description: "We currently offer specialization in Computer Science and AI.",
       },
       {
-        id: 2,
+        id: 42,
         title: "What kind of scholarships I can get?",
         description: "We currently offer specialization in Computer Science and AI.",
       },
       {
-        id: 3,
+        id: 43,
         title: "Are the Scholarship applicable on the tuition fees or the entire fees?",
         description: "We currently offer specialization in Computer Science and AI.",
       },
-      // Add more questions as needed
     ],
   },
-  // Add more FAQ categories as needed
 ];
 
 export const teamVedamScreenData = {

@@ -54,7 +54,7 @@ const Faqs = () => {
               }}
             >
               {faqItem.questions.map((item) => (
-                <Fragment key={`faq-item-${item.id}`}>
+                <Fragment key={`faq-item-${item.id}-${item.title}`}>
                   <Button
                     color="inherit"
                     sx={{
