@@ -46,7 +46,7 @@ export const expertsData = [
   {
     imageUrl: "/img/experts/first.webp",
     name: "Ramachandra Nalam",
-    logo: "/next.svg",
+    logo: "/img/companies/meta.webp",
     designation: "Data and ML Engineer",
     info: "Masters from University of Buffalo, Ex Amazon",
     rating: 3.7,
@@ -55,7 +55,7 @@ export const expertsData = [
   {
     imageUrl: "/img/experts/second.webp",
     name: "Gaurav Dawra",
-    logo: "/next.svg",
+    logo: "/img/companies/microsoft-logo.png",
     designation: "Software Engineer",
     info: "ICPC World Finalist 2022-23, 6 Star on Code Chef",
     rating: 4.2,
@@ -64,7 +64,7 @@ export const expertsData = [
   {
     imageUrl: "/img/experts/third.webp",
     name: "Bradford Tuckfield",
-    logo: "/next.svg",
+    logo: "/img/companies/wharton_logo.webp",
     designation: "PhD",
     info: "Founder, Author and Instructor ; Ex American Express and Accenture",
     rating: 4.9,
@@ -73,7 +73,7 @@ export const expertsData = [
   {
     imageUrl: "/img/experts/fourth.webp",
     name: "Amanpreet Singh",
-    logo: "/next.svg",
+    logo: "/img/companies/google.webp",
     designation: "Software Engineer",
     info: "NSIT, Ex Mentor Graphics & OYO",
     rating: 4.9,
@@ -83,7 +83,7 @@ export const expertsData = [
   {
     imageUrl: "/img/experts/fifth.webp",
     name: "M Senthurpandian",
-    logo: "/next.svg",
+    logo: "/img/companies/amazon.webp",
     designation: "Senior Software Engineer",
     info: "13+ Years of Experience, Amazon Interview Panel Member",
     rating: 4.9,
@@ -92,7 +92,7 @@ export const expertsData = [
   {
     imageUrl: "/img/experts/seventh.webp",
     name: "Ekta Shah",
-    logo: "/next.svg",
+    logo: "/img/companies/msci_logo.png",
     designation: "Data Scientist ",
     info: "Board Member-Board of Studies at NMIMS, Visiting Faculty at MU",
     rating: 4.9,
@@ -101,7 +101,7 @@ export const expertsData = [
   {
     imageUrl: "/img/experts/eighth.webp",
     name: "Basant Rawat",
-    logo: "/next.svg",
+    logo: "/img/companies/paytm.webp",
     designation: "SDE 2",
     info: "Mentored over 20,000 Minutes, Ex Hexaware",
     rating: 4.9,
@@ -110,7 +110,7 @@ export const expertsData = [
   {
     imageUrl: "/img/experts/ninth.webp",
     name: "Nishchay Agrawal",
-    logo: "/next.svg",
+    logo: "/img/companies/walmart.webp",
     designation: "Data Scientist",
     info: "University Gold Medalist, Ex Meesho",
     rating: 4.9,
@@ -509,7 +509,8 @@ export const homeScreenData = {
   },
   year2: {
     title: "Full Stack Mastery",
-    subtitle: "You can learn everything needed to build a fully functional web application and launch it successfully.",
+    subtitle:
+      "You can learn everything needed to build a fully functional web application and launch it successfully.",
     secondTitle: "Skills & Technologies",
     secondArray: [
       "Advanced DSA",
@@ -849,13 +850,15 @@ export const faqsScreenData = [
       },
       {
         id: 2,
-        title: "Will i be able to pursue Further education or take competitive exams later?",
+        title:
+          "Will i be able to pursue Further education or take competitive exams later?",
         description:
           "Yes, students will be eligible to pursue a master's degree. The 4-year UG Programme in CS and AI will ensure our students get access to the latest curriculum, hands-on experience, Internship to achieve success in Computer Science within India and abroad.",
       },
       {
         id: 3,
-        title: "What kind of degree am I going to get after completing 4 years at Vedam?",
+        title:
+          "What kind of degree am I going to get after completing 4 years at Vedam?",
         description:
           "After completing four years at Vedam School of Technology, you will receive a Bachelor of Technology (B.Tech) in Computer Science and Artificial Intelligence from our partner university and A Industry recognized certification from Vedam school of technology.",
       },
@@ -867,22 +870,27 @@ export const faqsScreenData = [
       {
         id: 10,
         title: "What is the eligibility criteria?",
-        description: "All the students who appeared for 12th exam in 2024, 2025 with PCM (>50% in PCM & 12th boards Overall) are eligible.",
+        description:
+          "All the students who appeared for 12th exam in 2024, 2025 with PCM (>50% in PCM & 12th boards Overall) are eligible.",
       },
       {
         id: 11,
         title: "My Board results are not out yet, Can I still Apply to VST?",
-        description: "Yes, you can still apply to Vedam School of Technology (VST) even if your board exam results are not out yet. If you meet the eligibility criteria after your results are declared, your admission will be confirmed.",
+        description:
+          "Yes, you can still apply to Vedam School of Technology (VST) even if your board exam results are not out yet. If you meet the eligibility criteria after your results are declared, your admission will be confirmed.",
       },
       {
         id: 12,
-        title: "I am in the first year of my Btech, Am i eligible to join this program?",
-        description: "Yes, if you are currently in the first year of your B.Tech program, you are eligible to join the Vedam School of Technology program. However, please note that you would need to take admission in the first Semester or Year 1 of the four-year Undergraduate program as the credits earned in your current B.Tech program may not be transferable to the Vedam school of technology.",
+        title:
+          "I am in the first year of my Btech, Am i eligible to join this program?",
+        description:
+          "Yes, if you are currently in the first year of your B.Tech program, you are eligible to join the Vedam School of Technology program. However, please note that you would need to take admission in the first Semester or Year 1 of the four-year Undergraduate program as the credits earned in your current B.Tech program may not be transferable to the Vedam school of technology.",
       },
       {
         id: 13,
         title: "I did my 12th in 2023 or before, Am I eligible to apply?",
-        description: "To enroll at Vedam School of Technology, you must meet specific eligibility criteria. You should have completed your 12th grade education in 2024 or 2025 with more than 50% Marks in PCM and 12th board overall and be under the age of 20 at the time of admission. If you meet these requirements, we invite you to join us and embark on an exciting journey toward a future in technology.",
+        description:
+          "To enroll at Vedam School of Technology, you must meet specific eligibility criteria. You should have completed your 12th grade education in 2024 or 2025 with more than 50% Marks in PCM and 12th board overall and be under the age of 20 at the time of admission. If you meet these requirements, we invite you to join us and embark on an exciting journey toward a future in technology.",
       },
       // Add more questions as needed
     ],
@@ -893,27 +901,33 @@ export const faqsScreenData = [
       {
         id: 20,
         title: "What is the admission and Selection process?",
-        description: "Visit vedam.org/admission for detailed admission and selection process",
+        description:
+          "Visit vedam.org/admission for detailed admission and selection process",
       },
       {
         id: 21,
         title: "How Many attempts can I give?",
-        description: "At Vedam School of Technology, candidates can attempt the Vedam Scholastic Aptitude Test (VSAT) up to three times to improve their scores.",
+        description:
+          "At Vedam School of Technology, candidates can attempt the Vedam Scholastic Aptitude Test (VSAT) up to three times to improve their scores.",
       },
       {
         id: 22,
         title: "Is VSAT an online exam? Is it proctored?",
-        description: "Yes, VSAT (Vedam Scholastic Aptitude Test) is an online exam that can be taken from the comfort of your home. Yes, It is a proctored exam.",
+        description:
+          "Yes, VSAT (Vedam Scholastic Aptitude Test) is an online exam that can be taken from the comfort of your home. Yes, It is a proctored exam.",
       },
       {
         id: 23,
         title: "Can I take VSAT from my Phone?",
-        description: "No, you cannot take the VSAT (Vedam Scholastic Aptitude Test) on a phone. VSAT is a proctored online exam that requires: A laptop or desktop with a webcam and microphone",
+        description:
+          "No, you cannot take the VSAT (Vedam Scholastic Aptitude Test) on a phone. VSAT is a proctored online exam that requires: A laptop or desktop with a webcam and microphone",
       },
       {
         id: 24,
-        title: "If I clear VSAT, Personal Interview is going to be online or offline?",
-        description: "If you clear VSAT, the Personal Interview (PI) will be conducted in online mode over Gmeet or Zoom",
+        title:
+          "If I clear VSAT, Personal Interview is going to be online or offline?",
+        description:
+          "If you clear VSAT, the Personal Interview (PI) will be conducted in online mode over Gmeet or Zoom",
       },
     ],
   },
@@ -929,17 +943,20 @@ export const faqsScreenData = [
       {
         id: 31,
         title: "Who will be the faculty of the course?",
-        description: "At Vedam School of Technology, the faculty comprises industry experts, renowned academicians, and experienced engineers from top tech companies.",
+        description:
+          "At Vedam School of Technology, the faculty comprises industry experts, renowned academicians, and experienced engineers from top tech companies.",
       },
       {
         id: 32,
         title: "What happens if I dont get Internship in 3rd and 4th Year?",
-        description: "We currently offer specialization in Computer Science and AI.",
+        description:
+          "We currently offer specialization in Computer Science and AI.",
       },
       {
         id: 33,
         title: "What happens if I dont get a Job after 4 years at Vedam?",
-        description: "We currently offer specialization in Computer Science and AI.",
+        description:
+          "We currently offer specialization in Computer Science and AI.",
       },
     ],
   },
@@ -954,18 +971,23 @@ export const faqsScreenData = [
       },
       {
         id: 41,
-        title: "What financing options are available for paying the college fees?",
-        description: "We currently offer specialization in Computer Science and AI.",
+        title:
+          "What financing options are available for paying the college fees?",
+        description:
+          "We currently offer specialization in Computer Science and AI.",
       },
       {
         id: 42,
         title: "What kind of scholarships I can get?",
-        description: "We currently offer specialization in Computer Science and AI.",
+        description:
+          "We currently offer specialization in Computer Science and AI.",
       },
       {
         id: 43,
-        title: "Are the Scholarship applicable on the tuition fees or the entire fees?",
-        description: "We currently offer specialization in Computer Science and AI.",
+        title:
+          "Are the Scholarship applicable on the tuition fees or the entire fees?",
+        description:
+          "We currently offer specialization in Computer Science and AI.",
       },
     ],
   },
