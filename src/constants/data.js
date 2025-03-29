@@ -222,27 +222,27 @@ export const homeScreenData = {
       },
       {
         id: 11,
-        imageUrl: "/img/companies/Intuit_Logo.png",
+        imageUrl: "/img/companies/Amex_Logo.png",
       },
       {
         id: 12,
-        imageUrl: "/img/companies/Intuit_Logo.png",
+        imageUrl: "/img/companies/phonepe.webp",
       },
       {
         id: 13,
-        imageUrl: "/img/companies/Intuit_Logo.png",
+        imageUrl: "/img/companies/goldman-logo.png",
       },
       {
         id: 14,
-        imageUrl: "/img/companies/Intuit_Logo.png",
+        imageUrl: "/img/companies/Sprinklr_Logo.png",
       },
       {
         id: 15,
-        imageUrl: "/img/companies/Intuit_Logo.png",
+        imageUrl: "/img/companies/Bosch_Logo.png",
       },
       {
         id: 16,
-        imageUrl: "/img/companies/Intuit_Logo.png",
+        imageUrl: "/img/companies/atlassian_Logo.png",
       },
     ],
     bottomText:
