@@ -44,8 +44,7 @@ export const testimonialData = [
 
 export const expertsData = [
   {
-    imageUrl:
-      "/img/experts/first.webp",
+    imageUrl: "/img/experts/first.webp",
     name: "Ramachandra Nalam",
     logo: "/next.svg",
     designation: "Data and ML Engineer",
@@ -54,8 +53,7 @@ export const expertsData = [
     linkedIn: "https://www.linkedin.com/in/ramachandra-nalam/",
   },
   {
-    imageUrl:
-    "/img/experts/second.webp",
+    imageUrl: "/img/experts/second.webp",
     name: "Gaurav Dawra",
     logo: "/next.svg",
     designation: "Software Engineer",
@@ -64,8 +62,7 @@ export const expertsData = [
     linkedIn: "https://www.linkedin.com/in/gaurav-dawra-a2a935200/",
   },
   {
-    imageUrl:
-    "/img/experts/third.webp",
+    imageUrl: "/img/experts/third.webp",
     name: "Bradford Tuckfield",
     logo: "/next.svg",
     designation: "PhD",
@@ -74,18 +71,17 @@ export const expertsData = [
     linkedIn: "https://www.linkedin.com/in/bradford-tuckfield-80565b25/",
   },
   {
-    imageUrl:
-    "/img/experts/fourth.webp",
+    imageUrl: "/img/experts/fourth.webp",
     name: "Amanpreet Singh",
     logo: "/next.svg",
     designation: "Software Engineer",
     info: "NSIT, Ex Mentor Graphics & OYO",
     rating: 4.9,
-    linkedIn: "https://www.linkedin.com/in/amanpreet-singh-b79598a3/?originalSubdomain=in",
+    linkedIn:
+      "https://www.linkedin.com/in/amanpreet-singh-b79598a3/?originalSubdomain=in",
   },
   {
-    imageUrl:
-    "/img/experts/fifth.webp",
+    imageUrl: "/img/experts/fifth.webp",
     name: "M Senthurpandian",
     logo: "/next.svg",
     designation: "Senior Software Engineer",
@@ -94,8 +90,7 @@ export const expertsData = [
     linkedIn: "https://www.linkedin.com/in/manivannan21/",
   },
   {
-    imageUrl:
-    "/img/experts/seventh.webp",
+    imageUrl: "/img/experts/seventh.webp",
     name: "Ekta Shah",
     logo: "/next.svg",
     designation: "Data Scientist ",
@@ -104,8 +99,7 @@ export const expertsData = [
     linkedIn: "https://www.linkedin.com/in/ekta-shah30/",
   },
   {
-    imageUrl:
-    "/img/experts/eighth.webp",
+    imageUrl: "/img/experts/eighth.webp",
     name: "Basant Rawat",
     logo: "/next.svg",
     designation: "SDE 2",
@@ -114,8 +108,7 @@ export const expertsData = [
     linkedIn: "https://www.linkedin.com/in/basant-rawat/",
   },
   {
-    imageUrl:
-    "/img/experts/ninth.webp",
+    imageUrl: "/img/experts/ninth.webp",
     name: "Nishchay Agrawal",
     logo: "/next.svg",
     designation: "Data Scientist",
@@ -130,7 +123,7 @@ export const detailsData = [
     bgImage: "/img/whyvedam/code_day1_m.jpeg",
     title: "Code From Day 1",
     description:
-    "From Day 1, you'll be writing real code, building projects, and solving industry-relevant problems.",
+      "From Day 1, you'll be writing real code, building projects, and solving industry-relevant problems.",
   },
   {
     image: "/img/whyvedam/second.webp",
@@ -292,7 +285,6 @@ export const homeScreenData = {
       { id: 5, img: "/img/investors/saama.webp" },
       { id: 6, img: "/img/investors/westbridge.webp" },
       { id: 7, img: "/img/investors/prime.webp" },
-
     ],
   },
   whyVedam: {
@@ -311,7 +303,6 @@ export const homeScreenData = {
         { id: 4, text: "Internships" },
         { id: 5, text: "Placements" },
         { id: 6, text: "Entrepreneurship" },
-      
       ],
     },
     middleSideData: {
@@ -394,12 +385,43 @@ export const homeScreenData = {
   FeeStructure: {
     subtitle: "Fee Structure",
     headerLeftTitle: "Semester wise break-up of course fee",
-    headerRightLocation: `ADY, Pune`,
+    headerRightLocation: `ADYPU, Pune`,
     leftSideYearTable: [
-      { id: "0", year1: "Year 1", amount1: "268,750", amount2: "218,750" },
-      { id: "1", year1: "Year 2", amount1: "218,750", amount2: "218,750" },
-      { id: "2", year1: "Year 3", amount1: "218,750", amount2: "218,750" },
-      { id: "3", year1: "Year 4", amount1: "218,750", amount2: "218,750" },
+      {
+        id: "0",
+        year1: "Year 1",
+        amount1: "268,750",
+        amount2: "218,750",
+        total: "487,500",
+      },
+      {
+        id: "1",
+        year1: "Year 2",
+        amount1: "218,750",
+        amount2: "218,750",
+        total: "437,500",
+      },
+      {
+        id: "2",
+        year1: "Year 3",
+        amount1: "218,750",
+        amount2: "218,750",
+        total: "437,500",
+      },
+      {
+        id: "3",
+        year1: "Year 4",
+        amount1: "218,750",
+        amount2: "218,750",
+        total: "437,500",
+      },
+      {
+        id: "4",
+        year1: "Total",
+        amount1: "",
+        amount2: "",
+        total: "1,800,000",
+      },
     ],
     rightSideText: [
       {
@@ -408,11 +430,15 @@ export const homeScreenData = {
       },
       {
         id: 2,
-        text: "The total fee mentioned above includes both the tuition fee and the upskilling fee.",
+        text: "The total fee mentioned in the table is the Tution Fees, This is exclusive of Hostel & Mess fees.",
       },
       {
         id: 3,
         text: "Hostel and mess services are available on the ADYPU campus, subject to availability and offered on a first-come, first-served basis.",
+      },
+      {
+        id: 4,
+        text: "Download the complete details of hostel rooms and charges: ",
       },
     ],
   },
@@ -483,100 +509,98 @@ export const homeScreenData = {
   },
   year2: {
     title: "Full Stack Mastery",
-    subtitle: "Learn the basics for AI and Programming by building from year 1",
+    subtitle: "You can learn everything needed to build a fully functional web application and launch it successfully.",
     secondTitle: "Skills & Technologies",
     secondArray: [
-      "HTML2",
-      "CSS2",
-      "Javascrip2t",
+      "Advanced DSA",
+      "Full Stack",
+      "System Design",
       "Python",
-      "DSA",
-      "Maths for CS",
-      "Probability and Statistics",
+      "ML",
+      "DBMS",
+      "Operating System",
       "Soft skills",
     ],
     Outcomes: "Outcomes",
     outcomeArray: [
       {
         id: 0,
-        text: "Building Hotstar like Feed with Search and Categories",
-        icon: "/img/outcomes/year1.jpg",
+        text: "Develop a Job Portal like LinkedIn",
+        icon: "/img/outcomes/year2_1.jpg",
       },
       {
         id: 1,
-        text: "Build a Portfolio Website like GitHub Pages",
-        icon: "/img/outcomes/year1_2.jpg",
+        text: "Build a Real-Time Chat platform like WhatsApp",
+        icon: "/img/outcomes/year2_2.jpg",
       },
       {
         id: 2,
-        text: "Develop an Online Resume Builder like Canva",
-        icon: "/img/outcomes/year1_3.jpg",
+        text: "Participate in SIH, GSoC, & ICPC",
+        icon: "/img/outcomes/year2_3.jpg",
       },
     ],
   },
   year3: {
-    title: "Programming 333Foundation",
-    subtitle: "Learn the basics for AI and Programming by building from year 1",
+    title: "AI Expertise & Industry Internship",
+    subtitle: "Build AI based applications ; Intern with top tech companies",
     secondTitle: "Skills & Technologies",
     secondArray: [
-      "HTML3",
-      "CSS3",
-      "Javascript",
-      "Python",
-      "DSA",
-      "Maths for CS",
-      "Probability and Statistics",
-      "Soft skills",
+      "Compiler Design",
+      "Computer Networks",
+      "Deep Learning",
+      "Foundation in Blockchain",
+      "Foundation in Robotics",
+      "Foundation in DevOps",
+      "Entrepreneurship skills",
     ],
     Outcomes: "Outcomes",
     outcomeArray: [
       {
         id: 0,
-        text: "Building Hotstar like Feed with Search and Categories",
-        icon: "/img/outcomes/year1.jpg",
+        text: "Build a Movie Recommendation System like Netflix",
+        icon: "/img/outcomes/year3_1.jpg",
       },
       {
         id: 1,
-        text: "Build a Portfolio Website like GitHub Pages",
-        icon: "/img/outcomes/year1_2.jpg",
+        text: "Create a Google Docs-style documentation Platform",
+        icon: "/img/outcomes/year3_2.jpg",
       },
       {
         id: 2,
-        text: "Develop an Online Resume Builder like Canva",
-        icon: "/img/outcomes/year1_3.jpg",
+        text: "Go for Industry Internship- Formal Experience",
+        icon: "/img/outcomes/year3_3.jpg",
       },
     ],
   },
   year4: {
-    title: "Programming Foundation44",
-    subtitle: "Learn the basics for AI 4and Programming by building from year 1",
+    title: "Jobs of 2029 - Specialised Tracks",
+    subtitle:
+      "Master your journey with Specialisation tracks that will be in-demand jobs of the time!",
     secondTitle: "Skills & Technologies",
     secondArray: [
-      "HTML",
-      "CSS",
-      "Javascript",
-      "Python",
-      "DSA",
-      "Maths for CS",
-      "Probability and Statistics",
-      "Soft skills",
+      "Advanced Robotics",
+      "Advanced Blockchain",
+      "NLP",
+      "Computer Architechture",
+      "Advanced DevOps",
+      "AI Ethics",
     ],
     Outcomes: "Outcomes",
     outcomeArray: [
       {
         id: 0,
-        text: "Building Hotstar like Feed with Search and Categories",
-        icon: "/img/outcomes/year1.jpg",
+        text: "Build a Cryptocurrency Wallet like Coinbase",
+        icon: "/img/outcomes/year4_1.jpg",
       },
       {
         id: 1,
-        text: "Build a Portfolio Website like GitHub Pages",
-        icon: "/img/outcomes/year1_2.jpg",
+        text: "Build an autonomous robot that detects and avoids obstacles.",
+        icon: "/img/outcomes/year4_2.jpg",
       },
       {
         id: 2,
-        text: "Develop an Online Resume Builder like Canva",
-        icon: "/img/outcomes/year1_3.jpg",
+        text: "Prepare for Placements in top Tech Companies",
+        icon: "/img/outcomes/year4_3.jpg",
       },
     ],
   },
@@ -609,11 +633,11 @@ export const admissionScreenData = {
       "Final Offer",
     ],
     secondArray: [
-      "21 March 2025",
-      "20 March 2025",
+      "18 April 2025",
+      "17 April 2025",
       "Immediatly After Exam",
       "Within 10 Days of the Exam",
-      "To be Announced",
+      "Within 20 Days of the Exam, If selected",
     ],
   },
   admissionProcess: {
@@ -640,7 +664,7 @@ export const admissionScreenData = {
         step: "Step 2",
         title: "Take the VSAT",
         subtitle:
-          "It is an entrance test conducted online. Early intake round on 21st March, 2025.",
+          "It is an entrance test conducted online. April intake round on 18th April, 2025.",
         showButton: false,
       },
       {
@@ -673,7 +697,7 @@ export const admissionScreenData = {
   },
   facilityAndAmenities: {
     subtitle: "Facilities & Amenities",
-    image: "/img/audi.webp",
+    image: "/img/Auditorium_ADYPU.jpg",
     imageTitle: "Auditorium and Amphitheater",
     subtitleDescription:
       "Premier auditorium and amphitheatre are ideal for events and performances.",
@@ -695,18 +719,21 @@ export const admissionScreenData = {
     data: [
       {
         image: "/img/scholarship/first.webp",
+        bgImage: "/img/scholarship/img1.jpeg",
         title: "Merit Based Scholarship",
         description:
           "Recognizes academic excellence, unique talent and leadership potential.",
       },
       {
         image: "/img/scholarship/second.webp",
+        bgImage: "/img/scholarship/img2.jpeg",
         title: "Women in Tech Scholarship",
         description:
           "Empowering and supporting women in tech for growth and success.",
       },
       {
         image: "/img/scholarship/third.webp",
+        bgImage: "/img/scholarship/img3.jpeg",
         title: "Need Based Scholarship",
         description:
           "Focused on specific fields of study or demonstrating financial needs.",
@@ -731,29 +758,36 @@ export const lifeAtVedam = {
     {
       leftSideTitle: "Clubs at VST",
       description:
-        "Explore VST Clubs! From coding to robotics, esports to innovation—connect, compete, learn, and grow with passionate like-minded individuals",
-      rightSideText: "Robotics Club",
+        "Join our Cultural Club to celebrate diversity through music, dance, drama, and festivals. Engage in events that bring creativity to life!",
+      rightSideText: "Cultural Club",
       rightSideText2: "Open Source club",
     },
     {
       leftSideTitle: "Clubs at VST",
       description:
-        "Join our Esports community! Compete in tournaments, improve your skills, and connect with fellow gaming enthusiasts",
-      rightSideText: "Esports Club",
+        "Stay active and competitive in our Sports Club! Participate in various sports, tournaments, and fitness activities to enhance teamwork and skills.",
+      rightSideText: "Sports Club",
       rightSideText2: "Gaming Hub",
     },
     {
       leftSideTitle: "Clubs at VST",
       description:
-        "Dive into the world of artificial intelligence and machine learning with hands-on projects and workshops",
-      rightSideText: "AI & ML Club",
+        "Join our ESports Club and compete in gaming tournaments, enhance strategic thinking, and connect with passionate gamers.",
+      rightSideText: "ESports Club",
       rightSideText2: "Data Science",
     },
     {
       leftSideTitle: "Clubs at VST",
       description:
-        "Express your creativity through photography, videography, and digital art with our media club",
-      rightSideText: "Media Club",
+        "Contribute to open-source projects, collaborate with developers, and gain real-world coding experience in our Open Source Club.",
+      rightSideText: "Open Source Club",
+      rightSideText2: "Creative Hub",
+    },
+    {
+      leftSideTitle: "Clubs at VST",
+      description:
+        "Sharpen your problem-solving skills with our Competitive Coding Club! Participate in coding challenges, and algorithmic competitions.",
+      rightSideText: "Competitive Coding Club",
       rightSideText2: "Creative Hub",
     },
   ],
@@ -832,7 +866,7 @@ export const teamVedamScreenData = {
       imageUrl: "/img/teamVedam/ashish_munjal.webp",
       designation: "Co-Founder",
       description:
-        "With a great appetite for startups, Ashish is currently the Co-Founder and CEO of Sunstone and Vedam. Earlier, he was the Co-Founder at Crownit where he headed Consumer and Business growth. An MBA from IMT Ghaziabad and a certified CFA, Ashish has diverse experience in various roles with Bank of America and handled Sales and Operations at Knowlarity.",
+        "With a great appetite for startups, Ashish is currently the Co-Founder at Vedam. Earlier, he was the Co-Founder at Crownit where he headed Consumer and Business growth. An MBA from IMT Ghaziabad and a certified CFA, Ashish has diverse experience in various roles with Bank of America and handled Sales and Operations at Knowlarity.",
     },
     {
       id: 1,
@@ -840,7 +874,7 @@ export const teamVedamScreenData = {
       imageUrl: "/img/teamVedam/pitush_nangru.webp",
       designation: "Co-Founder",
       description:
-        "With a passion for startups, Piyush is currently the Co-Founder and COO at Sunstone and Vedam. Piyush joined Crownit as a founding member and headed the marketing and business development aspect of the business. An engineer from NSIT and an MBA from IMT Ghaziabad, Piyush started his venture in the Cultural Tourism spac",
+        "With a passion for startups, Piyush is currently the Co-Founder at Vedam. Piyush joined Crownit as a founding member and headed the marketing and business development aspect of the business. An engineer from NSIT and an MBA from IMT Ghaziabad, Piyush started his venture in the Cultural Tourism spac",
     },
     {
       id: 2,
@@ -848,7 +882,7 @@ export const teamVedamScreenData = {
       imageUrl: "/img/teamVedam/ankur_jain.webp",
       designation: "Co-Founder",
       description:
-        "Ankur’s exposure to the education industry makes him an ideal fit for taking charge of Sunstone and Vedam’s growth and expansion as a Chief Business Officer. More than 15 years of demonstrated expertise in Sales, Marketing and Business Development, he has previously worked with Amazon, Airtel and YourStory and is the founder of HostelFund",
+        "Ankur’s exposure to the education industry makes him an ideal fit for taking charge of Vedam’s growth and expansion. More than 15 years of demonstrated expertise in Sales, Marketing and Business Development, he has previously worked with Amazon, Airtel and YourStory and is the founder of HostelFund",
     },
   ],
 };

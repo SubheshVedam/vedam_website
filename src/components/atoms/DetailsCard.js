@@ -23,10 +23,13 @@ export default function DetailsCard({
     <Card
       sx={{
         position: "relative", // Required for absolute positioning
-        backgroundColor: isFeatured  ? "#6C10BC" : "#FFFFFF",
+        backgroundColor: isFeatured ? "#6C10BC" : "#FFFFFF",
         maxWidth: "100%",
         height: { xs: "auto", md: height },
-        maxHeight: { xs: isFeatured ? 220 :  isScholarshipCard ? 200 : 150, md: height },
+        maxHeight: {
+          xs: isFeatured ? 220 : isScholarshipCard ? 200 : 150,
+          md: height,
+        },
         width: "100%",
         borderRadius: "16px",
         padding: "20px",
@@ -130,7 +133,7 @@ export default function DetailsCard({
           <Typography
             variant="h6"
             sx={{
-              color: isScholarshipCard ? "text.primary": "white",
+              color: "white",
               fontWeight: "bold",
               fontSize: isFeatured ? { xs: 22, sm: 32 } : { xs: 18, sm: 20 },
               marginBottom: isFeatured ? 0 : { xs: "8px", sm: "16px" },
@@ -142,14 +145,14 @@ export default function DetailsCard({
             <Typography
               variant="body1"
               sx={{
-                color: isFeatured ? "white" : "text.primary",
+                color: "white",
                 fontSize: { xs: 10, sm: 14 },
                 fontSize: isFeatured ? 14 : { xs: 11, sm: 14 },
               }}
             >
               {description}
             </Typography>
-          ): null}
+          ) : null}
         </Box>
       </CardContent>
     </Card>
