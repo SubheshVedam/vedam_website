@@ -47,7 +47,7 @@ export const ClubsAtVst = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2300,
     pauseOnHover: false,
     vertical: true, // Enable vertical sliding
     arrows: false,

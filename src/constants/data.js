@@ -765,7 +765,7 @@ export const lifeAtVedam = {
     {
       leftSideTitle: "Clubs at VST",
       description:
-        "Stay active and competitive in our Sports Club! Participate in various sports, tournaments, and fitness activities to enhance teamwork and skills.",
+        "Stay active and competitive in our Sports Club! Participate in various sports, tournaments, and activities to enhance teamwork and skills.",
       rightSideText: "Sports Club",
       rightSideText2: "Gaming Hub",
     },
@@ -793,7 +793,7 @@ export const lifeAtVedam = {
     {
       leftSideTitle: "Clubs at VST",
       description:
-        "Join our Entrepreneurship Club to learn how to turn ideas into successful ventures! Network with industry leaders, participate in startup challenges, and develop business strategies.",
+        "Join our Entrepreneurship Club to learn how to turn ideas into successful ventures and change the future!",
       rightSideText: "Entrepreneurship Club",
       rightSideText2: "Creative Hub",
     },
