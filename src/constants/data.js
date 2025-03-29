@@ -925,12 +925,12 @@ export const faqsScreenData = [
       {
         id: 0,
         title: "What curriculum will all be covered in this Undergrad program?",
-        description: "The B.Tech program is a 4-year full-time course.",
+        description: "For detailed curriculum visit https://vedam.org/home",
       },
       {
         id: 1,
         title: "Who will be the faculty of the course?",
-        description: "We currently offer specialization in Computer Science and AI.",
+        description: "At Vedam School of Technology, the faculty comprises industry experts, renowned academicians, and experienced engineers from top tech companies.",
       },
       {
         id: 2,
