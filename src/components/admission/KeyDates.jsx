@@ -20,7 +20,7 @@ export const KeyDates = () => {
         <Typography
           sx={{
             fontFamily: "Inter",
-            fontWeight: " 700",
+            fontWeight: "700",
             fontSize: "clamp(14px, 2vw, 20px)",
             lineHeight: "100%",
             color: "rgba(251, 127, 5, 1)",
@@ -30,19 +30,28 @@ export const KeyDates = () => {
         </Typography>
       </Box>
       <Box sx={{ display: "flex", flexDirection: { xs: "row", md: "column" } }}>
+        {/* First Row */}
         <Box
           sx={{
             width: "100%",
-            padding: "20px 0px",
+            padding: "20px",
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
             backgroundColor: "rgba(251, 127, 5, 0.3)",
-            gap: { xs: "2rem", md: "0" },
+            justifyContent: { xs: "space-evenly", md: "" },
+            // gap: { xs: "2.5rem", sm: 0 },
             borderBottomLeftRadius: { xs: "16px", md: 0 },
           }}
         >
           {admissionScreenData.keyDates.firstArray.map((item, index) => (
-            <Box key={index} sx={{ flex: { md: "0 0 20%" } }}>
+            <Box
+              key={index}
+              sx={{
+                flex: { md: "1 0 20%" },
+                paddingLeft: { md: index === 0 ? 0 : "12px" },
+                paddingRight: "12px",
+              }}
+            >
               <Typography
                 sx={{
                   fontWeight: "600",
@@ -57,27 +66,36 @@ export const KeyDates = () => {
             </Box>
           ))}
         </Box>
+
+        {/* Second Row */}
         <Box
           sx={{
             width: "100%",
-            padding: "20px 0px",
+            padding: "20px",
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
             borderLeft: { xs: "none", md: "1px solid #FB7F05" },
             borderRight: "1px solid #FB7F05",
             borderBottom: "1px solid #FB7F05",
-            padding: "20px",
             borderBottomRightRadius: "16px",
             borderBottomLeftRadius: { xs: "0", md: "16px" },
-            gap: { xs: "2rem", md: "0" },
+            gap: { xs: "2rem", sm: 0 },
+            // justifyContent: { xs: "space-around", md: "" },
           }}
         >
           {admissionScreenData.keyDates.secondArray.map((item, index) => (
-            <Box key={index} sx={{ flex: { md: "0 0 20%" } }}>
+            <Box
+              key={index}
+              sx={{
+                flex: { md: "1 0 20%" },
+                paddingLeft: { md: index === 0 ? 0 : "12px" },
+                paddingRight: "12px",
+              }}
+            >
               <Typography
                 sx={{
                   fontWeight: "500",
-                  lineHeight: "100%",
+                  lineHeight: "150%",
                   color: "#1E1E1E",
                   textAlign: "center",
                   fontFamily: "Inter",

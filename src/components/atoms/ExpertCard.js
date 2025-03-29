@@ -111,7 +111,7 @@ export default function ExpertCard({
               },
             }}
           >
-            <Rating
+            {/* <Rating
               name="size-medium"
               value={rating}
               defaultValue={4.5}
@@ -129,7 +129,8 @@ export default function ExpertCard({
                 justifyContent: "space-between",
                 width: "100%",
               }}
-            />
+            /> */}
+            <>  </>
           </Box>
           <Box sx={{ width: 32, height: 32, position: "relative" }}>
             <a

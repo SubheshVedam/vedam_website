@@ -78,7 +78,7 @@ const SingleCountText = ({ count, text, isHref }) => {
           {text}       {isHref && (
           <Link
             style={{
-              color: "rgba(30, 30, 30, 1)",
+              color: "#FFA41A",
               fontSize: "12px",
               fontFamily: "Inter",
               lineHeight: "150%",

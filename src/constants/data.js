@@ -831,35 +831,70 @@ export const lifeAtVedam = {
   },
 };
 
-export const faqsScreenData = {
-  title: "General FAQ",
-  questions: [
-    {
-      id: 0,
-      title: "How do I apply to the Program",
-      description:
-        "You can go to apply.vedam.org to access the official application portal and complete the application form to start the testing process.",
-    },
-    {
-      id: 1,
-      title: "Is this a full time program?",
-      description:
-        "Yes, Vedam School of Technology offers a full-time undergraduate B.Tech program focused on Computer Science and AI. There is no option of Correspondence or Online course.",
-    },
-    {
-      id: 2,
-      title: "Will i be able to pursue Further education or take competitive exams later?",
-      description:
-        "Yes, students will be eligible to pursue a master’s degree. The 4-year UG Programme in CS and AI will ensure our students get access to the latest curriculum, hands-on experience, Internship to achieve success in Computer Science within India and abroad.",
-    },
-    {
-      id: 3,
-      title: "What kind of degree am I going to get after completing 4 years at Vedam?",
-      description:
-        "After completing four years at Vedam School of Technology, you will receive a Bachelor of Technology (B.Tech) in Computer Science and Artificial Intelligence from our partner university and A Industry recognized certification from Vedam school of technology.",
-    },
-  ],
-};
+export const faqsScreenData = [
+  {
+    title: "General FAQ",
+    questions: [
+      {
+        id: 0,
+        title: "How do I apply to the Program",
+        description:
+          "You can go to apply.vedam.org to access the official application portal and complete the application form to start the testing process.",
+      },
+      {
+        id: 1,
+        title: "Is this a full time program?",
+        description:
+          "Yes, Vedam School of Technology offers a full-time undergraduate B.Tech program focused on Computer Science and AI. There is no option of Correspondence or Online course.",
+      },
+      {
+        id: 2,
+        title: "Will i be able to pursue Further education or take competitive exams later?",
+        description:
+          "Yes, students will be eligible to pursue a master's degree. The 4-year UG Programme in CS and AI will ensure our students get access to the latest curriculum, hands-on experience, Internship to achieve success in Computer Science within India and abroad.",
+      },
+      {
+        id: 3,
+        title: "What kind of degree am I going to get after completing 4 years at Vedam?",
+        description:
+          "After completing four years at Vedam School of Technology, you will receive a Bachelor of Technology (B.Tech) in Computer Science and Artificial Intelligence from our partner university and A Industry recognized certification from Vedam school of technology.",
+      },
+    ],
+  },
+  {
+    title: "Admissions FAQ",
+    questions: [
+      {
+        id: 0,
+        title: "What are the admission requirements?",
+        description: "Yes, students will be eligible to pursue a master's degree. The 4-year UG Programme in CS and AI will ensure our students get access to the latest curriculum, hands-on experience, Internship to achieve success in Computer Science within India and abroad.",
+      },
+      {
+        id: 1,
+        title: "Is there an entrance exam?",
+        description: "Yes, applicants must pass our entrance examination.",
+      },
+      // Add more questions as needed
+    ],
+  },
+  {
+    title: "Program FAQ",
+    questions: [
+      {
+        id: 0,
+        title: "What is the duration of the program?",
+        description: "The B.Tech program is a 4-year full-time course.",
+      },
+      {
+        id: 1,
+        title: "What are the specializations offered?",
+        description: "We currently offer specialization in Computer Science and AI.",
+      },
+      // Add more questions as needed
+    ],
+  },
+  // Add more FAQ categories as needed
+];
 
 export const teamVedamScreenData = {
   subtitle: "Team Vedam",
