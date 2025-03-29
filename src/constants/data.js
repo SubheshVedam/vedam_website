@@ -862,32 +862,111 @@ export const faqsScreenData = [
     ],
   },
   {
-    title: "Admissions FAQ",
+    title: "Eligibility",
     questions: [
       {
         id: 0,
-        title: "What are the admission requirements?",
-        description: "Yes, students will be eligible to pursue a master's degree. The 4-year UG Programme in CS and AI will ensure our students get access to the latest curriculum, hands-on experience, Internship to achieve success in Computer Science within India and abroad.",
+        title: "What is the eligibility criteria?",
+        description: "All the students who appeared for 12th exam in 2024, 2025 with PCM (>50% in PCM & 12th boards Overall) are eligible.",
       },
       {
         id: 1,
-        title: "Is there an entrance exam?",
-        description: "Yes, applicants must pass our entrance examination.",
+        title: "My Board results are not out yet, Can I still Apply to VST?",
+        description: "Yes, you can still apply to Vedam School of Technology (VST) even if your board exam results are not out yet. If you meet the eligibility criteria after your results are declared, your admission will be confirmed.",
+      },
+      {
+        id: 2,
+        title: "I am in the first year of my Btech, Am i eligible to join this program?",
+        description: "Yes, if you are currently in the first year of your B.Tech program, you are eligible to join the Vedam School of Technology program. However, please note that you would need to take admission in the first Semester or Year 1 of the four-year Undergraduate program as the credits earned in your current B.Tech program may not be transferable to the Vedam school of technology.",
+      },
+      {
+        id: 3,
+        title: "I did my 12th in 2023 or before, Am I eligible to apply?",
+        description: "To enroll at Vedam School of Technology, you must meet specific eligibility criteria. You should have completed your 12th grade education in 2024 or 2025 with more than 50% Marks in PCM and 12th board overall and be under the age of 20 at the time of admission. If you meet these requirements, we invite you to join us and embark on an exciting journey toward a future in technology.",
       },
       // Add more questions as needed
     ],
   },
   {
-    title: "Program FAQ",
+    title: "Selection Process",
     questions: [
       {
         id: 0,
-        title: "What is the duration of the program?",
+        title: "What is the admission and Selection process?",
         description: "The B.Tech program is a 4-year full-time course.",
       },
       {
         id: 1,
-        title: "What are the specializations offered?",
+        title: "How Many attempts can I give?",
+        description: "We currently offer specialization in Computer Science and AI.",
+      },
+      {
+        id: 2,
+        title: "Is VSAT an online exam? Is it proctored?",
+        description: "We currently offer specialization in Computer Science and AI.",
+      },
+      {
+        id: 3,
+        title: "Can I take VSAT from my Phone?",
+        description: "We currently offer specialization in Computer Science and AI.",
+      },
+      {
+        id: 4,
+        title: "If I clear VSAT, Personal Interview is going to be online or offline?",
+        description: "We currently offer specialization in Computer Science and AI.",
+      },
+      // Add more questions as needed
+    ],
+  },
+
+  {
+    title: "Program",
+    questions: [
+      {
+        id: 0,
+        title: "What curriculum will all be covered in this Undergrad program?",
+        description: "The B.Tech program is a 4-year full-time course.",
+      },
+      {
+        id: 1,
+        title: "Who will be the faculty of the course?",
+        description: "We currently offer specialization in Computer Science and AI.",
+      },
+      {
+        id: 2,
+        title: "What happens if I dont get Internship in 3rd and 4th Year?",
+        description: "We currently offer specialization in Computer Science and AI.",
+      },
+      {
+        id: 3,
+        title: "What happens if I dont get a Job after 4 years at Vedam?",
+        description: "We currently offer specialization in Computer Science and AI.",
+      },
+      // Add more questions as needed
+    ],
+  },
+
+  {
+    title: "Scholarship and Financing",
+    questions: [
+      {
+        id: 0,
+        title: "What is the fees structure of the program?",
+        description: "The B.Tech program is a 4-year full-time course.",
+      },
+      {
+        id: 1,
+        title: "What financing options are available for paying the college fees?",
+        description: "We currently offer specialization in Computer Science and AI.",
+      },
+      {
+        id: 2,
+        title: "What kind of scholarships I can get?",
+        description: "We currently offer specialization in Computer Science and AI.",
+      },
+      {
+        id: 3,
+        title: "Are the Scholarship applicable on the tuition fees or the entire fees?",
         description: "We currently offer specialization in Computer Science and AI.",
       },
       // Add more questions as needed
