@@ -357,7 +357,7 @@ export const homeScreenData = {
   FeeStructure: {
     subtitle: "Fee Structure",
     headerLeftTitle: "Semester wise break-up of course fee",
-    headerRightLocation: `ADY, Pune`,
+    headerRightLocation: `ADYPU, Pune`,
     leftSideYearTable: [
       {
         id: "0",
@@ -390,8 +390,8 @@ export const homeScreenData = {
       {
         id: "4",
         year1: "Total",
-        amount1: "925,000",
-        amount2: "875,000",
+        amount1: "",
+        amount2: "",
         total: "1,800,000",
       },
     ],
@@ -402,7 +402,7 @@ export const homeScreenData = {
       },
       {
         id: 2,
-        text: "The total fee mentioned above includes both the tuition fee and the upskilling fee.",
+        text: "The total fee mentioned in the table is the Tution Fees, This is exclusive of Hostel & Mess fees.",
       },
       {
         id: 3,
@@ -410,7 +410,7 @@ export const homeScreenData = {
       },
       {
         id: 4,
-        text: "TODO TODO on the first-served basis.Hostel and mess services are available on the first-served basis.",
+        text: "Download the complete details of hostel rooms and charges: ",
       },
     ],
   },
@@ -605,11 +605,11 @@ export const admissionScreenData = {
       "Final Offer",
     ],
     secondArray: [
-      "21 March 2025",
-      "20 March 2025",
+      "18 April 2025",
+      "17 April 2025",
       "Immediatly After Exam",
       "Within 10 Days of the Exam",
-      "To be Announced",
+      "Within 20 Days of the Exam, If selected",
     ],
   },
   admissionProcess: {
@@ -636,7 +636,7 @@ export const admissionScreenData = {
         step: "Step 2",
         title: "Take the VSAT",
         subtitle:
-          "It is an entrance test conducted online. Early intake round on 21st March, 2025.",
+          "It is an entrance test conducted online. April intake round on 18th April, 2025.",
         showButton: false,
       },
       {
@@ -669,7 +669,7 @@ export const admissionScreenData = {
   },
   facilityAndAmenities: {
     subtitle: "Facilities & Amenities",
-    image: "/img/audi.webp",
+    image: "/img/Auditorium_ADYPU.jpg",
     imageTitle: "Auditorium and Amphitheater",
     subtitleDescription:
       "Premier auditorium and amphitheatre are ideal for events and performances.",
@@ -730,29 +730,36 @@ export const lifeAtVedam = {
     {
       leftSideTitle: "Clubs at VST",
       description:
-        "Explore VST Clubs! From coding to robotics, esports to innovation—connect, compete, learn, and grow with passionate like-minded individuals",
-      rightSideText: "Robotics Club",
+        "Join our Cultural Club to celebrate diversity through music, dance, drama, and festivals. Engage in events that bring creativity to life!",
+      rightSideText: "Cultural Club",
       rightSideText2: "Open Source club",
     },
     {
       leftSideTitle: "Clubs at VST",
       description:
-        "Join our Esports community! Compete in tournaments, improve your skills, and connect with fellow gaming enthusiasts",
-      rightSideText: "Esports Club",
+        "Stay active and competitive in our Sports Club! Participate in various sports, tournaments, and fitness activities to enhance teamwork and skills.",
+      rightSideText: "Sports Club",
       rightSideText2: "Gaming Hub",
     },
     {
       leftSideTitle: "Clubs at VST",
       description:
-        "Dive into the world of artificial intelligence and machine learning with hands-on projects and workshops",
-      rightSideText: "AI & ML Club",
+        "Join our ESports Club and compete in gaming tournaments, enhance strategic thinking, and connect with passionate gamers.",
+      rightSideText: "ESports Club",
       rightSideText2: "Data Science",
     },
     {
       leftSideTitle: "Clubs at VST",
       description:
-        "Express your creativity through photography, videography, and digital art with our media club",
-      rightSideText: "Media Club",
+        "Contribute to open-source projects, collaborate with developers, and gain real-world coding experience in our Open Source Club.",
+      rightSideText: "Open Source Club",
+      rightSideText2: "Creative Hub",
+    },
+    {
+      leftSideTitle: "Clubs at VST",
+      description:
+        "Sharpen your problem-solving skills with our Competitive Coding Club! Participate in coding challenges, and algorithmic competitions.",
+      rightSideText: "Competitive Coding Club",
       rightSideText2: "Creative Hub",
     },
   ],
