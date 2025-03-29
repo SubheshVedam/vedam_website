@@ -16,27 +16,44 @@ export default function DetailsCard({
   height = 300,
 }) {
   const theme = useTheme();
-
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
     <Card
       sx={{
-        position: "relative", // Required for absolute positioning
+        position: "relative",
         backgroundColor: isFeatured ? "#6C10BC" : "#FFFFFF",
         maxWidth: "100%",
         height: { xs: "auto", md: height },
         maxHeight: {
-          xs: isFeatured ? 220 : isScholarshipCard ? 200 : 150,
+          xs: isFeatured ? 220 : isScholarshipCard ? 200 : 220,
           md: height,
         },
         width: "100%",
         borderRadius: "16px",
-        padding: "20px",
+        padding: "20px 20px 0 20px",
         boxShadow: "none",
-        overflow: "hidden", // Keeps everything contained within border radius
+        overflow: "hidden",
+        ...(!isFeatured &&
+          !isScholarshipCard && {
+            "&:hover": {
+              backgroundColor: "#f5f5f5",
+              transition: "background-color 0.3s ease",
+              "& .description-text": {
+                // Target the description text on card hover
+                transform: "translateY(0)",
+                opacity: 1,
+                height: "auto",
+                marginTop: "10px",
+              },
+              "& .title-box": {
+                // Target the title box on card hover
+                transform: "translateY(-10px)",
+              },
+            },
+          }),
 
-        // Background image with dark overlay (only if bgImage exists)
+        // Background image with dark overlay
         ...(bgImage && {
           "&::before": {
             content: '""',
@@ -49,13 +66,11 @@ export default function DetailsCard({
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
-            // Dark overlay (70% opacity)
             backgroundColor: "rgba(0, 0, 0, 0.7)",
             zIndex: 0,
           },
         }),
 
-        // Gradient overlay (only for featured cards)
         ...(isFeatured && {
           "&::after": {
             content: '""',
@@ -66,12 +81,11 @@ export default function DetailsCard({
             bottom: 0,
             background:
               "linear-gradient(160.16deg, #BA6BFF -29.47%, #6C10BC 39.76%, #1E1E1E 101.6%)",
-            zIndex: 1, // Above the dark overlay but below content
+            zIndex: 1,
             mixBlendMode: isFeatured ? "normal" : undefined,
           },
         }),
 
-        // Content stays on top
         "& > *": {
           position: "relative",
           zIndex: 2,
@@ -85,7 +99,10 @@ export default function DetailsCard({
           display: "flex",
           flexDirection: "column",
           padding: 0,
-          minHeight: { xs: 150, sm: isScholarshipCard ? 200 : 280 },
+          minHeight: {
+            xs: isScholarshipCard ? "auto" : 220,
+            sm: isScholarshipCard ? 200 : 280,
+          },
           height: "100%",
           justifyContent: "space-between",
           alignItems: isFeatured ? "center" : "normal",
@@ -129,30 +146,59 @@ export default function DetailsCard({
             />
           </Box>
         )}
-        <Box sx={{ textAlign: isFeatured ? "center" : "left" }}>
-          <Typography
-            variant="h6"
+        <Box
+          sx={{
+            textAlign: isFeatured ? "center" : "left",
+            overflow: "hidden",
+            paddingY: isFeatured || isScholarshipCard ? 0 : "10px",
+          }}
+        >
+          <Box
+            className="title-box"
             sx={{
-              color: "white",
-              fontWeight: "bold",
-              fontSize: isFeatured ? { xs: 22, sm: 32 } : { xs: 18, sm: 20 },
-              marginBottom: isFeatured ? 0 : { xs: "8px", sm: "16px" },
+              transition: "transform 0.3s ease",
             }}
           >
-            {title}{" "}
-          </Typography>
-          {isFeatured || isScholarshipCard ? (
             <Typography
-              variant="body1"
+              variant="h6"
               sx={{
                 color: "white",
-                fontSize: { xs: 10, sm: 14 },
+                fontWeight: "bold",
+                fontSize: isFeatured ? { xs: 22, sm: 32 } : { xs: 18, sm: 20 },
+                marginBottom: isFeatured ? 0 : { xs: "8px", sm: "16px" },
+              }}
+            >
+              {title}
+            </Typography>
+          </Box>
+
+          {/* Description text */}
+          {isFeatured || isScholarshipCard ? (
+            <Typography
+              variant="body2"
+              sx={{
+                color: "white",
                 fontSize: isFeatured ? 14 : { xs: 11, sm: 14 },
               }}
             >
               {description}
             </Typography>
-          ) : null}
+          ) : (
+            <Typography
+              className="description-text"
+              variant="body2"
+              sx={{
+                color: "white",
+                fontSize: { xs: 12, sm: 14 },
+                transform: "translateY(100%)",
+                opacity: 0,
+                height: 0,
+                transition: "all 0.3s ease",
+              }}
+            >
+              {description}
+            </Typography>
+          )}
         </Box>
       </CardContent>
     </Card>
