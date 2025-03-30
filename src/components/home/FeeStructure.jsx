@@ -11,6 +11,7 @@ import {
 import { homeScreenData } from "@/constants/data";
 import Image from "next/image";
 import Link from "next/link";
+import CallMadeIcon from '@mui/icons-material/CallMade';
 
 const SingleTableCell = ({ text, isHead = false, isFirst = false }) => {
   return (
@@ -75,24 +76,25 @@ const SingleCountText = ({ count, text, isHref }) => {
             lineHeight: "150%",
           }}
         >
-          {text}       {isHref && (
-          <Link
-            style={{
-              color: "#FFA41A",
-              fontSize: "12px",
-              fontFamily: "Inter",
-              lineHeight: "150%",
-            }}
-            href={
-              "https://drive.google.com/file/d/1ZH3snXOpdKxTdClmm-OWHo4bbc8zk61-/view?usp=drive_link"
-            }
-            target="_blank"
-          >
-            here
-          </Link>
-        )}.
+          {text}
+          {isHref && (
+            <Link
+              style={{
+                color: "#FFA41A",
+                fontSize: "12px",
+                fontFamily: "Inter",
+                lineHeight: "150%",
+                marginLeft: "4px",
+              }}
+              href={
+                "https://drive.google.com/file/d/1ZH3snXOpdKxTdClmm-OWHo4bbc8zk61-/view?usp=drive_link"
+              }
+              target="_blank"
+            >
+            <CallMadeIcon sx={{height:'100%',width:'12px'}}/>  here
+            </Link>
+          )}.
         </Typography>
- 
       </Box>
     </Box>
   );
@@ -107,6 +109,7 @@ export const FeeStructure = () => {
         padding: { xs: "20px 10px", md: "40px" },
       }}
     >
+      {/* Header Section - unchanged from original */}
       <Box
         sx={{
           display: "flex",
@@ -142,7 +145,7 @@ export const FeeStructure = () => {
             width={20}
             height={20}
             src={"/img/location2.webp"}
-            sx={{ width: "20px", height: "20px" }}
+            style={{ width: "20px", height: "20px" }}
             alt="location"
           />
           <Typography
@@ -160,6 +163,8 @@ export const FeeStructure = () => {
           </Typography>
         </Box>
       </Box>
+
+      {/* Content Section - modified to keep desktop layout identical */}
       <Box
         sx={{
           display: "flex",
@@ -179,33 +184,38 @@ export const FeeStructure = () => {
             marginTop: { xs: "8px", md: 0 },
           }}
         >
+          {/* Table Container - scrollable only on mobile */}
           <Box
             sx={{
-              width: {
-                xs: "100%",
-                md: "50%",
+              width: { xs: "100%", md: "50%" },
+              overflowX: { xs: "auto", md: "visible" },
+              WebkitOverflowScrolling: "touch",
+              "&::-webkit-scrollbar": { display: "none" },
+              scrollbarWidth: "none",
+              "&::-webkit-scrollbar-track": {
+                background: "#f1f1f1",
+              },
+              "&::-webkit-scrollbar-thumb": {
+                background: "#888",
+                borderRadius: "2px",
               },
             }}
           >
             <Table
               sx={{
-                width: "100%",
+                minWidth:  "100%",
                 backgroundColor: "rgba(186, 107, 255, 0.08)",
                 borderRadius: "12px",
                 paddingBottom: "40px",
               }}
               aria-label="simple table"
             >
-              <TableHead
-                sx={{
-                  width: "100%",
-                }}
-              >
+              <TableHead>
                 <TableRow>
                   <SingleTableCell text="Year" isHead />
                   <SingleTableCell text="Sem 1" isHead />
                   <SingleTableCell text="Sem 2" isHead />
-                  <SingleTableCell text="Total" isHead />{" "}
+                  <SingleTableCell text="Total" isHead />
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -216,7 +226,7 @@ export const FeeStructure = () => {
                       <SingleTableCell
                         text={row.amount1}
                         isFirst={
-                          idx ==
+                          idx ===
                           homeScreenData.FeeStructure.leftSideYearTable.length -
                             1
                         }
@@ -224,7 +234,7 @@ export const FeeStructure = () => {
                       <SingleTableCell
                         text={row.amount2}
                         isFirst={
-                          idx ==
+                          idx ===
                           homeScreenData.FeeStructure.leftSideYearTable.length -
                             1
                         }
@@ -236,6 +246,8 @@ export const FeeStructure = () => {
               </TableBody>
             </Table>
           </Box>
+
+          {/* Right Side Text - unchanged from original */}
           <Box
             sx={{
               width: { xs: "100%", md: "50%" },

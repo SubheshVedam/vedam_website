@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Box, useMediaQuery, useTheme } from "@mui/material";
-import { AIFirstCurriculumDesktop } from "../..";
+import { AIFirstCurriculumDesktop } from "./AIFirstCurriculumDesktop";
 import { AIFirstCurriculumMobile } from "./AIFirstCurriculumMobile";
 
 export const AIFirstCurriculum = () => {
