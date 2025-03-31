@@ -902,7 +902,7 @@ export const faqsScreenData = [
         id: 20,
         title: "What is the admission and Selection process?",
         description:
-          "Visit vedam.org/admission for detailed admission and selection process",
+          "The admission and selection process at Vedam School of Technology is designed to identify students with strong problem-solving abilities, technical aptitude, and a passion for innovation. The process begins with the Vedam Scholastic Aptitude Test (VSAT), which evaluates a candidate’s proficiency in mathematics, logical reasoning, and learnability. Shortlisted candidates then proceed to a Personal Interview (PI) conducted online via Google Meet or Zoom, where their technical knowledge, problem-solving skills, and motivation for joining the program are assessed.For a detailed overview of the admission criteria, selection stages, and important deadlines, please visit our official admissions page: https://vedam.org/admission",
       },
       {
         id: 21,
@@ -920,14 +920,14 @@ export const faqsScreenData = [
         id: 23,
         title: "Can I take VSAT from my Phone?",
         description:
-          "No, you cannot take the VSAT (Vedam Scholastic Aptitude Test) on a phone. VSAT is a proctored online exam that requires: A laptop or desktop with a webcam and microphone",
+          "No, you cannot take the VSAT (Vedam Scholastic Aptitude Test) on a phone. VSAT is a proctored online exam that requires a laptop or desktop with a webcam and microphone",
       },
       {
         id: 24,
         title:
           "If I clear VSAT, Personal Interview is going to be online or offline?",
         description:
-          "If you clear VSAT, the Personal Interview (PI) will be conducted in online mode over Gmeet or Zoom",
+          "If you successfully clear the Vedam Scholastic Aptitude Test (VSAT), the next step in the admission process will be the Personal Interview (PI). The interview will be conducted online via platforms such as Google Meet or Zoom, ensuring accessibility and convenience for all candidates. This allows you to attend the interview from anywhere while maintaining a seamless and professional evaluation process.",
       },
     ],
   },
@@ -938,7 +938,7 @@ export const faqsScreenData = [
       {
         id: 30,
         title: "What curriculum will all be covered in this Undergrad program?",
-        description: "For detailed curriculum visit https://vedam.org/home",
+        description: "Our undergraduate program is designed to provide a comprehensive and industry-aligned curriculum that equips students with cutting-edge knowledge in computer science and artificial intelligence. The coursework covers core programming concepts, data structures & algorithms, software development, machine learning, deep learning, cloud computing, cybersecurity, blockchain, and much more. Additionally, students gain hands-on experience through real-world projects, hackathons, and industry collaborations to ensure they are job-ready. To explore the detailed curriculum and learn more about the subjects covered, please visit our official page: https://vedam.org/home",
       },
       {
         id: 31,
@@ -950,13 +950,13 @@ export const faqsScreenData = [
         id: 32,
         title: "What happens if I dont get Internship in 3rd and 4th Year?",
         description:
-          "We currently offer specialization in Computer Science and AI.",
+          "At Vedam School of Technology, landing an internship is as easy as debugging your first Hello, World!—as long as you put in the effort. With 1000+ career partners, opportunities are plenty. But in the rare case you don’t get an internship, don’t panic—we won’t leave you hanging. Instead, you’ll work on a real-world tech project with industry mentors, gaining hands-on experience (and probably a few all-nighters). Either way, you’ll come out job-ready, and who knows—you might just build the next big thing.",
       },
       {
         id: 33,
         title: "What happens if I dont get a Job after 4 years at Vedam?",
         description:
-          "We currently offer specialization in Computer Science and AI.",
+          "At Vedam School of Technology, we are committed to ensuring that every student secures strong career opportunities. With a network of 1000+ hiring partners, we provide extensive placement support, industry connections, and hands-on training to enhance employability. Our program includes rigorous technical and career development sessions, personalized mentorship, and direct access to job opportunities across various industries. Even after graduation, students benefit from a thriving alumni network and ongoing career guidance. In case of challenges, our dedicated placement team offers resume reviews, interview preparation, and strategic job search support to help every graduate find the right opportunity.",
       },
     ],
   },
@@ -967,27 +967,27 @@ export const faqsScreenData = [
       {
         id: 40,
         title: "What is the fees structure of the program?",
-        description: "The B.Tech program is a 4-year full-time course.",
+        description: "The total tuition fee for our comprehensive 4-year program is ₹18 Lakhs, covering a curriculum designed to equip students with cutting-edge knowledge and industry-relevant skills. To explore a detailed breakdown of the fee structure and available financing options, please visit our official admissions page: https://vedam.org/admission",
       },
       {
         id: 41,
         title:
           "What financing options are available for paying the college fees?",
         description:
-          "We currently offer specialization in Computer Science and AI.",
+          "We offer multiple financing options to make college fees more accessible, including education loans from IDFC, Yes Bank, HDFC, RBL, and Propelled. Each option comes with different terms and benefits to suit your needs. Once you are selected, our team will guide you through the process and provide exact details to help you choose the best financing plan.",
       },
       {
         id: 42,
         title: "What kind of scholarships I can get?",
         description:
-          "We currently offer specialization in Computer Science and AI.",
+          "We offer three types of scholarships to support students: Merit-Based Scholarships for high achievers, Women in Tech Scholarships to encourage women in technology, and Need-Based Scholarships for those requiring financial assistance. Once selected, our team will guide you through the eligibility criteria and application process.",
       },
       {
         id: 43,
         title:
           "Are the Scholarship applicable on the tuition fees or the entire fees?",
         description:
-          "We currently offer specialization in Computer Science and AI.",
+          "The Scholarship is applicable on tution fees(18 Lakhs) only. Hostel and mess fee are not included in Scholarship.",
       },
     ],
   },
