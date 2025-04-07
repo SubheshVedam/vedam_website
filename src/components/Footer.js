@@ -43,22 +43,22 @@ const SOCIAL_LINKS = [
 export default function Footer() {
   return (
     <Box
-      component="footer"
-      sx={{
-        width: "auto",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: "#6C10BC",
-        paddingX: "1rem",
-        paddingY: "40px",
-      }}
-    >
+    component="footer"
+    sx={{
+      width: "auto",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      background: "linear-gradient(to bottom, #BA6BFF, #FFFFFF)", // Linear gradient from purple to lighter purple
+      paddingX: "1rem",
+      paddingY: "40px",
+    }}
+  >
       <Box
         sx={{
           paddingX: "10px",
           width: { xs: "100%", md: "1024px", xl: "1280px" },
-          color: "white",
+          color: "black",
           display: "flex",
           flexDirection: "column",
           gap: 4,
@@ -77,7 +77,7 @@ export default function Footer() {
               >
                 <Box sx={{ width: { xs: 170, sm: 200 }, ml: "-10px" }}>
                   <Image
-                    src="/img/Vedam_Final_Logo_White.png"
+                    src="/img/vedam_logo.webp"
                     alt="Navbar Logo"
                     width={200}
                     height={200}
@@ -150,7 +150,7 @@ export default function Footer() {
                   />
                   <Typography
                     fontSize={{ xs: 0, sm: 16 }}
-                    color="white"
+                    color="black"
                     sx={{
                       "&:hover": {
                         color: "#FFA41A",

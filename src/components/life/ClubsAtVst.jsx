@@ -105,7 +105,7 @@ export const ClubsAtVst = () => {
           sx={{
             fontSize: "clamp(12px, 2vw, 16px)",
             lineHeight: "150%",
-            fontWeight: "500",
+            fontWeight: "350",
             fontFamily: "Inter",
           }}
         >

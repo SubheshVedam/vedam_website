@@ -60,7 +60,7 @@ export const EdgeAtVedam = () => {
               fontSize: "clamp(12px, 2vw, 14px)",
               lineHeight: "120%",
               color: "#1F1F1F",
-              fontWeight: "500",
+              fontWeight: "350",
               fontFamily: "Inter",
               width:'100%',
 

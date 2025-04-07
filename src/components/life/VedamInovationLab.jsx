@@ -50,7 +50,7 @@ export const VedamInovationLab = () => {
           sx={{
             fontSize: "clamp(12px, 2vw, 16px)",
             lineHeight: "150%",
-            fontWeight: "500",
+            fontWeight: "350",
             fontFamily: "Inter",
           }}
         >
@@ -71,7 +71,7 @@ export const VedamInovationLab = () => {
             variant="h6"
             sx={{
               fontSize: "clamp(14px, 2vw, 16px)",
-              fontWeight: "500",
+              fontWeight: "400",
               textTransform: "initial",
               fontFamily: "Inter",
             }}

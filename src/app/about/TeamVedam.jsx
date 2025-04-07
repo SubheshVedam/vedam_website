@@ -34,7 +34,7 @@ const TeamVedam = () => {
             <Typography
               variant="subtitle1"
               sx={{
-                fontWeight: "500",
+                fontWeight: "400",
                 fontSize: "clmap(16px. 2vw, 20px)",
                 lineHeight: "150%",
                 fontFamily: "Inter",
@@ -145,8 +145,9 @@ const TeamVedam = () => {
                       sx={{
                         marginTop: { xs: "1rem", md: "1.4rem" },
                         color: "#1F1F1F",
-                        fontSize: { xs: "14px", md: "20px" },
+                        fontSize: { xs: "14px", md: "16px" },
                         lineHeight: "150%",
+                        fontWeight:'350',
                         fontFamily: "Inter",
                         paddingBottom: { xs: "10px", md: "0px" },
                       }}
