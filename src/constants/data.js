@@ -44,7 +44,7 @@ export const testimonialData = [
 
 export const expertsData = [
   {
-    imageUrl: "/img/experts/first.webp",
+    imageUrl: "/img/experts/ramchandra.jpg",
     name: "Ramachandra Nalam",
     logo: "/img/companies/meta.webp",
     designation: "Data and ML Engineer",
@@ -53,7 +53,7 @@ export const expertsData = [
     linkedIn: "https://www.linkedin.com/in/ramachandra-nalam/",
   },
   {
-    imageUrl: "/img/experts/second.webp",
+    imageUrl: "/img/experts/gauravdawra.jpg",
     name: "Gaurav Dawra",
     logo: "/img/companies/microsoft-logo.png",
     designation: "Software Engineer",
@@ -62,7 +62,7 @@ export const expertsData = [
     linkedIn: "https://www.linkedin.com/in/gaurav-dawra-a2a935200/",
   },
   {
-    imageUrl: "/img/experts/third.webp",
+    imageUrl: "/img/experts/bradford.jpg",
     name: "Bradford Tuckfield",
     logo: "/img/companies/wharton_logo.webp",
     designation: "PhD",
@@ -71,7 +71,7 @@ export const expertsData = [
     linkedIn: "https://www.linkedin.com/in/bradford-tuckfield-80565b25/",
   },
   {
-    imageUrl: "/img/experts/fourth.webp",
+    imageUrl: "/img/experts/amanpreet.jpg",
     name: "Amanpreet Singh",
     logo: "/img/companies/google.webp",
     designation: "Software Engineer",
@@ -81,7 +81,7 @@ export const expertsData = [
       "https://www.linkedin.com/in/amanpreet-singh-b79598a3/?originalSubdomain=in",
   },
   {
-    imageUrl: "/img/experts/fifth.webp",
+    imageUrl: "/img/experts/senthurpandian.jpg",
     name: "M Senthurpandian",
     logo: "/img/companies/amazon.webp",
     designation: "Senior Software Engineer",
@@ -90,7 +90,7 @@ export const expertsData = [
     linkedIn: "https://www.linkedin.com/in/manivannan21/",
   },
   {
-    imageUrl: "/img/experts/seventh.webp",
+    imageUrl: "/img/experts/ekta.jpg",
     name: "Ekta Shah",
     logo: "/img/companies/msci_logo.png",
     designation: "Data Scientist ",
@@ -99,7 +99,7 @@ export const expertsData = [
     linkedIn: "https://www.linkedin.com/in/ekta-shah30/",
   },
   {
-    imageUrl: "/img/experts/eighth.webp",
+    imageUrl: "/img/experts/basant.jpg",
     name: "Basant Rawat",
     logo: "/img/companies/paytm.webp",
     designation: "SDE 2",
@@ -108,7 +108,7 @@ export const expertsData = [
     linkedIn: "https://www.linkedin.com/in/basant-rawat/",
   },
   {
-    imageUrl: "/img/experts/ninth.webp",
+    imageUrl: "/img/experts/nischay.jpg",
     name: "Nishchay Agrawal",
     logo: "/img/companies/walmart.webp",
     designation: "Data Scientist",
