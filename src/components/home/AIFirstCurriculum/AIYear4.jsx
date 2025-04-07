@@ -36,7 +36,7 @@ const SingleCard = ({ icon, text, isCurriculum }) => {
           sx={{
             fontFamily: "Inter",
             fontSize: "12px",
-            fontWeight: "600",
+            fontWeight: "400",
             color: "rgba(0, 0, 0, 1)",
           }}
         >
@@ -125,7 +125,7 @@ export const AIYear4 = () => {
               sx={{
                 fontSize: "12px",
                 fontFamily: "Inter",
-                fontWeight: "700",
+                fontWeight: "500",
                 color: "rgba(30, 30, 30, 1)",
                 whiteSpace: "nowrap",
               }}

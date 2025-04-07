@@ -497,12 +497,12 @@ export const homeScreenData = {
       },
       {
         id: 1,
-        text: "Build a Portfolio Website like GitHub Pages",
+        text: "Build a database like IMDb for storage & ratings",
         icon: "/img/outcomes/year1_2.jpg",
       },
       {
         id: 2,
-        text: "Develop an Online Resume Builder like Canva",
+        text: "Participate in TechCrunch, CodeVita & Hackathons",
         icon: "/img/outcomes/year1_3.jpg",
       },
     ],
