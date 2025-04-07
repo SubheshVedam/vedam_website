@@ -1,7 +1,15 @@
 'use client'
-import { Box, Button, Typography } from '@mui/material';
+import { Box, Button } from '@mui/material';
 import { useState } from 'react';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import { keyframes } from '@emotion/react';
+
+// Animation for subtle pulse effect
+const pulse = keyframes`
+  0% { transform: scale(0.7); }
+  50% { transform: scale(0.8); }
+  100% { transform: scale(0.7); }
+`;
 
 const FloatingButton = () => {
   const [isClicked, setIsClicked] = useState(false);
@@ -17,44 +25,42 @@ const FloatingButton = () => {
       bottom: '24px',
       right: '24px',
       zIndex: 1000,
-      transition: 'transform 0.2s ease'
+      animation: `${pulse} 3s ease-in-out infinite`,
     }}>
       <Button
-        color="inherit"
+        onClick={handleClick}
         sx={{
-          backgroundColor: "#6C10BC",
+          fontSize: "clamp(12px, 2.5vw, 20px)",
+          color: "#F9F9F9",
+          background: "linear-gradient(95.22deg, #FB7F05 2.91%, #6C10BC 99.18%)",
           borderRadius: "8px",
-          padding: { xs: "12px 24px", md: "16px 32px" },
-          boxShadow: '0 4px 20px rgba(108, 16, 188, 0.3)',
+          padding: "12px 24px",
+          boxShadow: "0px 0px 11.2px rgba(255, 255, 255, 0.25)",
           transition: 'all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)',
+          transform: isClicked ? 'translateY(4px) scale(0.98)' : 'none',
           '&:hover': {
-            backgroundColor: "#5A0DA3",
-            boxShadow: '0 6px 24px rgba(108, 16, 188, 0.4)',
-            transform: 'translateY(-2px)'
+            background: "linear-gradient(95.22deg, #FB7F05 2.91%, #6C10BC 99.18%)",
+            boxShadow: "0px 0px 16px rgba(255, 255, 255, 0.5)",
+            transform: 'translateY(-2px)',
           },
-          transform: isClicked ? 'translateY(2px)' : 'none'
+          '&:active': {
+            transform: 'translateY(4px) scale(0.96)',
+            boxShadow: "0px 0px 8px rgba(255, 255, 255, 0.25)",
+          },
         }}
         href="https://apply.vedam.org/"
         target="_blank"
         rel="noopener noreferrer"
-        onClick={handleClick}
-        endIcon={<OpenInNewIcon sx={{color:'white'}}/>}
+        endIcon={<OpenInNewIcon sx={{ 
+          color: 'white',
+          transition: 'transform 0.3s ease',
+          transform: 'scale(0.7)',
+          '&:hover': {
+            transform: 'scale(0.9)'
+          }
+        }} />}
       >
-        <Typography
-          variant="button"
-          sx={{
-            fontSize: { xs: "12px", sm: "16px" },
-            fontWeight: 600,
-            color: "#FFFFFF",
-            fontFamily: "Inter, sans-serif",
-            lineHeight: "100%",
-            textTransform: "none",
-            letterSpacing: "0.5px",
-            whiteSpace: 'nowrap'
-          }}
-        >
-          Apply Now
-        </Typography>
+        Apply Now
       </Button>
     </Box>
   );
