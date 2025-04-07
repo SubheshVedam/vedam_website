@@ -4,8 +4,7 @@ import EmotionCacheProvider from "../components/EmotionCacheProvider";
 import Footer from "@/components/Footer";
 import { Inter } from "next/font/google";
 import "./globals.css";
-
-
+import Layout from "@/components/Layout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,9 +13,11 @@ export default function RootLayout({ children }) {
     <html lang="en" className={inter.className}>
       <body>
         <EmotionCacheProvider>
-          <Navbar />
-          {children}
-          <Footer />
+          <Layout>
+            <Navbar />
+            {children}
+            <Footer />
+          </Layout>
         </EmotionCacheProvider>
       </body>
     </html>

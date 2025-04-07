@@ -143,7 +143,7 @@ export default function Footer() {
                     width={32}
                     height={32}
                     style={{
-                      filter: "brightness(0) invert(1)",
+                      filter: "brightness(20) invert(1)",
                       transition: "transform 0.3s",
                     }}
                     className="hover:scale-110"
