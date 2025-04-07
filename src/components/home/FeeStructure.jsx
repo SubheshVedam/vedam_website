@@ -213,8 +213,8 @@ export const FeeStructure = () => {
               <TableHead>
                 <TableRow>
                   <SingleTableCell text="Year" isHead />
-                  <SingleTableCell text="Sem 1" isHead />
-                  <SingleTableCell text="Sem 2" isHead />
+                  <SingleTableCell text="Odd Sem" isHead />
+                  <SingleTableCell text="Even Sem" isHead />
                   <SingleTableCell text="Total" isHead />
                 </TableRow>
               </TableHead>

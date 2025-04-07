@@ -48,7 +48,7 @@ export const FacilityAndAmenities = () => {
               fontSize: "clamp(12px, 2vw, 16px)",
               lineHeight: "100%",
               fontFamily: "Inter",
-              fontWeight: "600",
+              fontWeight: "350",
             }}
           >
             {admissionScreenData.facilityAndAmenities.subtitleDescription}

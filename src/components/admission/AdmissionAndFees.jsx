@@ -11,7 +11,7 @@ export const AdmissionAndFees = () => {
         sx={{
           fontSize: { xs: "14px", md: "1rem" },
           fontFamily: "Inter",
-          fontWeight: "500",
+          fontWeight: "400",
           lineHeight: "150%",
           color: "rgba(30, 30, 30, 1)",
         }}

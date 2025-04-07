@@ -246,7 +246,7 @@ export const AdmissionProcess = () => {
               <Typography
                 variant="subtitle1"
                 sx={{
-                  fontWeight: "600",
+                  fontWeight: "400",
                   fontSize: "clamp(1rem, 2vw, 2rem)",
                   color: "rgba(31, 31, 31, 1)",
                   fontFamily: "Inter",
@@ -284,7 +284,7 @@ export const AdmissionProcess = () => {
               <Typography
                 variant="caption"
                 sx={{
-                  fontWeight: "500",
+                  fontWeight: "250",
                   fontSize: "clamp(14px, 2vw, 20px)",
                   color: "rgba(31, 31, 31, 1)",
                   fontFamily: "Inter",
