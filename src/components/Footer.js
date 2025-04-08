@@ -1,6 +1,10 @@
 import * as React from "react";
 import { Box, Typography, Link, Stack, Grid } from "@mui/material";
 import Image from "next/image";
+import InstagramIcon from '@mui/icons-material/Instagram';
+import TelegramIcon from '@mui/icons-material/Telegram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import YouTubeIcon from '@mui/icons-material/YouTube';
 
 // Dummy data for footer columns
 const FOOTER_LINKS = [
@@ -26,17 +30,22 @@ const SOCIAL_LINKS = [
   {
     name: "YouTube",
     url: "https://www.youtube.com/@VedamSchoolofTech_Official",
-    icon: "/img/Frame.png",
+    icon:  <YouTubeIcon sx={{color:'black'}}/>,
   },
   {
     name: "Instagram",
     url: "https://www.instagram.com/vedamschooloftech_official/?igsh=MTRscTNtdGxnNG1yMQ%3D%3D#",
-    icon: "/img/Frame (1).png",
+    icon:  <InstagramIcon sx={{color:'black'}}/>,
   },
   {
     name: "LinkedIn",
     url: "https://www.linkedin.com/company/vedam-school-of-technology/",
-    icon: "/img/Frame (2).png",
+    icon:  <LinkedInIcon sx={{color:'black'}}/>,
+  },
+  {
+    name: "Telegram",
+    url: "https://www.linkedin.com/company/vedam-school-of-technology/",
+    icon: <TelegramIcon sx={{color:'black'}}/>,
   },
 ];
 
@@ -137,7 +146,7 @@ export default function Footer() {
                   alignItems="center"
                   underline="hover"
                 >
-                  <Image
+                  {/* <Image
                     src={social.icon}
                     alt={social.name}
                     width={32}
@@ -147,7 +156,8 @@ export default function Footer() {
                       transition: "transform 0.3s",
                     }}
                     className="hover:scale-110"
-                  />
+                  /> */}
+                  {social.icon}
                   <Typography
                     fontSize={{ xs: 0, sm: 16 }}
                     color="black"
@@ -172,7 +182,7 @@ export default function Footer() {
             flexDirection: { xs: "column", md: "row" },
             justifyContent: "space-between",
             alignItems: "center",
-            borderTop: "1px solid rgba(255, 255, 255, 0.2)",
+            borderTop: "1px solid rgba(0, 0, 0, 0.27)",
             paddingTop: 3,
           }}
         >
@@ -180,11 +190,14 @@ export default function Footer() {
             Copyright © SET Education Technology Pvt. Ltd. 2025
           </Typography>
           <Stack direction="row" spacing={2}>
-            <Link href="#" color="inherit" underline="hover">
+            <Link href="/terms-of-use" color="inherit" underline="hover">
               Terms of use
             </Link>
-            <Link href="#" color="inherit" underline="hover">
+            <Link href="/privacy-policy" color="inherit" underline="hover">
               Privacy Policy
+            </Link>
+            <Link href="/refund-policy" color="inherit" underline="hover">
+            Refund Policy
             </Link>
           </Stack>
         </Box>
