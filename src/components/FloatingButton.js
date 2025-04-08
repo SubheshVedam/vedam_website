@@ -54,9 +54,9 @@ const FloatingButton = () => {
         endIcon={<OpenInNewIcon sx={{ 
           color: 'white',
           transition: 'transform 0.3s ease',
-          transform: 'scale(0.7)',
+          transform: 'scale(0.9)',
           '&:hover': {
-            transform: 'scale(0.9)'
+            transform: 'scale(1.1)'
           }
         }} />}
       >

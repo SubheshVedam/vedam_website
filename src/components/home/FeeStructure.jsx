@@ -11,7 +11,7 @@ import {
 import { homeScreenData } from "@/constants/data";
 import Image from "next/image";
 import Link from "next/link";
-import CallMadeIcon from '@mui/icons-material/CallMade';
+import CallMadeIcon from "@mui/icons-material/CallMade";
 
 const SingleTableCell = ({ text, isHead = false, isFirst = false }) => {
   return (
@@ -19,12 +19,12 @@ const SingleTableCell = ({ text, isHead = false, isFirst = false }) => {
       align="right"
       sx={{
         whiteSpace: "nowrap",
-        textAlign: "left",
+        textAlign: "center",
         borderWidth: 0,
         paddingBottom: "20px",
         paddingTop: isHead ? "16px" : "0px",
         paddingBottom: "16px",
-        fontWeight: "350",
+        fontWeight: "400",
         color: isHead ? "rgba(108, 16, 188, 1)" : "rgba(30, 30, 30, 1)",
       }}
     >
@@ -91,9 +91,10 @@ const SingleCountText = ({ count, text, isHref }) => {
               }
               target="_blank"
             >
-            <CallMadeIcon sx={{height:'100%',width:'12px'}}/>  here
+              <CallMadeIcon sx={{ height: "100%", width: "12px" }} /> here
             </Link>
-          )}.
+          )}
+          .
         </Typography>
       </Box>
     </Box>
@@ -164,49 +165,37 @@ export const FeeStructure = () => {
         </Box>
       </Box>
 
-      {/* Content Section - modified to keep desktop layout identical */}
+      {/* Content Section */}
       <Box
         sx={{
           display: "flex",
-          flexDirection: {
-            md: "column",
-            alignItems: "flex-start",
-            justifyContent: "space-between",
-          },
+          flexDirection: "column",
+          gap: "20px",
         }}
       >
+        {/* First Row - Table and Text */}
         <Box
           sx={{
             width: "100%",
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
             gap: "20px",
-            marginTop: { xs: "8px", md: 0 },
           }}
         >
-          {/* Table Container - scrollable only on mobile */}
+          {/* Table Container */}
           <Box
             sx={{
               width: { xs: "100%", md: "50%" },
               overflowX: { xs: "auto", md: "visible" },
               WebkitOverflowScrolling: "touch",
               "&::-webkit-scrollbar": { display: "none" },
-              scrollbarWidth: "none",
-              "&::-webkit-scrollbar-track": {
-                background: "#f1f1f1",
-              },
-              "&::-webkit-scrollbar-thumb": {
-                background: "#888",
-                borderRadius: "2px",
-              },
             }}
           >
             <Table
               sx={{
-                minWidth:  "100%",
+                minWidth: "100%",
                 backgroundColor: "rgba(186, 107, 255, 0.08)",
                 borderRadius: "12px",
-                paddingBottom: "40px",
               }}
               aria-label="simple table"
             >
@@ -247,7 +236,7 @@ export const FeeStructure = () => {
             </Table>
           </Box>
 
-          {/* Right Side Text - unchanged from original */}
+          {/* Right Side Text */}
           <Box
             sx={{
               width: { xs: "100%", md: "50%" },
@@ -256,7 +245,6 @@ export const FeeStructure = () => {
               gap: "1rem",
               alignItems: "flex-start",
               justifyContent: "space-between",
-              paddingBottom: { md: "16px" },
             }}
           >
             {homeScreenData.FeeStructure.rightSideText.map((item) => (
@@ -268,6 +256,53 @@ export const FeeStructure = () => {
               />
             ))}
           </Box>
+        </Box>
+
+        {/* Second Row - Additional Table (2x4) */}
+        <Box
+          sx={{
+            width: "100%",
+            overflowX: { xs: "auto", md: "visible" },
+            WebkitOverflowScrolling: "touch",
+            "&::-webkit-scrollbar": { display: "none" },
+          }}
+        >
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "Inter",
+              fontWeight: { xs: "400", md: "700" },
+              my: { xs: "8px", md: "8px" },
+            }}
+          >
+            Hostel Fees{" "}
+          </Typography>
+          <Table
+            sx={{
+              minWidth: "100%",
+              backgroundColor: "rgba(186, 107, 255, 0.08)",
+              borderRadius: "12px",
+            }}
+            aria-label="additional table"
+          >
+            <TableHead>
+              <TableRow>
+                <SingleTableCell text="Standard Room" isHead />
+                <SingleTableCell text="Premium Room" isHead />
+                <SingleTableCell text="Premium Plus Room" isHead />
+                <SingleTableCell text="Supreme Room (Only Boys)" isHead />
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {/* Example data - replace with your actual data */}
+              <TableRow>
+                <SingleTableCell text="85,000/-*" />
+                <SingleTableCell text="1,00,000/-*" />
+                <SingleTableCell text="1,30,000/-*" />
+                <SingleTableCell text="1,50,000/-*" />
+              </TableRow>
+            </TableBody>
+          </Table>
         </Box>
       </Box>
     </Box>
