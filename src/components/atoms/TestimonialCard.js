@@ -17,6 +17,7 @@ export default function TestimonialCard({ image, text, name, designation }) {
         borderRadius: "16px",
         padding: " 20px 20px 0 20px",
         boxShadow: "none",
+        cursor:'pointer'
       }}
     >
       <CardContent
