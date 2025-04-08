@@ -115,7 +115,7 @@ export const FeeStructure = () => {
         sx={{
           display: "flex",
           flexDirection: { xs: "column-reverse", md: "row" },
-          alignItems: { xs: "flex-end", md: "center" },
+          alignItems: { xs: "flex-start", md: "center" },
           justifyContent: "space-between",
           marginBottom: { xs: "1rem", md: "2rem" },
         }}
@@ -277,32 +277,93 @@ export const FeeStructure = () => {
           >
             Hostel Fees{" "}
           </Typography>
-          <Table
+          {/* Additional Table - Horizontal layout for desktop */}
+          <Box
             sx={{
-              minWidth: "100%",
-              backgroundColor: "rgba(186, 107, 255, 0.08)",
-              borderRadius: "12px",
+              overflowX: "auto",
+              WebkitOverflowScrolling: "touch",
+              "&::-webkit-scrollbar": { display: "none" },
+              display: { xs: "none", md: "block" },
+              marginTop: "20px",
             }}
-            aria-label="additional table"
           >
-            <TableHead>
-              <TableRow>
-                <SingleTableCell text="Standard Room" isHead />
-                <SingleTableCell text="Premium Room" isHead />
-                <SingleTableCell text="Premium Plus Room" isHead />
-                <SingleTableCell text="Supreme Room (Only Boys)" isHead />
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {/* Example data - replace with your actual data */}
-              <TableRow>
-                <SingleTableCell text="85,000/-*" />
-                <SingleTableCell text="1,00,000/-*" />
-                <SingleTableCell text="1,30,000/-*" />
-                <SingleTableCell text="1,50,000/-*" />
-              </TableRow>
-            </TableBody>
-          </Table>
+            <Table
+              sx={{
+                minWidth: "100%",
+                backgroundColor: "rgba(186, 107, 255, 0.08)",
+                borderRadius: "12px",
+              }}
+            >
+              <TableHead>
+                <TableRow>
+                  <SingleTableCell text="Standard Room" isHead />
+                  <SingleTableCell text="Premium Room" isHead />
+                  <SingleTableCell text="Premium Plus Room" isHead />
+                  <SingleTableCell text="Supreme Room (Only Boys)" isHead />
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                <TableRow>
+                  <SingleTableCell text="85,000/-*" />
+                  <SingleTableCell text="1,00,000/-*" />
+                  <SingleTableCell text="1,30,000/-*" />
+                  <SingleTableCell text="1,50,000/-*" />
+                </TableRow>
+              </TableBody>
+            </Table>
+          </Box>
+
+          {/* Additional Table - Vertical layout for mobile */}
+          <Box
+            sx={{
+              overflowX: "auto",
+              WebkitOverflowScrolling: "touch",
+              "&::-webkit-scrollbar": { display: "none" },
+              display: { xs: "block", md: "none" },
+              marginTop: "20px",
+            }}
+          >
+            <Table
+              sx={{
+                minWidth: "100%",
+                backgroundColor: "rgba(186, 107, 255, 0.08)",
+                borderRadius: "12px",
+                borderCollapse: "separate",
+                borderSpacing: 0,
+                "& .MuiTableCell-root": {
+                  border: "none",
+                  padding: "12px 16px",
+                },
+              }}
+            >
+              <TableBody>
+                <TableRow>
+                  <TableCell sx={{ color: "rgba(108, 16, 188, 1)" }}>
+                    Standard Room
+                  </TableCell>
+                  <TableCell>85,000/-*</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell sx={{ color: "rgba(108, 16, 188, 1)" }}>
+                    Premium Room
+                  </TableCell>
+                  <TableCell>1,00,000/-*</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell sx={{ color: "rgba(108, 16, 188, 1)" }}>
+                    Premium Plus Room
+                  </TableCell>
+                  <TableCell>1,30,000/-*</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell sx={{ color: "rgba(108, 16, 188, 1)" }}>
+                    Supreme Room (Only Boys)
+                  </TableCell>
+                  <TableCell>1,50,000/-*</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </Box>
         </Box>
       </Box>
     </Box>
