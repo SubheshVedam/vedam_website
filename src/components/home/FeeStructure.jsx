@@ -24,7 +24,7 @@ const SingleTableCell = ({ text, isHead = false, isFirst = false }) => {
         paddingBottom: "20px",
         paddingTop: isHead ? "16px" : "0px",
         paddingBottom: "16px",
-        fontWeight: "600",
+        fontWeight: "350",
         color: isHead ? "rgba(108, 16, 188, 1)" : "rgba(30, 30, 30, 1)",
       }}
     >

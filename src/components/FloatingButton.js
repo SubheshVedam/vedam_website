@@ -22,8 +22,8 @@ const FloatingButton = () => {
   return (
     <Box sx={{
       position: 'fixed',
-      bottom: '24px',
-      right: '24px',
+      bottom: {xs:'24px',sm:'70px'},
+      right: '20px',
       zIndex: 1000,
       animation: `${pulse} 3s ease-in-out infinite`,
     }}>
