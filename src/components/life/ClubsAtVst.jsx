@@ -124,7 +124,7 @@ export const ClubsAtVst = () => {
       >
         <Slider ref={setSliderRef} {...settings}>
           {clubs.map((club, index) => (
-            <Box key={index} sx={{ padding: "20px" }}>
+            <Box key={index} sx={{ padding: { xs: "8px", sm: "20px" } }}>
               <IconTitle
                 src={
                   index % 2 === 0
@@ -148,7 +148,7 @@ export const ClubsAtVst = () => {
                   className="clubsAtVstImage"
                   style={{
                     width: "100%",
-                    borderRadius:'16px',
+                    borderRadius: "16px",
                     height: isMobile ? "200px" : "300px",
                     objectFit: "cover",
                   }}
