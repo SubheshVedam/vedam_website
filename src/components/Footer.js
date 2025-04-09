@@ -5,16 +5,16 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import YouTubeIcon from '@mui/icons-material/YouTube';
+import XIcon from "@mui/icons-material/X";
 
 // Dummy data for footer columns
 const FOOTER_LINKS = [
   {
     title: "Quick Links",
     links: [
-      { label: "Home", href: "/home" },
-      { label: "Admission", href: "/admission" },
-      { label: "Life@VST", href: "/life" },
-      { label: "Team", href: "/about" },
+      { label: "Terms of use", href: "/terms-of-use" },
+      { label: "Privacy Policy", href: "/privacy-policy" },
+      { label: "Refund Policy", href: "/refund-policy" },
     ],
   },
   {
@@ -30,22 +30,27 @@ const SOCIAL_LINKS = [
   {
     name: "YouTube",
     url: "https://www.youtube.com/@VedamSchoolofTech_Official",
-    icon:  <YouTubeIcon sx={{color:'black'}}/>,
+    icon:  <YouTubeIcon sx={{color:'white'}}/>,
   },
   {
     name: "Instagram",
     url: "https://www.instagram.com/vedamschooloftech_official/?igsh=MTRscTNtdGxnNG1yMQ%3D%3D#",
-    icon:  <InstagramIcon sx={{color:'black'}}/>,
+    icon:  <InstagramIcon sx={{color:'white'}}/>,
   },
   {
     name: "LinkedIn",
     url: "https://www.linkedin.com/company/vedam-school-of-technology/",
-    icon:  <LinkedInIcon sx={{color:'black'}}/>,
+    icon:  <LinkedInIcon sx={{color:'white'}}/>,
   },
   {
     name: "Telegram",
-    url: "https://www.linkedin.com/company/vedam-school-of-technology/",
-    icon: <TelegramIcon sx={{color:'black'}}/>,
+    url: "https://t.me/vedamschooloftechnology",
+    icon: <TelegramIcon sx={{color:'white'}}/>,
+  },
+  {
+    name: "Twitter",
+    url: "https://x.com/vedamschooltech",
+    icon: <XIcon sx={{color:'white'}}/>,
   },
 ];
 
@@ -58,7 +63,7 @@ export default function Footer() {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      background: "linear-gradient(to bottom, #BA6BFF, #FFFFFF)", // Linear gradient from purple to lighter purple
+      background: "linear-gradient(to right, #6C10BC, #FB7F05)", // Linear gradient from purple to lighter purple
       paddingX: "1rem",
       paddingY: "40px",
     }}
@@ -67,7 +72,7 @@ export default function Footer() {
         sx={{
           paddingX: "10px",
           width: { xs: "100%", md: "1024px", xl: "1280px" },
-          color: "black",
+          color: "white",
           display: "flex",
           flexDirection: "column",
           gap: 4,
@@ -79,14 +84,14 @@ export default function Footer() {
             <Stack spacing={1}>
               <Box
                 sx={{
-                  width: "100%",
+                  width: "75%",
                   display: "flex",
                   justifyContent: "flex-start",
                 }}
               >
                 <Box sx={{ width: { xs: 170, sm: 200 }, ml: "-10px" }}>
                   <Image
-                    src="/img/vedam_logo.webp"
+                    src="/img/Vedam_Final_Logo_White.png"
                     alt="Navbar Logo"
                     width={200}
                     height={200}
@@ -103,9 +108,13 @@ export default function Footer() {
           {FOOTER_LINKS.map((column) => (
             <Grid item xs={6} sm={6} md={3} key={column.title}>
               <Typography
-                variant="h6"
-                sx={{ fontWeight: 700, mb: { xs: 1, sm: 2 } }}
-              >
+  variant="h6"
+  sx={{
+    fontWeight: 600,
+    mb: { xs: 1, sm: 2 },
+    fontSize: ["Quick Links", "Contact"].includes(column.title) ? "1.3rem" : "inherit",
+  }}
+>
                 {column.title}
               </Typography>
               <Stack spacing={{ xs: 1, sm: 2 }}>
@@ -130,7 +139,7 @@ export default function Footer() {
 
           {/* Social Links Column */}
           <Grid item xs={12} sm={6} md={3}>
-            <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>
+            <Typography variant="h6" sx={{ fontWeight: 500, mb: 2 }}>
               Follow Us
             </Typography>
             <Stack direction={{ xs: "row", sm: "column" }} spacing={2}>
@@ -142,7 +151,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   display="flex"
                   gap="10px"
-                  color="#FFA41A"
+                  color="#FFFFFF"
                   alignItems="center"
                   underline="hover"
                 >
@@ -160,10 +169,10 @@ export default function Footer() {
                   {social.icon}
                   <Typography
                     fontSize={{ xs: 0, sm: 16 }}
-                    color="black"
+                    color="white"
                     sx={{
                       "&:hover": {
-                        color: "#FFA41A",
+                        color: "#FFFFFF",
                       },
                     }}
                   >
@@ -189,17 +198,6 @@ export default function Footer() {
           <Typography variant="body2">
             Copyright © SET Education Technology Pvt. Ltd. 2025
           </Typography>
-          <Stack direction="row" spacing={2}>
-            <Link href="/terms-of-use" color="inherit" underline="hover">
-              Terms of use
-            </Link>
-            <Link href="/privacy-policy" color="inherit" underline="hover">
-              Privacy Policy
-            </Link>
-            <Link href="/refund-policy" color="inherit" underline="hover">
-            Refund Policy
-            </Link>
-          </Stack>
         </Box>
       </Box>
     </Box>
