@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { lifeAtVedam } from "@/constants/data";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -38,6 +38,8 @@ export const ClubsAtVst = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [sliderRef, setSliderRef] = useState(null);
   const clubs = lifeAtVedam.clubsAtVst;
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   // Carousel settings
   const settings = {
@@ -122,7 +124,7 @@ export const ClubsAtVst = () => {
       >
         <Slider ref={setSliderRef} {...settings}>
           {clubs.map((club, index) => (
-            <Box key={index} sx={{padding:'20px' }}>
+            <Box key={index} sx={{ padding: "20px" }}>
               <IconTitle
                 src={
                   index % 2 === 0
@@ -144,7 +146,12 @@ export const ClubsAtVst = () => {
                   width={300}
                   height={200}
                   className="clubsAtVstImage"
-                  style={{ width: "100%", height: "auto" }}
+                  style={{
+                    width: "100%",
+                    borderRadius:'16px',
+                    height: isMobile ? "200px" : "300px",
+                    objectFit: "cover",
+                  }}
                 />
               </Box>
             </Box>

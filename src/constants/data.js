@@ -762,7 +762,7 @@ export const lifeAtVedam = {
         "Join our Cultural Club to celebrate diversity through music, dance, drama, and festivals. Engage in events that bring creativity to life!",
       rightSideText: "Cultural Club",
       rightSideText2: "Open Source club",
-      image: "/img/clubsAtVst.webp",
+      image: "/img/clubsatVedam/Cultural_club.jpeg",
     },
     {
       leftSideTitle: "Clubs at VST",
@@ -778,7 +778,7 @@ export const lifeAtVedam = {
         "Join our ESports Club and compete in gaming tournaments, enhance strategic thinking, and connect with passionate gamers.",
       rightSideText: "ESports Club",
       rightSideText2: "Data Science",
-      image: "/img/clubsAtVst.webp",
+      image: "/img/clubsatVedam/Esports.jpeg",
     },
     {
       leftSideTitle: "Clubs at VST",
@@ -786,7 +786,7 @@ export const lifeAtVedam = {
         "Contribute to open-source projects, collaborate with developers, and gain real-world coding experience in our Open Source Club.",
       rightSideText: "Open Source Club",
       rightSideText2: "Creative Hub",
-      image: "/img/clubsAtVst.webp",
+      image: "/img/clubsatVedam/competitive_coding.jpeg",
     },
     {
       leftSideTitle: "Clubs at VST",
@@ -794,7 +794,7 @@ export const lifeAtVedam = {
         "Sharpen your problem-solving skills with our Competitive Coding Club! Participate in coding challenges, and algorithmic competitions.",
       rightSideText: "Competitive Coding Club",
       rightSideText2: "Creative Hub",
-      image: "/img/clubsAtVst.webp",
+      image: "/img/clubsatVedam/open_source.jpeg",
     },
     {
       leftSideTitle: "Clubs at VST",
@@ -802,7 +802,7 @@ export const lifeAtVedam = {
         "Join our Entrepreneurship Club to learn how to turn ideas into successful ventures and change the future!",
       rightSideText: "Entrepreneurship Club",
       rightSideText2: "Creative Hub",
-      image: "/img/clubsAtVst.webp",
+      image: "/img/clubsatVedam/Entrepreneurship_club.jpeg",
     },
   ],
   vedamLab: {
