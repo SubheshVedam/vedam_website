@@ -147,9 +147,9 @@ export default function DetailsCard({
         )}
         <Box
           sx={{
-            textAlign: isFeatured ? "center" : "left",
+            textAlign: "left",
             overflow: "hidden",
-            paddingY: isFeatured || isScholarshipCard ? 0 : "10px",
+            paddingY: isScholarshipCard ? 0 : "10px",
           }}
         >
           <Box
@@ -163,8 +163,8 @@ export default function DetailsCard({
               sx={{
                 color: "white",
                 fontWeight: "bold",
-                fontSize: isFeatured ? { xs: 22, sm: 32 } : { xs: 18, sm: 20 },
-                marginBottom: isFeatured ? 0 : { xs: "8px", sm: "16px" },
+                fontSize: { xs: 18, sm: 20 },
+                marginBottom: { xs: "8px", sm: "16px" },
               }}
             >
               {title}
