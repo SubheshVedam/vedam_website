@@ -13,6 +13,7 @@ export const CardContainer = ({
   return (
     <Box
       sx={{
+        pt:'1rem',
         display: "flex",
         flexDirection: "column",
         width: "100%",
@@ -49,7 +50,7 @@ export const CardContainer = ({
               background: linearGradientSubtitle,
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
-              fontSize: "clamp(1rem, 2.5vw, 2rem)",
+              fontSize: "clamp(1.3rem, 2.5vw, 2rem)",
             }}
             lineHeight={"120%"}
             letterSpacing={"-2%"}

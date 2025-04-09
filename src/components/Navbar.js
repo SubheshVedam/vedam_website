@@ -19,16 +19,17 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import { navLinks } from "@/constants/data";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const pathname = usePathname();
+  const router = useRouter();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-  
+
   const isAuthLink = (label) => {
     return label.includes("Login") || label.includes("Register");
   };
@@ -90,11 +91,16 @@ export default function Navbar() {
               alt="Navbar Logo"
               width={88}
               height={34}
-              style={{ objectFit: "contain", maxWidth: "100%" }}
+              style={{
+                objectFit: "contain",
+                maxWidth: "100%",
+                cursor: "pointer",
+              }}
               sx={{
                 width: { xs: "51px", sm: "88px" },
                 height: { xs: "20px", sm: "34px" },
               }}
+              onClick={() => router.push("/home")}
             />
 
             {/* Desktop Navigation */}
@@ -170,10 +176,10 @@ export default function Navbar() {
                     borderRadius: "8px",
                     fontFamily: "Inter",
                     "&:hover": activeStyle,
-                    ...(isActive(navLinks[navLinks.length - 1].path)) && {
+                    ...(isActive(navLinks[navLinks.length - 1].path) && {
                       ...activeStyle,
                       backgroundColor: "transparent",
-                    },
+                    }),
                   }}
                   target="_blank"
                   href={navLinks[navLinks.length - 1].path}
@@ -203,7 +209,7 @@ export default function Navbar() {
                   href={link.path}
                   onClick={handleDrawerToggle}
                   sx={{
-                    ...(isActive(link.path)) && activeStyle,
+                    ...(isActive(link.path) && activeStyle),
                   }}
                 >
                   <ListItemText
@@ -216,7 +222,7 @@ export default function Navbar() {
                       textTransform: "none",
                       transition: "all 0.3s ease-in-out",
                       "&:hover": activeStyle,
-                      ...(isActive(link.path)) && activeStyle,
+                      ...(isActive(link.path) && activeStyle),
                     }}
                     primary={link.label}
                   />

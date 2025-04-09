@@ -150,7 +150,7 @@ export const detailsData = [
     image: "/img/whyvedam/fifth.webp",
     title: "Personal Macbook ",
     description:
-      "It's your key to a hands-on, immersive and collaborative learning experience in Computer Science and AI.",
+      "It's your key to a hands-on, immersive and collaborative learning experience in CS and AI.",
     isFeatured: true,
   },
 ];

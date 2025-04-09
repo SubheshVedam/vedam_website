@@ -4,10 +4,9 @@ import React, { Fragment, useState } from "react";
 import { Box, Button, Collapse, Typography } from "@mui/material";
 import { faqsScreenData } from "@/constants/data";
 import { WidthContainer } from "@/components";
-import Image from "next/image";
 
 const Faqs = () => {
-  const [expandedButton, setExpandedButton] = useState(0);
+  const [expandedButton, setExpandedButton] = useState(null);
 
   const handleToggle = (buttonId) => {
     setExpandedButton(expandedButton === buttonId ? null : buttonId);
@@ -89,7 +88,12 @@ const Faqs = () => {
                     ></div>
                   </Button>
                   <Collapse in={expandedButton === item.id}>
-                    <Box sx={{ padding: { xs: "10px 20px", md: "30px 40px" } }}>
+                    <Box
+                      sx={{
+                        padding: { xs: "10px 20px", md: "30px 40px" },
+                        fontSize: { xs: 11, sm: 18 },
+                      }}
+                    >
                       {item.description}
                     </Box>
                   </Collapse>

@@ -1,10 +1,10 @@
 import * as React from "react";
 import { Box, Typography, Link, Stack, Grid } from "@mui/material";
 import Image from "next/image";
-import InstagramIcon from '@mui/icons-material/Instagram';
-import TelegramIcon from '@mui/icons-material/Telegram';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import YouTubeIcon from '@mui/icons-material/YouTube';
+import InstagramIcon from "@mui/icons-material/Instagram";
+import TelegramIcon from "@mui/icons-material/Telegram";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import YouTubeIcon from "@mui/icons-material/YouTube";
 import XIcon from "@mui/icons-material/X";
 
 // Dummy data for footer columns
@@ -20,7 +20,7 @@ const FOOTER_LINKS = [
   {
     title: "Contact",
     links: [
-      { label: "connect@vedam.org", href:"mailto:connect@vedam.org"  },
+      { label: "connect@vedam.org", href: "mailto:connect@vedam.org" },
       { label: "+91 92010 10176", href: "tel:9201010176" },
     ],
   },
@@ -30,44 +30,45 @@ const SOCIAL_LINKS = [
   {
     name: "YouTube",
     url: "https://www.youtube.com/@VedamSchoolofTech_Official",
-    icon:  <YouTubeIcon sx={{color:'white'}}/>,
+    icon: <YouTubeIcon sx={{ color: "white" }} />,
   },
   {
     name: "Instagram",
     url: "https://www.instagram.com/vedamschooloftech_official/?igsh=MTRscTNtdGxnNG1yMQ%3D%3D#",
-    icon:  <InstagramIcon sx={{color:'white'}}/>,
+    icon: <InstagramIcon sx={{ color: "white" }} />,
   },
   {
     name: "LinkedIn",
     url: "https://www.linkedin.com/company/vedam-school-of-technology/",
-    icon:  <LinkedInIcon sx={{color:'white'}}/>,
+    icon: <LinkedInIcon sx={{ color: "white" }} />,
   },
   {
     name: "Telegram",
     url: "https://t.me/vedamschooloftechnology",
-    icon: <TelegramIcon sx={{color:'white'}}/>,
+    icon: <TelegramIcon sx={{ color: "white" }} />,
   },
   {
     name: "Twitter",
     url: "https://x.com/vedamschooltech",
-    icon: <XIcon sx={{color:'white'}}/>,
+    icon: <XIcon sx={{ color: "white" }} />,
   },
 ];
 
 export default function Footer() {
   return (
     <Box
-    component="footer"
-    sx={{
-      width: "auto",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      background: "linear-gradient(to right, #6C10BC, #FB7F05)", // Linear gradient from purple to lighter purple
-      paddingX: "1rem",
-      paddingY: "40px",
-    }}
-  >
+      component="footer"
+      sx={{
+        width: "auto",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        background: "linear-gradient(to right, #6C10BC, #FB7F05)", // Linear gradient from purple to lighter purple
+        paddingX: "1rem",
+        paddingY: { xs: 0, sm: "20px" },
+        pb:{ xs: "8px", sm: 0 },
+      }}
+    >
       <Box
         sx={{
           paddingX: "10px",
@@ -108,13 +109,15 @@ export default function Footer() {
           {FOOTER_LINKS.map((column) => (
             <Grid item xs={6} sm={6} md={3} key={column.title}>
               <Typography
-  variant="h6"
-  sx={{
-    fontWeight: 500,
-    mb: { xs: 1, sm: 2 },
-    fontSize: ["Quick Links", "Contact"].includes(column.title) ? "1.35rem" : "inherit",
-  }}
->
+                variant="h6"
+                sx={{
+                  fontWeight: 500,
+                  mb: { xs: 1, sm: 2 },
+                  fontSize: ["Quick Links", "Contact"].includes(column.title)
+                    ? "1.25rem"
+                    : "inherit",
+                }}
+              >
                 {column.title}
               </Typography>
               <Stack spacing={{ xs: 1, sm: 2 }}>
@@ -125,6 +128,7 @@ export default function Footer() {
                     color="inherit"
                     underline="hover"
                     sx={{
+                      fontSize: { xs: 13, sm: 16 },
                       "&:hover": {
                         color: "#FFA41A",
                       },
@@ -138,8 +142,8 @@ export default function Footer() {
           ))}
 
           {/* Social Links Column */}
-          <Grid item xs={12} sm={6} md={3}>
-            <Typography variant="h6" sx={{ fontWeight: 400, mb: 2 }}>
+          <Grid item xs={12} sm={6} md={3} sx={{ mt: { xs: 2, sm: 0 } }}>
+            <Typography variant="h6" sx={{ fontWeight: 400, mb: 1 }}>
               Follow Us
             </Typography>
             <Stack direction={{ xs: "row", sm: "column" }} spacing={2}>
@@ -192,10 +196,10 @@ export default function Footer() {
             justifyContent: "space-between",
             alignItems: "center",
             borderTop: "1px solid rgba(0, 0, 0, 0.27)",
-            paddingTop: 3,
+            paddingTop: 2,
           }}
         >
-          <Typography variant="body2">
+          <Typography variant="body2" sx={{ fontSize: { xs: 12, sm: 16 } }}>
             Copyright © SET Education Technology Pvt. Ltd. 2025
           </Typography>
         </Box>

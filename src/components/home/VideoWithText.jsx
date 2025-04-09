@@ -88,6 +88,7 @@ export const VideoWithText = ({ title, subtitle, isImg }) => {
         </Typography>
         <Button
           sx={{
+            mt:'12px',
             fontSize: "clamp(20px. 2.5vw, 12px)",
             color: "#F9F9F9",
             background:

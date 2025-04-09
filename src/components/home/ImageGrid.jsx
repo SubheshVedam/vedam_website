@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
@@ -10,17 +10,21 @@ export const ImageGrid = () => {
   const [activeIndices, setActiveIndices] = useState([]);
   const [fadeStates, setFadeStates] = useState({});
 
-  // Initialize with 5 random images
+  // Initialize with random images (9 for mobile, 10 for desktop)
   useEffect(() => {
-    const initialIndices = getRandomIndices(10, homeScreenData.fromEducationToEntrance.imagesGrid.length);
+    const count = isMobile ? 9 : 10;
+    const initialIndices = getRandomIndices(
+      count,
+      homeScreenData.fromEducationToEntrance.imagesGrid.length
+    );
     setActiveIndices(initialIndices);
-    
+  
     const initialFadeStates = {};
-    initialIndices.forEach(index => {
+    initialIndices.forEach((index) => {
       initialFadeStates[index] = { opacity: 1, transitioning: false };
     });
     setFadeStates(initialFadeStates);
-  }, []);
+  }, [isMobile]);
 
   // Get unique random indices
   const getRandomIndices = (count, max) => {
@@ -37,22 +41,24 @@ export const ImageGrid = () => {
     if (activeIndices.length === 0) return;
 
     const interval = setInterval(() => {
-      // Choose 1-2 random logos to replace (for subtlety)
+      const totalImages = isMobile ? 9 : 10;
       const positionsToReplace = [];
-      const changeCount = 4; // 50% chance for 1 or 2 changes
-      
+      const changeCount = Math.floor(totalImages * 0.4); // Change 40% of images at a time
+
       while (positionsToReplace.length < changeCount) {
-        const randomPos = Math.floor(Math.random() * 10);
-        if (!positionsToReplace.includes(randomPos) && 
-            !fadeStates[activeIndices[randomPos]]?.transitioning) {
+        const randomPos = Math.floor(Math.random() * totalImages);
+        if (
+          !positionsToReplace.includes(randomPos) &&
+          !fadeStates[activeIndices[randomPos]]?.transitioning
+        ) {
           positionsToReplace.push(randomPos);
         }
       }
 
       // Start fade out
-      setFadeStates(prev => {
-        const newStates = {...prev};
-        positionsToReplace.forEach(pos => {
+      setFadeStates((prev) => {
+        const newStates = { ...prev };
+        positionsToReplace.forEach((pos) => {
           const currentIndex = activeIndices[pos];
           newStates[currentIndex] = { opacity: 0, transitioning: true };
         });
@@ -63,13 +69,16 @@ export const ImageGrid = () => {
       setTimeout(() => {
         const newIndices = [...activeIndices];
         const usedIndices = new Set(activeIndices);
-        
-        positionsToReplace.forEach(pos => {
+
+        positionsToReplace.forEach((pos) => {
           let newIndex;
           do {
-            newIndex = Math.floor(Math.random() * homeScreenData.fromEducationToEntrance.imagesGrid.length);
+            newIndex = Math.floor(
+              Math.random() *
+                homeScreenData.fromEducationToEntrance.imagesGrid.length
+            );
           } while (usedIndices.has(newIndex));
-          
+
           newIndices[pos] = newIndex;
           usedIndices.add(newIndex);
         });
@@ -77,9 +86,9 @@ export const ImageGrid = () => {
         setActiveIndices(newIndices);
 
         // Start fade in (starting transparent)
-        setFadeStates(prev => {
-          const newStates = {...prev};
-          positionsToReplace.forEach(pos => {
+        setFadeStates((prev) => {
+          const newStates = { ...prev };
+          positionsToReplace.forEach((pos) => {
             const newIndex = newIndices[pos];
             newStates[newIndex] = { opacity: 0, transitioning: true };
           });
@@ -88,9 +97,9 @@ export const ImageGrid = () => {
 
         // Complete fade in
         setTimeout(() => {
-          setFadeStates(prev => {
-            const newStates = {...prev};
-            positionsToReplace.forEach(pos => {
+          setFadeStates((prev) => {
+            const newStates = { ...prev };
+            positionsToReplace.forEach((pos) => {
               const newIndex = newIndices[pos];
               newStates[newIndex] = { opacity: 1, transitioning: false };
             });
@@ -101,7 +110,7 @@ export const ImageGrid = () => {
     }, 2000); // Change interval
 
     return () => clearInterval(interval);
-  }, [activeIndices, fadeStates]);
+  }, [activeIndices, fadeStates, isMobile]);
 
   return (
     <Box
@@ -114,7 +123,7 @@ export const ImageGrid = () => {
       <Box
         sx={{
           display: "grid",
-          gridTemplateColumns: "repeat(5, 1fr)",
+          gridTemplateColumns: isMobile ? "repeat(3, 1fr)" : "repeat(5, 1fr)",
           gap: "10px",
           justifyContent: "space-around",
           marginBottom: { xs: "0.5rem", md: "1.5rem" },
@@ -127,11 +136,12 @@ export const ImageGrid = () => {
               key={`img-${item.id}-${position}`}
               sx={{
                 position: "relative",
-                width: isMobile ? 44 : 140,
-                height: isMobile ? 14 : 40,
+                width: isMobile ? 80 : 140,
+                height: isMobile ? 32 : 40,
                 opacity: fadeStates[index]?.opacity ?? 1,
-                transition: 'opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
-                filter: fadeStates[index]?.opacity < 1 ? 'grayscale(20%)' : 'none',
+                transition: "opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
+                filter:
+                  fadeStates[index]?.opacity < 1 ? "grayscale(20%)" : "none",
               }}
             >
               <Image
@@ -139,7 +149,7 @@ export const ImageGrid = () => {
                 alt={"image"}
                 fill
                 loading="lazy"
-                style={{ 
+                style={{
                   objectFit: "contain",
                 }}
                 className="singleImageGrid"
