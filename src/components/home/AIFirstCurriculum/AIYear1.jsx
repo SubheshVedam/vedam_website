@@ -123,7 +123,7 @@ export const AIYear1 = () => {
             <Typography
               variant="subtitle1"
               sx={{
-                fontSize: "12px",
+                fontSize: "10px",
                 fontFamily: "Inter",
                 fontWeight: "350",
                 color: "rgba(30, 30, 30, 1)",

@@ -173,7 +173,7 @@ export const homeScreenData = {
       "Vedam's 4-year BTech program prepares you for startups, innovation, and leadership with industry driven coursework and hands-on projects.",
   },
   fromEducationToEntrance: {
-    title: "From education to entrance",
+    title: "",
     subtitle: "Our Students at Top companies",
     imagesGrid: [
       {
@@ -269,13 +269,13 @@ export const homeScreenData = {
     buttonIcon: "/img/brochure.webp",
   },
   techTeam: {
-    title: "Brilliant Mind who works",
+    title: "",
     subtitle: "Tech team behind Vedam",
     image: "/img/tech_team.jpeg",
     // image: "/img/tech_team.webp",
   },
   investorWhoTrustUs: {
-    subtitle: "Investor who trust us",
+    subtitle: "Investors who trust us",
     data: [
       { id: 0, img: "/img/investors/alteria.webp" },
       { id: 1, img: "/img/investors/saama.webp" },
@@ -288,7 +288,7 @@ export const homeScreenData = {
     ],
   },
   whyVedam: {
-    title: "It is a edge for you",
+    title: "",
     subtitle: "Why Vedam",
   },
   vedamVs: {
@@ -443,14 +443,14 @@ export const homeScreenData = {
     ],
   },
   learnFrom: {
-    title: "The people who build for world",
+    title: "",
     subtitle: "Learn from MAANG Experts",
   },
   whatPeople: {
     subtitle: "What people says about us",
   },
   aiFirst: {
-    title: "Future proof learning",
+    title: "",
     subtitle: "AI First Curriculum",
     data: [
       { id: 1, title: "Year 1", subtitle: "Foundation", content: <AIYear1 /> },

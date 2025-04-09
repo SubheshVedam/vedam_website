@@ -48,7 +48,7 @@ export const AIFirstCurriculumDesktop = () => {
         <div className="curriculum-container">
           <div>
             <CardContainer
-              title="Future proof learning"
+              title=""
               subtitle=" AI First Curriculum"
               containerStyle={{ padding: "20px 10px" }}
             >
