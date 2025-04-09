@@ -21,19 +21,36 @@ export default function PrivacyPolicy() {
               Privacy Policy
             </h1>
 
-            <div className="space-y-6">
+            <div className="space-y-6 text-gray-700">
               <section>
-                <p className="text-gray-700 mb-4">
+                <p>
                   This policy applies only to information we collect through our
                   Services, in email, text and other electronic communications
                   sent through or in connection with our Services.
                 </p>
-                <p className="text-gray-700">
-                  We at SET Education Technology Private Limited ("SET Education
-                  Technology Private Limited," the "Company," "we," "us," and
-                  "our,") firmly believe in the highest standards of integrity
+                <p>
+                  We at SET Education Technology Private Limited (“SET Education
+                  Technology Private Limited,” the “Company,” “we,” “us,” and
+                  “our,”) firmly believe in the highest standards of integrity
                   in relation to information provided by our customers when they
                   use our services and otherwise.
+                </p>
+                <p>
+                  This policy describes the types of information that we may
+                  collect from you when you access or use our website or
+                  applications or any other online services (collectively, our
+                  “Services”); and our practices for collecting, using,
+                  maintaining, protecting and disclosing that information.
+                </p>
+                <p>
+                  Please read this policy carefully to understand our policies
+                  and practices regarding your information and how we will treat
+                  it. If you do not agree with our policies and practices, your
+                  choice is not to use our Services. By accessing or using our
+                  services, you agree to this privacy policy. This policy may
+                  change from time to time, your continued use of our services
+                  after we make changes is deemed to be acceptance of those
+                  changes, so please check the policy periodically for updates.
                 </p>
               </section>
 
@@ -41,46 +58,55 @@ export default function PrivacyPolicy() {
                 <h2 className="text-2xl font-semibold text-secondary mb-4">
                   I. The information we collect and how we use it
                 </h2>
-                <p className="text-gray-700 mb-4">
-                  We collect several types of information from and about users
-                  of our services, including information:
-                </p>
-                <ul className="list-disc pl-6 text-gray-700 mb-4">
-                  <li>By which you may be personally identified; and/or</li>
-                  <li>
-                    About your internet connection, the equipment you use to
-                    access our Services and your usage details.
-                  </li>
+                <p>We collect several types of information from and about users of our services, including:</p>
+                <ul className="list-disc pl-6">
+                  <li>Information by which you may be personally identified</li>
+                  <li>Information about your internet connection, the equipment you use to access our Services and your usage details</li>
                 </ul>
-
-                <h3 className="text-xl font-semibold text-secondary mb-2">
-                  We collect this information:
-                </h3>
-                <ul className="list-disc pl-6 text-gray-700">
-                  <li>Directly from you when you provide it to us; and/or</li>
+                <p className="mt-4">We collect this information:</p>
+                <ul className="list-disc pl-6">
+                  <li>Directly from you when you provide it to us</li>
                   <li>Automatically as you navigate through our Services</li>
                 </ul>
+
+                <h3 className="text-xl font-semibold mt-4 mb-2">
+                  Information You Provide to Us
+                </h3>
+                <ul className="list-disc pl-6">
+                  <li>Your account information: Full name, email, postal code, password, mobile number, etc.</li>
+                  <li>Your content: Batting parameters, motion sensor data, and profile details.</li>
+                </ul>
+
+                <h3 className="text-xl font-semibold mt-4 mb-2">
+                  Information We Collect Through Automatic Data Collection Technologies
+                </h3>
+                <ul className="list-disc pl-6">
+                  <li>Usage information: Traffic data, location, logs, resources accessed.</li>
+                  <li>Computer/device info: IP, OS, browser, network details, device identifiers.</li>
+                  <li>Your activity: Clicks, searches, time spent, page views, etc.</li>
+                </ul>
+
+                <h3 className="text-xl font-semibold mt-4 mb-2">
+                  Anonymous or De-Identified Data
+                </h3>
+                <p>
+                  We may anonymize and/or de-identify information for analysis and improvements. Such data is not restricted by this policy and may be used or disclosed without limitation.
+                </p>
               </section>
 
               <section>
                 <h2 className="text-2xl font-semibold text-secondary mb-4">
                   II. How we use the information we collect
                 </h2>
-                <p className="text-gray-700 mb-4">
-                  We use the information we collect from and about you for a
-                  variety of purposes, including to:
-                </p>
-                <ul className="list-disc pl-6 text-gray-700">
-                  <li>Process and respond to your queries</li>
-                  <li>Understand our users and improve our Services</li>
-                  <li>
-                    Send you communications that you have requested or that may
-                    be of interest to you
-                  </li>
-                  <li>Enable us to show you relevant ads</li>
-                  <li>Carry out our obligations and enforce our rights</li>
-                  <li>Notify you about changes to our Services</li>
-                  <li>For any other purpose with your consent</li>
+                <ul className="list-disc pl-6">
+                  <li>Respond to your queries</li>
+                  <li>Improve content and features</li>
+                  <li>Diagnose technical issues</li>
+                  <li>Send relevant communication and offers</li>
+                  <li>Show personalized ads</li>
+                  <li>Fulfill contractual obligations and enforce rights</li>
+                  <li>Notify you of updates</li>
+                  <li>For other purposes with your consent</li>
                 </ul>
               </section>
 
@@ -88,43 +114,78 @@ export default function PrivacyPolicy() {
                 <h2 className="text-2xl font-semibold text-secondary mb-4">
                   III. How we share the information we collect
                 </h2>
-                <p className="text-gray-700 mb-4">
-                  We may disclose personal information that we collect or you
-                  provide, as described in this privacy policy, in the following
-                  ways:
-                </p>
-                <ul className="list-disc pl-6 text-gray-700">
-                  <li>
-                    To contractors, service providers and other third-parties
-                  </li>
-                  <li>To fulfil the purpose for which you provide it</li>
-                  <li>For legal purposes and compliance with law</li>
-                  <li>
-                    To protect the rights, property, or safety of SET Education
-                    Technology Private Limited
-                  </li>
-                  <li>With your consent</li>
+                <p>We may share information:</p>
+                <ul className="list-disc pl-6">
+                  <li>With service providers under confidentiality agreements</li>
+                  <li>As per the purpose you provided the data</li>
+                  <li>To comply with legal processes or protect rights</li>
+                  <li>With consent</li>
                 </ul>
+              </section>
+
+              <section>
+                <h2 className="text-2xl font-semibold text-secondary mb-4">
+                  IV. Choices about how we use and disclose your information
+                </h2>
+                <p>
+                  You can configure your browser or device to block cookies. We do not share your personal information with advertising agencies.
+                </p>
+              </section>
+
+              <section>
+                <h2 className="text-2xl font-semibold text-secondary mb-4">
+                  V. Communications choices
+                </h2>
+                <p>
+                  By signing up, you consent to receive emails from SET Education Technology Private Limited, its users, and businesses.
+                </p>
+              </section>
+
+              <section>
+                <h2 className="text-2xl font-semibold text-secondary mb-4">
+                  VI. Reviewing, Changing or deleting information
+                </h2>
+                <p>
+                  To review, change, or delete your data, please use the “Contact Us” option.
+                </p>
+              </section>
+
+              <section>
+                <h2 className="text-2xl font-semibold text-secondary mb-4">
+                  VII. Accessing & correcting your personal information
+                </h2>
+                <p>
+                  We encourage you to review and correct your personal data. Your rights may be limited by legal or practical factors (like abuse, safety, legal proceedings, or retention laws).
+                </p>
               </section>
 
               <section>
                 <h2 className="text-2xl font-semibold text-secondary mb-4">
                   VIII. Security: How we protect your information
                 </h2>
-                <p className="text-gray-700 mb-4">
-                  We have implemented appropriate physical, electronic, and
-                  managerial procedures to safeguard and help prevent
-                  unauthorized access to your information and to maintain data
-                  security. These safeguards take into account the sensitivity
-                  of the information that we collect, process and store and the
-                  current state of technology.
+                <p>
+                  We use industry-standard measures to protect your data but cannot guarantee absolute security. You are responsible for maintaining the confidentiality of your account credentials.
                 </p>
-                <p className="text-gray-700">
-                  We follow generally accepted industry standards to protect the
-                  personal information submitted to us. Therefore, while we
-                  strive to use commercially acceptable means to protect your
-                  personal information, we cannot guarantee its absolute
-                  security.
+                <p className="mt-2">
+                  To delete your account, click <a href="#" className="text-blue-600 underline">here</a>.
+                </p>
+              </section>
+
+              <section>
+                <h2 className="text-2xl font-semibold text-secondary mb-4">
+                  IX. Third-party links and services
+                </h2>
+                <p>
+                  We are not responsible for the privacy practices of third-party websites linked from our Services. Please read their policies separately.
+                </p>
+              </section>
+
+              <section>
+                <h2 className="text-2xl font-semibold text-secondary mb-4">
+                  X. Changes to this privacy policy
+                </h2>
+                <p>
+                  We may update this policy from time to time. Continued use of our Services constitutes your acceptance of these changes.
                 </p>
               </section>
 
@@ -132,11 +193,10 @@ export default function PrivacyPolicy() {
                 <h2 className="text-2xl font-semibold text-secondary mb-4">
                   XI. Contact us
                 </h2>
-                <p className="text-gray-700">
-                  If you have any queries relating to the processing/usage of
-                  information provided by you or SET Education Technology
-                  Private Limited's privacy policy, you may reach out to the
-                  Grievance Officer at connect@vedam.org
+                <p>
+                  If you have queries about how your data is used, contact our Grievance Officer:
+                  <br />
+                  Email: <a href="mailto:connect@vedam.org" className="text-blue-600 underline">connect@vedam.org</a>
                 </p>
               </section>
             </div>
