@@ -26,7 +26,7 @@ export default function DetailsCard({
         maxWidth: "100%",
         height: { xs: "auto", md: height },
         maxHeight: {
-          xs: isFeatured ? 220 : isScholarshipCard ? 200 : 220,
+          xs: isFeatured ? 220 : isScholarshipCard ? 220 : 220,
           md: height,
         },
         width: "100%",
@@ -34,23 +34,41 @@ export default function DetailsCard({
         padding: "20px 20px 0 20px",
         boxShadow: "none",
         overflow: "hidden",
-        ...(!isScholarshipCard && {
-            "&:hover": {
-              backgroundColor: isFeatured? "#7C20CC":"#f5f5f5",
-              transition: "background-color 0.3s ease",
-              "& .description-text": {
-                // Target the description text on card hover
-                transform: "translateY(0)",
-                opacity: 1,
-                height: "auto",
-                marginTop: "10px",
+        ...(!isScholarshipCard
+          ? {
+              "&:hover": {
+                backgroundColor: isFeatured ? "#7C20CC" : "#f5f5f5",
+                transition: "background-color 0.3s ease",
+                "& .description-text": {
+                  // Target the description text on card hover
+                  transform: "translateY(-10px)",
+                  opacity: 1,
+                  height: "auto",
+                  marginTop: "0px",
+                },
+                "& .title-box": {
+                  // Target the title box on card hover
+                  transform: "translateY(-10px)",
+                },
               },
-              "& .title-box": {
-                // Target the title box on card hover
-                transform: "translateY(-10px)",
+            }
+          : {
+              "&:hover": {
+                backgroundColor: isFeatured ? "#7C20CC" : "#f5f5f5",
+                transition: "background-color 0.3s ease",
+                "& .description-text": {
+                  // Target the description text on card hover
+                  transform: "translateY(0)",
+                  opacity: 1,
+                  height: "auto",
+                  marginTop: "10px",
+                },
+                "& .title-box": {
+                  // Target the title box on card hover
+                  transform: "translateY(-10px)",
+                },
               },
-            },
-          }),
+            }),
 
         // Background image with dark overlay
         ...(bgImage && {
@@ -99,8 +117,8 @@ export default function DetailsCard({
           flexDirection: "column",
           padding: 0,
           minHeight: {
-            xs: isScholarshipCard ? "auto" : 220,
-            sm: isScholarshipCard ? 200 : 280,
+            xs: isScholarshipCard ? 220 : 220,
+            sm: isScholarshipCard ? 220 : 280,
           },
           height: "100%",
           justifyContent: "space-between",
@@ -149,7 +167,7 @@ export default function DetailsCard({
           sx={{
             textAlign: "left",
             overflow: "hidden",
-            paddingY: isScholarshipCard ? 0 : "10px",
+            paddingY: isScholarshipCard ? "10px" : "10px",
           }}
         >
           <Box
@@ -172,32 +190,21 @@ export default function DetailsCard({
           </Box>
 
           {/* Description text */}
-          {isScholarshipCard ? (
-            <Typography
-              variant="body2"
-              sx={{
-                color: "white",
-                fontSize: { xs: 11, sm: 14 },
-              }}
-            >
-              {description}
-            </Typography>
-          ) : (
-            <Typography
-              className="description-text"
-              variant="body2"
-              sx={{
-                color: "white",
-                fontSize: isFeatured ? 14: { xs: 12, sm: 14 },
-                transform: "translateY(100%)",
-                opacity: 0,
-                height: 0,
-                transition: "all 0.3s ease",
-              }}
-            >
-              {description}
-            </Typography>
-          )}
+
+          <Typography
+            className="description-text"
+            variant="body2"
+            sx={{
+              color: "white",
+              fontSize: isFeatured ? 14 : { xs: 12, sm: 14 },
+              transform: "translateY(100%)",
+              opacity: 0,
+              height: 0,
+              transition: "all 0.3s ease",
+            }}
+          >
+            {description}
+          </Typography>
         </Box>
       </CardContent>
     </Card>
