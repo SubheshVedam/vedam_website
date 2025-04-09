@@ -110,9 +110,9 @@ export default function Footer() {
               <Typography
   variant="h6"
   sx={{
-    fontWeight: 600,
+    fontWeight: 500,
     mb: { xs: 1, sm: 2 },
-    fontSize: ["Quick Links", "Contact"].includes(column.title) ? "1.3rem" : "inherit",
+    fontSize: ["Quick Links", "Contact"].includes(column.title) ? "1.35rem" : "inherit",
   }}
 >
                 {column.title}
@@ -139,7 +139,7 @@ export default function Footer() {
 
           {/* Social Links Column */}
           <Grid item xs={12} sm={6} md={3}>
-            <Typography variant="h6" sx={{ fontWeight: 500, mb: 2 }}>
+            <Typography variant="h6" sx={{ fontWeight: 400, mb: 2 }}>
               Follow Us
             </Typography>
             <Stack direction={{ xs: "row", sm: "column" }} spacing={2}>
