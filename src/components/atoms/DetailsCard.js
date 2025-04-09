@@ -34,10 +34,9 @@ export default function DetailsCard({
         padding: "20px 20px 0 20px",
         boxShadow: "none",
         overflow: "hidden",
-        ...(!isFeatured &&
-          !isScholarshipCard && {
+        ...(!isScholarshipCard && {
             "&:hover": {
-              backgroundColor: "#f5f5f5",
+              backgroundColor: isFeatured? "#7C20CC":"#f5f5f5",
               transition: "background-color 0.3s ease",
               "& .description-text": {
                 // Target the description text on card hover
@@ -173,12 +172,12 @@ export default function DetailsCard({
           </Box>
 
           {/* Description text */}
-          {isFeatured || isScholarshipCard ? (
+          {isScholarshipCard ? (
             <Typography
               variant="body2"
               sx={{
                 color: "white",
-                fontSize: isFeatured ? 14 : { xs: 11, sm: 14 },
+                fontSize: { xs: 11, sm: 14 },
               }}
             >
               {description}
@@ -189,7 +188,7 @@ export default function DetailsCard({
               variant="body2"
               sx={{
                 color: "white",
-                fontSize: { xs: 12, sm: 14 },
+                fontSize: isFeatured ? 14: { xs: 12, sm: 14 },
                 transform: "translateY(100%)",
                 opacity: 0,
                 height: 0,
