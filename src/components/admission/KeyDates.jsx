@@ -53,7 +53,7 @@ export const KeyDates = () => {
             >
               <Typography
                 sx={{
-                  fontWeight: "500",
+                  fontWeight: "400",
                   lineHeight: "100%",
                   color: "#1E1E1E",
                   fontFamily: "Inter",
@@ -88,7 +88,7 @@ export const KeyDates = () => {
             >
               <Typography
                 sx={{
-                  fontWeight: "500",
+                  fontWeight: "200",
                   lineHeight: "150%",
                   color: "#1E1E1E",
                   fontFamily: "Inter",
@@ -132,7 +132,7 @@ export const KeyDates = () => {
               >
                 <Typography
                   sx={{
-                    fontWeight: "500",
+                    fontWeight: "400",
                     lineHeight: "150%",
                     color: "#1E1E1E",
                     fontFamily: "Inter",
@@ -153,7 +153,7 @@ export const KeyDates = () => {
               >
                 <Typography
                   sx={{
-                    fontWeight: "400",
+                    fontWeight: "200",
                     lineHeight: "150%",
                     color: "#1E1E1E",
                     fontFamily: "Inter",

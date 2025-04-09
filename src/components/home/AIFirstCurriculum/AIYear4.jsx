@@ -36,7 +36,7 @@ const SingleCard = ({ icon, text, isCurriculum }) => {
           sx={{
             fontFamily: "Inter",
             fontSize: "12px",
-            fontWeight: "400",
+            fontWeight: "200",
             color: "rgba(0, 0, 0, 1)",
           }}
         >

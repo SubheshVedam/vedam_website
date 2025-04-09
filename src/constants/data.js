@@ -144,7 +144,7 @@ export const detailsData = [
     bgImage: "/img/whyvedam/top_trainer_m.jpeg",
     title: "Top Instructors",
     description:
-      "At Vedam, you’ll learn from the best minds in tech—engineers, researchers, and industry leaders from Google, Microsoft, Amazon, and top startups. Our faculty doesn’t just teach theory; they bring real-world experience into the classroom.",
+      "At Vedam, you’ll learn from the best minds in tech—engineers, researchers, and industry leaders from Google, Microsoft, Amazon, and top startups.",
   },
   {
     image: "/img/whyvedam/fifth.webp",
