@@ -492,7 +492,7 @@ export const homeScreenData = {
     outcomeArray: [
       {
         id: 0,
-        text: "Building Hotstar like Feed with Search and Categories",
+        text: "Building Hotstar like Feed with Search & Categories",
         icon: "/img/outcomes/year1.jpg",
       },
       {
@@ -558,7 +558,7 @@ export const homeScreenData = {
     outcomeArray: [
       {
         id: 0,
-        text: "Build a Movie Recommendation System like Netflix",
+        text: "Build a Movie Recommendation System",
         icon: "/img/outcomes/year3_1.jpg",
       },
       {
@@ -595,7 +595,7 @@ export const homeScreenData = {
       },
       {
         id: 1,
-        text: "Build an autonomous robot that detects and avoids obstacles.",
+        text: "Build a robot that detects and avoids obstacles.",
         icon: "/img/outcomes/year4_2.jpg",
       },
       {
