@@ -364,6 +364,12 @@ export const FeeStructure = () => {
               </TableBody>
             </Table>
           </Box>
+          <Typography
+            variant="subtitle1"
+            sx={{ mt: 1, fontSize: { xs: 12, sm: 14 } }}
+          >
+            **Additional mess charge of ₹6,000 / month applicable.
+          </Typography>
         </Box>
       </Box>
     </Box>

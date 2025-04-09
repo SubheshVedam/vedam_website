@@ -476,7 +476,7 @@ export const homeScreenData = {
   },
   year1: {
     title: "Programming Foundation",
-    subtitle: "Learn the basics for AI and Programming by building from year 1",
+    subtitle: "Learn the basics for AI and Programming by building from year\u00A01",
     secondTitle: "Skills & Technologies",
     secondArray: [
       "HTML",
