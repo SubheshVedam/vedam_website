@@ -786,7 +786,7 @@ export const lifeAtVedam = {
         "Contribute to open-source projects, collaborate with developers, and gain real-world coding experience in our Open Source Club.",
       rightSideText: "Open Source Club",
       rightSideText2: "Creative Hub",
-      image: "/img/clubsatVedam/competitive_coding.jpeg",
+      image: "/img/clubsatVedam/open_source.jpeg",
     },
     {
       leftSideTitle: "Clubs at VST",
@@ -794,7 +794,7 @@ export const lifeAtVedam = {
         "Sharpen your problem-solving skills with our Competitive Coding Club! Participate in coding challenges, and algorithmic competitions.",
       rightSideText: "Competitive Coding Club",
       rightSideText2: "Creative Hub",
-      image: "/img/clubsatVedam/open_source.jpeg",
+      image: "/img/clubsatVedam/competitive_coding.jpeg",
     },
     {
       leftSideTitle: "Clubs at VST",
