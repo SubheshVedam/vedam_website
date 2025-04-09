@@ -125,7 +125,7 @@ export const AIYear1 = () => {
               sx={{
                 fontSize: "12px",
                 fontFamily: "Inter",
-                fontWeight: "200",
+                fontWeight: "350",
                 color: "rgba(30, 30, 30, 1)",
                 whiteSpace: "nowrap",
               }}

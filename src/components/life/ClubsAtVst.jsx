@@ -139,8 +139,8 @@ export const ClubsAtVst = () => {
                 }}
               >
                 <Image
-                  src={"/img/clubsAtVst.webp"}
-                  alt="clubs"
+                  src={club.image}
+                  alt={club.rightSideText}
                   width={300}
                   height={200}
                   className="clubsAtVstImage"

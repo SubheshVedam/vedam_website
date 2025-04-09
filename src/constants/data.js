@@ -120,28 +120,28 @@ export const expertsData = [
 export const detailsData = [
   {
     image: "/img/whyvedam/first.webp",
-    bgImage: "/img/whyvedam/code_day1_m.jpeg",
+    bgImage: "/img/whyvedam/code_from_day_1.jpeg",
     title: "Code From Day 1",
     description:
       "From Day 1, you'll be writing real code, building projects, and solving industry-relevant problems.",
   },
   {
     image: "/img/whyvedam/second.webp",
-    bgImage: "/img/whyvedam/ai_img_m.jpeg",
+    bgImage: "/img/whyvedam/AI_Curriculum.jpeg",
     title: "AI First Curriculum",
     description:
       "Our AI-First Curriculum is designed to equip students with the skills, tools, and mindset needed to thrive in an AI-powered world.",
   },
   {
     image: "/img/whyvedam/third.webp",
-    bgImage: "/img/whyvedam/mentor_m.jpeg",
+    bgImage: "/img/whyvedam/mentorship.jpeg",
     title: "Mentorships",
     description:
       "Get personalized career guidance from experienced professionals.",
   },
   {
     image: "/img/whyvedam/fourth.webp",
-    bgImage: "/img/whyvedam/top_trainer_m.jpeg",
+    bgImage: "/img/whyvedam/Top_Instructors.jpeg",
     title: "Top Instructors",
     description:
       "At Vedam, you’ll learn from the best minds in tech—engineers, researchers, and industry leaders from Google, Microsoft, Amazon, and top startups.",
@@ -762,6 +762,7 @@ export const lifeAtVedam = {
         "Join our Cultural Club to celebrate diversity through music, dance, drama, and festivals. Engage in events that bring creativity to life!",
       rightSideText: "Cultural Club",
       rightSideText2: "Open Source club",
+      image: "/img/clubsAtVst.webp",
     },
     {
       leftSideTitle: "Clubs at VST",
@@ -769,6 +770,7 @@ export const lifeAtVedam = {
         "Stay active and competitive in our Sports Club! Participate in various sports, tournaments, and activities to enhance teamwork and skills.",
       rightSideText: "Sports Club",
       rightSideText2: "Gaming Hub",
+      image: "/img/clubsatVedam/Sports_Club.png",
     },
     {
       leftSideTitle: "Clubs at VST",
@@ -776,6 +778,7 @@ export const lifeAtVedam = {
         "Join our ESports Club and compete in gaming tournaments, enhance strategic thinking, and connect with passionate gamers.",
       rightSideText: "ESports Club",
       rightSideText2: "Data Science",
+      image: "/img/clubsAtVst.webp",
     },
     {
       leftSideTitle: "Clubs at VST",
@@ -783,6 +786,7 @@ export const lifeAtVedam = {
         "Contribute to open-source projects, collaborate with developers, and gain real-world coding experience in our Open Source Club.",
       rightSideText: "Open Source Club",
       rightSideText2: "Creative Hub",
+      image: "/img/clubsAtVst.webp",
     },
     {
       leftSideTitle: "Clubs at VST",
@@ -790,6 +794,7 @@ export const lifeAtVedam = {
         "Sharpen your problem-solving skills with our Competitive Coding Club! Participate in coding challenges, and algorithmic competitions.",
       rightSideText: "Competitive Coding Club",
       rightSideText2: "Creative Hub",
+      image: "/img/clubsAtVst.webp",
     },
     {
       leftSideTitle: "Clubs at VST",
@@ -797,6 +802,7 @@ export const lifeAtVedam = {
         "Join our Entrepreneurship Club to learn how to turn ideas into successful ventures and change the future!",
       rightSideText: "Entrepreneurship Club",
       rightSideText2: "Creative Hub",
+      image: "/img/clubsAtVst.webp",
     },
   ],
   vedamLab: {
