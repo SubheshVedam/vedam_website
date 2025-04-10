@@ -202,7 +202,7 @@ const Home = () => {
                   }}
                 >
                   <Image
-                    src="/img/video_thumnail.jpeg"
+                    src="/img/hear_from_founder_thumbnail.jpeg"
                     alt="Video thumbnail2"
                     fill
                     style={{ objectFit: "cover" }}
