@@ -168,7 +168,7 @@ export const navLinks = [
 export const homeScreenData = {
   hero: {
     background_video: "/vid/videoBg.mp4",
-    title: "Learn Tech by Building It",
+    title: "Learn Tech by Building\u00A0It",
     subtitle:
       "Vedam's 4-year BTech program prepares you for startups, innovation, and leadership with industry driven coursework and hands-on projects.",
   },
@@ -502,7 +502,7 @@ export const homeScreenData = {
       },
       {
         id: 2,
-        text: "Participate in TechCrunch, CodeVita & Hackathons",
+        text: "Participate in TechCrunch & Hackathons",
         icon: "/img/outcomes/year1_3.jpg",
       },
     ],
@@ -531,7 +531,7 @@ export const homeScreenData = {
       },
       {
         id: 1,
-        text: "Build a Real-Time Chat platform like WhatsApp",
+        text: "Build a Real-Time Chat platform",
         icon: "/img/outcomes/year2_2.jpg",
       },
       {
@@ -563,7 +563,7 @@ export const homeScreenData = {
       },
       {
         id: 1,
-        text: "Create a Google Docs-style documentation Platform",
+        text: "Create a Google Doc-like documentation Platform",
         icon: "/img/outcomes/year3_2.jpg",
       },
       {
