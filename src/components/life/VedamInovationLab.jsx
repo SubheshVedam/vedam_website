@@ -18,7 +18,7 @@ export const VedamInovationLab = () => {
       }}
     >
       <img
-        src="/img/InnovationLab.jpeg"
+        src="/img/Innovation_Lab_N.jpeg"
         alt="innovation"
         className="innovationImageStyle"
       />

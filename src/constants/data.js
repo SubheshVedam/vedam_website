@@ -131,7 +131,7 @@ export const expertsData = [
 export const detailsData = [
   {
     image: "/img/whyvedam/first.webp",
-    bgImage: "/img/whyvedam/code_from_day_1.jpeg",
+    bgImage: "/img/whyvedam/Code_From_Day_1_N.jpeg",
     title: "Code From Day 1",
     description:
       "From Day 1, you'll be writing real code, building projects, and solving industry-relevant problems.",
@@ -145,14 +145,14 @@ export const detailsData = [
   },
   {
     image: "/img/whyvedam/third.webp",
-    bgImage: "/img/whyvedam/mentorship.jpeg",
-    title: "Mentorships",
+    bgImage: "/img/whyvedam/Top_5_Makes_it_N.jpeg",
+    title: "Only top 5% get through",
     description:
-      "Get personalized career guidance from experienced professionals.",
+      "Merit based selection to attract the top talent. Learn with and co-create best codes.",
   },
   {
     image: "/img/whyvedam/fourth.webp",
-    bgImage: "/img/whyvedam/Top_Instructors.jpeg",
+    bgImage: "/img/whyvedam/Top_Instructors_N.jpeg",
     title: "Top Instructors",
     description:
       "At Vedam, you’ll learn from the best minds in tech—engineers, researchers, and industry leaders from Google, Microsoft, Amazon, and top startups.",
@@ -762,7 +762,7 @@ export const admissionScreenData = {
 export const lifeAtVedam = {
   hero: {
     background_video:
-      "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+      "",
     title: "Life@VST",
     subtitle: "make memories, learn, grow, and\ncherish every moment joyfully.",
   },
@@ -781,7 +781,7 @@ export const lifeAtVedam = {
         "Stay active and competitive in our Sports Club! Participate in various sports, tournaments, and activities to enhance teamwork and skills.",
       rightSideText: "Sports Club",
       rightSideText2: "Gaming Hub",
-      image: "/img/clubsatVedam/Sports_Club.png",
+      image: "/img/clubsatVedam/Sports_Club_N.jpeg",
     },
     {
       leftSideTitle: "Clubs at VST",
@@ -789,7 +789,7 @@ export const lifeAtVedam = {
         "Join our ESports Club and compete in gaming tournaments, enhance strategic thinking, and connect with passionate gamers.",
       rightSideText: "ESports Club",
       rightSideText2: "Data Science",
-      image: "/img/clubsatVedam/Esports.jpeg",
+      image: "/img/clubsatVedam/Esports_Club_N.jpeg",
     },
     {
       leftSideTitle: "Clubs at VST",
@@ -805,7 +805,7 @@ export const lifeAtVedam = {
         "Sharpen your problem-solving skills with our Competitive Coding Club! Participate in coding challenges, and algorithmic competitions.",
       rightSideText: "Competitive Coding Club",
       rightSideText2: "Creative Hub",
-      image: "/img/clubsatVedam/competitive_coding.jpeg",
+      image: "/img/clubsatVedam/Competitive_Club_N.jpeg",
     },
     {
       leftSideTitle: "Clubs at VST",
@@ -813,7 +813,7 @@ export const lifeAtVedam = {
         "Join our Entrepreneurship Club to learn how to turn ideas into successful ventures and change the future!",
       rightSideText: "Entrepreneurship Club",
       rightSideText2: "Creative Hub",
-      image: "/img/clubsatVedam/Entrepreneurship_club.jpeg",
+      image: "/img/clubsatVedam/Entrepreneurship_Club_N.jpeg",
     },
   ],
   vedamLab: {
