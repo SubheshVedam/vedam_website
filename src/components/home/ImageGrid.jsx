@@ -164,7 +164,7 @@ export const ImageGrid = () => {
         textAlign={"center"}
         sx={{
           marginTop: { xs: "16px", md: "32px" },
-          fontSize: { xs: "10px", md: "12px" },
+          fontSize: { xs: "6px", md: "8px" },
           fontFamily: "Inter",
           color: "#1E1E1E",
           lineHeight: "150%",

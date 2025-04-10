@@ -21,7 +21,7 @@ export const testimonialData = [
   },
   {
     image: "/img/testimonials/kunal.webp",
-    text: `"Algorprep transformed my career with its comprehensive curriculum and expert instructors. The hands-on projects offered practical experience, boosting my confidence and job prospects. If you're serious about coding, Nishant and Subhesh are a top-notch choice."`,
+    text: `"The course transformed my career with its comprehensive curriculum and expert instructors. The hands-on projects offered practical experience, boosting my confidence and job prospects. If you're serious about coding, Nishant and Subhesh are a top-notch choice."`,
     name: "Kunal Trivedi",
     designation: "Software Engineer, Bosch",
     companyLogo:"/img/companies/Bosch_Logo.png"
@@ -112,7 +112,7 @@ export const expertsData = [
   {
     imageUrl: "/img/experts/basant.jpg",
     name: "Basant Rawat",
-    logo: "/img/companies/paytm.webp",
+    logo: "/img/companies/Angel_One_Logo.png",
     designation: "SDE 2",
     info: "Mentored over 20,000 Minutes, Ex Hexaware",
     rating: 4.9,
@@ -144,14 +144,14 @@ export const detailsData = [
       "Our AI-First Curriculum is designed to equip students with the skills, tools, and mindset needed to thrive in an AI-powered world.",
   },
   {
-    image: "/img/whyvedam/third.webp",
+    image: "/img/whyvedam/fourth.webp",
     bgImage: "/img/whyvedam/Top_5_Makes_it_N.jpeg",
     title: "Only top 5% get through",
     description:
       "Merit based selection to attract the top talent. Learn with and co-create best codes.",
   },
   {
-    image: "/img/whyvedam/fourth.webp",
+    image: "/img/whyvedam/third.webp",
     bgImage: "/img/whyvedam/Top_Instructors_N.jpeg",
     title: "Top Instructors",
     description:
@@ -181,7 +181,7 @@ export const homeScreenData = {
     background_video: "/vid/videoBg.mp4",
     title: "Learn Tech by Building\u00A0It",
     subtitle:
-      "Vedam's 4-year BTech program prepares you for startups, innovation, and leadership with industry driven coursework and hands-on projects.",
+      "Vedam's 4-year UG OnCampus program prepares you for startups, innovation, and leadership with industry driven coursework and hands-on projects.",
   },
   fromEducationToEntrance: {
     title: "",
@@ -263,12 +263,12 @@ export const homeScreenData = {
     title: "We are launching",
     subtitle: "In Collaboration with",
     leftSideImage: "/img/college.webp",
-    rightSideText1: "Ajinkya DY Patil University",
+    rightSideText1: "Ajeenkya DY Patil University",
     data: [
       {
         id: 0,
         image: "/img/branch.webp",
-        text: "B.Tech in Computer Science (AI)",
+        text: "B.Tech in Computer Science Engineering (AI)",
       },
       {
         id: 1,
@@ -281,7 +281,7 @@ export const homeScreenData = {
   },
   techTeam: {
     title: "",
-    subtitle: "Tech team behind Vedam",
+    subtitle: "Tech Minds behind Vedam",
     image: "/img/tech_team.jpeg",
     // image: "/img/tech_team.webp",
   },
@@ -332,17 +332,17 @@ export const homeScreenData = {
         {
           id: 2,
           icon: "/img/vedamvs/middle/third.webp",
-          text: "Prepration for Global competitions like GSoC and Tech confrences",
+          text: "Prepration for Global competitions like GSoC and Tech conferences",
         },
         {
           id: 3,
           icon: "/img/vedamvs/middle/fourth.webp",
-          text: "Practicioner from top tech companies like MS & Google",
+          text: "Practicioners from top tech companies like Microsoft & Google",
         },
         {
           id: 4,
           icon: "/img/vedamvs/middle/fifth.webp",
-          text: "6 months internship twice in 4 years with a tech product company",
+          text: "6 months internship with a tech product company",
         },
         {
           id: 5,
@@ -458,7 +458,7 @@ export const homeScreenData = {
     subtitle: "Learn from MAANG Experts",
   },
   whatPeople: {
-    subtitle: "What people says about us",
+    subtitle: "What people say about us",
   },
   aiFirst: {
     title: "",
@@ -503,7 +503,7 @@ export const homeScreenData = {
     outcomeArray: [
       {
         id: 0,
-        text: "Building Hotstar like Feed with Search & Categories",
+        text: "Build Hotstar like Feed with Search & Categories",
         icon: "/img/outcomes/year1.jpg",
       },
       {
@@ -527,7 +527,7 @@ export const homeScreenData = {
       "Advanced DSA",
       "Full Stack",
       "System Design",
-      "Python",
+      "Java",
       "ML",
       "DBMS",
       "Operating System",
@@ -537,17 +537,17 @@ export const homeScreenData = {
     outcomeArray: [
       {
         id: 0,
-        text: "Develop a Job Portal like LinkedIn",
+        text: "Develop an end to end Job Portal like LinkedIn",
         icon: "/img/outcomes/year2_1.jpg",
       },
       {
         id: 1,
-        text: "Build a Real-Time Chat platform",
+        text: "Build a Real-Time Chat platform like WhatsApp",
         icon: "/img/outcomes/year2_2.jpg",
       },
       {
         id: 2,
-        text: "Participate in SIH, GSoC, & ICPC",
+        text: "Participate in competitions like SIH, GSoC, & ICPC",
         icon: "/img/outcomes/year2_3.jpg",
       },
     ],
