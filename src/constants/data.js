@@ -718,7 +718,7 @@ export const admissionScreenData = {
       { id: 1, imageUrl: "/img/amenities/Amenities_2.jpeg" },
       { id: 2, imageUrl: "/img/amenities/Amenities_3.jpeg" },
       { id: 3, imageUrl: "/img/amenities/Amenities_4.jpeg" },
-      { id: 4, imageUrl: "/img/amenities/Amenities_5.jpeg" },
+      { id: 4, imageUrl: "/img/amenities/Amenities_6.jpeg" },
     ],
   },
   feeStructure: {
