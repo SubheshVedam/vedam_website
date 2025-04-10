@@ -67,6 +67,7 @@ export const WhatPeople = () => {
             text={testimonial.text}
             name={testimonial.name}
             designation={testimonial.designation}
+            companyLogo={testimonial.companyLogo}
           />
         ))}
       </Box>

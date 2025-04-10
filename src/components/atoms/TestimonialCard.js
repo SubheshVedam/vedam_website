@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import { Box } from "@mui/material";
 import Image from "next/image";
 
-export default function TestimonialCard({ image, text, name, designation }) {
+export default function TestimonialCard({ image, text, name, designation,companyLogo }) {
   return (
     <Card
       sx={{
@@ -17,7 +17,7 @@ export default function TestimonialCard({ image, text, name, designation }) {
         borderRadius: "16px",
         padding: " 20px 20px 0 20px",
         boxShadow: "none",
-        cursor:'pointer'
+        cursor: "pointer",
       }}
     >
       <CardContent
@@ -62,28 +62,54 @@ export default function TestimonialCard({ image, text, name, designation }) {
             {text}
           </Typography>
         </Box>
-        <Box>
-          <Typography
-            variant="h6"
-            sx={{
-              color: "#6C10BC",
-              fontWeight: "bold",
-              fontSize: { xs: 14, sm: 16 },
-              fontFamily: "Inter",
-            }}
-          >
-            {name}
-          </Typography>
-          <Typography
-            variant="body2"
-            sx={{
-              color: "text.secondary",
-              fontSize: { xs: 10, sm: 12 },
-              fontFamily: "Inter",
-            }}
-          >
-            {designation}
-          </Typography>
+        <Box
+          sx={{
+            display: "flex",
+            width: "100%",
+            justifyContent: "space-between",
+          }}
+        >
+          <Box>
+            <Typography
+              variant="h6"
+              sx={{
+                color: "#6C10BC",
+                fontWeight: "bold",
+                fontSize: { xs: 14, sm: 16 },
+                fontFamily: "Inter",
+              }}
+            >
+              {name}
+            </Typography>
+            <Typography
+              variant="body2"
+              sx={{
+                color: "text.secondary",
+                fontSize: { xs: 10, sm: 12 },
+                fontFamily: "Inter",
+              }}
+            >
+              {designation}
+            </Typography>
+          </Box>
+          <Box >
+            <Box
+              sx={{
+                width: { xs: "80px", sm: "100px" },
+                height: { xs: "auto", sm: "60px" },
+              }}
+            >
+              <Image
+                src={companyLogo}
+                alt={"image"}
+                width={100}
+                height={100}
+                style={{
+                  objectFit: "contain",width:'100%',height:'100%'
+                }}
+              />
+            </Box>
+          </Box>
         </Box>
       </CardContent>
     </Card>

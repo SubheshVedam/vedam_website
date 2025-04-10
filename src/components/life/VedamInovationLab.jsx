@@ -30,7 +30,7 @@ export const VedamInovationLab = () => {
           justifyContent: "center",
         }}
       >
-        <Typography
+        {/* <Typography
           variant="body1"
           sx={{
             background: "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)",
@@ -44,7 +44,7 @@ export const VedamInovationLab = () => {
           }}
         >
           {lifeAtVedam.vedamLab.linearGradientText}
-        </Typography>
+        </Typography> */}
         <Typography
           variant="subtitle1"
           sx={{

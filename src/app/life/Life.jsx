@@ -36,7 +36,10 @@ const Life = () => {
         }}
       >
         <ClubsAtVst />
-        <VedamInovationLab />
+        <CardContainer subtitle={lifeAtVedam.vedamLab.subtitle}>
+          <VedamInovationLab />
+        </CardContainer>
+
         <CardContainer subtitle={lifeAtVedam.edgeAtVedam.subtitle}>
           <EdgeAtVedam />
         </CardContainer>
