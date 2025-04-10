@@ -864,12 +864,12 @@ export const faqsScreenData = [
         id: 1,
         title: "Is this a full time program?",
         description:
-          "Yes, Vedam School of Technology offers a full-time undergraduate B.Tech program focused on Computer Science and AI. There is no option of Correspondence or Online course.",
+          "Yes, Vedam School of Technology offers a full-time undergraduate program focused on Computer Science and AI. There is no option of Correspondence or Online course.",
       },
       {
         id: 2,
         title:
-          "Will i be able to pursue Further education or take competitive exams later?",
+          "Will I be able to pursue further education or take competitive exams later?",
         description:
           "Yes, students will be eligible to pursue a master's degree. The 4-year UG Programme in CS and AI will ensure our students get access to the latest curriculum, hands-on experience, Internship to achieve success in Computer Science within India and abroad.",
       },
@@ -878,7 +878,7 @@ export const faqsScreenData = [
         title:
           "What kind of degree am I going to get after completing 4 years at Vedam?",
         description:
-          "After completing four years at Vedam School of Technology, you will receive a Bachelor of Technology (B.Tech) in Computer Science and Artificial Intelligence from our partner university and A Industry recognized certification from Vedam school of technology.",
+          "After completing four years at Vedam School of Technology, you will receive a Bachelor of Technology (B.Tech) in Computer Science and Artificial Intelligence from our partner university and an Industry recognized certification from Vedam School of Technology.",
       },
     ],
   },
@@ -900,7 +900,7 @@ export const faqsScreenData = [
       {
         id: 12,
         title:
-          "I am in the first year of my Btech, Am i eligible to join this program?",
+          "I am in the first year of my Btech, Am I eligible to join this program?",
         description:
           "Yes, if you are currently in the first year of your B.Tech program, you are eligible to join the Vedam School of Technology program. However, please note that you would need to take admission in the first Semester or Year 1 of the four-year Undergraduate program as the credits earned in your current B.Tech program may not be transferable to the Vedam school of technology.",
       },
@@ -908,7 +908,7 @@ export const faqsScreenData = [
         id: 13,
         title: "I did my 12th in 2023 or before, Am I eligible to apply?",
         description:
-          "To enroll at Vedam School of Technology, you must meet specific eligibility criteria. You should have completed your 12th grade education in 2024 or 2025 with more than 50% Marks in PCM and 12th board overall and be under the age of 20 at the time of admission. If you meet these requirements, we invite you to join us and embark on an exciting journey toward a future in technology.",
+          "You should have completed your 12th grade education in 2024 or 2025 with more than 50% Marks in PCM and 12th board overall. If you meet these requirements, we invite you to join us and embark on an exciting journey toward a future in technology.",
       },
       // Add more questions as needed
     ],
@@ -920,13 +920,13 @@ export const faqsScreenData = [
         id: 20,
         title: "What is the admission and Selection process?",
         description:
-          "The admission and selection process at Vedam School of Technology is designed to identify students with strong problem-solving abilities, technical aptitude, and a passion for innovation. The process begins with the Vedam Scholastic Aptitude Test (VSAT), which evaluates a candidate’s proficiency in mathematics, logical reasoning, and learnability. Shortlisted candidates then proceed to a Personal Interview (PI) conducted online via Google Meet or Zoom, where their technical knowledge, problem-solving skills, and motivation for joining the program are assessed.For a detailed overview of the admission criteria, selection stages, and important deadlines, please visit our official admissions page: https://vedam.org/admission",
+          "The admission and selection process at Vedam School of Technology is designed to identify students with strong problem-solving abilities, technical aptitude, and a passion for innovation.\nThe process begins with the Vedam Scholastic Aptitude Test (VSAT), which evaluates a candidate’s proficiency in mathematics, logical reasoning, and learnability. Shortlisted candidates then proceed to a Personal Interview (PI) conducted online via Google Meet or Zoom, where their problem-solving skills, Communication and motivation for joining the program are assessed.\nFor a detailed overview of the admission criteria, selection stages, and important deadlines, please visit our official admissions page: https://vedam.org/admission",
       },
       {
         id: 21,
         title: "How Many attempts can I give?",
         description:
-          "At Vedam School of Technology, candidates can attempt the Vedam Scholastic Aptitude Test (VSAT) up to three times to improve their scores.",
+          "At Vedam School of Technology, candidates can attempt the Vedam Scholastic Aptitude Test (VSAT) up to two times to improve their scores.",
       },
       {
         id: 22,
@@ -985,7 +985,7 @@ export const faqsScreenData = [
       {
         id: 40,
         title: "What is the fees structure of the program?",
-        description: "The total tuition fee for our comprehensive 4-year program is ₹18 Lakhs, covering a curriculum designed to equip students with cutting-edge knowledge and industry-relevant skills. To explore a detailed breakdown of the fee structure and available financing options, please visit our official admissions page: https://vedam.org/admission",
+        description: "The total Course fee for our comprehensive 4-year program is ₹18 Lakhs (Excluding hostel and mess fee), covering a curriculum designed to equip students with cutting-edge knowledge and industry-relevant skills. To explore a detailed breakdown of the fee structure and available financing options, please visit our official admissions page: https://vedam.org/admission",
       },
       {
         id: 41,
@@ -1003,7 +1003,7 @@ export const faqsScreenData = [
       {
         id: 43,
         title:
-          "Are the Scholarship applicable on the tuition fees or the entire fees?",
+          "Are the Scholarship applicable on the Hostel fees as well?",
         description:
           "The Scholarship is applicable on tution fees(18 Lakhs) only. Hostel and mess fee are not included in Scholarship.",
       },
