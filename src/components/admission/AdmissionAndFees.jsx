@@ -38,7 +38,7 @@ export const AdmissionAndFees = () => {
             sx={{
               fontSize: "clamp(1.4rem, 2vw, 40px)",
               color: "rgba(108, 16, 188, 1)",
-              fontWeight: "700",
+              fontWeight: "300",
               lineHeight: "100%",
             }}
           >
@@ -57,14 +57,14 @@ export const AdmissionAndFees = () => {
               <Typography
                 variant="body1"
                 sx={{
-                  fontWeight: "500",
+                  fontWeight: "300",
                   fontFamily: "Inter",
                   fontSize: "clamp(14px, 2vw, 16px)",
                 }}
               >
                 <strong
                   style={{
-                    fontWeight: "700",
+                    fontWeight: "450",
                     fontFamily: "Inter",
                     fontSize: "clamp(14px, 2vw, 16px)",
                     lineHeight: "150%",

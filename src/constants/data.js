@@ -441,7 +441,7 @@ export const homeScreenData = {
       },
       {
         id: 2,
-        text: "The total fee mentioned in the table is the Tution Fees, This is exclusive of Hostel & Mess fees.",
+        text: "The total fee mentioned in the table is the Tution Fees and Upskilling Fees, This is exclusive of Hostel & Mess fees.",
       },
       {
         id: 3,
@@ -636,7 +636,7 @@ export const admissionScreenData = {
   },
   keyDates: {
     subtitle: "Key Dates",
-    headerText: "March Intake Dates",
+    headerText: "April Intake Dates",
     firstArray: [
       "VSAT Test",
       "Last Date to Apply",
@@ -647,7 +647,7 @@ export const admissionScreenData = {
     secondArray: [
       "18 April 2025",
       "17 April 2025",
-      "Immediatly After Exam",
+      "Within 3 Days of the Exam",
       "Within 10 Days of the Exam",
       "Within 20 Days of the Exam, If selected",
     ],
@@ -668,7 +668,7 @@ export const admissionScreenData = {
         title: "Apply Online",
         subtitle:
           "Complete your profile and reserve your slot for the Vedam Scholastic Aptitude Test (VSAT).",
-        subtitle1: "Last Date to Register is 20 March 2025",
+        subtitle1: "Last Date to Register is 17th April 2025",
         showButton: true,
       },
       {
@@ -692,7 +692,7 @@ export const admissionScreenData = {
         step: "Step 4",
         title: "Recieve your Admission Results",
         subtitle:
-          "Result shall be announced in 7 - 10 days time of your interview, along with scholarships, in case you are eligible for any.",
+          "Result shall be announced in 10 days time of your interview, along with scholarships, in case you are eligible for any.",
         showButton: false,
       },
       {
@@ -820,7 +820,7 @@ export const lifeAtVedam = {
     subtitle:"Vedam Innovation Lab",
     linearGradientText: "Vedam Innovation Lab",
     description:
-      "Vedam Innovation Lab is a cutting-edge incubator driving innovation in AR/VR, AI & ML, IoT, Robotics, and Drones. Empowering creators, fostering breakthroughs, and shaping the future of technology through research and collaboration.",
+      "Vedam Innovation Lab is a cutting-edge incubator driving innovation in AR/VR, AI & ML, IoT, Robotics, and Drones. It Empowers creators, fostering breakthroughs, and shaping the future of technology through research and collaboration.",
   },
   edgeAtVedam: {
     subtitle: "Edge at Vedam",
