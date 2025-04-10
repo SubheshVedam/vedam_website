@@ -66,7 +66,7 @@ export default function Footer() {
         background: "linear-gradient(to right, #6C10BC, #FB7F05)", // Linear gradient from purple to lighter purple
         paddingX: "1rem",
         paddingY: { xs: 0, sm: "20px" },
-        pb:{ xs: "8px", sm: 0 },
+        pb: { xs: "8px", sm: 0 },
       }}
     >
       <Box
@@ -76,13 +76,13 @@ export default function Footer() {
           color: "white",
           display: "flex",
           flexDirection: "column",
-          gap: 4,
+          gap: 2,
         }}
       >
         {/* Main Footer Columns */}
-        <Grid container spacing={{ xs: 2, sm: 4 }}>
+        <Grid container spacing={{ xs: 1, sm: 4 }}>
           <Grid item xs={12} sm={6} md={3}>
-            <Stack spacing={1}>
+            <Stack sx={{p:0,m:0}}>
               <Box
                 sx={{
                   width: "75%",
@@ -90,7 +90,7 @@ export default function Footer() {
                   justifyContent: "flex-start",
                 }}
               >
-                <Box sx={{ width: { xs: 170, sm: 200 }, ml: "-10px" }}>
+                <Box sx={{ width: { xs: 130, sm: 200 }, ml: "-10px" }}>
                   <Image
                     src="/img/Vedam_Final_Logo_White.png"
                     alt="Navbar Logo"
@@ -112,15 +112,15 @@ export default function Footer() {
                 variant="h6"
                 sx={{
                   fontWeight: 500,
-                  mb: { xs: 1, sm: 2 },
-                  fontSize: ["Quick Links", "Contact"].includes(column.title)
-                    ? "1.25rem"
+                  mb: { xs: "8px", sm: "16px" },
+                    fontSize: ["Quick Links", "Contact"].includes(column.title)
+                    ? { xs: 14, sm: 20 }
                     : "inherit",
                 }}
               >
                 {column.title}
               </Typography>
-              <Stack spacing={{ xs: 1, sm: 2 }}>
+              <Stack spacing={{ xs: '8px', sm: 1 }}>
                 {column.links.map((link) => (
                   <Link
                     key={link.label}
@@ -128,7 +128,7 @@ export default function Footer() {
                     color="inherit"
                     underline="hover"
                     sx={{
-                      fontSize: { xs: 13, sm: 16 },
+                      fontSize: { xs: 11, sm: 16 },
                       "&:hover": {
                         color: "#FFA41A",
                       },
@@ -143,7 +143,14 @@ export default function Footer() {
 
           {/* Social Links Column */}
           <Grid item xs={12} sm={6} md={3} sx={{ mt: { xs: 2, sm: 0 } }}>
-            <Typography variant="h6" sx={{ fontWeight: 400, mb: 1 }}>
+            <Typography
+              variant="h6"
+              sx={{
+                fontWeight: 400,
+                mb: { xs: "8px", sm: "16px" },
+                fontSize: { xs: 14, sm: 20 },
+              }}
+            >
               Follow Us
             </Typography>
             <Stack direction={{ xs: "row", sm: "column" }} spacing={2}>
@@ -154,7 +161,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   display="flex"
-                  gap="10px"
+                  gap={"6px"}
                   color="#FFFFFF"
                   alignItems="center"
                   underline="hover"
@@ -199,7 +206,7 @@ export default function Footer() {
             paddingTop: 2,
           }}
         >
-          <Typography variant="body2" sx={{ fontSize: { xs: 12, sm: 16 } }}>
+          <Typography variant="body2" sx={{ fontSize: { xs: 10, sm: 14 } }}>
             Copyright © SET Education Technology Pvt. Ltd. 2025
           </Typography>
         </Box>
