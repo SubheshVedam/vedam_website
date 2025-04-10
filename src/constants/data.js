@@ -138,7 +138,7 @@ export const detailsData = [
   },
   {
     image: "/img/whyvedam/second.webp",
-    bgImage: "/img/whyvedam/AI_Curriculum.jpeg",
+    bgImage: "/img/whyvedam/AI_First_Curriculum_N.jpeg",
     title: "AI First Curriculum",
     description:
       "Our AI-First Curriculum is designed to equip students with the skills, tools, and mindset needed to thrive in an AI-powered world.",
@@ -714,11 +714,11 @@ export const admissionScreenData = {
     subtitleDescription:
       "Premier auditorium and amphitheatre are ideal for events and performances.",
     imageArray: [
-      { id: 0, imageUrl: "/img/amenities/first.webp" },
-      { id: 1, imageUrl: "/img/amenities/second.webp" },
-      { id: 2, imageUrl: "/img/amenities/third.webp" },
-      { id: 3, imageUrl: "/img/amenities/fourth.webp" },
-      { id: 4, imageUrl: "/img/amenities/fifth.webp" },
+      { id: 0, imageUrl: "/img/amenities/Amenities_1.jpeg" },
+      { id: 1, imageUrl: "/img/amenities/Amenities_2.jpeg" },
+      { id: 2, imageUrl: "/img/amenities/Amenities_3.jpeg" },
+      { id: 3, imageUrl: "/img/amenities/Amenities_4.jpeg" },
+      { id: 4, imageUrl: "/img/amenities/Amenities_5.jpeg" },
     ],
   },
   feeStructure: {
@@ -732,21 +732,21 @@ export const admissionScreenData = {
       {
         image: "/img/scholarship/first.webp",
         bgImage: "/img/scholarship/img1.jpeg",
-        title: "Merit Based Scholarship",
+        title: "Merit Based Scholarship (Upto 100%)",
         description:
           "Recognizes academic excellence, unique talent and leadership potential.",
       },
       {
         image: "/img/scholarship/second.webp",
         bgImage: "/img/scholarship/img2.jpeg",
-        title: "Women in Tech Scholarship",
+        title: "Women in Tech Scholarship (Upto 20%)",
         description:
           "Empowering and supporting women in tech for growth and success.",
       },
       {
         image: "/img/scholarship/third.webp",
         bgImage: "/img/scholarship/img3.jpeg",
-        title: "Need Based Scholarship",
+        title: "Need Based Scholarship (Upto 30%)",
         description:
           "Focused on specific fields of study or demonstrating financial needs.",
       },
