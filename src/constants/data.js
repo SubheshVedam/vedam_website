@@ -8,15 +8,15 @@ export const testimonialData = [
     image: "/img/testimonials/sarthak.webp",
     text: `"I can't praise Subhesh's DSA course enough. His unique teaching approach and comprehensive content gave me the edge to crack Google Warsaw. His dedication and support were truly invaluable. I would definitely recommend this course."`,
     name: "Sarthak Bhatia",
-    designation: "Software Engineer 3, Google",
-    companyLogo:"/img/companies/microsoft-logo.png"
+    designation: "SWE 3, Google",
+    companyLogo:"/img/companies/google.webp"
   },
   {
     image: "/img/testimonials/pranjal.webp",
     text: `"I wasted countless hours on DSA resources before landing under the guidance of Subhesh sir. He is an experienced teacher and one who makes learning a delightful experience. Really mind-blowing. I wish the team all the best"`,
     name: "Pranjal Sharma",
-    designation: "Software Development Engineer 1, Amazon",
-    companyLogo:"/img/companies/meta.webp"
+    designation: "SDE 1, Amazon",
+    companyLogo:"/img/companies/amazon.webp"
 
   },
   {
@@ -24,31 +24,31 @@ export const testimonialData = [
     text: `"Algorprep transformed my career with its comprehensive curriculum and expert instructors. The hands-on projects offered practical experience, boosting my confidence and job prospects. If you're serious about coding, Nishant and Subhesh are a top-notch choice."`,
     name: "Kunal Trivedi",
     designation: "Software Engineer, Bosch",
-    companyLogo:"/img/companies/meta.webp"
+    companyLogo:"/img/companies/Bosch_Logo.png"
 
   },
   {
     image: "/img/testimonials/harshit.webp",
     text: `"The curriculum is comprehensive, instructor is experienced, and in-depth learning helped me gain confidence. I started as a beginner and cracked multiple offers ultimately. Nishant and Subhesh make a great team. Kudos to them for taking this initiative"`,
     name: "Harshit Trehan",
-    designation: "Software Development Engineer 2, Atlassian",
-    companyLogo:"/img/companies/meta.webp"
+    designation: "SDE 2, Atlassian",
+    companyLogo:"/img/companies/Atlassian-Logo.png"
 
   },
   {
     image: "/img/testimonials/divya.webp",
     text: `"I loved the way this coding course was structured. He started with the basics and then gradually built on our knowledge. This made it easy to learn and retain the information. I also appreciate the fact that he provided us with plenty of practice exercises."`,
     name: "Divya Chopra",
-    designation: "Software Engineer 2, Google",
-    companyLogo:"/img/companies/meta.webp"
+    designation: "SWE 2, Google",
+    companyLogo:"/img/companies/google.webp"
 
   },
   {
     image: "/img/testimonials/jaivin.webp",
     text: `"I am really grateful that I had the opportunity to explore DSA with Subhesh sir. His methodology and guidance were exceptional. The course started from if else and at last we were solving really Hard Leetcode Problems. Had a lot of learning with fun."`,
     name: "Jaivin Phogaat",
-    designation: "Software Development Engineer, DP World",
-    companyLogo:"/img/companies/meta.webp"
+    designation: "SDE, DP World",
+    companyLogo:"/img/companies/Dp_World.png"
 
   },
 ];
@@ -241,7 +241,7 @@ export const homeScreenData = {
       },
       {
         id: 13,
-        imageUrl: "/img/companies/goldman-logo.png",
+        imageUrl: "/img/companies/Goldman_Sachs.png",
       },
       {
         id: 14,
@@ -253,7 +253,7 @@ export const homeScreenData = {
       },
       {
         id: 16,
-        imageUrl: "/img/companies/atlassian_Logo.png",
+        imageUrl: "/img/companies/Atlassian-Logo.png",
       },
     ],
     bottomText:
