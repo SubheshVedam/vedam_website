@@ -23,24 +23,10 @@ export const EdgeAtVedam = () => {
          width: '100%',
        }}
      >
-       <Image
-         src={item.image}
-         className="edgeAtVedamImage"
-         width={0} // Let the width be determined by the container
-         height={0} // Height will be calculated based on aspect ratio
-         sizes="100vw" // Tell browser image will be full viewport width
-         style={{ 
-           width: '100%', // Take up full width of parent
-           height: 'auto', // Maintain aspect ratio
-           objectFit: "contain" 
-         }}
-         alt="edgeAtVedamImage"
-       />
-          <Typography
+      <Typography
             variant="body1"
             sx={{
-              marginTop: "20px",
-              marginBottom: "8px",
+              marginTop: "10px",
               fontFamily: "Inter",
               fontSize: "clamp(16px, 2vw, 20px)",
               lineHeight: "120%",
@@ -56,6 +42,7 @@ export const EdgeAtVedam = () => {
           <Typography
             variant="body2"
             sx={{
+              marginBottom: "8px",
               fontFamily: "Inter",
               fontSize: "clamp(12px, 2vw, 14px)",
               lineHeight: "120%",
@@ -68,6 +55,19 @@ export const EdgeAtVedam = () => {
           >
             {item.subtitle}
           </Typography>
+       <Image
+         src={item.image}
+         className="edgeAtVedamImage"
+         width={0} // Let the width be determined by the container
+         height={0} // Height will be calculated based on aspect ratio
+         sizes="100vw" // Tell browser image will be full viewport width
+         style={{ 
+           width: '100%', // Take up full width of parent
+           height: 'auto', // Maintain aspect ratio
+           objectFit: "contain" 
+         }}
+         alt="edgeAtVedamImage"
+       />
         </Box>
       ))}
     </Box>

@@ -17,6 +17,17 @@ export const VedamInovationLab = () => {
         backgroundColor: "rgba(255, 255, 255, 1)",
       }}
     >
+      <Typography
+          variant="subtitle1"
+          sx={{
+            fontSize: "clamp(12px, 2vw, 16px)",
+            lineHeight: "150%",
+            fontWeight: "350",
+            fontFamily: "Inter",
+          }}
+        >
+          {lifeAtVedam.vedamLab.description}
+        </Typography>
       <img
         src="/img/Innovation_Lab_N.jpeg"
         alt="innovation"
@@ -45,40 +56,7 @@ export const VedamInovationLab = () => {
         >
           {lifeAtVedam.vedamLab.linearGradientText}
         </Typography> */}
-        <Typography
-          variant="subtitle1"
-          sx={{
-            fontSize: "clamp(12px, 2vw, 16px)",
-            lineHeight: "150%",
-            fontWeight: "350",
-            fontFamily: "Inter",
-          }}
-        >
-          {lifeAtVedam.vedamLab.description}
-        </Typography>
-        <Button
-          variant="contained"
-          sx={{
-            marginTop: "1rem",
-            backgroundColor: "rgba(108, 16, 188, 1)",
-            padding: "10px 20px",
-            borderRadius: "0.5rem",
-          }}
-          href="https://apply.vedam.org/"
-          target="_blank"
-        >
-          <Typography
-            variant="h6"
-            sx={{
-              fontSize: "clamp(14px, 2vw, 16px)",
-              fontWeight: "400",
-              textTransform: "initial",
-              fontFamily: "Inter",
-            }}
-          >
-            Apply Now
-          </Typography>
-        </Button>
+        
       </Box>
     </Box>
   );

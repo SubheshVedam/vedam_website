@@ -844,7 +844,7 @@ export const lifeAtVedam = {
         image: "/img/edgeAtVedam/third.webp",
         title: "Vedam Venture Fund",
         subtitle:
-          "Get seed funding up to Rs. 1 Cr for your tech startup that solve problems of future.",
+          "Get seed funding up to Rs. 1 Crore for your tech startup that solve awesome problems of the future.",
       },
     ],
   },
@@ -1014,24 +1014,24 @@ export const faqsScreenData = [
 export const teamVedamScreenData = {
   subtitle: "Team Vedam",
   description:
-    "Vedam School of Technology is an initiative by entrepreneurs - Ashish Munjal, Piyush Nangru and Ankur Jain. They come with an experience of running a Series C funded higher education company for the past 6 years that has already skilled more than 10,000 students through its education for the masses approach.",
+    "Vedam School of Technology is an initiative by entrepreneurs - Piyush Nangru, Ashish Munjal and Ankur Jain. They come with an experience of running a Series C funded higher education company for the past 6 years that has already skilled more than 10,000 students through its education for the masses approach.",
 
   data: [
     {
       id: 0,
-      name: "Ashish Munjal",
-      imageUrl: "/img/teamVedam/ashish_munjal.webp",
-      designation: "Co-Founder",
-      description:
-        "With a great appetite for startups, Ashish is currently the Co-Founder at Vedam. Earlier, he was the Co-Founder at Crownit where he headed Consumer and Business growth. An MBA from IMT Ghaziabad and a certified CFA, Ashish has diverse experience in various roles with Bank of America and handled Sales and Operations at Knowlarity.",
-    },
-    {
-      id: 1,
       name: "Piyush Nangru",
       imageUrl: "/img/teamVedam/pitush_nangru.webp",
       designation: "Co-Founder",
       description:
         "With a passion for startups, Piyush is currently the Co-Founder at Vedam. Piyush joined Crownit as a founding member and headed the marketing and business development aspect of the business. An engineer from NSIT and an MBA from IMT Ghaziabad, Piyush started his venture in the Cultural Tourism spac",
+    },
+    {
+      id: 1,
+      name: "Ashish Munjal",
+      imageUrl: "/img/teamVedam/ashish_munjal.webp",
+      designation: "Co-Founder",
+      description:
+        "With a great appetite for startups, Ashish is currently the Co-Founder at Vedam. Earlier, he was the Co-Founder at Crownit where he headed Consumer and Business growth. An MBA from IMT Ghaziabad and a certified CFA, Ashish has diverse experience in various roles with Bank of America and handled Sales and Operations at Knowlarity.",
     },
     {
       id: 2,
@@ -1041,5 +1041,6 @@ export const teamVedamScreenData = {
       description:
         "Ankur’s exposure to the education industry makes him an ideal fit for taking charge of Vedam’s growth and expansion. More than 15 years of demonstrated expertise in Sales, Marketing and Business Development, he has previously worked with Amazon, Airtel and YourStory and is the founder of HostelFund",
     },
+    
   ],
 };
