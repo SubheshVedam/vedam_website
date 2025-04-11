@@ -101,7 +101,7 @@ const Home = () => {
                     src="/img/video_thumnail.jpeg"
                     alt="Video thumbnail"
                     fill
-                    style={{ objectFit: "cover" }}
+                    style={{ objectFit: "contain" }}
                   />
                   <Box
                     sx={{
@@ -205,7 +205,7 @@ const Home = () => {
                     src="/img/hear_from_founder_thumbnail.jpeg"
                     alt="Video thumbnail2"
                     fill
-                    style={{ objectFit: "cover" }}
+                    style={{ objectFit: "contain" }}
                   />
                   <Box
                     sx={{
