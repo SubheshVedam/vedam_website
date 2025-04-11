@@ -4,7 +4,6 @@ import React, { Fragment, useState } from "react";
 import { Box, Button, Collapse, Typography } from "@mui/material";
 import { faqsScreenData } from "@/constants/data";
 import { WidthContainer } from "@/components";
-import RichTextBox from "@/components/RichTextBox";
 
 const Faqs = () => {
   const [expandedButton, setExpandedButton] = useState(null);
@@ -95,7 +94,7 @@ const Faqs = () => {
                         fontSize: { xs: 11, sm: 18 },
                       }}
                     >
-                      <RichTextBox html={item.description} />
+                      {item.description}
                     </Box>
                   </Collapse>
                 </Fragment>

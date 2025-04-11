@@ -316,7 +316,7 @@ export const FeeStructure = () => {
           {/* Additional Table - Vertical layout for mobile */}
           <Box
             sx={{
-              overflowX: "scroll",
+              overflowX: "auto",
               WebkitOverflowScrolling: "touch",
               "&::-webkit-scrollbar": { display: "none" },
               display: { xs: "block", md: "none" },
@@ -332,7 +332,7 @@ export const FeeStructure = () => {
                 borderSpacing: 0,
                 "& .MuiTableCell-root": {
                   border: "none",
-                  padding: "12px 10px",
+                  padding: "12px 16px",
                 },
               }}
             >
@@ -341,25 +341,25 @@ export const FeeStructure = () => {
                   <TableCell sx={{ color: "rgba(108, 16, 188, 1)" }}>
                     Standard Room
                   </TableCell>
-                  <TableCell>₹85,000/-*</TableCell>
+                  <TableCell>85,000/-*</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell sx={{ color: "rgba(108, 16, 188, 1)" }}>
                     Premium Room
                   </TableCell>
-                  <TableCell>₹1,00,000/-*</TableCell>
+                  <TableCell>1,00,000/-*</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell sx={{ color: "rgba(108, 16, 188, 1)" }}>
                     Premium Plus Room
                   </TableCell>
-                  <TableCell>₹1,30,000/-*</TableCell>
+                  <TableCell>1,30,000/-*</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell sx={{ color: "rgba(108, 16, 188, 1)" }}>
                     Supreme Room (Only Boys)
                   </TableCell>
-                  <TableCell>₹1,50,000/-*</TableCell>
+                  <TableCell>1,50,000/-*</TableCell>
                 </TableRow>
               </TableBody>
             </Table>

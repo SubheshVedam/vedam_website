@@ -9,42 +9,47 @@ export const testimonialData = [
     text: `"I can't praise Subhesh's DSA course enough. His unique teaching approach and comprehensive content gave me the edge to crack Google Warsaw. His dedication and support were truly invaluable. I would definitely recommend this course."`,
     name: "Sarthak Bhatia",
     designation: "SWE 3, Google",
-    companyLogo: "/img/companies/google.webp",
+    companyLogo:"/img/companies/google.webp"
   },
   {
     image: "/img/testimonials/pranjal.webp",
     text: `"I wasted countless hours on DSA resources before landing under the guidance of Subhesh sir. He is an experienced teacher and one who makes learning a delightful experience. Really mind-blowing. I wish the team all the best"`,
     name: "Pranjal Sharma",
     designation: "SDE 1, Amazon",
-    companyLogo: "/img/companies/amazon.webp",
+    companyLogo:"/img/companies/amazon.webp"
+
   },
   {
     image: "/img/testimonials/kunal.webp",
     text: `"The course transformed my career with its comprehensive curriculum and expert instructors. The hands-on projects offered practical experience, boosting my confidence and job prospects. If you're serious about coding, Nishant and Subhesh are a top-notch choice."`,
     name: "Kunal Trivedi",
     designation: "Software Engineer, Bosch",
-    companyLogo: "/img/companies/Bosch_Logo.png",
+    companyLogo:"/img/companies/Bosch_Logo.png"
+
   },
   {
     image: "/img/testimonials/harshit.webp",
     text: `"The curriculum is comprehensive, instructor is experienced, and in-depth learning helped me gain confidence. I started as a beginner and cracked multiple offers ultimately. Nishant and Subhesh make a great team. Kudos to them for taking this initiative"`,
     name: "Harshit Trehan",
     designation: "SDE 2, Atlassian",
-    companyLogo: "/img/companies/Atlassian-Logo.png",
+    companyLogo:"/img/companies/Atlassian-Logo.png"
+
   },
   {
     image: "/img/testimonials/divya.webp",
     text: `"I loved the way this coding course was structured. He started with the basics and then gradually built on our knowledge. This made it easy to learn and retain the information. I also appreciate the fact that he provided us with plenty of practice exercises."`,
     name: "Divya Chopra",
     designation: "SWE 2, Google",
-    companyLogo: "/img/companies/google.webp",
+    companyLogo:"/img/companies/google.webp"
+
   },
   {
     image: "/img/testimonials/jaivin.webp",
     text: `"I am really grateful that I had the opportunity to explore DSA with Subhesh sir. His methodology and guidance were exceptional. The course started from if else and at last we were solving really Hard Leetcode Problems. Had a lot of learning with fun."`,
     name: "Jaivin Phogaat",
     designation: "SDE, DP World",
-    companyLogo: "/img/companies/Dp_World.png",
+    companyLogo:"/img/companies/Dp_World.png"
+
   },
 ];
 
@@ -482,8 +487,7 @@ export const homeScreenData = {
   },
   year1: {
     title: "Programming Foundation",
-    subtitle:
-      "Learn the basics for AI and Programming by building from year\u00A01",
+    subtitle: "Learn the basics for AI and Programming by building from year\u00A01",
     secondTitle: "Skills & Technologies",
     secondArray: [
       "HTML",
@@ -757,7 +761,8 @@ export const admissionScreenData = {
 
 export const lifeAtVedam = {
   hero: {
-    background_video: "",
+    background_video:
+      "",
     title: "Life@VST",
     subtitle: "make memories, learn, grow, and\ncherish every moment joyfully.",
   },
@@ -812,7 +817,7 @@ export const lifeAtVedam = {
     },
   ],
   vedamLab: {
-    subtitle: "Vedam Innovation Lab",
+    subtitle:"Vedam Innovation Lab",
     linearGradientText: "Vedam Innovation Lab",
     description:
       "Vedam Innovation Lab is a cutting-edge incubator driving innovation in AR/VR, AI & ML, IoT, Robotics, and Drones. It Empowers creators, fostering breakthroughs, and shaping the future of technology through research and collaboration.",
@@ -852,8 +857,8 @@ export const faqsScreenData = [
       {
         id: 0,
         title: "How do I apply to the Program",
-        description: `You can go to  <a href="https://apply.vedam.org" target="_blank" rel="noopener noreferrer">apply.vedam.org</a> to access
- the official application portal and complete the application form to start the testing process.`,
+        description:
+          "You can go to apply.vedam.org to access the official application portal and complete the application form to start the testing process.",
       },
       {
         id: 1,
@@ -951,8 +956,7 @@ export const faqsScreenData = [
       {
         id: 30,
         title: "What curriculum will all be covered in this Undergrad program?",
-        description:
-          "Our undergraduate program is designed to provide a comprehensive and industry-aligned curriculum that equips students with cutting-edge knowledge in computer science and artificial intelligence. The coursework covers core programming concepts, data structures & algorithms, software development, machine learning, deep learning, cloud computing, cybersecurity, blockchain, and much more. Additionally, students gain hands-on experience through real-world projects, hackathons, and industry collaborations to ensure they are job-ready. To explore the detailed curriculum and learn more about the subjects covered, please visit our official page: https://vedam.org/home",
+        description: "Our undergraduate program is designed to provide a comprehensive and industry-aligned curriculum that equips students with cutting-edge knowledge in computer science and artificial intelligence. The coursework covers core programming concepts, data structures & algorithms, software development, machine learning, deep learning, cloud computing, cybersecurity, blockchain, and much more. Additionally, students gain hands-on experience through real-world projects, hackathons, and industry collaborations to ensure they are job-ready. To explore the detailed curriculum and learn more about the subjects covered, please visit our official page: https://vedam.org/home",
       },
       {
         id: 31,
@@ -981,8 +985,7 @@ export const faqsScreenData = [
       {
         id: 40,
         title: "What is the fees structure of the program?",
-        description:
-          "The total Course fee for our comprehensive 4-year program is ₹18 Lakhs (Excluding hostel and mess fee), covering a curriculum designed to equip students with cutting-edge knowledge and industry-relevant skills. To explore a detailed breakdown of the fee structure and available financing options, please visit our official admissions page: https://vedam.org/admission",
+        description: "The total Course fee for our comprehensive 4-year program is ₹18 Lakhs (Excluding hostel and mess fee), covering a curriculum designed to equip students with cutting-edge knowledge and industry-relevant skills. To explore a detailed breakdown of the fee structure and available financing options, please visit our official admissions page: https://vedam.org/admission",
       },
       {
         id: 41,
@@ -999,7 +1002,8 @@ export const faqsScreenData = [
       },
       {
         id: 43,
-        title: "Are the Scholarship applicable on the Hostel fees as well?",
+        title:
+          "Are the Scholarship applicable on the Hostel fees as well?",
         description:
           "The Scholarship is applicable on tution fees(18 Lakhs) only. Hostel and mess fee are not included in Scholarship.",
       },
@@ -1037,5 +1041,6 @@ export const teamVedamScreenData = {
       description:
         "Ankur’s exposure to the education industry makes him an ideal fit for taking charge of Vedam’s growth and expansion. More than 15 years of demonstrated expertise in Sales, Marketing and Business Development, he has previously worked with Amazon, Airtel and YourStory and is the founder of HostelFund",
     },
+    
   ],
 };
