@@ -1,11 +1,19 @@
 "use client";
 import React, { useState } from "react";
-import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
+import {
+  Box,
+  Typography,
+  useMediaQuery,
+  useTheme,
+  IconButton,
+} from "@mui/material";
 import { lifeAtVedam } from "@/constants/data";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
 const IconTitle = ({ src, title }) => {
   return (
@@ -41,6 +49,55 @@ export const ClubsAtVst = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
+  // Custom arrow components
+  const NextArrow = (props) => {
+    const { onClick } = props;
+    return (
+      <IconButton
+        onClick={onClick}
+        sx={{
+          position: "absolute",
+          bottom: -50,
+          right: "50%",
+          transform: "translateX(10px)",
+          zIndex: 1,
+          backgroundColor: "rgba(108, 16, 188, 0.2)",
+          "&:hover": {
+            backgroundColor: "rgba(0,0,0,0.2)",
+          },
+          mx: 2,
+          mt: "-20px",
+        }}
+      >
+        <ArrowDownwardIcon sx={{color:'#6C10BC'}} />
+      </IconButton>
+    );
+  };
+
+  const PrevArrow = (props) => {
+    const { onClick } = props;
+    return (
+      <IconButton
+        onClick={onClick}
+        sx={{
+          position: "absolute",
+          bottom: -50,
+          left: "50%",
+          transform: "translateX(-10px)",
+          zIndex: 1,
+          backgroundColor: "rgba(108, 16, 188, 0.2)",
+          "&:hover": {
+            backgroundColor: "rgba(0,0,0,0.2)",
+          },
+          mx: 2,
+          mt: "-20px",
+        }}
+      >
+        <ArrowUpwardIcon sx={{color:'#6C10BC',zIndex:100}} />
+      </IconButton>
+    );
+  };
+
   // Carousel settings
   const settings = {
     dots: false,
@@ -50,9 +107,11 @@ export const ClubsAtVst = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2300,
-    pauseOnHover: false,
-    vertical: true, // Enable vertical sliding
-    arrows: false,
+    pauseOnHover: true,
+    vertical: true,
+    arrows: true,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
     beforeChange: (current, next) => setActiveIndex(next),
     cssEase: "cubic-bezier(0.645, 0.045, 0.355, 1)",
   };
@@ -71,6 +130,7 @@ export const ClubsAtVst = () => {
         padding: { xs: "1rem", md: "2rem" },
         position: "relative",
         minHeight: "500px",
+        pb: 8, // Add padding at bottom for arrows
       }}
     >
       {/* Left Side - Description */}
@@ -120,6 +180,7 @@ export const ClubsAtVst = () => {
         sx={{
           width: { xs: "100%", sm: "50%" },
           position: "relative",
+          pb: 8, // Add padding at bottom for arrows
         }}
       >
         <Slider ref={setSliderRef} {...settings}>
