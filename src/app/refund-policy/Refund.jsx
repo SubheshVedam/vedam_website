@@ -1,4 +1,5 @@
 import { WidthContainer } from "@/components";
+
 import {
   Box,
   Typography,
@@ -69,8 +70,10 @@ export default function Refund() {
               </Typography>
               <Typography paragraph>VSAT Exam Fee is non-refundable.</Typography>
               <Typography paragraph>
-                Semester fees, if paid, are refundable as per the UGC Refund Policy 2024-25 or any
-                updates made to the same afterwards.
+              Semester fees, if paid, are refundable as per the{" "}
+<Link href="https://www.ugc.gov.in/pdfnews/1654477_Fee-Refund-Policy-2024-25.pdf" color="primary" underline="hover">
+  UGC Refund Policy 2024-25
+</Link>{" "}
               </Typography>
               <Typography paragraph>
                 Refunds, if approved, will be processed in 45 days from the approval date.

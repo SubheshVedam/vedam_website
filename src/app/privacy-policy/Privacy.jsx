@@ -138,7 +138,6 @@ export default function PrivacyPolicy() {
                   <>
                     We use industry-standard measures to protect your data but cannot guarantee absolute security. You are responsible for maintaining the confidentiality of your account credentials.
                     <br />
-                    <MuiLink href="#" color="primary" underline="hover">Click here</MuiLink> to delete your account.
                   </>
                 ),
               },
