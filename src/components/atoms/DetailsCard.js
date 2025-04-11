@@ -181,7 +181,8 @@ export default function DetailsCard({
               sx={{
                 color: "white",
                 fontWeight: "bold",
-                fontSize: { xs: 18, sm: 20 },
+                fontSize: { xs: 14, sm: 20 },
+                lineHeight: {xs:'130%',sm:'150%'},
                 marginBottom: { xs: "8px", sm: "16px" },
               }}
             >
@@ -196,7 +197,7 @@ export default function DetailsCard({
             variant="body2"
             sx={{
               color: "white",
-              fontSize: isFeatured ? 14 : { xs: 12, sm: 14 },
+              fontSize: isFeatured ? 14 : { xs: 11, sm: 14 },
               transform: "translateY(100%)",
               opacity: 0,
               height: 0,
