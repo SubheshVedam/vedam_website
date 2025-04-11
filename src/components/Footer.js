@@ -206,7 +206,8 @@ export default function Footer() {
             paddingTop: 2,
           }}
         >
-          <Typography variant="body2" sx={{ fontSize: { xs: 10, sm: 14 } }}>
+          <Typography variant="body2" sx={{ fontSize: { xs: 10, sm: 14},
+        paddingBottom: 1, }}>
             Copyright © SET Education Technology Pvt. Ltd. 2025
           </Typography>
         </Box>
