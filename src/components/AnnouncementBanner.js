@@ -61,7 +61,7 @@ export default function AnnouncementBanner() {
           component="span"
           sx={{ fontSize: { xs: 11, sm: 16 } }}
         >
-          ⏳ Hurry Up! April Intake --- Early Applications closes in -
+          ⏳ Hurry up! Applications for April intake are closing in
         </Typography>
 
         {!timeLeft.expired ? (
