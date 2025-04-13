@@ -146,7 +146,7 @@ const TeamVedam = () => {
                         marginTop: { xs: "1rem", md: "1.4rem" },
                         color: "#1F1F1F",
                         fontSize: { xs: "14px", md: "16px" },
-                        lineHeight: "150%",
+                        lineHeight: "170%",
                         fontWeight:'350',
                         fontFamily: "Inter",
                         paddingBottom: { xs: "10px", md: "0px" },
