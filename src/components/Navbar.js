@@ -199,7 +199,7 @@ export default function Navbar() {
           </Toolbar>
 
           {/* Drawer for Mobile Navigation */}
-          <Drawer anchor="right" open={mobileOpen} onClose={handleDrawerToggle}>
+          <Drawer anchor="right" open={mobileOpen} onClose={handleDrawerToggle} sx={{zIndex:11111}}>
             <List sx={{ width: "250px" }}>
               {navLinks.map((link, index) => (
                 <ListItem
