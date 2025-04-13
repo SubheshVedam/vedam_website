@@ -1,4 +1,3 @@
-// src/components/AnnouncementBanner.js
 "use client";
 import { Box, Typography, Stack } from "@mui/material";
 import { useState, useEffect } from "react";
@@ -46,7 +45,7 @@ export default function AnnouncementBanner() {
         py: 1,
         position: "sticky",
         top: 0,
-        zIndex: 1100,
+        zIndex: 11000,
         boxShadow: 1,
       }}
     >
