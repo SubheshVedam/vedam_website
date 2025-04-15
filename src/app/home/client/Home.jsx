@@ -160,7 +160,7 @@ const Home = () => {
           </CardContainer>
           <CardContainer
             title={homeScreenData.techTeam.title}
-            subtitle={"Hear from our Founder"}
+            subtitle={"Hear from our Co-Founder"}
           >
             <Box
               sx={{
