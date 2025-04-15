@@ -4,11 +4,12 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Suspense } from "react";
-import GoogleAnalytics from "@/components/google-analytics";
 import EmotionCacheProvider from "@/components/EmotionCacheProvider";
 import Layout from "@/components/Layout";
 import AnnouncementBanner from "@/components/AnnouncementBanner";
 import Script from "next/script";
+import { GoogleAnalytics } from '@next/third-parties/google'
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -72,7 +73,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={inter.className}>
       <head>
         <Suspense fallback={null}>
-          <GoogleAnalytics />
+          {/* <GoogleAnalytics /> */}
         </Suspense>
         <Script
           id="microsoft-clarity"
@@ -114,6 +115,8 @@ export default function RootLayout({ children }) {
           </Layout>
         </EmotionCacheProvider>
       </body>
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+
     </html>
   );
 }
