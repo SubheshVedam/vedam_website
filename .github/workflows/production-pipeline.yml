@@ -36,7 +36,7 @@ jobs:
 
       - name: Install dependencies if changed
         if: steps.cache.outputs.cache-hit != 'true'
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
       - name: Build application
         run: npm run build
