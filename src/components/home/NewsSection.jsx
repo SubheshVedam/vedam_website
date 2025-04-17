@@ -34,7 +34,7 @@ const NewsSection = () => {
   return (
     <WidthContainer>
       <CardContainer
-        subtitle="Hear Us in the News"
+        subtitle="In the Headlines"
         linearGradientSubtitle="linear-gradient(90deg, #FB7F05 0%, #6C10BC 100%)"
       >
         {isMobile ? (
