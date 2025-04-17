@@ -13,6 +13,7 @@ import {
   WidthContainer,
 } from "@/components";
 import WhyVedam from "@/components/WhyVedam";
+import NewsSection from "@/components/home/NewsSection";
 import { homeScreenData } from "@/constants/data";
 import { Box, useMediaQuery, useTheme } from "@mui/material";
 import Image from "next/image";
@@ -253,6 +254,7 @@ const Home = () => {
           <CardContainer subtitle={homeScreenData.investorWhoTrustUs.subtitle}>
             <InvestorWhoTrustUs />
           </CardContainer>
+          <NewsSection />
         </WidthContainer>
       </Box>
     </Fragment>
