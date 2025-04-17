@@ -73,7 +73,7 @@ export default function AnnouncementBanner() {
             component="span"
             sx={{ fontWeight: 600, fontSize: { xs: 13, sm: 16 } }}
           >
-            {timeLeft.days}d : {timeLeft.hours}h : {timeLeft.minutes}m : {timeLeft.seconds}s left
+            {timeLeft.days}d : {timeLeft.hours}h : {timeLeft.minutes}m : {timeLeft.seconds}s
           </Typography>
         ) : (
           <Typography
