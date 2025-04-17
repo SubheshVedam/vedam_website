@@ -72,6 +72,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={inter.className}>
       <head>
+      <link rel="icon" href="./favicon.ico" />
         <Suspense fallback={null}>
           {/* <GoogleAnalytics /> */}
         </Suspense>
