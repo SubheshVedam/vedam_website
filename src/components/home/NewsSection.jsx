@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import { Box, Grid, useMediaQuery, useTheme } from '@mui/material';
 import Image from 'next/image';
@@ -95,7 +96,7 @@ const NewsSection = () => {
                     boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
                     transition: 'transform 0.3s ease',
                     '&:hover': {
-                      transform: 'scale(1.0)',
+                      transform: 'scale(1.03)',
                     },
                   }}
                 >
