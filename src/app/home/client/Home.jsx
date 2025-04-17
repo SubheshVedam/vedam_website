@@ -254,8 +254,8 @@ const Home = () => {
           <CardContainer subtitle={homeScreenData.investorWhoTrustUs.subtitle}>
             <InvestorWhoTrustUs />
           </CardContainer>
+          <NewsSection />
         </WidthContainer>
-        <NewsSection />
       </Box>
     </Fragment>
   );

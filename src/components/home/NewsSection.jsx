@@ -84,20 +84,20 @@ const NewsSection = () => {
           </Box>
         ) : (
           // Desktop grid view
-          <Grid container spacing={{ xs: 2, sm: 3, md: 11 }}>
+          <Grid container spacing={2} >
             {newsArticles.map((article) => (
-              <Grid item xs={12} sm={6} md={3} key={article.id}>
+              <Grid item xs={12} sm={3} md={3} key={article.id}>
                 <Box
                   sx={{
                     position: 'relative',
-                    width: '140%',
-                    height: { sm: '250px', md: '300px' },
+                    width: '100%',
+                    height: { sm: '250px', md: '260px',xl:'330px' },
                     borderRadius: '8px',
                     overflow: 'hidden',
                     boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
                     transition: 'transform 0.3s ease',
                     '&:hover': {
-                      transform: 'scale(1.02)',
+                      transform: 'scale(1.0)',
                     },
                   }}
                 >
@@ -106,9 +106,8 @@ const NewsSection = () => {
                     alt={article.alt}
                     fill
                     style={{
-                      objectFit: 'cover',
+                      objectFit: 'contain',
                     }}
-                    sizes="(max-width: 960px) 50vw, 25vw"
                   />
                 </Box>
               </Grid>
