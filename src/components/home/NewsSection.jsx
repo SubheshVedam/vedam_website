@@ -7,7 +7,6 @@ const NewsSection = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
-  // Sample news articles - replace with actual news articles
   const newsArticles = [
     {
       id: 1,
@@ -76,7 +75,6 @@ const NewsSection = () => {
                   style={{
                     objectFit: 'cover',
                   }}
-                  priority={article.id === 1} // Only prioritize first image
                   sizes="(max-width: 600px) 85vw"
                 />
               </Box>
