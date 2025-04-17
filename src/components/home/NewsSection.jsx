@@ -11,22 +11,22 @@ const NewsSection = () => {
   const newsArticles = [
     {
       id: 1,
-      image: '/img/inTheNews/vedam_in_the_news_1.jpeg',
+      image: '/img/inTheNews/vedam_in_the_news_1.webp',
       alt: 'News Article 1',
     },
     {
       id: 2,
-      image: '/img/inTheNews/vedam_in_the_news_2.jpeg',
+      image: '/img/inTheNews/vedam_in_the_news_2.webp',
       alt: 'News Article 2',
     },
     {
       id: 3,
-      image: '/img/inTheNews/vedam_in_the_news_3.jpeg',
+      image: '/img/inTheNews/vedam_in_the_news_3.webp',
       alt: 'News Article 3',
     },
     {
       id: 4,
-      image: '/img/inTheNews/vedam_in_the_news_4.jpeg',
+      image: '/img/inTheNews/vedam_in_the_news_4.webp',
       alt: 'News Article 4',
     },
   ];
