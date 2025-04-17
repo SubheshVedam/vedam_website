@@ -25,6 +25,9 @@ export default function AnnouncementBanner() {
       minutes: String(
         Math.max(0, Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)))
       ).padStart(2, "0"),
+      seconds: String(
+        Math.max(0, Math.floor((difference % (1000 * 60)) / 1000))
+      ).padStart(2, "0"),
       expired: difference < 0,
     };
   }
@@ -62,7 +65,7 @@ export default function AnnouncementBanner() {
           component="span"
           sx={{ fontSize: { xs: 11, sm: 16 } }}
         >
-          ⏳ Hurry Up! April Intake --- Early Applications closes in -
+          ⏳ Hurry up! Applications for April intake are closing in
         </Typography>
 
         {!timeLeft.expired ? (
@@ -71,7 +74,7 @@ export default function AnnouncementBanner() {
             component="span"
             sx={{ fontWeight: 600, fontSize: { xs: 13, sm: 16 } }}
           >
-            {timeLeft.days}d : {timeLeft.hours}h : {timeLeft.minutes}m left
+            {timeLeft.days}d : {timeLeft.hours}h : {timeLeft.minutes}m : {timeLeft.seconds}s left
           </Typography>
         ) : (
           <Typography
