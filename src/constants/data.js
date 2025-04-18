@@ -672,7 +672,7 @@ export const admissionScreenData = {
         step: "Step 2",
         title: "Take the VSAT",
         subtitle:
-          "It is an entrance test conducted online. April intake round on 18th April, 2025.",
+          "It is an entrance test conducted online. May intake round on 10th May, 2025.",
         showButton: false,
       },
       {
