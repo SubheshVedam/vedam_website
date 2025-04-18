@@ -87,7 +87,7 @@ const SingleCountText = ({ count, text, isHref }) => {
                 marginLeft: "4px",
               }}
               href={
-                "https://drive.google.com/file/d/1ZH3snXOpdKxTdClmm-OWHo4bbc8zk61-/view?usp=drive_link"
+                "https://drive.google.com/file/d/1c5LiMhy9lJrNan2GsOVTXhjyUHVz97ka/view?usp=drive_link"
               }
               target="_blank"
             >
@@ -304,10 +304,10 @@ export const FeeStructure = () => {
               </TableHead>
               <TableBody>
                 <TableRow>
-                  <SingleTableCell text="85,000/-*" />
-                  <SingleTableCell text="1,00,000/-*" />
-                  <SingleTableCell text="1,30,000/-*" />
-                  <SingleTableCell text="1,50,000/-*" />
+                  <SingleTableCell text="90,000/-*" />
+                  <SingleTableCell text="1,10,000/-*" />
+                  <SingleTableCell text="1,40,000/-*" />
+                  <SingleTableCell text="1,80,000/-*" />
                 </TableRow>
               </TableBody>
             </Table>
@@ -341,25 +341,25 @@ export const FeeStructure = () => {
                   <TableCell sx={{ color: "rgba(108, 16, 188, 1)" }}>
                     Standard Room
                   </TableCell>
-                  <TableCell>₹85,000/-*</TableCell>
+                  <TableCell>₹90,000/-*</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell sx={{ color: "rgba(108, 16, 188, 1)" }}>
                     Premium Room
                   </TableCell>
-                  <TableCell>₹1,00,000/-*</TableCell>
+                  <TableCell>₹1,10,000/-*</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell sx={{ color: "rgba(108, 16, 188, 1)" }}>
                     Premium Plus Room
                   </TableCell>
-                  <TableCell>₹1,30,000/-*</TableCell>
+                  <TableCell>₹1,40,000/-*</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell sx={{ color: "rgba(108, 16, 188, 1)" }}>
                     Supreme Room (Only Boys)
                   </TableCell>
-                  <TableCell>₹1,50,000/-*</TableCell>
+                  <TableCell>₹1,80,000/-*</TableCell>
                 </TableRow>
               </TableBody>
             </Table>
