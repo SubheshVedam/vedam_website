@@ -924,6 +924,13 @@ export const faqsScreenData = [
           "At Vedam School of Technology, candidates can attempt the Vedam Scholastic Aptitude Test (VSAT) up to two times to improve their scores.",
       },
       {
+        id: 25,
+        title:
+          "If a student takes the VSAT twice, is the better score considered?",
+        description:
+          "Students can take the VSAT twice, but it's not a best-of-two. A second attempt is treated as a new application, requiring the full selection process again, with evaluation relative to others in that round. Scholarships from earlier rounds won't carry forward.",
+      },
+      {
         id: 22,
         title: "Is VSAT an online exam? Is it proctored?",
         description:
