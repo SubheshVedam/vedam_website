@@ -641,7 +641,7 @@ export const admissionScreenData = {
       "Final Offer",
     ],
     secondArray: [
-      "10th May 2025",
+      "10th or 12th May 2025",
       "9th May 2025",
       "Within 3 Days of the Exam",
       "Within 10 Days of the Exam",
@@ -672,7 +672,7 @@ export const admissionScreenData = {
         step: "Step 2",
         title: "Take the VSAT",
         subtitle:
-          "It is an entrance test conducted online. May intake round on 10th May, 2025.",
+          "It is an entrance test conducted online. May intake round on 10th or 12th May, 2025.",
         showButton: false,
       },
       {
