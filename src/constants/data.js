@@ -156,7 +156,7 @@ export const detailsData = [
     image: "/img/whyvedam/fifth.webp",
     title: "Personal Macbook ",
     description:
-      "It's your key to a hands-on, immersive and collaborative learning experience in CS and AI.",
+      "A MacBook Air M4(2025) for your hands‑on, immersive and collaborative learning experience in CS and AI ",
     isFeatured: true,
   },
 ];
@@ -641,8 +641,8 @@ export const admissionScreenData = {
       "Final Offer",
     ],
     secondArray: [
-      "10th or 12th May 2025",
-      "9th May 2025",
+      "12th May 2025",
+      "11th May 2025",
       "Within 3 Days of the Exam",
       "Within 10 Days of the Exam",
       "Within 20 Days of the Exam, If selected",
@@ -664,7 +664,7 @@ export const admissionScreenData = {
         title: "Apply Online",
         subtitle:
           "Complete your profile and reserve your slot for the Vedam Scholastic Aptitude Test (VSAT).",
-        subtitle1: "Last Date to Register is 9th May 2025",
+        subtitle1: "Last Date to Register is 11th May 2025",
         showButton: true,
       },
       {
@@ -672,7 +672,7 @@ export const admissionScreenData = {
         step: "Step 2",
         title: "Take the VSAT",
         subtitle:
-          "It is an entrance test conducted online. May intake round on 10th or 12th May, 2025.",
+          "It is an entrance test conducted online. May intake round on 12th May, 2025.",
         showButton: false,
       },
       {
