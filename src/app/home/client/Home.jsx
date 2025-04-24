@@ -99,7 +99,7 @@ const Home = () => {
                   }}
                 >
                   <Image
-                    src="/img/video_thumnail.jpeg"
+                    src="/img/video_thumbnail.jpg"
                     alt="Video thumbnail"
                     fill
                     style={{ objectFit: "contain" }}

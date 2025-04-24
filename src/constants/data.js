@@ -327,12 +327,12 @@ export const homeScreenData = {
         {
           id: 2,
           icon: "/img/vedamvs/middle/third.webp",
-          text: "Prepration for Global competitions like GSoC and Tech conferences",
+          text: "Preparation for Global competitions like GSoC and Tech conferences",
         },
         {
           id: 3,
           icon: "/img/vedamvs/middle/fourth.webp",
-          text: "Practicioners from top tech companies like Microsoft & Google",
+          text: "Practitioners from top tech companies like Microsoft & Google",
         },
         {
           id: 4,
