@@ -8,26 +8,33 @@ export const FacilityAndAmenities = () => {
       <Box
         sx={{
           width: "100%",
-          height: { xs: "250px", md: "520px" },
-          borderRadius: "20px",
           position: "relative",
+          paddingTop: "56.25%", // 16:9 Aspect Ratio
+          borderRadius: "20px",
           overflow: "hidden",
           marginBottom: "20px",
         }}
       >
-        <iframe
-          src="https://www.youtube.com/embed/R9moRoww1s4"
-          style={{
+        <Box
+          sx={{
             position: "absolute",
             top: 0,
             left: 0,
             width: "100%",
             height: "100%",
-            border: "none",
           }}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
+        >
+          <iframe
+            src="https://www.youtube.com/embed/R9moRoww1s4"
+            style={{
+              width: "100%",
+              height: "100%",
+              border: "none",
+            }}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </Box>
         <Box
           sx={{
             position: "absolute",
