@@ -706,9 +706,6 @@ export const admissionScreenData = {
   facilityAndAmenities: {
     subtitle: "Facilities & Amenities",
     image: "/img/Auditorium_ADYPU.jpg",
-    imageTitle: "Auditorium and Amphitheater",
-    subtitleDescription:
-      "Premier auditorium and amphitheatre are ideal for events and performances.",
     imageArray: [
       { id: 0, imageUrl: "/img/amenities/Amenities_1.jpeg" },
       { id: 1, imageUrl: "/img/amenities/Amenities_2.jpeg" },

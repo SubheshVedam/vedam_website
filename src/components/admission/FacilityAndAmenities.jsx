@@ -1,6 +1,5 @@
 import { admissionScreenData } from "@/constants/data";
 import { Box, Typography } from "@mui/material";
-import Image from "next/image";
 import React from "react";
 
 export const FacilityAndAmenities = () => {
@@ -9,24 +8,35 @@ export const FacilityAndAmenities = () => {
       <Box
         sx={{
           width: "100%",
-          height: { xs: "250px", md: "388px" },
+          height: { xs: "250px", md: "520px" },
           borderRadius: "20px",
-          background: `linear-gradient(180deg, rgba(0, 0, 0, 0) 71.57%, #000000 100%), url(${admissionScreenData.facilityAndAmenities.image})`,
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
+          position: "relative",
+          overflow: "hidden",
           marginBottom: "20px",
-          display: "flex",
         }}
       >
+        <iframe
+          src="https://www.youtube.com/embed/R9moRoww1s4"
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            border: "none",
+          }}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
         <Box
           sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-start",
-            justifyContent: "flex-end",
-            paddingLeft: "28px",
-            paddingBottom: "28px",
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            right: 0,
+            background: "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%)",
+            padding: "28px",
+            zIndex: 1,
           }}
         >
           <Typography
