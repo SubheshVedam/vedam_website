@@ -87,7 +87,7 @@ const SingleCountText = ({ count, text, isHref }) => {
                 marginLeft: "4px",
               }}
               href={
-                "https://drive.google.com/file/d/1c5LiMhy9lJrNan2GsOVTXhjyUHVz97ka/view?usp=drive_link"
+                "https://drive.google.com/file/d/1zJzM9ZOPsJzP5bhZsCRB5xWlho3iAGwt/view?usp=sharing"
               }
               target="_blank"
             >
