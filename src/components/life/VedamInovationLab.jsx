@@ -22,7 +22,7 @@ export const VedamInovationLab = () => {
     "/img/innovation_lab/innovation_lab_1.jpeg",
     "/img/innovation_lab/innovation_lab_2.jpeg",
     "/img/innovation_lab/innovation_lab_3.jpeg",
-    "/img/innovation_lab/innovation_lab_5.jpeg",
+    "/img/innovation_lab/innovation_lab_7.jpeg",
   ];
 
   return (
