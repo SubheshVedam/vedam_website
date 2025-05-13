@@ -56,13 +56,23 @@ export const VedamInovationLab = () => {
             variant="contained"
             onClick={handleOpenModal}
             sx={{
-              background: "linear-gradient(90deg, #FB7F05 0%,#6C10BC 100%)",
+              background: "linear-gradient(90deg, #FB7F05 0%, #6C10BC 50%, #FB7F05 100%)",
+              backgroundSize: "200% 100%",
+              animation: "gradientMove 3s linear infinite",
               color: "white",
               borderRadius: "30px",
               padding: "10px 30px",
               textTransform: "none",
               fontSize: "clamp(14px, 1.5vw, 16px)",
               fontWeight: "500",
+              "@keyframes gradientMove": {
+                "0%": {
+                  backgroundPosition: "0% 50%",
+                },
+                "100%": {
+                  backgroundPosition: "200% 50%",
+                },
+              },
               "&:hover": {
                 background: "linear-gradient(90deg, #5A0D9E 0%, #E06A00 100%)",
               },
