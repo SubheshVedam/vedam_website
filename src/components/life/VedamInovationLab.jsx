@@ -1,63 +1,152 @@
-import React from "react";
-import { Box, Button, Typography } from "@mui/material";
+"use client";
+
+import React, { useState } from "react";
+import {
+  Box,
+  Button,
+  Typography,
+  Grid,
+  Modal,
+  IconButton,
+} from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 import { lifeAtVedam } from "@/constants/data";
 
 export const VedamInovationLab = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleOpenModal = () => setOpen(true);
+  const handleCloseModal = () => setOpen(false);
+
+  const innovationImages = [
+    "/img/innovation_lab/innovation_lab_1.jpeg",
+    "/img/innovation_lab/innovation_lab_2.jpeg",
+    "/img/innovation_lab/innovation_lab_3.jpeg",
+    "/img/innovation_lab/innovation_lab_5.jpeg",
+  ];
+
   return (
-    <Box
-      sx={{
-        border: "0.5px solid rgba(0, 0, 0, 0.2)",
-        padding: { xs: "20px", md: "30px" },
-        display: "flex",
-        flexDirection: { xs: "column", md: "row" },
-        alignItems: "center",
-        justifyContent: "space-between",
-        gap: { xs: "1rem", md: "2.5rem" },
-        borderRadius: "30px",
-        backgroundColor: "rgba(255, 255, 255, 1)",
-      }}
-    >
-      <Typography
-          variant="subtitle1"
-          sx={{
-            fontSize: "clamp(12px, 2vw, 16px)",
-            lineHeight: "150%",
-            fontWeight: "350",
-            fontFamily: "Inter",
-          }}
-        >
-          {lifeAtVedam.vedamLab.description}
-        </Typography>
-      <img
-        src="/img/Innovation_Lab_N.jpeg"
-        alt="innovation"
-        className="innovationImageStyle"
-      />
+    <Box sx={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
       <Box
         sx={{
+          border: "0.5px solid rgba(0, 0, 0, 0.2)",
+          padding: { xs: "20px", md: "30px" },
           display: "flex",
-          flexDirection: "column",
-          alignItems: "flex-start",
-          justifyContent: "center",
+          flexDirection: { xs: "column", md: "row" },
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: { xs: "1rem", md: "2.5rem" },
+          borderRadius: "30px",
+          backgroundColor: "rgba(255, 255, 255, 1)",
         }}
       >
-        {/* <Typography
-          variant="body1"
+        <Box sx={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
+          <Typography
+            variant="subtitle1"
+            sx={{
+              fontSize: "clamp(12px, 2vw, 16px)",
+              lineHeight: "150%",
+              fontWeight: "350",
+              fontFamily: "Inter",
+            }}
+          >
+            {lifeAtVedam.vedamLab.description}
+          </Typography>
+          <Button
+            variant="contained"
+            onClick={handleOpenModal}
+            sx={{
+              background: "linear-gradient(90deg, #FB7F05 0%,#6C10BC 100%)",
+              color: "white",
+              borderRadius: "30px",
+              padding: "10px 30px",
+              textTransform: "none",
+              fontSize: "clamp(14px, 1.5vw, 16px)",
+              fontWeight: "500",
+              "&:hover": {
+                background: "linear-gradient(90deg, #5A0D9E 0%, #E06A00 100%)",
+              },
+            }}
+          >
+            Explore More
+          </Button>
+        </Box>
+
+        <img
+          src="/img/innovation_lab/innovation_lab_main.png"
+          alt="innovation"
+          className="innovationImageStyle"
+        />
+
+        <Box
           sx={{
-            background: "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            fontSize: "clamp(20px, 2vw, 36px)",
-            lineHeight: "100%",
-            fontWeight: "700",
-            marginBottom: { xs: "1rem", md: "26px" },
-            fontFamily: "Inter",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            justifyContent: "center",
+          }}
+        />
+      </Box>
+
+      {/* Image Grid Section */}
+      <Grid container spacing={2}>
+        {innovationImages.map((image, index) => (
+          <Grid item xs={12} sm={6} md={3} key={index}>
+            <Box
+              sx={{
+                width: "100%",
+                height: "200px",
+                borderRadius: "15px",
+                overflow: "hidden",
+                boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+              }}
+            >
+              <img
+                src={image}
+                alt={`Innovation Lab ${index + 1}`}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                }}
+              />
+            </Box>
+          </Grid>
+        ))}
+      </Grid>
+
+      {/* PDF Modal */}
+      <Modal open={open} onClose={handleCloseModal}>
+        <Box
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: "90%",
+            maxWidth: "1000px",
+            height: "90%",
+            bgcolor: "background.paper",
+            boxShadow: 24,
+            p: 2,
+            borderRadius: "20px",
+            display: "flex",
+            flexDirection: "column",
           }}
         >
-          {lifeAtVedam.vedamLab.linearGradientText}
-        </Typography> */}
-        
-      </Box>
+          <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+            <IconButton onClick={handleCloseModal}>
+              <CloseIcon />
+            </IconButton>
+          </Box>
+          <iframe
+            src="https://drive.google.com/file/d/1lRieByQU9y267-hCOJi2R8eJROpwHEGQ/preview"
+            title="Vedam Lab PDF"
+            style={{ flexGrow: 1, border: "none", borderRadius: "10px" }}
+            allow="autoplay"
+          />
+        </Box>
+      </Modal>
     </Box>
   );
 };

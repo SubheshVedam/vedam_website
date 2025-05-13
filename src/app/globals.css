@@ -90,7 +90,8 @@ body {
 
 .innovationImageStyle {
   object-fit: fill;
-  width: 100%;}
+  width: 100%;
+  border-radius: 15px;}
 
 .edgeAtVedamImage {
   height: 150px;
