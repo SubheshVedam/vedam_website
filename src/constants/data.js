@@ -521,6 +521,7 @@ export const homeScreenData = {
     secondTitle: "Skills & Technologies",
     secondArray: [
       "Advanced DSA",
+      "Theory of Computation",
       "Full Stack",
       "System Design",
       "Java",
