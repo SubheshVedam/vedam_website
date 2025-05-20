@@ -89,7 +89,7 @@ export const expertsData = [
   {
     imageUrl: "/img/experts/senthurpandian.jpeg",
     name: "M Senthurpandian",
-    logo: "/img/companies/amazon.webp",
+    logo: "/img/companies/microsoft-logo.png",
     designation: "Senior Software Engineer",
     info: "13+ Years of Experience, Amazon Interview Panel Member",
     rating: 4.9,
