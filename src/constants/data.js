@@ -1031,7 +1031,7 @@ export const teamVedamScreenData = {
       imageUrl: "/img/teamVedam/pitush_nangru.webp",
       designation: "Co-Founder",
       description:
-        "With a passion for startups, Piyush is currently the Co-Founder at Vedam. Piyush joined Crownit as a founding member and headed the marketing and business development aspect of the business. An engineer from NSIT and an MBA from IMT Ghaziabad, Piyush started his venture in the Cultural Tourism spac",
+        "With a passion for startups, Piyush is currently the Co-Founder at Vedam. Piyush joined Crownit as a founding member and headed the marketing and business development aspect of the business. An engineer from NSIT and an MBA from IMT Ghaziabad, Piyush started his venture in the Cultural Tourism space",
     },
     {
       id: 1,
