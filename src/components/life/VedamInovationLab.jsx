@@ -19,9 +19,9 @@ export const VedamInovationLab = () => {
   const handleCloseModal = () => setOpen(false);
 
   const innovationImages = [
-    "/img/innovation_lab/innovation_lab_1.jpeg",
-    "/img/innovation_lab/innovation_lab_2.jpeg",
-    "/img/innovation_lab/innovation_lab_3.jpeg",
+    "/img/innovation_lab/image3.jpg",
+    "/img/innovation_lab/image4.jpg",
+    "/img/innovation_lab/image2.jpg",
     "/img/innovation_lab/innovation_lab_7.jpeg",
   ];
 
@@ -83,18 +83,9 @@ export const VedamInovationLab = () => {
         </Box>
 
         <img
-          src="/img/innovation_lab/innovation_lab_main.png"
+          src="/img/innovation_lab/image1.jpg"
           alt="innovation"
           className="innovationImageStyle"
-        />
-
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-start",
-            justifyContent: "center",
-          }}
         />
       </Box>
 
@@ -109,18 +100,12 @@ export const VedamInovationLab = () => {
                 borderRadius: "15px",
                 overflow: "hidden",
                 boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+                backgroundImage: `url(${image})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
               }}
-            >
-              <img
-                src={image}
-                alt={`Innovation Lab ${index + 1}`}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                }}
-              />
-            </Box>
+            />
           </Grid>
         ))}
       </Grid>
