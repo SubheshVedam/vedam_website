@@ -167,8 +167,9 @@ export const navLinks = [
   { label: "Life @ Vedam", path: "/life" },
   { label: "FAQs", path: "/faqs" },
   { label: "About Us", path: "/about" },
-  { label: "Login", path: "https://apply.vedam.org/" }, //Don't reorder login
   { label: "Register Now", path: "https://apply.vedam.org/" }, //Don't reorder register
+  { label: "Login", path: "https://apply.vedam.org/" }, //Don't reorder login
+  
 ];
 
 export const homeScreenData = {
@@ -633,7 +634,7 @@ export const admissionScreenData = {
   },
   keyDates: {
     subtitle: "Key Dates",
-    headerText: "May Intake Dates",
+    headerText: "June Intake Dates",
     firstArray: [
       "VSAT Test",
       "Last Date to Apply",
@@ -642,8 +643,8 @@ export const admissionScreenData = {
       "Final Offer",
     ],
     secondArray: [
-      "30th May 2025",
-      "29th May 2025",
+      "18th June 2025",
+      "17th June 2025",
       "Within 3 Days of the Exam",
       "Within 10 Days of the Exam",
       "Within 20 Days of the Exam, If selected",
@@ -665,7 +666,7 @@ export const admissionScreenData = {
         title: "Apply Online",
         subtitle:
           "Complete your profile and reserve your slot for the Vedam Scholastic Aptitude Test (VSAT).",
-        subtitle1: "Last Date to Register is 29th May 2025",
+        subtitle1: "Last Date to Register is 17th June 2025",
         showButton: true,
       },
       {
@@ -673,7 +674,7 @@ export const admissionScreenData = {
         step: "Step 2",
         title: "Take the VSAT",
         subtitle:
-          "It is an entrance test conducted online. May intake round on 30th May, 2025.",
+          "It is an entrance test conducted online. June intake round on 18th June, 2025.",
         showButton: false,
       },
       {
