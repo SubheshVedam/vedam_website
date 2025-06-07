@@ -113,20 +113,37 @@ export const FeeStructure = ({ searchParams }) => {
   const selectedFee = fee === "hostel" ? "hostel" : "tuition";
   return (
     <Box >
-      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 6, width: '100%' }}>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: { xs: 'column', md: 'row' },
+          justifyContent: { xs: 'flex-start', md: 'space-between' }, // Changed xs to flex-start
+    alignItems: { xs: 'flex-start', md: 'center' },
+          mb: 6,
+          width: '100%',
+          gap: { xs: 2, md: 0 }
+        }}
+      >
         <Typography
           sx={{
             fontFamily: 'Inter',
             fontWeight: 600,
-            fontSize: '24px',
+            fontSize: { xs: '20px', sm: '22px', md: '24px' },
             lineHeight: '120%',
             color: '#1C1C1C',
+            textAlign: { xs: 'left', md: 'left' },
+            order: { xs: 1, md: 0 }
           }}
         >
           Vedam School Of Technology Fee Structure
         </Typography>
-
-        <Box sx={{ flexShrink: 0 }}>
+        <Box
+          sx={{
+            flexShrink: 0,
+            order: { xs: 2, md: 0 },
+            width: { xs: '100%', md: 'auto' }
+          }}
+        >
           <FeesToggleButton />
         </Box>
       </Box>
