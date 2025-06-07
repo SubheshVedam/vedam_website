@@ -12,7 +12,12 @@ import { homeScreenData } from "@/constants/data";
 import Image from "next/image";
 import Link from "next/link";
 import CallMadeIcon from "@mui/icons-material/CallMade";
-
+import FeesToggleButton from "./ToggleButton";
+// interface PageProps {
+//   searchParams: Promise<{
+//     fee?: string | string[];
+//   }>;
+// }
 const SingleTableCell = ({ text, isHead = false, isFirst = false }) => {
   return (
     <TableCell
@@ -101,281 +106,306 @@ const SingleCountText = ({ count, text, isHref }) => {
   );
 };
 
-export const FeeStructure = () => {
+export const FeeStructure = ({ searchParams }) => {
+  const rawFee = searchParams?.fee;
+  const fee = Array.isArray(rawFee) ? rawFee[0] : rawFee;
+
+  const selectedFee = fee === "hostel" ? "hostel" : "tuition";
   return (
-    <Box
-      sx={{
-        background: "rgba(255, 255, 255, 1)",
-        borderRadius: "30px",
-        padding: { xs: "20px 10px", md: "40px" },
-      }}
-    >
-      {/* Header Section - unchanged from original */}
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: { xs: "column-reverse", md: "row" },
-          alignItems: { xs: "flex-start", md: "center" },
-          justifyContent: "space-between",
-          marginBottom: { xs: "1rem", md: "2rem" },
-        }}
-      >
+    <Box >
+      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 6, width: '100%' }}>
         <Typography
-          variant="body1"
           sx={{
-            fontFamily: "Inter",
-            fontWeight: { xs: "400", md: "700" },
-            marginTop: { xs: "8px", md: 0 },
+            fontFamily: 'Inter',
+            fontWeight: 600,
+            fontSize: '24px',
+            lineHeight: '120%',
+            color: '#1C1C1C',
           }}
         >
-          {homeScreenData.FeeStructure.headerLeftTitle}
+          Vedam School Of Technology Fee Structure
         </Typography>
-        <Box
-          sx={{
-            border: "1px solid rgba(108, 16, 188, 1)",
-            paddingX: { xs: "10px", md: "20px" },
-            paddingY: { xs: "8px", md: "10px" },
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            gap: "10px",
-            borderRadius: 12,
-          }}
-        >
-          <Image
-            width={20}
-            height={20}
-            src={"/img/location2.webp"}
-            style={{ width: "20px", height: "20px" }}
-            alt="location"
-          />
-          <Typography
-            variant="body1"
-            sx={{
-              fontSize: {
-                xs: "12px",
-                md: "1rem",
-                color: "rgba(108, 16, 188, 1)",
-                whiteSpace: "nowrap",
-              },
-            }}
-          >
-            {homeScreenData.FeeStructure.headerRightLocation}
-          </Typography>
+
+        <Box sx={{ flexShrink: 0 }}>
+          <FeesToggleButton />
         </Box>
       </Box>
 
-      {/* Content Section */}
       <Box
         sx={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "20px",
+          background: "rgba(255, 255, 255, 1)",
+          borderRadius: "30px",
+          padding: { xs: "20px 10px", md: "40px" },
         }}
       >
-        {/* First Row - Table and Text */}
+        {/* Header Section - unchanged from original */}
         <Box
           sx={{
-            width: "100%",
             display: "flex",
-            flexDirection: { xs: "column", md: "row" },
-            gap: "20px",
+            flexDirection: { xs: "column-reverse", md: "row" },
+            alignItems: { xs: "flex-start", md: "center" },
+            justifyContent: "space-between",
+            marginBottom: { xs: "1rem", md: "2rem" },
           }}
         >
-          {/* Table Container */}
-          <Box
-            sx={{
-              width: { xs: "100%", md: "50%" },
-              overflowX: { xs: "auto", md: "visible" },
-              WebkitOverflowScrolling: "touch",
-              "&::-webkit-scrollbar": { display: "none" },
-            }}
-          >
-            <Table
-              sx={{
-                minWidth: "100%",
-                backgroundColor: "rgba(186, 107, 255, 0.08)",
-                borderRadius: "12px",
-              }}
-              aria-label="simple table"
-            >
-              <TableHead>
-                <TableRow>
-                  <SingleTableCell text="Year" isHead />
-                  <SingleTableCell text="Odd Sem" isHead />
-                  <SingleTableCell text="Even Sem" isHead />
-                  <SingleTableCell text="Total" isHead />
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {homeScreenData.FeeStructure.leftSideYearTable.map(
-                  (row, idx) => (
-                    <TableRow key={row.id}>
-                      <SingleTableCell isFirst={true} text={row.year1} />
-                      <SingleTableCell
-                        text={row.amount1}
-                        isFirst={
-                          idx ===
-                          homeScreenData.FeeStructure.leftSideYearTable.length -
-                            1
-                        }
-                      />
-                      <SingleTableCell
-                        text={row.amount2}
-                        isFirst={
-                          idx ===
-                          homeScreenData.FeeStructure.leftSideYearTable.length -
-                            1
-                        }
-                      />
-                      <SingleTableCell text={row.total} />
-                    </TableRow>
-                  )
-                )}
-              </TableBody>
-            </Table>
-          </Box>
 
-          {/* Right Side Text */}
-          <Box
-            sx={{
-              width: { xs: "100%", md: "50%" },
-              display: "flex",
-              flexDirection: "column",
-              gap: "1rem",
-              alignItems: "flex-start",
-              justifyContent: "space-between",
-            }}
-          >
-            {homeScreenData.FeeStructure.rightSideText.map((item) => (
-              <SingleCountText
-                key={item.id}
-                count={item.id}
-                text={item.text}
-                isHref={item.id === 4}
-              />
-            ))}
-          </Box>
-        </Box>
-
-        {/* Second Row - Additional Table (2x4) */}
-        <Box
-          sx={{
-            width: "100%",
-            overflowX: { xs: "auto", md: "visible" },
-            WebkitOverflowScrolling: "touch",
-            "&::-webkit-scrollbar": { display: "none" },
-          }}
-        >
           <Typography
             variant="body1"
             sx={{
               fontFamily: "Inter",
               fontWeight: { xs: "400", md: "700" },
-              my: { xs: "8px", md: "8px" },
+              marginTop: { xs: "8px", md: 0 },
             }}
           >
-            Hostel Fees{" "}
+            {homeScreenData.FeeStructure.headerLeftTitle}
           </Typography>
-          {/* Additional Table - Horizontal layout for desktop */}
           <Box
             sx={{
-              overflowX: "auto",
-              WebkitOverflowScrolling: "touch",
-              "&::-webkit-scrollbar": { display: "none" },
-              display: { xs: "none", md: "block" },
-              marginTop: "20px",
+              border: "1px solid rgba(108, 16, 188, 1)",
+              paddingX: { xs: "10px", md: "20px" },
+              paddingY: { xs: "8px", md: "10px" },
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              gap: "10px",
+              borderRadius: 12,
             }}
           >
-            <Table
+            <Image
+              width={20}
+              height={20}
+              src={"/img/location2.webp"}
+              style={{ width: "20px", height: "20px" }}
+              alt="location"
+            />
+            <Typography
+              variant="body1"
               sx={{
-                minWidth: "100%",
-                backgroundColor: "rgba(186, 107, 255, 0.08)",
-                borderRadius: "12px",
-              }}
-            >
-              <TableHead>
-                <TableRow>
-                  <SingleTableCell text="Standard Room" isHead />
-                  <SingleTableCell text="Premium Room" isHead />
-                  <SingleTableCell text="Premium Plus Room" isHead />
-                  <SingleTableCell text="Supreme Room (Only Boys)" isHead />
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                <TableRow>
-                  <SingleTableCell text="90,000/-*" />
-                  <SingleTableCell text="1,10,000/-*" />
-                  <SingleTableCell text="1,40,000/-*" />
-                  <SingleTableCell text="1,80,000/-*" />
-                </TableRow>
-              </TableBody>
-            </Table>
-          </Box>
-
-          {/* Additional Table - Vertical layout for mobile */}
-          <Box
-            sx={{
-              overflowX: "scroll",
-              WebkitOverflowScrolling: "touch",
-              "&::-webkit-scrollbar": { display: "none" },
-              display: { xs: "block", md: "none" },
-              marginTop: "20px",
-            }}
-          >
-            <Table
-              sx={{
-                minWidth: "100%",
-                backgroundColor: "rgba(186, 107, 255, 0.08)",
-                borderRadius: "12px",
-                borderCollapse: "separate",
-                borderSpacing: 0,
-                "& .MuiTableCell-root": {
-                  border: "none",
-                  padding: "12px 10px",
+                fontSize: {
+                  xs: "12px",
+                  md: "1rem",
+                  color: "rgba(108, 16, 188, 1)",
+                  whiteSpace: "nowrap",
                 },
               }}
             >
-              <TableBody>
-                <TableRow>
-                  <TableCell sx={{ color: "rgba(108, 16, 188, 1)" }}>
-                    Standard Room
-                  </TableCell>
-                  <TableCell>₹90,000/-*</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell sx={{ color: "rgba(108, 16, 188, 1)" }}>
-                    Premium Room
-                  </TableCell>
-                  <TableCell>₹1,10,000/-*</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell sx={{ color: "rgba(108, 16, 188, 1)" }}>
-                    Premium Plus Room
-                  </TableCell>
-                  <TableCell>₹1,40,000/-*</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell sx={{ color: "rgba(108, 16, 188, 1)" }}>
-                    Supreme Room (Only Boys)
-                  </TableCell>
-                  <TableCell>₹1,80,000/-*</TableCell>
-                </TableRow>
-              </TableBody>
-            </Table>
+              {homeScreenData.FeeStructure.headerRightLocation}
+            </Typography>
           </Box>
-          <Typography
-            variant="subtitle1"
-            sx={{ mt: 1, fontSize: { xs: 12, sm: 14 } }}
+        </Box>
+
+        {/* Content Section */}
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "20px",
+          }}
+        >
+          {/* First Row - Table and Text */}
+          <Box
+            sx={{
+              width: "100%",
+              display: "flex",
+              flexDirection: { xs: "column", md: "row" },
+              gap: "20px",
+            }}
           >
-            *The hostel fees mentioned above is per student per year.
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            sx={{ mt: 1, fontSize: { xs: 12, sm: 14 } }}
+            {/* Table Container */}
+            <Box
+              sx={{
+                width: { xs: "100%", md: "50%" },
+                overflowX: { xs: "auto", md: "visible" },
+                WebkitOverflowScrolling: "touch",
+                "&::-webkit-scrollbar": { display: "none" },
+              }}
+            >
+              <Table
+                sx={{
+                  minWidth: "100%",
+                  backgroundColor: "rgba(186, 107, 255, 0.08)",
+                  borderRadius: "12px",
+                }}
+                aria-label="simple table"
+              >
+                <TableHead>
+                  <TableRow>
+                    <SingleTableCell text="Year" isHead />
+                    <SingleTableCell text="Odd Sem" isHead />
+                    <SingleTableCell text="Even Sem" isHead />
+                    <SingleTableCell text="Total" isHead />
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {homeScreenData.FeeStructure.leftSideYearTable.map(
+                    (row, idx) => (
+                      <TableRow key={row.id}>
+                        <SingleTableCell isFirst={true} text={row.year1} />
+                        <SingleTableCell
+                          text={row.amount1}
+                          isFirst={
+                            idx ===
+                            homeScreenData.FeeStructure.leftSideYearTable.length -
+                            1
+                          }
+                        />
+                        <SingleTableCell
+                          text={row.amount2}
+                          isFirst={
+                            idx ===
+                            homeScreenData.FeeStructure.leftSideYearTable.length -
+                            1
+                          }
+                        />
+                        <SingleTableCell text={row.total} />
+                      </TableRow>
+                    )
+                  )}
+                </TableBody>
+              </Table>
+            </Box>
+
+            {/* Right Side Text */}
+            <Box
+              sx={{
+                width: { xs: "100%", md: "50%" },
+                display: "flex",
+                flexDirection: "column",
+                gap: "1rem",
+                alignItems: "flex-start",
+                justifyContent: "space-between",
+              }}
+            >
+              {homeScreenData.FeeStructure.rightSideText.map((item) => (
+                <SingleCountText
+                  key={item.id}
+                  count={item.id}
+                  text={item.text}
+                  isHref={item.id === 4}
+                />
+              ))}
+            </Box>
+          </Box>
+
+          {/* Second Row - Additional Table (2x4) */}
+          <Box
+            sx={{
+              width: "100%",
+              overflowX: { xs: "auto", md: "visible" },
+              WebkitOverflowScrolling: "touch",
+              "&::-webkit-scrollbar": { display: "none" },
+            }}
           >
-            **Additional mess charge of ₹5,500 / month applicable.
-          </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                fontFamily: "Inter",
+                fontWeight: { xs: "400", md: "700" },
+                my: { xs: "8px", md: "8px" },
+              }}
+            >
+              Hostel Fees{" "}
+            </Typography>
+            {/* Additional Table - Horizontal layout for desktop */}
+            <Box
+              sx={{
+                overflowX: "auto",
+                WebkitOverflowScrolling: "touch",
+                "&::-webkit-scrollbar": { display: "none" },
+                display: { xs: "none", md: "block" },
+                marginTop: "20px",
+              }}
+            >
+              <Table
+                sx={{
+                  minWidth: "100%",
+                  backgroundColor: "rgba(186, 107, 255, 0.08)",
+                  borderRadius: "12px",
+                }}
+              >
+                <TableHead>
+                  <TableRow>
+                    <SingleTableCell text="Standard Room" isHead />
+                    <SingleTableCell text="Premium Room" isHead />
+                    <SingleTableCell text="Premium Plus Room" isHead />
+                    <SingleTableCell text="Supreme Room (Only Boys)" isHead />
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  <TableRow>
+                    <SingleTableCell text="90,000/-*" />
+                    <SingleTableCell text="1,10,000/-*" />
+                    <SingleTableCell text="1,40,000/-*" />
+                    <SingleTableCell text="1,80,000/-*" />
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </Box>
+
+            {/* Additional Table - Vertical layout for mobile */}
+            <Box
+              sx={{
+                overflowX: "scroll",
+                WebkitOverflowScrolling: "touch",
+                "&::-webkit-scrollbar": { display: "none" },
+                display: { xs: "block", md: "none" },
+                marginTop: "20px",
+              }}
+            >
+              <Table
+                sx={{
+                  minWidth: "100%",
+                  backgroundColor: "rgba(186, 107, 255, 0.08)",
+                  borderRadius: "12px",
+                  borderCollapse: "separate",
+                  borderSpacing: 0,
+                  "& .MuiTableCell-root": {
+                    border: "none",
+                    padding: "12px 10px",
+                  },
+                }}
+              >
+                <TableBody>
+                  <TableRow>
+                    <TableCell sx={{ color: "rgba(108, 16, 188, 1)" }}>
+                      Standard Room
+                    </TableCell>
+                    <TableCell>₹90,000/-*</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell sx={{ color: "rgba(108, 16, 188, 1)" }}>
+                      Premium Room
+                    </TableCell>
+                    <TableCell>₹1,10,000/-*</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell sx={{ color: "rgba(108, 16, 188, 1)" }}>
+                      Premium Plus Room
+                    </TableCell>
+                    <TableCell>₹1,40,000/-*</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell sx={{ color: "rgba(108, 16, 188, 1)" }}>
+                      Supreme Room (Only Boys)
+                    </TableCell>
+                    <TableCell>₹1,80,000/-*</TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </Box>
+            <Typography
+              variant="subtitle1"
+              sx={{ mt: 1, fontSize: { xs: 12, sm: 14 } }}
+            >
+              *The hostel fees mentioned above is per student per year.
+            </Typography>
+            <Typography
+              variant="subtitle1"
+              sx={{ mt: 1, fontSize: { xs: 12, sm: 14 } }}
+            >
+              **Additional mess charge of ₹5,500 / month applicable.
+            </Typography>
+          </Box>
         </Box>
       </Box>
     </Box>
