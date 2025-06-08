@@ -518,7 +518,7 @@ export const FeeStructure = () => {
             lineHeight: 1.6,
           }}
         >
-          *Download the complete details of hostel rooms and charges  <Link
+          ***Download the complete details of hostel rooms and charges  <Link
             style={{
               color: "#FFA41A",
               fontSize: "12px",
@@ -960,7 +960,7 @@ export const FeeStructure = () => {
             fontFamily: "Inter",
           }}
         >
-          *Download the complete details of hostel rooms and charges  <Link
+          ***Download the complete details of hostel rooms and charges  <Link
             style={{
               color: "#FFA41A",
               fontSize: "12px",
