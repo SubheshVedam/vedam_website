@@ -460,7 +460,7 @@ export const homeScreenData = {
       },
       {
         id: "8",
-        year1: "Total Cost",
+        year1: "Total Course Fees",
         semester: "",
         amount1: "1,31,250",
         amount2: "93,750",
@@ -547,7 +547,7 @@ export const homeScreenData = {
       },
       {
         id: 2,
-        text: "The total fee mentioned in the table is the Tution Fees and Upskilling Fees, This is exclusive of Hostel & Mess fees",
+        text: "The fees mentioned in the table is the Course fees, This is exclusive of Hostel & Mess fees",
       },
       {
         id: 3,

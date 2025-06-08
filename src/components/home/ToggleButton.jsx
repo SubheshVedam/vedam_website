@@ -64,7 +64,7 @@ const ToggleButton = ({ selectedFee, setSelectedFee }) => {
               userSelect: "none",
             }}
           >
-            {type === "tuition" ? "Tuition Fees" : "Hostel/Mess Fees"}
+            {type === "tuition" ? "Course Fees" : "Hostel/Mess Fees"}
           </Box>
         ))}
       </Box>
