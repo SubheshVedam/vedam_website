@@ -1,6 +1,11 @@
+'use client'
 import React from "react";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import {
   Box,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
   Table,
   TableBody,
   TableCell,
@@ -145,7 +150,7 @@ export const FeeStructure = () => {
   {
     /* First Outer Box - Tuition Fees */
   }
-  const div1 = 
+  const div1 =
     <Box
       sx={{
         background: "rgba(255, 255, 255, 1)",
@@ -182,8 +187,8 @@ export const FeeStructure = () => {
               <TableRow sx={{ background: "rgba(146, 62, 218, 1)" }}>
                 <SingleTableCell text="Year" isHead isFirstColumn isFirstRow />
                 <SingleTableCell text="Semester" isHead isFirstRow />
-                <SingleTableCell text="ADYPU" isHead isFirstRow />
-                <SingleTableCell text="Vedam" isHead isFirstRow />
+                <SingleTableCell text=" " isHead isFirstRow />
+                <SingleTableCell text=" " isHead isFirstRow />
                 <SingleTableCell text="Total" isHead isLastColumn isFirstRow />
               </TableRow>
             </TableHead>
@@ -323,12 +328,12 @@ export const FeeStructure = () => {
           ))}
       </Box>
     </Box>
-  
+
 
   {
     /* Second Outer Box - Hostel Fees */
   }
-  const div2 = 
+  const div2 =
     <Box
       sx={{
         background: "rgba(255, 255, 255, 1)",
@@ -514,7 +519,7 @@ export const FeeStructure = () => {
         }}
       />
     </Box>
-  
+
 
   {
     /* Content Section mobile */
@@ -523,16 +528,17 @@ export const FeeStructure = () => {
   {
     /* /* First Row - Table and Text */
   }
-  const mdiv1 = 
+  const mdiv1 =
+
     <Box
       sx={{
         width: "100%",
         display: "flex",
         flexDirection: { xs: "column", md: "row" },
-        gap: "20px",
+        gap: "16px",
       }}
     >
-      {/* Table Container */}
+      {/* Accordion Container */}
       <Box
         sx={{
           width: { xs: "100%", md: "50%" },
@@ -541,110 +547,132 @@ export const FeeStructure = () => {
           "&::-webkit-scrollbar": { display: "none" },
           display: "flex",
           flexDirection: "column",
-          gap: "25px", // Add space between tables
+          gap: "16px",
         }}
       >
-        {homeScreenData.FeeStructure.leftSideYearTable.map((row, idx) => (
-          <Box
+        {homeScreenData.FeeStructure.leftSideYearTableMobile.map((row, idx) => (
+          <Accordion
             key={row.id}
             sx={{
-              borderRadius: "22px",
-              p: "2px",
-              background: "linear-gradient(90deg, #6513AC 0%, #FF7829 100%)",
-              mb: 2,
+              borderRadius: "16px",
+              boxShadow: "none", // Remove default shadow
+              border: "none",
+              "&:before": {
+                display: "none", // ✨ This removes the default top divider line
+              },
             }}
           >
-            <Table
+
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon sx={{ color: "#fff" }} />}
+              sx={{
+                boxShadow: "none", // Remove default shadow
+                borderWidth: "0px", // Remove border
+                backgroundColor: "#E4C5FF",
+                borderRadius: "8px 8px 0 0",
+                color: "#1C1C1C",
+                fontWeight: "bold",
+                fontSize: "1rem",
+                textAlign: "center",
+                padding: "8px 16px",
+              }}
+            >
+              {row.year1}
+            </AccordionSummary>
+            <AccordionDetails
               sx={{
                 backgroundColor: "#fff",
-                borderRadius: "20px",
-                borderCollapse: "collapse",
-                width: "100%",
-                // "& .MuiTableCell-root": {
-                //   border: "2px solid #E0E0E0", // Force gridline globally as fallback
-                // },
+                borderRadius: "0 0 20px 20px",
+                padding: 0,
               }}
-              aria-label="fee table"
             >
-              <TableHead>
-                <TableRow>
-                  <TableCell
-                    colSpan={2}
+              <Table sx={{ width: "100%"}}>
+                <TableBody>
+                  <TableRow
                     sx={{
-                      textAlign: "center",
-                      color: "#1C1C1C",
-                      fontWeight: "bold",
-                      fontSize: "1rem",
-                      padding: "16px",
-                      backgroundColor: "#E4C5FF",
-                      borderRadius: "20px 20px 0 0",
-                      // border: "1px solid #E0E0E0",
+                      "& .MuiTableCell-root": {
+                        border: "1px solid #E0E0E0",
+                      },
                     }}
                   >
-                    {row.year1}
-                  </TableCell>
-                </TableRow>
-              </TableHead>
+                    <SingleTableCell isFirst text="upskilling" />
+                    <SingleTableCell text={row.amount1} />
+                  </TableRow>
+                  <TableRow
+                    sx={{
+                      "& .MuiTableCell-root": {
+                        border: "1px solid #E0E0E0",
+                      },
+                    }}
+                  >
+                    <SingleTableCell isFirst text="coolege 2" />
+                    <SingleTableCell text={row.amount2} />
+                  </TableRow>
+                  <TableRow
+                    sx={{
+                      "& .MuiTableCell-root": {
+                        border: "1px solid #E0E0E0",
+                      },
+                    }}
+                  >
+                    <SingleTableCell isFirst text="Total" />
+                    <SingleTableCell text={row.total} />
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </AccordionDetails>
+          </Accordion>
+        ))}
+      </Box>
 
-              <TableBody
+    {/* Total Price */}
+    <Box
+        sx={{
+          width: "100%",
+          height: "60px",
+          marginBottom: "20px",
+          borderRadius: "12px",
+          background: "linear-gradient(90deg, #FF7829 0%, #7B2CBF 100%)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          paddingX: "40px",
+        }}
+      >
+        <Box>
+          {homeScreenData.FeeStructure.leftSideYearTableMobile
+            .filter((item) => item.id === "8")
+            .map((item) => (
+              <Typography
+                key={item.year1}
+                variant="h6"
                 sx={{
-                  "&::-webkit-scrollbar": { border: "1px solid" },
+                  color: "white",
+                  fontFamily: "Inter",
+                  fontSize: "24px",
                 }}
               >
-                <TableRow
-                  sx={{
-                    "& .MuiTableCell-root": {
-                      border: "1px solid #E0E0E0", // Force gridline globally as fallback
-                    },
-                  }}
-                >
-                  <SingleTableCell isFirst text="Semester 1" />
-                  <SingleTableCell text={row.amount1} />
-                </TableRow>
-                <TableRow
-                  sx={{
-                    "& .MuiTableCell-root": {
-                      border: "1px solid #E0E0E0", // Force gridline globally as fallback
-                    },
-                  }}
-                >
-                  <SingleTableCell isFirst text="Semester 2" />
-                  <SingleTableCell text={row.amount2} />
-                </TableRow>
-                <TableRow
-                  sx={{
-                    "& .MuiTableCell-root": {
-                      border: "1px solid #E0E0E0", // Force gridline globally as fallback
-                    },
-                  }}
-                >
-                  <SingleTableCell isFirst text="ADYPU" />
-                  <SingleTableCell text="75,000/-" />
-                </TableRow>
-                <TableRow
-                  sx={{
-                    "& .MuiTableCell-root": {
-                      border: "1px solid #E0E0E0", // Force gridline globally as fallback
-                    },
-                  }}
-                >
-                  <SingleTableCell isFirst text="Vedam" />
-                  <SingleTableCell text="75,000/-" />
-                </TableRow>
-                <TableRow
-                // sx={{
-                //   "& .MuiTableCell-root": {
-                //     border: " 1px solid #E0E0E0", // Force gridline globally as fallback
-                //   },
-                // }}
-                >
-                  <SingleTableCell isFirst text="Total" />
-                  <SingleTableCell text={row.total} />
-                </TableRow>
-              </TableBody>
-            </Table>
-          </Box>
-        ))}
+                {item.year1}
+              </Typography>
+            ))}
+        </Box>
+        <Box>
+          {homeScreenData.FeeStructure.leftSideYearTableMobile
+            .filter((item) => item.id === "8")
+            .map((item) => (
+              <Typography
+                key={item.total}
+                variant="h6"
+                sx={{
+                  color: "white",
+                  fontFamily: "Inter",
+                  fontSize: "24px",
+                }}
+              >
+                {item.total}
+              </Typography>
+            ))}
+        </Box>
       </Box>
       {/* Right Side Text */}
       <Box
@@ -667,12 +695,13 @@ export const FeeStructure = () => {
         ))}
       </Box>
     </Box>
-  
+
+
 
   {
     /* Second Row - Additional Table (2x4) */
   }
-  const mdiv2 = 
+  const mdiv2 =
     <Box
       sx={{
         width: "100%",
@@ -905,7 +934,7 @@ export const FeeStructure = () => {
         </Typography>
       </Box>
     </Box>
-  
+
 
   return (
     <Box

@@ -1,13 +1,8 @@
 "use client";
-import React from "react";
-import Link from "next/link";
-import { Box, useMediaQuery, Theme } from "@mui/material";
-import { useSearchParams } from "next/navigation";
+import React, { useState } from "react";
+import { Box, useMediaQuery } from "@mui/material";
 
-const ToggleButton = () => {
-  const searchParams = useSearchParams();
-  const selectedFee = searchParams.get("fee") || "tuition";
-
+const ToggleButton = ({ selectedFee, setSelectedFee }) => {
   return (
     <Box display="flex" justifyContent="center" mb={2} px={{ xs: 2, sm: 0 }}>
       <Box
@@ -17,11 +12,7 @@ const ToggleButton = () => {
           padding: { xs: "0.4rem", sm: "0.5rem" },
           display: "flex",
           position: "relative",
-          width: {
-            xs: "21rem",
-            sm: "21rem",
-            md: "21rem",
-          },
+          width: "21rem",
           maxWidth: "21rem",
           height: { xs: "3.5rem", sm: "4.1rem" },
           mx: "auto",
@@ -31,6 +22,7 @@ const ToggleButton = () => {
           border: "1px solid #E5E2E2",
         }}
       >
+        {/* Sliding Highlight */}
         <Box
           sx={{
             position: "absolute",
@@ -48,33 +40,32 @@ const ToggleButton = () => {
           }}
         />
         {["tuition", "hostel"].map((type) => (
-          <Link
+          <Box
             key={type}
-            href={`?fee=${type}`}
-            scroll={false}
-            style={{ flex: 1, zIndex: 2, textDecoration: "none" }}
+            onClick={() => setSelectedFee(type)}
+            sx={{
+              flex: 1,
+              zIndex: 2,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              color: selectedFee === type ? "#fff" : "#6513AC",
+              fontWeight: 600,
+              height: "100%",
+              fontSize: {
+                xs: "0.85rem",
+                sm: "0.9rem",
+                md: "0.95rem",
+              },
+              px: { xs: 1, sm: 0 },
+              textAlign: "center",
+              whiteSpace: { xs: "nowrap", sm: "normal" },
+              cursor: "pointer",
+              userSelect: "none",
+            }}
           >
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: selectedFee === type ? "#fff" : "#6513AC",
-                fontWeight: 600,
-                height: "100%",
-                fontSize: {
-                  xs: "0.85rem",
-                  sm: "0.9rem",
-                  md: "0.95rem",
-                },
-                px: { xs: 1, sm: 0 },
-                textAlign: "center",
-                whiteSpace: { xs: "nowrap", sm: "normal" },
-              }}
-            >
-              {type === "tuition" ? "Tuition Fees" : "Hostel/Mess Fees"}
-            </Box>
-          </Link>
+            {type === "tuition" ? "Tuition Fees" : "Hostel/Mess Fees"}
+          </Box>
         ))}
       </Box>
     </Box>
@@ -82,9 +73,11 @@ const ToggleButton = () => {
 };
 
 const FeesToggleButton = ({ div1, div2, mdiv1, mdiv2 }) => {
-  const searchParams = useSearchParams();
-  const selectedFee = searchParams.get("fee") || "tuition";
+  const [selectedFee, setSelectedFee] = useState("tuition");
   const isMobile = useMediaQuery("(max-width:600px)");
+
+  const content = selectedFee === "tuition" ? (isMobile ? mdiv1 : div1) : (isMobile ? mdiv2 : div2);
+
   return (
     <Box
       sx={{
@@ -94,16 +87,8 @@ const FeesToggleButton = ({ div1, div2, mdiv1, mdiv2 }) => {
         flexDirection: "column",
       }}
     >
-      <ToggleButton />
-      <Box mt={2}>
-        {selectedFee === "tuition"
-          ? isMobile
-            ? mdiv1
-            : div1
-          : isMobile
-          ? mdiv2
-          : div2}
-      </Box>
+      <ToggleButton selectedFee={selectedFee} setSelectedFee={setSelectedFee} />
+      <Box mt={2}>{content}</Box>
     </Box>
   );
 };
