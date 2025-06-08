@@ -237,7 +237,7 @@ export const FeeStructure = () => {
                         isLastRow={isLastRow}
                       />
                       <SingleTableCell
-                        text={row.total}
+                        text={'₹' + row.total}
                         isFirst={true}
                         isLastColumn
                         isLastRow={isLastRow}
@@ -482,7 +482,7 @@ export const FeeStructure = () => {
               fontSize: "14px",
             }}
           >
-            Note1
+            Note
           </Typography>
         </Box>
 
