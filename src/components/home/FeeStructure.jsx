@@ -348,6 +348,7 @@ export const FeeStructure = () => {
           </Box>
 
           {/* Additional Table - Vertical layout for mobile */}
+
           <Box
             sx={{
               overflowX: "scroll",
@@ -383,7 +384,7 @@ export const FeeStructure = () => {
                     sx={{
                       width: "50%",
                       color: "#FFFFFF",
-                      borderRadius: "20px 0 0 0",
+                      borderRadius: "22px 0 0 0",
                       backgroundColor: "#A75EE7",
                     }}>
                     Standard Room
@@ -391,7 +392,7 @@ export const FeeStructure = () => {
                   <TableCell
                     sx={{
                       color: "#6D6D6D",
-                      borderRadius: "0 20px 0 0",
+                      borderRadius: "0 22px 0 0",
                       width: "50%",
                     }}>
                     ₹90,000/-*
@@ -400,8 +401,8 @@ export const FeeStructure = () => {
                 <TableRow>
                   <TableCell
                     sx={{
-                      color: "#FFFFFF",
-                      backgroundColor: "#A75EE7",
+                      color: " #FFFFFF",
+                      backgroundColor: " #A75EE7",
                       width: "50%",
                     }}>
                     Premium Room
@@ -435,12 +436,14 @@ export const FeeStructure = () => {
                       color: "#FFFFFF",
                       backgroundColor: "#A75EE7",
                       width: "50%",
+                      borderRadius: "0 0 0 22px",
                     }}>
                     Supreme Room (Only Boys)
                   </TableCell>
                   <TableCell
                     sx={{
                       color: "#6D6D6D",
+                      borderRadius: "0 0 22px 0",
                     }}>
                     ₹1,80,000/-*
                   </TableCell>
