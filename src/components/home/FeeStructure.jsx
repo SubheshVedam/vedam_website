@@ -12,7 +12,7 @@ import { homeScreenData } from "@/constants/data";
 import Image from "next/image";
 import Link from "next/link";
 import CallMadeIcon from "@mui/icons-material/CallMade";
-import { BorderRight } from "@mui/icons-material";
+import { BorderRight, BorderRightRounded } from "@mui/icons-material";
 
 const SingleTableCell = ({ text, isHead = false, isFirst = false }) => {
   return (
@@ -225,7 +225,12 @@ export const FeeStructure = () => {
                     sx={{
                       "&::-webkit-scrollbar": { border: "1px solid" },
                     }}>
-                    <TableRow>
+                    <TableRow
+                      sx={{
+                        "& .MuiTableCell-root": {
+                          border: "1px solid #E0E0E0", // Force gridline globally as fallback
+                        },
+                      }}>
                       <SingleTableCell isFirst text="Semester 1" />
                       <SingleTableCell text={row.amount1} />
                     </TableRow>
@@ -257,11 +262,12 @@ export const FeeStructure = () => {
                       <SingleTableCell text="75,000/-" />
                     </TableRow>
                     <TableRow
-                      sx={{
-                        "& .MuiTableCell-root": {
-                          borderTop: " 1px solid #E0E0E0", // Force gridline globally as fallback
-                        },
-                      }}>
+                    // sx={{
+                    //   "& .MuiTableCell-root": {
+                    //     border: " 1px solid #E0E0E0", // Force gridline globally as fallback
+                    //   },
+                    // }}
+                    >
                       <SingleTableCell isFirst text="Total" />
                       <SingleTableCell text={row.total} />
                     </TableRow>
