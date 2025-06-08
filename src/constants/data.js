@@ -471,7 +471,7 @@ export const homeScreenData = {
       {
         id: "0",
         year1: "Semester 1",
-        semester: "Uopskillung degdhy 1",
+        semester: "Semester 1",
         amount1: "1,31,250",
         amount2: "93,750",
         total: "2,25,000",
@@ -502,7 +502,7 @@ export const homeScreenData = {
       },
       {
         id: "4",
-        year1: "Year 3",
+        year1: "Semester 5",
         semester: "Semester 5",
         amount1: "1,31,250",
         amount2: "93,750",
@@ -510,7 +510,7 @@ export const homeScreenData = {
       },
       {
         id: "5",
-        year1: "Semester 1",
+        year1: "Semester 6",
         semester: "Semester 6",
         amount1: "1,31,250",
         amount2: "93,750",
@@ -518,7 +518,7 @@ export const homeScreenData = {
       },
       {
         id: "6",
-        year1: "Year 4",
+        year1: "Semester 7",
         semester: "Semester 7",
         amount1: "1,31,250",
         amount2: "93,750",
@@ -526,7 +526,7 @@ export const homeScreenData = {
       },
       {
         id: "7",
-        year1: "Semester 1",
+        year1: "Semester 8",
         semester: "Semester 8",
         amount1: "1,31,250",
         amount2: "93,750",
@@ -547,16 +547,16 @@ export const homeScreenData = {
       },
       {
         id: 2,
-        text: "The total fee mentioned in the table is the Tution Fees and Upskilling Fees, This is exclusive of Hostel & Mess fees.",
+        text: "The total fee mentioned in the table is the Tution Fees and Upskilling Fees, This is exclusive of Hostel & Mess fees",
       },
       {
         id: 3,
-        text: "Hostel and mess services are available on the ADYPU campus, subject to availability and offered on a first-come, first-served basis.",
+        text: "Hostel and mess services are available on the ADYPU campus, subject to availability and offered on a first-come, first-served basis",
       },
-      {
-        id: 4,
-        text: "*Download the complete details of hostel rooms and charges ",
-      },
+      // {
+      //   id: 4,
+      //   text: "*Download the complete details of hostel rooms and charges ",
+      // },
     ],
   },
   learnFrom: {

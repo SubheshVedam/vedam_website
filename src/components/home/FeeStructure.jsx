@@ -1,4 +1,3 @@
-'use client'
 import React from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import {
@@ -187,8 +186,8 @@ export const FeeStructure = () => {
               <TableRow sx={{ background: "rgba(146, 62, 218, 1)" }}>
                 <SingleTableCell text="Year" isHead isFirstColumn isFirstRow />
                 <SingleTableCell text="Semester" isHead isFirstRow />
-                <SingleTableCell text=" " isHead isFirstRow />
-                <SingleTableCell text=" " isHead isFirstRow />
+                <SingleTableCell text="Tuition Fees" isHead isFirstRow />
+                <SingleTableCell text="Upskilling Fees" isHead isFirstRow />
                 <SingleTableCell text="Total" isHead isLastColumn isFirstRow />
               </TableRow>
             </TableHead>
@@ -296,7 +295,7 @@ export const FeeStructure = () => {
                   fontSize: "24px",
                 }}
               >
-                {item.total}
+               ₹ {item.total}
               </Typography>
             ))}
         </Box>
@@ -342,7 +341,6 @@ export const FeeStructure = () => {
         width: "100%",
         display: "flex",
         flexDirection: "column",
-        minHeight: "800px",
       }}
     >
       {/* Hostel Fees Section */}
@@ -473,6 +471,8 @@ export const FeeStructure = () => {
             padding: "0.5rem 1rem",
             borderRadius: "8px",
             width: "fit-content",
+            mb: 1
+
           }}
         >
           <Typography
@@ -482,7 +482,7 @@ export const FeeStructure = () => {
               fontSize: "14px",
             }}
           >
-            Note
+            Note1
           </Typography>
         </Box>
 
@@ -509,6 +509,28 @@ export const FeeStructure = () => {
         >
           **Additional mess charge of ₹5,500 / month applicable.
         </Typography>
+        <Typography
+          variant="subtitle1"
+          sx={{
+            mt: 1,
+            fontSize: { xs: 12, sm: 14 },
+            color: "#374151",
+            lineHeight: 1.6,
+          }}
+        >
+          *Download the complete details of hostel rooms and charges  <Link
+            style={{
+              color: "#FFA41A",
+              fontSize: "12px",
+              fontFamily: "Inter",
+              lineHeight: "150%",
+              marginLeft: "4px",
+            }}
+            href="https://drive.google.com/file/d/1zJzM9ZOPsJzP5bhZsCRB5xWlho3iAGwt/view?usp=sharing"
+            target="_blank"
+          >
+          <CallMadeIcon sx={{ height: "100%", width: "12px" }} /> here
+          </Link>.        </Typography>
       </Box>
 
       {/* Empty Space to Match Height */}
@@ -586,7 +608,7 @@ export const FeeStructure = () => {
                 padding: 0,
               }}
             >
-              <Table sx={{ width: "100%"}}>
+              <Table sx={{ width: "100%" }}>
                 <TableBody>
                   <TableRow
                     sx={{
@@ -595,7 +617,7 @@ export const FeeStructure = () => {
                       },
                     }}
                   >
-                    <SingleTableCell isFirst text="upskilling" />
+                    <SingleTableCell isFirst text="Tution Fees" />
                     <SingleTableCell text={row.amount1} />
                   </TableRow>
                   <TableRow
@@ -605,7 +627,7 @@ export const FeeStructure = () => {
                       },
                     }}
                   >
-                    <SingleTableCell isFirst text="coolege 2" />
+                    <SingleTableCell isFirst text="Upskilling Fees" />
                     <SingleTableCell text={row.amount2} />
                   </TableRow>
                   <TableRow
@@ -625,22 +647,22 @@ export const FeeStructure = () => {
         ))}
       </Box>
 
-    {/* Total Price */}
-    <Box
+      {/* Total Price */}
+      <Box
         sx={{
           width: "100%",
-          height: "60px",
+          paddingY:'16px',
+          paddingX:'24px',
           marginBottom: "20px",
           borderRadius: "12px",
           background: "linear-gradient(90deg, #FF7829 0%, #7B2CBF 100%)",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          paddingX: "40px",
         }}
       >
         <Box>
-          {homeScreenData.FeeStructure.leftSideYearTableMobile
+          {homeScreenData.FeeStructure.leftSideYearTable
             .filter((item) => item.id === "8")
             .map((item) => (
               <Typography
@@ -649,15 +671,16 @@ export const FeeStructure = () => {
                 sx={{
                   color: "white",
                   fontFamily: "Inter",
-                  fontSize: "24px",
+                  fontSize: "18px",
                 }}
               >
                 {item.year1}
               </Typography>
             ))}
         </Box>
+        <Typography sx={{ fontSize: 40, color: 'white' }}></Typography>
         <Box>
-          {homeScreenData.FeeStructure.leftSideYearTableMobile
+          {homeScreenData.FeeStructure.leftSideYearTable
             .filter((item) => item.id === "8")
             .map((item) => (
               <Typography
@@ -666,10 +689,10 @@ export const FeeStructure = () => {
                 sx={{
                   color: "white",
                   fontFamily: "Inter",
-                  fontSize: "24px",
+                  fontSize: "18px",
                 }}
               >
-                {item.total}
+                ₹ {item.total}
               </Typography>
             ))}
         </Box>
@@ -878,32 +901,28 @@ export const FeeStructure = () => {
           padding: "16px",
           marginTop: "20px",
           border: "1px solid #E3C2FF ",
-
           // boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
           position: "relative",
         }}
       >
         <Box
           sx={{
-            // position: "absolute",
-            // top: "-12px",
-            // left: "16px",
             textAlign: "center",
-            // padding: "10px",
-            width: "102px",
-            height: "34px",
+            padding: "8px",
+            maxWidth: '80px',
             backgroundColor: "#D8BBF0",
             color: "#FFFFFF",
             borderRadius: "12px",
-            padding: "4px 12px",
             fontSize: "12px",
             fontWeight: "500",
             fontFamily: "Inter",
+            mb: 1
           }}
         >
           <Typography
             sx={{
               color: "#000000",
+              fontSize: "12px",
             }}
           >
             Note
@@ -932,6 +951,29 @@ export const FeeStructure = () => {
         >
           **Additional mess charge of ₹5,500 / month applicable.
         </Typography>
+        <Typography
+          variant="subtitle1"
+          sx={{
+            fontSize: { xs: 12, sm: 14 },
+            color: "#000000",
+            fontWeight: "400",
+            fontFamily: "Inter",
+          }}
+        >
+          *Download the complete details of hostel rooms and charges  <Link
+            style={{
+              color: "#FFA41A",
+              fontSize: "12px",
+              fontFamily: "Inter",
+              lineHeight: "100%",
+              marginLeft: "4px",
+            }}
+            href="https://drive.google.com/file/d/1zJzM9ZOPsJzP5bhZsCRB5xWlho3iAGwt/view?usp=sharing"
+            target="_blank"
+          >
+            <CallMadeIcon sx={{ height: "100%", width: "12px" }} /> here
+          </Link>.          </Typography>
+
       </Box>
     </Box>
 
