@@ -398,8 +398,8 @@ export const homeScreenData = {
         id: "0",
         year1: "Year 1",
         semester: "Semester 1",
-        amount1: "1,56,770",
-        amount2: "1,11,980",
+        amount1: "1,56,772",
+        amount2: "1,11,978",
         total: "2,68,750",
       },
       {
@@ -472,8 +472,8 @@ export const homeScreenData = {
         id: "0",
         year1: "Semester 1",
         semester: "Semester 1",
-        amount1: "1,56,770",
-        amount2: "1,11,980",
+        amount1: "1,56,772",
+        amount2: "1,11,978",
         total: "2,68,750",
       },
       {
