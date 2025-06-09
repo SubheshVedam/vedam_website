@@ -155,12 +155,14 @@ export default function DetailsCard({
               marginBottom: { xs: "2rem", md: "20px" },
             }}
           >
-            <Image
-              src={image}
-              alt="profile icon"
-              width={isMobile ? 38 : 42}
-              height={isMobile ? 38 : 42}
-            />
+            {image && (
+              <Image
+                src={image}
+                alt="profile icon"
+                width={isMobile ? 38 : 42}
+                height={isMobile ? 38 : 42}
+              />
+            )}
           </Box>
         )}
         <Box
@@ -182,7 +184,7 @@ export default function DetailsCard({
                 color: "white",
                 fontWeight: "bold",
                 fontSize: { xs: 14, sm: 20 },
-                lineHeight: {xs:'130%',sm:'150%'},
+                lineHeight: { xs: "130%", sm: "150%" },
                 marginBottom: { xs: "8px", sm: "16px" },
               }}
             >

@@ -169,7 +169,6 @@ export const navLinks = [
   { label: "About Us", path: "/about" },
   { label: "Register Now", path: "https://apply.vedam.org/" }, //Don't reorder register
   { label: "Login", path: "https://apply.vedam.org/" }, //Don't reorder login
-  
 ];
 
 export const homeScreenData = {
@@ -839,6 +838,41 @@ export const lifeAtVedam = {
         title: "Vedam Venture Fund",
         subtitle:
           "Get seed funding up to Rs. 1 Crore for your tech startup that solve awesome problems of the future.",
+      },
+    ],
+  },
+  whyVedam: {
+    subtitle: "Why Vedam?",
+    data: [
+      {
+        bgImage: "/img/clubsatVedam/Sports_Club_N.jpeg",
+        title: "Sports Club",
+        description:
+          "Stay active and competitive in our Sports Club! Participate in various sports, tournaments, and activities to enhance teamwork and skills.",
+      },
+      {
+        bgImage: "/img/clubsatVedam/Entrepreneurship_club.jpeg",
+        title: "Entrepreneurship Club",
+        description:
+          "Join our Entrepreneurship Club to learn how to turn ideas into successful ventures and change the future!",
+      },
+      {
+        bgImage: "/img/clubsatVedam/competitive_coding.jpeg",
+        title: "Competitive Coding Club",
+        description:
+          "Sharpen your problem-solving skills with our Competitive Coding Club! Participate in coding challenges, and algorithmic competitions.",
+      },
+      {
+        bgImage: "/img/clubsatVedam/Cultural_club.jpeg",
+        title: "Cultural Club",
+        description:
+          "Join our Cultural Club to celebrate diversity through music, dance, drama, and festivals.",
+      },
+      {
+        bgImage: "/img/clubsatVedam/open_source.jpeg",
+        title: "Open Source Club",
+        description:
+          "Contribute to open-source projects, collaborate with developers, and gain real-world coding experience in our Open Source Club.",
       },
     ],
   },

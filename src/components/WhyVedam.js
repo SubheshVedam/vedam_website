@@ -15,7 +15,8 @@ const WhyVedam = ({ data }) => {
         flexWrap: "wrap",
         alignItems: "center",
         gap: "1rem",
-      }}>
+      }}
+    >
       {/* First row with 3 items */}
       {dataArr.slice(0, 3).map((item, index) => (
         <Box
@@ -24,7 +25,8 @@ const WhyVedam = ({ data }) => {
             display: "flex",
             justifyContent: "center",
             width: { xs: "100%", sm: "calc(33.33% - 1rem)" },
-          }}>
+          }}
+        >
           <DetailsCard
             image={item.image}
             bgImage={item.bgImage}
@@ -42,7 +44,8 @@ const WhyVedam = ({ data }) => {
             display: "flex",
             justifyContent: "center",
             width: { xs: "100%", sm: "calc(50% - 1rem)" },
-          }}>
+          }}
+        >
           <DetailsCard
             image={item.image}
             bgImage={item.bgImage}
