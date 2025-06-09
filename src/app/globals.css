@@ -218,3 +218,6 @@ body {
 .MuiTypography-subtitle1 {
   background-color: transparent !important;
 }
+.no-margin {
+  margin-bottom: 0 !important;
+}

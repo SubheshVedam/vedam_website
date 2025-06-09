@@ -1,3 +1,4 @@
+
 import { Box, Typography } from "@mui/material";
 import React, { Fragment } from "react";
 import {
@@ -48,7 +49,8 @@ const Life = () => {
             gap: { xs: "1rem", md: "2rem", lg: "3rem" },
           }}>
           {/* <ClubsAtVst /> */}
-          <CardContainer subtitle2={lifeAtVedam.vedamLab.subtitle}>
+
+          <CardContainer subtitle2={lifeAtVedam.vedamLab.subtitle}  >
             <VedamInovationLab />
             <ScrollComponent />
           </CardContainer>

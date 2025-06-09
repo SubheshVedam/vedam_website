@@ -33,15 +33,14 @@ export const ScrollComponentDesktop = () => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-between",
-                marginBottom: "2rem",
                 minHeight: "37.5rem",
             }}
         >
             <Box
                 sx={{
-                    maxWidth: "80rem", 
+                    maxWidth: "80rem",
                     width: { xs: "100%", md: "64rem", xl: "80rem" },
-                    padding: "2rem",
+                    paddingX: "2rem",
                 }}
             >
                 <CardContainer title="" subtitle="">
@@ -62,7 +61,7 @@ export const ScrollComponentDesktop = () => {
                                 flexDirection: "column",
                                 gap: "2.6rem",
                                 marginRight: "1.5rem",
-                                marginTop: "1.1rem", 
+                                marginTop: "1.1rem",
                             }}
                         >
                             {sectionData.map((section, index) => (
@@ -150,7 +149,7 @@ export const ScrollComponentDesktop = () => {
                         {/* Right Content Section */}
                         <Box
                             sx={{
-                                flex:'1',
+                                flex: '1',
                                 height: "100%",
                                 overflowY: "auto",
                                 overflowX: "hidden",
@@ -172,14 +171,14 @@ export const ScrollComponentDesktop = () => {
                                     <Box
                                         key={item.id}
                                         sx={{
-                                             minHeight: index === sectionData.length - 1 
+                                            minHeight: index === sectionData.length - 1
                                                 ? "31.25rem"
                                                 : "27.5rem",
                                             display: "flex",
                                             alignItems: "center",
                                             // justifyContent: "center",
                                             paddingX: "2rem",
-                                            paddingY:'1rem',
+                                            paddingY: '1rem',
                                             transition: "all 0.3s ease",
                                             transform: activeStep === index ? "scale(1.02)" : "scale(1)",
                                         }}
@@ -202,7 +201,7 @@ export const ScrollComponentDesktop = () => {
 
                                     </Box>
                                 ))}
-                                <Box sx={{ height: "2rem" }} /> 
+                                <Box sx={{ height: "2rem" }} />
                             </Box>
                         </Box>
                     </Box>
