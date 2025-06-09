@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState } from "react";
 import {
   Box,
@@ -26,89 +25,121 @@ export const VedamInovationLab = () => {
   ];
 
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
+    <Box sx={{ display: "flex", flexDirection: "column", gap: "2rem"}}>
+      <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+        <Typography sx={{
+          color: '#FFF',
+          textAlign: 'center',
+          fontFamily: 'Inter',
+          fontSize: {
+            xs: '12px', // 0px and up
+            sm: '24px', // 600px and up
+          },
+          fontStyle: 'normal',
+          fontWeight: 400,
+          lineHeight: {
+            xs: '20px',
+            sm: '24px'
+          },
+          letterSpacing: '-0.72px',
+        }}>
+          Vedam Innovation Lab is a cutting-edge incubator driving innovation in AR/VR, AI & ML, IoT, Robotics, and Drones.
+        </Typography>
+      </Box>
+
       <Box
         sx={{
-          border: "0.5px solid rgba(0, 0, 0, 0.2)",
-          padding: { xs: "20px", md: "30px" },
-          display: "flex",
-          flexDirection: { xs: "column", md: "row" },
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: { xs: "1rem", md: "2.5rem" },
+          height: "464px",
           borderRadius: "30px",
           backgroundColor: "rgba(255, 255, 255, 1)",
+          overflow: "hidden",
         }}
       >
-        <Box sx={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
-          <Typography
-            variant="subtitle1"
-            sx={{
-              fontSize: "clamp(12px, 2vw, 16px)",
-              lineHeight: "150%",
-              fontWeight: "350",
-              fontFamily: "Inter",
-            }}
-          >
-            {lifeAtVedam.vedamLab.description}
-          </Typography>
-          <Button
-            variant="contained"
-            onClick={handleOpenModal}
-            sx={{
-              background: "linear-gradient(90deg, #FB7F05 0%, #6C10BC 50%, #FB7F05 100%)",
-              backgroundSize: "200% 100%",
-              animation: "gradientMove 3s linear infinite",
-              color: "white",
-              borderRadius: "30px",
-              padding: "10px 30px",
-              textTransform: "none",
-              fontSize: "clamp(14px, 1.5vw, 16px)",
-              fontWeight: "500",
-              "@keyframes gradientMove": {
-                "0%": {
-                  backgroundPosition: "0% 50%",
-                },
-                "100%": {
-                  backgroundPosition: "200% 50%",
-                },
-              },
-              "&:hover": {
-                background: "linear-gradient(90deg, #5A0D9E 0%, #E06A00 100%)",
-              },
-            }}
-          >
-            Explore More
-          </Button>
-        </Box>
-
-        <img
-          src="/img/innovation_lab/image1.jpg"
+        <Box
+          component="video"
+          src="/vid/videoBg.mp4"
           alt="innovation"
-          className="innovationImageStyle"
+          autoPlay
+          muted
+          loop
+          sx={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            borderRadius: "30px",
+          }}
         />
       </Box>
 
-      {/* Image Grid Section */}
-      <Grid container spacing={2}>
-        {innovationImages.map((image, index) => (
-          <Grid item xs={12} sm={6} md={3} key={index}>
+      {/* Infinite Carousel Section */}
+      <Box
+        sx={{
+          overflowX: "hidden",
+          whiteSpace: "nowrap",
+          "&::-webkit-scrollbar": { display: "none" },
+          scrollbarWidth: "none",
+          position: "relative",
+          "&:hover div": { animationPlayState: "paused" },
+          marginTop: "33px",
+          height: "200px",
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "24px",
+            flexWrap: "nowrap",
+            animation: "scroll 15s linear infinite",
+            "@keyframes scroll": {
+              "0%": { transform: "translateX(0%)" },
+              "100%": { transform: "translateX(-50%)" },
+            },
+          }}
+        >
+          {[...innovationImages, ...innovationImages].map((image, index) => (
             <Box
+              key={index}
               sx={{
-                width: "100%",
+                width: "280px",
                 height: "200px",
-                borderRadius: "15px",
+                borderRadius: "20px",
                 overflow: "hidden",
-                boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
                 backgroundImage: `url(${image})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
+                flexShrink: 0,
               }}
             />
-          </Grid>
-        ))}
-      </Grid>
+          ))}
+        </Box>
+      </Box>
+           
+      <Box>
+        <Typography
+          sx={{
+            // color: '#5E00AF',
+            color: {
+              xs: 'white',
+              sm: '#5E00AF'
+            },
+            textAlign: 'center',
+            fontFamily: 'Inter',
+              fontSize: {
+            xs: '18px', // 0px and up
+            sm: '24px', // 600px and up
+          },
+            fontStyle: 'normal',
+            fontWeight: 600,
+            lineHeight: '31px',
+            letterSpacing: '-0.72px',
+          }}
+          className="text-trim" // optional, for unsupported properties
+        >
+          Vedam Innovation Lab is a cutting-edge
+        </Typography>
+      </Box>
 
       {/* PDF Modal */}
       <Modal open={open} onClose={handleCloseModal}>
