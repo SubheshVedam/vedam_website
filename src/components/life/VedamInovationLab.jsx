@@ -25,51 +25,57 @@ export const VedamInovationLab = () => {
   ];
 
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", gap: "2rem"}}>
-      <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-        <Typography sx={{
-          color: '#FFF',
-          textAlign: 'center',
-          fontFamily: 'Inter',
-          fontSize: {
-            xs: '12px', // 0px and up
-            sm: '24px', // 600px and up
-          },
-          fontStyle: 'normal',
-          fontWeight: 400,
-          lineHeight: {
-            xs: '20px',
-            sm: '24px'
-          },
-          letterSpacing: '-0.72px',
+    <Box sx={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
         }}>
-          Vedam Innovation Lab is a cutting-edge incubator driving innovation in AR/VR, AI & ML, IoT, Robotics, and Drones.
+        <Typography
+          sx={{
+            color: "#FFF",
+            textAlign: "center",
+            fontFamily: "Inter",
+            fontSize: {
+              xs: "12px", // 0px and up
+              sm: "24px", // 600px and up
+            },
+            fontStyle: "normal",
+            fontWeight: 400,
+            lineHeight: {
+              xs: "20px",
+              sm: "24px",
+            },
+            letterSpacing: "-0.72px",
+          }}>
+          Vedam Innovation Lab is a cutting-edge incubator driving innovation in
+          AR/VR, AI & ML, IoT, Robotics, and Drones.
         </Typography>
       </Box>
 
-      <Box
+      {/* <Box
         sx={{
           height: "464px",
           borderRadius: "30px",
           backgroundColor: "rgba(255, 255, 255, 1)",
           overflow: "hidden",
+        }}> */}
+      <Box
+        component="video"
+        src="/vid/videoBg.mp4"
+        alt="innovation"
+        autoPlay
+        muted
+        loop
+        sx={{
+          width: "100%",
+          height: { xs: "250px", sm: "333px", md: "333px", lg: "464px" },
+          objectFit: "cover",
+          borderRadius: "30px",
         }}
-      >
-        <Box
-          component="video"
-          src="/vid/videoBg.mp4"
-          alt="innovation"
-          autoPlay
-          muted
-          loop
-          sx={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            borderRadius: "30px",
-          }}
-        />
-      </Box>
+      />
+      {/* </Box> */}
 
       {/* Infinite Carousel Section */}
       <Box
@@ -82,8 +88,7 @@ export const VedamInovationLab = () => {
           "&:hover div": { animationPlayState: "paused" },
           marginTop: "33px",
           height: "200px",
-        }}
-      >
+        }}>
         <Box
           sx={{
             display: "flex",
@@ -95,8 +100,7 @@ export const VedamInovationLab = () => {
               "0%": { transform: "translateX(0%)" },
               "100%": { transform: "translateX(-50%)" },
             },
-          }}
-        >
+          }}>
           {[...innovationImages, ...innovationImages].map((image, index) => (
             <Box
               key={index}
@@ -115,25 +119,25 @@ export const VedamInovationLab = () => {
           ))}
         </Box>
       </Box>
-           
+
       <Box>
         <Typography
           sx={{
             // color: '#5E00AF',
             color: {
-              xs: 'white',
-              sm: '#5E00AF'
+              xs: "white",
+              sm: "#5E00AF",
             },
-            textAlign: 'center',
-            fontFamily: 'Inter',
-              fontSize: {
-            xs: '18px', // 0px and up
-            sm: '24px', // 600px and up
-          },
-            fontStyle: 'normal',
+            textAlign: "center",
+            fontFamily: "Inter",
+            fontSize: {
+              xs: "18px", // 0px and up
+              sm: "24px", // 600px and up
+            },
+            fontStyle: "normal",
             fontWeight: 600,
-            lineHeight: '31px',
-            letterSpacing: '-0.72px',
+            lineHeight: "31px",
+            letterSpacing: "-0.72px",
           }}
           className="text-trim" // optional, for unsupported properties
         >
@@ -158,8 +162,7 @@ export const VedamInovationLab = () => {
             borderRadius: "20px",
             display: "flex",
             flexDirection: "column",
-          }}
-        >
+          }}>
           <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
             <IconButton onClick={handleCloseModal}>
               <CloseIcon />
