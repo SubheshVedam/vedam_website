@@ -9,6 +9,7 @@ import {
   WidthContainer,
 } from "@/components";
 import { lifeAtVedam } from "@/constants/data";
+import WhyVedam from "@/components/WhyVedam";
 
 const Life = () => {
   const linearGradient = "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)";
@@ -20,8 +21,7 @@ const Life = () => {
         gap: { xs: "2rem", lg: "3rem" },
         alignItems: "center",
         backgroundColor: "#F9F9F9",
-      }}
-    >
+      }}>
       <VideoWithText
         title={lifeAtVedam.hero.title}
         titleLinearGradient="linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)"
@@ -34,16 +34,16 @@ const Life = () => {
           display: "flex",
           flexDirection: "column",
           gap: { xs: "1rem", md: "2rem", lg: "3rem" },
-        }}
-      >
+        }}>
         <ClubsAtVst />
         <CardContainer subtitle={lifeAtVedam.vedamLab.subtitle}>
-          <VedamInovationLab/>
+          <VedamInovationLab />
         </CardContainer>
 
         <CardContainer subtitle={lifeAtVedam.edgeAtVedam.subtitle}>
           <EdgeAtVedam />
         </CardContainer>
+        <WhyVedam />
       </WidthContainer>
     </Box>
   );
