@@ -349,9 +349,12 @@ export const VedamInovationLab = () => {
         }}
       >
         <Box
-          component="img"
-          src="/img/innovation_lab/image1.jpg"
+          component="video"
+          src="/vid/videoBg.mp4"
           alt="innovation"
+          autoPlay
+          muted
+          loop
           sx={{
             width: "100%",
             height: "100%",
@@ -368,7 +371,8 @@ export const VedamInovationLab = () => {
           position: "relative",
           width: "100%",
           height: "200px",
-          borderRadius: "20px",
+          marginTop:"33px"
+          // borderRadius: "20px",
         }}
       >
         <Box
@@ -376,7 +380,7 @@ export const VedamInovationLab = () => {
             display: "flex",
             transform: `translateX(-${currentIndex * 2}px)`,
             transition: "transform 0.5s linear",
-            gap: "8px",
+            gap: "24px",
             height: "100%",
             width: "fit-content",
           }}

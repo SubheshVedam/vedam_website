@@ -1,3 +1,4 @@
+'use client';
 // import { Box } from "@mui/material";
 // import React, { Fragment } from "react";
 // import {
@@ -56,7 +57,7 @@
 
 
 import { Box } from "@mui/material";
-import React, { Fragment } from "react";
+import React from "react";
 import {
   CardContainer,
   // ClubsAtVst,
@@ -67,8 +68,8 @@ import {
 } from "@/components";
 import { lifeAtVedam } from "@/constants/data";
 
+
 const Life = () => {
-  // const linearGradient = "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)";
   return (
     <Box
       sx={{
@@ -96,11 +97,15 @@ const Life = () => {
         }}
       >
         {/* <ClubsAtVst /> */}
+
+
         <CardContainer
           subtitle={lifeAtVedam.vedamLab.subtitle}
         >
           <VedamInovationLab />
         </CardContainer>
+
+
 
         <CardContainer subtitle={lifeAtVedam.edgeAtVedam.subtitle}>
           <EdgeAtVedam />
