@@ -1,0 +1,6 @@
+{
+    "files.autoSave": "onFocusChange",
+    "files.autoSaveDelay": 0,
+    "editor.formatOnSave": true,
+    "files.autoSaveWhenNoErrors": true
+}

@@ -1,9 +1,12 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Box } from "@mui/material";
 import { detailsData } from "@/constants/data";
 import DetailsCard from "./atoms/DetailsCard";
 
-const WhyVedam = () => {
+const WhyVedam = ({ data }) => {
+  console.log(data);
+  const dataArr = data ? data : detailsData;
+
   return (
     <Box
       sx={{
@@ -14,7 +17,7 @@ const WhyVedam = () => {
         gap: "1rem",
       }}>
       {/* First row with 3 items */}
-      {detailsData.slice(0, 3).map((item, index) => (
+      {dataArr.slice(0, 3).map((item, index) => (
         <Box
           key={`testimonial-${index}`}
           sx={{
@@ -32,7 +35,7 @@ const WhyVedam = () => {
       ))}
 
       {/* Second row with 2 items */}
-      {detailsData.slice(3).map((item, index) => (
+      {dataArr.slice(3).map((item, index) => (
         <Box
           key={`testimonial-${index + 3}`}
           sx={{
