@@ -29,19 +29,6 @@ const SingleCard = ({ data, onClick, expandIn }) => {
           }}
         >
           <Typography
-            variant="subtitle2"
-            sx={{
-              fontSize: "10px",
-              fontWeight: "500",
-              lineHeight: "100%",
-              fontFamily: "Inter",
-              marginBottom: "0.3rem",
-              color: "#1E1E1E",
-            }}
-          >
-            {data.title}
-          </Typography>
-          <Typography
             variant="subtitle1"
             sx={{
               fontSize: "14px",

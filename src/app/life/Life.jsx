@@ -9,6 +9,7 @@ import {
   WidthContainer,
 } from "@/components";
 import { lifeAtVedam } from "@/constants/data";
+import { ScrollComponent } from "@/components/life/ScrollComponent/ScrollComponent";
 
 const Life = () => {
   const linearGradient = "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)";
@@ -36,6 +37,12 @@ const Life = () => {
           gap: { xs: "1rem", md: "2rem", lg: "3rem" },
         }}
       >
+
+        {/* ----- */}
+        {/* i have to add scroll component here */}
+        <ScrollComponent/>
+        {/* ----- */}
+
         <ClubsAtVst />
         <CardContainer subtitle={lifeAtVedam.vedamLab.subtitle}>
           <VedamInovationLab/>
