@@ -38,8 +38,12 @@ const Life = () => {
           display: "flex",
           flexDirection: "column",
           gap: { xs: "1rem", md: "2rem", lg: "3rem" },
-        }}
-      >
+        }}>
+        {/* ----- */}
+        {/* i have to add scroll component here */}
+        <ScrollComponent />
+        {/* ----- */}
+
         <ClubsAtVst />
         <CardContainer subtitle={lifeAtVedam.vedamLab.subtitle}>
           <VedamInovationLab />
