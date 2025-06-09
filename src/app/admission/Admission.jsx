@@ -62,12 +62,15 @@ const Admission = () => {
         >
           <FacilityAndAmenities />
         </CardContainer>
+        {/* ----------- */}
         <CardContainer
           subtitle={admissionScreenData.feeStructure.subtitle}
           linearGradientSubtitle={linearGradient}
+          id="fees-toggle"
         >
           <FeeStructure />
         </CardContainer>
+        {/* ------------- */}
         <CardContainer
           subtitle={admissionScreenData.scholarshipProgram.subtitle}
           linearGradientSubtitle={linearGradient}

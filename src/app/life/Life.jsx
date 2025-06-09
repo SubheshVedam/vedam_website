@@ -9,6 +9,7 @@ import {
   WidthContainer,
 } from "@/components";
 import { lifeAtVedam, whyVedam } from "@/constants/data";
+import { ScrollComponent } from "@/components/life/ScrollComponent/ScrollComponent";
 import WhyVedam from "@/components/WhyVedam";
 
 
@@ -37,7 +38,8 @@ const Life = () => {
           display: "flex",
           flexDirection: "column",
           gap: { xs: "1rem", md: "2rem", lg: "3rem" },
-        }}>
+        }}
+      >
         <ClubsAtVst />
         <CardContainer subtitle={lifeAtVedam.vedamLab.subtitle}>
           <VedamInovationLab />
