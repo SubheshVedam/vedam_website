@@ -872,7 +872,7 @@ export const lifeAtVedam = {
   hero: {
     background_video: "",
     title: "Life@VST",
-    subtitle: "make memories, learn, grow, and\ncherish every moment joyfully.",
+    subtitle: "Make memories, learn, grow, and cherish every moment joyfully",
   },
   clubsAtVst: [
     {
