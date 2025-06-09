@@ -63,7 +63,7 @@ const Life = () => {
           flexDirection: "column",
           gap: { xs: "1rem", md: "2rem", lg: "3rem" },
         }}>
-        <CardContainer subtitle={lifeAtVedam.edgeAtVedam.subtitle}>
+        <CardContainer subtitle={lifeAtVedam.edgeAtVedam.subtitle} >
           <EdgeAtVedam />
         </CardContainer>
         <CardContainer subtitle={lifeAtVedam.whyVedam.subtitle}>

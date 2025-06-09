@@ -117,8 +117,20 @@ export const ScrollComponentDesktop = () => {
                                             viewBox="0 0 21 21"
                                             fill="none"
                                         >
-                                            <circle cx="10.5" cy="10.5" r="10" fill="white" stroke="#7B2CBF" />
-                                            <circle cx="10.5" cy="10.5" r="6" fill="#7B2CBF" stroke="#7B2CBF" />
+                                            <circle
+                                                cx="10.5"
+                                                cy="10.5"
+                                                r="10"
+                                                fill="white"
+                                                stroke={activeStep >= index ? "#7B2CBF" : "#E0E0E0"}
+                                            />
+                                            <circle
+                                                cx="10.5"
+                                                cy="10.5"
+                                                r="6"
+                                                fill={activeStep >= index ? "#7B2CBF" : "#E0E0E0"}
+                                                stroke={activeStep >= index ? "#7B2CBF" : "#E0E0E0"}
+                                            />
                                         </svg>
 
                                         {/* Connector Line */}

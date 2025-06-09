@@ -469,7 +469,7 @@ export const homeScreenData = {
         amount1: "1,31,250",
         amount2: "93,750",
         total: "18,00,000",
-      }
+      },
     ],
     leftSideYearTableMobile: [
       {
@@ -535,7 +535,7 @@ export const homeScreenData = {
         amount1: "1,27,604",
         amount2: "91,146",
         total: "2,18,750",
-      }
+      },
     ],
     // totalPriceText: [
     //     {
@@ -935,14 +935,14 @@ export const lifeAtVedam = {
     data: [
       {
         id: 0,
-        image: "/img/edgeAtVedam/first.webp",
+        image: "/img/innovation_lab/edgen1.jpg",
         title: "Shadow a CTO",
         subtitle:
           "Spend a day at leading tech StartUps and know a day in the life of tech leaders and software engineers.",
       },
       {
         id: 1,
-        image: "/img/edgeAtVedam/second.webp",
+        image: "/img/innovation_lab/edgen2.jpg",
         title: "Global Exposure",
         subtitle:
           "Travel and participate in global tech conferences, hackathons and international coding competitions.",
