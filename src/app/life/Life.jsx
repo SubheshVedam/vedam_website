@@ -67,7 +67,7 @@ import {
   WidthContainer,
 } from "@/components";
 import { lifeAtVedam } from "@/constants/data";
-
+import { ScrollComponent } from "@/components/life/ScrollComponent/ScrollComponent";
 
 const Life = () => {
   return (
@@ -96,13 +96,9 @@ const Life = () => {
           gap: { xs: "1rem", md: "2rem", lg: "3rem" },
         }}
       >
-        {/* <ClubsAtVst /> */}
-
-
-        <CardContainer
-          subtitle={lifeAtVedam.vedamLab.subtitle}
-        >
-          <VedamInovationLab />
+        <ClubsAtVst />
+        <CardContainer subtitle={lifeAtVedam.vedamLab.subtitle}>
+          <VedamInovationLab/>
         </CardContainer>
 
 

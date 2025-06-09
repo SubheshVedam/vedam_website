@@ -2,6 +2,11 @@ import { AIYear1 } from "@/components/home/AIFirstCurriculum/AIYear1";
 import { AIYear2 } from "@/components/home/AIFirstCurriculum/AIYear2";
 import { AIYear3 } from "@/components/home/AIFirstCurriculum/AIYear3";
 import { AIYear4 } from "@/components/home/AIFirstCurriculum/AIYear4";
+import AI1 from "@/components/life/ScrollComponent/AI1";
+import Robotics2 from "@/components/life/ScrollComponent/Robotics2";
+import Drone3 from "@/components/life/ScrollComponent/Drone3";
+import Vc4 from "@/components/life/ScrollComponent/Vc4";
+import Project5 from "@/components/life/ScrollComponent/Project5";
 
 export const testimonialData = [
   {
@@ -169,7 +174,6 @@ export const navLinks = [
   { label: "About Us", path: "/about" },
   { label: "Register Now", path: "https://apply.vedam.org/" }, //Don't reorder register
   { label: "Login", path: "https://apply.vedam.org/" }, //Don't reorder login
-
 ];
 
 export const homeScreenData = {
@@ -951,6 +955,73 @@ export const lifeAtVedam = {
           "Get seed funding up to Rs. 1 Crore for your tech startup that solve awesome problems of the future.",
       },
     ],
+  },
+  // Vedam Innovation Lab Scroll Component
+  aiFirst: {
+    title: "",
+    subtitle: "",
+    data: [
+      { id: 1, title: "AI + Mac Zone", subtitle: "", content: <AI1 /> },
+      {
+        id: 2,
+        title: "Robotics Zone",
+        subtitle: "",
+        content: <Robotics2 />,
+      },
+      {
+        id: 3,
+        title: "Drone Zone",
+        subtitle: "",
+        content: <Drone3 />,
+      },
+      {
+        id: 4,
+        title: "VC Fund Linkage",
+        subtitle: "",
+        content: <Vc4 />,
+      },
+      {
+        id: 5,
+        title: "Projects you Build",
+        subtitle: "",
+        content: <Project5 />,
+      },
+    ],
+  },
+  AI: {
+    title: "AI + Mac Zone",
+    subtitle:
+      "High-performance Mac Studios + Vision Pro for your AI & XR experiments.",
+    icon1: "/img/innovation_lab/scroll_component/laptop.png",
+    icon2: "/img/innovation_lab/scroll_component/vr.png",
+  },
+  Robotics: {
+    title: "Robotics Zone",
+    subtitle:
+      "High-performance Mac Studios + Vision Pro for your AI & XR experiments.",
+    icon1: "/img/innovation_lab/scroll_component/Robotics.png",
+    icon2: "/img/innovation_lab/scroll_component/Robotics2.png",
+  },
+  Drone: {
+    title: "Drone Zone",
+    subtitle:
+      "High-performance Mac Studios + Vision Pro for your AI & XR experiments.",
+    icon1: "/img/innovation_lab/scroll_component/Drone.png",
+    icon2: "/img/innovation_lab/scroll_component/vr.png",
+  },
+  Vc: {
+    title: "VC",
+    subtitle:
+      "High-performance Mac Studios + Vision Pro for your AI & XR experiments.",
+    icon1: "/img/innovation_lab/scroll_component/Vc.png",
+    icon2: "/img/innovation_lab/scroll_component/vr.png",
+  },
+  Projects: {
+    title: "Projects",
+    subtitle:
+      "High-performance Mac Studios + Vision Pro for your AI & XR experiments.",
+    icon1: "/img/innovation_lab/scroll_component/Drone.png",
+    icon2: "/img/innovation_lab/scroll_component/vr.png",
   },
 };
 
