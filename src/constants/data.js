@@ -846,6 +846,7 @@ export const lifeAtVedam = {
       },
     ],
   },
+  // Vedam Innovation Lab Scroll Component
   aiFirst: {
     title: "",
     subtitle: "",

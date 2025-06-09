@@ -13,11 +13,11 @@ const SingleCard = ({ data, onClick, expandIn }) => {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "space-between",
-                    padding: "0.625rem", // 10px
+                    padding: "0.625rem", 
                     boxShadow: "none",
                     width: "100%",
                     textTransform: "none",
-                    borderRadius: "0.75rem", // 12px
+                    borderRadius: "0.75rem", 
                     border: "1px solid #4ED0DD",
                     backgroundColor: "#E7FDFF",
                 }}
@@ -32,7 +32,7 @@ const SingleCard = ({ data, onClick, expandIn }) => {
                     <Typography
                         variant="subtitle1"
                         sx={{
-                            fontSize: "0.875rem", // 14px
+                            fontSize: "0.875rem", 
                             fontWeight: 600,
                             lineHeight: "1.3",
                             fontFamily: "Inter",
@@ -57,16 +57,16 @@ const SingleCard = ({ data, onClick, expandIn }) => {
             <Collapse in={expandIn}>
                 <Box
                     sx={{
-                        paddingY: "1rem", // 16px
-                        borderRadius: "0.375rem", // 6px
-                        marginTop: "0.5rem", // 8px
+                        paddingY: "1rem", 
+                        borderRadius: "0.375rem", 
+                        marginTop: "0.5rem",
                     }}
                 >
                     {data.content || (
                         <Typography
                             variant="body2"
                             sx={{
-                                fontSize: "0.75rem", // 12px
+                                fontSize: "0.75rem", 
                                 fontWeight: 400,
                                 lineHeight: "1.4",
                                 fontFamily: "Inter",
@@ -93,14 +93,14 @@ export const ScrollComponentMobile = () => {
     };
 
     return (
-        <Box sx={{ padding: "0.625rem 1.25rem", width: "100%" }}> {/* 10px 20px */}
+        <Box sx={{ padding: "0.625rem ", width: "100%" }}>
             <CardContainer>
                 <Paper
                     elevation={3}
                     sx={{
                         display: "flex",
                         flexDirection: "column",
-                        gap: "0.625rem", // 10px
+                        gap: "0.625rem", 
                         boxShadow: "none",
                         backgroundColor: "transparent",
                     }}
