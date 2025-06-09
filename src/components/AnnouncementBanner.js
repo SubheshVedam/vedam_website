@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 export default function AnnouncementBanner() {
   const targetDate = new Date("2025-06-17T23:59:59").getTime();
 
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const [timeLeft, setTimeLeft] = useState(null);
 
   function calculateTimeLeft() {
     const now = new Date().getTime();
@@ -32,6 +32,7 @@ export default function AnnouncementBanner() {
   }
 
   useEffect(() => {
+    setTimeLeft(calculateTimeLeft());
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
@@ -50,37 +51,32 @@ export default function AnnouncementBanner() {
         top: 0,
         zIndex: 11000,
         boxShadow: 1,
-      }}
-    >
+      }}>
       <Stack
         direction={{ xs: "column", sm: "row" }}
         alignItems="center"
         justifyContent="center"
         spacing={{ xs: 0.5, sm: 2 }}
-        sx={{ px: 2 }}
-      >
+        sx={{ px: 2 }}>
         <Typography
           variant="body2"
           component="span"
-          sx={{ fontSize: { xs: 11, sm: 16 } }}
-        >
+          sx={{ fontSize: { xs: 11, sm: 16 } }}>
           ⏳ Hurry up! Applications for 18th June intake are closing in
         </Typography>
-
-        {!timeLeft.expired ? (
+        {timeLeft === null ? null : !timeLeft.expired ? (
           <Typography
             variant="body2"
             component="span"
-            sx={{ fontWeight: 600, fontSize: { xs: 13, sm: 16 } }}
-          >
-            {timeLeft.days}d : {timeLeft.hours}h : {timeLeft.minutes}m : {timeLeft.seconds}s
+            sx={{ fontWeight: 600, fontSize: { xs: 13, sm: 16 } }}>
+            {timeLeft.days}d : {timeLeft.hours}h : {timeLeft.minutes}m :{" "}
+            {timeLeft.seconds}s
           </Typography>
         ) : (
           <Typography
             variant="body2"
             component="span"
-            sx={{ fontWeight: 600, fontSize: { xs: 13, sm: 16 } }}
-          >
+            sx={{ fontWeight: 600, fontSize: { xs: 13, sm: 16 } }}>
             Applications Closed !!!
           </Typography>
         )}

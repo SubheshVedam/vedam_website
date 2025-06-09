@@ -169,7 +169,7 @@ export const navLinks = [
   { label: "About Us", path: "/about" },
   { label: "Register Now", path: "https://apply.vedam.org/" }, //Don't reorder register
   { label: "Login", path: "https://apply.vedam.org/" }, //Don't reorder login
-  
+
 ];
 
 export const homeScreenData = {
@@ -391,45 +391,155 @@ export const homeScreenData = {
   },
   FeeStructure: {
     subtitle: "Fee Structure",
-    headerLeftTitle: "Semester wise break-up of course fee",
+    headerLeftTitle: "Vedam School of Technology Fee Structure",
     headerRightLocation: `ADYPU, Pune`,
     leftSideYearTable: [
       {
         id: "0",
         year1: "Year 1",
-        amount1: "268,750",
-        amount2: "218,750",
-        total: "487,500",
+        semester: "Semester 1",
+        amount1: "1,56,772",
+        amount2: "1,11,978",
+        total: "2,68,750",
       },
       {
         id: "1",
-        year1: "Year 2",
-        amount1: "218,750",
-        amount2: "218,750",
-        total: "437,500",
+        year1: "",
+        semester: "Semester 2",
+        amount1: "1,27,604",
+        amount2: "91,146",
+        total: "2,18,750",
       },
       {
         id: "2",
-        year1: "Year 3",
-        amount1: "218,750",
-        amount2: "218,750",
-        total: "437,500",
+        year1: "Year 2",
+        semester: "Semester 3",
+        amount1: "1,27,604",
+        amount2: "91,146",
+        total: "2,18,750",
       },
       {
         id: "3",
-        year1: "Year 4",
-        amount1: "218,750",
-        amount2: "218,750",
-        total: "437,500",
+        year1: "",
+        semester: "Semester 4",
+        amount1: "1,27,604",
+        amount2: "91,146",
+        total: "2,18,750",
       },
       {
         id: "4",
-        year1: "Total",
-        amount1: "",
-        amount2: "",
-        total: "1,800,000",
+        year1: "Year 3",
+        semester: "Semester 5",
+        amount1: "1,27,604",
+        amount2: "91,146",
+        total: "2,18,750",
       },
+      {
+        id: "5",
+        year1: "",
+        semester: "Semester 6",
+        amount1: "1,27,604",
+        amount2: "91,146",
+        total: "2,18,750",
+      },
+      {
+        id: "6",
+        year1: "Year 4",
+        semester: "Semester 7",
+        amount1: "1,27,604",
+        amount2: "91,146",
+        total: "2,18,750",
+      },
+      {
+        id: "7",
+        year1: "",
+        semester: "Semester 8",
+        amount1: "1,27,604",
+        amount2: "91,146",
+        total: "2,18,750",
+      },
+      {
+        id: "8",
+        year1: "Total Course Fees",
+        semester: "",
+        amount1: "1,31,250",
+        amount2: "93,750",
+        total: "18,00,000",
+      }
     ],
+    leftSideYearTableMobile: [
+      {
+        id: "0",
+        year1: "Semester 1",
+        semester: "Semester 1",
+        amount1: "1,56,772",
+        amount2: "1,11,978",
+        total: "2,68,750",
+      },
+      {
+        id: "1",
+        year1: "Semester 2",
+        semester: "Semester 2",
+        amount1: "1,27,604",
+        amount2: "91,146",
+        total: "2,18,750",
+      },
+      {
+        id: "2",
+        year1: "Semester 3",
+        semester: "Semester 3",
+        amount1: "1,27,604",
+        amount2: "91,146",
+        total: "2,18,750",
+      },
+      {
+        id: "3",
+        year1: "Semester 4",
+        semester: "Semester 4",
+        amount1: "1,27,604",
+        amount2: "91,146",
+        total: "2,18,750",
+      },
+      {
+        id: "4",
+        year1: "Semester 5",
+        semester: "Semester 5",
+        amount1: "1,27,604",
+        amount2: "91,146",
+        total: "2,18,750",
+      },
+      {
+        id: "5",
+        year1: "Semester 6",
+        semester: "Semester 6",
+        amount1: "1,27,604",
+        amount2: "91,146",
+        total: "2,18,750",
+      },
+      {
+        id: "6",
+        year1: "Semester 7",
+        semester: "Semester 7",
+        amount1: "1,27,604",
+        amount2: "91,146",
+        total: "2,18,750",
+      },
+      {
+        id: "7",
+        year1: "Semester 8",
+        semester: "Semester 8",
+        amount1: "1,27,604",
+        amount2: "91,146",
+        total: "2,18,750",
+      }
+    ],
+    // totalPriceText: [
+    //     {
+    //       id: "Total Cost",
+    //       total: "₹4.16 lack"
+    //     }
+    // ],
+
     rightSideText: [
       {
         id: 1,
@@ -437,16 +547,16 @@ export const homeScreenData = {
       },
       {
         id: 2,
-        text: "The total fee mentioned in the table is the Tution Fees and Upskilling Fees, This is exclusive of Hostel & Mess fees.",
+        text: "The fees mentioned in the table is the Course fees, This is exclusive of Hostel & Mess fees",
       },
       {
         id: 3,
-        text: "Hostel and mess services are available on the ADYPU campus, subject to availability and offered on a first-come, first-served basis.",
+        text: "Hostel and mess services are available on the ADYPU campus, subject to availability and offered on a first-come, first-served basis",
       },
-      {
-        id: 4,
-        text: "*Download the complete details of hostel rooms and charges ",
-      },
+      // {
+      //   id: 4,
+      //   text: "*Download the complete details of hostel rooms and charges ",
+      // },
     ],
   },
   learnFrom: {
