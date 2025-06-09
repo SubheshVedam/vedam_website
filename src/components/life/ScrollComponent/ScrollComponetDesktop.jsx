@@ -62,7 +62,7 @@ export const ScrollComponentDesktop = () => {
                                 flexDirection: "column",
                                 gap: "2.6rem",
                                 marginRight: "1.5rem",
-                                marginTop: "1.1rem", // removed stray semicolon
+                                marginTop: "1.1rem", 
                             }}
                         >
                             {sectionData.map((section, index) => (
@@ -150,6 +150,7 @@ export const ScrollComponentDesktop = () => {
                         {/* Right Content Section */}
                         <Box
                             sx={{
+                                flex:'1',
                                 height: "100%",
                                 overflowY: "auto",
                                 overflowX: "hidden",
@@ -171,11 +172,14 @@ export const ScrollComponentDesktop = () => {
                                     <Box
                                         key={item.id}
                                         sx={{
-                                            minHeight: "24.4375rem",
+                                             minHeight: index === sectionData.length - 1 
+                                                ? "31.25rem"
+                                                : "27.5rem",
                                             display: "flex",
                                             alignItems: "center",
-                                            justifyContent: "center",
-                                            padding: "2rem",
+                                            // justifyContent: "center",
+                                            paddingX: "2rem",
+                                            paddingY:'1rem',
                                             transition: "all 0.3s ease",
                                             transform: activeStep === index ? "scale(1.02)" : "scale(1)",
                                         }}
@@ -190,6 +194,7 @@ export const ScrollComponentDesktop = () => {
                                                 color: "white",
                                                 fontSize: "1.5rem",
                                                 fontWeight: "bold",
+                                                width: "100%",
                                             }}
                                         >
                                             {item.content || `Content ${index + 1}`}
@@ -197,6 +202,7 @@ export const ScrollComponentDesktop = () => {
 
                                     </Box>
                                 ))}
+                                <Box sx={{ height: "2rem" }} /> 
                             </Box>
                         </Box>
                     </Box>
