@@ -12,7 +12,7 @@ import { lifeAtVedam, whyVedam } from "@/constants/data";
 import { ScrollComponent } from "@/components/life/ScrollComponent/ScrollComponent";
 import WhyVedam from "@/components/WhyVedam";
 
-const whyVdata = lifeAtVedam.whyVedam.data;
+const clubsatVST = lifeAtVedam.clubsatVedam.data;
 
 const Life = () => {
   return (
@@ -71,8 +71,8 @@ const Life = () => {
         <CardContainer subtitle={lifeAtVedam.edgeAtVedam.subtitle}>
           <EdgeAtVedam />
         </CardContainer>
-        <CardContainer subtitle={lifeAtVedam.whyVedam.subtitle}>
-          <WhyVedam data={whyVdata} />
+        <CardContainer subtitle={lifeAtVedam.clubsatVedam.subtitle}>
+          <WhyVedam data={clubsatVST} />
         </CardContainer>
       </WidthContainer>
     </Box>

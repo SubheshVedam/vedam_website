@@ -1023,8 +1023,8 @@ export const lifeAtVedam = {
     icon1: "/img/innovation_lab/scroll_component/Drone.png",
     icon2: "/img/innovation_lab/scroll_component/vr.png",
   },
-  whyVedam: {
-    subtitle: "Why Vedam?",
+  clubsatVedam: {
+    subtitle: "Clubs at VST",
     data: [
       {
         bgImage: "/img/clubsatVedam/Sports_Club_N.jpeg",
