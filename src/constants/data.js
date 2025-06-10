@@ -998,28 +998,28 @@ export const lifeAtVedam = {
   Robotics: {
     title: "Robotics Zone",
     subtitle:
-      "High-performance Mac Studios + Vision Pro for your AI & XR experiments.",
+      "Hands-on 3D printers, Arduino/Raspberry Pi kits & robotics arms.",
     icon1: "/img/innovation_lab/scroll_component/Robotics.png",
     icon2: "/img/innovation_lab/scroll_component/Robotics2.png",
   },
   Drone: {
     title: "Drone Zone",
     subtitle:
-      "High-performance Mac Studios + Vision Pro for your AI & XR experiments.",
+      "Full-scale drone simulators, 3D-printing integration & visual tracking.",
     icon1: "/img/innovation_lab/scroll_component/Drone.png",
     icon2: "/img/innovation_lab/scroll_component/vr.png",
   },
   Vc: {
     title: "VC",
     subtitle:
-      "High-performance Mac Studios + Vision Pro for your AI & XR experiments.",
+      "Get upto 1 Cr of Funding.",
     icon1: "/img/innovation_lab/scroll_component/Vc.png",
     icon2: "/img/innovation_lab/scroll_component/vr.png",
   },
   Projects: {
     title: "Projects",
     subtitle:
-      "High-performance Mac Studios + Vision Pro for your AI & XR experiments.",
+      "Build AI models, smart devices, AR/VR tools, drones, and startup-ready prototypes.",
     icon1: "/img/innovation_lab/scroll_component/Drone.png",
     icon2: "/img/innovation_lab/scroll_component/vr.png",
   },

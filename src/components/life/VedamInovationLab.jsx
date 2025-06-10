@@ -58,7 +58,7 @@ export const VedamInovationLab = () => {
       >
         <Box
           component="video"
-          src="/vid/videoBg.mp4"
+          src="/vid/InnovationLab.mp4"
           alt="innovation"
           autoPlay
           muted
