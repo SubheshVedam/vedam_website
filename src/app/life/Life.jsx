@@ -1,4 +1,3 @@
-
 import { Box, Typography } from "@mui/material";
 import React, { Fragment } from "react";
 import {
@@ -13,7 +12,6 @@ import { lifeAtVedam, whyVedam } from "@/constants/data";
 import { ScrollComponent } from "@/components/life/ScrollComponent/ScrollComponent";
 import WhyVedam from "@/components/WhyVedam";
 
-
 const whyVdata = lifeAtVedam.whyVedam.data;
 
 const Life = () => {
@@ -25,7 +23,8 @@ const Life = () => {
         // gap: { xs: "2rem", lg: "3rem" },
         alignItems: "center",
         minHeight: "100vh",
-      }}>
+      }}
+    >
       <VideoWithText
         title={lifeAtVedam.hero.title}
         titleLinearGradient="linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)"
@@ -41,16 +40,21 @@ const Life = () => {
           width: "100%",
           display: "flex",
           justifyContent: "center",
-        }}>
+        }}
+      >
         <WidthContainer
           childrenStyle={{
             display: "flex",
             flexDirection: "column",
             gap: { xs: "1rem", md: "2rem", lg: "3rem" },
-          }}>
-          {/* <ClubsAtVst /> */}
-
-          <CardContainer subtitle2={lifeAtVedam.vedamLab.subtitle}  >
+            marginBottom: "0px",
+            paddingY: 0,
+          }}
+        >
+          <CardContainer
+            subtitle2={lifeAtVedam.vedamLab.subtitle}
+            containerStyle={{ marginBottom: "0px" }}
+          >
             <VedamInovationLab />
             <ScrollComponent />
           </CardContainer>
@@ -62,8 +66,9 @@ const Life = () => {
           display: "flex",
           flexDirection: "column",
           gap: { xs: "1rem", md: "2rem", lg: "3rem" },
-        }}>
-        <CardContainer subtitle={lifeAtVedam.edgeAtVedam.subtitle} >
+        }}
+      >
+        <CardContainer subtitle={lifeAtVedam.edgeAtVedam.subtitle}>
           <EdgeAtVedam />
         </CardContainer>
         <CardContainer subtitle={lifeAtVedam.whyVedam.subtitle}>

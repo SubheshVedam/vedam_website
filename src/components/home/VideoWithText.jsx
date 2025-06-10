@@ -26,7 +26,7 @@ export const VideoWithText = ({ title, subtitle, isImg }) => {
           zIndex: 1,
         }}
       />
-      
+
       {/* Background Media */}
       {!isImg ? (
         <video
@@ -64,7 +64,7 @@ export const VideoWithText = ({ title, subtitle, isImg }) => {
           className="responsive-image"
         />
       )}
-      
+
       {/* Content Container */}
       <Box
         sx={{
@@ -88,17 +88,17 @@ export const VideoWithText = ({ title, subtitle, isImg }) => {
             fontWeight: "bold",
             whiteSpace: "pre-line",
             fontFamily: "Inter",
-            fontSize: { 
-              xs: "1.75rem", 
-              sm: "2.25rem", 
-              md: "2.75rem", 
-              lg: "3.5rem" 
+            fontSize: {
+              xs: "1.75rem",
+              sm: "2.25rem",
+              md: "2.75rem",
+              lg: "3.5rem",
             },
-            lineHeight: { 
-              xs: "2rem", 
-              sm: "2.5rem", 
-              md: "3rem", 
-              lg: "3.75rem" 
+            lineHeight: {
+              xs: "2rem",
+              sm: "2.5rem",
+              md: "3rem",
+              lg: "3.75rem",
             },
             marginBottom: { xs: "1rem", md: "1.5rem" },
             textAlign: "center",
@@ -120,17 +120,17 @@ export const VideoWithText = ({ title, subtitle, isImg }) => {
         >
           {title}
         </Typography>
-        
+
         <Typography
           variant="subtitle1"
           sx={{
             marginBottom: { xs: "1.5rem", md: "2rem" },
             fontFamily: "Inter",
-            fontSize: { 
-              xs: "1rem", 
-              sm: "1.125rem", 
-              md: "1.25rem", 
-              lg: "1.5rem" 
+            fontSize: {
+              xs: "1rem",
+              sm: "1.125rem",
+              md: "1.25rem",
+              lg: "1.5rem",
             },
             fontWeight: 400,
             textAlign: "center",
@@ -140,8 +140,8 @@ export const VideoWithText = ({ title, subtitle, isImg }) => {
         >
           {subtitle}
         </Typography>
-        
-        <Box 
+
+        <Box
           sx={{
             display: "flex",
             flexDirection: { xs: "column", sm: "row" },
@@ -152,37 +152,6 @@ export const VideoWithText = ({ title, subtitle, isImg }) => {
             maxWidth: "500px",
           }}
         >
-
-          <Button
-            sx={{
-              fontSize: { xs: "0.875rem", sm: "1rem" },
-              color: "#F9F9F9",
-              borderRadius: "1rem",
-              padding: { xs: "12px 24px", sm: "12px 30px" },
-              border: "1px solid #FFF",
-              backgroundColor: "transparent",
-              display: "flex",
-              order: { xs: 2, sm: 1 },
-              alignItems: "center",
-              gap: "0.5rem",
-              minWidth: { xs: "200px", sm: "auto" },
-              justifyContent: "center",
-              transition: "all 0.3s ease",
-              "&:hover": {
-                backgroundColor: "rgba(255, 255, 255, 0.1)",
-                transform: "translateY(-2px)",
-              },
-            }}
-            href="https://apply.vedam.org/"
-            target="_blank"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path d="M0.469558 12.469L11.1899 1.74958H3.25018C3.05127 1.74958 2.86051 1.67057 2.71985 1.52991C2.5792 1.38926 2.50018 1.19849 2.50018 0.999582C2.50018 0.80067 2.5792 0.609904 2.71985 0.469252C2.86051 0.328599 3.05127 0.249582 3.25018 0.249582H13.0002C13.1991 0.249582 13.3899 0.328599 13.5305 0.469252C13.6712 0.609904 13.7502 0.80067 13.7502 0.999582V10.7496C13.7502 10.9485 13.6712 11.1393 13.5305 11.2799C13.3899 11.4206 13.1991 11.4996 13.0002 11.4996C12.8013 11.4996 12.6105 11.4206 12.4699 11.2799C12.3292 11.1393 12.2502 10.9485 12.2502 10.7496V2.8099L1.53081 13.5302C1.46113 13.5999 1.3784 13.6552 1.28736 13.6929C1.19631 13.7306 1.09873 13.75 1.00018 13.75C0.901637 13.75 0.804055 13.7306 0.713011 13.6929C0.621966 13.6552 0.539241 13.5999 0.469558 13.5302C0.399875 13.4605 0.344601 13.3778 0.306889 13.2868C0.269176 13.1957 0.249765 13.0981 0.249765 12.9996C0.249765 12.901 0.269176 12.8035 0.306889 12.7124C0.344601 12.6214 0.399875 12.5386 0.469558 12.469Z" fill="white" />
-            </svg>
-            Book Campus Visit
-          </Button>
-          
-   
           <Button
             sx={{
               fontSize: { xs: "0.875rem", sm: "1rem" },
