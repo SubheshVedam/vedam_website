@@ -25,25 +25,26 @@ export const VedamInovationLab = () => {
   ];
 
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", gap: "2rem"}}>
-      <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-        <Typography sx={{
-          color: '#FFF',
-          textAlign: 'center',
-          fontFamily: 'Inter',
-          fontSize: {
-            xs: '12px', // 0px and up
-            sm: '24px', // 600px and up
-          },
-          fontStyle: 'normal',
-          fontWeight: 400,
-          lineHeight: {
-            xs: '20px',
-            sm: '24px'
-          },
-          letterSpacing: '-0.72px',
-        }}>
-          Vedam Innovation Lab is a cutting-edge incubator driving innovation in AR/VR, AI & ML, IoT, Robotics, and Drones.
+    <Box sx={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
+      <Box
+        sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+      >
+        <Typography
+          sx={{
+            color: "#FFF",
+            textAlign: "center",
+            fontFamily: "Inter",
+            fontSize: {
+              xs: "12px", // 0px and up
+              sm: "24px", // 600px and up
+            },
+            fontStyle: "normal",
+            fontWeight: 400,
+            letterSpacing: "-0.72px",
+          }}
+        >
+          Vedam Innovation Lab is a cutting-edge incubator driving innovation in
+          AR/VR, AI & ML, IoT, Robotics and Drones.
         </Typography>
       </Box>
 
@@ -115,29 +116,31 @@ export const VedamInovationLab = () => {
           ))}
         </Box>
       </Box>
-           
+
       <Box>
         <Typography
           sx={{
+            mt: 2,
             // color: '#5E00AF',
             color: {
-              xs: 'white',
-              sm: '#5E00AF'
+              xs: "white",
+              sm: "#5E00AF",
             },
-            textAlign: 'center',
-            fontFamily: 'Inter',
-              fontSize: {
-            xs: '18px', // 0px and up
-            sm: '24px', // 600px and up
-          },
-            fontStyle: 'normal',
-            fontWeight: 600,
-            lineHeight: '31px',
-            letterSpacing: '-0.72px',
+            textAlign: "center",
+            fontFamily: "Inter",
+            fontSize: {
+              xs: "18px", // 0px and up
+              sm: "24px", // 600px and up
+            },
+            fontStyle: "normal",
+            fontWeight: 500,
+            lineHeight: "31px",
+            letterSpacing: "-0.72px",
           }}
           className="text-trim" // optional, for unsupported properties
         >
-          Vedam Innovation Lab is a cutting-edge
+          Vedam Innovation Lab is a cutting-edge incubator driving innovation in
+          AR/VR, AI & ML, IoT, Robotics, and Drones.
         </Typography>
       </Box>
 

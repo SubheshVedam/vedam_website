@@ -36,10 +36,11 @@ const Life = () => {
       <Box
         sx={{
           background:
-            "linear-gradient(180deg, #155A5D 0.06%, #ADF0F7 57.18%, #FFF 98.95%)",
+            "linear-gradient(180deg, #155A5D 0.26%, #ADF0F7 87.18%, #FFF 98.95%)",
           width: "100%",
           display: "flex",
           justifyContent: "center",
+          pt: { xs: 2, sm: 7 },
         }}
       >
         <WidthContainer

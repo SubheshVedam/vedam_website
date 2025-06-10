@@ -1033,13 +1033,13 @@ export const lifeAtVedam = {
           "Stay active and competitive in our Sports Club! Participate in various sports, tournaments, and activities to enhance teamwork and skills.",
       },
       {
-        bgImage: "/img/clubsatVedam/Entrepreneurship_club.jpeg",
+        bgImage: "/img/clubsatVedam/Entrepreneurship_Club_N.jpeg",
         title: "Entrepreneurship Club",
         description:
           "Join our Entrepreneurship Club to learn how to turn ideas into successful ventures and change the future!",
       },
       {
-        bgImage: "/img/clubsatVedam/competitive_coding.jpeg",
+        bgImage: "/img/clubsatVedam/Competitive_Club_N.jpeg",
         title: "Competitive Coding Club",
         description:
           "Sharpen your problem-solving skills with our Competitive Coding Club! Participate in coding challenges, and algorithmic competitions.",
