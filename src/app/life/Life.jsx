@@ -1,25 +1,28 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React, { Fragment } from "react";
 import {
   CardContainer,
-  ClubsAtVst,
+  // ClubsAtVst,
   EdgeAtVedam,
   VedamInovationLab,
   VideoWithText,
   WidthContainer,
 } from "@/components";
-import { lifeAtVedam } from "@/constants/data";
+import { lifeAtVedam, whyVedam } from "@/constants/data";
+import { ScrollComponent } from "@/components/life/ScrollComponent/ScrollComponent";
+import WhyVedam from "@/components/WhyVedam";
+
+const whyVdata = lifeAtVedam.whyVedam.data;
 
 const Life = () => {
-  const linearGradient = "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)";
   return (
     <Box
       sx={{
         display: "flex",
         flexDirection: "column",
-        gap: { xs: "2rem", lg: "3rem" },
+        // gap: { xs: "2rem", lg: "3rem" },
         alignItems: "center",
-        backgroundColor: "#F9F9F9",
+        minHeight: "100vh",
       }}
     >
       <VideoWithText
@@ -29,6 +32,35 @@ const Life = () => {
         showApplyNowButton={false}
         isImg={true}
       />
+
+      <Box
+        sx={{
+          background:
+            "linear-gradient(180deg, #155A5D 0.06%, #ADF0F7 57.18%, #FFF 98.95%)",
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <WidthContainer
+          childrenStyle={{
+            display: "flex",
+            flexDirection: "column",
+            gap: { xs: "1rem", md: "2rem", lg: "3rem" },
+            marginBottom: "0px",
+            paddingY: 0,
+          }}
+        >
+          <CardContainer
+            subtitle2={lifeAtVedam.vedamLab.subtitle}
+            containerStyle={{ marginBottom: "0px" }}
+          >
+            <VedamInovationLab />
+            <ScrollComponent />
+          </CardContainer>
+        </WidthContainer>
+      </Box>
+
       <WidthContainer
         childrenStyle={{
           display: "flex",
@@ -36,13 +68,11 @@ const Life = () => {
           gap: { xs: "1rem", md: "2rem", lg: "3rem" },
         }}
       >
-        <ClubsAtVst />
-        <CardContainer subtitle={lifeAtVedam.vedamLab.subtitle}>
-          <VedamInovationLab/>
-        </CardContainer>
-
         <CardContainer subtitle={lifeAtVedam.edgeAtVedam.subtitle}>
           <EdgeAtVedam />
+        </CardContainer>
+        <CardContainer subtitle={lifeAtVedam.whyVedam.subtitle}>
+          <WhyVedam data={whyVdata} />
         </CardContainer>
       </WidthContainer>
     </Box>

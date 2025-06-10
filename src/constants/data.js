@@ -2,6 +2,11 @@ import { AIYear1 } from "@/components/home/AIFirstCurriculum/AIYear1";
 import { AIYear2 } from "@/components/home/AIFirstCurriculum/AIYear2";
 import { AIYear3 } from "@/components/home/AIFirstCurriculum/AIYear3";
 import { AIYear4 } from "@/components/home/AIFirstCurriculum/AIYear4";
+import AI1 from "@/components/life/ScrollComponent/AI1";
+import Robotics2 from "@/components/life/ScrollComponent/Robotics2";
+import Drone3 from "@/components/life/ScrollComponent/Drone3";
+import Vc4 from "@/components/life/ScrollComponent/Vc4";
+import Project5 from "@/components/life/ScrollComponent/Project5";
 
 export const testimonialData = [
   {
@@ -169,7 +174,6 @@ export const navLinks = [
   { label: "About Us", path: "/about" },
   { label: "Register Now", path: "https://apply.vedam.org/" }, //Don't reorder register
   { label: "Login", path: "https://apply.vedam.org/" }, //Don't reorder login
-
 ];
 
 export const homeScreenData = {
@@ -465,7 +469,7 @@ export const homeScreenData = {
         amount1: "1,31,250",
         amount2: "87,500",
         total: "18,00,000",
-      }
+      },
     ],
     leftSideYearTableMobile: [
       {
@@ -531,7 +535,7 @@ export const homeScreenData = {
         amount1: "1,31,250",
         amount2: "87,500",
         total: "2,18,750",
-      }
+      },
     ],
     // totalPriceText: [
     //     {
@@ -868,7 +872,7 @@ export const lifeAtVedam = {
   hero: {
     background_video: "",
     title: "Life@VST",
-    subtitle: "make memories, learn, grow, and\ncherish every moment joyfully.",
+    subtitle: "Make memories, learn, grow, and cherish every moment joyfully",
   },
   clubsAtVst: [
     {
@@ -931,14 +935,14 @@ export const lifeAtVedam = {
     data: [
       {
         id: 0,
-        image: "/img/edgeAtVedam/first.webp",
+        image: "/img/innovation_lab/edgen1.jpg",
         title: "Shadow a CTO",
         subtitle:
           "Spend a day at leading tech StartUps and know a day in the life of tech leaders and software engineers.",
       },
       {
         id: 1,
-        image: "/img/edgeAtVedam/second.webp",
+        image: "/img/innovation_lab/edgen2.jpg",
         title: "Global Exposure",
         subtitle:
           "Travel and participate in global tech conferences, hackathons and international coding competitions.",
@@ -949,6 +953,108 @@ export const lifeAtVedam = {
         title: "Vedam Venture Fund",
         subtitle:
           "Get seed funding up to Rs. 1 Crore for your tech startup that solve awesome problems of the future.",
+      },
+    ],
+  },
+  // Vedam Innovation Lab Scroll Component
+  aiFirst: {
+    title: "",
+    subtitle: "",
+    data: [
+      { id: 1, title: "AI + Mac Zone", subtitle: "", content: <AI1 /> },
+      {
+        id: 2,
+        title: "Robotics Zone",
+        subtitle: "",
+        content: <Robotics2 />,
+      },
+      {
+        id: 3,
+        title: "Drone Zone",
+        subtitle: "",
+        content: <Drone3 />,
+      },
+      {
+        id: 4,
+        title: "VC Fund Linkage",
+        subtitle: "",
+        content: <Vc4 />,
+      },
+      {
+        id: 5,
+        title: "Projects you Build",
+        subtitle: "",
+        content: <Project5 />,
+      },
+    ],
+  },
+  AI: {
+    title: "AI + Mac Zone",
+    subtitle:
+      "High-performance Mac Studios + Vision Pro for your AI & XR experiments.",
+    icon1: "/img/innovation_lab/scroll_component/laptop.png",
+    icon2: "/img/innovation_lab/scroll_component/vr.png",
+  },
+  Robotics: {
+    title: "Robotics Zone",
+    subtitle:
+      "High-performance Mac Studios + Vision Pro for your AI & XR experiments.",
+    icon1: "/img/innovation_lab/scroll_component/Robotics.png",
+    icon2: "/img/innovation_lab/scroll_component/Robotics2.png",
+  },
+  Drone: {
+    title: "Drone Zone",
+    subtitle:
+      "High-performance Mac Studios + Vision Pro for your AI & XR experiments.",
+    icon1: "/img/innovation_lab/scroll_component/Drone.png",
+    icon2: "/img/innovation_lab/scroll_component/vr.png",
+  },
+  Vc: {
+    title: "VC",
+    subtitle:
+      "High-performance Mac Studios + Vision Pro for your AI & XR experiments.",
+    icon1: "/img/innovation_lab/scroll_component/Vc.png",
+    icon2: "/img/innovation_lab/scroll_component/vr.png",
+  },
+  Projects: {
+    title: "Projects",
+    subtitle:
+      "High-performance Mac Studios + Vision Pro for your AI & XR experiments.",
+    icon1: "/img/innovation_lab/scroll_component/Drone.png",
+    icon2: "/img/innovation_lab/scroll_component/vr.png",
+  },
+  whyVedam: {
+    subtitle: "Why Vedam?",
+    data: [
+      {
+        bgImage: "/img/clubsatVedam/Sports_Club_N.jpeg",
+        title: "Sports Club",
+        description:
+          "Stay active and competitive in our Sports Club! Participate in various sports, tournaments, and activities to enhance teamwork and skills.",
+      },
+      {
+        bgImage: "/img/clubsatVedam/Entrepreneurship_club.jpeg",
+        title: "Entrepreneurship Club",
+        description:
+          "Join our Entrepreneurship Club to learn how to turn ideas into successful ventures and change the future!",
+      },
+      {
+        bgImage: "/img/clubsatVedam/competitive_coding.jpeg",
+        title: "Competitive Coding Club",
+        description:
+          "Sharpen your problem-solving skills with our Competitive Coding Club! Participate in coding challenges, and algorithmic competitions.",
+      },
+      {
+        bgImage: "/img/clubsatVedam/Cultural_club.jpeg",
+        title: "Cultural Club",
+        description:
+          "Join our Cultural Club to celebrate diversity through music, dance, drama, and festivals.",
+      },
+      {
+        bgImage: "/img/clubsatVedam/open_source.jpeg",
+        title: "Open Source Club",
+        description:
+          "Contribute to open-source projects, collaborate with developers, and gain real-world coding experience in our Open Source Club.",
       },
     ],
   },

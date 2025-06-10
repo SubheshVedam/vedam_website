@@ -214,3 +214,10 @@ body {
 .animate-marquee:hover {
   animation-play-state: paused;
 }
+
+.MuiTypography-subtitle1 {
+  background-color: transparent !important;
+}
+.no-margin {
+  margin-bottom: 0 !important;
+}

@@ -4,16 +4,18 @@ import { Box, Typography } from "@mui/material";
 export const CardContainer = ({
   title = "",
   subtitle = "",
+  subtitle2 = "",
   children,
   linearGradientSubtitle = "linear-gradient(90deg, #FB7F05 0%, #6C10BC 42.11%)",
   containerStyle = {},
+  subtitleStyle = {},
   titleChildContainer = {},
   showSubtitleBottomBorder = false,
 }) => {
   return (
     <Box
       sx={{
-        pt:'1rem',
+        pt: "1rem",
         display: "flex",
         flexDirection: "column",
         width: "100%",
@@ -41,11 +43,11 @@ export const CardContainer = ({
           </Typography>
         )}
 
-        {subtitle && (
+        {subtitle && !subtitle2 && (
           <Typography
             variant="h4"
             fontFamily={"Inter"}
-            style={{
+            sx={{
               fontWeight: "700",
               background: linearGradientSubtitle,
               WebkitBackgroundClip: "text",
@@ -58,6 +60,25 @@ export const CardContainer = ({
             {subtitle}
           </Typography>
         )}
+
+        {subtitle2 && (
+          <Typography
+            fontFamily={"Inter"}
+            sx={{
+              color: "#FFFFFF",
+              textAlign: "center",
+              // fontSize: "24px",
+              fontStyle: "normal",
+              fontWeight: "700",
+              lineHeight: "28px",
+              alignSelf: "center",
+              fontSize: "clamp(1.3rem, 2.5vw, 2rem)",
+            }}
+          >
+            {subtitle2}
+          </Typography>
+        )}
+
         {showSubtitleBottomBorder && (
           <Box
             sx={{
