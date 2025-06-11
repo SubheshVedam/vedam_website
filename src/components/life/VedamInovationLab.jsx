@@ -81,7 +81,7 @@ export const VedamInovationLab = () => {
           <Box
             onClick={() => {
               setVideoUrl1(
-                "https://www.youtube.com/embed/zHquRUSxP8o?autoplay=1&si=MjqF-PfmelA2too8"
+                "https://www.youtube.com/embed/eq8HnUDuN0E?autoplay=1&si=0"
               );
               setShowIframe1(true);
             }}
@@ -94,7 +94,7 @@ export const VedamInovationLab = () => {
               // borderRadius: "16px",
             }}>
             <Image
-              src="/img/video_thumbnail.jpg"
+              src="/img/VideothumbnaillifeVST.jpg"
               alt="Video thumbnail"
               width={800}
               height={800}

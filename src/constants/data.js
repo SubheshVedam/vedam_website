@@ -1010,7 +1010,7 @@ export const lifeAtVedam = {
     icon2: "/img/innovation_lab/scroll_component/vr.png",
   },
   Vc: {
-    title: "VC",
+    title: "VC Fund Linkage",
     subtitle:
       "Get upto 1 Cr of Funding.",
     icon1: "/img/innovation_lab/scroll_component/Vc.png",
