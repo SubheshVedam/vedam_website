@@ -13,8 +13,8 @@ import Image from "next/image";
 
 export const VedamInovationLab = () => {
   const [open, setOpen] = useState(false);
-  const [showIframe1, setShowIframe1] = useState(false);
-  const [videoUrl1, setVideoUrl1] = useState("");
+  const [showIframe, setShowIframe] = useState(false);
+  const [videoUrl, setVideoUrl] = useState("");
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const isLarge = useMediaQuery(theme.breakpoints.up("lg"));
@@ -66,7 +66,7 @@ export const VedamInovationLab = () => {
           overflow: "hidden",
           borderRadius: "16px",
         }}>
-        {showIframe1 ? (
+        {showIframe ? (
           <iframe
             width="100%"
             height="100%"
@@ -74,7 +74,7 @@ export const VedamInovationLab = () => {
               borderRadius: "16px",
               border: "none",
             }}
-            src={videoUrl1}
+            src={videoUrl}
             title="YouTube video player"
             loading="lazy"
             className="techTeamImage"
@@ -84,10 +84,10 @@ export const VedamInovationLab = () => {
         ) : (
           <Box
             onClick={() => {
-              setVideoUrl1(
+              setVideoUrl(
                 "https://www.youtube.com/embed/eq8HnUDuN0E?autoplay=1&si=0"
               );
-              setShowIframe1(true);
+              setShowIframe(true);
             }}
             sx={{
               cursor: "pointer",
