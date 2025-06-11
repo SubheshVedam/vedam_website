@@ -868,6 +868,29 @@ export const admissionScreenData = {
   },
 };
 
+export const VST_FinancingOptions = {
+  subtitleMain: "Financing Option",
+  descriptionMain: `At Vedam School of Technology, we understand that flexibility and convenience in fee
+payments are important to our students and their families. To make this process easier
+and more accessible, we have partnered with recognized financial companies.`,
+  body: {
+    card1: {
+      subtitle: `Loan at Zero Cost EMI`,
+      description: `You can pay your annual course fee in monthly installments with no interest, no
+processing fee, and no hidden charges.
+We've partnered trusted fintech company working with over 2,500 institutions, to
+offer this option.`,
+    },
+    card2: {
+      subtitle: `Education Loan from a Bank`,
+      description: `You can also access education loans through our trusted banking partners, making
+it easier for you to finance your education with flexible repayment options and
+competitive interest rates.`,
+    },
+  },
+  financingPartners: "Our Financing Partners",
+};
+
 export const lifeAtVedam = {
   hero: {
     background_video: "",
