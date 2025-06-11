@@ -55,9 +55,13 @@ export const VedamInovationLab = () => {
 
       <Box
         sx={{
-          position: "relative",
-          width: "100%",
-          height: isMobile ? "220px" : isLarge ? "680px" : "580px",
+          display: "flex",
+          // position: "relative",
+          width: "auto",
+          // height: isMobile ? "220px" : isLarge ? "680px" : "580px",
+          // height: "auto",
+          height: isMobile ? "220px" : isLarge ? "565px" : "580px",
+
           borderRadius: "16px",
           overflow: "hidden",
           borderRadius: "16px",
@@ -90,7 +94,8 @@ export const VedamInovationLab = () => {
               width: "100%",
               height: "100%",
               position: "relative",
-              display: 'flex'
+              display: "flex",
+              alignItems: "center",
               // borderRadius: "16px",
             }}>
             <Image
@@ -99,8 +104,8 @@ export const VedamInovationLab = () => {
               width={800}
               height={800}
               style={{
-                width: '100%',
-                height: '100%',
+                width: "100%",
+                height: "100%",
                 objectFit: "cover",
                 borderRadius: "16px",
               }}
