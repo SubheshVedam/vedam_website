@@ -15,7 +15,7 @@ export const CardContainer = ({
   return (
     <Box
       sx={{
-        pt: '1rem',
+        pt: "1rem",
         display: "flex",
         flexDirection: "column",
         width: "100%",
@@ -73,7 +73,6 @@ export const CardContainer = ({
               lineHeight: "28px",
               alignSelf: "center",
               fontSize: "clamp(1.3rem, 2.5vw, 2rem)",
-
             }}
           >
             {subtitle2}

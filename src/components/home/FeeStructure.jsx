@@ -149,7 +149,7 @@ export const FeeStructure = () => {
   {
     /* First Outer Box - Tuition Fees */
   }
-  const div1 =
+  const div1 = (
     <Box
       sx={{
         background: "rgba(255, 255, 255, 1)",
@@ -237,7 +237,7 @@ export const FeeStructure = () => {
                         isLastRow={isLastRow}
                       />
                       <SingleTableCell
-                        text={'₹' + row.total}
+                        text={"₹" + row.total}
                         isFirst={true}
                         isLastColumn
                         isLastRow={isLastRow}
@@ -295,7 +295,7 @@ export const FeeStructure = () => {
                   fontSize: "24px",
                 }}
               >
-               ₹ {item.total}
+                ₹ {item.total}
               </Typography>
             ))}
         </Box>
@@ -327,12 +327,12 @@ export const FeeStructure = () => {
           ))}
       </Box>
     </Box>
-
+  );
 
   {
     /* Second Outer Box - Hostel Fees */
   }
-  const div2 =
+  const div2 = (
     <Box
       sx={{
         background: "rgba(255, 255, 255, 1)",
@@ -471,8 +471,7 @@ export const FeeStructure = () => {
             padding: "0.5rem 1rem",
             borderRadius: "8px",
             width: "fit-content",
-            mb: 1
-
+            mb: 1,
           }}
         >
           <Typography
@@ -518,7 +517,8 @@ export const FeeStructure = () => {
             lineHeight: 1.6,
           }}
         >
-          ***Download the complete details of hostel rooms and charges  <Link
+          ***Download the complete details of hostel rooms and charges{" "}
+          <Link
             style={{
               color: "#FFA41A",
               fontSize: "12px",
@@ -529,8 +529,10 @@ export const FeeStructure = () => {
             href="https://drive.google.com/file/d/1zJzM9ZOPsJzP5bhZsCRB5xWlho3iAGwt/view?usp=sharing"
             target="_blank"
           >
-          <CallMadeIcon sx={{ height: "100%", width: "12px" }} /> here
-          </Link>.        </Typography>
+            <CallMadeIcon sx={{ height: "100%", width: "12px" }} /> here
+          </Link>
+          .{" "}
+        </Typography>
       </Box>
 
       {/* Empty Space to Match Height */}
@@ -541,7 +543,7 @@ export const FeeStructure = () => {
         }}
       />
     </Box>
-
+  );
 
   {
     /* Content Section mobile */
@@ -550,8 +552,7 @@ export const FeeStructure = () => {
   {
     /* /* First Row - Table and Text */
   }
-  const mdiv1 =
-
+  const mdiv1 = (
     <Box
       sx={{
         width: "100%",
@@ -584,7 +585,6 @@ export const FeeStructure = () => {
               },
             }}
           >
-
             <AccordionSummary
               expandIcon={<ExpandMoreIcon sx={{ color: "#fff" }} />}
               sx={{
@@ -651,8 +651,8 @@ export const FeeStructure = () => {
       <Box
         sx={{
           width: "100%",
-          paddingY:'16px',
-          paddingX:'24px',
+          paddingY: "16px",
+          paddingX: "24px",
           marginBottom: "20px",
           borderRadius: "12px",
           background: "linear-gradient(90deg, #FF7829 0%, #7B2CBF 100%)",
@@ -678,7 +678,7 @@ export const FeeStructure = () => {
               </Typography>
             ))}
         </Box>
-        <Typography sx={{ fontSize: 40, color: 'white' }}></Typography>
+        <Typography sx={{ fontSize: 40, color: "white" }}></Typography>
         <Box>
           {homeScreenData.FeeStructure.leftSideYearTable
             .filter((item) => item.id === "8")
@@ -718,13 +718,12 @@ export const FeeStructure = () => {
         ))}
       </Box>
     </Box>
-
-
+  );
 
   {
     /* Second Row - Additional Table (2x4) */
   }
-  const mdiv2 =
+  const mdiv2 = (
     <Box
       sx={{
         width: "100%",
@@ -909,14 +908,14 @@ export const FeeStructure = () => {
           sx={{
             textAlign: "center",
             padding: "8px",
-            maxWidth: '80px',
+            maxWidth: "80px",
             backgroundColor: "#D8BBF0",
             color: "#FFFFFF",
             borderRadius: "12px",
             fontSize: "12px",
             fontWeight: "500",
             fontFamily: "Inter",
-            mb: 1
+            mb: 1,
           }}
         >
           <Typography
@@ -960,7 +959,8 @@ export const FeeStructure = () => {
             fontFamily: "Inter",
           }}
         >
-          ***Download the complete details of hostel rooms and charges  <Link
+          ***Download the complete details of hostel rooms and charges{" "}
+          <Link
             style={{
               color: "#FFA41A",
               fontSize: "12px",
@@ -972,11 +972,12 @@ export const FeeStructure = () => {
             target="_blank"
           >
             <CallMadeIcon sx={{ height: "100%", width: "12px" }} /> here
-          </Link>.          </Typography>
-
+          </Link>
+          .{" "}
+        </Typography>
       </Box>
     </Box>
-
+  );
 
   return (
     <Box
