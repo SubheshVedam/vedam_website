@@ -5,15 +5,16 @@ import { VST_FinancingOptions } from "@/constants/data";
 
 export const FinancingOptions = () => {
   return (
-    <Box sx={{ px: { xs: 2, md: 8 }, py: 6 }}>
+    <Box sx={{ pt: { xs: 2, md: 4 } }}>
       {/* Description */}
       <Typography
         variant="subtitle1"
         sx={{
           textAlign: "left",
-          fontFamily: "Inter",
-          fontSize: "clamp(12px, 2vw, 20px)",
           color: "rgba(31, 31, 31, 1)",
+          fontFamily: "Inter",
+          fontSize: "clamp(14px, 2vw, 20px)",
+          fontWeight: "500",
           lineHeight: "150%",
           mb: 4,
         }}>
@@ -103,10 +104,10 @@ export const FinancingOptions = () => {
         </Box>
       </Box>
       {/* Financing Partners */}
-      <Box sx={{ textAlign: "center", mb: 3 }}>
+      <Box sx={{ textAlign: "center", mb: 0 }}>
         <Typography
           variant="h6"
-          sx={{ color: "#FF9000", fontWeight: 700, mb: 2 }}>
+          sx={{ color: "#FF9000", fontWeight: 700, mb: 1 }}>
           Our Financing Partners
         </Typography>
         <Box
