@@ -22,7 +22,7 @@ const Life = () => {
         flexDirection: "column",
         // gap: { xs: "2rem", lg: "3rem" },
         alignItems: "center",
-        minHeight: "100vh",
+        // minHeight: "100vh",
       }}
     >
       <VideoWithText

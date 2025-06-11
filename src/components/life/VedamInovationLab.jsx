@@ -90,14 +90,18 @@ export const VedamInovationLab = () => {
               width: "100%",
               height: "100%",
               position: "relative",
+              display: 'flex'
               // borderRadius: "16px",
             }}>
             <Image
               src="/img/video_thumbnail.jpg"
               alt="Video thumbnail"
-              fill
+              width={800}
+              height={800}
               style={{
-                objectFit: "contain",
+                width: '100%',
+                height: '100%',
+                objectFit: "cover",
                 borderRadius: "16px",
               }}
             />
