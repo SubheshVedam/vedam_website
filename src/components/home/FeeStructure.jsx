@@ -168,15 +168,20 @@ export const FeeStructure = () => {
             overflowX: { xs: "auto", md: "visible" },
             WebkitOverflowScrolling: "touch",
             "&::-webkit-scrollbar": { display: "none" },
+            borderRadius: "22px",
+            p: "2px",
+            background: "linear-gradient(90deg, #6513AC 0%, #FF7829 100%)",
+            mb: 2,
           }}>
           <Table
             sx={{
               minWidth: "100%",
-              borderRadius: "12px",
+              borderRadius: "21px",
               padding: "10px",
               borderCollapse: "separate",
               borderSpacing: 0,
               overflow: "hidden",
+              backgroundColor: "#fff",
               // border: "2px solid red",
             }}>
             <TableHead>
