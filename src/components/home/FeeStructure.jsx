@@ -159,8 +159,7 @@ export const FeeStructure = () => {
         display: "flex",
         flexDirection: "column",
         minHeight: "800px",
-      }}
-    >
+      }}>
       {/* Main Fee Table */}
       <Box sx={{ width: "100%", marginBottom: "20px" }}>
         <Box
@@ -169,8 +168,7 @@ export const FeeStructure = () => {
             overflowX: { xs: "auto", md: "visible" },
             WebkitOverflowScrolling: "touch",
             "&::-webkit-scrollbar": { display: "none" },
-          }}
-        >
+          }}>
           <Table
             sx={{
               minWidth: "100%",
@@ -179,9 +177,8 @@ export const FeeStructure = () => {
               borderCollapse: "separate",
               borderSpacing: 0,
               overflow: "hidden",
-              border: "2px solid red",
-            }}
-          >
+              // border: "2px solid red",
+            }}>
             <TableHead>
               <TableRow sx={{ background: "rgba(146, 62, 218, 1)" }}>
                 <SingleTableCell text="Year" isHead isFirstColumn isFirstRow />
@@ -218,8 +215,7 @@ export const FeeStructure = () => {
                               : "0px",
                             borderTopRightRadius: "0px",
                             borderBottomRightRadius: "0px",
-                          }}
-                        >
+                          }}>
                           {year}
                         </TableCell>
                       )}
@@ -263,8 +259,7 @@ export const FeeStructure = () => {
           alignItems: "center",
           justifyContent: "space-between",
           paddingX: "40px",
-        }}
-      >
+        }}>
         <Box>
           {homeScreenData.FeeStructure.leftSideYearTable
             .filter((item) => item.id === "8")
@@ -276,8 +271,7 @@ export const FeeStructure = () => {
                   color: "white",
                   fontFamily: "Inter",
                   fontSize: "24px",
-                }}
-              >
+                }}>
                 {item.year1}
               </Typography>
             ))}
@@ -293,8 +287,7 @@ export const FeeStructure = () => {
                   color: "white",
                   fontFamily: "Inter",
                   fontSize: "24px",
-                }}
-              >
+                }}>
                 ₹ {item.total}
               </Typography>
             ))}
@@ -314,8 +307,7 @@ export const FeeStructure = () => {
           borderRadius: "12px",
           padding: "3rem",
           flex: 1,
-        }}
-      >
+        }}>
         {homeScreenData.FeeStructure.rightSideText &&
           homeScreenData.FeeStructure.rightSideText.map((item) => (
             <SingleCountText
