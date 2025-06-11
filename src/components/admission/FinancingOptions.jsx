@@ -5,7 +5,7 @@ import { VST_FinancingOptions } from "@/constants/data";
 
 export const FinancingOptions = () => {
   return (
-    <Box sx={{ pt: { xs: 2, md: 4 } }}>
+    <Box sx={{ pt: { xs: 0, md: 0 } }}>
       {/* Description */}
       <Typography
         variant="subtitle1"
