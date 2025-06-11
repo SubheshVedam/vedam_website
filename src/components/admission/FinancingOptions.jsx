@@ -109,6 +109,31 @@ export const FinancingOptions = () => {
           sx={{ color: "#FF9000", fontWeight: 700, mb: 2 }}>
           Our Financing Partners
         </Typography>
+        <Box
+          sx={{
+            display: "flex",
+            gap: "2rem",
+            justifyContent: "center",
+          }}>
+          <img
+            src="/img/financingOptions/icici-bank.svg"
+            alt="Icici Bank"
+            width={58}
+            height={58}
+          />
+          <img
+            src="/img/financingOptions/jodo-logo-v2.svg"
+            alt="Jodo"
+            width={58}
+            height={58}
+          />
+          <img
+            src="/img/financingOptions/propelledLoan.png"
+            alt="Propelled"
+            width={58}
+            height={58}
+          />
+        </Box>
       </Box>
     </Box>
   );
