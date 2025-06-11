@@ -68,12 +68,13 @@ export const FinancingOptions = () => {
             gap: 1,
           }}>
           <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
-            <span
-              role="img"
-              aria-label="emi"
-              style={{ fontSize: 28, marginRight: 8 }}>
-              💸
-            </span>
+            <img
+              src="/img/financingOptions/loanIcon.png"
+              alt="Loan Icon"
+              width={28}
+              height={28}
+              style={{ marginRight: 8 }}
+            />
             <Typography variant="h6" sx={{ color: "#FF9000", fontWeight: 700 }}>
               Loan at Zero Cost EMI
             </Typography>
@@ -104,12 +105,13 @@ export const FinancingOptions = () => {
             gap: 1,
           }}>
           <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
-            <span
-              role="img"
-              aria-label="bank"
-              style={{ fontSize: 28, marginRight: 8 }}>
-              🏦
-            </span>
+            <img
+              src="/img/financingOptions/eduLoanIcon.png"
+              alt="Loan Icon"
+              width={28}
+              height={28}
+              style={{ marginRight: 8 }}
+            />
             <Typography variant="h6" sx={{ color: "#FF9000", fontWeight: 700 }}>
               Education Loan from a Bank
             </Typography>
@@ -133,43 +135,6 @@ export const FinancingOptions = () => {
           sx={{ color: "#FF9000", fontWeight: 700, mb: 2 }}>
           Our Financing Partners
         </Typography>
-        {/* <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            gap: 4,
-          }}>
-          <img
-            src="/img/finance.webp"
-            alt="ICICI"
-            style={{
-              width: 56,
-              height: 56,
-              borderRadius: "50%",
-              background: "#fff",
-            }}
-          />
-          <img
-            src="/img/jodo.png"
-            alt="Jodo"
-            style={{
-              width: 56,
-              height: 56,
-              borderRadius: "50%",
-              background: "#fff",
-            }}
-          />
-          <img
-            src="/img/propelld.png"
-            alt="Propelld"
-            style={{
-              width: 56,
-              height: 56,
-              borderRadius: "50%",
-              background: "#fff",
-            }}
-          />
-        </Box> */}
       </Box>
     </Box>
   );
