@@ -212,8 +212,7 @@ export const VedamInovationLab = () => {
           }}
           className="text-trim" // optional, for unsupported properties
         >
-          Vedam Innovation Lab is a cutting-edge incubator driving innovation in
-          AR/VR, AI & ML, IoT, Robotics, and Drones.
+          Vedam Innovation Zone: Engineering Tomorrow’s Tech Today
         </Typography>
       </Box>
 

@@ -961,16 +961,16 @@ export const lifeAtVedam = {
     title: "",
     subtitle: "",
     data: [
-      { id: 1, title: "AI + Mac Zone", subtitle: "", content: <AI1 /> },
+      { id: 1, title: "AI Zone", subtitle: "", content: <AI1 /> },
       {
         id: 2,
-        title: "Robotics Zone",
+        title: "Robo Station",
         subtitle: "",
         content: <Robotics2 />,
       },
       {
         id: 3,
-        title: "Drone Zone",
+        title: "Drone Dock",
         subtitle: "",
         content: <Drone3 />,
       },
@@ -989,21 +989,21 @@ export const lifeAtVedam = {
     ],
   },
   AI: {
-    title: "AI + Mac Zone",
+    title: "AI Zone",
     subtitle:
       "High-performance Mac Studios + Vision Pro for your AI & XR experiments.",
     icon1: "/img/innovation_lab/scroll_component/laptop.png",
     icon2: "/img/innovation_lab/scroll_component/vr.png",
   },
   Robotics: {
-    title: "Robotics Zone",
+    title: "Robo Station",
     subtitle:
       "Hands-on 3D printers, Arduino/Raspberry Pi kits & robotics arms.",
     icon1: "/img/innovation_lab/scroll_component/Robotics.png",
     icon2: "/img/innovation_lab/scroll_component/Robotics2.png",
   },
   Drone: {
-    title: "Drone Zone",
+    title: "Drone Dock",
     subtitle:
       "Full-scale drone simulators, 3D-printing integration & visual tracking.",
     icon1: "/img/innovation_lab/scroll_component/Drone.png",
