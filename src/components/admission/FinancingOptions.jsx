@@ -18,7 +18,7 @@ export const FinancingOptions = () => {
           lineHeight: "150%",
           mb: 4,
         }}>
-        {admissionScreenData.financingOption.description}
+        {VST_FinancingOptions.descriptionMain}
       </Typography>
       {/* Financing Options Cards */}
       <Box
@@ -60,10 +60,7 @@ export const FinancingOptions = () => {
               fontFamily: "Inter",
               fontSize: 16,
             }}>
-            You can pay your annual course fee in monthly installments with no
-            interest, no processing fee, and no hidden charges.
-            <br /> We’ve partnered trusted fintech company working with over
-            2,500 institutions, to offer this option.
+            {VST_FinancingOptions.body.card1.description}
           </Typography>
         </Box>
         {/* Card 2 */}
@@ -97,9 +94,7 @@ export const FinancingOptions = () => {
               fontFamily: "Inter",
               fontSize: 16,
             }}>
-            You can also access education loans through our trusted banking
-            partners, making it easier for you to finance your education with
-            flexible repayment options and competitive interest rates.
+            {VST_FinancingOptions.body.card2.description}
           </Typography>
         </Box>
       </Box>
