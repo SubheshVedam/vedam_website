@@ -338,35 +338,42 @@ export const FeeStructure = () => {
         width: "100%",
         display: "flex",
         flexDirection: "column",
-      }}
-    >
+      }}>
       {/* Hostel Fees Section */}
-      <Box sx={{ width: "100%", marginBottom: "20px" }}>
+      <Box
+        sx={{
+          width: "100%",
+          overflowX: { xs: "auto", md: "visible" },
+          WebkitOverflowScrolling: "touch",
+          "&::-webkit-scrollbar": { display: "none" },
+          borderRadius: "23px",
+          p: "2px",
+          background: "linear-gradient(90deg, #6513AC 0%, #FF7829 100%)",
+          mb: 2,
+        }}>
         {/* Desktop Hostel Table */}
         <Box
           sx={{
             padding: "10px",
-            borderRadius: "12px",
-            border: "2px solid red",
-          }}
-        >
+            borderRadius: "22px",
+            // border: "2px solid red",
+            backgroundColor: "#fff",
+          }}>
           <Box
             sx={{
               display: { xs: "none", md: "block" },
-              borderRadius: "12px",
+              borderRadius: "22px",
               overflow: "hidden",
               border: "1px solid rgba(186, 107, 255, 0.3)",
-            }}
-          >
+            }}>
             <Table
               sx={{
                 width: "100%",
                 backgroundColor: "rgba(186, 107, 255, 0.08)",
                 borderCollapse: "separate",
                 borderSpacing: 0,
-                borderRadius: "12px",
-              }}
-            >
+                borderRadius: "22px",
+              }}>
               <TableHead>
                 <TableRow sx={{ background: "rgba(146, 62, 218, 1)" }}>
                   <TableCell
@@ -375,8 +382,7 @@ export const FeeStructure = () => {
                       textAlign: "center",
                       borderRight: "1px solid rgba(186, 107, 255, 0.3)",
                       borderBottom: "1px solid rgba(186, 107, 255, 0.3)",
-                    }}
-                  >
+                    }}>
                     Standard Room
                   </TableCell>
                   <TableCell
@@ -385,8 +391,7 @@ export const FeeStructure = () => {
                       textAlign: "center",
                       borderRight: "1px solid rgba(186, 107, 255, 0.3)",
                       borderBottom: "1px solid rgba(186, 107, 255, 0.3)",
-                    }}
-                  >
+                    }}>
                     Premium Room
                   </TableCell>
                   <TableCell
@@ -395,8 +400,7 @@ export const FeeStructure = () => {
                       textAlign: "center",
                       borderRight: "1px solid rgba(186, 107, 255, 0.3)",
                       borderBottom: "1px solid rgba(186, 107, 255, 0.3)",
-                    }}
-                  >
+                    }}>
                     Premium Plus Room
                   </TableCell>
                   <TableCell
@@ -404,8 +408,7 @@ export const FeeStructure = () => {
                       color: "white",
                       textAlign: "center",
                       borderBottom: "1px solid rgba(186, 107, 255, 0.3)",
-                    }}
-                  >
+                    }}>
                     Supreme Room (Only Boys)
                   </TableCell>
                 </TableRow>
@@ -416,31 +419,27 @@ export const FeeStructure = () => {
                     sx={{
                       textAlign: "center",
                       borderRight: "1px solid rgba(186, 107, 255, 0.3)",
-                    }}
-                  >
+                    }}>
                     ₹90,000/-*
                   </TableCell>
                   <TableCell
                     sx={{
                       textAlign: "center",
                       borderRight: "1px solid rgba(186, 107, 255, 0.3)",
-                    }}
-                  >
+                    }}>
                     ₹1,10,000/-*
                   </TableCell>
                   <TableCell
                     sx={{
                       textAlign: "center",
                       borderRight: "1px solid rgba(186, 107, 255, 0.3)",
-                    }}
-                  >
+                    }}>
                     ₹1,40,000/-*
                   </TableCell>
                   <TableCell
                     sx={{
                       textAlign: "center",
-                    }}
-                  >
+                    }}>
                     ₹1,80,000/-*
                   </TableCell>
                 </TableRow>
@@ -460,8 +459,7 @@ export const FeeStructure = () => {
           borderRadius: "12px",
           padding: "1rem",
           marginBottom: "20px",
-        }}
-      >
+        }}>
         <Box
           sx={{
             backgroundColor: "rgba(186, 107, 255, 0.2)",
@@ -469,15 +467,13 @@ export const FeeStructure = () => {
             borderRadius: "8px",
             width: "fit-content",
             mb: 1,
-          }}
-        >
+          }}>
           <Typography
             sx={{
               color: "#7C3AED",
               fontWeight: 600,
               fontSize: "14px",
-            }}
-          >
+            }}>
             Note
           </Typography>
         </Box>
@@ -489,8 +485,7 @@ export const FeeStructure = () => {
             fontSize: { xs: 12, sm: 14 },
             color: "#374151",
             lineHeight: 1.6,
-          }}
-        >
+          }}>
           *The hostel fees mentioned above is per student per year.
         </Typography>
 
@@ -501,8 +496,7 @@ export const FeeStructure = () => {
             fontSize: { xs: 12, sm: 14 },
             color: "#374151",
             lineHeight: 1.6,
-          }}
-        >
+          }}>
           **Additional mess charge of ₹5,500 / month applicable.
         </Typography>
         <Typography
@@ -512,8 +506,7 @@ export const FeeStructure = () => {
             fontSize: { xs: 12, sm: 14 },
             color: "#374151",
             lineHeight: 1.6,
-          }}
-        >
+          }}>
           ***Download the complete details of hostel rooms and charges{" "}
           <Link
             style={{
@@ -524,8 +517,7 @@ export const FeeStructure = () => {
               marginLeft: "4px",
             }}
             href="https://drive.google.com/file/d/1zJzM9ZOPsJzP5bhZsCRB5xWlho3iAGwt/view?usp=sharing"
-            target="_blank"
-          >
+            target="_blank">
             <CallMadeIcon sx={{ height: "100%", width: "12px" }} /> here
           </Link>
           .{" "}
