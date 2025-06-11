@@ -2,23 +2,26 @@
 import React, { useState } from "react";
 import {
   Box,
-  Button,
   Typography,
-  Grid,
   Modal,
   IconButton,
+  useMediaQuery,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import { lifeAtVedam } from "@/constants/data";
+import { useTheme } from "@mui/material/styles";
+import Image from "next/image";
 
 export const VedamInovationLab = () => {
   const [open, setOpen] = useState(false);
+  const [showIframe1, setShowIframe1] = useState(false);
+  const [videoUrl1, setVideoUrl1] = useState("");
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isLarge = useMediaQuery(theme.breakpoints.up("lg"));
 
-  const handleOpenModal = () => setOpen(true);
   const handleCloseModal = () => setOpen(false);
 
   const innovationImages = [
-    "/img/innovation_lab/image3.jpg",
     "/img/innovation_lab/image4.jpg",
     "/img/innovation_lab/image2.jpg",
     "/img/innovation_lab/innovation_lab_7.jpeg",
@@ -27,8 +30,11 @@ export const VedamInovationLab = () => {
   return (
     <Box sx={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
       <Box
-        sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
-      >
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}>
         <Typography
           sx={{
             color: "#FFF",
@@ -41,8 +47,7 @@ export const VedamInovationLab = () => {
             fontStyle: "normal",
             fontWeight: 400,
             letterSpacing: "-0.72px",
-          }}
-        >
+          }}>
           Vedam Innovation Lab is a cutting-edge incubator driving innovation in
           AR/VR, AI & ML, IoT, Robotics and Drones.
         </Typography>
@@ -50,12 +55,82 @@ export const VedamInovationLab = () => {
 
       <Box
         sx={{
+          position: "relative",
+          width: "100%",
+          height: isMobile ? "220px" : isLarge ? "680px" : "580px",
+          borderRadius: "16px",
+          overflow: "hidden",
+          borderRadius: "16px",
+        }}>
+        {showIframe1 ? (
+          <iframe
+            width="100%"
+            height="100%"
+            style={{
+              borderRadius: "16px",
+              border: "none",
+            }}
+            src={videoUrl1}
+            title="YouTube video player"
+            loading="lazy"
+            className="techTeamImage"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        ) : (
+          <Box
+            onClick={() => {
+              setVideoUrl1(
+                "https://www.youtube.com/embed/zHquRUSxP8o?autoplay=1&si=MjqF-PfmelA2too8"
+              );
+              setShowIframe1(true);
+            }}
+            sx={{
+              cursor: "pointer",
+              width: "100%",
+              height: "100%",
+              position: "relative",
+              // borderRadius: "16px",
+            }}>
+            <Image
+              src="/img/video_thumbnail.jpg"
+              alt="Video thumbnail"
+              fill
+              style={{
+                objectFit: "contain",
+                borderRadius: "16px",
+              }}
+            />
+            <Box
+              sx={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                background: "rgba(0,0,0,0.6)",
+                padding: "12px 16px",
+                borderRadius: "100px",
+              }}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width={40}
+                height={40}
+                fill="#fff"
+                viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </Box>
+          </Box>
+        )}
+      </Box>
+
+      {/* <Box
+        sx={{
           height: "464px",
           borderRadius: "30px",
           backgroundColor: "rgba(255, 255, 255, 1)",
           overflow: "hidden",
-        }}
-      >
+        }}>
         <Box
           component="video"
           src="/vid/InnovationLab.mp4"
@@ -70,7 +145,7 @@ export const VedamInovationLab = () => {
             borderRadius: "30px",
           }}
         />
-      </Box>
+      </Box> */}
 
       {/* Infinite Carousel Section */}
       <Box
@@ -83,8 +158,7 @@ export const VedamInovationLab = () => {
           "&:hover div": { animationPlayState: "paused" },
           marginTop: "33px",
           height: "200px",
-        }}
-      >
+        }}>
         <Box
           sx={{
             display: "flex",
@@ -96,8 +170,7 @@ export const VedamInovationLab = () => {
               "0%": { transform: "translateX(0%)" },
               "100%": { transform: "translateX(-50%)" },
             },
-          }}
-        >
+          }}>
           {[...innovationImages, ...innovationImages].map((image, index) => (
             <Box
               key={index}
@@ -161,8 +234,7 @@ export const VedamInovationLab = () => {
             borderRadius: "20px",
             display: "flex",
             flexDirection: "column",
-          }}
-        >
+          }}>
           <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
             <IconButton onClick={handleCloseModal}>
               <CloseIcon />
