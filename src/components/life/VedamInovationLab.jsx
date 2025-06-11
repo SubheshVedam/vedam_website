@@ -81,7 +81,7 @@ export const VedamInovationLab = () => {
           <Box
             onClick={() => {
               setVideoUrl1(
-                "https://www.youtube.com/embed/zHquRUSxP8o?autoplay=1&si=MjqF-PfmelA2too8"
+                "https://www.youtube.com/embed/eq8HnUDuN0E?autoplay=1&si=0"
               );
               setShowIframe1(true);
             }}
@@ -90,14 +90,18 @@ export const VedamInovationLab = () => {
               width: "100%",
               height: "100%",
               position: "relative",
+              display: 'flex'
               // borderRadius: "16px",
             }}>
             <Image
-              src="/img/video_thumbnail.jpg"
+              src="/img/VideothumbnaillifeVST.jpg"
               alt="Video thumbnail"
-              fill
+              width={800}
+              height={800}
               style={{
-                objectFit: "contain",
+                width: '100%',
+                height: '100%',
+                objectFit: "cover",
                 borderRadius: "16px",
               }}
             />
@@ -212,8 +216,7 @@ export const VedamInovationLab = () => {
           }}
           className="text-trim" // optional, for unsupported properties
         >
-          Vedam Innovation Lab is a cutting-edge incubator driving innovation in
-          AR/VR, AI & ML, IoT, Robotics, and Drones.
+          Vedam Innovation Zone: Engineering Tomorrow’s Tech Today
         </Typography>
       </Box>
 

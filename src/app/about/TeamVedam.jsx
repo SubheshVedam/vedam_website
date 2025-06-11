@@ -29,6 +29,7 @@ const TeamVedam = () => {
             sx={{
               borderBottom: "1px solid rgba(0, 0, 0, 0.3)",
               paddingBottom: { xs: "1rem", md: "2rem", lg: "2.5rem" },
+
             }}
           >
             <Typography
@@ -53,6 +54,7 @@ const TeamVedam = () => {
               display: "flex",
               flexDirection: "column",
               gap: { xs: "1rem", md: "2rem" },
+
             }}
           >
             {teamVedamScreenData.data.map((item) => (
@@ -66,11 +68,12 @@ const TeamVedam = () => {
                   justifyContent: "space-between",
                   width: "100%",
                   position: "relative",
+
                 }}
               >
                 <Box
                   sx={{
-                    flex: "0 0 40%",
+                    flex: { xs: "0 0 40%", xl: "0 0 37%" },
                     borderTopLeftRadius: "20px",
                     borderBottomLeftRadius: "20px",
                     height: {
@@ -83,13 +86,13 @@ const TeamVedam = () => {
                   <img
                     src={item.imageUrl}
                     alt="founder-image"
-                    style={{ objectFit: "fill",aspectRatio:'1.17/1',height:'100%' }}
+                    style={{ objectFit: "fill", aspectRatio: '1.17/1', height: '100%' }}
                     className="founderImage"
                   />
                 </Box>
                 <Box
                   sx={{
-                    flex: "0 0 60%",
+                    flex: { xs: "0 0 60%", xl: "0 0 63%" },
                     height: {
                       xs: "250px",
                       md: "324px",
@@ -116,6 +119,7 @@ const TeamVedam = () => {
                         md: "324px",
                         xl: "380px",
                       },
+
                     }}
                   >
                     <Typography
@@ -147,7 +151,7 @@ const TeamVedam = () => {
                         color: "#1F1F1F",
                         fontSize: { xs: "14px", md: "16px" },
                         lineHeight: "170%",
-                        fontWeight:'350',
+                        fontWeight: '350',
                         fontFamily: "Inter",
                         paddingBottom: { xs: "10px", md: "0px" },
                       }}
