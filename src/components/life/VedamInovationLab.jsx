@@ -101,8 +101,8 @@ export const VedamInovationLab = () => {
             <Image
               src="/img/VideothumbnaillifeVST.jpg"
               alt="Video thumbnail"
-              width={800}
-              height={800}
+              width={2000}
+              height={1200}
               style={{
                 width: "100%",
                 height: "100%",
