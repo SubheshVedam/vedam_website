@@ -1,5 +1,5 @@
-import { Box, Typography } from "@mui/material";
-import React, { Fragment } from "react";
+import { Box } from "@mui/material";
+import React from "react";
 import {
   CardContainer,
   // ClubsAtVst,
@@ -8,7 +8,7 @@ import {
   VideoWithText,
   WidthContainer,
 } from "@/components";
-import { lifeAtVedam, whyVedam } from "@/constants/data";
+import { lifeAtVedam } from "@/constants/data";
 import { ScrollComponent } from "@/components/life/ScrollComponent/ScrollComponent";
 import WhyVedam from "@/components/WhyVedam";
 
