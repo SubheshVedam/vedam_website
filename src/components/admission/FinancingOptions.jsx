@@ -6,32 +6,6 @@ import { VST_FinancingOptions } from "@/constants/data";
 export const FinancingOptions = () => {
   return (
     <Box sx={{ px: { xs: 2, md: 8 }, py: 6 }}>
-      {/* Heading */}
-      <Box>
-        <Typography
-          variant="h3"
-          sx={{
-            fontWeight: 700,
-            fontFamily: "Inter",
-            color: "#2B217F",
-            fontSize: { xs: "2rem", md: "3rem" },
-            lineHeight: 1.1,
-          }}>
-          Financing
-        </Typography>
-        <Typography
-          variant="h3"
-          sx={{
-            fontWeight: 700,
-            fontFamily: "Inter",
-            color: "#FF9000",
-            fontSize: { xs: "2rem", md: "3rem" },
-            lineHeight: 1.1,
-            mb: 2,
-          }}>
-          Options
-        </Typography>
-      </Box>
       {/* Description */}
       <Typography
         variant="subtitle1"
