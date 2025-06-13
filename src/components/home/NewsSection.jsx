@@ -12,9 +12,9 @@ const NewsSection = () => {
   const newsArticles = [
     {
       id: 1,
-      image: "/img/inTheNews/vedam_in_the_news_1.webp",
+      image: "/img/inTheNews/vedam_in_the_news_5.jpeg",
       alt: "News Article 1",
-      link: "https://www.businessworld.in/article/vedam-school-of-technology-acquires-algoprep-to-build-indias-first-ai-first-advanced-tech-curriculum-to-revolutionise-computer-science-engineering-for-the-jobs-of-2029-beyond-553613",
+      link: "https://timesofindia.indiatimes.com/spotlight/leading-ai-focused-computer-science-programme-in-india-inside-vedams-4-year-computer-science-undergraduate-program/articleshow/121819349.cms",
     },
     {
       id: 2,
