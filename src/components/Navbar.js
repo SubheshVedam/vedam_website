@@ -15,6 +15,7 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
+  Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { navLinks } from "@/constants/data";
@@ -124,11 +125,54 @@ export default function Navbar() {
                       textTransform: "none",
                       transition: "all 0.3s ease-in-out",
                       fontFamily: "Inter",
+                      zIndex: "1",
                       "&:hover": activeStyle,
                       ...(isActive(link.path) && activeStyle),
                     }}
                   >
                     {link.label}
+                    {link.img && (
+                      <Box
+                        sx={{
+                          display: { xs: "none", lg: "block" },
+                        }}
+                      >
+                        <Typography
+                          sx={{
+                            fontFamily: "Inter",
+                            fontSize: "0.5rem",
+                            fontStyle: "italic",
+                            fontWeight: 600,
+                            lineHeight: "1.75rem",
+                            background:
+                              "linear-gradient(90deg, #FF7829 0%, #7B2CBF 100%)",
+                            WebkitBackgroundClip: "text",
+                            WebkitTextFillColor: "transparent",
+                            backgroundClip: "text",
+                            color: "transparent",
+                            position: "absolute",
+                            top: "-42%",
+                            right: "13%",
+                            zIndex: " 4",
+                          }}
+                        >
+                          New
+                        </Typography>
+                        <Image
+                          src={link.img}
+                          alt=""
+                          width={25}
+                          height={35}
+                          style={{
+                            zIndex: "2",
+                            position: "absolute",
+                            right: -1,
+                            top: "49%",
+                            transform: "translateY(-50%)",
+                          }}
+                        />
+                      </Box>
+                    )}
                   </Button>
                 </Link>
               ))}
@@ -199,7 +243,12 @@ export default function Navbar() {
           </Toolbar>
 
           {/* Drawer for Mobile Navigation */}
-          <Drawer anchor="right" open={mobileOpen} onClose={handleDrawerToggle} sx={{zIndex:11111}}>
+          <Drawer
+            anchor="right"
+            open={mobileOpen}
+            onClose={handleDrawerToggle}
+            sx={{ zIndex: 11111 }}
+          >
             <List sx={{ width: "250px" }}>
               {navLinks.map((link, index) => (
                 <ListItem

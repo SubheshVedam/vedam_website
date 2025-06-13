@@ -169,7 +169,7 @@ export const detailsData = [
 export const navLinks = [
   { label: "Home", path: "/home" },
   { label: "Admission & Fees", path: "/admission" },
-  { label: "Life @ Vedam", path: "/life" },
+  { label: "Life @ Vedam", path: "/life", img: "/img/Group 1261155759.svg" },
   { label: "FAQs", path: "/faqs" },
   { label: "About Us", path: "/about" },
   { label: "Register Now", path: "https://apply.vedam.org/" }, //Don't reorder register
@@ -1034,8 +1034,7 @@ export const lifeAtVedam = {
   },
   Vc: {
     title: "VC Fund Linkage",
-    subtitle:
-      "Get upto 1 Cr of Funding.",
+    subtitle: "Get upto 1 Cr of Funding.",
     icon1: "/img/innovation_lab/scroll_component/Vc.png",
     icon2: "/img/innovation_lab/scroll_component/vr.png",
   },
