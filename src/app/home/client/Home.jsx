@@ -7,6 +7,7 @@ import {
   InCollaborationWith,
   InvestorWhoTrustUs,
   LearnFrom,
+  VedamInovationLab,
   VedamVs,
   VideoWithText,
   WhatPeople,
@@ -14,6 +15,7 @@ import {
 } from "@/components";
 import WhyVedam from "@/components/WhyVedam";
 import NewsSection from "@/components/home/NewsSection";
+import { VSTHome } from "@/components/life/VSTHome";
 import { homeScreenData } from "@/constants/data";
 import { Box, useMediaQuery, useTheme } from "@mui/material";
 import Image from "next/image";
@@ -49,6 +51,12 @@ const Home = () => {
             flexDirection: "column",
           }}
         >
+          <CardContainer
+            subtitle={"Vedam School of Technology"}
+          >
+            <VSTHome />
+
+          </CardContainer>
           <CardContainer
             title={homeScreenData.inCollaborationWith.title}
             subtitle={homeScreenData.inCollaborationWith.subtitle}
@@ -254,7 +262,7 @@ const Home = () => {
           <CardContainer subtitle={homeScreenData.investorWhoTrustUs.subtitle}>
             <InvestorWhoTrustUs />
           </CardContainer>
-          { <NewsSection /> }
+          {<NewsSection />}
         </WidthContainer>
       </Box>
     </Fragment>

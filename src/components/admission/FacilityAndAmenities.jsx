@@ -2,7 +2,7 @@ import { admissionScreenData } from "@/constants/data";
 import { Box, Typography } from "@mui/material";
 import React from "react";
 
-export const FacilityAndAmenities = () => {
+export const FacilityAndAmenities = ({ isV2 }) => {
   return (
     <Box>
       <Box
@@ -12,7 +12,7 @@ export const FacilityAndAmenities = () => {
           paddingTop: "56.25%", // 16:9 Aspect Ratio
           borderRadius: "20px",
           overflow: "hidden",
-          marginBottom: "20px",
+          marginBottom: isV2 ? 0 : "20px",
         }}
       >
         <Box
@@ -25,7 +25,7 @@ export const FacilityAndAmenities = () => {
           }}
         >
           <iframe
-            src="https://www.youtube.com/embed/R9moRoww1s4"
+            src={isV2 ? "https://www.youtube.com/embed/iWm442DPj1A" : "https://www.youtube.com/embed/R9moRoww1s4"}
             style={{
               width: "100%",
               height: "100%",
@@ -35,7 +35,7 @@ export const FacilityAndAmenities = () => {
             allowFullScreen
           />
         </Box>
-        <Box
+        {!isV2 && <Box
           sx={{
             position: "absolute",
             bottom: 0,
@@ -70,9 +70,9 @@ export const FacilityAndAmenities = () => {
           >
             {admissionScreenData.facilityAndAmenities.subtitleDescription}
           </Typography>
-        </Box>
+        </Box>}
       </Box>
-      <Box
+      {!isV2 && <Box
         sx={{
           display: "flex",
           gap: "20px",
@@ -89,7 +89,7 @@ export const FacilityAndAmenities = () => {
             style={{ width: "100%", height: "126px" }}
           />
         ))}
-      </Box>
+      </Box>}
     </Box>
   );
 };

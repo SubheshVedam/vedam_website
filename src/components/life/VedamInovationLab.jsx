@@ -7,19 +7,16 @@ import {
   IconButton,
   useMediaQuery,
 } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
 import { useTheme } from "@mui/material/styles";
 import Image from "next/image";
 
 export const VedamInovationLab = () => {
-  const [open, setOpen] = useState(false);
   const [showIframe, setShowIframe] = useState(false);
   const [videoUrl, setVideoUrl] = useState("");
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const isLarge = useMediaQuery(theme.breakpoints.up("lg"));
 
-  const handleCloseModal = () => setOpen(false);
 
   const innovationImages = [
     "/img/innovation_lab/image4.jpg",
@@ -133,29 +130,6 @@ export const VedamInovationLab = () => {
         )}
       </Box>
 
-      {/* <Box
-        sx={{
-          height: "464px",
-          borderRadius: "30px",
-          backgroundColor: "rgba(255, 255, 255, 1)",
-          overflow: "hidden",
-        }}>
-        <Box
-          component="video"
-          src="/vid/InnovationLab.mp4"
-          alt="innovation"
-          autoPlay
-          muted
-          loop
-          sx={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            borderRadius: "30px",
-          }}
-        />
-      </Box> */}
-
       {/* Infinite Carousel Section */}
       <Box
         sx={{
@@ -225,37 +199,6 @@ export const VedamInovationLab = () => {
         </Typography>
       </Box>
 
-      {/* PDF Modal */}
-      <Modal open={open} onClose={handleCloseModal}>
-        <Box
-          sx={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: "90%",
-            maxWidth: "1000px",
-            height: "90%",
-            bgcolor: "background.paper",
-            boxShadow: 24,
-            p: 2,
-            borderRadius: "20px",
-            display: "flex",
-            flexDirection: "column",
-          }}>
-          <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
-            <IconButton onClick={handleCloseModal}>
-              <CloseIcon />
-            </IconButton>
-          </Box>
-          <iframe
-            src="https://drive.google.com/file/d/1lRieByQU9y267-hCOJi2R8eJROpwHEGQ/preview"
-            title="Vedam Lab PDF"
-            style={{ flexGrow: 1, border: "none", borderRadius: "10px" }}
-            allow="autoplay"
-          />
-        </Box>
-      </Modal>
     </Box>
   );
 };
