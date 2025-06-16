@@ -1,10 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   Box,
   Typography,
-  Modal,
-  IconButton,
   useMediaQuery,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
@@ -17,12 +15,55 @@ export const VedamInovationLab = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const isLarge = useMediaQuery(theme.breakpoints.up("lg"));
 
+  // Carousel refs and state
+  const carouselRef = useRef(null);
+  const [isPaused, setIsPaused] = useState(false);
+  const currentTranslateRef = useRef(0);
+  const animationIdRef = useRef(null);
 
   const innovationImages = [
     "/img/innovation_lab/image4.jpg",
     "/img/innovation_lab/image2.jpg",
     "/img/innovation_lab/innovation_lab_7.jpeg",
   ];
+
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    if (!carousel) return;
+
+    const speed = 0.8; // pixels per frame
+    const itemWidth = 280 + 24; // width + gap
+    const totalItems = innovationImages.length;
+    const resetPoint = -(itemWidth * totalItems);
+
+    const animate = () => {
+      if (!isPaused) {
+        currentTranslateRef.current -= speed;
+
+        // Reset position when we've moved exactly one set of images
+        if (currentTranslateRef.current <= resetPoint) {
+          currentTranslateRef.current = 0;
+        }
+      }
+
+      // Always update the transform, whether paused or not
+      carousel.style.transform = `translateX(${currentTranslateRef.current}px)`;
+      animationIdRef.current = requestAnimationFrame(animate);
+    };
+
+    // Cancel any existing animation before starting a new one
+    if (animationIdRef.current) {
+      cancelAnimationFrame(animationIdRef.current);
+    }
+
+    animationIdRef.current = requestAnimationFrame(animate);
+
+    return () => {
+      if (animationIdRef.current) {
+        cancelAnimationFrame(animationIdRef.current);
+      }
+    };
+  }, [isPaused, innovationImages.length]);
 
   return (
     <Box sx={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
@@ -53,15 +94,10 @@ export const VedamInovationLab = () => {
       <Box
         sx={{
           display: "flex",
-          // position: "relative",
           width: "auto",
-          // height: isMobile ? "220px" : isLarge ? "680px" : "580px",
-          // height: "auto",
           height: isMobile ? "220px" : isLarge ? "565px" : "580px",
-
           borderRadius: "16px",
           overflow: "hidden",
-          borderRadius: "16px",
         }}>
         {showIframe ? (
           <iframe
@@ -93,7 +129,6 @@ export const VedamInovationLab = () => {
               position: "relative",
               display: "flex",
               alignItems: "center",
-              // borderRadius: "16px",
             }}>
             <Image
               src="/img/VideothumbnaillifeVST.jpg"
@@ -138,23 +173,23 @@ export const VedamInovationLab = () => {
           "&::-webkit-scrollbar": { display: "none" },
           scrollbarWidth: "none",
           position: "relative",
-          "&:hover div": { animationPlayState: "paused" },
           marginTop: "33px",
           height: "200px",
-        }}>
+        }}
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
         <Box
+          ref={carouselRef}
           sx={{
             display: "flex",
             flexDirection: "row",
             gap: "24px",
             flexWrap: "nowrap",
-            animation: "scroll 15s linear infinite",
-            "@keyframes scroll": {
-              "0%": { transform: "translateX(0%)" },
-              "100%": { transform: "translateX(-50%)" },
-            },
+            willChange: "transform",
           }}>
-          {[...innovationImages, ...innovationImages].map((image, index) => (
+          {/* Triple the images for seamless loop */}
+          {[...innovationImages, ...innovationImages, ...innovationImages].map((image, index) => (
             <Box
               key={index}
               sx={{
@@ -177,7 +212,6 @@ export const VedamInovationLab = () => {
         <Typography
           sx={{
             mt: 2,
-            // color: '#5E00AF',
             color: {
               xs: "white",
               sm: "#5E00AF",
@@ -193,12 +227,11 @@ export const VedamInovationLab = () => {
             lineHeight: "31px",
             letterSpacing: "-0.72px",
           }}
-          className="text-trim" // optional, for unsupported properties
+          className="text-trim"
         >
-          Vedam Innovation Zone: Engineering Tomorrow’s Tech Today
+          Vedam Innovation Zone: Engineering Tomorrow's Tech Today
         </Typography>
       </Box>
-
     </Box>
   );
 };
