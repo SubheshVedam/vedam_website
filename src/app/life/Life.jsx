@@ -13,6 +13,7 @@ import {
 import { lifeAtVedam } from "@/constants/data";
 import { ScrollComponent } from "@/components/life/ScrollComponent/ScrollComponent";
 import WhyVedam from "@/components/WhyVedam";
+import Clubs from "@/components/Clubs"
 
 const clubsatVST = lifeAtVedam.clubsatVedam.data;
 
@@ -38,7 +39,8 @@ const Life = () => {
       <Box
         sx={{
           background:
-            "linear-gradient(180deg, #155A5D 0.26%, #ADF0F7 87.18%, #FFF 98.95%)",
+            "linear-gradient(180deg, #155A5D 0.06%, #ADF0F7 33.99%, #E2FDFF 65.97%, #FFF 98.95%)",
+          //background: linear-gradient(180deg, #155A5D 0.06%, #ADF0F7 33.99%, #E2FDFF 65.97%, #FFF 98.95%);
           width: "100%",
           display: "flex",
           justifyContent: "center",
@@ -80,7 +82,7 @@ const Life = () => {
           <EdgeAtVedam />
         </CardContainer>
         <CardContainer subtitle={lifeAtVedam.clubsatVedam.subtitle}>
-          <WhyVedam data={clubsatVST} />
+          <Clubs data={clubsatVST} />
         </CardContainer>
       </WidthContainer>
     </Box>

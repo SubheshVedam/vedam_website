@@ -69,7 +69,7 @@ export const ClubsAtVst = () => {
           mt: "-20px",
         }}
       >
-        <ArrowDownwardIcon sx={{color:'#6C10BC'}} />
+        <ArrowDownwardIcon sx={{ color: '#6C10BC' }} />
       </IconButton>
     );
   };
@@ -93,7 +93,7 @@ export const ClubsAtVst = () => {
           mt: "-20px",
         }}
       >
-        <ArrowUpwardIcon sx={{color:'#6C10BC',zIndex:100}} />
+        <ArrowUpwardIcon sx={{ color: '#6C10BC', zIndex: 100 }} />
       </IconButton>
     );
   };
@@ -198,6 +198,7 @@ export const ClubsAtVst = () => {
                 sx={{
                   width: "100%",
                   padding: "20px 0px",
+                  // borderRadius: 
                   margin: "1.5rem 0",
                 }}
               >

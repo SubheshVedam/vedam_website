@@ -35,7 +35,7 @@ const WhyVedam = ({ data }) => {
               height: "100%",
               top: 0,
               left: 0,
-              borderRadius: 2,
+              borderRadius: "16px",
             }}
           />
           <DetailsCard
@@ -65,7 +65,7 @@ const WhyVedam = ({ data }) => {
               height: "100%",
               top: 0,
               left: 0,
-              borderRadius: 2,
+              borderRadius: "16px",
             }}
           />
           <DetailsCard
@@ -74,7 +74,7 @@ const WhyVedam = ({ data }) => {
             description={item.description}
             title={item.title}
             isFeatured={item.isFeatured}
-            sx={{ position: "relative", zIndex: 2 }}
+            sx={{ position: "relative", zIndex: 2, }}
           />
         </Box>
       ))}
