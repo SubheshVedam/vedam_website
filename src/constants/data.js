@@ -728,6 +728,60 @@ export const homeScreenData = {
       },
     ],
   },
+  intheHeadlines: {
+    title: "In The Headlines",
+    subtitle: "In The Headlines",
+    data: [
+      {
+        id: 1,
+        image: "/img/inTheNews/vedam_in_the_news_5.jpeg",
+        alt: "News Article 1",
+        link: "https://timesofindia.indiatimes.com/spotlight/leading-ai-focused-computer-science-programme-in-india-inside-vedams-4-year-computer-science-undergraduate-program/articleshow/121819349.cms",
+      },
+      {
+        id: 2,
+        image: "/img/inTheNews/vedam_in_the_news_2.webp",
+        alt: "News Article 2",
+        link: "https://www.edtechreview.in/news/vedam-school-of-technology-aims-to-transform-computer-science-education-in-india/",
+      },
+      {
+        id: 3,
+        image: "/img/inTheNews/vedam_in_the_news_3.webp",
+        alt: "News Article 3",
+        link: "https://educationmatters.in/2025/02/vedam-school-of-technology-set-to-revolutionize-computer-science-education-in-india/",
+      },
+      {
+        id: 4,
+        image: "/img/inTheNews/vedam_in_the_news_4.webp",
+        alt: "News Article 4",
+        link: "https://government.economictimes.indiatimes.com/news/education/vedam-school-of-technology-acquires-algoprep-to-build-indias-first-ai-native-tech-curriculum/120303273?utm_source=latest_news&utm_medium=homepage",
+      },
+      {
+        id: 5,
+        image: "/img/inTheNews/vedam_in_the_news_5.jpeg",
+        alt: "News Article 5",
+        link: "https://timesofindia.indiatimes.com/spotlight/leading-ai-focused-computer-science-programme-in-india-inside-vedams-4-year-computer-science-undergraduate-program/articleshow/121819349.cms",
+      },
+      {
+        id: 6,
+        image: "/img/inTheNews/vedam_in_the_news_2.webp",
+        alt: "News Article 6",
+        link: "https://www.edtechreview.in/news/vedam-school-of-technology-aims-to-transform-computer-science-education-in-india/",
+      },
+      {
+        id: 7,
+        image: "/img/inTheNews/vedam_in_the_news_3.webp",
+        alt: "News Article 7",
+        link: "https://educationmatters.in/2025/02/vedam-school-of-technology-set-to-revolutionize-computer-science-education-in-india/",
+      },
+      {
+        id: 8,
+        image: "/img/inTheNews/vedam_in_the_news_4.webp",
+        alt: "News Article 8",
+        link: "https://government.economictimes.indiatimes.com/news/education/vedam-school-of-technology-acquires-algoprep-to-build-indias-first-ai-native-tech-curriculum/120303273?utm_source=latest_news&utm_medium=homepage",
+      },
+    ],
+  },
 };
 
 export const admissionScreenData = {

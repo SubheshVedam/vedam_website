@@ -1,115 +1,67 @@
 'use client'
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Box, IconButton } from '@mui/material';
 import Image from 'next/image';
-import { CardContainer, WidthContainer } from '@/components';
+import { WidthContainer } from '@/components';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import { homeScreenData } from '@/constants/data';
 
 const NewsSection = () => {
   const scrollContainerRef = useRef(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
 
-  const scrollLeft = () => {
+  const { intheHeadlines } = homeScreenData;
+
+  const updateScrollButtons = () => {
     if (scrollContainerRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+      setCanScrollLeft(scrollLeft > 5);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 5);
+    }
+  };
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      updateScrollButtons();
+      container.addEventListener('scroll', updateScrollButtons);
+      return () => container.removeEventListener('scroll', updateScrollButtons);
+    }
+  }, []);
+
+  const scroll = (direction) => {
+    if (scrollContainerRef.current) {
+      const cardWidth = scrollContainerRef.current.children[0]?.offsetWidth || 300;
+      const scrollAmount = cardWidth + 20; // card width + gap
+
       scrollContainerRef.current.scrollBy({
-        left: -300, // Adjust scroll amount as needed
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
         behavior: 'smooth',
       });
     }
   };
 
-  const scrollRight = () => {
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({
-        left: 300, // Adjust scroll amount as needed
-        behavior: 'smooth',
-      });
-    }
-  };
-
-  const newsArticles = [
-    {
-      id: 1,
-      image: "/img/inTheNews/vedam_in_the_news_5.jpeg",
-      alt: "News Article 1",
-      link: "https://timesofindia.indiatimes.com/spotlight/leading-ai-focused-computer-science-programme-in-india-inside-vedams-4-year-computer-science-undergraduate-program/articleshow/121819349.cms",
-    },
-    {
-      id: 2,
-      image: "/img/inTheNews/vedam_in_the_news_2.webp",
-      alt: "News Article 2",
-      link: "https://www.edtechreview.in/news/vedam-school-of-technology-aims-to-transform-computer-science-education-in-india/",
-    },
-    {
-      id: 3,
-      image: "/img/inTheNews/vedam_in_the_news_3.webp",
-      alt: "News Article 3",
-      link: "https://educationmatters.in/2025/02/vedam-school-of-technology-set-to-revolutionize-computer-science-education-in-india/",
-    },
-    {
-      id: 4,
-      image: "/img/inTheNews/vedam_in_the_news_4.webp",
-      alt: "News Article 4",
-      link: "https://government.economictimes.indiatimes.com/news/education/vedam-school-of-technology-acquires-algoprep-to-build-indias-first-ai-native-tech-curriculum/120303273?utm_source=latest_news&utm_medium=homepage",
-    },
-    {
-      id: 5,
-      image: "/img/inTheNews/vedam_in_the_news_5.jpeg",
-      alt: "News Article 5",
-      link: "https://timesofindia.indiatimes.com/spotlight/leading-ai-focused-computer-science-programme-in-india-inside-vedams-4-year-computer-science-undergraduate-program/articleshow/121819349.cms",
-    },
-    {
-      id: 6,
-      image: "/img/inTheNews/vedam_in_the_news_2.webp",
-      alt: "News Article 6",
-      link: "https://www.edtechreview.in/news/vedam-school-of-technology-aims-to-transform-computer-science-education-in-india/",
-    },
-    {
-      id: 7,
-      image: "/img/inTheNews/vedam_in_the_news_3.webp",
-      alt: "News Article 7",
-      link: "https://educationmatters.in/2025/02/vedam-school-of-technology-set-to-revolutionize-computer-science-education-in-india/",
-    },
-    {
-      id: 8,
-      image: "/img/inTheNews/vedam_in_the_news_4.webp",
-      alt: "News Article 8",
-      link: "https://government.economictimes.indiatimes.com/news/education/vedam-school-of-technology-acquires-algoprep-to-build-indias-first-ai-native-tech-curriculum/120303273?utm_source=latest_news&utm_medium=homepage",
-    },
-  ];
+  if (!intheHeadlines?.data?.length) return null;
 
   return (
-    // <WidthContainer sx={{
-    //   // padding: '0px'
-    // }}>
-    <CardContainer
-      sx={{
-        // padding: "0px"
-      }}
-      subtitle="In the Headlines"
-      linearGradientSubtitle="linear-gradient(90deg, #FB7F05 0%, #6C10BC 100%)"
-    >
-      <Box sx={{
-        position: 'relative',
-        // padding: "0px" 
-      }}>
+    <WidthContainer>
+      <Box sx={{ position: 'relative' }}>
         {/* Left Arrow */}
         <IconButton
-          onClick={scrollLeft}
+          onClick={() => scroll('left')}
+          disabled={!canScrollLeft}
           sx={{
             position: 'absolute',
-            left: 0,
+            left: '-1rem',
             top: '50%',
-            // padding: "0px",
             transform: 'translateY(-50%)',
             zIndex: 100,
-            opacity: 0.8,
+            opacity: canScrollLeft ? 0.9 : 0.3,
             backgroundColor: 'background.paper',
-            '&:hover': {
-              backgroundColor: 'background.paper',
-              opacity: 1,
-            },
+            boxShadow: 2,
           }}
         >
           <ChevronLeftIcon />
@@ -120,46 +72,39 @@ const NewsSection = () => {
           ref={scrollContainerRef}
           sx={{
             display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'flex-start',
-            gap: '1.2rem',
+            gap: '1.25rem',
             overflowX: 'auto',
             '&::-webkit-scrollbar': { display: 'none' },
             scrollbarWidth: 'none',
-            paddingLeft: '40px', // Reduced left padding
-            paddingRight: '50px',
+            pl: { xs: '1rem', md: '2rem', lg: '2.5rem' },
+            pr: { xs: '1rem', md: '2rem', lg: '2.5rem' },
+            py: 1,
           }}
         >
-          {newsArticles.map((article) => (
+          {intheHeadlines.data.map((headline, index) => (
             <Link
-              key={article.id}
-              href={article.link}
+              key={headline.id || index}
+              href={headline.link}
               target="_blank"
               rel="noopener noreferrer"
+              style={{ textDecoration: 'none', flexShrink: 0 }}
             >
               <Box
                 sx={{
-                  flex: '0 0 auto',
-                  width: '300px', // Slightly increased width
-                  height: '350px', // Increased height significantly
-                  borderRadius: '8px',
+                  width: { xs: '75vw', sm: '18.75rem' },
+                  height: '19rem',
+                  borderRadius: 2,
                   overflow: 'hidden',
-                  boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+                  boxShadow: '0 4px 4px rgba(149, 157, 165, 0.2)',
                   position: 'relative',
-                  transition: 'transform 0.3s ease',
-                  '&:hover': {
-                    transform: 'scale(1.03)',
-                  },
                 }}
               >
                 <Image
-                  src={article.image}
-                  alt={article.alt}
+                  src={headline.image}
+                  alt={headline.alt || `News ${index + 1}`}
                   fill
-                  style={{
-                    objectFit: 'cover',
-                  }}
-                  sizes="300px"
+                  style={{ objectFit: '' }}
+                  sizes="(max-width: 600px) 75vw, 300px"
                 />
               </Box>
             </Link>
@@ -168,26 +113,23 @@ const NewsSection = () => {
 
         {/* Right Arrow */}
         <IconButton
-          onClick={scrollRight}
+          onClick={() => scroll('right')}
+          disabled={!canScrollRight}
           sx={{
             position: 'absolute',
-            right: 0,
+            right: '-1rem',
             top: '50%',
             transform: 'translateY(-50%)',
             zIndex: 100,
-            opacity: 0.8,
+            opacity: canScrollRight ? 0.9 : 0.3,
             backgroundColor: 'background.paper',
-            '&:hover': {
-              backgroundColor: 'background.paper',
-              opacity: 1,
-            },
+            boxShadow: 2,
           }}
         >
           <ChevronRightIcon />
         </IconButton>
       </Box>
-    </CardContainer>
-    // </WidthContainer>
+    </WidthContainer>
   );
 };
 

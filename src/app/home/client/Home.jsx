@@ -262,7 +262,11 @@ const Home = () => {
           <CardContainer subtitle={homeScreenData.investorWhoTrustUs.subtitle}>
             <InvestorWhoTrustUs />
           </CardContainer>
-          {<NewsSection />}
+
+          <CardContainer subtitle={homeScreenData.intheHeadlines.subtitle}>
+            <NewsSection />
+          </CardContainer>
+
         </WidthContainer>
       </Box>
     </Fragment>
