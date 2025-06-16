@@ -1,10 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
     Box,
     Typography,
-    Modal,
-    IconButton,
     useMediaQuery,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
@@ -17,6 +15,11 @@ export const VSTHome = () => {
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
     const isLarge = useMediaQuery(theme.breakpoints.up("lg"));
 
+    // Carousel refs and state
+    const carouselRef = useRef(null);
+    const [isPaused, setIsPaused] = useState(false);
+    const currentTranslateRef = useRef(0);
+    const animationIdRef = useRef(null);
 
     const innovationImages = [
         "/img/vst_home/Image_1.jpg",
@@ -24,6 +27,44 @@ export const VSTHome = () => {
         "/img/vst_home/Image_3.jpg",
         "/img/vst_home/Image_4.jpg",
     ];
+
+    useEffect(() => {
+        const carousel = carouselRef.current;
+        if (!carousel) return;
+
+        const speed = 0.8; // pixels per frame
+        const itemWidth = 280 + 24; // width + gap
+        const totalItems = innovationImages.length;
+        const resetPoint = -(itemWidth * totalItems);
+
+        const animate = () => {
+            if (!isPaused) {
+                currentTranslateRef.current -= speed;
+
+                // Reset position when we've moved exactly one set of images
+                if (currentTranslateRef.current <= resetPoint) {
+                    currentTranslateRef.current = 0;
+                }
+            }
+
+            // Always update the transform, whether paused or not
+            carousel.style.transform = `translateX(${currentTranslateRef.current}px)`;
+            animationIdRef.current = requestAnimationFrame(animate);
+        };
+
+        // Cancel any existing animation before starting a new one
+        if (animationIdRef.current) {
+            cancelAnimationFrame(animationIdRef.current);
+        }
+
+        animationIdRef.current = requestAnimationFrame(animate);
+
+        return () => {
+            if (animationIdRef.current) {
+                cancelAnimationFrame(animationIdRef.current);
+            }
+        };
+    }, [isPaused, innovationImages.length]);
 
     return (
         <Box sx={{ display: "flex", flexDirection: "column", gap: "1rem", m: 0 }}>
@@ -139,23 +180,23 @@ export const VSTHome = () => {
                     "&::-webkit-scrollbar": { display: "none" },
                     scrollbarWidth: "none",
                     position: "relative",
-                    "&:hover div": { animationPlayState: "paused" },
                     marginTop: "33px",
                     height: "200px",
-                }}>
+                }}
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={() => setIsPaused(false)}
+            >
                 <Box
+                    ref={carouselRef}
                     sx={{
                         display: "flex",
                         flexDirection: "row",
                         gap: "24px",
                         flexWrap: "nowrap",
-                        animation: "scroll 15s linear infinite",
-                        "@keyframes scroll": {
-                            "0%": { transform: "translateX(0%)" },
-                            "100%": { transform: "translateX(-50%)" },
-                        },
+                        willChange: "transform",
                     }}>
-                    {[...innovationImages, ...innovationImages].map((image, index) => (
+                    {/* Triple the images for seamless loop */}
+                    {[...innovationImages, ...innovationImages, ...innovationImages].map((image, index) => (
                         <Box
                             key={index}
                             sx={{
@@ -173,7 +214,6 @@ export const VSTHome = () => {
                     ))}
                 </Box>
             </Box>
-
         </Box>
     );
 };
