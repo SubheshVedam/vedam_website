@@ -1133,10 +1133,10 @@ export const lifeAtVedam = {
           "Contribute to open-source projects, collaborate with developers, and gain real-world coding experience in our Open Source Club.",
       },
       {
-        bgImage: "/img/clubsatVedam/Sports_Club_N.jpeg",
-        title: "Sports Club",
+        bgImage: "/img/clubsatVedam/Esports_Club_N.jpeg",
+        title: "ESports Club",
         description:
-          "Stay active and competitive in our Sports Club! Participate in various sports, tournaments, and activities to enhance teamwork and skills.",
+          "Join our ESports Club and compete in gaming tournaments, enhance strategic thinking, and connect with passionate gamers.",
       },
     ],
   },
