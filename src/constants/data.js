@@ -812,7 +812,7 @@ export const admissionScreenData = {
     ],
     secondArray: [
       "18th June 2025",
-      "17th June 2025",
+      "18th June 2025",
       "Within 3 Days of the Exam",
       "Within 10 Days of the Exam",
       "Within 20 Days of the Exam, If selected",
@@ -834,7 +834,7 @@ export const admissionScreenData = {
         title: "Apply Online",
         subtitle:
           "Complete your profile and reserve your slot for the Vedam Scholastic Aptitude Test (VSAT).",
-        subtitle1: "Last Date to Register is 17th June 2025",
+        subtitle1: "Last Date to Register is 18th June 2025",
         showButton: true,
       },
       {
