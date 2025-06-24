@@ -340,6 +340,259 @@ export const FeeStructure = () => {
         flexDirection: "column",
       }}>
       {/* Hostel Fees Section */}
+
+
+
+      <Typography sx={{
+        fontSize: {
+          xs: "1rem",
+          md: "1.2rem",
+        }, color: 'rgba(146, 62, 218, 1)',
+        mb: 2
+      }}>YourSpace Hostel [Out of Campus]</Typography>
+      {/* Out Hostel Fees Section */}
+      <Box
+        sx={{
+          width: "100%",
+          overflowX: { xs: "visible", md: "visible" },
+          WebkitOverflowScrolling: "touch",
+          "&::-webkit-scrollbar": { display: "none" },
+          borderRadius: "23px",
+          p: "2px",
+          background: "linear-gradient(90deg, #6513AC 0%, #FF7829 100%)",
+          mb: 2,
+        }}>
+        {/* Desktop Hostel Table */}
+        <Box
+          sx={{
+            padding: "10px",
+            borderRadius: "22px",
+            backgroundColor: "#fff",
+          }}>
+          <Box
+            sx={{
+              display: "block",
+              overflowX: 'auto', borderRadius: "22px",
+              border: "1px solid rgba(186, 107, 255, 0.3)",
+            }}>
+            <Table
+              sx={{
+                width: "100%",
+                backgroundColor: "rgba(186, 107, 255, 0.08)",
+                borderCollapse: "separate",
+                borderSpacing: 0,
+                borderRadius: "22px",
+              }}>
+              <TableHead>
+                <TableRow sx={{ background: "rgba(146, 62, 218, 1)" }}>
+                  <TableCell
+                    sx={{
+                      color: "white",
+                      textAlign: "center",
+                      borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                      borderBottom: "1px solid rgba(186, 107, 255, 0.3)",
+                    }}>
+                    Room Type
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      color: "white",
+                      textAlign: "center",
+                      borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                      borderBottom: "1px solid rgba(186, 107, 255, 0.3)",
+                    }}>
+                    3 Sharing Room
+                  </TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                <TableRow>
+                  <TableCell
+                    sx={{
+                      textAlign: "center",
+                      borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                    }}>
+                    Hostel Fee per Year
+                    [Accomodation + Mess + Laundry Charges]
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      textAlign: "center",
+                    }}>
+                    ₹2,24,000/-
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell
+                    sx={{
+                      textAlign: "center",
+                      borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                    }}>
+                    Security Deposit (Refundable)
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      textAlign: "center",
+                    }}>
+                    ₹10,000/-
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell
+                    sx={{
+                      textAlign: "center",
+                      borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                    }}>
+                    Room Features
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      textAlign: "center",
+                    }}>
+                    Attached Washroom, AC, high speed WiFi
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell
+                    sx={{
+                      textAlign: "center",
+                      borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                    }}>
+                    Applicable for
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      textAlign: "center",
+                    }}>
+                    Boys and Girls
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </Box>
+        </Box>
+      </Box>
+
+      {/* out Hostel Fee Notes */}
+      <Box
+        sx={{
+          width: "100%",
+          display: "flex",
+          flexDirection: "column",
+          backgroundColor: "rgba(186, 107, 255, 0.08)",
+          borderRadius: "12px",
+          padding: "1rem",
+          marginBottom: "20px",
+        }}>
+        <Box
+          sx={{
+            backgroundColor: "rgba(186, 107, 255, 0.2)",
+            padding: "0.5rem 1rem",
+            borderRadius: "8px",
+            width: "fit-content",
+            mb: 1,
+          }}>
+          <Typography
+            sx={{
+              color: "#7C3AED",
+              fontWeight: 600,
+              fontSize: "14px",
+            }}>
+            Note
+          </Typography>
+        </Box>
+
+        <Box component="ol" sx={{ pl: 2, mt: 1, mb: 0, listStyleType: 'decimal' }}>
+          <Typography
+            component="li"
+            variant="subtitle1"
+            sx={{
+              fontSize: { xs: 12, sm: 14 },
+              color: "#374151",
+              lineHeight: 1.6,
+              mb: 1,
+            }}>
+            <Box component="span" sx={{ fontWeight: 600 }}>Limited Availability:</Box> There are very few beds left in ADYPU hostel, which are getting allocated on a first come first serve basis
+          </Typography>
+          <Typography
+            component="li"
+            variant="subtitle1"
+            sx={{
+              fontSize: { xs: 12, sm: 14 },
+              color: "#374151",
+              lineHeight: 1.6,
+              mb: 1,
+            }}>
+            <Box component="span" sx={{ fontWeight: 600 }}>4-Sharing & 3-Sharing Rooms:</Box> Have common washroom and are non-AC. Applicable for both boys and girls
+          </Typography>
+          <Typography
+            component="li"
+            variant="subtitle1"
+            sx={{
+              fontSize: { xs: 12, sm: 14 },
+              color: "#374151",
+              lineHeight: 1.6,
+              mb: 1,
+            }}>
+            <Box component="span" sx={{ fontWeight: 600 }}>5-Sharing Rooms:</Box> Come with attached washroom and have AC. Applicable only for boys
+          </Typography>
+          <Typography
+            component="li"
+            variant="subtitle1"
+            sx={{
+              fontSize: { xs: 12, sm: 14 },
+              color: "#374151",
+              lineHeight: 1.6,
+              mb: 1,
+            }}>
+            <Box component="span" sx={{ fontWeight: 600 }}>Non-Refundable Fee:</Box> Hostel accommodation fee is non-refundable. Students will be charged for the entire year, even if vacating mid-year. Full year payment required for room booking
+          </Typography>
+          <Typography
+            component="li"
+            variant="subtitle1"
+            sx={{
+              fontSize: { xs: 12, sm: 14 },
+              color: "#374151",
+              lineHeight: 1.6,
+              mb: 1,
+            }}>
+            <Box component="span" sx={{ fontWeight: 600 }}>Fee Structure:</Box> Applicable for academic year 2025-26 and may increase by 7-10% annually from second year onwards due to inflation adjustment
+          </Typography>
+          <Typography
+            component="li"
+            variant="subtitle1"
+            sx={{
+              fontSize: { xs: 12, sm: 14 },
+              color: "#374151",
+              lineHeight: 1.6,
+            }}>
+            <Box component="span" sx={{ fontWeight: 600 }}>Booking Process:</Box> Contact Vedam team at{" "}
+            <Link
+              style={{
+                color: "#FFA41A",
+                fontSize: "inherit",
+                fontFamily: "Inter",
+                lineHeight: "150%",
+              }}
+              href="mailto:connect@vedam.org">
+              connect@vedam.org
+            </Link>{" "}
+            to check availability and proceed with booking
+          </Typography>
+          <Typography
+            component="li"
+            variant="subtitle1"
+            sx={{
+              fontSize: { xs: 12, sm: 14 },
+              color: "#374151",
+              lineHeight: 1.6,
+              mb: 1,
+            }}>
+            Electricity charges on actuals are applicable          </Typography>
+        </Box>
+      </Box>
+
+
       <Typography sx={{
         fontSize: {
           xs: "1rem",
@@ -613,255 +866,6 @@ export const FeeStructure = () => {
             }}>
             Electricity charges on actuals are applicable
           </Typography>
-        </Box>
-      </Box>
-
-      <Typography sx={{
-        fontSize: {
-          xs: "1rem",
-          md: "1.2rem",
-        }, color: 'rgba(146, 62, 218, 1)',
-        mb: 2
-      }}>YourSpace Hostel [Out of Campus]</Typography>
-      {/* Out Hostel Fees Section */}
-      <Box
-        sx={{
-          width: "100%",
-          overflowX: { xs: "visible", md: "visible" },
-          WebkitOverflowScrolling: "touch",
-          "&::-webkit-scrollbar": { display: "none" },
-          borderRadius: "23px",
-          p: "2px",
-          background: "linear-gradient(90deg, #6513AC 0%, #FF7829 100%)",
-          mb: 2,
-        }}>
-        {/* Desktop Hostel Table */}
-        <Box
-          sx={{
-            padding: "10px",
-            borderRadius: "22px",
-            backgroundColor: "#fff",
-          }}>
-          <Box
-            sx={{
-              display: "block",
-              overflowX: 'auto', borderRadius: "22px",
-              border: "1px solid rgba(186, 107, 255, 0.3)",
-            }}>
-            <Table
-              sx={{
-                width: "100%",
-                backgroundColor: "rgba(186, 107, 255, 0.08)",
-                borderCollapse: "separate",
-                borderSpacing: 0,
-                borderRadius: "22px",
-              }}>
-              <TableHead>
-                <TableRow sx={{ background: "rgba(146, 62, 218, 1)" }}>
-                  <TableCell
-                    sx={{
-                      color: "white",
-                      textAlign: "center",
-                      borderRight: "1px solid rgba(186, 107, 255, 0.3)",
-                      borderBottom: "1px solid rgba(186, 107, 255, 0.3)",
-                    }}>
-                    Room Type
-                  </TableCell>
-                  <TableCell
-                    sx={{
-                      color: "white",
-                      textAlign: "center",
-                      borderRight: "1px solid rgba(186, 107, 255, 0.3)",
-                      borderBottom: "1px solid rgba(186, 107, 255, 0.3)",
-                    }}>
-                    3 Sharing Room
-                  </TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                <TableRow>
-                  <TableCell
-                    sx={{
-                      textAlign: "center",
-                      borderRight: "1px solid rgba(186, 107, 255, 0.3)",
-                    }}>
-                    Hostel Fee per Year
-                    [Accomodation + Mess + Laundry Charges]
-                  </TableCell>
-                  <TableCell
-                    sx={{
-                      textAlign: "center",
-                    }}>
-                    ₹2,24,000/-
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell
-                    sx={{
-                      textAlign: "center",
-                      borderRight: "1px solid rgba(186, 107, 255, 0.3)",
-                    }}>
-                    Security Deposit (Refundable)
-                  </TableCell>
-                  <TableCell
-                    sx={{
-                      textAlign: "center",
-                    }}>
-                    ₹10,000/-
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell
-                    sx={{
-                      textAlign: "center",
-                      borderRight: "1px solid rgba(186, 107, 255, 0.3)",
-                    }}>
-                    Room Features
-                  </TableCell>
-                  <TableCell
-                    sx={{
-                      textAlign: "center",
-                    }}>
-                    Attached Washroom, AC, high speed WiFi
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell
-                    sx={{
-                      textAlign: "center",
-                      borderRight: "1px solid rgba(186, 107, 255, 0.3)",
-                    }}>
-                    Applicable for
-                  </TableCell>
-                  <TableCell
-                    sx={{
-                      textAlign: "center",
-                    }}>
-                    Boys and Girls
-                  </TableCell>
-                </TableRow>
-              </TableBody>
-            </Table>
-          </Box>
-        </Box>
-      </Box>
-
-      {/* out Hostel Fee Notes */}
-      <Box
-        sx={{
-          width: "100%",
-          display: "flex",
-          flexDirection: "column",
-          backgroundColor: "rgba(186, 107, 255, 0.08)",
-          borderRadius: "12px",
-          padding: "1rem",
-          marginBottom: "20px",
-        }}>
-        <Box
-          sx={{
-            backgroundColor: "rgba(186, 107, 255, 0.2)",
-            padding: "0.5rem 1rem",
-            borderRadius: "8px",
-            width: "fit-content",
-            mb: 1,
-          }}>
-          <Typography
-            sx={{
-              color: "#7C3AED",
-              fontWeight: 600,
-              fontSize: "14px",
-            }}>
-            Note
-          </Typography>
-        </Box>
-
-        <Box component="ol" sx={{ pl: 2, mt: 1, mb: 0, listStyleType: 'decimal' }}>
-          <Typography
-            component="li"
-            variant="subtitle1"
-            sx={{
-              fontSize: { xs: 12, sm: 14 },
-              color: "#374151",
-              lineHeight: 1.6,
-              mb: 1,
-            }}>
-            <Box component="span" sx={{ fontWeight: 600 }}>Limited Availability:</Box> There are very few beds left in ADYPU hostel, which are getting allocated on a first come first serve basis
-          </Typography>
-          <Typography
-            component="li"
-            variant="subtitle1"
-            sx={{
-              fontSize: { xs: 12, sm: 14 },
-              color: "#374151",
-              lineHeight: 1.6,
-              mb: 1,
-            }}>
-            <Box component="span" sx={{ fontWeight: 600 }}>4-Sharing & 3-Sharing Rooms:</Box> Have common washroom and are non-AC. Applicable for both boys and girls
-          </Typography>
-          <Typography
-            component="li"
-            variant="subtitle1"
-            sx={{
-              fontSize: { xs: 12, sm: 14 },
-              color: "#374151",
-              lineHeight: 1.6,
-              mb: 1,
-            }}>
-            <Box component="span" sx={{ fontWeight: 600 }}>5-Sharing Rooms:</Box> Come with attached washroom and have AC. Applicable only for boys
-          </Typography>
-          <Typography
-            component="li"
-            variant="subtitle1"
-            sx={{
-              fontSize: { xs: 12, sm: 14 },
-              color: "#374151",
-              lineHeight: 1.6,
-              mb: 1,
-            }}>
-            <Box component="span" sx={{ fontWeight: 600 }}>Non-Refundable Fee:</Box> Hostel accommodation fee is non-refundable. Students will be charged for the entire year, even if vacating mid-year. Full year payment required for room booking
-          </Typography>
-          <Typography
-            component="li"
-            variant="subtitle1"
-            sx={{
-              fontSize: { xs: 12, sm: 14 },
-              color: "#374151",
-              lineHeight: 1.6,
-              mb: 1,
-            }}>
-            <Box component="span" sx={{ fontWeight: 600 }}>Fee Structure:</Box> Applicable for academic year 2025-26 and may increase by 7-10% annually from second year onwards due to inflation adjustment
-          </Typography>
-          <Typography
-            component="li"
-            variant="subtitle1"
-            sx={{
-              fontSize: { xs: 12, sm: 14 },
-              color: "#374151",
-              lineHeight: 1.6,
-            }}>
-            <Box component="span" sx={{ fontWeight: 600 }}>Booking Process:</Box> Contact Vedam team at{" "}
-            <Link
-              style={{
-                color: "#FFA41A",
-                fontSize: "inherit",
-                fontFamily: "Inter",
-                lineHeight: "150%",
-              }}
-              href="mailto:connect@vedam.org">
-              connect@vedam.org
-            </Link>{" "}
-            to check availability and proceed with booking
-          </Typography>
-          <Typography
-            component="li"
-            variant="subtitle1"
-            sx={{
-              fontSize: { xs: 12, sm: 14 },
-              color: "#374151",
-              lineHeight: 1.6,
-              mb: 1,
-            }}>
-            Electricity charges on actuals are applicable          </Typography>
         </Box>
       </Box>
 
