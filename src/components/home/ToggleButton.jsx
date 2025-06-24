@@ -76,7 +76,7 @@ const FeesToggleButton = ({ div1, div2, mdiv1, mdiv2 }) => {
   const [selectedFee, setSelectedFee] = useState("tuition");
   const isMobile = useMediaQuery("(max-width:600px)");
 
-  const content = selectedFee === "tuition" ? (isMobile ? mdiv1 : div1) : (isMobile ? mdiv2 : div2);
+  const content = selectedFee === "tuition" ? (isMobile ? mdiv1 : div1) : div2;
 
   return (
     <Box
