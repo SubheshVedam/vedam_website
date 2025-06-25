@@ -501,8 +501,52 @@ export const FeeStructure = () => {
             Note
           </Typography>
         </Box>
+        <Box component="ol" sx={{ pl: 2, mt: 1, mb: 0 }}>
+          <Typography
+            component="li"
+            variant="subtitle1"
+            sx={{
+              fontSize: { xs: 12, sm: 14 },
+              color: "#374151",
+              lineHeight: 1.6,
+              mb: 1,
+            }}>
+            There will be a free transportation service provided to Vedam students in the morning and evening for traveling between hostel and university
+          </Typography>
+          <Typography
+            component="li"
+            variant="subtitle1"
+            sx={{
+              fontSize: { xs: 12, sm: 14 },
+              color: "#374151",
+              lineHeight: 1.6,
+              mb: 1,
+            }}>
+            Hostel fee is non refundable. Students will be charged for the entire year, even if one plans to vacate mid-year. The payment happens semester wise
+          </Typography>
+          <Typography
+            component="li"
+            variant="subtitle1"
+            sx={{
+              fontSize: { xs: 12, sm: 14 },
+              color: "#374151",
+              lineHeight: 1.6,
+              mb: 1,
+            }}>
+            Fee are applicable for the academic year 2025 - 26 and may increase by 7 - 10% annually from the second year onwards due to inflation adjustment
+          </Typography>
+          <Typography
+            component="li"
+            variant="subtitle1"
+            sx={{
+              fontSize: { xs: 12, sm: 14 },
+              color: "#374151",
+              lineHeight: 1.6,
+              mb: 1,
+            }}>
+            Electricity charges on actuals are applicable
+          </Typography>
 
-        <Box component="ol" sx={{ pl: 2, mt: 1, mb: 0, listStyleType: 'decimal' }}>
           <Typography
             component="li"
             variant="subtitle1"
@@ -512,51 +556,20 @@ export const FeeStructure = () => {
               lineHeight: 1.6,
               mb: 1,
             }}>
-            <Box component="span" sx={{ fontWeight: 600 }}>Limited Availability:</Box> There are very few beds left in ADYPU hostel, which are getting allocated on a first come first serve basis
-          </Typography>
-          <Typography
-            component="li"
-            variant="subtitle1"
-            sx={{
-              fontSize: { xs: 12, sm: 14 },
-              color: "#374151",
-              lineHeight: 1.6,
-              mb: 1,
-            }}>
-            <Box component="span" sx={{ fontWeight: 600 }}>4-Sharing & 3-Sharing Rooms:</Box> Have common washroom and are non-AC. Applicable for both boys and girls
-          </Typography>
-          <Typography
-            component="li"
-            variant="subtitle1"
-            sx={{
-              fontSize: { xs: 12, sm: 14 },
-              color: "#374151",
-              lineHeight: 1.6,
-              mb: 1,
-            }}>
-            <Box component="span" sx={{ fontWeight: 600 }}>5-Sharing Rooms:</Box> Come with attached washroom and have AC. Applicable only for boys
-          </Typography>
-          <Typography
-            component="li"
-            variant="subtitle1"
-            sx={{
-              fontSize: { xs: 12, sm: 14 },
-              color: "#374151",
-              lineHeight: 1.6,
-              mb: 1,
-            }}>
-            <Box component="span" sx={{ fontWeight: 600 }}>Non-Refundable Fee:</Box> Hostel accommodation fee is non-refundable. Students will be charged for the entire year, even if vacating mid-year. Full year payment required for room booking
-          </Typography>
-          <Typography
-            component="li"
-            variant="subtitle1"
-            sx={{
-              fontSize: { xs: 12, sm: 14 },
-              color: "#374151",
-              lineHeight: 1.6,
-              mb: 1,
-            }}>
-            <Box component="span" sx={{ fontWeight: 600 }}>Fee Structure:</Box> Applicable for academic year 2025-26 and may increase by 7-10% annually from second year onwards due to inflation adjustment
+            You can find more details about your space Hostel for Vedam Students
+            <Link
+              style={{
+                color: "#FFA41A",
+                fontSize: "inherit",
+                fontFamily: "Inter",
+                lineHeight: "150%",
+                marginLeft: "4px",
+              }}
+              href="https://drive.google.com/file/d/1EaLAx0kR71ALaqtlVPs4-UroJXlJIQAx/view?usp=sharing"
+              target="_blank">
+              here
+            </Link>
+            .
           </Typography>
           <Typography
             component="li"
@@ -566,7 +579,7 @@ export const FeeStructure = () => {
               color: "#374151",
               lineHeight: 1.6,
             }}>
-            <Box component="span" sx={{ fontWeight: 600 }}>Booking Process:</Box> Contact Vedam team at{" "}
+            Should you wish to book, please contact Vedam team at{" "}
             <Link
               style={{
                 color: "#FFA41A",
@@ -576,19 +589,9 @@ export const FeeStructure = () => {
               }}
               href="mailto:connect@vedam.org">
               connect@vedam.org
-            </Link>{" "}
-            to check availability and proceed with booking
+            </Link>
+            .
           </Typography>
-          <Typography
-            component="li"
-            variant="subtitle1"
-            sx={{
-              fontSize: { xs: 12, sm: 14 },
-              color: "#374151",
-              lineHeight: 1.6,
-              mb: 1,
-            }}>
-            Electricity charges on actuals are applicable          </Typography>
         </Box>
       </Box>
 
@@ -671,7 +674,7 @@ export const FeeStructure = () => {
                       textAlign: "center",
                       borderBottom: "1px solid rgba(186, 107, 255, 0.3)",
                     }}>
-                    2 Sharing Room
+                    5 Sharing Room
                   </TableCell>
                 </TableRow>
               </TableHead>
@@ -775,7 +778,7 @@ export const FeeStructure = () => {
           </Typography>
         </Box>
 
-        <Box component="ol" sx={{ pl: 2, mt: 1, mb: 0 }}>
+        <Box component="ol" sx={{ pl: 2, mt: 1, mb: 0, listStyleType: 'decimal' }}>
           <Typography
             component="li"
             variant="subtitle1"
@@ -785,7 +788,7 @@ export const FeeStructure = () => {
               lineHeight: 1.6,
               mb: 1,
             }}>
-            There will be a free transportation service provided to Vedam students in the morning and evening for traveling between hostel and university
+            <Box component="span" sx={{ fontWeight: 600 }}></Box> There are very few beds left in ADYPU hostel, which are getting allocated on a first come first serve basis
           </Typography>
           <Typography
             component="li"
@@ -796,7 +799,7 @@ export const FeeStructure = () => {
               lineHeight: 1.6,
               mb: 1,
             }}>
-            Hostel fee is non refundable. Students will be charged for the entire year, even if one plans to vacate mid-year. The payment happens semester wise
+            <Box component="span" sx={{ fontWeight: 600 }}></Box> The 4 sharing and 3 Sharing rooms have common washroom and are non AC. Applicable for both boys and girls
           </Typography>
           <Typography
             component="li"
@@ -807,9 +810,8 @@ export const FeeStructure = () => {
               lineHeight: 1.6,
               mb: 1,
             }}>
-            Fee are applicable for the academic year 2025 - 26 and may increase by 7 - 10% annually from the second year onwards due to inflation adjustment
+            <Box component="span" sx={{ fontWeight: 600 }}></Box> The 5 Sharing room comes with attached washroom and are having AC. Applicable only for boys
           </Typography>
-
           <Typography
             component="li"
             variant="subtitle1"
@@ -819,20 +821,18 @@ export const FeeStructure = () => {
               lineHeight: 1.6,
               mb: 1,
             }}>
-            You can find more details about your space Hostel for Vedam Students
-            <Link
-              style={{
-                color: "#FFA41A",
-                fontSize: "inherit",
-                fontFamily: "Inter",
-                lineHeight: "150%",
-                marginLeft: "4px",
-              }}
-              href="https://drive.google.com/file/d/1EaLAx0kR71ALaqtlVPs4-UroJXlJIQAx/view?usp=sharing"
-              target="_blank">
-              here
-            </Link>
-            .
+            <Box component="span" sx={{ fontWeight: 600 }}></Box> Hostel accomodation fee is non refundable. Students will be charged for the entire year, even if one plans to vacate mid-year. This fee component has to be paid for the entire year for room booking
+          </Typography>
+          <Typography
+            component="li"
+            variant="subtitle1"
+            sx={{
+              fontSize: { xs: 12, sm: 14 },
+              color: "#374151",
+              lineHeight: 1.6,
+              mb: 1,
+            }}>
+            <Box component="span" sx={{ fontWeight: 600 }}></Box> Fee are applicable for the academic year 2025 - 26 and may increase by 7 - 10% annually from the second year onwards due to inflation adjustment.
           </Typography>
           <Typography
             component="li"
@@ -842,7 +842,7 @@ export const FeeStructure = () => {
               color: "#374151",
               lineHeight: 1.6,
             }}>
-            Should you wish to book, please contact Vedam team at{" "}
+            <Box component="span" sx={{ fontWeight: 600 }}></Box> Should you wish to book, please contact Vedam team at{" "}
             <Link
               style={{
                 color: "#FFA41A",
@@ -852,21 +852,12 @@ export const FeeStructure = () => {
               }}
               href="mailto:connect@vedam.org">
               connect@vedam.org
-            </Link>
-            .
-          </Typography>
-          <Typography
-            component="li"
-            variant="subtitle1"
-            sx={{
-              fontSize: { xs: 12, sm: 14 },
-              color: "#374151",
-              lineHeight: 1.6,
-              mb: 1,
-            }}>
-            Electricity charges on actuals are applicable
+            </Link>{" "}
+            to check availability and proceed with booking
           </Typography>
         </Box>
+
+
       </Box>
 
       {/* Empty Space to Match Height */}
