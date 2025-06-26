@@ -813,9 +813,9 @@ export const admissionScreenData = {
     secondArray: [
       "4th July 2025",
       "3rd July 2025",
-      "Within 3 Days of the Exam",
-      "Within 10 Days of the Exam",
-      "Within 20 Days of the Exam, If selected",
+      "Within 2 Days of the Exam",
+      "Within 5 Days of the Exam",
+      "Within 15 Days of the Exam, If selected",
     ],
   },
   admissionProcess: {
