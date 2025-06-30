@@ -14,6 +14,7 @@ import {
   WidthContainer,
 } from "@/components";
 import WhyVedam from "@/components/WhyVedam";
+import { Instructors } from "@/components/home/Instructors";
 import NewsSection from "@/components/home/NewsSection";
 import { VSTHome } from "@/components/life/VSTHome";
 import { homeScreenData } from "@/constants/data";
@@ -247,6 +248,12 @@ const Home = () => {
             linearGradientSubtitle="linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)"
           >
             <ImageGrid />
+          </CardContainer>
+          <CardContainer
+            title={homeScreenData.instructor.title}
+            subtitle={homeScreenData.instructor.subtitle}
+          >
+            <Instructors />
           </CardContainer>
           <CardContainer
             title={homeScreenData.learnFrom.title}

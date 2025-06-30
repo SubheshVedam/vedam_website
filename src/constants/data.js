@@ -7,6 +7,7 @@ import Robotics2 from "@/components/life/ScrollComponent/Robotics2";
 import Drone3 from "@/components/life/ScrollComponent/Drone3";
 import Vc4 from "@/components/life/ScrollComponent/Vc4";
 import Project5 from "@/components/life/ScrollComponent/Project5";
+import Image from "next/image";
 
 export const testimonialData = [
   {
@@ -127,6 +128,46 @@ export const expertsData = [
     rating: 4.9,
     linkedIn: "https://www.linkedin.com/in/nishchay-agrawal-157404170/",
   },
+];
+export const instructorData = [
+  {
+    imageUrl: "/img/experts/bradford.jpeg",
+    name: "Subhesh Kumar",
+    logo: "/img/instructors/google.webp",
+    designation: "Software Developer",
+    info: "Ex-Google",
+    college: "B.Tech. from DTU (formely DCE)",
+    linkedIn: "https://www.linkedin.com/in/bradford-tuckfield-80565b25/",
+    isGoogle: true
+  },
+  {
+    imageUrl: "/img/experts/amanpreet.jpeg",
+    name: "Pankaj Kumar",
+    logo: "/img/instructors/birdeye.png",
+    designation: "Software Developer",
+    info: "Ex-Birdeye",
+    college: "B.Tech. from GD University",
+    linkedIn:
+      "https://www.linkedin.com/in/amanpreet-singh-b79598a3/?originalSubdomain=in",
+  },
+  {
+    imageUrl: "/img/experts/senthurpandian.jpeg",
+    name: "Prasanna Swain",
+    logo: "/img/instructors/pollard.png",
+    designation: "Software Developer",
+    info: "Ex-Pollard",
+    college: "B.Tech. from DTU (formely DCE)",
+    linkedIn: "https://www.linkedin.com/in/manivannan21/",
+  },
+  {
+    imageUrl: "/img/experts/ekta.jpeg",
+    name: "Rupesh Kumar",
+    logo: "/img/companies/msci_logo.png",
+    designation: "Software Developer",
+    info: "Ex-AlgoPrep",
+    college: "B.Tech. from Jaipur IT",
+    linkedIn: "https://www.linkedin.com/in/ekta-shah30/",
+  }
 ];
 export const detailsData = [
   {
@@ -562,6 +603,10 @@ export const homeScreenData = {
       //   text: "*Download the complete details of hostel rooms and charges ",
       // },
     ],
+  },
+  instructor: {
+    title: "The people who build for world",
+    subtitle: "Instructors",
   },
   learnFrom: {
     title: "",
