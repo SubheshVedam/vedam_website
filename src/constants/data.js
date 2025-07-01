@@ -280,7 +280,7 @@ export const homeScreenData = {
       },
       {
         id: 22,
-        imageUrl: "/img/companies/KPMG-logo.png",
+        imageUrl: "/img/companies/KPMG-logo.webp",
       },
       {
         id: 23,
