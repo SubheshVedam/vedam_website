@@ -24,7 +24,7 @@ export default function InstructorCard({
             sx={{
                 backgroundImage: `url(${imageUrl})`,
                 backgroundSize: 'cover',
-                backgroundPosition: 'center',
+                backgroundPosition: 'center -60px',
                 backgroundRepeat: 'no-repeat',
                 minHeight: '375px',
                 minWidth: '300px',
@@ -34,8 +34,6 @@ export default function InstructorCard({
                 padding: '16px',
                 borderRadius: '24px',
                 border: "0.5px solid rgba(132, 132, 132, 0.2)",
-
-
             }}
         >
             <Box sx={{ display: 'hidden' }}></Box>
@@ -95,7 +93,7 @@ export default function InstructorCard({
                                 Full Time Faculty
                             </Typography>
                         </Box>
-                        <Typography sx={{ fontSize: 14, lineHeight: '120%', fontStyle: 'normal', letterSpacing: "-0.28px", alignItems: 'center', display: 'flex', gap: 1 }}><SchoolOutlined /> {college}</Typography>
+                        {/* <Typography sx={{ fontSize: 14, lineHeight: '120%', fontStyle: 'normal', letterSpacing: "-0.28px", alignItems: 'center', display: 'flex', gap: 1 }}><SchoolOutlined /> {college}</Typography> */}
                     </Box>
                     <Box>
                         <Button

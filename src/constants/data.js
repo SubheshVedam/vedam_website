@@ -131,7 +131,7 @@ export const expertsData = [
 ];
 export const instructorData = [
   {
-    imageUrl: "/img/experts/bradford.jpeg",
+    imageUrl: "/img/instructors/subhesh.jpeg",
     name: "Subhesh Kumar",
     logo: "/img/instructors/google.webp",
     designation: "Software Developer",
@@ -141,7 +141,7 @@ export const instructorData = [
     isGoogle: true
   },
   {
-    imageUrl: "/img/experts/amanpreet.jpeg",
+    imageUrl: "/img/instructors/pankaj.jpeg",
     name: "Pankaj Kumar",
     logo: "/img/instructors/birdeye.png",
     designation: "Software Developer",
@@ -151,22 +151,13 @@ export const instructorData = [
       "https://www.linkedin.com/in/amanpreet-singh-b79598a3/?originalSubdomain=in",
   },
   {
-    imageUrl: "/img/experts/senthurpandian.jpeg",
+    imageUrl: "/img/instructors/praz.jpeg",
     name: "Prasanna Swain",
-    logo: "/img/instructors/pollard.png",
+    logo: "/img/instructors/dtu.png",
     designation: "Software Developer",
-    info: "Ex-Pollard",
+    info: "DTU (ex-DCE)",
     college: "B.Tech. from DTU (formely DCE)",
     linkedIn: "https://www.linkedin.com/in/manivannan21/",
-  },
-  {
-    imageUrl: "/img/experts/ekta.jpeg",
-    name: "Rupesh Kumar",
-    logo: "/img/companies/msci_logo.png",
-    designation: "Software Developer",
-    info: "Ex-AlgoPrep",
-    college: "B.Tech. from Jaipur IT",
-    linkedIn: "https://www.linkedin.com/in/ekta-shah30/",
   }
 ];
 export const detailsData = [
