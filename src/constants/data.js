@@ -275,10 +275,6 @@ export const homeScreenData = {
         imageUrl: "/img/companies/HCL_Technologies-Logo.png",
       },
       {
-        id: 21,
-        imageUrl: "/img/companies/Jp-Morgan-Chase-Logo.png",
-      },
-      {
         id: 22,
         imageUrl: "/img/companies/KPMG-logo.webp",
       },
