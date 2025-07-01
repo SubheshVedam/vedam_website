@@ -841,6 +841,30 @@ export const FeeStructure = () => {
               fontSize: { xs: 12, sm: 14 },
               color: "#374151",
               lineHeight: 1.6,
+              mb: 1,
+            }}>
+            You can find more details about In-Campus Hostel
+            <Link
+              style={{
+                color: "#FFA41A",
+                fontSize: "inherit",
+                fontFamily: "Inter",
+                lineHeight: "150%",
+                marginLeft: "4px",
+              }}
+              href="https://drive.google.com/file/d/1kskrsGu2yfH3zlrxjMPVeVut4R72ACKQ/view?usp=sharing"
+              target="_blank">
+              here
+            </Link>
+            .
+          </Typography>
+          <Typography
+            component="li"
+            variant="subtitle1"
+            sx={{
+              fontSize: { xs: 12, sm: 14 },
+              color: "#374151",
+              lineHeight: 1.6,
             }}>
             <Box component="span" sx={{ fontWeight: 600 }}></Box> Should you wish to book, please contact Vedam team at{" "}
             <Link
