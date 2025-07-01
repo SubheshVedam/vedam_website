@@ -565,7 +565,7 @@ export const FeeStructure = () => {
                 lineHeight: "150%",
                 marginLeft: "4px",
               }}
-              href="https://drive.google.com/file/d/1EaLAx0kR71ALaqtlVPs4-UroJXlJIQAx/view?usp=sharing"
+              href="https://drive.google.com/file/d/12PNSdWpV5CB3699kUTadut_8j4Y62T64/view?usp=drive_link"
               target="_blank">
               here
             </Link>
