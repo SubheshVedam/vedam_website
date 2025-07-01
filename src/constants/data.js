@@ -258,6 +258,34 @@ export const homeScreenData = {
         id: 16,
         imageUrl: "/img/companies/Atlassian-Logo.png",
       },
+      {
+        id: 17,
+        imageUrl: "/img/companies/Airtel-Logo.png",
+      },
+      {
+        id: 18,
+        imageUrl: "/img/companies/delhivery_logo.png",
+      },
+      {
+        id: 19,
+        imageUrl: "/img/companies/deloitte-logo.png",
+      },
+      {
+        id: 20,
+        imageUrl: "/img/companies/HCL_Technologies-Logo.png",
+      },
+      {
+        id: 21,
+        imageUrl: "/img/companies/Jp-Morgan-Chase-Logo.png",
+      },
+      {
+        id: 22,
+        imageUrl: "/img/companies/KPMG-logo.webp",
+      },
+      {
+        id: 23,
+        imageUrl: "/img/companies/Zivame-logo.png",
+      },
     ],
     bottomText:
       "*outcome through companies whom the founders built before Vedam ",
