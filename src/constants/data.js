@@ -55,33 +55,6 @@ export const testimonialData = [
 
 export const expertsData = [
   {
-    imageUrl: "/img/experts/ramchandra.jpeg",
-    name: "Ramachandra Nalam",
-    logo: "/img/companies/meta.webp",
-    designation: "Data and ML Engineer",
-    info: "Masters from University of Buffalo, Ex Amazon",
-    rating: 3.7,
-    linkedIn: "https://www.linkedin.com/in/ramachandra-nalam/",
-  },
-  {
-    imageUrl: "/img/experts/gauravdawra.jpeg",
-    name: "Gaurav Dawra",
-    logo: "/img/companies/microsoft-logo.png",
-    designation: "Software Engineer",
-    info: "ICPC World Finalist 2022-23, 6 Star on Code Chef",
-    rating: 4.2,
-    linkedIn: "https://www.linkedin.com/in/gaurav-dawra-a2a935200/",
-  },
-  {
-    imageUrl: "/img/experts/bradford.jpeg",
-    name: "Bradford Tuckfield",
-    logo: "/img/companies/wharton_logo.webp",
-    designation: "PhD",
-    info: "Founder, Author and Instructor ; Ex American Express and Accenture",
-    rating: 4.9,
-    linkedIn: "https://www.linkedin.com/in/bradford-tuckfield-80565b25/",
-  },
-  {
     imageUrl: "/img/experts/amanpreet.jpeg",
     name: "Amanpreet Singh",
     logo: "/img/companies/google.webp",
@@ -100,6 +73,7 @@ export const expertsData = [
     rating: 4.9,
     linkedIn: "https://www.linkedin.com/in/manivannan21/",
   },
+
   {
     imageUrl: "/img/experts/ekta.jpeg",
     name: "Ekta Shah",
@@ -110,13 +84,33 @@ export const expertsData = [
     linkedIn: "https://www.linkedin.com/in/ekta-shah30/",
   },
   {
-    imageUrl: "/img/experts/basant.jpeg",
-    name: "Basant Rawat",
-    logo: "/img/companies/Angel_One_Logo.png",
-    designation: "SDE 2",
-    info: "Mentored over 20,000 Minutes, Ex Hexaware",
+    imageUrl: "/img/experts/gauravdawra.jpeg",
+    name: "Gaurav Dawra",
+    logo: "/img/companies/microsoft-logo.png",
+    designation: "Software Engineer",
+    info: "ICPC World Finalist 2022-23, 6 Star on Code Chef",
+    rating: 4.2,
+    linkedIn: "https://www.linkedin.com/in/gaurav-dawra-a2a935200/",
+  },
+
+  {
+    imageUrl: "/img/experts/bradford.jpeg",
+    name: "Bradford Tuckfield",
+    logo: "/img/companies/wharton_logo.webp",
+    designation: "PhD",
+    info: "Founder, Author and Instructor ; Ex American Express and Accenture",
     rating: 4.9,
-    linkedIn: "https://www.linkedin.com/in/basant-rawat/",
+    linkedIn: "https://www.linkedin.com/in/bradford-tuckfield-80565b25/",
+  },
+
+  {
+    imageUrl: "/img/experts/ramchandra.jpeg",
+    name: "Ramachandra Nalam",
+    logo: "/img/companies/meta.webp",
+    designation: "Data and ML Engineer",
+    info: "Masters from University of Buffalo, Ex Amazon",
+    rating: 3.7,
+    linkedIn: "https://www.linkedin.com/in/ramachandra-nalam/",
   },
   {
     imageUrl: "/img/experts/nischay.jpeg",
@@ -126,6 +120,15 @@ export const expertsData = [
     info: "University Gold Medalist, Ex Meesho",
     rating: 4.9,
     linkedIn: "https://www.linkedin.com/in/nishchay-agrawal-157404170/",
+  },
+  {
+    imageUrl: "/img/experts/basant.jpeg",
+    name: "Basant Rawat",
+    logo: "/img/companies/Angel_One_Logo.png",
+    designation: "SDE 2",
+    info: "Mentored over 20,000 Minutes, Ex Hexaware",
+    rating: 4.9,
+    linkedIn: "https://www.linkedin.com/in/basant-rawat/",
   },
 ];
 export const detailsData = [
@@ -268,7 +271,7 @@ export const homeScreenData = {
       {
         id: 0,
         image: "/img/branch.webp",
-        text: "B.Tech in Computer Science Engineering (AI)",
+        text: "B.Tech in Computer Science Engineering (AI) - UGC Approved",
       },
       {
         id: 1,
