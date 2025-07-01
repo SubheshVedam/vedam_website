@@ -282,10 +282,6 @@ export const homeScreenData = {
         id: 22,
         imageUrl: "/img/companies/KPMG-logo.webp",
       },
-      {
-        id: 23,
-        imageUrl: "/img/companies/Zivame-logo.png",
-      },
     ],
     bottomText:
       "*outcome through companies whom the founders built before Vedam ",
