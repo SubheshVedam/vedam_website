@@ -137,7 +137,7 @@ export const instructorData = [
     designation: "Software Developer",
     info: "Ex-Google",
     college: "B.Tech. from DTU (formely DCE)",
-    linkedIn: "https://www.linkedin.com/in/bradford-tuckfield-80565b25/",
+    linkedIn: "https://in.linkedin.com/in/subhu9",
     isGoogle: true
   },
   {
@@ -148,16 +148,16 @@ export const instructorData = [
     info: "Ex-Birdeye",
     college: "B.Tech. from GD University",
     linkedIn:
-      "https://www.linkedin.com/in/amanpreet-singh-b79598a3/?originalSubdomain=in",
+      "https://www.linkedin.com/in/gargpk",
   },
   {
     imageUrl: "/img/instructors/praz.jpeg",
     name: "Prasanna Swain",
     logo: "/img/instructors/dtu.png",
     designation: "Software Developer",
-    info: "DTU (ex-DCE)",
+    info: "BTech - DTU",
     college: "B.Tech. from DTU (formely DCE)",
-    linkedIn: "https://www.linkedin.com/in/manivannan21/",
+    linkedIn: "https://www.linkedin.com/in/prasanna-swain/",
   }
 ];
 export const detailsData = [
@@ -596,8 +596,8 @@ export const homeScreenData = {
     ],
   },
   instructor: {
-    title: "The people who build for world",
-    subtitle: "Instructors",
+    title: "The people who blend hands-on expertise with academic clarity",
+    subtitle: "Our Instructors",
   },
   learnFrom: {
     title: "",
