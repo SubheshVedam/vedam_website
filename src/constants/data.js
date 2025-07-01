@@ -268,14 +268,10 @@ export const homeScreenData = {
       },
       {
         id: 19,
-        imageUrl: "/img/companies/deloitte-logo.png",
-      },
-      {
-        id: 20,
         imageUrl: "/img/companies/HCL_Technologies-Logo.png",
       },
       {
-        id: 22,
+        id: 20,
         imageUrl: "/img/companies/KPMG-logo.webp",
       },
     ],
