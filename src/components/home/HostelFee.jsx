@@ -1,58 +1,65 @@
 "use client";
 import React, { useState } from "react";
+import Divider from '@mui/material/Divider';
+
 import { Box, Typography, Link, Table, TableHead, TableBody, TableRow, TableCell } from "@mui/material";
 
 export const HostelTypeToggle = ({ selectedHostelType, setSelectedHostelType }) => {
     return (
         <Box
-            sx={{
-                display: "flex",
-                gap: 3,
-                mb: 2,
-                alignItems: "center",
-                justifyContent: "center",
-                pt: 2,
-            }}
+            display="flex"
+            gap={3}
+            mb={2}
+            borderBottom="2px solid #D9CFE2"
+            pb={1}
         >
             <Box
                 onClick={() => setSelectedHostelType("outCampus")}
                 sx={{
+                    position: "relative",
+                    mx: 2,
                     fontSize: { xs: "1rem", sm: "1.1rem" },
                     fontWeight: 600,
-                    color: "#6513AC",
+                    color: selectedHostelType === "outCampus" ? "#6513AC" : "#7B7B7B",
                     cursor: "pointer",
-                    textDecoration: selectedHostelType === "outCampus" ? "underline" : "none",
-                    textDecorationThickness: "2px",
-                    textUnderlineOffset: "4px",
-                    "&:hover": {
-                        textDecoration: "underline",
-                        textDecorationThickness: "2px",
-                        textUnderlineOffset: "4px",
+                    "&::after": {
+                        content: '""',
+                        position: "absolute",
+                        bottom: -10, // adjust as needed
+                        left: 0,
+                        right: 0,
+                        height: "2px",
+                        backgroundColor: selectedHostelType === "outCampus" ? "#6513AC" : "transparent",
                     },
                 }}
             >
                 Out of Campus
             </Box>
+
             <Box
                 onClick={() => setSelectedHostelType("inCampus")}
                 sx={{
+                    position: "relative",
+                    mx: 2,
                     fontSize: { xs: "1rem", sm: "1.1rem" },
                     fontWeight: 600,
-                    color: "#6513AC",
+                    color: selectedHostelType === "inCampus" ? "#6513AC" : "#7B7B7B",
                     cursor: "pointer",
-                    textDecoration: selectedHostelType === "inCampus" ? "underline" : "none",
-                    textDecorationThickness: "2px",
-                    textUnderlineOffset: "4px",
-                    "&:hover": {
-                        textDecoration: "underline",
-                        textDecorationThickness: "2px",
-                        textUnderlineOffset: "4px",
+                    "&::after": {
+                        content: '""',
+                        position: "absolute",
+                        bottom: -10,
+                        left: 0,
+                        right: 0,
+                        height: "2px",
+                        backgroundColor: selectedHostelType === "inCampus" ? "#6513AC" : "transparent",
                     },
                 }}
             >
                 In Campus
             </Box>
         </Box>
+
     );
 };
 
@@ -101,10 +108,11 @@ export const HostelContent = ({ selectedHostelType }) => {
                                     <TableRow sx={{ background: "rgba(146, 62, 218, 1)" }}>
                                         <TableCell
                                             sx={{
-                                                color: "white",
+                                                color: "#1C1C1C",
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
                                                 borderBottom: "1px solid rgba(186, 107, 255, 0.3)",
+                                                backgroundColor: '#D6A6FF'
                                             }}
                                         >
                                             Room Type
@@ -136,6 +144,7 @@ export const HostelContent = ({ selectedHostelType }) => {
                                         <TableCell
                                             sx={{
                                                 textAlign: "left",
+                                                color: '#667085'
                                             }}
                                         >
                                             ₹1,12,000/-
@@ -155,6 +164,7 @@ export const HostelContent = ({ selectedHostelType }) => {
                                         <TableCell
                                             sx={{
                                                 textAlign: "left",
+                                                color: '#667085'
                                             }}
                                         >
                                             ₹2,24,000/-
@@ -173,7 +183,7 @@ export const HostelContent = ({ selectedHostelType }) => {
                                         <TableCell
                                             sx={{
                                                 textAlign: "left",
-                                                collor: '667085'
+                                                color: '#667085'
                                             }}
                                         >
                                             ₹10,000/-
@@ -191,6 +201,7 @@ export const HostelContent = ({ selectedHostelType }) => {
                                         <TableCell
                                             sx={{
                                                 textAlign: "left",
+                                                color: '#667085'
                                             }}
                                         >
                                             Attached Washroom, AC, high speed WiFi
@@ -208,6 +219,7 @@ export const HostelContent = ({ selectedHostelType }) => {
                                         <TableCell
                                             sx={{
                                                 textAlign: "left",
+                                                color: '#667085'
                                             }}
                                         >
                                             Boys and Girls
@@ -225,6 +237,7 @@ export const HostelContent = ({ selectedHostelType }) => {
                                         <TableCell
                                             sx={{
                                                 textAlign: "left",
+                                                color: '#667085'
                                             }}
                                         >
                                             Electricity to be charged on actuals
@@ -268,104 +281,79 @@ export const HostelContent = ({ selectedHostelType }) => {
                         </Typography>
                     </Box>
                     <Box component="ol" sx={{ pl: 2, mt: 1, mb: 0 }}>
-                        <Typography
-                            component="li"
-                            variant="subtitle1"
-                            sx={{
-                                fontSize: { xs: 12, sm: 14 },
-                                color: "#374151",
-                                lineHeight: 1.6,
-                                mb: 1,
-                            }}
-                        >
-                            There will be a free transportation service provided to Vedam students in the morning and evening for traveling between hostel and university
-                        </Typography>
-                        <Typography
-                            component="li"
-                            variant="subtitle1"
-                            sx={{
-                                fontSize: { xs: 12, sm: 14 },
-                                color: "#374151",
-                                lineHeight: 1.6,
-                                mb: 1,
-                            }}
-                        >
-                            Students need to pay 1 semester fee to book a bed
-                        </Typography>
-                        <Typography
-                            component="li"
-                            variant="subtitle1"
-                            sx={{
-                                fontSize: { xs: 12, sm: 14 },
-                                color: "#374151",
-                                lineHeight: 1.6,
-                                mb: 1,
-                            }}
-                        >
-                            Hostel fee is non refundable. Students will be charged for the entire year, even if one plans to vacate mid-year.
-                        </Typography>
-                        <Typography
-                            component="li"
-                            variant="subtitle1"
-                            sx={{
-                                fontSize: { xs: 12, sm: 14 },
-                                color: "#374151",
-                                lineHeight: 1.6,
-                                mb: 1,
-                            }}
-                        >
-                            Fee are applicable for the academic year 2025 - 26 and may increase by 7 - 10% annually from the second year onwards due to inflation adjustment
-                        </Typography>
-                        <Typography
-                            component="li"
-                            variant="subtitle1"
-                            sx={{
-                                fontSize: { xs: 12, sm: 14 },
-                                color: "#374151",
-                                lineHeight: 1.6,
-                                mb: 1,
-                            }}
-                        >
-                            You can find more details about your space Hostel for Vedam Students here
-                            <Link
-                                style={{
-                                    color: "#000000",
-                                    fontSize: "inherit",
-                                    fontFamily: "Inter",
-                                    lineHeight: "150%",
-                                    marginLeft: "4px",
-                                }}
-                                href="https://drive.google.com/file/d/1EaLAx0kR71ALaqtlVPs4-UroJXlJIQAx/view?usp=sharing"
-                                target="_blank"
-                            >
-                                here
-                            </Link>
-                            .
-                        </Typography>
-                        <Typography
-                            component="li"
-                            variant="subtitle1"
-                            sx={{
-                                fontSize: { xs: 12, sm: 14 },
-                                color: "#374151",
-                                lineHeight: 1.6,
-                            }}
-                        >
-                            Should you wish to book, please contact Vedam team at connect@vedam.org{" "}
-                            <Link
-                                style={{
-                                    color: "#000000",
-                                    fontSize: "inherit",
-                                    fontFamily: "Inter",
-                                    lineHeight: "150%",
-                                }}
-                                href="mailto:connect@vedam.org"
-                            >
-                                connect@vedam.org
-                            </Link>
-                            .
-                        </Typography>
+                        {[
+                            "There will be a free transportation service provided to Vedam students in the morning and evening for traveling between hostel and university",
+                            "Students need to pay 1 semester fee to book a bed",
+                            "Hostel fee is non refundable. Students will be charged for the entire year, even if one plans to vacate mid-year.",
+                            "Fee are applicable for the academic year 2025 - 26 and may increase by 7 - 10% annually from the second year onwards due to inflation adjustment",
+                            <>
+                                You can find more details about your space Hostel for Vedam Students
+                                <Link
+                                    style={{
+                                        color: "#000000",
+                                        fontSize: "inherit",
+                                        fontFamily: "Inter",
+                                        lineHeight: "150%",
+                                        marginLeft: "4px",
+                                    }}
+                                    href="https://drive.google.com/file/d/1EaLAx0kR71ALaqtlVPs4-UroJXlJIQAx/view?usp=sharing"
+                                    target="_blank"
+                                >
+                                    here
+                                </Link>
+                                .
+                            </>,
+                            <>
+                                Should you wish to book, please contact Vedam team at{" "}
+                                <Link
+                                    style={{
+                                        color: "#000000",
+                                        fontSize: "inherit",
+                                        fontFamily: "Inter",
+                                        lineHeight: "150%",
+                                    }}
+                                    href="mailto:connect@vedam.org"
+                                >
+                                    connect@vedam.org
+                                </Link>
+                                .
+                            </>,
+                        ].map((text, index) => (
+                            <Box key={index} display="flex" alignItems="flex-start" mb={1}>
+                                <Box
+                                    sx={{
+                                        minWidth: 24,
+                                        height: 24,
+                                        backgroundColor: "#7B2CBF",
+                                        color: "#fff",
+                                        fontSize: 12,
+                                        fontWeight: 600,
+                                        borderRadius: "50%",
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                        mt: "2px",
+                                        mr: 1.5,
+                                        flexShrink: 0,
+                                    }}
+                                >
+                                    {index + 1}
+                                </Box>
+                                <Typography
+                                    variant="subtitle1"
+                                    sx={{
+                                        fontSize: { xs: 12, sm: 14 },
+                                        color: "#000",
+                                        lineHeight: 1.6,
+                                        fontFamily: "Inter",
+                                    }}
+                                >
+                                    {text}
+                                </Typography>
+                            </Box>
+                        ))}
                     </Box>
+
                 </Box>
             </>
         );
@@ -413,10 +401,11 @@ export const HostelContent = ({ selectedHostelType }) => {
                                     <TableRow sx={{ background: "rgba(146, 62, 218, 1)" }}>
                                         <TableCell
                                             sx={{
-                                                color: "white",
+                                                color: "#1C1C1C",
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
                                                 borderBottom: "1px solid rgba(186, 107, 255, 0.3)",
+                                                backgroundColor: '#D6A6FF'
                                             }}
                                         >
                                             Room Type
@@ -466,24 +455,27 @@ export const HostelContent = ({ selectedHostelType }) => {
                                             sx={{
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                                                color: '#667085'
                                             }}
                                         >
-                                            ₹1,62,000/-
+                                            ₹90,000/-
                                         </TableCell>
                                         <TableCell
                                             sx={{
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                                                color: '#667085'
                                             }}
                                         >
-                                            ₹1,82,000/-
+                                            ₹1,10,000/-
                                         </TableCell>
                                         <TableCell
                                             sx={{
                                                 textAlign: "left",
+                                                color: '#667085'
                                             }}
                                         >
-                                            ₹2,22,000/-
+                                            ₹1,50,000/-
                                         </TableCell>
                                     </TableRow>
                                     <TableRow>
@@ -499,24 +491,27 @@ export const HostelContent = ({ selectedHostelType }) => {
                                             sx={{
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                                                color: '#667085'
                                             }}
                                         >
-                                            ₹10,000/-
+                                            ₹5,500/-
                                         </TableCell>
                                         <TableCell
                                             sx={{
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                                                color: '#667085'
                                             }}
                                         >
-                                            ₹20,000/-
+                                            ₹5,500/-
                                         </TableCell>
                                         <TableCell
                                             sx={{
                                                 textAlign: "left",
+                                                color: '#667085'
                                             }}
                                         >
-                                            ₹20,000/-
+                                            ₹5,500/-
                                         </TableCell>
                                     </TableRow>
                                     <TableRow>
@@ -532,24 +527,27 @@ export const HostelContent = ({ selectedHostelType }) => {
                                             sx={{
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                                                color: '#667085'
                                             }}
                                         >
-                                            ₹10,000/-
+                                            ₹6,000/-
                                         </TableCell>
                                         <TableCell
                                             sx={{
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                                                color: '#667085'
                                             }}
                                         >
-                                            ₹20,000/-
+                                            ₹6,000/-
                                         </TableCell>
                                         <TableCell
                                             sx={{
                                                 textAlign: "left",
+                                                color: '#667085'
                                             }}
                                         >
-                                            ₹20,000/-
+                                            ₹6,000/-
                                         </TableCell>
                                     </TableRow>
                                     <TableRow>
@@ -567,24 +565,27 @@ export const HostelContent = ({ selectedHostelType }) => {
                                             sx={{
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                                                color: '#667085'
                                             }}
                                         >
-                                            ₹10,000/-
+                                            ₹1,62,000/-
                                         </TableCell>
                                         <TableCell
                                             sx={{
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                                                color: '#667085'
                                             }}
                                         >
-                                            ₹20,000/-
+                                            ₹1,82,000/-
                                         </TableCell>
                                         <TableCell
                                             sx={{
                                                 textAlign: "left",
+                                                color: '#667085'
                                             }}
                                         >
-                                            ₹20,000/-
+                                            ₹2,22,000/-
                                         </TableCell>
                                     </TableRow>
                                     <TableRow>
@@ -600,6 +601,7 @@ export const HostelContent = ({ selectedHostelType }) => {
                                             sx={{
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                                                color: '#667085'
                                             }}
                                         >
                                             ₹10,000/-
@@ -608,6 +610,7 @@ export const HostelContent = ({ selectedHostelType }) => {
                                             sx={{
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                                                color: '#667085'
                                             }}
                                         >
                                             ₹20,000/-
@@ -615,6 +618,7 @@ export const HostelContent = ({ selectedHostelType }) => {
                                         <TableCell
                                             sx={{
                                                 textAlign: "left",
+                                                color: '#667085'
                                             }}
                                         >
                                             ₹20,000/-
@@ -633,24 +637,29 @@ export const HostelContent = ({ selectedHostelType }) => {
                                             sx={{
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                                                color: '#667085'
                                             }}
                                         >
-                                            Attached Washroom, AC, WiFi
+                                            Common Washroom,
+                                            Non AC
                                         </TableCell>
                                         <TableCell
                                             sx={{
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                                                color: '#667085'
                                             }}
                                         >
-                                            Attached Washroom, AC, WiFi
+                                            Common Washroom,
+                                            Non AC
                                         </TableCell>
                                         <TableCell
                                             sx={{
                                                 textAlign: "left",
+                                                color: '#667085'
                                             }}
                                         >
-                                            Attached Washroom, AC, WiFi
+                                            Attached Washroom, AC
                                         </TableCell>
                                     </TableRow>
                                     <TableRow>
@@ -666,24 +675,27 @@ export const HostelContent = ({ selectedHostelType }) => {
                                             sx={{
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                                                color: '#667085'
                                             }}
                                         >
-                                            Boys and Girls
+                                            Boys & Girls
                                         </TableCell>
                                         <TableCell
                                             sx={{
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                                                color: '#667085'
                                             }}
                                         >
-                                            Boys and Girls
+                                            Boys & Girls
                                         </TableCell>
                                         <TableCell
                                             sx={{
                                                 textAlign: "left",
+                                                color: '#667085'
                                             }}
                                         >
-                                            Boys and Girls
+                                            Boys
                                         </TableCell>
                                     </TableRow>
                                     <TableRow>
@@ -695,29 +707,16 @@ export const HostelContent = ({ selectedHostelType }) => {
                                         >
                                             NOTE
                                         </TableCell>
-                                        <TableCell
+                                        <TableCell colSpan={3}
                                             sx={{
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                                                color: '#667085'
                                             }}
                                         >
-                                            Electricity extra
+                                            Electricity to be charged on actuals
                                         </TableCell>
-                                        <TableCell
-                                            sx={{
-                                                textAlign: "left",
-                                                borderRight: "1px solid rgba(186, 107, 255, 0.3)",
-                                            }}
-                                        >
-                                            Electricity extra
-                                        </TableCell>
-                                        <TableCell
-                                            sx={{
-                                                textAlign: "left",
-                                            }}
-                                        >
-                                            Electricity extra
-                                        </TableCell>
+
                                     </TableRow>
                                 </TableBody>
                             </Table>
@@ -756,91 +755,64 @@ export const HostelContent = ({ selectedHostelType }) => {
                             Note
                         </Typography>
                     </Box>
-                    <Box component="ol" sx={{ pl: 2, mt: 1, mb: 0, listStyleType: 'decimal' }}>
-                        <Typography
-                            component="li"
-                            variant="subtitle1"
-                            sx={{
-                                fontSize: { xs: 12, sm: 14 },
-                                color: "#374151",
-                                lineHeight: 1.6,
-                                mb: 1,
-                            }}
-                        >
-                            Students need to pay accommodation cost for the entire year to book a bed. Mess and laundry charges will have to be paid at the time of moving in
-                        </Typography>
-                        <Typography
-                            component="li"
-                            variant="subtitle1"
-                            sx={{
-                                fontSize: { xs: 12, sm: 14 },
-                                color: "#374151",
-                                lineHeight: 1.6,
-                                mb: 1,
-                            }}
-                        >
-                            There are very few beds left in ADYPU hostel for girls, which are getting allocated on a first cum first basis
-                        </Typography>
-                        <Typography
-                            component="li"
-                            variant="subtitle1"
-                            sx={{
-                                fontSize: { xs: 12, sm: 14 },
-                                color: "#374151",
-                                lineHeight: 1.6,
-                                mb: 1,
-                            }}
-                        >
-                            There are no more beds left in the ADYPU hostel for boys
-                        </Typography>
-                        <Typography
-                            component="li"
-                            variant="subtitle1"
-                            sx={{
-                                fontSize: { xs: 12, sm: 14 },
-                                color: "#374151",
-                                lineHeight: 1.6,
-                                mb: 1,
-                            }}
-                        >
-                            Hostel accommodation fee is non refundable. Students will be charged for the entire year, even if one plans to vacate mid-year
-                        </Typography>
-                        <Typography
-                            component="li"
-                            variant="subtitle1"
-                            sx={{
-                                fontSize: { xs: 12, sm: 14 },
-                                color: "#374151",
-                                lineHeight: 1.6,
-                                mb: 1,
-                            }}
-                        >
-                            Fee are applicable for the academic year 2025 - 26 and may increase by 7 - 10% annually from the second year onwards due to inflation adjustment
-                        </Typography>
-                        <Typography
-                            component="li"
-                            variant="subtitle1"
-                            sx={{
-                                fontSize: { xs: 12, sm: 14 },
-                                color: "#374151",
-                                lineHeight: 1.6,
-                            }}
-                        >
-                            Should you wish to book, please contact Vedam team at{" "}
-                            <Link
-                                style={{
-                                    color: "#000000",
-                                    fontSize: "inherit",
-                                    fontFamily: "Inter",
-                                    lineHeight: "150%",
-                                }}
-                                href="mailto:connect@vedam.org"
-                            >
-                                connect@vedam.org
-                            </Link>{" "}
-                            to check availability and proceed accordingly
-                        </Typography>
+                    <Box component="ol" sx={{ pl: 2, mt: 1, mb: 0 }}>
+                        {[
+                            "Students need to pay accommodation cost for the entire year to book a bed. Mess and laundry charges will have to be paid at the time of moving in",
+                            "There are very few beds left in ADYPU hostel for girls, which are getting allocated on a first cum first basis",
+                            "There are no more beds left in the ADYPU hostel for boys",
+                            "Hostel accommodation fee is non refundable. Students will be charged for the entire year, even if one plans to vacate mid-year",
+                            "Fee are applicable for the academic year 2025 - 26 and may increase by 7 - 10% annually from the second year onwards due to inflation adjustment",
+                            <>
+                                Should you wish to book, please contact Vedam team at{" "}
+                                <Link
+                                    style={{
+                                        color: "#000000",
+                                        fontSize: "inherit",
+                                        fontFamily: "Inter",
+                                        lineHeight: "150%",
+                                    }}
+                                    href="mailto:connect@vedam.org"
+                                >
+                                    connect@vedam.org
+                                </Link>{" "}
+                                to check availability and proceed accordingly.
+                            </>,
+                        ].map((text, index) => (
+                            <Box key={index} display="flex" alignItems="flex-start" mb={1}>
+                                <Box
+                                    sx={{
+                                        minWidth: 24,
+                                        height: 24,
+                                        backgroundColor: "#7B2CBF",
+                                        color: "#fff",
+                                        fontSize: 12,
+                                        fontWeight: 600,
+                                        borderRadius: "50%",
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                        mt: "2px",
+                                        mr: 1.5,
+                                        flexShrink: 0,
+                                    }}
+                                >
+                                    {index + 1}
+                                </Box>
+                                <Typography
+                                    variant="subtitle1"
+                                    sx={{
+                                        fontSize: { xs: 12, sm: 14 },
+                                        color: "#000",
+                                        lineHeight: 1.6,
+                                        fontFamily: "Inter",
+                                    }}
+                                >
+                                    {text}
+                                </Typography>
+                            </Box>
+                        ))}
                     </Box>
+
                 </Box>
             </>
         );
