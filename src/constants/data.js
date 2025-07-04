@@ -268,11 +268,31 @@ export const homeScreenData = {
       },
       {
         id: 19,
-        imageUrl: "/img/companies/HCL_Technologies-Logo.png",
+        imageUrl: "/img/companies/HCL image.png",
       },
       {
         id: 20,
-        imageUrl: "/img/companies/KPMG-logo.webp",
+        imageUrl: "/img/companies/KPMG-logo (1).png",
+      },
+      {
+        id: 21,
+        imageUrl: "/img/companies/Deloitte.png",
+      },
+      {
+        id: 22,
+        imageUrl: "/img/companies/jpmc-logo.png",
+      },
+      {
+        id: 23,
+        imageUrl: "/img/companies/Samsung_Logo_(RGB).png",
+      },
+      {
+        id: 24,
+        imageUrl: "/img/companies/zivame-logo-2019.png",
+      },
+      {
+        id: 25,
+        imageUrl: "/img/companies/atoms-logo-dark@3x-fb135d29.webp",
       },
     ],
     bottomText:
