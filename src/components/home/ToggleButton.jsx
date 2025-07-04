@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Box, useMediaQuery } from "@mui/material";
+import { HostelFees } from "./HostelFee";
 
 const ToggleButton = ({ selectedFee, setSelectedFee }) => {
   return (
@@ -72,11 +73,17 @@ const ToggleButton = ({ selectedFee, setSelectedFee }) => {
   );
 };
 
-const FeesToggleButton = ({ div1, div2, mdiv1, mdiv2 }) => {
+const FeesToggleButton = ({ div1, mdiv1 }) => {
   const [selectedFee, setSelectedFee] = useState("tuition");
   const isMobile = useMediaQuery("(max-width:600px)");
 
-  const content = selectedFee === "tuition" ? (isMobile ? mdiv1 : div1) : div2;
+  const getContent = () => {
+    if (selectedFee === "tuition") {
+      return isMobile ? mdiv1 : div1;
+    } else {
+      return <HostelFees />;
+    }
+  };
 
   return (
     <Box
@@ -87,8 +94,12 @@ const FeesToggleButton = ({ div1, div2, mdiv1, mdiv2 }) => {
         flexDirection: "column",
       }}
     >
-      <ToggleButton selectedFee={selectedFee} setSelectedFee={setSelectedFee} />
-      <Box mt={2}>{content}</Box>
+      <ToggleButton
+        selectedFee={selectedFee}
+        setSelectedFee={setSelectedFee}
+      />
+
+      <Box mt={2}>{getContent()}</Box>
     </Box>
   );
 };
