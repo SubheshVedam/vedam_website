@@ -349,7 +349,7 @@ export const FeeStructure = () => {
           md: "1.2rem",
         }, color: 'rgba(146, 62, 218, 1)',
         mb: 2
-      }}>YourSpace Hostel [Out of Campus]</Typography>
+      }}>Out of Campus</Typography>
       {/* Out Hostel Fees Section */}
       <Box
         sx={{
@@ -388,7 +388,7 @@ export const FeeStructure = () => {
                   <TableCell
                     sx={{
                       color: "white",
-                      textAlign: "center",
+                      textAlign: "left",
                       borderRight: "1px solid rgba(186, 107, 255, 0.3)",
                       borderBottom: "1px solid rgba(186, 107, 255, 0.3)",
                     }}>
@@ -397,7 +397,7 @@ export const FeeStructure = () => {
                   <TableCell
                     sx={{
                       color: "white",
-                      textAlign: "center",
+                      textAlign: "left",
                       borderRight: "1px solid rgba(186, 107, 255, 0.3)",
                       borderBottom: "1px solid rgba(186, 107, 255, 0.3)",
                     }}>
@@ -409,15 +409,33 @@ export const FeeStructure = () => {
                 <TableRow>
                   <TableCell
                     sx={{
-                      textAlign: "center",
+                      textAlign: "left",
                       borderRight: "1px solid rgba(186, 107, 255, 0.3)",
                     }}>
-                    Hostel Fee per Year
+                    Hostel Fee per Semester
+                    <br />
                     [Accomodation + Mess + Laundry Charges]
                   </TableCell>
                   <TableCell
                     sx={{
-                      textAlign: "center",
+                      textAlign: "left",
+                    }}>
+                    ₹1,12,000/-
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell
+                    sx={{
+                      textAlign: "left",
+                      borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                    }}>
+                    Hostel Fee per Year
+                    <br />
+                    [Accomodation + Mess + Laundry Charges]
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      textAlign: "left",
                     }}>
                     ₹2,24,000/-
                   </TableCell>
@@ -425,14 +443,16 @@ export const FeeStructure = () => {
                 <TableRow>
                   <TableCell
                     sx={{
-                      textAlign: "center",
+                      color: '#1C1C1C',
+                      textAlign: "left",
                       borderRight: "1px solid rgba(186, 107, 255, 0.3)",
                     }}>
-                    Security Deposit (Refundable)
+                    Security Deposite (Refundable)
                   </TableCell>
                   <TableCell
                     sx={{
-                      textAlign: "center",
+                      textAlign: "left",
+                      collor: '667085'
                     }}>
                     ₹10,000/-
                   </TableCell>
@@ -440,14 +460,14 @@ export const FeeStructure = () => {
                 <TableRow>
                   <TableCell
                     sx={{
-                      textAlign: "center",
+                      textAlign: "left",
                       borderRight: "1px solid rgba(186, 107, 255, 0.3)",
                     }}>
                     Room Features
                   </TableCell>
                   <TableCell
                     sx={{
-                      textAlign: "center",
+                      textAlign: "left",
                     }}>
                     Attached Washroom, AC, high speed WiFi
                   </TableCell>
@@ -455,16 +475,31 @@ export const FeeStructure = () => {
                 <TableRow>
                   <TableCell
                     sx={{
-                      textAlign: "center",
+                      textAlign: "left",
                       borderRight: "1px solid rgba(186, 107, 255, 0.3)",
                     }}>
                     Applicable for
                   </TableCell>
                   <TableCell
                     sx={{
-                      textAlign: "center",
+                      textAlign: "left",
                     }}>
                     Boys and Girls
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell
+                    sx={{
+                      textAlign: "left",
+                      borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                    }}>
+                    NOTE
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      textAlign: "left",
+                    }}>
+                    Electricity to be charged on actuals
                   </TableCell>
                 </TableRow>
               </TableBody>
@@ -522,7 +557,18 @@ export const FeeStructure = () => {
               lineHeight: 1.6,
               mb: 1,
             }}>
-            Hostel fee is non refundable. Students will be charged for the entire year, even if one plans to vacate mid-year. The payment happens semester wise
+            Students need to pay 1 semester fee to book a bed
+          </Typography>
+          <Typography
+            component="li"
+            variant="subtitle1"
+            sx={{
+              fontSize: { xs: 12, sm: 14 },
+              color: "#374151",
+              lineHeight: 1.6,
+              mb: 1,
+            }}>
+            Hostel fee is non refundable. Students will be charged for the entire year, even if one plans to vacate mid-year.
           </Typography>
           <Typography
             component="li"
@@ -535,17 +581,6 @@ export const FeeStructure = () => {
             }}>
             Fee are applicable for the academic year 2025 - 26 and may increase by 7 - 10% annually from the second year onwards due to inflation adjustment
           </Typography>
-          <Typography
-            component="li"
-            variant="subtitle1"
-            sx={{
-              fontSize: { xs: 12, sm: 14 },
-              color: "#374151",
-              lineHeight: 1.6,
-              mb: 1,
-            }}>
-            Electricity charges on actuals are applicable
-          </Typography>
 
           <Typography
             component="li"
@@ -556,10 +591,10 @@ export const FeeStructure = () => {
               lineHeight: 1.6,
               mb: 1,
             }}>
-            You can find more details about your space Hostel for Vedam Students
+            You can find more details about your space Hostel for Vedam Students here
             <Link
               style={{
-                color: "#FFA41A",
+                color: "#000000",
                 fontSize: "inherit",
                 fontFamily: "Inter",
                 lineHeight: "150%",
@@ -579,10 +614,10 @@ export const FeeStructure = () => {
               color: "#374151",
               lineHeight: 1.6,
             }}>
-            Should you wish to book, please contact Vedam team at{" "}
+            Should you wish to book, please contact Vedam team at connect@vedam.org{" "}
             <Link
               style={{
-                color: "#FFA41A",
+                color: "#000000",
                 fontSize: "inherit",
                 fontFamily: "Inter",
                 lineHeight: "150%",
@@ -602,7 +637,7 @@ export const FeeStructure = () => {
           md: "1.2rem",
         }, color: 'rgba(146, 62, 218, 1)',
         mb: 2
-      }}>ADYPU Hostel [In Campus]</Typography>
+      }}>In Campus</Typography>
       <Box
         sx={{
           width: "100%",
@@ -644,7 +679,7 @@ export const FeeStructure = () => {
                   <TableCell
                     sx={{
                       color: "white",
-                      textAlign: "center",
+                      textAlign: "left",
                       borderRight: "1px solid rgba(186, 107, 255, 0.3)",
                       borderBottom: "1px solid rgba(186, 107, 255, 0.3)",
                     }}>
@@ -653,7 +688,7 @@ export const FeeStructure = () => {
                   <TableCell
                     sx={{
                       color: "white",
-                      textAlign: "center",
+                      textAlign: "left",
                       borderRight: "1px solid rgba(186, 107, 255, 0.3)",
                       borderBottom: "1px solid rgba(186, 107, 255, 0.3)",
                     }}>
@@ -662,7 +697,7 @@ export const FeeStructure = () => {
                   <TableCell
                     sx={{
                       color: "white",
-                      textAlign: "center",
+                      textAlign: "left",
                       borderRight: "1px solid rgba(186, 107, 255, 0.3)",
                       borderBottom: "1px solid rgba(186, 107, 255, 0.3)",
                     }}>
@@ -671,7 +706,7 @@ export const FeeStructure = () => {
                   <TableCell
                     sx={{
                       color: "white",
-                      textAlign: "center",
+                      textAlign: "left",
                       borderBottom: "1px solid rgba(186, 107, 255, 0.3)",
                     }}>
                     5 Sharing Room
@@ -683,31 +718,30 @@ export const FeeStructure = () => {
                 <TableRow>
                   <TableCell
                     sx={{
-                      textAlign: "center",
+                      textAlign: "left",
                       borderRight: "1px solid rgba(186, 107, 255, 0.3)",
                     }}>
-                    Hostel Fee per Year
-                    [Accomodation + Mess + Laundry Charges]
+                    Accommodation Cost per Year
 
 
                   </TableCell>
                   <TableCell
                     sx={{
-                      textAlign: "center",
+                      textAlign: "left",
                       borderRight: "1px solid rgba(186, 107, 255, 0.3)",
                     }}>
                     ₹1,62,000/-
                   </TableCell>
                   <TableCell
                     sx={{
-                      textAlign: "center",
+                      textAlign: "left",
                       borderRight: "1px solid rgba(186, 107, 255, 0.3)",
                     }}>
                     ₹1,82,000/-
                   </TableCell>
                   <TableCell
                     sx={{
-                      textAlign: "center",
+                      textAlign: "left",
                     }}>
                     ₹2,22,000/-
                   </TableCell>
@@ -715,7 +749,103 @@ export const FeeStructure = () => {
                 <TableRow>
                   <TableCell
                     sx={{
+                      textAlign: "left",
+                      borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                    }}>
+                    Mess Charges per Month
+
+
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      textAlign: "left",
+                      borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                    }}>
+                    ₹10,000/-
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      textAlign: "left",
+                      borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                    }}>
+                    ₹20,000/-
+                  </TableCell>
+                  <TableCell
+                    sx={{
                       textAlign: "center",
+                    }}>
+                    ₹20,000/-
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell
+                    sx={{
+                      textAlign: "left",
+                      borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                    }}>
+                    Laundry Charges per Year
+
+
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      textAlign: "left",
+                      borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                    }}>
+                    ₹10,000/-
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      textAlign: "left",
+                      borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                    }}>
+                    ₹20,000/-
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      textAlign: "left",
+                    }}>
+                    ₹20,000/-
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell
+                    sx={{
+                      textAlign: "left",
+                      borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                    }}>
+                    Hostel Fee per Year
+                    <br />
+                    [Accomodation + Mess + Laundry Charges]
+
+
+
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      textAlign: "left",
+                      borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                    }}>
+                    ₹10,000/-
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      textAlign: "left",
+                      borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                    }}>
+                    ₹20,000/-
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      textAlign: "left",
+                    }}>
+                    ₹20,000/-
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell
+                    sx={{
+                      textAlign: "left",
                       borderRight: "1px solid rgba(186, 107, 255, 0.3)",
                     }}>
                     Security Deposit (Refundable)
@@ -724,21 +854,113 @@ export const FeeStructure = () => {
                   </TableCell>
                   <TableCell
                     sx={{
-                      textAlign: "center",
+                      textAlign: "left",
                       borderRight: "1px solid rgba(186, 107, 255, 0.3)",
                     }}>
                     ₹10,000/-
                   </TableCell>
                   <TableCell
                     sx={{
-                      textAlign: "center",
+                      textAlign: "left",
                       borderRight: "1px solid rgba(186, 107, 255, 0.3)",
                     }}>
                     ₹20,000/-
                   </TableCell>
                   <TableCell
                     sx={{
-                      textAlign: "center",
+                      textAlign: "left",
+                    }}>
+                    ₹20,000/-
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell
+                    sx={{
+                      textAlign: "left",
+                      borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                    }}>
+                    Room Features
+
+
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      textAlign: "left",
+                      borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                    }}>
+                    ₹10,000/-
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      textAlign: "left",
+                      borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                    }}>
+                    ₹20,000/-
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      textAlign: "left",
+                    }}>
+                    ₹20,000/-
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell
+                    sx={{
+                      textAlign: "left",
+                      borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                    }}>
+                    Applicable for
+
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      textAlign: "left",
+                      borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                    }}>
+                    ₹10,000/-
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      textAlign: "left",
+                      borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                    }}>
+                    ₹20,000/-
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      textAlign: "left",
+                    }}>
+                    ₹20,000/-
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell
+                    sx={{
+                      textAlign: "left",
+                      borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                    }}>
+                    NOTE
+
+
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      textAlign: "left",
+                      borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                    }}>
+                    ₹10,000/-
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      textAlign: "left",
+                      borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                    }}>
+                    ₹20,000/-
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      textAlign: "left",
                     }}>
                     ₹20,000/-
                   </TableCell>
