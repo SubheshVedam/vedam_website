@@ -56,33 +56,6 @@ export const testimonialData = [
 
 export const expertsData = [
   {
-    imageUrl: "/img/experts/ramchandra.jpeg",
-    name: "Ramachandra Nalam",
-    logo: "/img/companies/meta.webp",
-    designation: "Data and ML Engineer",
-    info: "Masters from University of Buffalo, Ex Amazon",
-    rating: 3.7,
-    linkedIn: "https://www.linkedin.com/in/ramachandra-nalam/",
-  },
-  {
-    imageUrl: "/img/experts/gauravdawra.jpeg",
-    name: "Gaurav Dawra",
-    logo: "/img/companies/microsoft-logo.png",
-    designation: "Software Engineer",
-    info: "ICPC World Finalist 2022-23, 6 Star on Code Chef",
-    rating: 4.2,
-    linkedIn: "https://www.linkedin.com/in/gaurav-dawra-a2a935200/",
-  },
-  {
-    imageUrl: "/img/experts/bradford.jpeg",
-    name: "Bradford Tuckfield",
-    logo: "/img/companies/wharton_logo.webp",
-    designation: "PhD",
-    info: "Founder, Author and Instructor ; Ex American Express and Accenture",
-    rating: 4.9,
-    linkedIn: "https://www.linkedin.com/in/bradford-tuckfield-80565b25/",
-  },
-  {
     imageUrl: "/img/experts/amanpreet.jpeg",
     name: "Amanpreet Singh",
     logo: "/img/companies/google.webp",
@@ -101,6 +74,7 @@ export const expertsData = [
     rating: 4.9,
     linkedIn: "https://www.linkedin.com/in/manivannan21/",
   },
+
   {
     imageUrl: "/img/experts/ekta.jpeg",
     name: "Ekta Shah",
@@ -111,13 +85,33 @@ export const expertsData = [
     linkedIn: "https://www.linkedin.com/in/ekta-shah30/",
   },
   {
-    imageUrl: "/img/experts/basant.jpeg",
-    name: "Basant Rawat",
-    logo: "/img/companies/Angel_One_Logo.png",
-    designation: "SDE 2",
-    info: "Mentored over 20,000 Minutes, Ex Hexaware",
+    imageUrl: "/img/experts/gauravdawra.jpeg",
+    name: "Gaurav Dawra",
+    logo: "/img/companies/microsoft-logo.png",
+    designation: "Software Engineer",
+    info: "ICPC World Finalist 2022-23, 6 Star on Code Chef",
+    rating: 4.2,
+    linkedIn: "https://www.linkedin.com/in/gaurav-dawra-a2a935200/",
+  },
+
+  {
+    imageUrl: "/img/experts/bradford.jpeg",
+    name: "Bradford Tuckfield",
+    logo: "/img/companies/wharton_logo.webp",
+    designation: "PhD",
+    info: "Founder, Author and Instructor ; Ex American Express and Accenture",
     rating: 4.9,
-    linkedIn: "https://www.linkedin.com/in/basant-rawat/",
+    linkedIn: "https://www.linkedin.com/in/bradford-tuckfield-80565b25/",
+  },
+
+  {
+    imageUrl: "/img/experts/ramchandra.jpeg",
+    name: "Ramachandra Nalam",
+    logo: "/img/companies/meta.webp",
+    designation: "Data and ML Engineer",
+    info: "Masters from University of Buffalo, Ex Amazon",
+    rating: 3.7,
+    linkedIn: "https://www.linkedin.com/in/ramachandra-nalam/",
   },
   {
     imageUrl: "/img/experts/nischay.jpeg",
@@ -127,6 +121,15 @@ export const expertsData = [
     info: "University Gold Medalist, Ex Meesho",
     rating: 4.9,
     linkedIn: "https://www.linkedin.com/in/nishchay-agrawal-157404170/",
+  },
+  {
+    imageUrl: "/img/experts/basant.jpeg",
+    name: "Basant Rawat",
+    logo: "/img/companies/Angel_One_Logo.png",
+    designation: "SDE 2",
+    info: "Mentored over 20,000 Minutes, Ex Hexaware",
+    rating: 4.9,
+    linkedIn: "https://www.linkedin.com/in/basant-rawat/",
   },
 ];
 export const instructorData = [
@@ -287,6 +290,42 @@ export const homeScreenData = {
         id: 16,
         imageUrl: "/img/companies/Atlassian-Logo.png",
       },
+      {
+        id: 17,
+        imageUrl: "/img/companies/Airtel-Logo.png",
+      },
+      {
+        id: 18,
+        imageUrl: "/img/companies/delhivery_logo.png",
+      },
+      {
+        id: 19,
+        imageUrl: "/img/companies/HCL image.png",
+      },
+      {
+        id: 20,
+        imageUrl: "/img/companies/KPMG-logo (1).png",
+      },
+      {
+        id: 21,
+        imageUrl: "/img/companies/Deloitte.png",
+      },
+      {
+        id: 22,
+        imageUrl: "/img/companies/jpmc-logo.png",
+      },
+      {
+        id: 23,
+        imageUrl: "/img/companies/Samsung_Logo_(RGB).png",
+      },
+      {
+        id: 24,
+        imageUrl: "/img/companies/zivame-logo-2019.png",
+      },
+      {
+        id: 25,
+        imageUrl: "/img/companies/atoms-logo-dark@3x-fb135d29.webp",
+      },
     ],
     bottomText:
       "*outcome through companies whom the founders built before Vedam ",
@@ -300,7 +339,7 @@ export const homeScreenData = {
       {
         id: 0,
         image: "/img/branch.webp",
-        text: "B.Tech in Computer Science Engineering (AI)",
+        text: "B.Tech in Computer Science Engineering (AI) - UGC Approved",
       },
       {
         id: 1,
@@ -847,8 +886,8 @@ export const admissionScreenData = {
       "Final Offer",
     ],
     secondArray: [
-      "4th July 2025",
-      "3rd July 2025",
+      "15th July 2025",
+      "14th July 2025",
       "Within 2 Days of the Exam",
       "Within 5 Days of the Exam",
       "Within 15 Days of the Exam, If selected",
@@ -870,7 +909,7 @@ export const admissionScreenData = {
         title: "Apply Online",
         subtitle:
           "Complete your profile and reserve your slot for the Vedam Scholastic Aptitude Test (VSAT).",
-        subtitle1: "Last Date to Register is 3rd July 2025",
+        subtitle1: "Last Date to Register is 14th July 2025",
         showButton: true,
       },
       {
@@ -878,7 +917,7 @@ export const admissionScreenData = {
         step: "Step 2",
         title: "Take the VSAT",
         subtitle:
-          "It is an entrance test conducted online. July intake round on 4th July, 2025.",
+          "It is an entrance test conducted online. July intake round on 15th July, 2025.",
         showButton: false,
       },
       {
