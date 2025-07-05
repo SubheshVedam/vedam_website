@@ -98,7 +98,7 @@ export const HostelContent = ({ selectedHostelType }) => {
                             <Table
                                 sx={{
                                     width: "100%",
-                                    backgroundColor: "rgba(186, 107, 255, 0.08)",
+                                    backgroundColor: "white",
                                     borderCollapse: "separate",
                                     borderSpacing: 0,
                                     borderRadius: "22px",
@@ -129,7 +129,11 @@ export const HostelContent = ({ selectedHostelType }) => {
                                                 // color: "white",
                                                 color: {
                                                     xs: "#667085",
-                                                    md: "fff"
+                                                    md: "white"
+                                                },
+                                                backgroundColor: {
+                                                    xs: "white",
+                                                    md: "#923EDA"
                                                 },
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
@@ -146,6 +150,14 @@ export const HostelContent = ({ selectedHostelType }) => {
                                             sx={{
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                                                color: {
+                                                    xs: "#FFFFFF",
+                                                    md: "#1C1C1C"
+                                                },
+                                                backgroundColor: {
+                                                    xs: "#A75EE7",
+                                                    md: "#FFFFFF"
+                                                }
                                             }}
                                         >
                                             Hostel Fee per Semester
@@ -166,6 +178,14 @@ export const HostelContent = ({ selectedHostelType }) => {
                                             sx={{
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                                                color: {
+                                                    xs: "#FFFFFF",
+                                                    md: "#1C1C1C"
+                                                },
+                                                backgroundColor: {
+                                                    xs: "#A75EE7",
+                                                    md: "#FFFFFF"
+                                                }
                                             }}
                                         >
                                             Hostel Fee per Year
@@ -184,9 +204,17 @@ export const HostelContent = ({ selectedHostelType }) => {
                                     <TableRow>
                                         <TableCell
                                             sx={{
-                                                color: '#1C1C1C',
+                                                // color: '#1C1C1C',
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                                                color: {
+                                                    xs: "#FFFFFF",
+                                                    md: "#1C1C1C"
+                                                },
+                                                backgroundColor: {
+                                                    xs: "#A75EE7",
+                                                    md: "#FFFFFF"
+                                                }
                                             }}
                                         >
                                             Security Deposite (Refundable)
@@ -205,6 +233,14 @@ export const HostelContent = ({ selectedHostelType }) => {
                                             sx={{
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                                                color: {
+                                                    xs: "#FFFFFF",
+                                                    md: "#1C1C1C"
+                                                },
+                                                backgroundColor: {
+                                                    xs: "#A75EE7",
+                                                    md: "#FFFFFF"
+                                                }
                                             }}
                                         >
                                             Room Features
@@ -223,6 +259,14 @@ export const HostelContent = ({ selectedHostelType }) => {
                                             sx={{
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                                                color: {
+                                                    xs: "#FFFFFF",
+                                                    md: "#1C1C1C"
+                                                },
+                                                backgroundColor: {
+                                                    xs: "#A75EE7",
+                                                    md: "#FFFFFF"
+                                                }
                                             }}
                                         >
                                             Applicable for
@@ -241,6 +285,14 @@ export const HostelContent = ({ selectedHostelType }) => {
                                             sx={{
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                                                color: {
+                                                    xs: "#FFFFFF",
+                                                    md: "#1C1C1C"
+                                                },
+                                                backgroundColor: {
+                                                    xs: "#A75EE7",
+                                                    md: "#FFFFFF"
+                                                }
                                             }}
                                         >
                                             NOTE
@@ -402,7 +454,7 @@ export const HostelContent = ({ selectedHostelType }) => {
                             <Table
                                 sx={{
                                     width: "100%",
-                                    backgroundColor: "rgba(186, 107, 255, 0.08)",
+                                    backgroundColor: "white",
                                     borderCollapse: "separate",
                                     borderSpacing: 0,
                                     borderRadius: "22px",
@@ -412,40 +464,71 @@ export const HostelContent = ({ selectedHostelType }) => {
                                     <TableRow sx={{ background: "rgba(146, 62, 218, 1)" }}>
                                         <TableCell
                                             sx={{
-                                                color: "#1C1C1C",
+                                                // color: "#1C1C1C",
+                                                color: {
+                                                    xs: "#fff",
+                                                    md: "#1C1C1C"
+                                                },
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
                                                 borderBottom: "1px solid rgba(186, 107, 255, 0.3)",
-                                                backgroundColor: '#D6A6FF'
+                                                // backgroundColor: '#D6A6FF'
+                                                backgroundColor: {
+                                                    sx: '#A75EE7', md: '#D6A6FF'
+                                                }
                                             }}
                                         >
                                             Room Type
                                         </TableCell>
                                         <TableCell
                                             sx={{
-                                                color: "white",
+                                                // color: "white",
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
                                                 borderBottom: "1px solid rgba(186, 107, 255, 0.3)",
+                                                color: {
+                                                    xs: "#667085",
+                                                    md: "white"
+                                                },
+                                                backgroundColor: {
+                                                    xs: "white",
+                                                    md: "#923EDA"
+                                                },
                                             }}
                                         >
                                             4 Sharing Room
                                         </TableCell>
                                         <TableCell
                                             sx={{
-                                                color: "white",
+                                                // color: "white",
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
                                                 borderBottom: "1px solid rgba(186, 107, 255, 0.3)",
+                                                color: {
+                                                    xs: "#667085",
+                                                    md: "white"
+                                                },
+                                                backgroundColor: {
+                                                    xs: "white",
+                                                    md: "#923EDA"
+                                                },
                                             }}
                                         >
                                             3 Sharing Room
                                         </TableCell>
                                         <TableCell
                                             sx={{
-                                                color: "white",
+                                                // color: "white",
                                                 textAlign: "left",
                                                 borderBottom: "1px solid rgba(186, 107, 255, 0.3)",
+                                                color: {
+                                                    xs: "#667085",
+                                                    md: "white"
+                                                },
+                                                backgroundColor: {
+                                                    xs: "white",
+                                                    md: "#923EDA"
+                                                },
                                             }}
                                         >
                                             5 Sharing Room
@@ -458,6 +541,14 @@ export const HostelContent = ({ selectedHostelType }) => {
                                             sx={{
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                                                color: {
+                                                    xs: "#FFFFFF",
+                                                    md: "#1C1C1C"
+                                                },
+                                                backgroundColor: {
+                                                    xs: "#A75EE7",
+                                                    md: "#FFFFFF"
+                                                }
                                             }}
                                         >
                                             Accommodation Cost per Year
@@ -494,6 +585,14 @@ export const HostelContent = ({ selectedHostelType }) => {
                                             sx={{
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                                                color: {
+                                                    xs: "#FFFFFF",
+                                                    md: "#1C1C1C"
+                                                },
+                                                backgroundColor: {
+                                                    xs: "#A75EE7",
+                                                    md: "#FFFFFF"
+                                                }
                                             }}
                                         >
                                             Mess Charges per Month
@@ -530,6 +629,14 @@ export const HostelContent = ({ selectedHostelType }) => {
                                             sx={{
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                                                color: {
+                                                    xs: "#FFFFFF",
+                                                    md: "#1C1C1C"
+                                                },
+                                                backgroundColor: {
+                                                    xs: "#A75EE7",
+                                                    md: "#FFFFFF"
+                                                }
                                             }}
                                         >
                                             Laundry Charges per Year
@@ -566,6 +673,14 @@ export const HostelContent = ({ selectedHostelType }) => {
                                             sx={{
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                                                color: {
+                                                    xs: "#FFFFFF",
+                                                    md: "#1C1C1C"
+                                                },
+                                                backgroundColor: {
+                                                    xs: "#A75EE7",
+                                                    md: "#FFFFFF"
+                                                }
                                             }}
                                         >
                                             Hostel Fee per Year
@@ -604,6 +719,14 @@ export const HostelContent = ({ selectedHostelType }) => {
                                             sx={{
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                                                color: {
+                                                    xs: "#FFFFFF",
+                                                    md: "#1C1C1C"
+                                                },
+                                                backgroundColor: {
+                                                    xs: "#A75EE7",
+                                                    md: "#FFFFFF"
+                                                }
                                             }}
                                         >
                                             Security Deposit (Refundable)
@@ -640,6 +763,14 @@ export const HostelContent = ({ selectedHostelType }) => {
                                             sx={{
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                                                color: {
+                                                    xs: "#FFFFFF",
+                                                    md: "#1C1C1C"
+                                                },
+                                                backgroundColor: {
+                                                    xs: "#A75EE7",
+                                                    md: "#FFFFFF"
+                                                }
                                             }}
                                         >
                                             Room Features
@@ -678,6 +809,14 @@ export const HostelContent = ({ selectedHostelType }) => {
                                             sx={{
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                                                color: {
+                                                    xs: "#FFFFFF",
+                                                    md: "#1C1C1C"
+                                                },
+                                                backgroundColor: {
+                                                    xs: "#A75EE7",
+                                                    md: "#FFFFFF"
+                                                }
                                             }}
                                         >
                                             Applicable for
@@ -714,6 +853,14 @@ export const HostelContent = ({ selectedHostelType }) => {
                                             sx={{
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
+                                                color: {
+                                                    xs: "#FFFFFF",
+                                                    md: "#1C1C1C"
+                                                },
+                                                backgroundColor: {
+                                                    xs: "#A75EE7",
+                                                    md: "#FFFFFF"
+                                                }
                                             }}
                                         >
                                             NOTE
