@@ -108,18 +108,29 @@ export const HostelContent = ({ selectedHostelType }) => {
                                     <TableRow sx={{ background: "rgba(146, 62, 218, 1)" }}>
                                         <TableCell
                                             sx={{
-                                                color: "#1C1C1C",
+                                                // color: "#1C1C1C",
+                                                color: {
+                                                    xs: "#fff",
+                                                    md: "#1C1C1C"
+                                                },
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
                                                 borderBottom: "1px solid rgba(186, 107, 255, 0.3)",
-                                                backgroundColor: '#D6A6FF'
+                                                // backgroundColor: '#D6A6FF'
+                                                backgroundColor: {
+                                                    sx: '#A75EE7', md: '#D6A6FF'
+                                                }
                                             }}
                                         >
                                             Room Type
                                         </TableCell>
                                         <TableCell
                                             sx={{
-                                                color: "white",
+                                                // color: "white",
+                                                color: {
+                                                    xs: "#667085",
+                                                    md: "fff"
+                                                },
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
                                                 borderBottom: "1px solid rgba(186, 107, 255, 0.3)",
