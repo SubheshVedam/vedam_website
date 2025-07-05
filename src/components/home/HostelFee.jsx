@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import Divider from '@mui/material/Divider';
 
 import { Box, Typography, Link, Table, TableHead, TableBody, TableRow, TableCell } from "@mui/material";
 
@@ -25,7 +24,7 @@ export const HostelTypeToggle = ({ selectedHostelType, setSelectedHostelType }) 
                     "&::after": {
                         content: '""',
                         position: "absolute",
-                        bottom: -10, // adjust as needed
+                        bottom: -10,
                         left: 0,
                         right: 0,
                         height: "2px",
@@ -108,7 +107,6 @@ export const HostelContent = ({ selectedHostelType }) => {
                                     <TableRow sx={{ background: "rgba(146, 62, 218, 1)" }}>
                                         <TableCell
                                             sx={{
-                                                // color: "#1C1C1C",
                                                 color: {
                                                     xs: "#fff",
                                                     md: "#1C1C1C"
@@ -116,7 +114,6 @@ export const HostelContent = ({ selectedHostelType }) => {
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
                                                 borderBottom: "1px solid rgba(186, 107, 255, 0.3)",
-                                                // backgroundColor: '#D6A6FF'
                                                 backgroundColor: {
                                                     sx: '#A75EE7', md: '#D6A6FF'
                                                 }
@@ -126,7 +123,6 @@ export const HostelContent = ({ selectedHostelType }) => {
                                         </TableCell>
                                         <TableCell
                                             sx={{
-                                                // color: "white",
                                                 color: {
                                                     xs: "#667085",
                                                     md: "white"
@@ -145,7 +141,12 @@ export const HostelContent = ({ selectedHostelType }) => {
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
-                                    <TableRow>
+                                    <TableRow sx={{
+                                        height: {
+                                            xs: "112px",
+                                            md: "62px"
+                                        }
+                                    }}>
                                         <TableCell
                                             sx={{
                                                 textAlign: "left",
@@ -173,7 +174,12 @@ export const HostelContent = ({ selectedHostelType }) => {
                                             ₹1,12,000/-
                                         </TableCell>
                                     </TableRow>
-                                    <TableRow>
+                                    <TableRow sx={{
+                                        height: {
+                                            xs: "112px",
+                                            md: "62px"
+                                        }
+                                    }}>
                                         <TableCell
                                             sx={{
                                                 textAlign: "left",
@@ -201,10 +207,14 @@ export const HostelContent = ({ selectedHostelType }) => {
                                             ₹2,24,000/-
                                         </TableCell>
                                     </TableRow>
-                                    <TableRow>
+                                    <TableRow sx={{
+                                        height: {
+                                            xs: "112px",
+                                            md: "62px"
+                                        }
+                                    }}>
                                         <TableCell
                                             sx={{
-                                                // color: '#1C1C1C',
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
                                                 color: {
@@ -228,7 +238,12 @@ export const HostelContent = ({ selectedHostelType }) => {
                                             ₹10,000/-
                                         </TableCell>
                                     </TableRow>
-                                    <TableRow>
+                                    <TableRow sx={{
+                                        height: {
+                                            xs: "112px",
+                                            md: "62px"
+                                        }
+                                    }}>
                                         <TableCell
                                             sx={{
                                                 textAlign: "left",
@@ -254,7 +269,12 @@ export const HostelContent = ({ selectedHostelType }) => {
                                             Attached Washroom, AC, high speed WiFi
                                         </TableCell>
                                     </TableRow>
-                                    <TableRow>
+                                    <TableRow sx={{
+                                        height: {
+                                            xs: "112px",
+                                            md: "62px"
+                                        }
+                                    }}>
                                         <TableCell
                                             sx={{
                                                 textAlign: "left",
@@ -280,7 +300,12 @@ export const HostelContent = ({ selectedHostelType }) => {
                                             Boys and Girls
                                         </TableCell>
                                     </TableRow>
-                                    <TableRow>
+                                    <TableRow sx={{
+                                        height: {
+                                            xs: "112px",
+                                            md: "62px"
+                                        }
+                                    }}>
                                         <TableCell
                                             sx={{
                                                 textAlign: "left",
@@ -464,7 +489,6 @@ export const HostelContent = ({ selectedHostelType }) => {
                                     <TableRow sx={{ background: "rgba(146, 62, 218, 1)" }}>
                                         <TableCell
                                             sx={{
-                                                // color: "#1C1C1C",
                                                 color: {
                                                     xs: "#fff",
                                                     md: "#1C1C1C"
@@ -472,7 +496,6 @@ export const HostelContent = ({ selectedHostelType }) => {
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
                                                 borderBottom: "1px solid rgba(186, 107, 255, 0.3)",
-                                                // backgroundColor: '#D6A6FF'
                                                 backgroundColor: {
                                                     sx: '#A75EE7', md: '#D6A6FF'
                                                 }
@@ -482,7 +505,6 @@ export const HostelContent = ({ selectedHostelType }) => {
                                         </TableCell>
                                         <TableCell
                                             sx={{
-                                                // color: "white",
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
                                                 borderBottom: "1px solid rgba(186, 107, 255, 0.3)",
@@ -500,7 +522,6 @@ export const HostelContent = ({ selectedHostelType }) => {
                                         </TableCell>
                                         <TableCell
                                             sx={{
-                                                // color: "white",
                                                 textAlign: "left",
                                                 borderRight: "1px solid rgba(186, 107, 255, 0.3)",
                                                 borderBottom: "1px solid rgba(186, 107, 255, 0.3)",
@@ -518,7 +539,6 @@ export const HostelContent = ({ selectedHostelType }) => {
                                         </TableCell>
                                         <TableCell
                                             sx={{
-                                                // color: "white",
                                                 textAlign: "left",
                                                 borderBottom: "1px solid rgba(186, 107, 255, 0.3)",
                                                 color: {
@@ -536,7 +556,12 @@ export const HostelContent = ({ selectedHostelType }) => {
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
-                                    <TableRow>
+                                    <TableRow sx={{
+                                        height: {
+                                            xs: "110px",
+                                            md: "90px",
+                                        }
+                                    }}>
                                         <TableCell
                                             sx={{
                                                 textAlign: "left",
@@ -548,7 +573,7 @@ export const HostelContent = ({ selectedHostelType }) => {
                                                 backgroundColor: {
                                                     xs: "#A75EE7",
                                                     md: "#FFFFFF"
-                                                }
+                                                },
                                             }}
                                         >
                                             Accommodation Cost per Year
@@ -580,7 +605,12 @@ export const HostelContent = ({ selectedHostelType }) => {
                                             ₹1,50,000/-
                                         </TableCell>
                                     </TableRow>
-                                    <TableRow>
+                                    <TableRow sx={{
+                                        height: {
+                                            xs: "110px",
+                                            md: "90px"
+                                        }
+                                    }}>
                                         <TableCell
                                             sx={{
                                                 textAlign: "left",
@@ -624,7 +654,12 @@ export const HostelContent = ({ selectedHostelType }) => {
                                             ₹5,500/-
                                         </TableCell>
                                     </TableRow>
-                                    <TableRow>
+                                    <TableRow sx={{
+                                        height: {
+                                            xs: "110px",
+                                            md: "90px"
+                                        }
+                                    }}>
                                         <TableCell
                                             sx={{
                                                 textAlign: "left",
@@ -668,7 +703,16 @@ export const HostelContent = ({ selectedHostelType }) => {
                                             ₹6,000/-
                                         </TableCell>
                                     </TableRow>
-                                    <TableRow>
+                                    <TableRow sx={{
+                                        height: {
+                                            xs: "110px",
+                                            md: "90px",
+                                        },
+                                        lineHeight: {
+                                            sx: "17px",
+                                            md: "20px"
+                                        }
+                                    }}>
                                         <TableCell
                                             sx={{
                                                 textAlign: "left",
@@ -714,7 +758,12 @@ export const HostelContent = ({ selectedHostelType }) => {
                                             ₹2,22,000/-
                                         </TableCell>
                                     </TableRow>
-                                    <TableRow>
+                                    <TableRow sx={{
+                                        height: {
+                                            xs: "110px",
+                                            md: "90px"
+                                        }
+                                    }}>
                                         <TableCell
                                             sx={{
                                                 textAlign: "left",
@@ -758,7 +807,12 @@ export const HostelContent = ({ selectedHostelType }) => {
                                             ₹20,000/-
                                         </TableCell>
                                     </TableRow>
-                                    <TableRow>
+                                    <TableRow sx={{
+                                        height: {
+                                            xs: "110px",
+                                            md: "90px"
+                                        }
+                                    }}>
                                         <TableCell
                                             sx={{
                                                 textAlign: "left",
@@ -804,7 +858,12 @@ export const HostelContent = ({ selectedHostelType }) => {
                                             Attached Washroom, AC
                                         </TableCell>
                                     </TableRow>
-                                    <TableRow>
+                                    <TableRow sx={{
+                                        height: {
+                                            xs: "110px",
+                                            md: "90px"
+                                        }
+                                    }}>
                                         <TableCell
                                             sx={{
                                                 textAlign: "left",
@@ -848,7 +907,12 @@ export const HostelContent = ({ selectedHostelType }) => {
                                             Boys
                                         </TableCell>
                                     </TableRow>
-                                    <TableRow>
+                                    <TableRow sx={{
+                                        height: {
+                                            xs: "110px",
+                                            md: "90px"
+                                        }
+                                    }}>
                                         <TableCell
                                             sx={{
                                                 textAlign: "left",
