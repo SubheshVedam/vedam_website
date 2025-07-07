@@ -16,7 +16,7 @@ jobs:
       - name: Clear repository
         run: sudo rm -fr $GITHUB_WORKSPACE && mkdir $GITHUB_WORKSPACE
 
-      - name: Checkout repos
+      - name: Checkout repository
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
@@ -26,20 +26,29 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+          cache: 'yarn'
+
+      - name: Install Yarn
+        run: npm install -g yarn
+
+      - name: Get Yarn version
+        run: yarn --version
 
       - name: Cache dependencies
         id: cache
         uses: actions/cache@v3
         with:
-          path: ./node_modules
-          key: node-modules-${{ hashFiles('package-lock.json') }}
+          path: |
+            ./node_modules
+            ~/.cache/yarn
+          key: yarn-deps-${{ hashFiles('yarn.lock') }}
 
       - name: Install dependencies if changed
         if: steps.cache.outputs.cache-hit != 'true'
-        run: npm ci --legacy-peer-deps
+        run: yarn install --frozen-lockfile
 
       - name: Build application
-        run: npm run build
+        run: yarn build
 
       - name: SSH to our server and backup old build
         uses: appleboy/ssh-action@v0.1.5
