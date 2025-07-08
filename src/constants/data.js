@@ -220,7 +220,7 @@ export const homeScreenData = {
   },
   fromEducationToEntrance: {
     title: "",
-    subtitle: "Our Students at Top companies",
+    subtitle: "Our Placement Network",
     imagesGrid: [
       {
         id: 0,
