@@ -328,7 +328,7 @@ export const homeScreenData = {
       },
     ],
     bottomText:
-      "*outcome through companies whom the founders built before Vedam ",
+      "*Placement network of SET Education's parent organization and past success record of Vedam founding team ",
   },
   inCollaborationWith: {
     title: "We are launching",
