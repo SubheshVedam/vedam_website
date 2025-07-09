@@ -249,12 +249,12 @@ const Home = () => {
           >
             <ImageGrid />
           </CardContainer>
-          {/* <CardContainer
+          <CardContainer
             title={homeScreenData.instructor.title}
             subtitle={homeScreenData.instructor.subtitle}
           >
             <Instructors />
-          </CardContainer> */}
+          </CardContainer>
           <CardContainer
             title={homeScreenData.learnFrom.title}
             subtitle={homeScreenData.learnFrom.subtitle}
