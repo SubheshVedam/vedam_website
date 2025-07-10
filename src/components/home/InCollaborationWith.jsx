@@ -1,4 +1,6 @@
-import React from "react";
+'use client';
+
+import React, { useState } from "react";
 import { Button, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { homeScreenData } from "@/constants/data";
@@ -33,6 +35,8 @@ const SingleIconText = ({
 
 export const InCollaborationWith = () => {
   const data = homeScreenData.inCollaborationWith;
+  const [showVideo, setShowVideo] = useState(false);
+  const YOUTUBE_URL = "https://www.youtube.com/embed/3PCRxHdf--g?autoplay=1";
   return (
     <Box
       sx={{
@@ -48,13 +52,60 @@ export const InCollaborationWith = () => {
         width: "100%",
       }}
     >
-      <Box sx={{ width: { xs: "100%", md: "55%" } }}>
-        <img
-          src={data.leftSideImage}
-          width={"100%"}
-          height={260}
-          style={{ objectFit: "cover",aspectRatio:"2.07:1" }}
-        />
+      <Box sx={{ width: { xs: "100%", md: "55%" }, position: "relative", height: 260 }}>
+        {showVideo ? (
+          <iframe
+            width="100%"
+            height="100%"
+            style={{ borderRadius: "16px", border: "none", width: "100%", height: "100%", aspectRatio: "2.07/1" }}
+            src={YOUTUBE_URL}
+            title="YouTube video player"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        ) : (
+          <Box
+            onClick={() => setShowVideo(true)}
+            sx={{
+              cursor: "pointer",
+              width: "100%",
+              height: "100%",
+              position: "relative",
+              borderRadius: "16px",
+              overflow: "hidden",
+            }}
+          >
+            <img
+              src="/img/thumbnail.png"
+              width={"100%"}
+              height={260}
+              style={{ objectFit: "cover", aspectRatio: "2.07:1", width: "100%", height: "100%" }}
+              alt="Collaboration Thumbnail"
+            />
+            <Box
+              sx={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                background: "rgba(0,0,0,0.6)",
+                padding: "12px 16px",
+                borderRadius: "100px",
+              }}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width={40}
+                height={40}
+                fill="#fff"
+                viewBox="0 0 24 24"
+              >
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </Box>
+          </Box>
+        )}
       </Box>
       <Box
         sx={{
