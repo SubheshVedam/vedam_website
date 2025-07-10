@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useState } from "react";
 import { Button, Typography } from "@mui/material";
@@ -52,12 +52,24 @@ export const InCollaborationWith = () => {
         width: "100%",
       }}
     >
-      <Box sx={{ width: { xs: "100%", md: "55%" }, position: "relative", height: 260 }}>
+      <Box
+        sx={{
+          width: { xs: "100%", md: "55%" },
+          position: "relative",
+          height: 260,
+        }}
+      >
         {showVideo ? (
           <iframe
             width="100%"
             height="100%"
-            style={{ borderRadius: "16px", border: "none", width: "100%", height: "100%", aspectRatio: "2.07/1" }}
+            style={{
+              borderRadius: "16px",
+              border: "none",
+              width: "100%",
+              height: "100%",
+              aspectRatio: "2.07/1",
+            }}
             src={YOUTUBE_URL}
             title="YouTube video player"
             loading="lazy"
@@ -76,12 +88,17 @@ export const InCollaborationWith = () => {
               overflow: "hidden",
             }}
           >
-            <img
-              src="/img/thumbnail.webp"
-              width={"100%"}
-              height={260}
-              style={{ objectFit: "cover", aspectRatio: "2.07:1", width: "100%", height: "100%" }}
-              alt="Collaboration Thumbnail"
+            <Image
+              src="/img/thumbnailADYPU.webp"
+              alt="Video thumbnail"
+              width={2000}
+              height={1200}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                aspectRatio: "2.07:1",
+              }}
             />
             <Box
               sx={{
