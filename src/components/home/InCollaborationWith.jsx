@@ -89,7 +89,7 @@ export const InCollaborationWith = () => {
             }}
           >
             <Image
-              src="https://ozuzizemngdbzejrptqh.supabase.co/storage/v1/object/public/vedam-website-static-assets/thumbnailADYPU.webp"
+              src="/img/thumbnailADYPU.webp"
               alt="Video thumbnail"
               width={2000}
               height={1200}
