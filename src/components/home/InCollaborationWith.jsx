@@ -77,7 +77,7 @@ export const InCollaborationWith = () => {
             }}
           >
             <img
-              src="/img/thumbnail.png"
+              src="/img/thumbnail.webp"
               width={"100%"}
               height={260}
               style={{ objectFit: "cover", aspectRatio: "2.07:1", width: "100%", height: "100%" }}
