@@ -21,7 +21,6 @@ import { homeScreenData } from "@/constants/data";
 import { Box, useMediaQuery, useTheme } from "@mui/material";
 import Image from "next/image";
 import React, { Fragment, useState } from "react";
-import RecognitionAwards from "@/components/home/RecognitionAwards";
 
 const Home = () => {
   const theme = useTheme();
@@ -267,7 +266,6 @@ const Home = () => {
             <WhatPeople />
           </CardContainer>
 
-          <RecognitionAwards />
           <CardContainer subtitle={homeScreenData.investorWhoTrustUs.subtitle}>
             <InvestorWhoTrustUs />
           </CardContainer>
