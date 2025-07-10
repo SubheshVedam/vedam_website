@@ -665,6 +665,9 @@ export const homeScreenData = {
   whatPeople: {
     subtitle: "What people say about us",
   },
+  Recognitionawards: {
+    subtitle: "Recognition & Awards",
+  },
   aiFirst: {
     title: "",
     subtitle: "AI First Curriculum",
