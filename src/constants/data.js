@@ -175,7 +175,7 @@ export const instructorData = [
   {
     imageUrl: "/img/instructors/Jasbir_Instructor.png",
     name: "Jasbir Singh",
-    logo: "/img/instructors/Cars24_logo.png",
+    logo: "/img/instructors/Cars24_Logo.jpeg",
     designation: "5 yrs+ Teaching experience",
     info: "Tech Lead",
     college: "B.Tech. from DTU (formely DCE)",
