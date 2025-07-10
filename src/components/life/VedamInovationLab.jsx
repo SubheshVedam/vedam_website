@@ -212,10 +212,7 @@ export const VedamInovationLab = () => {
         <Typography
           sx={{
             mt: 2,
-            color: {
-              xs: "white",
-              sm: "#5E00AF",
-            },
+            color: "#5E00AF",
             textAlign: "center",
             fontFamily: "Inter",
             fontSize: {
