@@ -72,6 +72,7 @@ export const Instructors = () => {
                         linkedIn={expert.linkedIn}
                         college={expert.college}
                         isGoogle={expert.isGoogle}
+                        facultyType={expert.facultyType || "Full Time Faculty"}
                     />
                 ))}
             </Box>

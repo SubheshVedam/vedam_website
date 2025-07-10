@@ -151,6 +151,7 @@ export const instructorData = [
     info: "Ex-Microsoft",
     college: "B.Tech. from DTU (formely DCE)",
     linkedIn: "https://www.linkedin.com/in/aman5898/",
+    facultyType: "Visiting Faculty"
   },
   {
     imageUrl: "/img/instructors/Pankaj_Instructor.png",
@@ -179,6 +180,7 @@ export const instructorData = [
     info: "Tech Lead",
     college: "B.Tech. from DTU (formely DCE)",
     linkedIn: "https://www.linkedin.com/in/jazzy96/",
+    facultyType: "Visiting Faculty"
   }
 ];
 export const detailsData = [

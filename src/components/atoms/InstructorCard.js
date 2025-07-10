@@ -16,16 +16,13 @@ export default function InstructorCard({
     info,
     linkedIn,
     college,
-    isGoogle
+    isGoogle,
+    facultyType
 }) {
     return (
         <Box
             role="img"
             sx={{
-                backgroundImage: `url(${imageUrl})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center -60px',
-                backgroundRepeat: 'no-repeat',
                 minHeight: '375px',
                 minWidth: '300px',
                 display: "flex",
@@ -34,15 +31,33 @@ export default function InstructorCard({
                 padding: '16px',
                 borderRadius: '24px',
                 border: "0.5px solid rgba(132, 132, 132, 0.2)",
+                background: "linear-gradient(180deg, rgba(255, 255, 255, 0.80) 0%, #F3E8FF 100%)",
+                boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.10)",
             }}
         >
-            <Box sx={{ display: 'hidden' }}></Box>
+            {/* Instructor Image at the top */}
+            <Box
+                sx={{
+                    width: '100%',
+                    height: 180,
+                    position: 'relative',
+                    borderRadius: '18px',
+                    overflow: 'hidden',
+                    mb: 2,
+                }}
+            >
+                <Image
+                    src={imageUrl}
+                    alt={name}
+                    fill
+                    style={{ objectFit: 'cover', objectPosition: 'top' }}
+                />
+            </Box>
             <Box
                 sx={{
                     border: "2px solid transparent",
                     borderRadius: "24px",
                     opacity: 0.9,
-
                     background:
                         "linear-gradient(transparent, transparent) padding-box, " +
                         "linear-gradient(to right, #FF8A00, #FF0058) border-box",
@@ -90,7 +105,7 @@ export default function InstructorCard({
                             </Typography>
                             <span style={{ color: "#A4A4A4" }}>|</span>
                             <Typography sx={{ fontSize: 14, lineHeight: '120%', fontStyle: 'normal', letterSpacing: "-0.28px", alignItems: 'center', display: 'flex', gap: 1 }}>
-                                Full Time Faculty
+                                {facultyType || "Full Time Faculty"}
                             </Typography>
                         </Box>
                         {/* <Typography sx={{ fontSize: 14, lineHeight: '120%', fontStyle: 'normal', letterSpacing: "-0.28px", alignItems: 'center', display: 'flex', gap: 1 }}><SchoolOutlined /> {college}</Typography> */}
@@ -119,6 +134,5 @@ export default function InstructorCard({
                 </Box>
             </Box>
         </Box >
-
     );
 }
