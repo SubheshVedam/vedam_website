@@ -52,12 +52,12 @@ const Admission = () => {
           <KeyDates />
         </CardContainer>
         <CardContainer subtitle={admissionScreenData.admissionProcess.subtitle}
-          linearGradientSubtitle={linearGradient}
+        linearGradientSubtitle={linearGradient}
         >
           <AdmissionProcess />
         </CardContainer>
         <CardContainer
-          subtitle={""}
+          subtitle={admissionScreenData.facilityAndAmenities.subtitle}
           linearGradientSubtitle={linearGradient}
         >
           <FacilityAndAmenities />
