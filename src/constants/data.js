@@ -134,33 +134,51 @@ export const expertsData = [
 ];
 export const instructorData = [
   {
-    imageUrl: "/img/instructors/subhesh.jpeg",
+    imageUrl: "/img/instructors/Subhesh_Instructor.png",
     name: "Subhesh Kumar",
     logo: "/img/instructors/google.webp",
-    designation: "Software Developer",
+    designation: "6 yrs+ teaching experience",
     info: "Ex-Google",
     college: "B.Tech. from DTU (formely DCE)",
     linkedIn: "https://in.linkedin.com/in/subhu9",
     isGoogle: true
   },
   {
-    imageUrl: "/img/instructors/pankaj.jpeg",
+    imageUrl: "/img/instructors/Aman_Instructor.png",
+    name: "Aman Kumar",
+    logo: "/img/instructors/Microsoft_Logo.png",
+    designation: "SDE at Apple",
+    info: "Ex-Microsoft",
+    college: "B.Tech. from DTU (formely DCE)",
+    linkedIn: "https://www.linkedin.com/in/aman5898/",
+  },
+  {
+    imageUrl: "/img/instructors/Pankaj_Instructor.png",
     name: "Pankaj Kumar",
     logo: "/img/instructors/birdeye.png",
-    designation: "Software Developer",
+    designation: "Backend Lead at Vedam",
     info: "Ex-Birdeye",
     college: "B.Tech. from GD University",
     linkedIn:
       "https://www.linkedin.com/in/gargpk",
   },
   {
-    imageUrl: "/img/instructors/praz.jpeg",
+    imageUrl: "/img/instructors/Prasanna_Instructor.png",
     name: "Prasanna Swain",
     logo: "/img/instructors/dtu.png",
-    designation: "Software Developer",
+    designation: "Frontend Lead at Vedam",
     info: "BTech - DTU",
     college: "B.Tech. from DTU (formely DCE)",
     linkedIn: "https://www.linkedin.com/in/prasanna-swain/",
+  },
+  {
+    imageUrl: "/img/instructors/Jasbir_Instructor.png",
+    name: "Jasbir Singh",
+    logo: "/img/instructors/Cars24_logo.png",
+    designation: "5 yrs+ Teaching experience",
+    info: "Tech Lead",
+    college: "B.Tech. from DTU (formely DCE)",
+    linkedIn: "https://www.linkedin.com/in/jazzy96/",
   }
 ];
 export const detailsData = [
@@ -635,7 +653,7 @@ export const homeScreenData = {
     ],
   },
   instructor: {
-    title: "The people who blend hands-on expertise with academic clarity",
+    title: "",
     subtitle: "Our Instructors",
   },
   learnFrom: {
