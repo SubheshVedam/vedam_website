@@ -68,6 +68,31 @@ const RecognitionAwards = () => {
                     </Box>
                 ))}
             </Box>
+            <Box
+                sx={{
+                    width: { xs: '100%', md: '800px' },
+                    margin: '24px auto 0 auto',
+                    display: 'flex',
+                    justifyContent: 'center',
+                }}
+            >
+                <span
+                    style={{
+                        fontFamily: 'Nunito Sans, sans-serif',
+                        fontWeight: 500,
+                        fontStyle: 'italic',
+                        fontSize: { xs: "6px", md: "8px" },
+                        lineHeight: '120%',
+                        letterSpacing: '-2%',
+                        color: '#1E1E1E',
+                        textAlign: 'center',
+                        width: '100%',
+                        display: 'block',
+                    }}
+                >
+                    *Recognitions Earned by SET Education’s Parent Organization
+                </span>
+            </Box>
         </Box>
     );
 };

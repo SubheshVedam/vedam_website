@@ -660,7 +660,7 @@ export const homeScreenData = {
   },
   learnFrom: {
     title: "",
-    subtitle: "Learn from MAANG Experts",
+    subtitle: "Meet your Mentors",
   },
   whatPeople: {
     subtitle: "What people say about us",

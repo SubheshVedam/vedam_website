@@ -52,13 +52,16 @@ export const InCollaborationWith = () => {
         width: "100%",
       }}
     >
-      <Box
-        sx={{
-          width: { xs: "100%", md: "55%" },
-          position: "relative",
-          height: 260,
-        }}
-      >
+      <Box sx={{
+        width: { xs: "100%", md: "55%" },
+        position: "relative",
+        aspectRatio: "2.07/1",
+        height: "auto",
+        minHeight: { xs: 120, sm: 160, md: 220 },
+        maxHeight: { xs: 180, sm: 220, md: 260 },
+        borderRadius: "16px",
+        overflow: "hidden",
+      }}>
         {showVideo ? (
           <iframe
             width="100%"
@@ -88,17 +91,12 @@ export const InCollaborationWith = () => {
               overflow: "hidden",
             }}
           >
-            <Image
+            <img
               src="/img/thumbnailADYPU.webp"
-              alt="Video thumbnail"
-              width={2000}
-              height={1200}
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                aspectRatio: "2.07:1",
-              }}
+              width={"100%"}
+              height="100%"
+              style={{ objectFit: "cover", width: "100%", height: "100%", aspectRatio: "2.07/1" }}
+              alt="Collaboration Thumbnail"
             />
             <Box
               sx={{
@@ -107,14 +105,15 @@ export const InCollaborationWith = () => {
                 left: "50%",
                 transform: "translate(-50%, -50%)",
                 background: "rgba(0,0,0,0.6)",
-                padding: "12px 16px",
+                padding: { xs: "6px 8px", sm: "10px 12px", md: "12px 16px" },
                 borderRadius: "100px",
               }}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width={40}
-                height={40}
+                width={32}
+                height={32}
+                style={{ width: "2.5em", height: "2.5em", minWidth: 24, minHeight: 24, maxWidth: 40, maxHeight: 40 }}
                 fill="#fff"
                 viewBox="0 0 24 24"
               >
