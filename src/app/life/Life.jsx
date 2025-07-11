@@ -73,11 +73,6 @@ const Life = () => {
           gap: { xs: "1rem", md: "2rem", lg: "3rem" },
         }}
       >
-        <CardContainer
-          subtitle={'Step Into the Most Futuristic INNOVATION LAB '}
-        >
-          <FacilityAndAmenities isV2={true} />
-        </CardContainer>
         <CardContainer subtitle={lifeAtVedam.edgeAtVedam.subtitle}>
           <EdgeAtVedam />
         </CardContainer>
