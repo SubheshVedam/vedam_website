@@ -81,7 +81,7 @@ const RecognitionAwards = () => {
                         fontFamily: 'Nunito Sans, sans-serif',
                         fontWeight: 500,
                         fontStyle: 'italic',
-                        fontSize: { xs: "6px", md: "8px" },
+                        fontSize: '6px',
                         lineHeight: '120%',
                         letterSpacing: '-2%',
                         color: '#1E1E1E',
