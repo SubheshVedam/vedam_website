@@ -62,7 +62,7 @@ export default function AnnouncementBanner() {
           variant="body2"
           component="span"
           sx={{ fontSize: { xs: 11, sm: 16 } }}>
-          ⏳ Hurry up! Applications for 29th July<strong>[Final Intake]</strong> are closing in
+          ⏳ Hurry up! Applications for 29th July <strong>[Final Intake]</strong> are closing in
         </Typography>
         {timeLeft === null ? null : !timeLeft.expired ? (
           <Typography
