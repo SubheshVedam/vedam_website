@@ -909,8 +909,8 @@ export const admissionScreenData = {
       "Final Offer",
     ],
     secondArray: [
-      "29th or 31st July 2025",
-      "28th July 2025",
+      "31st July 2025",
+      "30th July 2025",
       "Within 2 Days of the Exam",
       "Within 5 Days of the Exam",
       "Within 15 Days of the Exam, If selected",
@@ -932,7 +932,7 @@ export const admissionScreenData = {
         title: "Apply Online",
         subtitle:
           "Complete your profile and reserve your slot for the Vedam Scholastic Aptitude Test (VSAT).",
-        subtitle1: "Last Date to Register is 28th July 2025",
+        subtitle1: "Last Date to Register is 30th July 2025",
         showButton: true,
       },
       {
@@ -940,7 +940,7 @@ export const admissionScreenData = {
         step: "Step 2",
         title: "Take the VSAT",
         subtitle:
-          "It is an entrance test conducted online. July intake round on 29th or 31st July, 2025.",
+          "It is an entrance test conducted online. July intake round on 31st July, 2025.",
         showButton: false,
       },
       {

@@ -3,7 +3,7 @@ import { Box, Typography, Stack } from "@mui/material";
 import { useState, useEffect } from "react";
 
 export default function AnnouncementBanner() {
-  const targetDate = new Date("2025-07-28T23:59:59").getTime();
+  const targetDate = new Date("2025-07-30T23:59:59").getTime();
 
   const [timeLeft, setTimeLeft] = useState(null);
 
@@ -62,7 +62,7 @@ export default function AnnouncementBanner() {
           variant="body2"
           component="span"
           sx={{ fontSize: { xs: 11, sm: 16 } }}>
-          ⏳ Hurry up! Applications for 29th July <strong>[Final Intake]</strong> are closing in
+          ⏳ Hurry up! Applications for 31st July <strong>[Final Intake]</strong> are closing in
         </Typography>
         {timeLeft === null ? null : !timeLeft.expired ? (
           <Typography
