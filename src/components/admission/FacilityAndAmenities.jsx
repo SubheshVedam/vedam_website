@@ -50,37 +50,7 @@ export const FacilityAndAmenities = ({ isV2 }) => {
         >
           Facilities & Amenities
         </Typography>
-        <Box
-          sx={{
-            width: '100%',
-            position: 'relative',
-            paddingTop: '56.25%', // 16:9 Aspect Ratio
-            borderRadius: '20px',
-            overflow: 'hidden',
-          }}
-        >
-          <Box
-            sx={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-            }}
-          >
-            <iframe
-              src={isV2 ? 'https://www.youtube.com/embed/iWm442DPj1A' : 'https://www.youtube.com/embed/R9moRoww1s4'}
-              style={{
-                width: '100%',
-                height: '100%',
-                border: 'none',
-                borderRadius: '20px',
-              }}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </Box>
-        </Box>
+
         {/* Add images below the video, stacked vertically */}
         {!isV2 && (
           <Box
@@ -92,7 +62,7 @@ export const FacilityAndAmenities = ({ isV2 }) => {
               justifyContent: 'center',
             }}
           >
-            {[1, 2, 3, 4, 5, 6, 7].map((num) => (
+            {[2, 3, 4, 5, 6].map((num) => (
               <img
                 key={num}
                 src={`/img/amenities/${num}.png`}

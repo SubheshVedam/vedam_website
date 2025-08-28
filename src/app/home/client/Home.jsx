@@ -53,12 +53,7 @@ const Home = () => {
             flexDirection: "column",
           }}
         >
-          <CardContainer
-            subtitle={"Vedam School of Technology"}
-          >
-            <VSTHome />
 
-          </CardContainer>
           <CardContainer
             title={homeScreenData.inCollaborationWith.title}
             subtitle={homeScreenData.inCollaborationWith.subtitle}
