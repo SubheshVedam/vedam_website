@@ -62,7 +62,7 @@ export const FacilityAndAmenities = ({ isV2 }) => {
               justifyContent: 'center',
             }}
           >
-            {[2, 3, 4, 5, 6].map((num) => (
+            {[2, 3, 4, 5, 6, 7, 8].map((num) => (
               <img
                 key={num}
                 src={`/img/amenities/${num}.png`}
