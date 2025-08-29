@@ -1,4 +1,3 @@
-import { admissionScreenData } from "@/constants/data";
 import { Box, Typography } from "@mui/material";
 import React from "react";
 
@@ -22,7 +21,7 @@ export const FacilityAndAmenities = ({ isV2 }) => {
         sx={{
           width: '100%',
           maxWidth: '1280px',
-          minHeight: { xs: 'auto', md: '3108px' },
+          minHeight: 'auto',
           boxSizing: 'border-box',
           display: 'flex',
           flexDirection: 'column',
@@ -51,18 +50,18 @@ export const FacilityAndAmenities = ({ isV2 }) => {
           Facilities & Amenities
         </Typography>
 
-        {/* Add images below the video, stacked vertically */}
+        {/* Images: first five stacked, last two side-by-side */}
         {!isV2 && (
           <Box
             sx={{
               display: 'flex',
               flexDirection: 'column',
-              gap: '22px', // Keep gap unchanged
+              gap: '22px',
               width: '100%',
               justifyContent: 'center',
             }}
           >
-            {[2, 3, 4, 5, 6, 7, 8].map((num) => (
+            {[2, 3, 4, 5, 6].map((num) => (
               <img
                 key={num}
                 src={`/img/amenities/${num}.png`}
@@ -79,6 +78,45 @@ export const FacilityAndAmenities = ({ isV2 }) => {
                 }}
               />
             ))}
+
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: { xs: 'column', sm: 'row' },
+                gap: '22px',
+                width: '100%',
+              }}
+            >
+              {[7, 8].map((num) => (
+                <Box
+                  key={num}
+                  sx={{
+                    flex: 1,
+                    background: '#FFFFFF',
+                    borderRadius: '20px',
+                    padding: '10px',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <img
+                    src={`/img/amenities/${num}.png`}
+                    alt={`Facility ${num}`}
+                    style={{
+                      width: '100%',
+                      maxHeight: '323px',
+                      height: 'auto',
+                      objectFit: 'contain',
+                      background: '#1D0036',
+                      borderRadius: '16px',
+                      display: 'block',
+                    }}
+                  />
+                </Box>
+              ))}
+            </Box>
           </Box>
         )}
       </Box>
