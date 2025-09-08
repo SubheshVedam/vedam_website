@@ -62,7 +62,7 @@ export default function AnnouncementBanner() {
           variant="body2"
           component="span"
           sx={{ fontSize: { xs: 11, sm: 16 } }}>
-          ⏳ Hurry up! Applications for 31st July <strong>[Final Intake]</strong> are closing in
+          <strong>Intakes for Batch 2025-29 have been closed now</strong>
         </Typography>
         {timeLeft === null ? null : !timeLeft.expired ? (
           <Typography
@@ -77,7 +77,6 @@ export default function AnnouncementBanner() {
             variant="body2"
             component="span"
             sx={{ fontWeight: 600, fontSize: { xs: 13, sm: 16 } }}>
-            Applications Closed !!!
           </Typography>
         )}
       </Stack>
