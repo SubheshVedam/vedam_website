@@ -67,7 +67,7 @@ export const expertsData = [
   },
   {
     imageUrl: "/img/experts/senthurpandian.jpeg",
-    name: "M Senthurpandian",
+    name: "Manivannan",
     logo: "/img/companies/microsoft-logo.png",
     designation: "Senior Software Engineer",
     info: "13+ Years of Experience, Amazon Interview Panel Member",
@@ -102,16 +102,6 @@ export const expertsData = [
     info: "Founder, Author and Instructor ; Ex American Express and Accenture",
     rating: 4.9,
     linkedIn: "https://www.linkedin.com/in/bradford-tuckfield-80565b25/",
-  },
-
-  {
-    imageUrl: "/img/experts/ramchandra.jpeg",
-    name: "Ramachandra Nalam",
-    logo: "/img/companies/meta.webp",
-    designation: "Data and ML Engineer",
-    info: "Masters from University of Buffalo, Ex Amazon",
-    rating: 3.7,
-    linkedIn: "https://www.linkedin.com/in/ramachandra-nalam/",
   },
   {
     imageUrl: "/img/experts/nischay.jpeg",
