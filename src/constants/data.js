@@ -66,7 +66,7 @@ export const expertsData = [
       "https://www.linkedin.com/in/amanpreet-singh-b79598a3/?originalSubdomain=in",
   },
   {
-    imageUrl: "/img/experts/senthurpandian.jpeg",
+    imageUrl: "/img/experts/Manivannan.png",
     name: "Manivannan",
     logo: "/img/companies/microsoft-logo.png",
     designation: "Senior Software Engineer",
