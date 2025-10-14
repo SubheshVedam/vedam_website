@@ -62,7 +62,7 @@ export default function AnnouncementBanner() {
           variant="body2"
           component="span"
           sx={{ fontSize: { xs: 11, sm: 16 } }}>
-          <strong>Intakes for Batch 2025-29 have been closed now</strong>
+          <strong>Intakes for Batch of 2026 - Will be announced soon!</strong>
         </Typography>
         {timeLeft === null ? null : !timeLeft.expired ? (
           <Typography
