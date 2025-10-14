@@ -877,13 +877,13 @@ export const admissionScreenData = {
     background_video:
       "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
     title: "Top 5% will make it\nto the Vedam batch.",
-    subtitle: "Apply Now for 2025 admission",
+    subtitle: "Apply Now for 2026 admission",
   },
   admissionAndFees: {
     subtitle: "Admission & Fees",
     description:
       "We look forward to welcoming students who value a talented peer group. Only the top 5% will make it to the Vedam batch. The group study and peer to peer learning increases greatly in such a batch.",
-    applyNow: "Apply Now for 2025 admission",
+    applyNow: "Apply Now for 2026 admission",
     eligibilityStrong: "Eligibility Criteria: ",
     eligibilityText:
       "2024, 2025 12th student with PCM (>50% in PCM & 12th boards Overall)",
@@ -930,7 +930,7 @@ export const admissionScreenData = {
         step: "Step 2",
         title: "Take the VSAT",
         subtitle:
-          "It is an entrance test conducted online. July intake round on 31st July, 2025.",
+          "It is an entrance test conducted online.",
         showButton: false,
       },
       {

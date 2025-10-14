@@ -16,16 +16,16 @@ import {
 export default function Refund() {
   return (
     <Box
-    sx={{
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center",
-      backgroundColor: "#F9F9F9",
-      paddingTop: { xs: "0rem", md: "7rem" },
-      paddingBottom: "3rem",
-    }}
-  >
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: "#F9F9F9",
+        paddingTop: { xs: "0rem", md: "7rem" },
+        paddingBottom: "3rem",
+      }}
+    >
       <WidthContainer>
         <Box
           sx={{
@@ -70,10 +70,10 @@ export default function Refund() {
               </Typography>
               <Typography paragraph>VSAT Exam Fee is non-refundable.</Typography>
               <Typography paragraph>
-              Semester fees, if paid, are refundable as per the{" "}
-<Link href="https://www.ugc.gov.in/pdfnews/1654477_Fee-Refund-Policy-2024-25.pdf" color="primary" underline="hover">
-  UGC Refund Policy 2024-25
-</Link>{" "}
+                Semester fees, if paid, are refundable as per the{" "}
+                <Link href="https://www.ugc.gov.in/pdfnews/1654477_Fee-Refund-Policy-2024-25.pdf" color="primary" underline="hover">
+                  UGC Refund Policy 2024-25
+                </Link>{" "}
               </Typography>
               <Typography paragraph>
                 Refunds, if approved, will be processed in 45 days from the approval date.
@@ -127,7 +127,7 @@ export default function Refund() {
                 Special Consideration Refund Requests
               </Typography>
               <Typography fontWeight="bold" mb={1}>
-                For Students pursuing 12th Class in 2025 and If the student’s final Class 12th score
+                For Students pursuing 12th Class in 2026 and If the student’s final Class 12th score
                 is below 50%:
               </Typography>
               <TableContainer component={Paper} variant="outlined">
