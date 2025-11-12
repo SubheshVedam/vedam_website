@@ -1,32 +1,18 @@
-import { WidthContainer } from "@/components";
+import { PageSection, SectionStack } from "@/components";
 import { Box } from "@mui/material";
 
 export default function TermsOfUse() {
-  return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: "#F9F9F9",
-        paddingTop: { xs: "0rem", md: "7rem" },
-        paddingBottom: "3rem",
-      }}
-    >
-      <WidthContainer>
-        <Box>
-          <div className="bg-white shadow rounded-lg p-8">
-            <h1 className="text-3xl font-bold text-primary mb-8">
-              Terms of Use
-            </h1>
+  const renderContent = () => (
+    <Box>
+      <div className="bg-white shadow rounded-lg p-8">
+        <h1 className="text-3xl font-bold text-primary mb-8">Terms of Use</h1>
 
-            <div className="space-y-6">
-              <section>
-                <p className="text-gray-700 mb-6">
-                  By using the SET Education Technology Private Limited website, you agree to be bound by the following terms and conditions ("Terms of Use"). This agreement is personal to you; it cannot be assigned or transferred. If any provision of this agreement is invalid or unenforceable under applicable law, the remaining provisions will continue in full force and effect.
-                </p>
-              </section>
+        <div className="space-y-6">
+          <section>
+            <p className="text-gray-700 mb-6">
+              By using the SET Education Technology Private Limited website, you agree to be bound by the following terms and conditions ("Terms of Use"). This agreement is personal to you; it cannot be assigned or transferred. If any provision of this agreement is invalid or unenforceable under applicable law, the remaining provisions will continue in full force and effect.
+            </p>
+          </section>
 
               <section>
                 <h2 className="text-2xl font-semibold text-secondary mb-4">
@@ -152,20 +138,32 @@ export default function TermsOfUse() {
                 </p>
               </section>
 
-              <section>
-                <h2 className="text-2xl font-semibold text-secondary mb-4">
-                  Notice
-                </h2>
-                <p className="text-gray-700">
-                  SET Education Technology Private Limited reserves the right to update this Terms of Use from time to time. SET Education Technology Private Limited will notify you of any changes and/or modifications by updating the "Last Modified" date on this page, sending an electronic communication detailing the changes, posting a notification on the Services, or as required by law. Any changes or modifications will be effective immediately upon posting the update on SET Education Technology Private Limited's Services. You are encouraged to periodically review these Terms of Use to stay informed of updates. Your continued use of SET Education Technology Private Limited's Services after receipt of such revised Terms of Use will be deemed an acceptance of the changes.
-                </p>
-              </section>
-            </div>
-          </div>
-        </Box>
-      </WidthContainer>
+          <section>
+            <h2 className="text-2xl font-semibold text-secondary mb-4">
+              Notice
+            </h2>
+            <p className="text-gray-700">
+              SET Education Technology Private Limited reserves the right to update this Terms of Use from time to time. SET Education Technology Private Limited will notify you of any changes and/or modifications by updating the "Last Modified" date on this page, sending an electronic communication detailing the changes, posting a notification on the Services, or as required by law. Any changes or modifications will be effective immediately upon posting the update on SET Education Technology Private Limited's Services. You are encouraged to periodically review these Terms of Use to stay informed of updates. Your continued use of SET Education Technology Private Limited's Services after receipt of such revised Terms of Use will be deemed an acceptance of the changes.
+            </p>
+          </section>
+        </div>
+      </div>
     </Box>
   );
-}
 
+  return (
+    <PageSection paddingTop={{ xs: "0rem", md: "7rem" }}>
+      <SectionStack
+        sections={[
+          {
+            id: "terms-of-use",
+            useCard: false,
+            plainWrapperProps: { sx: { width: "100%" } },
+            render: renderContent,
+          },
+        ]}
+      />
+    </PageSection>
+  );
+}
 

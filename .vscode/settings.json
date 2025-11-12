@@ -2,5 +2,7 @@
     "files.autoSave": "onFocusChange",
     "files.autoSaveDelay": 0,
     "editor.formatOnSave": true,
-    "files.autoSaveWhenNoErrors": true
+    "files.autoSaveWhenNoErrors": true,
+    "chatgpt.openOnStartup": true,
+    "chatgpt.runCodexInWindowsSubsystemForLinux": true
 }

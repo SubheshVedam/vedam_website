@@ -1,18 +1,9 @@
 'use client'
 import { Box } from "@mui/material";
 import React from "react";
-import {
-  CardContainer,
-  // ClubsAtVst,
-  EdgeAtVedam,
-  FacilityAndAmenities,
-  VedamInovationLab,
-  VideoWithText,
-  WidthContainer,
-} from "@/components";
+import { EdgeAtVedam, VedamInovationLab, VideoWithText, SectionStack } from "@/components";
 import { lifeAtVedam } from "@/constants/data";
 import { ScrollComponent } from "@/components/life/ScrollComponent/ScrollComponent";
-import WhyVedam from "@/components/WhyVedam";
 import Clubs from "@/components/Clubs"
 
 const clubsatVST = lifeAtVedam.clubsatVedam.data;
@@ -40,46 +31,59 @@ const Life = () => {
         sx={{
           background:
             "linear-gradient(180deg, #155A5D 0.06%, #ADF0F7 33.99%, #E2FDFF 65.97%, #FFF 98.95%)",
-          //background: linear-gradient(180deg, #155A5D 0.06%, #ADF0F7 33.99%, #E2FDFF 65.97%, #FFF 98.95%);
           width: "100%",
           display: "flex",
           justifyContent: "center",
           pt: { xs: 2, sm: 7 },
         }}
       >
-        <WidthContainer
-          childrenStyle={{
+        <SectionStack
+          widthContainerProps={{
+            childrenStyle: {
+              display: "flex",
+              flexDirection: "column",
+              gap: { xs: "1rem", md: "2rem", lg: "3rem" },
+              marginBottom: "0px",
+              paddingY: 0,
+            },
+          }}
+          sections={[
+            {
+              id: "innovation-lab",
+              subtitle2: lifeAtVedam.vedamLab.subtitle,
+              render: () => (
+                <>
+                  <VedamInovationLab />
+                  <ScrollComponent />
+                </>
+              ),
+              cardProps: { containerStyle: { marginBottom: "0px" } },
+            },
+          ]}
+        />
+      </Box>
+
+      <SectionStack
+        widthContainerProps={{
+          childrenStyle: {
             display: "flex",
             flexDirection: "column",
             gap: { xs: "1rem", md: "2rem", lg: "3rem" },
-            marginBottom: "0px",
-            paddingY: 0,
-          }}
-        >
-          <CardContainer
-            subtitle2={lifeAtVedam.vedamLab.subtitle}
-            containerStyle={{ marginBottom: "0px" }}
-          >
-            <VedamInovationLab />
-            <ScrollComponent />
-          </CardContainer>
-        </WidthContainer>
-      </Box>
-
-      <WidthContainer
-        childrenStyle={{
-          display: "flex",
-          flexDirection: "column",
-          gap: { xs: "1rem", md: "2rem", lg: "3rem" },
+          },
         }}
-      >
-        <CardContainer subtitle={lifeAtVedam.edgeAtVedam.subtitle}>
-          <EdgeAtVedam />
-        </CardContainer>
-        <CardContainer subtitle={lifeAtVedam.clubsatVedam.subtitle}>
-          <Clubs data={clubsatVST} />
-        </CardContainer>
-      </WidthContainer>
+        sections={[
+          {
+            id: "edge-at-vedam",
+            subtitle: lifeAtVedam.edgeAtVedam.subtitle,
+            render: () => <EdgeAtVedam />,
+          },
+          {
+            id: "clubs-at-vedam",
+            subtitle: lifeAtVedam.clubsatVedam.subtitle,
+            render: () => <Clubs data={clubsatVST} />,
+          },
+        ]}
+      />
     </Box>
   );
 };

@@ -1,90 +1,84 @@
 import React from "react";
-import { Box } from "@mui/material";
 import { admissionScreenData } from "@/constants/data";
 import {
   AdmissionAndFees,
   AdmissionProcess,
-  CardContainer,
   FacilityAndAmenities,
   FeeStructure,
   FinancingOptions,
   KeyDates,
   ScholarshipProgram,
+  PageSection,
+  SectionStack,
   VideoWithText,
-  WidthContainer,
 } from "@/components";
 
 const Admission = () => {
   const linearGradient = "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)";
+  const sections = [
+    {
+      id: "admission-and-fees",
+      subtitle: admissionScreenData.admissionAndFees.subtitle,
+      render: () => <AdmissionAndFees />,
+      cardProps: { showSubtitleBottomBorder: true },
+    },
+    {
+      id: "key-dates",
+      subtitle: admissionScreenData.keyDates.subtitle,
+      render: () => <KeyDates />,
+    },
+    {
+      id: "admission-process",
+      subtitle: admissionScreenData.admissionProcess.subtitle,
+      render: () => <AdmissionProcess />,
+    },
+    {
+      id: "facilities",
+      subtitle: "",
+      render: () => <FacilityAndAmenities />,
+    },
+    {
+      id: "fee-structure",
+      subtitle: admissionScreenData.feeStructure.subtitle,
+      render: () => <FeeStructure />,
+      cardProps: { id: "fees-toggle" },
+    },
+    {
+      id: "scholarship",
+      subtitle: admissionScreenData.scholarshipProgram.subtitle,
+      render: () => <ScholarshipProgram />,
+    },
+    {
+      id: "financing",
+      subtitle: admissionScreenData.financingOption.subtitle,
+      render: () => <FinancingOptions />,
+    },
+  ];
+
   return (
-    <Box
+    <PageSection
+      paddingTop={0}
+      paddingBottom="16px"
       sx={{
-        display: "flex",
-        flexDirection: "column",
         gap: { xs: "1rem", md: "1.5rem" },
-        alignItems: "center",
-        paddingBottom: "16px",
-        backgroundColor: "#F9F9F9",
       }}
     >
       <VideoWithText
         title={admissionScreenData.hero.title}
         subtitle={admissionScreenData.hero.subtitle}
       />
-      <WidthContainer
-        childrenStyle={{
-          display: "flex",
-          gap: "20px",
-          flexDirection: "column",
+      <SectionStack
+        cardDefaults={{ linearGradientSubtitle: linearGradient }}
+        widthContainerProps={{
+          childrenStyle: {
+            display: "flex",
+            gap: "20px",
+            flexDirection: "column",
+          },
         }}
-      >
-        <CardContainer
-          subtitle={admissionScreenData.admissionAndFees.subtitle}
-          linearGradientSubtitle={linearGradient}
-          showSubtitleBottomBorder
-        >
-          <AdmissionAndFees />
-        </CardContainer>
-        <CardContainer
-          subtitle={admissionScreenData.keyDates.subtitle}
-          linearGradientSubtitle={linearGradient}
-        >
-          <KeyDates />
-        </CardContainer>
-        <CardContainer subtitle={admissionScreenData.admissionProcess.subtitle}
-          linearGradientSubtitle={linearGradient}
-        >
-          <AdmissionProcess />
-        </CardContainer>
-        <CardContainer
-          subtitle={""}
-          linearGradientSubtitle={linearGradient}
-        >
-          <FacilityAndAmenities />
-        </CardContainer>
-        {/* ----------- */}
-        <CardContainer
-          subtitle={admissionScreenData.feeStructure.subtitle}
-          linearGradientSubtitle={linearGradient}
-          id="fees-toggle"
-        >
-          <FeeStructure />
-        </CardContainer>
-        {/* ------------- */}
-        <CardContainer
-          subtitle={admissionScreenData.scholarshipProgram.subtitle}
-          linearGradientSubtitle={linearGradient}
-        >
-          <ScholarshipProgram />
-        </CardContainer>
-        <CardContainer
-          subtitle={admissionScreenData.financingOption.subtitle}
-          linearGradientSubtitle={linearGradient}
-        >
-          <FinancingOptions />
-        </CardContainer>
-      </WidthContainer>
-    </Box>
+        sections={sections}
+      />
+    </PageSection>
   );
 };
 
