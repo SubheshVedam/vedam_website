@@ -886,7 +886,7 @@ export const admissionScreenData = {
     applyNow: "Apply Now for 2026 admission",
     eligibilityStrong: "Eligibility Criteria: ",
     eligibilityText:
-      "2024, 2025 12th student with PCM (>50% in PCM & 12th boards Overall)",
+      "2025, 2026 12th student with PCM (>50% in PCM & 12th boards Overall)",
   },
   keyDates: {
     subtitle: "Key Dates",
