@@ -899,8 +899,8 @@ export const admissionScreenData = {
       "Final Offer",
     ],
     secondArray: [
-      "Coming Soon",
-      "Coming Soon",
+      "23rd December",
+      "22nd December",
       "Within 2 Days of the Exam",
       "Within 5 Days of the Exam",
       "Within 15 Days of the Exam, If selected",
@@ -922,7 +922,7 @@ export const admissionScreenData = {
         title: "Apply Online",
         subtitle:
           "Complete your profile and reserve your slot for the Vedam Scholastic Aptitude Test (VSAT).",
-        subtitle1: "Intakes for Batch of 2026 - Will be announced soon!",
+        subtitle1: "Last to apply for Early Intake 1 is 22nd December",
         showButton: true,
       },
       {
@@ -931,6 +931,7 @@ export const admissionScreenData = {
         title: "Take the VSAT",
         subtitle:
           "It is an entrance test conducted online.",
+        subtitle1: "The next VSAT is on 23rd December",
         showButton: false,
       },
       {
@@ -1269,7 +1270,7 @@ export const faqsScreenData = [
         id: 10,
         title: "What is the eligibility criteria?",
         description:
-          "All the students who appeared for 12th exam in 2024, 2025 with PCM (>50% in PCM & 12th boards Overall) are eligible.",
+          "All the students who appeared for 12th exam in 2025, 2026 with PCM (>50% in PCM & 12th boards Overall) are eligible.",
       },
       {
         id: 11,
