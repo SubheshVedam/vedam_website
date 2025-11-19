@@ -113,7 +113,7 @@ export default function AnnouncementBanner() {
           variant="body2"
           component="span"
           sx={{ fontSize: { xs: 11, sm: 16 } }}>
-          <strong>Admissions for 2026(Early Intake 1) closes in</strong>
+          <strong>Admissions for 2026 (Early Intake 1) closes in</strong>
         </Typography>
         {timerItems ? (
           <Stack
