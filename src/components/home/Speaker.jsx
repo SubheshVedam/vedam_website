@@ -1,8 +1,7 @@
 "use client";
 import React, { useRef, useState, useEffect } from "react";
-import { Box, IconButton } from "@mui/material";
-import { expertsData } from "@/constants/data";
-import ExpertCard from "../atoms/ExpertCard";
+import { Box, IconButton, useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
@@ -12,6 +11,39 @@ export const Speaker = () => {
     const [isPaused, setIsPaused] = useState(false);
     const currentTranslateRef = useRef(0);
     const animationIdRef = useRef(null);
+    const [activeVideo, setActiveVideo] = useState(null);
+
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
+    // YouTube video data
+    const speakerVideos = [
+        {
+            id: 1,
+            thumbnail: isMobile ? "/img/speaker/speaker1_mob.png" : "/img/speaker/speaker1.png",
+            videoUrl: "https://www.youtube.com/embed/eq8HnUDuN0E?autoplay=1&si=0"
+        },
+        {
+            id: 2,
+            thumbnail: isMobile ? "/img/speaker/speaker2_mob.png" : "/img/speaker/speaker2.png",
+            videoUrl: "https://www.youtube.com/embed/eq8HnUDuN0E?autoplay=1&si=0"
+        },
+        {
+            id: 3,
+            thumbnail: isMobile ? "/img/speaker/speaker3_mob.png" : "/img/speaker/speaker3.png",
+            videoUrl: "https://www.youtube.com/embed/eq8HnUDuN0E?autoplay=1&si=0"
+        },
+        {
+            id: 4,
+            thumbnail: isMobile ? "/img/speaker/speaker4_mob.png" : "/img/speaker/speaker4.png",
+            videoUrl: "https://www.youtube.com/embed/eq8HnUDuN0E?autoplay=1&si=0"
+        },
+        {
+            id: 5,
+            thumbnail: isMobile ? "/img/speaker/speaker5_mob.png" : "/img/speaker/speaker5.png",
+            videoUrl: "https://www.youtube.com/embed/eq8HnUDuN0E?autoplay=1&si=0"
+        },
+    ];
 
     // Speaker images for infinite carousel
     const speakerImages = [
@@ -29,8 +61,8 @@ export const Speaker = () => {
         const carousel = carouselRef.current;
         if (!carousel) return;
 
-        const speed = 0.8; // pixels per frame
-        const itemWidth = 280 + 24; // width + gap
+        const speed = 0.8;
+        const itemWidth = 280 + 24;
         const totalItems = speakerImages.length;
         const resetPoint = -(itemWidth * totalItems);
 
@@ -38,18 +70,15 @@ export const Speaker = () => {
             if (!isPaused) {
                 currentTranslateRef.current -= speed;
 
-                // Reset position when we've moved exactly one set of images
                 if (currentTranslateRef.current <= resetPoint) {
                     currentTranslateRef.current = 0;
                 }
             }
 
-            // Always update the transform, whether paused or not
             carousel.style.transform = `translateX(${currentTranslateRef.current}px)`;
             animationIdRef.current = requestAnimationFrame(animate);
         };
 
-        // Cancel any existing animation before starting a new one
         if (animationIdRef.current) {
             cancelAnimationFrame(animationIdRef.current);
         }
@@ -83,7 +112,7 @@ export const Speaker = () => {
 
     return (
         <Box sx={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
-            {/* Expert Cards Section with Manual Scroll */}
+            {/* Video Thumbnails Section with Manual Scroll */}
             <Box sx={{ position: "relative" }}>
                 <IconButton
                     onClick={scrollLeft}
@@ -116,17 +145,74 @@ export const Speaker = () => {
                         padding: "0 40px",
                     }}
                 >
-                    {expertsData.map((expert, index) => (
-                        <ExpertCard
-                            key={`expertsCard-${index}`}
-                            imageUrl={expert.imageUrl}
-                            name={expert.name}
-                            logo={expert.logo}
-                            designation={expert.designation}
-                            info={expert.info}
-                            rating={expert.rating}
-                            linkedIn={expert.linkedIn}
-                        />
+                    {speakerVideos.map((video) => (
+                        <Box
+                            key={video.id}
+                            sx={{
+                                minWidth: isMobile ? "280px" : "420px",
+                                height: isMobile ? "210px" : "300px",
+                                borderRadius: "16px",
+                                overflow: "hidden",
+                                position: "relative",
+                                cursor: "pointer",
+                                flexShrink: 0,
+                            }}
+                        >
+                            {activeVideo === video.id ? (
+                                <iframe
+                                    width="100%"
+                                    height="100%"
+                                    style={{
+                                        borderRadius: "16px",
+                                        border: "none",
+                                    }}
+                                    src={`https://www.youtube.com/embed/${video.videoUrl}?autoplay=1`}
+                                    title="YouTube video player"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                />
+                            ) : (
+                                <Box
+                                    onClick={() => setActiveVideo(video.id)}
+                                    sx={{
+                                        width: "100%",
+                                        height: "100%",
+                                        position: "relative",
+                                        backgroundImage: `url(${video.thumbnail})`,
+                                        backgroundSize: "cover",
+                                        backgroundPosition: "center",
+                                        backgroundRepeat: "no-repeat",
+                                    }}
+                                >
+                                    <Box
+                                        sx={{
+                                            position: "absolute",
+                                            top: "50%",
+                                            left: "50%",
+                                            transform: "translate(-50%, -50%)",
+                                            background: "rgba(0,0,0,0.6)",
+                                            padding: "12px 16px",
+                                            borderRadius: "100px",
+                                            transition: "all 0.3s ease",
+                                            "&:hover": {
+                                                background: "rgba(0,0,0,0.8)",
+                                                transform: "translate(-50%, -50%) scale(1.1)",
+                                            },
+                                        }}
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width={40}
+                                            height={40}
+                                            fill="#fff"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path d="M8 5v14l11-7z" />
+                                        </svg>
+                                    </Box>
+                                </Box>
+                            )}
+                        </Box>
                     ))}
                 </Box>
 
@@ -172,7 +258,6 @@ export const Speaker = () => {
                         willChange: "transform",
                     }}
                 >
-                    {/* Triple the images for seamless loop */}
                     {[...speakerImages, ...speakerImages, ...speakerImages].map((image, index) => (
                         <Box
                             key={index}
