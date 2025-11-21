@@ -124,7 +124,7 @@ export const expertsData = [
 ];
 export const instructorData = [
   {
-    imageUrl: "/img/instructors/Subhesh_Instructor.png",
+    imageUrl: "/img/instructors/Subhesh_New.png",
     name: "Subhesh Kumar",
     logo: "/img/instructors/google.webp",
     designation: "6 yrs+ teaching experience",
@@ -134,17 +134,7 @@ export const instructorData = [
     isGoogle: true
   },
   {
-    imageUrl: "/img/instructors/Aman_Instructor.png",
-    name: "Aman Kumar",
-    logo: "/img/instructors/Microsoft_Logo.png",
-    designation: "SDE at Apple",
-    info: "Ex-Microsoft",
-    college: "B.Tech. from DTU (formely DCE)",
-    linkedIn: "https://www.linkedin.com/in/aman5898/",
-    facultyType: "Visiting Faculty"
-  },
-  {
-    imageUrl: "/img/instructors/Pankaj_Instructor.png",
+    imageUrl: "/img/instructors/Pankaj_New.png",
     name: "Pankaj Kumar",
     logo: "/img/instructors/birdeye.png",
     designation: "Backend Lead at Vedam",
@@ -154,20 +144,20 @@ export const instructorData = [
       "https://www.linkedin.com/in/gargpk",
   },
   {
-    imageUrl: "/img/instructors/Prasanna_Instructor.png",
+    imageUrl: "/img/instructors/Prasanna_New.png",
     name: "Prasanna Swain",
-    logo: "/img/instructors/dtu.png",
+    logo: "/img/instructors/pollard_banknote.png",
     designation: "Frontend Lead at Vedam",
-    info: "BTech - DTU",
+    info: "Ex-Pollard Banknote Ltd.",
     college: "B.Tech. from DTU (formely DCE)",
     linkedIn: "https://www.linkedin.com/in/prasanna-swain/",
   },
   {
-    imageUrl: "/img/instructors/Jasbir_Instructor.png",
-    name: "Jasbir Singh",
-    logo: "/img/instructors/Cars24_Logo.jpeg",
-    designation: "5 yrs+ Teaching experience",
-    info: "Tech Lead",
+    imageUrl: "/img/instructors/Rupesh_New.png",
+    name: "Rupesh Kumar",
+    logo: "/img/instructors/algoprep.png",
+    designation: "DSA Instructor at Vedam",
+    info: "Ex-AlogPrep",
     college: "B.Tech. from DTU (formely DCE)",
     linkedIn: "https://www.linkedin.com/in/jazzy96/",
     facultyType: "Visiting Faculty"

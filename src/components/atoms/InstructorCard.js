@@ -143,7 +143,7 @@ export default function InstructorCard({
                 />
                 {info}
               </Typography>
-              <span style={{ color: "#A4A4A4" }}>|</span>
+              {/* <span style={{ color: "#A4A4A4" }}>|</span> */}
               <Button
                 sx={{
                   width: "20px",
@@ -153,7 +153,7 @@ export default function InstructorCard({
                   borderRadius: "100px",
                   p: "4px",
                   backgroundColor: "#FFF",
-                  mx: 2,
+                  // mx: 2,
                   boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.10)",
                 }}
                 onClick={() =>
