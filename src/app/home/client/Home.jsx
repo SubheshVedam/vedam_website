@@ -10,6 +10,7 @@ import {
   VideoWithText,
   WhatPeople,
 } from "@/components";
+import { StudentsAtVedam } from "@/components/home/StudentsAtVedam";
 import WhyVedam from "@/components/WhyVedam";
 import { Instructors } from "@/components/home/Instructors";
 import NewsSection from "@/components/home/NewsSection";
@@ -134,6 +135,12 @@ const Home = () => {
   ];
 
   const detailSections = [
+    {
+      id: "students-at-vedam",
+      subtitle: isMobile ? "Meet the Students at Vedam" : "",
+      // subtitle: "",
+      render: () => <StudentsAtVedam />,
+    },
     {
       id: "vedam-vs",
       subtitle: homeScreenData.vedamVs.subtitle,

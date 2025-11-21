@@ -78,6 +78,7 @@ export default function InstructorCard({
             flexDirection: "column",
             padding: "16px",
             borderRadius: "24px",
+            // border: '1px solid #C200DB',
             background:
               "linear-gradient(180deg, rgba(255, 255, 255, 0.80) 0%, #F3E8FF 100%)",
           }}

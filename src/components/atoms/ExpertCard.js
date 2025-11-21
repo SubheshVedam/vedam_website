@@ -42,6 +42,7 @@ export default function ExpertCard({
           height: { xs: 200, sm: 200 },
           objectFit: "cover",
           borderRadius: "8px",
+          backgroundColor: "#F98317",
         }}
         image={imageUrl}
         alt="green iguana"
@@ -63,7 +64,7 @@ export default function ExpertCard({
           <Typography
             variant="h6"
             component="div"
-            sx={{ color: "text.primary", fontWeight: "bold", fontSize: {xs:'17px',sm:'20px'} }}
+            sx={{ color: "text.primary", fontWeight: "bold", fontSize: { xs: '17px', sm: '20px' } }}
           >
             {name}
           </Typography>

@@ -85,11 +85,11 @@ export const expertsData = [
     linkedIn: "https://www.linkedin.com/in/ekta-shah30/",
   },
   {
-    imageUrl: "/img/experts/gauravdawra.jpeg",
-    name: "Gaurav Dawra",
-    logo: "/img/companies/microsoft-logo.png",
+    imageUrl: "/img/experts/ashishG.png",
+    name: "Ashish G",
+    logo: "/img/companies/apple.png",
     designation: "Software Engineer",
-    info: "ICPC World Finalist 2022-23, 6 Star on Code Chef",
+    info: "NSIT, Ext Mentor Graphics & OYO",
     rating: 4.2,
     linkedIn: "https://www.linkedin.com/in/gaurav-dawra-a2a935200/",
   },
@@ -652,7 +652,7 @@ export const homeScreenData = {
   },
   instructor: {
     title: "",
-    subtitle: "Our Instructors",
+    subtitle: "Meet Your Instructors",
   },
   learnFrom: {
     title: "",
