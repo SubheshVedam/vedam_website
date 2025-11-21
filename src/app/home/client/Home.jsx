@@ -103,29 +103,28 @@ const Home = () => {
 
   const heroSections = [
     {
-      id: "collaboration",
-      title: homeScreenData.inCollaborationWith.title,
-      subtitle: homeScreenData.inCollaborationWith.subtitle,
+      id: "in-collaboration-with",
+      subtitle: homeScreenData.inCollaborationWith2.subtitle,
       render: () => <InCollaborationWith />,
     },
-    {
-      id: "tech-video",
-      title: homeScreenData.techTeam.title,
-      subtitle: homeScreenData.techTeam.subtitle,
-      render: () =>
-        renderVideoCard(
-          showIframe1,
-          videoUrl1,
-          () => {
-            setVideoUrl1(
-              "https://www.youtube.com/embed/zHquRUSxP8o?autoplay=1&si=MjqF-PfmelA2too8"
-            );
-            setShowIframe1(true);
-          },
-          "/img/video_thumbnail.jpg",
-          "Video thumbnail"
-        ),
-    },
+    // {
+    //   id: "tech-video",
+    //   title: homeScreenData.techTeam.title,
+    //   subtitle: homeScreenData.techTeam.subtitle,
+    //   render: () =>
+    //     renderVideoCard(
+    //       showIframe1,
+    //       videoUrl1,
+    //       () => {
+    //         setVideoUrl1(
+    //           "https://www.youtube.com/embed/zHquRUSxP8o?autoplay=1&si=MjqF-PfmelA2too8"
+    //         );
+    //         setShowIframe1(true);
+    //       },
+    //       "/img/video_thumbnail.jpg",
+    //       "Video thumbnail"
+    //     ),
+    // },
     {
       id: "why-vedam",
       title: homeScreenData.whyVedam.title,

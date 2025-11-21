@@ -176,37 +176,38 @@ export const instructorData = [
 export const detailsData = [
   {
     image: "/img/whyvedam/first.webp",
-    bgImage: "/img/whyvedam/Code_From_Day_1_N.jpeg",
-    title: "Code From Day 1",
-    description:
-      "From Day 1, you'll be writing real code, building projects, and solving industry-relevant problems.",
-  },
-  {
-    image: "/img/whyvedam/second.webp",
-    bgImage: "/img/whyvedam/AI_First_Curriculum_N.jpeg",
-    title: "AI First Curriculum",
-    description:
-      "Our AI-First Curriculum is designed to equip students with the skills, tools, and mindset needed to thrive in an AI-powered world.",
-  },
-  {
-    image: "/img/whyvedam/fourth.webp",
-    bgImage: "/img/whyvedam/Top_5_Makes_it_N.jpeg",
+    bgImage: "/img/whyvedam/whyvedam1.png",
     title: "Only top 5% get through",
     description:
       "Merit based selection to attract the top talent. Learn with and co-create best codes.",
   },
   {
+    image: "/img/whyvedam/second.webp",
+    bgImage: "/img/whyvedam/whyvedam2.png",
+    title: "Code From Day 1",
+    description:
+      "From Day 1, you'll be writing real code, building projects, and solving industry-relevant problems.",
+  },
+  {
+    image: "/img/whyvedam/fourth.webp",
+    bgImage: "/img/whyvedam/whyvedam3.png",
+    title: "AI First Curriculum",
+    description:
+      "Our AI-First Curriculum is designed to equip students with the skills, tools, and mindset needed to thrive in an AI-powered world.",
+  },
+  {
     image: "/img/whyvedam/third.webp",
-    bgImage: "/img/whyvedam/Top_Instructors_N.jpeg",
+    bgImage: "/img/whyvedam/whyvedam4.png",
     title: "Top Instructors",
     description:
       "At Vedam, you’ll learn from the best minds in tech—engineers, researchers, and industry leaders from Google, Microsoft, Amazon, and top startups.",
   },
   {
     image: "/img/whyvedam/fifth.webp",
+    bgImage: "/img/whyvedam/whyvedam5.png",
     title: "Personal Macbook ",
     description:
-      "A MacBook Air M4(2025) for your hands‑on, immersive and collaborative learning experience in CS and AI ",
+      "It's your key to a hands-on, immersive and collaborative learning experience in Computer Science and AI. ",
     isFeatured: true,
   },
 ];
@@ -359,6 +360,21 @@ export const homeScreenData = {
     ],
     buttonText: "Download Brochure",
     buttonIcon: "/img/brochure.webp",
+  },
+  inCollaborationWith2: {
+    subtitle: "In Collaboration with",
+    data: [
+      {
+        id: 0,
+        image: "/image/inCollaborationWith/img1.png",
+        text: "Ajeenkya DY Patil University, Pune",
+      },
+      {
+        id: 1,
+        image: "/image/inCollaborationWith/img2.png",
+        text: "Ajinkya DY Patil University, Pune",
+      }
+    ]
   },
   techTeam: {
     title: "",

@@ -26,7 +26,7 @@ const WhyVedam = ({ data }) => {
             width: { xs: "100%", sm: "calc(33.33% - 1rem)" },
             position: "relative",
           }}>
-          <Backdrop
+          {/* <Backdrop
             open={true}
             sx={{
               position: "absolute",
@@ -37,9 +37,9 @@ const WhyVedam = ({ data }) => {
               left: 0,
               borderRadius: "16px",
             }}
-          />
+          /> */}
           <DetailsCard
-            image={item.image}
+            image=""
             bgImage={item.bgImage}
             description={item.description}
             title={item.title}
@@ -56,7 +56,7 @@ const WhyVedam = ({ data }) => {
             width: { xs: "100%", sm: "calc(50% - 1rem)" },
             position: "relative",
           }}>
-          <Backdrop
+          {/* <Backdrop
             open={true}
             sx={{
               position: "absolute",
@@ -67,9 +67,9 @@ const WhyVedam = ({ data }) => {
               left: 0,
               borderRadius: "16px",
             }}
-          />
+          /> */}
           <DetailsCard
-            image={item.image}
+            image=""
             bgImage={item.bgImage}
             description={item.description}
             title={item.title}

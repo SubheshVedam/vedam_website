@@ -1,179 +1,109 @@
-"use client";
-
-import React, { useState } from "react";
-import { Button, Typography } from "@mui/material";
-import { Box } from "@mui/system";
-import { homeScreenData } from "@/constants/data";
-import Image from "next/image";
-
-const SingleIconText = ({
-  icon,
-  text,
-  flexDirection = "row",
-  textColor = "rgba(30, 30, 30, 1)",
-}) => {
-  return (
-    <Box sx={{ display: "flex", flexDirection: flexDirection, gap: "12px" }}>
-      <Image
-        src={icon}
-        alt="svg"
-        width={20}
-        height={20}
-        className="iconStyle"
-      />
-      <Typography
-        variant="subtitle2"
-        color={textColor}
-        fontWeight={"500"}
-        sx={{ fontSize: "clamp(12px, 2vw 1rem)" }}
-      >
-        {text}
-      </Typography>
-    </Box>
-  );
-};
+import React from "react";
+import { Typography, Box } from "@mui/material";
 
 export const InCollaborationWith = () => {
-  const data = homeScreenData.inCollaborationWith;
-  const [showVideo, setShowVideo] = useState(false);
-  const YOUTUBE_URL = "https://www.youtube.com/embed/3PCRxHdf--g?autoplay=1";
+  const campusData = [
+    {
+      id: 0,
+      image: "/img/inCollaborationWith/img1.png",
+      imageMobile: "/img/inCollaborationWith/img1_mob.png",
+      text: "Ajeenkya DY Patil University, Pune",
+      color: "#8A18FF",
+      gradientStart: "#ECD5FF",
+    },
+    {
+      id: 1,
+      image: "/img/inCollaborationWith/img2.png",
+      imageMobile: "/img/inCollaborationWith/img2_mob.png",
+      text: "Ajeenkya DY Patil University, Pune",
+      color: "#F57A10",
+      gradientStart: "#FFE9AE",
+    }
+  ];
+
   return (
-    <Box
-      sx={{
-        borderWidth: 1,
-        borderColor: "rgba(0, 0, 0, 0.2)",
-        borderStyle: "solid",
-        borderRadius: "2rem",
-        display: "flex",
-        flexDirection: { xs: "column", md: "row" },
-        gap: "1rem",
-        justifyContent: "space-between",
-        padding: { xs: "20px", md: "40px" },
-        width: "100%",
-      }}
-    >
-      <Box sx={{
-        width: { xs: "100%", md: "55%" },
-        position: "relative",
-        aspectRatio: "2.07/1",
-        height: "auto",
-        minHeight: { xs: 120, sm: 160, md: 220 },
-        maxHeight: { xs: 180, sm: 220, md: 260 },
-        borderRadius: "16px",
-        overflow: "hidden",
-      }}>
-        {showVideo ? (
-          <iframe
-            width="100%"
-            height="100%"
-            style={{
-              borderRadius: "16px",
-              border: "none",
-              width: "100%",
-              height: "100%",
-              aspectRatio: "2.07/1",
-            }}
-            src={YOUTUBE_URL}
-            title="YouTube video player"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-        ) : (
-          <Box
-            onClick={() => setShowVideo(true)}
-            sx={{
-              cursor: "pointer",
-              width: "100%",
-              height: "100%",
-              position: "relative",
-              borderRadius: "16px",
-              overflow: "hidden",
-            }}
-          >
-            <img
-              src="/img/thumbnailADYPU.webp"
-              width={"100%"}
-              height="100%"
-              style={{ objectFit: "cover", width: "100%", height: "100%", aspectRatio: "2.07/1" }}
-              alt="Collaboration Thumbnail"
-            />
-            <Box
-              sx={{
-                position: "absolute",
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, -50%)",
-                background: "rgba(0,0,0,0.6)",
-                padding: { xs: "6px 8px", sm: "10px 12px", md: "12px 16px" },
-                borderRadius: "100px",
-              }}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width={32}
-                height={32}
-                style={{ width: "2.5em", height: "2.5em", minWidth: 24, minHeight: 24, maxWidth: 40, maxHeight: 40 }}
-                fill="#fff"
-                viewBox="0 0 24 24"
-              >
-                <path d="M8 5v14l11-7z" />
-              </svg>
-            </Box>
-          </Box>
-        )}
-      </Box>
+    <Box sx={{
+      width: "100%",
+    }}>
       <Box
         sx={{
-          width: { xs: "100%", md: "43%" },
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "flex-start",
-          justifyContent: "center",
+          display: 'flex',
+          justifyContent: 'center',
+          flexDirection: { xs: 'column', md: 'row' },
+          gap: { xs: '24px', md: '14px' },
+          alignItems: 'center',
         }}
       >
-        <Typography
-          variant="h4"
-          style={{
-            fontSize: "clamp(1.2rem, 2vw, 2rem)",
-            lineHeight: "120%",
-            letterSpacing: "-2%",
-            fontWeight: "700",
-            marginBottom: 8,
-          }}
-        >
-          {data.rightSideText1}
-        </Typography>
-        <Box sx={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-          {data.data.map((item) => (
-            <SingleIconText key={item.id} icon={item.image} text={item.text} />
-          ))}
-        </Box>
-        <Button
-          style={{
-            marginTop: "1.2rem",
-            backgroundColor: "rgba(251, 127, 5, 1)",
-            padding: "15px 20px",
-            borderRadius: "8px",
-          }}
-          sx={{
-            width: { xs: "100%", md: "auto" },
-            transition: "background-color 0.3s ease, transform 0.2s ease",
-            "&:hover": {
-              backgroundColor: "rgba(220, 110, 5, 1)",
-              transform: "scale(1.05)",
-            },
-          }}
-          href="https://apply.vedam.org/"
-          target="_blank"
-        >
-          <SingleIconText
-            icon={data.buttonIcon}
-            text={data.buttonText}
-            flexDirection="row-reverse"
-            textColor={"#F9F9F9"}
-          />
-        </Button>
+        {campusData.map((campus) => (
+          <Box
+            key={campus.id}
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              width: { xs: '100%', md: 'auto' },
+              maxWidth: { xs: '100%', md: '500px' },
+            }}
+          >
+            <Box
+              sx={{
+                width: '100%',
+                mb: '-40px',
+                zIndex: 1,
+              }}
+            >
+              <Box
+                component="img"
+                src={campus.image}
+                alt={campus.text}
+                sx={{
+                  width: '100%',
+                  height: 'auto',
+                  borderRadius: "16px",
+                  objectFit: "cover",
+                  display: { xs: 'none', md: 'block' }
+                }}
+              />
+              <Box
+                component="img"
+                src={campus.imageMobile}
+                alt={campus.text}
+                sx={{
+                  width: '100%',
+                  height: 'auto',
+                  borderRadius: "16px",
+                  objectFit: "cover",
+                  display: { xs: 'block', md: 'none' }
+                }}
+              />
+            </Box>
+
+            <Box
+              sx={{
+                borderRadius: '12px',
+                background: `linear-gradient(0deg, ${campus.gradientStart} 1.44%, #FFF 73.08%)`,
+                width: { xs: '74%', md: '62%' },
+                p: { xs: '24px 40px', md: '24px 46px' },
+                position: 'relative',
+                zIndex: 2,
+                borderBottom: `4px solid ${campus.color}`,
+              }}
+            >
+              <Typography
+                sx={{
+                  fontFamily: 'Outfit, sans-serif',
+                  fontSize: { xs: '16px', md: '24px' },
+                  fontWeight: 500,
+                  lineHeight: { xs: '22.4px', md: '33.6px' },
+                  color: '#1E1E1E',
+                  textAlign: 'center',
+                }}
+              >
+                {campus.text}
+              </Typography>
+            </Box>
+          </Box>
+        ))}
       </Box>
     </Box>
   );
