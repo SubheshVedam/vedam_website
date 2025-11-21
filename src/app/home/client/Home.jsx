@@ -11,6 +11,7 @@ import {
   WhatPeople,
 } from "@/components";
 import { StudentsAtVedam } from "@/components/home/StudentsAtVedam";
+import { Speaker } from "@/components/home/Speaker";
 import WhyVedam from "@/components/WhyVedam";
 import { Instructors } from "@/components/home/Instructors";
 import NewsSection from "@/components/home/NewsSection";
@@ -186,6 +187,11 @@ const Home = () => {
       title: homeScreenData.learnFrom.title,
       subtitle: homeScreenData.learnFrom.subtitle,
       render: () => <LearnFrom />,
+    },
+    {
+      id: "speaker",
+      subtitle: "Mentorship & Guidance from the Best in the Industry",
+      render: () => <Speaker />,
     },
     {
       id: "what-people",
