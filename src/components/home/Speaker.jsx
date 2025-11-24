@@ -16,32 +16,77 @@ export const Speaker = () => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-    // YouTube video data - store only video IDs
+    // Helper function to extract YouTube video ID from various URL formats
+    const getYouTubeVideoId = (url) => {
+        // Handle different YouTube URL formats
+        const patterns = [
+            /(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\?\/]+)/,
+            /youtube\.com\/embed\/([^&\?\/]+)/,
+        ];
+
+        for (const pattern of patterns) {
+            const match = url.match(pattern);
+            if (match && match[1]) {
+                return match[1];
+            }
+        }
+
+        // If it's already just an ID (no URL), return it
+        if (url && !url.includes('/') && !url.includes('http')) {
+            return url;
+        }
+
+        return null;
+    };
+
+    // Helper function to get Google Drive embed URL
+    const getGoogleDriveEmbedUrl = (url) => {
+        const fileIdMatch = url.match(/\/d\/([^\/]+)/);
+        if (fileIdMatch && fileIdMatch[1]) {
+            return `https://drive.google.com/file/d/${fileIdMatch[1]}/preview`;
+        }
+        return null;
+    };
+
+    // Helper function to determine video type and get embed URL
+    const getEmbedUrl = (url) => {
+        if (url.includes('drive.google.com')) {
+            return getGoogleDriveEmbedUrl(url);
+        } else {
+            const videoId = getYouTubeVideoId(url);
+            if (videoId) {
+                return `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
+            }
+        }
+        return null;
+    };
+
+    // YouTube video data
     const speakerVideos = [
         {
             id: 1,
             thumbnail: isMobile ? "/img/speaker/speaker1_mob.png" : "/img/speaker/speaker1.png",
-            videoId: "eq8HnUDuN0E"
+            videoUrl: "https://youtu.be/C1WADUPpx98?si=obOLIeGiFlo4KG6n"
         },
         {
             id: 2,
             thumbnail: isMobile ? "/img/speaker/speaker2_mob.png" : "/img/speaker/speaker2.png",
-            videoId: "eq8HnUDuN0E"
+            videoUrl: "https://drive.google.com/file/d/1HXj6NoN6P2_nAOB6BFq_xYPLaGdS2JF7/view?usp=sharing"
         },
         {
             id: 3,
             thumbnail: isMobile ? "/img/speaker/speaker3_mob.png" : "/img/speaker/speaker3.png",
-            videoId: "eq8HnUDuN0E"
+            videoUrl: "https://www.youtube.com/watch?v=0Pp7yhV1-1g"
         },
         {
             id: 4,
             thumbnail: isMobile ? "/img/speaker/speaker4_mob.png" : "/img/speaker/speaker4.png",
-            videoId: "eq8HnUDuN0E"
+            videoUrl: "https://youtu.be/Ffd_UBBWrMU"
         },
         {
             id: 5,
             thumbnail: isMobile ? "/img/speaker/speaker5_mob.png" : "/img/speaker/speaker5.png",
-            videoId: "eq8HnUDuN0E"
+            videoUrl: "https://youtu.be/mkRGpgc__xw?si=HYHMvO0RWDB0Pavj"
         },
     ];
 
@@ -145,75 +190,79 @@ export const Speaker = () => {
                         padding: "0 40px",
                     }}
                 >
-                    {speakerVideos.map((video) => (
-                        <Box
-                            key={video.id}
-                            sx={{
-                                minWidth: isMobile ? "280px" : "420px",
-                                height: isMobile ? "210px" : "300px",
-                                borderRadius: "16px",
-                                overflow: "hidden",
-                                position: "relative",
-                                cursor: "pointer",
-                                flexShrink: 0,
-                            }}
-                        >
-                            {activeVideo === video.id ? (
-                                <iframe
-                                    width="100%"
-                                    height="100%"
-                                    style={{
-                                        borderRadius: "16px",
-                                        border: "none",
-                                    }}
-                                    src={`https://www.youtube.com/embed/${video.videoId}?autoplay=1&rel=0&modestbranding=1`}
-                                    title="YouTube video player"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowFullScreen
-                                />
-                            ) : (
-                                <Box
-                                    onClick={() => setActiveVideo(video.id)}
-                                    sx={{
-                                        width: "100%",
-                                        height: "100%",
-                                        position: "relative",
-                                        backgroundImage: `url(${video.thumbnail})`,
-                                        backgroundSize: "cover",
-                                        backgroundPosition: "center",
-                                        backgroundRepeat: "no-repeat",
-                                    }}
-                                >
+                    {speakerVideos.map((video) => {
+                        const embedUrl = getEmbedUrl(video.videoUrl);
+
+                        return (
+                            <Box
+                                key={video.id}
+                                sx={{
+                                    minWidth: isMobile ? "280px" : "420px",
+                                    height: isMobile ? "210px" : "300px",
+                                    borderRadius: "16px",
+                                    overflow: "hidden",
+                                    position: "relative",
+                                    cursor: "pointer",
+                                    flexShrink: 0,
+                                }}
+                            >
+                                {activeVideo === video.id ? (
+                                    <iframe
+                                        width="100%"
+                                        height="100%"
+                                        style={{
+                                            borderRadius: "16px",
+                                            border: "none",
+                                        }}
+                                        src={embedUrl}
+                                        title="Video player"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowFullScreen
+                                    />
+                                ) : (
                                     <Box
+                                        onClick={() => setActiveVideo(video.id)}
                                         sx={{
-                                            position: "absolute",
-                                            top: "50%",
-                                            left: "50%",
-                                            transform: "translate(-50%, -50%)",
-                                            background: "rgba(0,0,0,0.6)",
-                                            padding: "12px 16px",
-                                            borderRadius: "100px",
-                                            transition: "all 0.3s ease",
-                                            "&:hover": {
-                                                background: "rgba(0,0,0,0.8)",
-                                                transform: "translate(-50%, -50%) scale(1.1)",
-                                            },
+                                            width: "100%",
+                                            height: "100%",
+                                            position: "relative",
+                                            backgroundImage: `url(${video.thumbnail})`,
+                                            backgroundSize: "cover",
+                                            backgroundPosition: "center",
+                                            backgroundRepeat: "no-repeat",
                                         }}
                                     >
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width={40}
-                                            height={40}
-                                            fill="#fff"
-                                            viewBox="0 0 24 24"
+                                        <Box
+                                            sx={{
+                                                position: "absolute",
+                                                top: "50%",
+                                                left: "50%",
+                                                transform: "translate(-50%, -50%)",
+                                                background: "rgba(0,0,0,0.6)",
+                                                padding: "12px 16px",
+                                                borderRadius: "100px",
+                                                transition: "all 0.3s ease",
+                                                "&:hover": {
+                                                    background: "rgba(0,0,0,0.8)",
+                                                    transform: "translate(-50%, -50%) scale(1.1)",
+                                                },
+                                            }}
                                         >
-                                            <path d="M8 5v14l11-7z" />
-                                        </svg>
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width={40}
+                                                height={40}
+                                                fill="#fff"
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <path d="M8 5v14l11-7z" />
+                                            </svg>
+                                        </Box>
                                     </Box>
-                                </Box>
-                            )}
-                        </Box>
-                    ))}
+                                )}
+                            </Box>
+                        );
+                    })}
                 </Box>
 
                 <IconButton
