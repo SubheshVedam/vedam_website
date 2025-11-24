@@ -3,10 +3,10 @@ import { Box } from "@mui/material";
 import Image from "next/image";
 
 const awards = [
-    { img: "/img/rewards/rewards1.png" },
-    { img: "/img/rewards/rewards2.png" },
-    { img: "/img/rewards/rewards3.png" },
-    { img: "/img/rewards/rewards4.png" },
+    { img: "/img/rewards/Image1.png" },
+    { img: "/img/rewards/Image2.png" },
+    { img: "/img/rewards/Image3.png" },
+    { img: "/img/rewards/Image4.png" },
 ];
 
 const RecognitionAwards = () => {
@@ -39,7 +39,7 @@ const RecognitionAwards = () => {
                     flexWrap: { xs: "wrap", md: "nowrap" },
                     justifyContent: "space-around",
                     alignItems: "center",
-                    gap: { xs: 2, md: 0 },
+                    gap: { xs: 2, md: '35px' },
                     mx: "auto",
                 }}
             >
@@ -54,6 +54,9 @@ const RecognitionAwards = () => {
                             alignItems: "center",
                             position: "relative",
                             overflow: "hidden",
+                            borderRadius: "22px",
+                            border: "4px solid #FFF",
+                            background: "#FFF",
                         }}
                     >
                         <Box
@@ -83,22 +86,6 @@ const RecognitionAwards = () => {
                     justifyContent: 'center',
                 }}
             >
-                <span
-                    style={{
-                        fontFamily: 'Nunito Sans, sans-serif',
-                        fontWeight: 500,
-                        fontStyle: 'italic',
-                        fontSize: '6px',
-                        lineHeight: '120%',
-                        letterSpacing: '-2%',
-                        color: '#1E1E1E',
-                        textAlign: 'center',
-                        width: '100%',
-                        display: 'block',
-                    }}
-                >
-                    *Recognitions Earned by SET Education's Parent Organization
-                </span>
             </Box>
         </Box>
     );
