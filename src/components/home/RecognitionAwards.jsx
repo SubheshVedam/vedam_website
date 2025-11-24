@@ -3,10 +3,10 @@ import { Box } from "@mui/material";
 import Image from "next/image";
 
 const awards = [
-    { img: "/img/rewards/img1.png" },
-    { img: "/img/rewards/img2.png" },
-    { img: "/img/rewards/img3.png" },
-    { img: "/img/rewards/img4.png" },
+    { img: "/img/rewards/rewards1.png" },
+    { img: "/img/rewards/rewards2.png" },
+    { img: "/img/rewards/rewards3.png" },
+    { img: "/img/rewards/rewards4.png" },
 ];
 
 const RecognitionAwards = () => {
@@ -33,13 +33,13 @@ const RecognitionAwards = () => {
                     backgroundRepeat: "no-repeat",
                     borderRadius: "32px",
                     boxShadow: "0 4px 24px rgba(0, 0, 0, 0.07)",
-                    p: { xs: 3, md: '27px' },
+                    p: { xs: 3, md: 5 },
                     display: "flex",
                     flexDirection: { xs: "row", md: "row" },
                     flexWrap: { xs: "wrap", md: "nowrap" },
                     justifyContent: "space-around",
                     alignItems: "center",
-                    gap: { xs: 2, md: '10px' },
+                    gap: { xs: 2, md: 0 },
                     mx: "auto",
                 }}
             >
@@ -52,9 +52,6 @@ const RecognitionAwards = () => {
                             display: "flex",
                             justifyContent: "center",
                             alignItems: "center",
-                            borderRadius: '24px',
-                            backgroundColor: 'white',
-                            px: '7px',
                             position: "relative",
                             overflow: "hidden",
                         }}
