@@ -1,109 +1,112 @@
 import React from "react";
-import { Typography, Box } from "@mui/material";
+import { Button, Typography } from "@mui/material";
+import { Box } from "@mui/system";
+import { homeScreenData } from "@/constants/data";
+import Image from "next/image";
+
+const SingleIconText = ({
+  icon,
+  text,
+  flexDirection = "row",
+  textColor = "rgba(30, 30, 30, 1)",
+}) => {
+  return (
+    <Box sx={{ display: "flex", flexDirection: flexDirection, gap: "12px" }}>
+      <Image
+        src={icon}
+        alt="svg"
+        width={20}
+        height={20}
+        className="iconStyle"
+      />
+      <Typography
+        variant="subtitle2"
+        color={textColor}
+        fontWeight={"500"}
+        sx={{ fontSize: "clamp(12px, 2vw 1rem)" }}
+      >
+        {text}
+      </Typography>
+    </Box>
+  );
+};
 
 export const InCollaborationWith = () => {
-  const campusData = [
-    {
-      id: 0,
-      image: "/img/inCollaborationWith/img1.png",
-      imageMobile: "/img/inCollaborationWith/img1_mob.png",
-      text: "Ajeenkya DY Patil University, Pune",
-      color: "#8A18FF",
-      gradientStart: "#ECD5FF",
-    },
-    {
-      id: 1,
-      image: "/img/inCollaborationWith/img2.png",
-      imageMobile: "/img/inCollaborationWith/img2_mob.png",
-      text: "Ajeenkya DY Patil University, Pune",
-      color: "#F57A10",
-      gradientStart: "#FFE9AE",
-    }
-  ];
-
+  const data = homeScreenData.inCollaborationWith;
   return (
-    <Box sx={{
-      width: "100%",
-    }}>
+    <Box
+      sx={{
+        borderWidth: 1,
+        borderColor: "rgba(0, 0, 0, 0.2)",
+        borderStyle: "solid",
+        borderRadius: "2rem",
+        display: "flex",
+        flexDirection: { xs: "column", md: "row" },
+        gap: "1rem",
+        justifyContent: "space-between",
+        padding: { xs: "20px", md: "40px" },
+        width: "100%",
+      }}
+    >
+      <Box sx={{ width: { xs: "100%", md: "55%" } }}>
+        <img
+          src={data.leftSideImage}
+          width={"100%"}
+          height={260}
+          style={{ objectFit: "cover", aspectRatio: "2.07:1" }}
+        />
+      </Box>
       <Box
         sx={{
-          display: 'flex',
-          justifyContent: 'center',
-          flexDirection: { xs: 'column', md: 'row' },
-          gap: { xs: '24px', md: '14px' },
-          alignItems: 'center',
+          width: { xs: "100%", md: "43%" },
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "flex-start",
+          justifyContent: "center",
         }}
       >
-        {campusData.map((campus) => (
-          <Box
-            key={campus.id}
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              width: { xs: '100%', md: 'auto' },
-              maxWidth: { xs: '100%', md: '500px' },
-            }}
-          >
-            <Box
-              sx={{
-                width: '100%',
-                mb: '-40px',
-                zIndex: 1,
-              }}
-            >
-              <Box
-                component="img"
-                src={campus.image}
-                alt={campus.text}
-                sx={{
-                  width: '100%',
-                  height: 'auto',
-                  borderRadius: "16px",
-                  objectFit: "cover",
-                  display: { xs: 'none', md: 'block' }
-                }}
-              />
-              <Box
-                component="img"
-                src={campus.imageMobile}
-                alt={campus.text}
-                sx={{
-                  width: '100%',
-                  height: 'auto',
-                  borderRadius: "16px",
-                  objectFit: "cover",
-                  display: { xs: 'block', md: 'none' }
-                }}
-              />
-            </Box>
-
-            <Box
-              sx={{
-                borderRadius: '12px',
-                background: `linear-gradient(0deg, ${campus.gradientStart} 1.44%, #FFF 73.08%)`,
-                width: { xs: '74%', md: '62%' },
-                p: { xs: '24px 40px', md: '24px 46px' },
-                position: 'relative',
-                zIndex: 2,
-                borderBottom: `4px solid ${campus.color}`,
-              }}
-            >
-              <Typography
-                sx={{
-                  fontFamily: 'Outfit, sans-serif',
-                  fontSize: { xs: '16px', md: '24px' },
-                  fontWeight: 500,
-                  lineHeight: { xs: '22.4px', md: '33.6px' },
-                  color: '#1E1E1E',
-                  textAlign: 'center',
-                }}
-              >
-                {campus.text}
-              </Typography>
-            </Box>
-          </Box>
-        ))}
+        <Typography
+          variant="h4"
+          style={{
+            fontSize: "clamp(1.2rem, 2vw, 2rem)",
+            lineHeight: "120%",
+            letterSpacing: "-2%",
+            fontWeight: "700",
+            marginBottom: 8,
+          }}
+        >
+          {data.rightSideText1}
+        </Typography>
+        <Box sx={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+          {data.data.map((item) => (
+            <SingleIconText key={item.id} icon={item.image} text={item.text} />
+          ))}
+        </Box>
+        <Button
+          style={{
+            marginTop: "1.2rem",
+            backgroundColor: "rgba(251, 127, 5, 1)",
+            padding: "15px 20px",
+            borderRadius: "8px",
+          }}
+          sx={{
+            width: { xs: "100%", md: "auto" },
+            transition: "background-color 0.3s ease, transform 0.2s ease",
+            "&:hover": {
+              backgroundColor: "rgba(220, 110, 5, 1)",
+              transform: "scale(1.05)",
+            },
+          }}
+          href="https://apply.vedam.org/"
+          target="_blank"
+        >
+          <SingleIconText
+            icon={data.buttonIcon}
+            text={data.buttonText}
+            flexDirection="row-reverse"
+            textColor={"#F9F9F9"}
+          />
+        </Button>
       </Box>
     </Box>
   );

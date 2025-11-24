@@ -368,21 +368,21 @@ export const homeScreenData = {
     buttonText: "Download Brochure",
     buttonIcon: "/img/brochure.webp",
   },
-  inCollaborationWith2: {
-    subtitle: "In Collaboration with",
-    data: [
-      {
-        id: 0,
-        image: "/image/inCollaborationWith/img1.png",
-        text: "Ajeenkya DY Patil University, Pune",
-      },
-      {
-        id: 1,
-        image: "/image/inCollaborationWith/img2.png",
-        text: "Ajinkya DY Patil University, Pune",
-      }
-    ]
-  },
+  // inCollaborationWith2: {
+  //   subtitle: "In Collaboration with",
+  //   data: [
+  //     {
+  //       id: 0,
+  //       image: "/image/inCollaborationWith/img1.png",
+  //       text: "Ajeenkya DY Patil University, Pune",
+  //     },
+  //     {
+  //       id: 1,
+  //       image: "/image/inCollaborationWith/img2.png",
+  //       text: "Ajinkya DY Patil University, Pune",
+  //     }
+  //   ]
+  // },
   techTeam: {
     title: "",
     subtitle: "Tech Minds behind Vedam",
