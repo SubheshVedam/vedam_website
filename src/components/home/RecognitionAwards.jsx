@@ -3,10 +3,10 @@ import { Box } from "@mui/material";
 import Image from "next/image";
 
 const awards = [
-    { img: "/img/rewards/rewards1.png" },
-    { img: "/img/rewards/rewards2.png" },
-    { img: "/img/rewards/rewards3.png" },
-    { img: "/img/rewards/rewards4.png" },
+    { img: "/img/rewards/img1.png" },
+    { img: "/img/rewards/img2.png" },
+    { img: "/img/rewards/img3.png" },
+    { img: "/img/rewards/img4.png" },
 ];
 
 const RecognitionAwards = () => {
@@ -24,15 +24,22 @@ const RecognitionAwards = () => {
                 sx={{
                     width: "100%",
                     maxWidth: 1200,
-                    background: "linear-gradient(180deg, #CCA866 0%, #FFFFFF 100%)",
+                    backgroundImage: {
+                        xs: "url(/img/awards/img1.png)",
+                        md: "url(/img/awards/img2.png)",
+                    },
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
                     borderRadius: "32px",
                     boxShadow: "0 4px 24px rgba(0, 0, 0, 0.07)",
-                    p: { xs: 3, md: 5 },
+                    p: { xs: 3, md: '27px' },
                     display: "flex",
-                    flexDirection: { xs: "column", md: "row" },
+                    flexDirection: { xs: "row", md: "row" },
+                    flexWrap: { xs: "wrap", md: "nowrap" },
                     justifyContent: "space-around",
                     alignItems: "center",
-                    gap: { xs: 4, md: 0 }, // Add gap in mobile, no gap in desktop
+                    gap: { xs: 2, md: '10px' },
                     mx: "auto",
                 }}
             >
@@ -40,11 +47,14 @@ const RecognitionAwards = () => {
                     <Box
                         key={idx}
                         sx={{
-                            width: 300,
-                            height: 180,
+                            width: { xs: "calc(50% - 8px)", md: 300 },
+                            height: { xs: 150, md: 180 },
                             display: "flex",
                             justifyContent: "center",
                             alignItems: "center",
+                            borderRadius: '24px',
+                            backgroundColor: 'white',
+                            px: '7px',
                             position: "relative",
                             overflow: "hidden",
                         }}
@@ -90,7 +100,7 @@ const RecognitionAwards = () => {
                         display: 'block',
                     }}
                 >
-                    *Recognitions Earned by SET Education’s Parent Organization
+                    *Recognitions Earned by SET Education's Parent Organization
                 </span>
             </Box>
         </Box>
