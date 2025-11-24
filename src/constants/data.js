@@ -108,7 +108,7 @@ export const expertsData = [
     designation: "Software Engineer",
     info: "NSIT, Ext Mentor Graphics & OYO",
     rating: 4.2,
-    linkedIn: "https://www.linkedin.com/in/gaurav-dawra-a2a935200/",
+    linkedIn: "https://www.linkedin.com/in/ashishgautamdev/",
   },
 
   {
