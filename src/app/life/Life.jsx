@@ -72,11 +72,11 @@ const Life = () => {
           },
         }}
         sections={[
-          {
-            id: "edge-at-vedam",
-            subtitle: lifeAtVedam.edgeAtVedam.subtitle,
-            render: () => <EdgeAtVedam />,
-          },
+          // {
+          //   id: "edge-at-vedam",
+          //   subtitle: lifeAtVedam.edgeAtVedam.subtitle,
+          //   render: () => <EdgeAtVedam />,
+          // },
           {
             id: "clubs-at-vedam",
             subtitle: lifeAtVedam.clubsatVedam.subtitle,
