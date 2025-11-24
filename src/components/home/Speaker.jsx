@@ -71,7 +71,7 @@ export const Speaker = () => {
         {
             id: 2,
             thumbnail: isMobile ? "/img/speaker/speaker2_mob.png" : "/img/speaker/speaker2.png",
-            videoUrl: "https://drive.google.com/file/d/1HXj6NoN6P2_nAOB6BFq_xYPLaGdS2JF7/view?usp=sharing"
+            videoUrl: "https://www.youtube.com/watch?v=RRnFQXXoAzw"
         },
         {
             id: 3,
