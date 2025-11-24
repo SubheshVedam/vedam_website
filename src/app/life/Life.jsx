@@ -29,12 +29,17 @@ const Life = () => {
 
       <Box
         sx={{
-          background:
-            "linear-gradient(180deg, #155A5D 0.06%, #ADF0F7 33.99%, #E2FDFF 65.97%, #FFF 98.95%)",
+          backgroundImage: {
+            xs: "url(/img/innovation_lab/bg_mob.png)",
+            sm: "url(/img/innovation_lab/bg_web.png)",
+          },
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
           width: "100%",
           display: "flex",
           justifyContent: "center",
-          pt: { xs: 2, sm: 7 },
+          pt: { xs: 2, sm: '70px' },
         }}
       >
         <SectionStack
@@ -54,7 +59,7 @@ const Life = () => {
               render: () => (
                 <>
                   <VedamInovationLab />
-                  <ScrollComponent />
+                  {/* <ScrollComponent /> */}
                 </>
               ),
               cardProps: { containerStyle: { marginBottom: "0px" } },
