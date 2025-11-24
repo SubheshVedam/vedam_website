@@ -37,7 +37,7 @@ export const WhatPeople = () => {
           top: "50%",
           transform: "translateY(-50%)",
           zIndex: 100,
-          opacity:0.8,
+          opacity: 0.8,
           backgroundColor: "background.paper",
           "&:hover": {
             backgroundColor: "background.paper",
@@ -67,7 +67,7 @@ export const WhatPeople = () => {
             text={testimonial.text}
             name={testimonial.name}
             designation={testimonial.designation}
-            companyLogo={testimonial.companyLogo}
+            linkedInUrl={testimonial.linkedInUrl}
           />
         ))}
       </Box>
@@ -80,7 +80,7 @@ export const WhatPeople = () => {
           top: "50%",
           transform: "translateY(-50%)",
           zIndex: 100,
-          opacity:0.8,
+          opacity: 0.8,
           backgroundColor: "background.paper",
           "&:hover": {
             backgroundColor: "background.paper",

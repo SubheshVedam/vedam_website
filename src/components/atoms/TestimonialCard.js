@@ -2,10 +2,10 @@ import * as React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import { Box } from "@mui/material";
+import { Box, IconButton } from "@mui/material";
 import Image from "next/image";
 
-export default function TestimonialCard({ image, text, name, designation,companyLogo }) {
+export default function TestimonialCard({ image, text, name, designation, linkedInUrl }) {
   return (
     <Card
       sx={{
@@ -15,7 +15,7 @@ export default function TestimonialCard({ image, text, name, designation,company
         maxWidth: "100%",
         minWidth: { xs: 274, sm: 333 },
         borderRadius: "16px",
-        padding: " 20px 20px 0 20px",
+        padding: "20px 20px 0 20px",
         boxShadow: "none",
         cursor: "pointer",
       }}
@@ -32,84 +32,91 @@ export default function TestimonialCard({ image, text, name, designation,company
           justifyContent: "space-between",
         }}
       >
+        {/* Top Section: Profile Image, Name, and LinkedIn */}
         <Box sx={{ display: "flex", flexDirection: "column" }}>
           <Box
             sx={{
-              width: { xs: "40px", sm: "60px" },
-              height: { xs: "40px", sm: "60px" },
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
               mb: "16px",
-              borderRadius: 100,
             }}
           >
-            <Image
-              src={image}
-              objectFit="cover"
-              alt="profile icon"
-              width={100}
-              height={100}
-              style={{ borderRadius: 100, width: "100%", height: "100%" }}
-            />
+            <Box sx={{ display: "flex", alignItems: "center", gap: "12px" }}>
+              <Box
+                sx={{
+                  width: { xs: "40px", sm: "60px" },
+                  height: { xs: "40px", sm: "60px" },
+                  borderRadius: 100,
+                  overflow: "hidden",
+                }}
+              >
+                <Image
+                  src={image}
+                  alt="profile icon"
+                  width={60}
+                  height={60}
+                  style={{ borderRadius: 100, width: "100%", height: "100%", objectFit: "cover" }}
+                />
+              </Box>
+              <Box>
+                <Typography
+                  variant="h6"
+                  sx={{
+                    color: "#6C10BC",
+                    fontWeight: 700,
+                    fontSize: { xs: 14, sm: 16 },
+                    fontFamily: "Inter",
+                  }}
+                >
+                  {name}
+                </Typography>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: "#000",
+                    fontSize: { xs: 10, sm: 12 },
+                    fontFamily: "Inter",
+                    fontWeight: 500,
+                  }}
+                >
+                  {designation}
+                </Typography>
+              </Box>
+            </Box>
+
+            {/* LinkedIn Icon */}
+            {linkedInUrl && (
+              <IconButton
+                onClick={() => window.open(linkedInUrl, "_blank")}
+                sx={{
+                  padding: 0,
+                  width: { xs: "24px", sm: "32px" },
+                  height: { xs: "24px", sm: "32px" },
+                }}
+              >
+                <Image
+                  src="/img/testimonials/LinkedIn.png"
+                  alt="LinkedIn"
+                  width={32}
+                  height={32}
+                  style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                />
+              </IconButton>
+            )}
           </Box>
+
+          {/* Testimonial Text */}
           <Typography
             variant="body1"
             sx={{
               color: "text.primary",
-              marginBottom: "16px",
               fontSize: { xs: 14, sm: 16 },
               fontFamily: "Inter",
             }}
           >
             {text}
           </Typography>
-        </Box>
-        <Box
-          sx={{
-            display: "flex",
-            width: "100%",
-            justifyContent: "space-between",
-          }}
-        >
-          <Box>
-            <Typography
-              variant="h6"
-              sx={{
-                color: "#6C10BC",
-                fontWeight: "bold",
-                fontSize: { xs: 14, sm: 16 },
-                fontFamily: "Inter",
-              }}
-            >
-              {name}
-            </Typography>
-            <Typography
-              variant="body2"
-              sx={{
-                color: "text.secondary",
-                fontSize: { xs: 10, sm: 12 },
-                fontFamily: "Inter",
-              }}
-            >
-              {designation}
-            </Typography>
-          </Box>
-          <Box >
-            <Box
-              sx={{
-                width: { xs: "80px", sm: "100px" },
-                height: { xs: "auto", sm: "60px" },
-              }}
-            >
-              <Image
-                src={companyLogo}
-                alt={"image"}
-                width={100}
-                height={100}
-                style={{
-                  objectFit: "contain",width:'100%',height:'100%'
-                }}
-              />
-            </Box>
-          </Box>
         </Box>
       </CardContent>
     </Card>

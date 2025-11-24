@@ -16,32 +16,32 @@ export const Speaker = () => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-    // YouTube video data
+    // YouTube video data - store only video IDs
     const speakerVideos = [
         {
             id: 1,
             thumbnail: isMobile ? "/img/speaker/speaker1_mob.png" : "/img/speaker/speaker1.png",
-            videoUrl: "https://www.youtube.com/embed/eq8HnUDuN0E?autoplay=1&si=0"
+            videoId: "eq8HnUDuN0E"
         },
         {
             id: 2,
             thumbnail: isMobile ? "/img/speaker/speaker2_mob.png" : "/img/speaker/speaker2.png",
-            videoUrl: "https://www.youtube.com/embed/eq8HnUDuN0E?autoplay=1&si=0"
+            videoId: "eq8HnUDuN0E"
         },
         {
             id: 3,
             thumbnail: isMobile ? "/img/speaker/speaker3_mob.png" : "/img/speaker/speaker3.png",
-            videoUrl: "https://www.youtube.com/embed/eq8HnUDuN0E?autoplay=1&si=0"
+            videoId: "eq8HnUDuN0E"
         },
         {
             id: 4,
             thumbnail: isMobile ? "/img/speaker/speaker4_mob.png" : "/img/speaker/speaker4.png",
-            videoUrl: "https://www.youtube.com/embed/eq8HnUDuN0E?autoplay=1&si=0"
+            videoId: "eq8HnUDuN0E"
         },
         {
             id: 5,
             thumbnail: isMobile ? "/img/speaker/speaker5_mob.png" : "/img/speaker/speaker5.png",
-            videoUrl: "https://www.youtube.com/embed/eq8HnUDuN0E?autoplay=1&si=0"
+            videoId: "eq8HnUDuN0E"
         },
     ];
 
@@ -166,9 +166,9 @@ export const Speaker = () => {
                                         borderRadius: "16px",
                                         border: "none",
                                     }}
-                                    src={`https://www.youtube.com/embed/${video.videoUrl}?autoplay=1`}
+                                    src={`https://www.youtube.com/embed/${video.videoId}?autoplay=1&rel=0&modestbranding=1`}
                                     title="YouTube video player"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     allowFullScreen
                                 />
                             ) : (
