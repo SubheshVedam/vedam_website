@@ -23,7 +23,6 @@ const RecognitionAwards = () => {
             <Box
                 sx={{
                     width: "100%",
-                    maxWidth: 1200,
                     backgroundImage: {
                         xs: "url(/img/awards/img1.png)",
                         md: "url(/img/awards/img2.png)",
@@ -31,9 +30,9 @@ const RecognitionAwards = () => {
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",
-                    borderRadius: "32px",
+                    borderRadius: { sx: "0px", md: '32px' },
                     boxShadow: "0 4px 24px rgba(0, 0, 0, 0.07)",
-                    p: { xs: 3, md: 5 },
+                    p: { xs: 3, md: '27px' },
                     display: "flex",
                     flexDirection: { xs: "row", md: "row" },
                     flexWrap: { xs: "wrap", md: "nowrap" },
@@ -48,15 +47,13 @@ const RecognitionAwards = () => {
                         key={idx}
                         sx={{
                             width: { xs: "calc(50% - 8px)", md: 300 },
-                            height: { xs: 150, md: 180 },
+                            height: { xs: 160, md: 250 },
                             display: "flex",
                             justifyContent: "center",
                             alignItems: "center",
                             position: "relative",
                             overflow: "hidden",
-                            borderRadius: "22px",
-                            border: "4px solid #FFF",
-                            background: "#FFF",
+                            borderRadius: { xs: '10px', md: '22px' },
                         }}
                     >
                         <Box
@@ -64,8 +61,7 @@ const RecognitionAwards = () => {
                                 width: "100%",
                                 height: "100%",
                                 position: "relative",
-                                transform: idx >= 2 ? "scale(2)" : "scale(1.5)",
-                                transition: "transform 0.3s ease",
+                                padding: { xs: 1, md: 2 },
                             }}
                         >
                             <Image
@@ -77,15 +73,6 @@ const RecognitionAwards = () => {
                         </Box>
                     </Box>
                 ))}
-            </Box>
-            <Box
-                sx={{
-                    width: { xs: '100%', md: '800px' },
-                    margin: '24px auto 0 auto',
-                    display: 'flex',
-                    justifyContent: 'center',
-                }}
-            >
             </Box>
         </Box>
     );
