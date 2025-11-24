@@ -25,14 +25,14 @@ export const testimonialData = [
 `,
     name: "Sharav Yadav",
     designation: "Student at Vedam",
-    linkedInUrl: "/img/companies/amazon.webp",
+    linkedInUrl: "https://www.linkedin.com/in/sharav-yadav-s52/",
   },
   {
     image: "/img/testimonials/img3.png",
     text: `My first 100 days at Vedam School of Technology have been full of learning and new experiences. The supportive environment, hands-on sessions, and encouraging faculty have helped me grow both technically and personally. I’ve learned to think more practically, collaborate better, and stay curious about new technologies.`,
     name: "Awanessh Gupta",
     designation: "Student at Vedam",
-    linkedInUrl: "/img/companies/Bosch_Logo.png",
+    linkedInUrl: "https://www.linkedin.com/in/awaneesh-gupta/",
   },
   {
     image: "/img/testimonials/img4.png",
@@ -176,7 +176,7 @@ export const instructorData = [
     designation: "DSA Instructor at Vedam",
     info: "Ex-AlogPrep",
     college: "B.Tech. from DTU (formely DCE)",
-    linkedIn: "https://www.linkedin.com/in/jazzy96/",
+    linkedIn: "https://www.linkedin.com/in/rupesh-kumar-9b9468189/",
     facultyType: "Visiting Faculty"
   }
 ];

@@ -91,8 +91,8 @@ export default function TestimonialCard({ image, text, name, designation, linked
                 onClick={() => window.open(linkedInUrl, "_blank")}
                 sx={{
                   padding: 0,
-                  width: { xs: "24px", sm: "32px" },
-                  height: { xs: "24px", sm: "32px" },
+                  width: '24px',
+                  height: '24px',
                 }}
               >
                 <Image
