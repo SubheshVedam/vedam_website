@@ -29,12 +29,13 @@ export const StudentsAtVedam = () => {
                         <iframe
                             width="100%"
                             height="100%"
-                            src="https://www.youtube.com/embed/eq8HnUDuN0E?autoplay=1&si=0"
+                            src="https://www.youtube.com/embed/ae-N-YGiGxo?autoplay=1&start=1"
                             title="YouTube video player"
                             frameBorder="0"
                             allow="autoplay; encrypted-media"
                             allowFullScreen
                         />
+
                     </Box>
                 ) : (
                     <>
