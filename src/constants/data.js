@@ -913,7 +913,7 @@ export const admissionScreenData = {
   },
   keyDates: {
     subtitle: "Key Dates",
-    headerText: "July Intake Dates",
+    headerText: "December Intake Dates",
     firstArray: [
       "VSAT Test",
       "Last Date to Apply",
