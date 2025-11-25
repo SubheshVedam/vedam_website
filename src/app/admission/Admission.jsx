@@ -1,5 +1,6 @@
 import React from "react";
 import { admissionScreenData } from "@/constants/data";
+import { Box } from "@mui/material";
 import {
   AdmissionAndFees,
   AdmissionProcess,
@@ -51,7 +52,9 @@ const Admission = () => {
     {
       id: "facilities",
       subtitle: "",
-      render: () => <FacilityAndAmenities />,
+      render: () => <Box sx={{ mb: { xs: '-40px', md: '-80px' } }}>
+        <FacilityAndAmenities />
+      </Box>
     },
   ];
 
