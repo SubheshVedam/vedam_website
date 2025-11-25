@@ -174,7 +174,7 @@ export const FinancingPartners = () => {
 
         <Box sx={{ width: "100%" }}>
             <Typography
-                variant="h4"
+                variant="subtitle1"
                 sx={{
                     background: "linear-gradient(135deg, #2B135C 0%, #6F17D1 25%, #8A18FF 45%, #8E17FF 50%, #922CCD 65%, #F97D03 100%)",
                     backgroundClip: "text",

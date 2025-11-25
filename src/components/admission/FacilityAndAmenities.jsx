@@ -177,12 +177,12 @@ export const FacilityAndAmenities = ({ isV2 }) => {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'flex-start',
-          padding: { xs: '0 20px', sm: '0 40px', md: '0 120px' },
+          padding: { xs: '0 10px', sm: '0 40px' },
           gap: { xs: '16px', md: '45px' },
         }}
       >
         <Typography
-          variant="h4"
+          variant="subtitle1"
           sx={{
             background: 'linear-gradient(135deg, #2B135C 0%, #6F17D1 25%, #8A18FF 45%, #8E17FF 50%, #922CCD 65%, #F97D03 100%)',
             backgroundClip: "text",
