@@ -5,220 +5,580 @@ import {
   Typography,
   useMediaQuery,
   useTheme,
-  IconButton,
+  Collapse,
 } from "@mui/material";
 import { lifeAtVedam } from "@/constants/data";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Image from "next/image";
-import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
-import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
-const IconTitle = ({ src, title }) => {
+const clubImageMap = {
+  "Open Source Club": "open_source",
+  "Competitive Coding Club": "coding",
+  "Entrepreneurship Club": "entrepreneurship",
+  "Cultural Club": "cultural",
+  "Sports Club": "sports",
+  "E-Sports Club": "esports",
+};
+
+const clubVideoMap = {
+  "Open Source Club": "https://www.youtube.com/embed/eq8HnUDuN0E?autoplay=1&si=0",
+  "Competitive Coding Club": "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&si=0",
+  "Entrepreneurship Club": "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&si=0",
+  "Cultural Club": "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&si=0",
+  "Sports Club": "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&si=0",
+  "E-Sports Club": "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&si=0",
+};
+
+// Separate component for club images
+const ClubImages = ({ clubName, getImagePath, resetKey }) => {
+  const [showIframe, setShowIframe] = useState(false);
+  const [videoUrl, setVideoUrl] = useState("");
+
+  // Reset video when club changes
+  React.useEffect(() => {
+    setShowIframe(false);
+    setVideoUrl("");
+  }, [resetKey]);
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: "1rem",
-      }}
-    >
-      <img src={src} alt="image" className="clubsIconImage" />
-      <Typography
-        variant="subtitle1"
+    <>
+      {/* Desktop View - Custom Grid Layout */}
+      <Box
         sx={{
-          fontSize: "clamp(20px, 2vw, 24px)",
-          lineHeight: "120%",
-          fontWeight: "700",
-          fontFamily: "Inter",
+          display: { xs: "none", md: "grid" },
+          gridTemplateColumns: "repeat(5, 1fr)",
+          gridTemplateRows: "repeat(2, 280px)",
+          gap: "18px",
+          maxHeight: "578px",
         }}
       >
-        {title}
-      </Typography>
-    </Box>
+        {/* Row 1: img1 (2 cols), img2 (2 cols), img3 (1 col) */}
+        <Box
+          sx={{
+            gridColumn: "span 2",
+            position: "relative",
+            width: "100%",
+            height: "280px",
+            borderRadius: "16px",
+            overflow: "hidden",
+            cursor: "pointer",
+            "&:hover": {
+              transform: "scale(1.02)",
+              transition: "transform 0.3s ease",
+            },
+          }}
+        >
+          {showIframe ? (
+            <iframe
+              width="100%"
+              height="100%"
+              style={{
+                borderRadius: "16px",
+                border: "none",
+              }}
+              src={videoUrl}
+              title="YouTube video player"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          ) : (
+            <Box
+              onClick={() => {
+                setVideoUrl(clubVideoMap[clubName] || "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&si=0");
+                setShowIframe(true);
+              }}
+              sx={{
+                cursor: "pointer",
+                width: "100%",
+                height: "100%",
+                position: "relative",
+              }}
+            >
+              <img
+                src={getImagePath(clubName, 1)}
+                alt="Club image 1"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                }}
+              />
+              <Box
+                className="play-button"
+                sx={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
+                  width: "60px",
+                  height: "60px",
+                  borderRadius: "50%",
+                  backgroundColor: "rgba(108, 16, 188, 0.9)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  transition: "transform 0.3s ease",
+                  "&::after": {
+                    content: '""',
+                    width: 0,
+                    height: 0,
+                    borderLeft: "16px solid white",
+                    borderTop: "10px solid transparent",
+                    borderBottom: "10px solid transparent",
+                    marginLeft: "3px",
+                  },
+                }}
+              />
+            </Box>
+          )}
+        </Box>
+
+        <Box
+          sx={{
+            gridColumn: "span 2",
+            position: "relative",
+            width: "100%",
+            height: "280px",
+            borderRadius: "16px",
+            overflow: "hidden",
+            "&:hover": {
+              transform: "scale(1.02)",
+              transition: "transform 0.3s ease",
+            },
+          }}
+        >
+          <img
+            src={getImagePath(clubName, 2)}
+            alt="Club image 2"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
+        </Box>
+
+        <Box
+          sx={{
+            gridColumn: "span 1",
+            position: "relative",
+            width: "100%",
+            height: "280px",
+            borderRadius: "16px",
+            overflow: "hidden",
+            "&:hover": {
+              transform: "scale(1.02)",
+              transition: "transform 0.3s ease",
+            },
+          }}
+        >
+          <img
+            src={getImagePath(clubName, 3)}
+            alt="Club image 3"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
+        </Box>
+
+        {/* Row 2: img4 (1 col), img5 (2 cols), img6 (2 cols) */}
+        <Box
+          sx={{
+            gridColumn: "span 1",
+            position: "relative",
+            width: "100%",
+            height: "280px",
+            borderRadius: "16px",
+            overflow: "hidden",
+            "&:hover": {
+              transform: "scale(1.02)",
+              transition: "transform 0.3s ease",
+            },
+          }}
+        >
+          <img
+            src={getImagePath(clubName, 4)}
+            alt="Club image 4"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
+        </Box>
+
+        <Box
+          sx={{
+            gridColumn: "span 2",
+            position: "relative",
+            width: "100%",
+            height: "280px",
+            borderRadius: "16px",
+            overflow: "hidden",
+            "&:hover": {
+              transform: "scale(1.02)",
+              transition: "transform 0.3s ease",
+            },
+          }}
+        >
+          <img
+            src={getImagePath(clubName, 5)}
+            alt="Club image 5"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
+        </Box>
+
+        <Box
+          sx={{
+            gridColumn: "span 2",
+            position: "relative",
+            width: "100%",
+            height: "280px",
+            borderRadius: "16px",
+            overflow: "hidden",
+            "&:hover": {
+              transform: "scale(1.02)",
+              transition: "transform 0.3s ease",
+            },
+          }}
+        >
+          <img
+            src={getImagePath(clubName, 6)}
+            alt="Club image 6"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
+        </Box>
+      </Box>
+
+      {/* Mobile View - Horizontal Scroll */}
+      <Box
+        sx={{
+          display: { xs: "flex", md: "none" },
+          overflowX: "auto",
+          gap: "10px",
+          scrollSnapType: "x mandatory",
+          "&::-webkit-scrollbar": {
+            display: "none",
+          },
+          scrollbarWidth: "none",
+          pb: 1,
+          mt: 2,
+        }}
+      >
+        {[1, 2, 3, 4, 5, 6].map((imgNum) => (
+          <Box
+            key={imgNum}
+            sx={{
+              minWidth: "85%",
+              aspectRatio: "1.5/1",
+              borderRadius: "16px",
+              overflow: "hidden",
+              scrollSnapAlign: "center",
+              position: "relative",
+            }}
+          >
+            {imgNum === 1 ? (
+              showIframe ? (
+                <iframe
+                  width="100%"
+                  height="100%"
+                  style={{
+                    borderRadius: "16px",
+                    border: "none",
+                  }}
+                  src={videoUrl}
+                  title="YouTube video player"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              ) : (
+                <Box
+                  onClick={() => {
+                    setVideoUrl(clubVideoMap[clubName] || "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&si=0");
+                    setShowIframe(true);
+                  }}
+                  sx={{
+                    cursor: "pointer",
+                    width: "100%",
+                    height: "100%",
+                    position: "relative",
+                  }}
+                >
+                  <img
+                    src={getImagePath(clubName, imgNum)}
+                    alt={`Club image ${imgNum}`}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
+                  />
+                  <Box
+                    className="play-button"
+                    sx={{
+                      position: "absolute",
+                      top: "50%",
+                      left: "50%",
+                      transform: "translate(-50%, -50%)",
+                      width: "60px",
+                      height: "60px",
+                      borderRadius: "50%",
+                      backgroundColor: "rgba(108, 16, 188, 0.9)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      "&::after": {
+                        content: '""',
+                        width: 0,
+                        height: 0,
+                        borderLeft: "16px solid white",
+                        borderTop: "10px solid transparent",
+                        borderBottom: "10px solid transparent",
+                        marginLeft: "3px",
+                      },
+                    }}
+                  />
+                </Box>
+              )
+            ) : (
+              <img
+                src={getImagePath(clubName, imgNum)}
+                alt={`Club image ${imgNum}`}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                }}
+              />
+            )}
+          </Box>
+        ))}
+      </Box>
+    </>
   );
 };
 
 export const ClubsAtVst = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [sliderRef, setSliderRef] = useState(null);
   const clubs = lifeAtVedam.clubsAtVst;
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
-  // Custom arrow components
-  const NextArrow = (props) => {
-    const { onClick } = props;
-    return (
-      <IconButton
-        onClick={onClick}
-        sx={{
-          position: "absolute",
-          bottom: -50,
-          right: "50%",
-          transform: "translateX(10px)",
-          zIndex: 1,
-          backgroundColor: "rgba(108, 16, 188, 0.2)",
-          "&:hover": {
-            backgroundColor: "rgba(0,0,0,0.2)",
-          },
-          mx: 2,
-          mt: "-20px",
-        }}
-      >
-        <ArrowDownwardIcon sx={{ color: '#6C10BC' }} />
-      </IconButton>
-    );
+  const handleClubClick = (index) => {
+    setActiveIndex(index);
   };
 
-  const PrevArrow = (props) => {
-    const { onClick } = props;
-    return (
-      <IconButton
-        onClick={onClick}
-        sx={{
-          position: "absolute",
-          bottom: -50,
-          left: "50%",
-          transform: "translateX(-10px)",
-          zIndex: 1,
-          backgroundColor: "rgba(108, 16, 188, 0.2)",
-          "&:hover": {
-            backgroundColor: "rgba(0,0,0,0.2)",
-          },
-          mx: 2,
-          mt: "-20px",
-        }}
-      >
-        <ArrowUpwardIcon sx={{ color: '#6C10BC', zIndex: 100 }} />
-      </IconButton>
-    );
-  };
-
-  // Carousel settings
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2300,
-    pauseOnHover: true,
-    vertical: true,
-    arrows: true,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-    beforeChange: (current, next) => setActiveIndex(next),
-    cssEase: "cubic-bezier(0.645, 0.045, 0.355, 1)",
+  const getImagePath = (clubName, imageIndex) => {
+    const clubFolder = clubImageMap[clubName] || "coding";
+    return `/img/clubsatVedam/${clubFolder}/img${imageIndex}.png`;
   };
 
   return (
     <Box
       sx={{
-        display: "flex",
-        flexDirection: { xs: "column", sm: "row" },
-        gap: { xs: "1.5rem", md: "2.5rem" },
-        alignItems: "center",
-        borderRadius: "30px",
-        justifyContent: "space-between",
-        background:
-          "radial-gradient(101.43% 227.29% at 100% 0%, rgba(186, 107, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%)",
-        padding: { xs: "1rem", md: "2rem" },
-        position: "relative",
-        minHeight: "500px",
-        pb: 8, // Add padding at bottom for arrows
+        maxWidth: "100%",
+        margin: "0 auto",
       }}
     >
-      {/* Left Side - Description */}
       <Box
         sx={{
-          width: { xs: "100%", sm: "30%" },
           display: "flex",
-          flexDirection: "column",
-          alignItems: "flex-start",
-          justifyContent: "center",
-          gap: { xs: "1rem", md: "20px" },
-          position: { md: "sticky" },
-          top: 0,
-          height: "fit-content",
+          flexDirection: { xs: "column", md: "row" },
+          gap: { xs: "1.5rem", md: "18px" },
         }}
       >
-        <Typography
-          variant="body1"
+        {/* Left Side - Club List (Desktop Only) */}
+        <Box
           sx={{
-            background: "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            fontSize: "clamp(20px, 2vw, 36px)",
-            lineHeight: "100%",
-            fontWeight: "700",
-            marginBottom: { xs: "1rem", md: "26px" },
-            fontFamily: "Inter",
+            width: { xs: "100%", md: "286px" },
+            display: { xs: "none", md: "flex" },
+            flexDirection: "column",
+            gap: "21px",
           }}
         >
-          {clubs[activeIndex].leftSideTitle}
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          sx={{
-            fontSize: "clamp(12px, 2vw, 16px)",
-            lineHeight: "150%",
-            fontWeight: "350",
-            fontFamily: "Inter",
-          }}
-        >
-          {clubs[activeIndex].description}
-        </Typography>
-      </Box>
-
-      {/* Right Side - Carousel */}
-      <Box
-        sx={{
-          width: { xs: "100%", sm: "50%" },
-          position: "relative",
-          pb: 8, // Add padding at bottom for arrows
-        }}
-      >
-        <Slider ref={setSliderRef} {...settings}>
           {clubs.map((club, index) => (
-            <Box key={index} sx={{ padding: { xs: "8px", sm: "20px" } }}>
-              <IconTitle
-                src={
-                  index % 2 === 0
-                    ? "/img/robotics.webp"
-                    : "/img/openSource.webp"
-                }
-                title={club.rightSideText}
-              />
+            <Box
+              key={index}
+              onClick={() => handleClubClick(index)}
+              sx={{
+                padding: "20px",
+                borderRadius: "16px",
+                backgroundColor:
+                  activeIndex === index
+                    ? "rgba(108, 16, 188, 0.1)"
+                    : "#ffffff",
+                border:
+                  activeIndex === index
+                    ? "1px solid #E8D1FF"
+                    : "1px solid #e0e0e0",
+                cursor: "pointer",
+                transition: "all 0.3s ease",
+                "&:hover": {
+                  backgroundColor: "rgba(108, 16, 188, 0.05)",
+                  transform: "translateX(4px)",
+                },
+              }}
+            >
               <Box
                 sx={{
-                  width: "100%",
-                  padding: "20px 0px",
-                  // borderRadius: 
-                  margin: "1.5rem 0",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginBottom: activeIndex === index ? "1rem" : 0,
                 }}
               >
-                <Image
-                  src={club.image}
-                  alt={club.rightSideText}
-                  width={300}
-                  height={200}
-                  className="clubsAtVstImage"
-                  style={{
-                    width: "100%",
-                    borderRadius: "16px",
-                    height: isMobile ? "200px" : "300px",
-                    objectFit: "cover",
+                <Typography
+                  variant="h6"
+                  sx={{
+                    fontSize: "18px",
+                    fontWeight: "600",
+                    fontFamily: "Inter",
+                    color: activeIndex === index ? "#6C10BC" : "#000",
+                  }}
+                >
+                  {club.rightSideText || `Club ${index + 1}`}
+                </Typography>
+                <ArrowForwardIosIcon
+                  sx={{
+                    color: activeIndex === index ? "#6C10BC" : "#666",
+                    fontSize: "1.2rem",
+                    transform:
+                      activeIndex === index ? "rotate(90deg)" : "rotate(0deg)",
+                    transition: "transform 0.3s ease",
                   }}
                 />
               </Box>
+
+              <Collapse in={activeIndex === index}>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    fontSize: "14px",
+                    lineHeight: "150%",
+                    fontWeight: "400",
+                    fontFamily: "Inter",
+                    color: "#555",
+                  }}
+                >
+                  {club.description}
+                </Typography>
+              </Collapse>
             </Box>
           ))}
-        </Slider>
+        </Box>
+
+        {/* Mobile View - Club List with Images Below Each */}
+        <Box
+          sx={{
+            display: { xs: "flex", md: "none" },
+            flexDirection: "column",
+            gap: "20px",
+            width: "100%",
+          }}
+        >
+          {clubs.map((club, index) => (
+            <Box key={index}>
+              <Box
+                onClick={() => handleClubClick(index)}
+                sx={{
+                  padding: "20px",
+                  borderRadius: "16px",
+                  backgroundColor:
+                    activeIndex === index
+                      ? "rgba(108, 16, 188, 0.1)"
+                      : "#ffffff",
+                  border:
+                    activeIndex === index
+                      ? "1px solid #E8D1FF"
+                      : "1px solid #e0e0e0",
+                  cursor: "pointer",
+                  transition: "all 0.3s ease",
+                  "&:hover": {
+                    backgroundColor: "rgba(108, 16, 188, 0.05)",
+                  },
+                }}
+              >
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    marginBottom: activeIndex === index ? "1rem" : 0,
+                  }}
+                >
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      fontSize: "18px",
+                      fontWeight: "600",
+                      fontFamily: "Inter",
+                      color: activeIndex === index ? "#6C10BC" : "#000",
+                    }}
+                  >
+                    {club.rightSideText || `Club ${index + 1}`}
+                  </Typography>
+                  <ArrowForwardIosIcon
+                    sx={{
+                      color: activeIndex === index ? "#6C10BC" : "#666",
+                      fontSize: "1.2rem",
+                      transform:
+                        activeIndex === index ? "rotate(90deg)" : "rotate(0deg)",
+                      transition: "transform 0.3s ease",
+                    }}
+                  />
+                </Box>
+
+                <Collapse in={activeIndex === index}>
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      fontSize: "14px",
+                      lineHeight: "150%",
+                      fontWeight: "400",
+                      fontFamily: "Inter",
+                      color: "#555",
+                    }}
+                  >
+                    {club.description}
+                  </Typography>
+                </Collapse>
+              </Box>
+
+              {/* Images immediately below this club in mobile view */}
+              <Collapse in={activeIndex === index}>
+                <ClubImages
+                  clubName={club.rightSideText}
+                  getImagePath={getImagePath}
+                />
+              </Collapse>
+            </Box>
+          ))}
+        </Box>
+
+        {/* Right Side - Images (Desktop Only) */}
+        <Box
+          sx={{
+            width: { xs: "100%", md: "70%" },
+            display: { xs: "none", md: "flex" },
+            flexDirection: "column",
+          }}
+        >
+          <ClubImages
+            clubName={clubs[activeIndex].rightSideText}
+            getImagePath={getImagePath}
+            resetKey={activeIndex}
+          />
+        </Box>
       </Box>
     </Box>
   );
