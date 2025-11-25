@@ -1,5 +1,151 @@
-import { Box, Typography } from "@mui/material";
-import React from "react";
+'use client'
+import { Box, Typography, IconButton } from "@mui/material";
+import React, { useState } from "react";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+
+const categories = [
+  { name: "Campus", folder: "campus", count: 6 },
+  { name: "Classrooms", folder: "classroom", count: 5 },
+  { name: "Hive", folder: "hive", count: 5 },
+  { name: "Common Area", folder: "common_area", count: 7 },
+];
+
+const CategoryCarousel = ({ category }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const imagesPerView = 2;
+  const maxIndex = Math.ceil(category.count / imagesPerView) - 1;
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) => Math.max(0, prev - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => Math.min(maxIndex, prev + 1));
+  };
+
+  const startImg = currentIndex * imagesPerView + 1;
+  const endImg = Math.min(startImg + imagesPerView - 1, category.count);
+
+  return (
+    <Box sx={{ width: '100%' }}>
+      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: { xs: '10px', md: '18px' } }}>
+        <Typography
+          sx={{
+            color: '#8A18FF',
+            fontWeight: 600,
+            fontSize: { xs: '20px', md: '30px' },
+            fontFamily: 'Inter, sans-serif',
+          }}
+        >
+          {category.name}
+        </Typography>
+        <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 1 }}>
+          <IconButton
+            onClick={handlePrev}
+            disabled={currentIndex === 0}
+            sx={{
+              opacity: 0.8,
+              backgroundColor: 'background.paper',
+              '&:hover': {
+                backgroundColor: 'background.paper',
+              },
+              '&:disabled': { opacity: 0.3 },
+            }}
+          >
+            <ChevronLeftIcon />
+          </IconButton>
+          <IconButton
+            onClick={handleNext}
+            disabled={currentIndex === maxIndex}
+            sx={{
+              opacity: 0.8,
+              backgroundColor: 'background.paper',
+              '&:hover': {
+                backgroundColor: 'background.paper',
+              },
+              '&:disabled': { opacity: 0.3 },
+            }}
+          >
+            <ChevronRightIcon />
+          </IconButton>
+        </Box>
+      </Box>
+
+      {/* Desktop: Grid with controlled navigation */}
+      <Box
+        sx={{
+          display: { xs: 'none', md: 'grid' },
+          gridTemplateColumns: '1fr 1fr',
+          gap: '20px',
+          position: 'relative',
+        }}
+      >
+        {Array.from({ length: endImg - startImg + 1 }, (_, i) => startImg + i).map((imgNum) => (
+          <Box
+            key={imgNum}
+            sx={{
+              width: '100%',
+              aspectRatio: '16/9',
+              borderRadius: '16px',
+              overflow: 'hidden',
+              bgcolor: '#2D1B4E',
+            }}
+          >
+            <img
+              src={`/img/amenities/${category.folder}/img${imgNum}.png`}
+              alt={`${category.name} ${imgNum}`}
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+              }}
+            />
+          </Box>
+        ))}
+      </Box>
+
+      {/* Mobile: Scrollable carousel */}
+      <Box
+        sx={{
+          display: { xs: 'flex', md: 'none' },
+          overflowX: 'auto',
+          gap: '16px',
+          scrollSnapType: 'x mandatory',
+          '&::-webkit-scrollbar': {
+            display: 'none',
+          },
+          scrollbarWidth: 'none',
+          pb: 1,
+        }}
+      >
+        {Array.from({ length: category.count }, (_, i) => i + 1).map((imgNum) => (
+          <Box
+            key={imgNum}
+            sx={{
+              minWidth: '85%',
+              aspectRatio: '16/9',
+              borderRadius: '16px',
+              overflow: 'hidden',
+              bgcolor: '#2D1B4E',
+              scrollSnapAlign: 'center',
+            }}
+          >
+            <img
+              src={`/img/amenities/${category.folder}/img${imgNum}.png`}
+              alt={`${category.name} ${imgNum}`}
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+              }}
+            />
+          </Box>
+        ))}
+      </Box>
+    </Box>
+  );
+};
 
 export const FacilityAndAmenities = ({ isV2 }) => {
   return (
@@ -11,114 +157,49 @@ export const FacilityAndAmenities = ({ isV2 }) => {
         right: '50%',
         marginLeft: '-50vw',
         marginRight: '-50vw',
-        background: '#1D0036',
+        backgroundImage: {
+          xs: 'url(/img/amenities/bg/bg_mob.png)',
+          md: 'url(/img/amenities/bg/bg_web.png)',
+        },
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
         display: 'flex',
         justifyContent: 'center',
-        padding: { xs: '32px 0', md: '80px 0' }, // Responsive vertical padding
+        padding: { xs: '18px 0', md: '40px 0' },
       }}
     >
       <Box
         sx={{
           width: '100%',
           maxWidth: '1280px',
-          minHeight: 'auto',
           boxSizing: 'border-box',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'flex-start',
-          padding: { xs: '12px', sm: '24px', md: '20px 120px' }, // Responsive horizontal padding
-          gap: '28px',
+          padding: { xs: '0 20px', sm: '0 40px', md: '0 120px' },
+          gap: { xs: '16px', md: '45px' },
         }}
       >
         <Typography
           variant="h4"
           sx={{
-            color: '#fff',
+            background: 'linear-gradient(135deg, #2B135C 0%, #6F17D1 25%, #8A18FF 45%, #8E17FF 50%, #922CCD 65%, #F97D03 100%)',
+            backgroundClip: "text",
+            WebkitBackgroundClip: "text",
+            color: "transparent",
+            WebkitTextFillColor: "transparent",
             fontWeight: 700,
-            fontSize: { xs: '1.6rem', sm: '2.2rem', md: '36px' },
-            lineHeight: '120%',
-            letterSpacing: '-2%',
-            fontFamily: 'Inter, sans-serif',
-            width: { xs: '100%', md: '1040px' },
-            height: { xs: 'auto', md: '43px' },
-            margin: 0,
-            textAlign: 'left',
-            display: 'flex',
-            alignItems: 'center',
+            fontSize: { xs: "24px", sm: "36px" },
+            display: "inline-block",
           }}
         >
           Facilities & Amenities
         </Typography>
 
-        {/* Images: first five stacked, last two side-by-side */}
-        {!isV2 && (
-          <Box
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '22px',
-              width: '100%',
-              justifyContent: 'center',
-            }}
-          >
-            {[2, 3, 4, 5, 6].map((num) => (
-              <img
-                key={num}
-                src={`/img/amenities/${num}.png`}
-                alt={`Facility ${num}`}
-                style={{
-                  width: '100%',
-                  maxHeight: '323px',
-                  height: 'auto',
-                  objectFit: 'contain',
-                  background: '#1D0036',
-                  borderRadius: '16px',
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
-                  display: 'block',
-                }}
-              />
-            ))}
-
-            <Box
-              sx={{
-                display: 'flex',
-                flexDirection: { xs: 'column', sm: 'row' },
-                gap: '22px',
-                width: '100%',
-              }}
-            >
-              {[7, 8].map((num) => (
-                <Box
-                  key={num}
-                  sx={{
-                    flex: 1,
-                    background: '#FFFFFF',
-                    borderRadius: '20px',
-                    padding: '10px',
-                    boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                  }}
-                >
-                  <img
-                    src={`/img/amenities/${num}.png`}
-                    alt={`Facility ${num}`}
-                    style={{
-                      width: '100%',
-                      maxHeight: '323px',
-                      height: 'auto',
-                      objectFit: 'contain',
-                      background: '#1D0036',
-                      borderRadius: '16px',
-                      display: 'block',
-                    }}
-                  />
-                </Box>
-              ))}
-            </Box>
-          </Box>
-        )}
+        {categories.map((category) => (
+          <CategoryCarousel key={category.folder} category={category} />
+        ))}
       </Box>
     </Box>
   );

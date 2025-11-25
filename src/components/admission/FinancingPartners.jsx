@@ -11,6 +11,7 @@ const ToggleButton = ({ selectedPartner, setSelectedPartner }) => {
                     borderRadius: { xs: 3, sm: 4.4 },
                     padding: { xs: "0.4rem", sm: "0.5rem" },
                     display: "flex",
+                    justifyContent: 'flex-start',
                     position: "relative",
                     width: "21rem",
                     maxWidth: "21rem",
@@ -50,6 +51,7 @@ const ToggleButton = ({ selectedPartner, setSelectedPartner }) => {
                             justifyContent: "center",
                             color: selectedPartner === type ? "#fff" : "#6513AC",
                             fontWeight: 600,
+                            fontFamily: "Inter",
                             height: "100%",
                             fontSize: { xs: "0.85rem", sm: "0.9rem", md: "0.95rem" },
                             px: { xs: 1, sm: 0 },
@@ -94,16 +96,18 @@ const FinancingTable = ({ data }) => {
                             borderRight: "1px solid #E5E5E5",
                             display: "flex",
                             alignItems: "center",
-                            justifyContent: 'center'
+                            justifyContent: { xs: "flex-start", md: "center" }
+
                         }}
                     >
                         <Typography
                             sx={{
-                                fontWeight: index === 0 ? 600 : 500,
+                                fontWeight: index === 0 ? 600 : 400,
                                 fontSize: { xs: "0.8rem", sm: "0.95rem" },
-                                color: "#333",
+                                color: "#1E1E1E",
                                 lineHeight: 1.4,
                                 textAlign: { xs: "left", md: "center" },
+                                fontFamily: "Inter",
                             }}
                         >
                             {row.label}
@@ -126,6 +130,7 @@ const FinancingTable = ({ data }) => {
                                 color: "#333",
                                 lineHeight: 1.4,
                                 textAlign: { xs: "left", md: "center" },
+                                fontFamily: "Inter",
                             }}
                         >
                             {row.value}
@@ -171,17 +176,20 @@ export const FinancingPartners = () => {
             <Typography
                 variant="h4"
                 sx={{
-                    background: "linear-gradient(90deg, #FF6B35 0%, #B931B8 100%)",
+                    background: "linear-gradient(135deg, #2B135C 0%, #6F17D1 25%, #8A18FF 45%, #8E17FF 50%, #922CCD 65%, #F97D03 100%)",
+                    backgroundClip: "text",
                     WebkitBackgroundClip: "text",
+                    color: "transparent",
                     WebkitTextFillColor: "transparent",
                     fontWeight: 700,
-                    fontSize: { xs: "1.5rem", sm: "2rem", md: "2.2rem" },
-                    mb: 3,
-                    // textAlign: "center",
+                    fontSize: { xs: "1.5rem", sm: "2rem" },
+                    display: "inline-block",
+                    mb: '20px',
                 }}
             >
                 Financing Partners
             </Typography>
+
 
             <ToggleButton
                 selectedPartner={selectedPartner}
