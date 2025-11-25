@@ -2,6 +2,7 @@
 import { Box } from "@mui/material";
 import React from "react";
 import { EdgeAtVedam, VedamInovationLab, VideoWithText, SectionStack, ClubsAtVst } from "@/components";
+import { FunAtVedam } from "@/components/life/FunAtVedam";
 import { lifeAtVedam } from "@/constants/data";
 import { ScrollComponent } from "@/components/life/ScrollComponent/ScrollComponent";
 import Clubs from "@/components/Clubs"
@@ -86,6 +87,11 @@ const Life = () => {
             id: "clubs-at-vedam",
             subtitle: lifeAtVedam.clubsatVedam.subtitle,
             render: () => <ClubsAtVst />,
+          },
+          {
+            id: "fun-at-vedam",
+            subtitle: "Fun@Vedam",
+            render: () => <FunAtVedam />,
           },
         ]}
       />

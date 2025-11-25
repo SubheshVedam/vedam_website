@@ -20,12 +20,12 @@ const clubImageMap = {
 };
 
 const clubVideoMap = {
-  "Open Source Club": "https://www.youtube.com/embed/eq8HnUDuN0E?autoplay=1&si=0",
-  "Competitive Coding Club": "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&si=0",
-  "Entrepreneurship Club": "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&si=0",
-  "Cultural Club": "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&si=0",
-  "Sports Club": "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&si=0",
-  "E-Sports Club": "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&si=0",
+  "Open Source Club": "",
+  "Competitive Coding Club": "",
+  "Entrepreneurship Club": "",
+  "Cultural Club": "",
+  "Sports Club": "",
+  "E-Sports Club": "",
 };
 
 // Separate component for club images
@@ -83,7 +83,7 @@ const ClubImages = ({ clubName, getImagePath, resetKey }) => {
           ) : (
             <Box
               onClick={() => {
-                setVideoUrl(clubVideoMap[clubName] || "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&si=0");
+                setVideoUrl(clubVideoMap[clubName]);
                 setShowIframe(true);
               }}
               sx={{
@@ -304,7 +304,7 @@ const ClubImages = ({ clubName, getImagePath, resetKey }) => {
               ) : (
                 <Box
                   onClick={() => {
-                    setVideoUrl(clubVideoMap[clubName] || "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&si=0");
+                    setVideoUrl(clubVideoMap[clubName]);
                     setShowIframe(true);
                   }}
                   sx={{
