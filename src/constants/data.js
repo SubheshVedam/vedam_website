@@ -1005,22 +1005,19 @@ export const admissionScreenData = {
       "Empowering students with the resources to compete in the new age program. Upto 100% scholarships are available",
     data: [
       {
-        image: "/img/scholarship/first.webp",
-        bgImage: "/img/scholarship/img1.jpeg",
+        bgImage: "/img/scholarship/img1.png",
         title: "Merit Based Scholarship (Upto 100%)",
         description:
           "Recognizes academic excellence, unique talent and leadership potential.",
       },
       {
-        image: "/img/scholarship/second.webp",
-        bgImage: "/img/scholarship/img2.jpeg",
+        bgImage: "/img/scholarship/img2.png",
         title: "Women in Tech Scholarship (Upto 20%)",
         description:
           "Empowering and supporting women in tech for growth and success.",
       },
       {
-        image: "/img/scholarship/third.webp",
-        bgImage: "/img/scholarship/img3.jpeg",
+        bgImage: "/img/scholarship/img3.png",
         title: "Need Based Scholarship (Upto 30%)",
         description:
           "Focused on specific fields of study or demonstrating financial needs.",

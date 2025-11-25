@@ -45,7 +45,7 @@ const Admission = () => {
     },
     {
       id: "scholarship",
-      subtitle: admissionScreenData.scholarshipProgram.subtitle,
+      subtitle: '',
       render: () => <ScholarshipProgram />,
     },
     {

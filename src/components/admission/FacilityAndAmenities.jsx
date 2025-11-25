@@ -192,6 +192,7 @@ export const FacilityAndAmenities = ({ isV2 }) => {
             fontWeight: 700,
             fontSize: { xs: "24px", sm: "36px" },
             display: "inline-block",
+            mb: { xs: '-10px', md: '-30px' }
           }}
         >
           Facilities & Amenities
