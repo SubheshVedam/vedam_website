@@ -315,7 +315,7 @@ export const FeeStructure = () => {
               key={item.id}
               count={item.id}
               text={item.text}
-              isHref={item.id === 4}
+              isHref={item.id === 10}
             />
           ))}
       </Box>
@@ -1031,7 +1031,7 @@ export const FeeStructure = () => {
             key={item.id}
             count={item.id}
             text={item.text}
-            isHref={item.id === 4}
+            isHref={item.id === 10}
           />
         ))}
       </Box>

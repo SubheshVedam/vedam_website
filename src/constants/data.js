@@ -231,7 +231,7 @@ export const navLinks = [
 
 export const homeScreenData = {
   hero: {
-    background_video: "/vid/videoBg.mp4",
+    background_video: "/vid/videoBgNew.mp4",
     title: "Learn Tech by Building\u00A0It",
     subtitle:
       "Vedam's 4-year UG OnCampus program prepares you for startups, innovation, and leadership with industry driven coursework and hands-on projects.",
@@ -663,8 +663,12 @@ export const homeScreenData = {
       },
       // {
       //   id: 4,
-      //   text: "*Download the complete details of hostel rooms and charges ",
+      //   text: "This fee is for the year 2025 and can be used as a reference for now. The 2026 fee will be updated soon.",
       // },
+      {
+        id: 4,
+        text: "This fee is for the year 2025 and can be used as a reference for now. The 2026 fee will be updated soon.",
+      },
     ],
   },
   instructor: {
@@ -924,9 +928,9 @@ export const admissionScreenData = {
     secondArray: [
       "23rd December",
       "22nd December",
-      "Within 2 Days of the Exam",
-      "Within 5 Days of the Exam",
-      "Within 15 Days of the Exam, If selected",
+      "24th December 2025",
+      "5th January 2026 onwards",
+      "On or before 12th January 2026, If selected",
     ],
   },
   admissionProcess: {
