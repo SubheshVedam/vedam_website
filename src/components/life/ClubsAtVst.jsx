@@ -16,8 +16,10 @@ const clubImageMap = {
   "Entrepreneurship Club": "entrepreneurship",
   "Cultural Club": "cultural",
   "Sports Club": "sports",
-  "E-Sports Club": "esports",
+  "ESports Club": "esports",
 };
+
+
 
 const clubVideoMap = {
   "Open Source Club": "https://www.youtube.com/embed/RRnFQXXoAzw?autoplay=1&si=0",
@@ -25,7 +27,7 @@ const clubVideoMap = {
   "Entrepreneurship Club": "https://www.youtube.com/embed/RRnFQXXoAzw?autoplay=1&si=0",
   "Cultural Club": "https://www.youtube.com/embed/RRnFQXXoAzw?autoplay=1&si=0",
   "Sports Club": "https://www.youtube.com/embed/RRnFQXXoAzw?autoplay=1&si=0",
-  "E-Sports Club": "https://www.youtube.com/embed/RRnFQXXoAzw?autoplay=1&si=0",
+  "ESports Club": "https://www.youtube.com/embed/RRnFQXXoAzw?autoplay=1&si=0",
 };
 
 // Separate component for club images
@@ -88,7 +90,7 @@ const ClubImages = ({ clubName, getImagePath, resetKey }) => {
           ) : (
             <Box
               onClick={() => {
-                setVideoUrl(clubVideoMap[clubName] || "https://www.youtube.com/embed/RRnFQXXoAzw?autoplay=1&si=0");
+                setVideoUrl(clubVideoMap[clubName]);
                 setShowIframe(true);
               }}
               sx={{
@@ -384,7 +386,7 @@ export const ClubsAtVst = () => {
   };
 
   const getImagePath = (clubName, imageIndex) => {
-    const clubFolder = clubImageMap[clubName] || "coding";
+    const clubFolder = clubImageMap[clubName];
     return `/img/clubsatVedam/${clubFolder}/img${imageIndex}.png`;
   };
 

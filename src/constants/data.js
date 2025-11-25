@@ -1064,30 +1064,6 @@ export const lifeAtVedam = {
     {
       leftSideTitle: "Clubs at VST",
       description:
-        "Join our Cultural Club to celebrate diversity through music, dance, drama, and festivals. Engage in events that bring creativity to life!",
-      rightSideText: "Cultural Club",
-      rightSideText2: "Open Source club",
-      image: "/img/clubsatVedam/Cultural_club.jpeg",
-    },
-    {
-      leftSideTitle: "Clubs at VST",
-      description:
-        "Stay active and competitive in our Sports Club! Participate in various sports, tournaments, and activities to enhance teamwork and skills.",
-      rightSideText: "Sports Club",
-      rightSideText2: "Gaming Hub",
-      image: "/img/clubsatVedam/Sports_Club_N.jpeg",
-    },
-    {
-      leftSideTitle: "Clubs at VST",
-      description:
-        "Join our ESports Club and compete in gaming tournaments, enhance strategic thinking, and connect with passionate gamers.",
-      rightSideText: "ESports Club",
-      rightSideText2: "Data Science",
-      image: "/img/clubsatVedam/Esports_Club_N.jpeg",
-    },
-    {
-      leftSideTitle: "Clubs at VST",
-      description:
         "Contribute to open-source projects, collaborate with developers, and gain real-world coding experience in our Open Source Club.",
       rightSideText: "Open Source Club",
       rightSideText2: "Creative Hub",
@@ -1109,6 +1085,32 @@ export const lifeAtVedam = {
       rightSideText2: "Creative Hub",
       image: "/img/clubsatVedam/Entrepreneurship_Club_N.jpeg",
     },
+    {
+      leftSideTitle: "Clubs at VST",
+      description:
+        "Join our Cultural Club to celebrate diversity through music, dance, drama, and festivals. Engage in events that bring creativity to life!",
+      rightSideText: "Cultural Club",
+      rightSideText2: "Open Source club",
+      image: "/img/clubsatVedam/Cultural_club.jpeg",
+    },
+    {
+      leftSideTitle: "Clubs at VST",
+      description:
+        "Stay active and competitive in our Sports Club! Participate in various sports, tournaments, and activities to enhance teamwork and skills.",
+      rightSideText: "Sports Club",
+      rightSideText2: "Gaming Hub",
+      image: "/img/clubsatVedam/Sports_Club_N.jpeg",
+    },
+    {
+      leftSideTitle: "Clubs at VST",
+      description:
+        "Join our ESports Club and compete in gaming tournaments, enhance strategic thinking, and connect with passionate gamers.",
+      rightSideText: "ESports Club",
+      rightSideText2: "Data Science",
+      image: "/img/clubsatVedam/Esports_Club_N.jpeg",
+    },
+
+
   ],
   vedamLab: {
     subtitle: "Vedam Innovation Lab",
