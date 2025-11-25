@@ -22,12 +22,12 @@ const clubImageMap = {
 
 
 const clubVideoMap = {
-  "Open Source Club": "https://www.youtube.com/embed/RRnFQXXoAzw?autoplay=1&si=0",
-  "Competitive Coding Club": "https://www.youtube.com/embed/RRnFQXXoAzw?autoplay=1&si=0",
-  "Entrepreneurship Club": "https://www.youtube.com/embed/RRnFQXXoAzw?autoplay=1&si=0",
-  "Cultural Club": "https://www.youtube.com/embed/RRnFQXXoAzw?autoplay=1&si=0",
-  "Sports Club": "https://www.youtube.com/embed/RRnFQXXoAzw?autoplay=1&si=0",
-  "ESports Club": "https://www.youtube.com/embed/RRnFQXXoAzw?autoplay=1&si=0",
+  "Open Source Club": "https://www.youtube.com/embed/RRnFQXXAzw?autoplay=1&si=0",
+  "Competitive Coding Club": "https://www.youtube.com/embed/RRnFQXXAzw?autoplay=1&si=0",
+  "Entrepreneurship Club": "https://www.youtube.com/embed/RRnFQXXAzw?autoplay=1&si=0",
+  "Cultural Club": "https://www.youtube.com/embed/RRnFQXXAzw?autoplay=1&si=0",
+  "Sports Club": "https://www.youtube.com/embed/RRnFQXXAzw?autoplay=1&si=0",
+  "ESports Club": "https://www.youtube.com/embed/RRnFQXXAzw?autoplay=1&si=0",
 };
 
 // Separate component for club images

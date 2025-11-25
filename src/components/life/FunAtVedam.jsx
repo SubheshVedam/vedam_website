@@ -62,17 +62,17 @@ export const FunAtVedam = () => {
         {
             id: 1,
             thumbnail: "/img/funAtVedam/img1.png",
-            videoUrl: "https://www.youtube.com/watch?v=RRnFQXXoAzw" // Dummy URL
+            videoUrl: "https://www.youtube.com/watch?v=RRnFQXXAzw" // Dummy URL
         },
         {
             id: 2,
             thumbnail: "/img/funAtVedam/img2.png",
-            videoUrl: "https://www.youtube.com/watch?v=RRnFQXXoAzw" // Dummy URL
+            videoUrl: "https://www.youtube.com/watch?v=RRnFQXXAzw" // Dummy URL
         },
         {
             id: 3,
             thumbnail: "/img/funAtVedam/img3.png",
-            videoUrl: "https://www.youtube.com/watch?v=RRnFQXXoAzw" // Dummy URL
+            videoUrl: "https://www.youtube.com/watch?v=RRnFQXXAzw" // Dummy URL
         },
     ];
 
