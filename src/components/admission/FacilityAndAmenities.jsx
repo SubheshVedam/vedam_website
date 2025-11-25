@@ -176,7 +176,7 @@ export const FacilityAndAmenities = ({ isV2 }) => {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'flex-start',
-          // padding: { xs: '0 10px', sm: '0 40px' },
+          padding: { xs: '0 10px', sm: '0 0' },
           gap: { xs: '16px', md: '45px' },
         }}
       >

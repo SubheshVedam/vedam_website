@@ -45,7 +45,7 @@ export const ScholarshipProgram = () => {
           boxSizing: 'border-box',
           display: 'flex',
           flexDirection: 'column',
-          // padding: { xs: '0 10px', sm: '0 40px' },
+          padding: { xs: '0 10px', sm: '0 0' },
         }}
       >
         <Typography

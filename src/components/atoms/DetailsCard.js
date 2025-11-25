@@ -36,39 +36,39 @@ export default function DetailsCard({
         overflow: "hidden",
         ...(!isScholarshipCard
           ? {
-              "&:hover": {
-                backgroundColor: isFeatured ? "#7C20CC" : "#f5f5f5",
-                transition: "background-color 0.3s ease",
-                "& .description-text": {
-                  // Target the description text on card hover
-                  transform: "translateY(-10px)",
-                  opacity: 1,
-                  height: "auto",
-                  marginTop: "0px",
-                },
-                "& .title-box": {
-                  // Target the title box on card hover
-                  transform: "translateY(-10px)",
-                },
+            "&:hover": {
+              backgroundColor: isFeatured ? "#7C20CC" : "#f5f5f5",
+              transition: "background-color 0.3s ease",
+              "& .description-text": {
+                // Target the description text on card hover
+                transform: "translateY(-10px)",
+                opacity: 1,
+                height: "auto",
+                marginTop: "0px",
               },
-            }
+              "& .title-box": {
+                // Target the title box on card hover
+                transform: "translateY(-10px)",
+              },
+            },
+          }
           : {
-              "&:hover": {
-                backgroundColor: isFeatured ? "#7C20CC" : "#f5f5f5",
-                transition: "background-color 0.3s ease",
-                "& .description-text": {
-                  // Target the description text on card hover
-                  transform: "translateY(0)",
-                  opacity: 1,
-                  height: "auto",
-                  marginTop: "10px",
-                },
-                "& .title-box": {
-                  // Target the title box on card hover
-                  transform: "translateY(-10px)",
-                },
+            "&:hover": {
+              backgroundColor: isFeatured ? "#7C20CC" : "#f5f5f5",
+              transition: "background-color 0.3s ease",
+              "& .description-text": {
+                // Target the description text on card hover
+                transform: "translateY(0)",
+                opacity: 1,
+                height: "auto",
+                marginTop: "10px",
               },
-            }),
+              "& .title-box": {
+                // Target the title box on card hover
+                transform: "translateY(-10px)",
+              },
+            },
+          }),
 
         // Background image with dark overlay
         ...(bgImage && {
