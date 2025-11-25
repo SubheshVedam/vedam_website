@@ -12,6 +12,7 @@ const FOOTER_LINKS = [
   {
     title: "Quick Links",
     links: [
+      { label: "About Us", href: "/about" },
       { label: "Terms of use", href: "/terms-of-use" },
       { label: "Privacy Policy", href: "/privacy-policy" },
       { label: "Refund Policy", href: "/refund-policy" },
@@ -82,7 +83,7 @@ export default function Footer() {
         {/* Main Footer Columns */}
         <Grid container spacing={{ xs: 1, sm: 4 }}>
           <Grid item xs={12} sm={6} md={3}>
-            <Stack sx={{p:0,m:0}}>
+            <Stack sx={{ p: 0, m: 0 }}>
               <Box
                 sx={{
                   width: "75%",
@@ -113,7 +114,7 @@ export default function Footer() {
                 sx={{
                   fontWeight: 500,
                   mb: { xs: "8px", sm: "16px" },
-                    fontSize: ["Quick Links", "Contact"].includes(column.title)
+                  fontSize: ["Quick Links", "Contact"].includes(column.title)
                     ? { xs: 14, sm: 20 }
                     : "inherit",
                 }}
@@ -206,8 +207,10 @@ export default function Footer() {
             paddingTop: 2,
           }}
         >
-          <Typography variant="body2" sx={{ fontSize: { xs: 10, sm: 14},
-        paddingBottom: 1, }}>
+          <Typography variant="body2" sx={{
+            fontSize: { xs: 10, sm: 14 },
+            paddingBottom: 1,
+          }}>
             Copyright © SET Education Technology Pvt. Ltd. 2025
           </Typography>
         </Box>

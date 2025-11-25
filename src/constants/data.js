@@ -224,7 +224,7 @@ export const navLinks = [
   { label: "Admission & Fees", path: "/admission" },
   { label: "Life @ Vedam", path: "/life", img: "/img/Group 1261155759.svg" },
   { label: "FAQs", path: "/faqs" },
-  { label: "About Us", path: "/about" },
+  // { label: "About Us", path: "/about" },
   { label: "Register Now", path: "https://apply.vedam.org/" }, //Don't reorder register
   { label: "Login", path: "https://apply.vedam.org/" }, //Don't reorder login
 ];
