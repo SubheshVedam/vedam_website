@@ -106,7 +106,10 @@ const ClubImages = ({ clubName, getImagePath, resetKey }) => {
                 style={{
                   width: "100%",
                   height: "100%",
-                  objectFit: "cover",
+                  // objectFit: "cover",
+                  backgroundSize: "contain",       // 🔥 makes whole image visible
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "center",
                 }}
               />
               <Box
@@ -159,7 +162,9 @@ const ClubImages = ({ clubName, getImagePath, resetKey }) => {
             style={{
               width: "100%",
               height: "100%",
-              objectFit: "cover",
+              backgroundSize: "contain",       // 🔥 makes whole image visible
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
             }}
           />
         </Box>
@@ -184,7 +189,9 @@ const ClubImages = ({ clubName, getImagePath, resetKey }) => {
             style={{
               width: "100%",
               height: "100%",
-              objectFit: "cover",
+              backgroundSize: "contain",       // 🔥 makes whole image visible
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
             }}
           />
         </Box>
@@ -210,7 +217,9 @@ const ClubImages = ({ clubName, getImagePath, resetKey }) => {
             style={{
               width: "100%",
               height: "100%",
-              objectFit: "cover",
+              backgroundSize: "contain",       // 🔥 makes whole image visible
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
             }}
           />
         </Box>
@@ -235,7 +244,9 @@ const ClubImages = ({ clubName, getImagePath, resetKey }) => {
             style={{
               width: "100%",
               height: "100%",
-              objectFit: "cover",
+              backgroundSize: "contain",       // 🔥 makes whole image visible
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
             }}
           />
         </Box>
@@ -260,7 +271,9 @@ const ClubImages = ({ clubName, getImagePath, resetKey }) => {
             style={{
               width: "100%",
               height: "100%",
-              objectFit: "cover",
+              backgroundSize: "contain",       // 🔥 makes whole image visible
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
             }}
           />
         </Box>
