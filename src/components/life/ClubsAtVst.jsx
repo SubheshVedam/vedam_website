@@ -20,24 +20,29 @@ const clubImageMap = {
 };
 
 const clubVideoMap = {
-  "Open Source Club": "",
-  "Competitive Coding Club": "",
-  "Entrepreneurship Club": "",
-  "Cultural Club": "",
-  "Sports Club": "",
-  "E-Sports Club": "",
+  "Open Source Club": "https://www.youtube.com/embed/RRnFQXXoAzw?autoplay=1&si=0",
+  "Competitive Coding Club": "https://www.youtube.com/embed/RRnFQXXoAzw?autoplay=1&si=0",
+  "Entrepreneurship Club": "https://www.youtube.com/embed/RRnFQXXoAzw?autoplay=1&si=0",
+  "Cultural Club": "https://www.youtube.com/embed/RRnFQXXoAzw?autoplay=1&si=0",
+  "Sports Club": "https://www.youtube.com/embed/RRnFQXXoAzw?autoplay=1&si=0",
+  "E-Sports Club": "https://www.youtube.com/embed/RRnFQXXoAzw?autoplay=1&si=0",
 };
 
 // Separate component for club images
 const ClubImages = ({ clubName, getImagePath, resetKey }) => {
   const [showIframe, setShowIframe] = useState(false);
   const [videoUrl, setVideoUrl] = useState("");
+  const [mobileShowIframe, setMobileShowIframe] = useState(false);
+  const [mobileVideoUrl, setMobileVideoUrl] = useState("");
 
   // Reset video when club changes
   React.useEffect(() => {
     setShowIframe(false);
     setVideoUrl("");
-  }, [resetKey]);
+    setMobileShowIframe(false);
+    setMobileVideoUrl("");
+  }, [resetKey, clubName]);
+
   return (
     <>
       {/* Desktop View - Custom Grid Layout */}
@@ -83,7 +88,7 @@ const ClubImages = ({ clubName, getImagePath, resetKey }) => {
           ) : (
             <Box
               onClick={() => {
-                setVideoUrl(clubVideoMap[clubName]);
+                setVideoUrl(clubVideoMap[clubName] || "https://www.youtube.com/embed/RRnFQXXoAzw?autoplay=1&si=0");
                 setShowIframe(true);
               }}
               sx={{
@@ -287,7 +292,7 @@ const ClubImages = ({ clubName, getImagePath, resetKey }) => {
             }}
           >
             {imgNum === 1 ? (
-              showIframe ? (
+              mobileShowIframe ? (
                 <iframe
                   width="100%"
                   height="100%"
@@ -295,7 +300,7 @@ const ClubImages = ({ clubName, getImagePath, resetKey }) => {
                     borderRadius: "16px",
                     border: "none",
                   }}
-                  src={videoUrl}
+                  src={mobileVideoUrl}
                   title="YouTube video player"
                   loading="lazy"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -304,8 +309,8 @@ const ClubImages = ({ clubName, getImagePath, resetKey }) => {
               ) : (
                 <Box
                   onClick={() => {
-                    setVideoUrl(clubVideoMap[clubName]);
-                    setShowIframe(true);
+                    setMobileVideoUrl(clubVideoMap[clubName] || "https://www.youtube.com/embed/RRnFQXXoAzw?autoplay=1&si=0");
+                    setMobileShowIframe(true);
                   }}
                   sx={{
                     cursor: "pointer",
@@ -559,6 +564,7 @@ export const ClubsAtVst = () => {
                 <ClubImages
                   clubName={club.rightSideText}
                   getImagePath={getImagePath}
+                  resetKey={`mobile-${index}`}
                 />
               </Collapse>
             </Box>

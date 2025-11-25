@@ -33,6 +33,7 @@ export const FunAtVedam = () => {
         return null;
     };
 
+
     // Helper function to get Google Drive embed URL
     const getGoogleDriveEmbedUrl = (url) => {
         const fileIdMatch = url.match(/\/d\/([^\/]+)/);
@@ -49,28 +50,29 @@ export const FunAtVedam = () => {
         } else {
             const videoId = getYouTubeVideoId(url);
             if (videoId) {
-                return `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
+                return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&rel=0&modestbranding=1`;
             }
         }
         return null;
     };
+
 
     // Video data with dummy URLs (to be updated)
     const funVideos = [
         {
             id: 1,
             thumbnail: "/img/funAtVedam/img1.png",
-            videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" // Dummy URL
+            videoUrl: "https://www.youtube.com/watch?v=RRnFQXXoAzw" // Dummy URL
         },
         {
             id: 2,
             thumbnail: "/img/funAtVedam/img2.png",
-            videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" // Dummy URL
+            videoUrl: "https://www.youtube.com/watch?v=RRnFQXXoAzw" // Dummy URL
         },
         {
             id: 3,
             thumbnail: "/img/funAtVedam/img3.png",
-            videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" // Dummy URL
+            videoUrl: "https://www.youtube.com/watch?v=RRnFQXXoAzw" // Dummy URL
         },
     ];
 
@@ -147,7 +149,7 @@ export const FunAtVedam = () => {
                     overflowX: "auto",
                     "&::-webkit-scrollbar": { display: "none" },
                     scrollbarWidth: "none",
-                    padding: isMobile ? "0 16px" : "0 40px",
+                    padding: isMobile ? "0 0" : "0 40px",
                 }}
             >
 
@@ -158,7 +160,7 @@ export const FunAtVedam = () => {
                         <Box
                             key={video.id}
                             sx={{
-                                minWidth: isMobile ? "280px" : "420px",
+                                minWidth: isMobile ? "100%" : "420px",
                                 height: isMobile ? "210px" : "300px",
                                 borderRadius: "16px",
                                 overflow: "hidden",
