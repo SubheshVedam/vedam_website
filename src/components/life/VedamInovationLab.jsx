@@ -311,6 +311,7 @@ export const VedamInovationLab = () => {
               fontFamily: "Inter",
               fontSize: "16px",
               fontWeight: 500,
+              boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.15)",
               background: "linear-gradient(90deg, rgba(255, 255, 255, 0.70) 62.13%, rgba(177, 240, 247, 0.49) 101.82%, rgba(82, 222, 237, 0.41) 124.5%, rgba(0, 207, 229, 0.28) 175.53%), #FFF",
               color: "#000",
               border: "1px solid rgba(249, 125, 3, 0.00)",

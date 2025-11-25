@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Typography } from "@mui/material";
 import { admissionScreenData } from "@/constants/data";
 import { VST_FinancingOptions } from "@/constants/data";
+import { FinancingPartners } from './FinancingPartners'
 
 export const FinancingOptions = () => {
   return (
@@ -99,38 +100,8 @@ export const FinancingOptions = () => {
         </Box>
       </Box>
       {/* Financing Partners */}
-      <Box sx={{ textAlign: "center", mb: 0 }}>
-        <Typography
-          variant="h6"
-          sx={{ color: "#FF9000", fontWeight: 700, mb: 1 }}>
-          Our Financing Partners
-        </Typography>
-        <Box
-          sx={{
-            display: "flex",
-            gap: "2rem",
-            justifyContent: "center",
-          }}>
-          <img
-            src="/img/financingOptions/icici-bank.svg"
-            alt="Icici Bank"
-            width={58}
-            height={58}
-          />
-          <img
-            src="/img/financingOptions/jodo-logo-v2.svg"
-            alt="Jodo"
-            width={58}
-            height={58}
-          />
-          <img
-            src="/img/financingOptions/propelledLoan.png"
-            alt="Propelled"
-            width={58}
-            height={58}
-          />
-        </Box>
-      </Box>
+      <FinancingPartners />
+
     </Box>
   );
 };
