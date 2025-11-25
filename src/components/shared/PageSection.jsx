@@ -5,7 +5,7 @@ export const PageSection = ({
   children,
   backgroundColor = "#F9F9F9",
   paddingTop = { xs: "2rem", md: "10rem" },
-  paddingBottom = "3rem",
+  paddingBottom = "0px",
   sx = {},
   ...boxProps
 }) => {

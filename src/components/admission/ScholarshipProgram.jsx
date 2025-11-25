@@ -41,12 +41,11 @@ export const ScholarshipProgram = () => {
 
       <Box
         sx={{
-          width: '100%',
-          maxWidth: '1280px',
+          width: { xs: "100%", md: "1024px", xl: "1280px" },
           boxSizing: 'border-box',
           display: 'flex',
           flexDirection: 'column',
-          padding: { xs: '0 10px', sm: '0 40px' },
+          // padding: { xs: '0 10px', sm: '0 40px' },
         }}
       >
         <Typography

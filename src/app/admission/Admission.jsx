@@ -33,9 +33,9 @@ const Admission = () => {
       render: () => <AdmissionProcess />,
     },
     {
-      id: "facilities",
-      subtitle: "",
-      render: () => <FacilityAndAmenities />,
+      id: "scholarship",
+      subtitle: '',
+      render: () => <ScholarshipProgram />,
     },
     {
       id: "fee-structure",
@@ -44,21 +44,21 @@ const Admission = () => {
       cardProps: { id: "fees-toggle" },
     },
     {
-      id: "scholarship",
-      subtitle: '',
-      render: () => <ScholarshipProgram />,
-    },
-    {
       id: "financing",
       subtitle: admissionScreenData.financingOption.subtitle,
       render: () => <FinancingOptions />,
+    },
+    {
+      id: "facilities",
+      subtitle: "",
+      render: () => <FacilityAndAmenities />,
     },
   ];
 
   return (
     <PageSection
       paddingTop={0}
-      paddingBottom="16px"
+      // paddingBottom="-86px"
       sx={{
         gap: { xs: "1rem", md: "1.5rem" },
       }}

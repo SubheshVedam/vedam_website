@@ -171,13 +171,12 @@ export const FacilityAndAmenities = ({ isV2 }) => {
     >
       <Box
         sx={{
-          width: '100%',
-          maxWidth: '1280px',
+          width: { xs: "100%", md: "1024px", xl: "1280px" },
           boxSizing: 'border-box',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'flex-start',
-          padding: { xs: '0 10px', sm: '0 40px' },
+          // padding: { xs: '0 10px', sm: '0 40px' },
           gap: { xs: '16px', md: '45px' },
         }}
       >

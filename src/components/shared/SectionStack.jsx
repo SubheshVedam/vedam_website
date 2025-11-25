@@ -28,8 +28,8 @@ export const SectionStack = ({
         const content = render
           ? render(section, index)
           : Component
-          ? <Component {...componentProps} />
-          : null;
+            ? <Component {...componentProps} />
+            : null;
 
         if (!content) {
           return null;
