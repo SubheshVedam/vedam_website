@@ -62,17 +62,17 @@ export const FunAtVedam = () => {
         {
             id: 1,
             thumbnail: "/img/funAtVedam/img1.png",
-            videoUrl: "https://www.youtube.com/watch?v=geINf3vdK5k" // Dummy URL
+            videoUrl: "https://www.youtube.com/watch?v=geINf3vdK5k"
         },
         {
             id: 2,
             thumbnail: "/img/funAtVedam/img2.png",
-            videoUrl: "https://www.youtube.com/watch?v=qV7SaAdMabw" // Dummy URL
+            videoUrl: "https://www.youtube.com/watch?v=qV7SaAdMabw"
         },
         {
             id: 3,
             thumbnail: "/img/funAtVedam/img3.png",
-            videoUrl: "https://www.youtube.com/watch?v=ae-N-YGiGxo" // Dummy URL
+            videoUrl: "https://www.youtube.com/watch?v=ae-N-YGiGxo"
         },
     ];
 
@@ -161,7 +161,7 @@ export const FunAtVedam = () => {
                             key={video.id}
                             sx={{
                                 minWidth: isMobile ? "100%" : "420px",
-                                height: isMobile ? "210px" : "300px",
+                                height: isMobile ? "200px" : "240px",
                                 borderRadius: "16px",
                                 overflow: "hidden",
                                 position: "relative",
@@ -190,9 +190,10 @@ export const FunAtVedam = () => {
                                         height: "100%",
                                         position: "relative",
                                         backgroundImage: `url(${video.thumbnail})`,
-                                        backgroundSize: "cover",
+                                        backgroundSize: "contain",
                                         backgroundPosition: "center",
                                         backgroundRepeat: "no-repeat",
+                                        // backgroundColor: "#000",
                                     }}
                                 >
                                     <Box
