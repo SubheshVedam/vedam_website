@@ -108,11 +108,11 @@ export default function Navbar() {
             <Box
               sx={{
                 display: { xs: "none", sm: "flex" },
-                gap: "32px",
+                gap: "60px",
                 alignItems: "center",
               }}
             >
-              {navLinks.slice(0, 5).map((link, index) => (
+              {navLinks.slice(0, 4).map((link, index) => (
                 <Link key={index} href={link.path} passHref>
                   <Button
                     color="inherit"
