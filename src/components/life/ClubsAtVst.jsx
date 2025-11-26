@@ -52,7 +52,7 @@ const ClubImages = ({ clubName, getImagePath, resetKey }) => {
         sx={{
           display: { xs: "none", md: "grid" },
           gridTemplateColumns: "repeat(5, 1fr)",
-          gridTemplateRows: "repeat(2, 280px)",
+          gridTemplateRows: "repeat(2, 220px)",
           gap: "18px",
           maxHeight: "578px",
         }}
@@ -63,7 +63,7 @@ const ClubImages = ({ clubName, getImagePath, resetKey }) => {
             gridColumn: "span 2",
             position: "relative",
             width: "100%",
-            height: "280px",
+            height: "220px",
             borderRadius: "16px",
             overflow: "hidden",
             cursor: "pointer",
@@ -147,7 +147,7 @@ const ClubImages = ({ clubName, getImagePath, resetKey }) => {
             gridColumn: "span 2",
             position: "relative",
             width: "100%",
-            height: "280px",
+            height: "220px",
             borderRadius: "16px",
             overflow: "hidden",
             "&:hover": {
@@ -174,7 +174,7 @@ const ClubImages = ({ clubName, getImagePath, resetKey }) => {
             gridColumn: "span 1",
             position: "relative",
             width: "100%",
-            height: "280px",
+            height: "220px",
             borderRadius: "16px",
             overflow: "hidden",
             "&:hover": {
@@ -202,7 +202,7 @@ const ClubImages = ({ clubName, getImagePath, resetKey }) => {
             gridColumn: "span 1",
             position: "relative",
             width: "100%",
-            height: "280px",
+            height: "220px",
             borderRadius: "16px",
             overflow: "hidden",
             "&:hover": {
@@ -229,7 +229,7 @@ const ClubImages = ({ clubName, getImagePath, resetKey }) => {
             gridColumn: "span 2",
             position: "relative",
             width: "100%",
-            height: "280px",
+            height: "220px",
             borderRadius: "16px",
             overflow: "hidden",
             "&:hover": {
@@ -256,7 +256,7 @@ const ClubImages = ({ clubName, getImagePath, resetKey }) => {
             gridColumn: "span 2",
             position: "relative",
             width: "100%",
-            height: "280px",
+            height: "220px",
             borderRadius: "16px",
             overflow: "hidden",
             "&:hover": {
@@ -271,9 +271,9 @@ const ClubImages = ({ clubName, getImagePath, resetKey }) => {
             style={{
               width: "100%",
               height: "100%",
-              backgroundSize: "contain",       // 🔥 makes whole image visible
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
+              // backgroundSize: "contain",       // 🔥 makes whole image visible
+              // backgroundRepeat: "no-repeat",
+              // backgroundPosition: "center",
             }}
           />
         </Box>
@@ -420,10 +420,10 @@ export const ClubsAtVst = () => {
         {/* Left Side - Club List (Desktop Only) */}
         <Box
           sx={{
-            width: { xs: "100%", md: "286px" },
+            width: { xs: "100%", md: "30%" },
             display: { xs: "none", md: "flex" },
             flexDirection: "column",
-            gap: "21px",
+            gap: "12px",
           }}
         >
           {clubs.map((club, index) => (
@@ -431,7 +431,7 @@ export const ClubsAtVst = () => {
               key={index}
               onClick={() => handleClubClick(index)}
               sx={{
-                padding: "20px",
+                padding: "16px",
                 borderRadius: "16px",
                 backgroundColor:
                   activeIndex === index
@@ -454,14 +454,14 @@ export const ClubsAtVst = () => {
                   display: "flex",
                   justifyContent: "space-between",
                   alignItems: "center",
-                  marginBottom: activeIndex === index ? "1rem" : 0,
+                  // marginBottom: activeIndex === index ? "0" : 0,
                 }}
               >
                 <Typography
                   variant="h6"
                   sx={{
                     fontSize: "18px",
-                    fontWeight: "600",
+                    fontWeight: "500",
                     fontFamily: "Inter",
                     color: activeIndex === index ? "#6C10BC" : "#000",
                   }}
