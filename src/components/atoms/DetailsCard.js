@@ -31,7 +31,7 @@ export default function DetailsCard({
         },
         width: "100%",
         borderRadius: "16px",
-        padding: "20px 20px 0 20px",
+        padding: "6px 6px 6px 6px",
         boxShadow: "none",
         overflow: "hidden",
         ...(!isScholarshipCard
@@ -40,15 +40,9 @@ export default function DetailsCard({
               backgroundColor: isFeatured ? "#7C20CC" : "#f5f5f5",
               transition: "background-color 0.3s ease",
               "& .description-text": {
-                // Target the description text on card hover
-                transform: "translateY(-10px)",
                 opacity: 1,
-                height: "auto",
-                marginTop: "0px",
-              },
-              "& .title-box": {
-                // Target the title box on card hover
-                transform: "translateY(-10px)",
+                maxHeight: "200px",
+                marginTop: "8px",
               },
             },
           }
@@ -57,15 +51,9 @@ export default function DetailsCard({
               backgroundColor: isFeatured ? "#7C20CC" : "#f5f5f5",
               transition: "background-color 0.3s ease",
               "& .description-text": {
-                // Target the description text on card hover
-                transform: "translateY(0)",
                 opacity: 1,
-                height: "auto",
-                marginTop: "10px",
-              },
-              "& .title-box": {
-                // Target the title box on card hover
-                transform: "translateY(-10px)",
+                maxHeight: "200px",
+                marginTop: "8px",
               },
             },
           }),
@@ -124,7 +112,7 @@ export default function DetailsCard({
           justifyContent: "space-between",
           alignItems: isFeatured ? "center" : "normal",
           "&:last-child": {
-            paddingBottom: "20px",
+            paddingBottom: 0,
           },
         }}
       >
@@ -168,14 +156,18 @@ export default function DetailsCard({
         <Box
           sx={{
             textAlign: "left",
-            overflow: "hidden",
-            paddingY: isScholarshipCard ? "10px" : "10px",
+            overflow: "visible",
+            paddingBottom: { xs: "12px", md: 0 },
           }}
         >
           <Box
             className="title-box"
             sx={{
-              transition: "transform 0.3s ease",
+              borderRadius: "14px",
+              background: "rgba(30, 30, 30, 0.90)",
+              padding: "10px",
+              transition: "all 0.3s ease",
+              overflow: "visible",
             }}
           >
             <Typography
@@ -185,29 +177,29 @@ export default function DetailsCard({
                 fontWeight: "bold",
                 fontSize: { xs: 14, sm: 20 },
                 lineHeight: { xs: "130%", sm: "150%" },
-                marginBottom: { xs: "8px", sm: "16px" },
+                marginBottom: 0,
               }}
             >
               {title}
             </Typography>
+
+            {/* Description text */}
+            <Typography
+              className="description-text"
+              variant="body2"
+              sx={{
+                color: "white",
+                fontSize: isFeatured ? 14 : { xs: 11, sm: 14 },
+                opacity: 0,
+                maxHeight: 0,
+                marginTop: 0,
+                overflow: "hidden",
+                transition: "all 0.3s ease",
+              }}
+            >
+              {description}
+            </Typography>
           </Box>
-
-          {/* Description text */}
-
-          <Typography
-            className="description-text"
-            variant="body2"
-            sx={{
-              color: "white",
-              fontSize: isFeatured ? 14 : { xs: 11, sm: 14 },
-              transform: "translateY(100%)",
-              opacity: 0,
-              height: 0,
-              transition: "all 0.3s ease",
-            }}
-          >
-            {description}
-          </Typography>
         </Box>
       </CardContent>
     </Card>
