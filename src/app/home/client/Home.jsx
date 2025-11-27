@@ -35,7 +35,8 @@ const Home = () => {
     videoUrl,
     onPlay,
     thumbnailSrc,
-    thumbnailAlt
+    thumbnailAlt,
+    containerSx = {}
   ) => (
     <Box
       sx={{
@@ -44,6 +45,8 @@ const Home = () => {
         height: isMobile ? "220px" : isLarge ? "680px" : "580px",
         borderRadius: "16px",
         overflow: "hidden",
+        backgroundColor: "#000",
+        ...containerSx,
       }}
     >
       {isVisible ? (
@@ -51,7 +54,7 @@ const Home = () => {
           width="100%"
           height="100%"
           style={{
-            borderRadius: "16px",
+            borderRadius: "inherit",
             border: "none",
           }}
           src={videoUrl}
@@ -75,7 +78,7 @@ const Home = () => {
             src={thumbnailSrc}
             alt={thumbnailAlt}
             fill
-            style={{ objectFit: "contain" }}
+            style={{ objectFit: "cover", borderRadius: "inherit" }}
           />
           <Box
             sx={{
@@ -167,7 +170,11 @@ const Home = () => {
             setShowIframe2(true);
           },
           "/img/hear_from_founder_thumbnail.jpeg",
-          "Video thumbnail2"
+          "Video thumbnail2",
+          {
+            borderRadius: { xs: "16px", md: "22px" },
+            boxShadow: "0px 18px 38px rgba(0,0,0,0.12)",
+          }
         ),
     },
     {
@@ -259,6 +266,3 @@ const Home = () => {
 };
 
 export default Home;
-
-
-
