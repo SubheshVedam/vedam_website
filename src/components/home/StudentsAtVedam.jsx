@@ -47,7 +47,7 @@ export const StudentsAtVedam = () => {
                             }}
                         >
                             <Image
-                                src="/img/studentsAtVedam/img1.png"
+                                src="/img/studentsAtVedam/img.png"
                                 alt="Students at Vedam"
                                 width={1200}
                                 height={400}
@@ -63,7 +63,7 @@ export const StudentsAtVedam = () => {
                             }}
                         >
                             <Image
-                                src="/img/studentsAtVedam/imgMobile.png"
+                                src="/img/studentsAtVedam/imgMob.png"
                                 alt="Students at Vedam"
                                 width={400}
                                 height={600}
