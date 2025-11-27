@@ -176,7 +176,7 @@ export const FinancingPartners = () => {
             <Typography
                 variant="subtitle1"
                 sx={{
-                    background: "linear-gradient(135deg, #2B135C 0%, #6F17D1 25%, #8A18FF 45%, #8E17FF 50%, #922CCD 65%, #F97D03 100%)",
+                    background: "linear-gradient(90deg, #FB7F05 0%, #6C10BC 42.11%)",
                     backgroundClip: "text",
                     WebkitBackgroundClip: "text",
                     color: "transparent",

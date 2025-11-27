@@ -175,7 +175,7 @@ const Home = () => {
       title: homeScreenData.fromEducationToEntrance.title,
       subtitle: homeScreenData.fromEducationToEntrance.subtitle,
       render: () => <ImageGrid />,
-      linearGradientSubtitle: "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)",
+      // linearGradientSubtitle: "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)",
     },
     {
       id: "instructors",

@@ -71,7 +71,7 @@ const Admission = () => {
         subtitle={admissionScreenData.hero.subtitle}
       />
       <SectionStack
-        cardDefaults={{ linearGradientSubtitle: linearGradient }}
+        cardDefaults={{}}
         widthContainerProps={{
           childrenStyle: {
             display: "flex",

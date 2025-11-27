@@ -237,7 +237,7 @@ export const homeScreenData = {
       "Vedam's 4-year UG OnCampus program prepares you for startups, innovation, and leadership with industry driven coursework and hands-on projects.",
   },
   fromEducationToEntrance: {
-    title: "",
+    // title: "",
     subtitle: "Our Placement Network",
     imagesGrid: [
       {
