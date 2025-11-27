@@ -73,6 +73,15 @@ export const testimonialData = [
 
 export const expertsData = [
   {
+    imageUrl: "/img/experts/ashishG.png",
+    name: "Ashish G",
+    logo: "/img/companies/apple.png",
+    designation: "Software Engineer",
+    info: "NSIT, Ext Mentor Graphics & OYO",
+    rating: 4.2,
+    linkedIn: "https://www.linkedin.com/in/ashishgautamdev/",
+  },
+  {
     imageUrl: "/img/experts/amanpreet.jpeg",
     name: "Amanpreet Singh",
     logo: "/img/companies/google.webp",
@@ -100,15 +109,6 @@ export const expertsData = [
     info: "Board Member-Board of Studies at NMIMS, Visiting Faculty at MU",
     rating: 4.9,
     linkedIn: "https://www.linkedin.com/in/ekta-shah30/",
-  },
-  {
-    imageUrl: "/img/experts/ashishG.png",
-    name: "Ashish G",
-    logo: "/img/companies/apple.png",
-    designation: "Software Engineer",
-    info: "NSIT, Ext Mentor Graphics & OYO",
-    rating: 4.2,
-    linkedIn: "https://www.linkedin.com/in/ashishgautamdev/",
   },
 
   {
@@ -151,6 +151,16 @@ export const instructorData = [
     isGoogle: true
   },
   {
+    imageUrl: "/img/instructors/Aman_Instructor.png",
+    name: "Aman Kumar",
+    logo: "/img/instructors/Microsoft_Logo.png",
+    designation: "SDE at Apple",
+    info: "Ex-Microsoft",
+    college: "B.Tech. from DTU (formely DCE)",
+    linkedIn: "https://www.linkedin.com/in/aman5898/",
+    isGoogle: true
+  },
+  {
     imageUrl: "/img/instructors/Pankaj_New.png",
     name: "Pankaj Kumar",
     logo: "/img/instructors/birdeye.png",
@@ -168,6 +178,16 @@ export const instructorData = [
     info: "Ex-Pollard Banknote",
     college: "B.Tech. from DTU (formely DCE)",
     linkedIn: "https://www.linkedin.com/in/prasanna-swain/",
+  },
+  {
+    imageUrl: "/img/instructors/Jasbir_Instructor.png",
+    name: "Jasbir Singh",
+    logo: "/img/instructors/Cars24_Logo.jpeg",
+    designation: "6 Yrs+ Dev teaching exp.",
+    info: "Tech Lead",
+    college: "B.Tech. from DTU (formely DCE)",
+    linkedIn: "https://www.linkedin.com/in/rupesh-kumar-9b9468189/",
+    facultyType: "Visiting Faculty"
   },
   {
     imageUrl: "/img/instructors/Rupesh_New.png",
