@@ -53,27 +53,26 @@ export default function AnnouncementBanner() {
   const timerItems = timerSegments
     ? timerSegments.flatMap(({ label, value }, index) => {
       const content = (
-        <Box
+        <Stack
           key={`segment-${label}`}
+          spacing={0.25}
+          alignItems="center"
           sx={{
-            px: 1.25,
-            py: 0.75,
-            borderRadius: 1,
-            backgroundColor: "rgba(0,0,0,0.2)",
             textAlign: "center",
-            minWidth: { xs: 54, sm: 68 },
+            minWidth: { xs: 42, sm: 52 },
+            lineHeight: 1.1,
           }}>
           <Typography
             variant="body2"
-            sx={{ fontWeight: 700, fontSize: { xs: 14, sm: 18 } }}>
+            sx={{ fontWeight: 700, fontSize: { xs: 13, sm: 16 }, lineHeight: 1 }}>
             {value}
           </Typography>
           <Typography
             variant="caption"
-            sx={{ fontSize: { xs: 10, sm: 12 }, lineHeight: 1 }}>
+            sx={{ fontSize: { xs: 10, sm: 11 }, lineHeight: 1 }}>
             {label}
           </Typography>
-        </Box>
+        </Stack>
       );
       if (index === timerSegments.length - 1) {
         return [content];
