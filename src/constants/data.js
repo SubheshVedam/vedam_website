@@ -30,14 +30,14 @@ export const testimonialData = [
   {
     image: "/img/testimonials/img3.png",
     text: `My first 100 days at Vedam School of Technology have been full of learning and new experiences. The supportive environment, hands-on sessions, and encouraging faculty have helped me grow both technically and personally. I’ve learned to think more practically, collaborate better, and stay curious about new technologies.`,
-    name: "Awanessh Gupta",
+    name: "Awaneesh Gupta",
     designation: "Student at Vedam",
     linkedInUrl: "https://www.linkedin.com/in/awaneesh-gupta/",
   },
   {
     image: "/img/testimonials/img4.png",
     text: `My journey at Vedam has been truly transformative! Under the guidance of Subhesh Sir, we’ve grown from learners to builders ; creating real-world projects and products for Vedam students. Problem-solving in DSA now feels effortless and genuinely fun!`,
-    name: "Siddhant Pande",
+    name: "Sidhant Pande",
     designation: "Student at Vedam",
     linkedInUrl: "https://www.linkedin.com/in/sidhantpande/",
   },
@@ -51,7 +51,7 @@ export const testimonialData = [
   {
     image: "/img/testimonials/img6.png",
     text: `My academic journey at Vedam has been truly enriching! From Shubesh Sir’s Java classes to Prasanna Sir’s creative web sessions and Anuj Khanna Sir’s engaging communication classes — every lesson has boosted my skills and confidence`,
-    name: "Aaradhya Chinche",
+    name: "Aaradhy Chinche",
     designation: "Student at Vedam",
     linkedInUrl: "https://www.linkedin.com/in/aaradhy-chinche/",
   },
