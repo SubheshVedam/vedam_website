@@ -232,7 +232,7 @@ export const detailsData = [
   {
     image: "/img/whyvedam/fifth.webp",
     bgImage: "/img/whyvedam/whyvedam5.png",
-    title: "Personal Macbook Pro",
+    title: "Personal Macbook",
     description:
       "It's your key to a hands-on, immersive and collaborative learning experience in Computer Science and AI. ",
     // isFeatured: true,
@@ -875,21 +875,21 @@ export const homeScreenData = {
       },
       {
         id: 2,
-        image: "/img/inTheNews/img2.png",
-        alt: "News Article 2",
-        link: "https://sugermint.com/vedam-school-of-technology-opens-doors-to-founding-batch/",
-      },
-      {
-        id: 3,
         image: "/img/inTheNews/img3.png",
         alt: "News Article 3",
         link: "https://www.financialexpress.com/jobs-career/education-vedam-school-of-technology-acquires-algoprep-aims-to-launch-ai-native-tech-curriculum-3809339/",
       },
       {
-        id: 4,
+        id: 3,
         image: "/img/inTheNews/img4.png",
         alt: "News Article 4",
         link: "https://www.passionateinmarketing.com/vedam-school-of-technology-set-to-revolutionize-computer-science-education-in-india/",
+      },
+      {
+        id: 4,
+        image: "/img/inTheNews/img2.png",
+        alt: "News Article 2",
+        link: "https://sugermint.com/vedam-school-of-technology-opens-doors-to-founding-batch/",
       },
       // {
       //   id: 5,
