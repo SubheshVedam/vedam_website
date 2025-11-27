@@ -76,8 +76,8 @@ export const StudentsAtVedam = () => {
                             onClick={() => setPlayVideo(true)}
                             sx={{
                                 position: "absolute",
-                                bottom: { xs: "20px", md: "80px" },
-                                left: { xs: "50%", md: "112px" },
+                                bottom: { xs: "20px", md: "60px" },
+                                left: { xs: "50%", md: "82px" },
                                 transform: { xs: "translateX(-50%)", md: "none" },
                                 backgroundColor: "#FFFFFF",
                                 color: "#000000",
@@ -85,7 +85,7 @@ export const StudentsAtVedam = () => {
                                 fontSize: { xs: "14px", md: "16px" },
                                 px: { xs: 2, md: 3 },
                                 py: { xs: 1, md: 1.5 },
-                                borderRadius: "8px",
+                                borderRadius: "10px",
                                 textTransform: "none",
                                 display: "flex",
                                 alignItems: "center",
