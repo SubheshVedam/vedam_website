@@ -169,6 +169,7 @@ export const VedamVs = () => {
               display: "flex",
               alignItems: "flex-start",
               marginTop: "1rem",
+              paddingLeft: '12px'
             }}
             showBorder
             textArrayStyle={{
@@ -229,6 +230,7 @@ export const VedamVs = () => {
               display: "flex",
               alignItems: "flex-start",
               marginTop: "1rem",
+              paddingLeft: '12px',
             }}
             showBorder
             textArrayStyle={{
@@ -247,8 +249,11 @@ export const VedamVs = () => {
             data={homeScreenData.vedamVs.rightSideData}
             containerStyle={{
               flex: "0 0 65%",
-              border: "1px solid rgba(108, 16, 188, 1)",
+              borderLeft: "1px solid #8A18FF",
+              // borderTop: "1px solid #8A18FF",
+              // borderBottom: "1px solid #8A18FF",
               borderRadius: "20px",
+              backgroundColor: '#F4F4F4',
               height: "414px",
               paddingTop: "35px",
               paddingBottom: "20px",
