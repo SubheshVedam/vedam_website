@@ -165,7 +165,7 @@ export const instructorData = [
     name: "Prasanna Swain",
     logo: "/img/instructors/pollard_banknote.png",
     designation: "Frontend Lead at Vedam",
-    info: "Ex-Pollard Banknote Ltd.",
+    info: "Ex-Pollard Banknote",
     college: "B.Tech. from DTU (formely DCE)",
     linkedIn: "https://www.linkedin.com/in/prasanna-swain/",
   },
