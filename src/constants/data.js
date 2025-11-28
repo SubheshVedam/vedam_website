@@ -212,7 +212,7 @@ export const detailsData = [
   {
     image: "/img/whyvedam/fifth.webp",
     bgImage: "/img/whyvedam/whyvedam5.png",
-    title: "Personal Macbook Pro",
+    title: "Personal Macbook",
     description:
       "It's your key to a hands-on, immersive and collaborative learning experience in Computer Science and AI. ",
     // isFeatured: true,
