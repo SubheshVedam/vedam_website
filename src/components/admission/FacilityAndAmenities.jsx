@@ -6,9 +6,9 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 const categories = [
   { name: "Campus", folder: "campus", count: 6 },
-  { name: "Classrooms", folder: "classroom", count: 5 },
-  { name: "Hive", folder: "hive", count: 5 },
-  { name: "Common Area", folder: "common_area", count: 7 },
+  { name: "Classrooms", folder: "classroom", count: 6 },
+  { name: "Hive", folder: "hive", count: 6 },
+  { name: "Common Area", folder: "common_area", count: 6 },
 ];
 
 const CategoryCarousel = ({ category }) => {

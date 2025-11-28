@@ -30,14 +30,14 @@ export const testimonialData = [
   {
     image: "/img/testimonials/img3.png",
     text: `My first 100 days at Vedam School of Technology have been full of learning and new experiences. The supportive environment, hands-on sessions, and encouraging faculty have helped me grow both technically and personally. I’ve learned to think more practically, collaborate better, and stay curious about new technologies.`,
-    name: "Awanessh Gupta",
+    name: "Awaneesh Gupta",
     designation: "Student at Vedam",
     linkedInUrl: "https://www.linkedin.com/in/awaneesh-gupta/",
   },
   {
     image: "/img/testimonials/img4.png",
     text: `My journey at Vedam has been truly transformative! Under the guidance of Subhesh Sir, we’ve grown from learners to builders ; creating real-world projects and products for Vedam students. Problem-solving in DSA now feels effortless and genuinely fun!`,
-    name: "Siddhant Pande",
+    name: "Sidhant Pande",
     designation: "Student at Vedam",
     linkedInUrl: "https://www.linkedin.com/in/sidhantpande/",
   },
@@ -51,7 +51,7 @@ export const testimonialData = [
   {
     image: "/img/testimonials/img6.png",
     text: `My academic journey at Vedam has been truly enriching! From Shubesh Sir’s Java classes to Prasanna Sir’s creative web sessions and Anuj Khanna Sir’s engaging communication classes — every lesson has boosted my skills and confidence`,
-    name: "Aaradhya Chinche",
+    name: "Aaradhy Chinche",
     designation: "Student at Vedam",
     linkedInUrl: "https://www.linkedin.com/in/aaradhy-chinche/",
   },
@@ -72,6 +72,15 @@ export const testimonialData = [
 ];
 
 export const expertsData = [
+  {
+    imageUrl: "/img/experts/ashishG.png",
+    name: "Ashish G",
+    logo: "/img/companies/apple.png",
+    designation: "Software Engineer",
+    info: "NSIT, Ext Mentor Graphics & OYO",
+    rating: 4.2,
+    linkedIn: "https://www.linkedin.com/in/ashishgautamdev/",
+  },
   {
     imageUrl: "/img/experts/amanpreet.jpeg",
     name: "Amanpreet Singh",
@@ -100,15 +109,6 @@ export const expertsData = [
     info: "Board Member-Board of Studies at NMIMS, Visiting Faculty at MU",
     rating: 4.9,
     linkedIn: "https://www.linkedin.com/in/ekta-shah30/",
-  },
-  {
-    imageUrl: "/img/experts/ashishG.png",
-    name: "Ashish G",
-    logo: "/img/companies/apple.png",
-    designation: "Software Engineer",
-    info: "NSIT, Ext Mentor Graphics & OYO",
-    rating: 4.2,
-    linkedIn: "https://www.linkedin.com/in/ashishgautamdev/",
   },
 
   {
@@ -151,6 +151,16 @@ export const instructorData = [
     isGoogle: true
   },
   {
+    imageUrl: "/img/instructors/Aman_Instructor.png",
+    name: "Aman Kumar",
+    logo: "/img/instructors/Microsoft_Logo.png",
+    designation: "SDE at Apple",
+    info: "Ex-Microsoft",
+    college: "B.Tech. from DTU (formely DCE)",
+    linkedIn: "https://www.linkedin.com/in/aman5898/",
+    isGoogle: true
+  },
+  {
     imageUrl: "/img/instructors/Pankaj_New.png",
     name: "Pankaj Kumar",
     logo: "/img/instructors/birdeye.png",
@@ -165,9 +175,19 @@ export const instructorData = [
     name: "Prasanna Swain",
     logo: "/img/instructors/pollard_banknote.png",
     designation: "Frontend Lead at Vedam",
-    info: "Ex-Pollard Banknote Ltd.",
+    info: "Ex-Pollard Banknote",
     college: "B.Tech. from DTU (formely DCE)",
     linkedIn: "https://www.linkedin.com/in/prasanna-swain/",
+  },
+  {
+    imageUrl: "/img/instructors/Jasbir_Instructor.png",
+    name: "Jasbir Singh",
+    logo: "/img/instructors/Cars24_Logo.jpeg",
+    designation: "6 Yrs+ Dev teaching exp.",
+    info: "Tech Lead",
+    college: "B.Tech. from DTU (formely DCE)",
+    linkedIn: "https://www.linkedin.com/in/rupesh-kumar-9b9468189/",
+    facultyType: "Visiting Faculty"
   },
   {
     imageUrl: "/img/instructors/Rupesh_New.png",
@@ -855,21 +875,21 @@ export const homeScreenData = {
       },
       {
         id: 2,
-        image: "/img/inTheNews/img2.png",
-        alt: "News Article 2",
-        link: "https://sugermint.com/vedam-school-of-technology-opens-doors-to-founding-batch/",
-      },
-      {
-        id: 3,
         image: "/img/inTheNews/img3.png",
         alt: "News Article 3",
         link: "https://www.financialexpress.com/jobs-career/education-vedam-school-of-technology-acquires-algoprep-aims-to-launch-ai-native-tech-curriculum-3809339/",
       },
       {
-        id: 4,
+        id: 3,
         image: "/img/inTheNews/img4.png",
         alt: "News Article 4",
         link: "https://www.passionateinmarketing.com/vedam-school-of-technology-set-to-revolutionize-computer-science-education-in-india/",
+      },
+      {
+        id: 4,
+        image: "/img/inTheNews/img2.png",
+        alt: "News Article 2",
+        link: "https://sugermint.com/vedam-school-of-technology-opens-doors-to-founding-batch/",
       },
       // {
       //   id: 5,

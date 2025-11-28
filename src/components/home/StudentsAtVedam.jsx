@@ -29,7 +29,7 @@ export const StudentsAtVedam = () => {
                         <iframe
                             width="100%"
                             height="100%"
-                            src="https://www.youtube.com/embed/ae-N-YGiGxo?autoplay=1&start=1"
+                            src="https://www.youtube.com/embed/XvTqUQL1JIY?autoplay=1&start=1"
                             title="YouTube video player"
                             frameBorder="0"
                             allow="autoplay; encrypted-media"
