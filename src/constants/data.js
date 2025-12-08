@@ -15,7 +15,7 @@ export const testimonialData = [
     text: `My experience at Vedam School of Technology so far has been nothing short of mesmerizing. 🌟
       From the very first day, I felt a sense of belonging, surrounded by mentors who genuinely care, peers who constantly inspire, and an environment that encourages curiosity and innovation.
 `,
-    name: "Nishtha Vadhvani",
+    name: "Nishtha Vadhwani",
     designation: "Student at Vedam",
     linkedInUrl: "https://www.linkedin.com/in/nishtha-vadhwani-9a95a2219/",
   },
@@ -77,7 +77,7 @@ export const expertsData = [
     name: "Ashish G",
     logo: "/img/companies/apple.png",
     designation: "Software Engineer",
-    info: "NSIT, Ext Mentor Graphics & OYO",
+    info: "NSIT, Ex Mentor Graphics & OYO",
     rating: 4.2,
     linkedIn: "https://www.linkedin.com/in/ashishgautamdev/",
   },
@@ -186,7 +186,7 @@ export const instructorData = [
     designation: "6 Yrs+ Dev teaching exp.",
     info: "Tech Lead",
     college: "B.Tech. from DTU (formely DCE)",
-    linkedIn: "https://www.linkedin.com/in/rupesh-kumar-9b9468189/",
+    linkedIn: "https://www.linkedin.com/in/jazzy96/",
     facultyType: "Visiting Faculty"
   },
   {
@@ -194,7 +194,7 @@ export const instructorData = [
     name: "Rupesh Kumar",
     logo: "/img/instructors/algoprep.png",
     designation: "DSA Instructor at Vedam",
-    info: "Ex-AlogPrep",
+    info: "Ex-AlgoPrep",
     college: "B.Tech. from DTU (formely DCE)",
     linkedIn: "https://www.linkedin.com/in/rupesh-kumar-9b9468189/",
     facultyType: "Visiting Faculty"
