@@ -1,25 +1,77 @@
 "use client";
-import {
-  AIFirstCurriculum,
-  ImageGrid,
-  InCollaborationWith,
-  InvestorWhoTrustUs,
-  LearnFrom,
-  SectionStack,
-  VedamVs,
-  VideoWithText,
-  WhatPeople,
-} from "@/components";
-import { StudentsAtVedam } from "@/components/home/StudentsAtVedam";
-import { Speaker } from "@/components/home/Speaker";
+import dynamic from "next/dynamic";
+import { SectionStack, VideoWithText } from "@/components";
 import WhyVedam from "@/components/WhyVedam";
-import { Instructors } from "@/components/home/Instructors";
-import NewsSection from "@/components/home/NewsSection";
 import { homeScreenData } from "@/constants/data";
 import { Box, useMediaQuery, useTheme } from "@mui/material";
 import Image from "next/image";
 import React, { Fragment, useState } from "react";
-import RecognitionAwards from "@/components/home/RecognitionAwards";
+
+const SectionSkeleton = ({ height = 320 }) => (
+  <Box
+    role="status"
+    aria-label="Loading section"
+    sx={{
+      width: "100%",
+      minHeight: height,
+      borderRadius: "16px",
+      background: "linear-gradient(90deg, #f2f2f2 0%, #e8e8e8 50%, #f2f2f2 100%)",
+      backgroundSize: "200% 100%",
+      animation: "pulse 1.2s ease-in-out infinite",
+      "@keyframes pulse": {
+        "0%": { backgroundPosition: "200% 0" },
+        "100%": { backgroundPosition: "-200% 0" },
+      },
+    }}
+  />
+);
+
+const InCollaborationWith = dynamic(
+  () => import("@/components/home/InCollaborationWith").then((m) => m.InCollaborationWith),
+  { loading: () => <SectionSkeleton height={260} /> }
+);
+const AIFirstCurriculum = dynamic(
+  () => import("@/components/home/AIFirstCurriculum/AIFirstCurriculum").then((m) => m.AIFirstCurriculum),
+  { loading: () => <SectionSkeleton height={420} /> }
+);
+const ImageGrid = dynamic(
+  () => import("@/components/home/ImageGrid").then((m) => m.ImageGrid),
+  { loading: () => <SectionSkeleton height={360} /> }
+);
+const InvestorWhoTrustUs = dynamic(
+  () => import("@/components/home/InvestorWhoTrustUs").then((m) => m.InvestorWhoTrustUs),
+  { loading: () => <SectionSkeleton height={260} /> }
+);
+const LearnFrom = dynamic(
+  () => import("@/components/home/LearnFrom").then((m) => m.LearnFrom),
+  { loading: () => <SectionSkeleton height={320} /> }
+);
+const VedamVs = dynamic(
+  () => import("@/components/home/VedamVs").then((m) => m.VedamVs),
+  { loading: () => <SectionSkeleton height={320} /> }
+);
+const WhatPeople = dynamic(
+  () => import("@/components/home/WhatPeople").then((m) => m.WhatPeople),
+  { loading: () => <SectionSkeleton height={320} /> }
+);
+const StudentsAtVedam = dynamic(
+  () => import("@/components/home/StudentsAtVedam").then((m) => m.StudentsAtVedam),
+  { loading: () => <SectionSkeleton height={360} /> }
+);
+const Speaker = dynamic(
+  () => import("@/components/home/Speaker").then((m) => m.Speaker),
+  { loading: () => <SectionSkeleton height={280} /> }
+);
+const Instructors = dynamic(
+  () => import("@/components/home/Instructors").then((m) => m.Instructors),
+  { loading: () => <SectionSkeleton height={300} /> }
+);
+const NewsSection = dynamic(() => import("@/components/home/NewsSection"), {
+  loading: () => <SectionSkeleton height={300} />,
+});
+const RecognitionAwards = dynamic(() => import("@/components/home/RecognitionAwards"), {
+  loading: () => <SectionSkeleton height={260} />,
+});
 
 const Home = () => {
   const theme = useTheme();

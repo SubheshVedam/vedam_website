@@ -78,7 +78,7 @@ export default function RootLayout({ children }) {
         </Suspense>
         <Script
           id="gtm"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -91,7 +91,7 @@ export default function RootLayout({ children }) {
         />
         <Script
           id="facebook-pixel"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               !function(f,b,e,v,n,t,s)
@@ -109,7 +109,7 @@ export default function RootLayout({ children }) {
         />
         <Script
           id="microsoft-clarity"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               (function(c,l,a,r,i,t,y){
@@ -142,7 +142,7 @@ export default function RootLayout({ children }) {
         </noscript>
         <Script
           id="nopaperforms-tracker"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               var npf_d='https://apply.vedam.org'; 
