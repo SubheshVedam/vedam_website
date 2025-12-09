@@ -65,41 +65,41 @@ export const Speaker = () => {
     const speakerVideos = [
         {
             id: 1,
-            thumbnail: isMobile ? "/img/speaker/speaker1_mob.png" : "/img/speaker/speaker1.png",
+            thumbnail: isMobile ? "/img/speaker/speaker1_mob.webp" : "/img/speaker/speaker1.webp",
             videoUrl: "https://youtu.be/C1WADUPpx98?si=obOLIeGiFlo4KG6n"
         },
         {
             id: 2,
-            thumbnail: isMobile ? "/img/speaker/speaker2_mob.png" : "/img/speaker/speaker2.png",
+            thumbnail: isMobile ? "/img/speaker/speaker2_mob.webp" : "/img/speaker/speaker2.webp",
             videoUrl: "https://www.youtube.com/watch?v=RRnFQXXoAzw"
         },
         {
             id: 3,
-            thumbnail: isMobile ? "/img/speaker/speaker3_mob.png" : "/img/speaker/speaker3.png",
+            thumbnail: isMobile ? "/img/speaker/speaker3_mob.webp" : "/img/speaker/speaker3.webp",
             videoUrl: "https://www.youtube.com/watch?v=0Pp7yhV1-1g"
         },
         {
             id: 4,
-            thumbnail: isMobile ? "/img/speaker/speaker4_mob.png" : "/img/speaker/speaker4.png",
+            thumbnail: isMobile ? "/img/speaker/speaker4_mob.webp" : "/img/speaker/speaker4.webp",
             videoUrl: "https://youtu.be/Ffd_UBBWrMU"
         },
         {
             id: 5,
-            thumbnail: isMobile ? "/img/speaker/speaker5_mob.png" : "/img/speaker/speaker5.png",
+            thumbnail: isMobile ? "/img/speaker/speaker5_mob.webp" : "/img/speaker/speaker5.webp",
             videoUrl: "https://youtu.be/mkRGpgc__xw?si=HYHMvO0RWDB0Pavj"
         },
     ];
 
     // Speaker images for infinite carousel
     const speakerImages = [
-        "/img/speaker/img1.png",
-        "/img/speaker/img2.png",
-        "/img/speaker/img3.png",
-        "/img/speaker/img4.png",
-        "/img/speaker/img5.png",
-        "/img/speaker/img6.png",
-        "/img/speaker/img7.png",
-        "/img/speaker/img8.png",
+        "/img/speaker/img1.webp",
+        "/img/speaker/img2.webp",
+        "/img/speaker/img3.webp",
+        "/img/speaker/img4.webp",
+        "/img/speaker/img5.webp",
+        "/img/speaker/img6.webp",
+        "/img/speaker/img7.webp",
+        "/img/speaker/img8.webp",
     ];
 
     useEffect(() => {
