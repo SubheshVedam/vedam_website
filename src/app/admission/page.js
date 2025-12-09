@@ -13,7 +13,7 @@ export const metadata = {
     type: 'website',
     images: [
       {
-        url: '/img/Vedam_Final_Logo_White.png',
+        url: '/img/Vedam_Final_Logo_White.webp',
         width: 1200,
         height: 630,
         alt: 'Admissions & Fees - Vedam School of Technology',

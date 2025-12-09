@@ -46,7 +46,7 @@ export const metadata = {
     siteName: "Vedam School of Technology",
     images: [
       {
-        url: "/img/Vedam_Final_Logo_White.png",
+        url: "/img/Vedam_Final_Logo_White.webp",
         width: 1200,
         height: 630,
         alt: "Vedam School of Technology - Computer Science & AI Education",
@@ -72,7 +72,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={inter.className}>
       <head>
-      <link rel="icon" href="./favicon.ico" />
+        <link rel="icon" href="./favicon.ico" />
         <Suspense fallback={null}>
           {/* <GoogleAnalytics /> */}
         </Suspense>
