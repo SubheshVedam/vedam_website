@@ -256,12 +256,13 @@ export const InCollaborationWith = () => {
               }}
               key={widgetInstance}
             >
+              {/* Allow top navigation/download so the NoPaperForms widget can redirect after submit */}
               <iframe
                 ref={widgetContainerRef}
                 title="Download brochure form"
                 srcDoc={widgetHtml}
                 style={{ width: "100%", height: "420px", border: "none" }}
-                sandbox="allow-forms allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+                sandbox="allow-forms allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-top-navigation allow-top-navigation-by-user-activation allow-downloads"
               />
             </Box>
           </Box>
