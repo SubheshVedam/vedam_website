@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Button, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { homeScreenData } from "@/constants/data";
 import Image from "next/image";
+import Script from "next/script";
 
 const SingleIconText = ({
   icon,
@@ -38,60 +39,89 @@ export const InCollaborationWith = () => {
   const [showVideo, setShowVideo] = useState(false);
   const [showBrochureWidget, setShowBrochureWidget] = useState(false);
   const [widgetInstance, setWidgetInstance] = useState(0);
+  const widgetContainerRef = useRef(null);
   const YOUTUBE_URL = "https://www.youtube.com/embed/3PCRxHdf--g?autoplay=1";
   const WIDGET_SCRIPT_ID = "npf-widget-script";
   const WIDGET_SRC = "https://widgets.in6.nopaperforms.com/emwgts.js";
 
-  // Load and (re)initialise the NoPaperForms widget whenever the modal opens.
+  // Initialize the widget once the script is loaded and modal is open.
   useEffect(() => {
     if (!showBrochureWidget) return;
-
-    const initWidget = () => {
+    const tryInit = () => {
       if (window?.npfWgts && typeof window.npfWgts.init === "function") {
         window.npfWgts.init();
+        return true;
       }
+      return false;
     };
 
-    const existingScript = document.getElementById(WIDGET_SCRIPT_ID);
-    if (existingScript) {
-      initWidget();
-      return;
-    }
+    if (tryInit()) return;
 
-    const script = document.createElement("script");
-    script.id = WIDGET_SCRIPT_ID;
-    script.type = "text/javascript";
-    script.async = true;
-    script.src = WIDGET_SRC;
-    script.onload = initWidget;
-    document.body.appendChild(script);
+    let attempts = 0;
+    const interval = setInterval(() => {
+      attempts += 1;
+      if (tryInit() || attempts > 30) {
+        clearInterval(interval);
+      }
+    }, 150);
+
+    return () => clearInterval(interval);
+  }, [showBrochureWidget, widgetInstance]);
+
+  // Keep the widget from hijacking the page by forcing links/forms to open in a new tab.
+  useEffect(() => {
+    if (!showBrochureWidget) return;
+    const container = widgetContainerRef.current;
+    if (!container) return;
+
+    const applyTargets = () => {
+      const forms = container.querySelectorAll("form");
+      forms.forEach((form) => {
+        form.setAttribute("target", "_blank");
+        form.setAttribute("rel", "noopener noreferrer");
+      });
+      const anchors = container.querySelectorAll("a");
+      anchors.forEach((a) => {
+        a.setAttribute("target", "_blank");
+        a.setAttribute("rel", "noopener noreferrer");
+      });
+    };
+
+    applyTargets();
+    const observer = new MutationObserver(applyTargets);
+    observer.observe(container, { childList: true, subtree: true });
+    return () => observer.disconnect();
   }, [showBrochureWidget, widgetInstance]);
 
   return (
-    <Box
-      sx={{
-        borderWidth: 1,
-        borderColor: "rgba(0, 0, 0, 0.2)",
-        borderStyle: "solid",
-        borderRadius: "2rem",
-        display: "flex",
-        flexDirection: { xs: "column", md: "row" },
-        gap: "1rem",
-        justifyContent: "space-between",
-        padding: { xs: "20px", md: "40px" },
-        width: "100%",
-      }}
-    >
-      <Box sx={{
-        width: { xs: "100%", md: "55%" },
-        position: "relative",
-        aspectRatio: "2.07/1",
-        height: "auto",
-        minHeight: { xs: 120, sm: 160, md: 220 },
-        maxHeight: { xs: 180, sm: 220, md: 260 },
-        borderRadius: "16px",
-        overflow: "hidden",
-      }}>
+    <>
+      <Script id={WIDGET_SCRIPT_ID} src={WIDGET_SRC} strategy="afterInteractive" />
+      <Box
+        sx={{
+          borderWidth: 1,
+          borderColor: "rgba(0, 0, 0, 0.2)",
+          borderStyle: "solid",
+          borderRadius: "2rem",
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
+          gap: "1rem",
+          justifyContent: "space-between",
+          padding: { xs: "20px", md: "40px" },
+          width: "100%",
+        }}
+      >
+        <Box
+          sx={{
+            width: { xs: "100%", md: "55%" },
+            position: "relative",
+            aspectRatio: "2.07/1",
+            height: "auto",
+            minHeight: { xs: 120, sm: 160, md: 220 },
+            maxHeight: { xs: 180, sm: 220, md: 260 },
+            borderRadius: "16px",
+            overflow: "hidden",
+          }}
+        >
         {showVideo ? (
           <iframe
             width="100%"
@@ -257,6 +287,7 @@ export const InCollaborationWith = () => {
                 overflow: "hidden",
               }}
               key={widgetInstance}
+              ref={widgetContainerRef}
             >
               <div
                 className="npf_wgts"
@@ -268,6 +299,7 @@ export const InCollaborationWith = () => {
           </Box>
         </Box>
       )}
-    </Box>
+      </Box>
+    </>
   );
 };
