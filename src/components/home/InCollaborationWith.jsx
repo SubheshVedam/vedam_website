@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { homeScreenData } from "@/constants/data";
@@ -36,7 +36,37 @@ const SingleIconText = ({
 export const InCollaborationWith = () => {
   const data = homeScreenData.inCollaborationWith;
   const [showVideo, setShowVideo] = useState(false);
+  const [showBrochureWidget, setShowBrochureWidget] = useState(false);
+  const [widgetInstance, setWidgetInstance] = useState(0);
   const YOUTUBE_URL = "https://www.youtube.com/embed/3PCRxHdf--g?autoplay=1";
+  const WIDGET_SCRIPT_ID = "npf-widget-script";
+  const WIDGET_SRC = "https://widgets.in6.nopaperforms.com/emwgts.js";
+
+  // Load and (re)initialise the NoPaperForms widget whenever the modal opens.
+  useEffect(() => {
+    if (!showBrochureWidget) return;
+
+    const initWidget = () => {
+      if (window?.npfWgts && typeof window.npfWgts.init === "function") {
+        window.npfWgts.init();
+      }
+    };
+
+    const existingScript = document.getElementById(WIDGET_SCRIPT_ID);
+    if (existingScript) {
+      initWidget();
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.id = WIDGET_SCRIPT_ID;
+    script.type = "text/javascript";
+    script.async = true;
+    script.src = WIDGET_SRC;
+    script.onload = initWidget;
+    document.body.appendChild(script);
+  }, [showBrochureWidget, widgetInstance]);
+
   return (
     <Box
       sx={{
@@ -164,8 +194,10 @@ export const InCollaborationWith = () => {
               transform: "scale(1.05)",
             },
           }}
-          href="https://apply.vedam.org/"
-          target="_blank"
+          onClick={() => {
+            setWidgetInstance((count) => count + 1);
+            setShowBrochureWidget(true);
+          }}
         >
           <SingleIconText
             icon={data.buttonIcon}
@@ -175,6 +207,67 @@ export const InCollaborationWith = () => {
           />
         </Button>
       </Box>
+      {showBrochureWidget && (
+        <Box
+          sx={{
+            position: "fixed",
+            inset: 0,
+            backgroundColor: "rgba(0,0,0,0.6)",
+            zIndex: 1300,
+            alignItems: "center",
+            justifyContent: "center",
+            padding: { xs: "16px", sm: "24px" },
+          }}
+          display="flex"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Download brochure form"
+          onClick={() => setShowBrochureWidget(false)}
+        >
+          <Box
+            sx={{
+              position: "relative",
+              backgroundColor: "#fff",
+              width: "100%",
+              maxWidth: { xs: "96vw", sm: "700px" },
+              borderRadius: "16px",
+              padding: { xs: "12px", sm: "16px" },
+              maxHeight: "90vh",
+              boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
+              display: "flex",
+              flexDirection: "column",
+              gap: "12px",
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Button
+              onClick={() => setShowBrochureWidget(false)}
+              sx={{
+                alignSelf: "flex-end",
+                minWidth: "auto",
+                padding: "6px 12px",
+              }}
+            >
+              Close
+            </Button>
+            <Box
+              sx={{
+                width: "100%",
+                borderRadius: "12px",
+                overflow: "hidden",
+              }}
+              key={widgetInstance}
+            >
+              <div
+                className="npf_wgts"
+                data-height="340px"
+                data-w="a7933df0565e4ea9a0414057c751118c"
+                style={{ width: "100%" }}
+              ></div>
+            </Box>
+          </Box>
+        </Box>
+      )}
     </Box>
   );
 };
