@@ -5,7 +5,6 @@ import { Button, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { homeScreenData } from "@/constants/data";
 import Image from "next/image";
-import Script from "next/script";
 
 const SingleIconText = ({
   icon,
@@ -41,61 +40,30 @@ export const InCollaborationWith = () => {
   const [widgetInstance, setWidgetInstance] = useState(0);
   const widgetContainerRef = useRef(null);
   const YOUTUBE_URL = "https://www.youtube.com/embed/3PCRxHdf--g?autoplay=1";
-  const WIDGET_SCRIPT_ID = "npf-widget-script";
-  const WIDGET_SRC = "https://widgets.in6.nopaperforms.com/emwgts.js";
-
-  // Initialize the widget once the script is loaded and modal is open.
-  useEffect(() => {
-    if (!showBrochureWidget) return;
-    const tryInit = () => {
-      if (window?.npfWgts && typeof window.npfWgts.init === "function") {
-        window.npfWgts.init();
-        return true;
-      }
-      return false;
-    };
-
-    if (tryInit()) return;
-
-    let attempts = 0;
-    const interval = setInterval(() => {
-      attempts += 1;
-      if (tryInit() || attempts > 30) {
-        clearInterval(interval);
-      }
-    }, 150);
-
-    return () => clearInterval(interval);
-  }, [showBrochureWidget, widgetInstance]);
-
-  // Keep the widget from hijacking the page by forcing links/forms to open in a new tab.
-  useEffect(() => {
-    if (!showBrochureWidget) return;
-    const container = widgetContainerRef.current;
-    if (!container) return;
-
-    const applyTargets = () => {
-      const forms = container.querySelectorAll("form");
-      forms.forEach((form) => {
-        form.setAttribute("target", "_blank");
-        form.setAttribute("rel", "noopener noreferrer");
-      });
-      const anchors = container.querySelectorAll("a");
-      anchors.forEach((a) => {
-        a.setAttribute("target", "_blank");
-        a.setAttribute("rel", "noopener noreferrer");
-      });
-    };
-
-    applyTargets();
-    const observer = new MutationObserver(applyTargets);
-    observer.observe(container, { childList: true, subtree: true });
-    return () => observer.disconnect();
-  }, [showBrochureWidget, widgetInstance]);
+  const widgetHtml = `
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <base target="_blank" />
+        <style>body{margin:0;padding:0;}</style>
+      </head>
+      <body>
+        <div class="npf_wgts" data-height="440px" data-w="a7933df0565e4ea9a0414057c751118c" style="width:100%"></div>
+        <script type="text/javascript">
+          var s=document.createElement("script");
+          s.type="text/javascript";
+          s.async=true;
+          s.src="https://widgets.in6.nopaperforms.com/emwgts.js";
+          document.body.appendChild(s);
+        </script>
+      </body>
+    </html>
+  `;
 
   return (
     <>
-      <Script id={WIDGET_SCRIPT_ID} src={WIDGET_SRC} strategy="afterInteractive" />
       <Box
         sx={{
           borderWidth: 1,
@@ -287,14 +255,14 @@ export const InCollaborationWith = () => {
                 overflow: "hidden",
               }}
               key={widgetInstance}
-              ref={widgetContainerRef}
             >
-              <div
-                className="npf_wgts"
-                data-height="340px"
-                data-w="a7933df0565e4ea9a0414057c751118c"
-                style={{ width: "100%" }}
-              ></div>
+              <iframe
+                ref={widgetContainerRef}
+                title="Download brochure form"
+                srcDoc={widgetHtml}
+                style={{ width: "100%", height: "420px", border: "none" }}
+                sandbox="allow-forms allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+              />
             </Box>
           </Box>
         </Box>
