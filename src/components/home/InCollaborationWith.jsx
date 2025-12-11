@@ -50,7 +50,7 @@ export const InCollaborationWith = () => {
         <style>body{margin:0;padding:0;}</style>
       </head>
       <body>
-        <div class="npf_wgts" data-height="440px" data-w="a7933df0565e4ea9a0414057c751118c" style="width:100%"></div>
+        <div class="npf_wgts" data-height="360px" data-w="a7933df0565e4ea9a0414057c751118c" style="width:100%"></div>
         <script type="text/javascript">
           var s=document.createElement("script");
           s.type="text/javascript";
@@ -261,7 +261,7 @@ export const InCollaborationWith = () => {
                 ref={widgetContainerRef}
                 title="Download brochure form"
                 srcDoc={widgetHtml}
-                style={{ width: "100%", height: "420px", border: "none" }}
+                style={{ width: "100%", height: "360px", border: "none" }}
                 sandbox="allow-forms allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-top-navigation allow-top-navigation-by-user-activation allow-downloads"
               />
             </Box>
