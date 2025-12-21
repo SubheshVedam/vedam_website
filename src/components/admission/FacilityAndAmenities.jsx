@@ -93,7 +93,7 @@ const CategoryCarousel = ({ category }) => {
             }}
           >
             <img
-              src={`/img/amenities/${category.folder}/img${imgNum}.png`}
+              src={`/img/amenities/${category.folder}/img${imgNum}.webp`}
               alt={`${category.name} ${imgNum}`}
               style={{
                 width: '100%',

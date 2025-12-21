@@ -14,8 +14,8 @@ export const ScholarshipProgram = () => {
         marginLeft: '-50vw',
         marginRight: '-50vw',
         backgroundImage: {
-          xs: "url('/img/scholarship/bg_mob.png')",
-          md: "url('/img/scholarship/bg_web.png')",
+          xs: "url('/img/scholarship/bg_mob.webp')",
+          md: "url('/img/scholarship/bg_web.webp')",
         },
         backgroundSize: "cover",
         backgroundPosition: "center",
