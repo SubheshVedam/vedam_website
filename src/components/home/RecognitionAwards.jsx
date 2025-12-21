@@ -24,8 +24,8 @@ const RecognitionAwards = () => {
                 sx={{
                     width: "100%",
                     backgroundImage: {
-                        xs: "url(/img/awards/img1.png)",
-                        md: "url(/img/awards/img2.png)",
+                        xs: "url(/img/awards/img1.webp)",
+                        md: "url(/img/awards/img2.webp)",
                     },
                     backgroundSize: "cover",
                     backgroundPosition: "center",
