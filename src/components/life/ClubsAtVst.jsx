@@ -400,7 +400,7 @@ export const ClubsAtVst = () => {
 
   const getImagePath = (clubName, imageIndex) => {
     const clubFolder = clubImageMap[clubName];
-    return `/img/clubsatVedam/${clubFolder}/img${imageIndex}.png`;
+    return `/img/clubsatVedam/${clubFolder}/img${imageIndex}.webp`;
   };
 
   return (
