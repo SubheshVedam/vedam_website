@@ -937,7 +937,7 @@ export const admissionScreenData = {
   },
   keyDates: {
     subtitle: "Key Dates",
-    headerText: "December Intake Dates",
+    headerText: "January Intake Dates",
     firstArray: [
       "VSAT Test",
       "Last Date to Apply",
@@ -949,8 +949,8 @@ export const admissionScreenData = {
       "16th January",
       "15th January",
       "Within 2 Days of the Exam",
-      "Within 10 Days of the Exam",
-      "Within 14 Days, If selected",
+      "Within 5 Days of the Exam",
+      "Within 15 Days, If selected",
     ],
   },
   admissionProcess: {
