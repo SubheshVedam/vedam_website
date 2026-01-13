@@ -289,6 +289,7 @@ const Home = () => {
         <VideoWithText
           title={homeScreenData.hero.title}
           subtitle={homeScreenData.hero.subtitle}
+          videoUrl={homeScreenData.hero.background_video}
         />
         <SectionStack
           widthContainerProps={{

@@ -1,5 +1,5 @@
 import React from "react";
-import { admissionScreenData } from "@/constants/data";
+import { admissionScreenData, homeScreenData } from "@/constants/data";
 import { Box } from "@mui/material";
 import {
   AdmissionAndFees,
@@ -69,6 +69,7 @@ const Admission = () => {
       <VideoWithText
         title={admissionScreenData.hero.title}
         subtitle={admissionScreenData.hero.subtitle}
+        videoUrl={homeScreenData.hero.background_video}
       />
       <SectionStack
         cardDefaults={{}}

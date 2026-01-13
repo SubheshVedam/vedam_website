@@ -1080,7 +1080,7 @@ competitive interest rates.`,
 
 export const lifeAtVedam = {
   hero: {
-    background_video: "",
+    background_video: "/vid/LifeAtVedam.mp4",
     title: "Life@VST",
     subtitle: "Make memories, learn, grow, and cherish every moment joyfully",
   },

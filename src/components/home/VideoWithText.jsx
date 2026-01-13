@@ -4,7 +4,7 @@ import { Box, Typography } from "@mui/material";
 import { homeScreenData } from "@/constants/data";
 import Button from "@mui/material/Button";
 
-export const VideoWithText = ({ title, subtitle, isImg }) => {
+export const VideoWithText = ({ title, subtitle, isImg, videoUrl, imageUrl }) => {
   return (
     <Box
       sx={{
@@ -45,12 +45,12 @@ export const VideoWithText = ({ title, subtitle, isImg }) => {
           }}
           className="responsive-video"
         >
-          <source src={homeScreenData.hero.background_video} type="video/mp4" />
+          <source src={videoUrl} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       ) : (
         <img
-          src={"/img/life_vedam_bg.jpeg"}
+          src={imageUrl || "/img/life_vedam_bg.jpeg"}
           alt="Background"
           style={{
             position: "absolute",

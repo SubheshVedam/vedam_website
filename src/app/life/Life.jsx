@@ -23,9 +23,10 @@ const Life = () => {
       <VideoWithText
         title={lifeAtVedam.hero.title}
         titleLinearGradient="linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)"
+        videoUrl={lifeAtVedam.hero.background_video}
         subtitle={lifeAtVedam.hero.subtitle}
         showApplyNowButton={false}
-        isImg={true}
+      // isImg={true}
       />
 
       <Box
