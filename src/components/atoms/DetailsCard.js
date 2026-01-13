@@ -14,6 +14,7 @@ export default function DetailsCard({
   bgImage,
   isFeatured,
   height = 320,
+  heights = 400
 }) {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
@@ -24,15 +25,20 @@ export default function DetailsCard({
         position: "relative",
         backgroundColor: isFeatured ? "#6C10BC" : "#FFFFFF",
         maxWidth: "100%",
-        height: { xs: "auto", md: height },
+        height: { xs: isScholarshipCard ? 350 : "auto", md: height, xl: heights },
         maxHeight: {
-          xs: isFeatured ? 220 : isScholarshipCard ? 220 : 220,
+          xs: isFeatured ? 220 : isScholarshipCard ? 350 : 220,
           md: height,
+          xl: heights
         },
+        // minHeight: {
+        //   xs: isScholarshipCard ? 350 : 220,
+        // },
         width: "100%",
         borderRadius: "16px",
         padding: 0,
         boxShadow: "none",
+        justifyContent: "flex-end",
         overflow: "hidden",
         ...(!isScholarshipCard
           ? {
@@ -167,7 +173,7 @@ export default function DetailsCard({
             sx={{
               borderRadius: "0 0 10px 10px",
               background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.85) -50.79%, rgba(12, 9, 49, 0.85) 69.78%)',
-              padding: "10px",
+              padding: "16px",
               transition: "all 0.3s ease",
               overflow: "visible",
             }}
