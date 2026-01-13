@@ -82,7 +82,7 @@ export const expertsData = [
     linkedIn: "https://www.linkedin.com/in/ashishgautamdev/",
   },
   {
-    imageUrl: "/img/experts/amanpreet.jpeg",
+    imageUrl: "/img/experts/amanpreet.png",
     name: "Amanpreet Singh",
     logo: "/img/companies/google.webp",
     designation: "Software Engineer",
@@ -130,7 +130,7 @@ export const expertsData = [
     linkedIn: "https://www.linkedin.com/in/nishchay-agrawal-157404170/",
   },
   {
-    imageUrl: "/img/experts/basant.jpeg",
+    imageUrl: "/img/experts/basant.png",
     name: "Basant Rawat",
     logo: "/img/companies/Angel_One_Logo.png",
     designation: "SDE 2",
