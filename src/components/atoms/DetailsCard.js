@@ -31,7 +31,7 @@ export default function DetailsCard({
         },
         width: "100%",
         borderRadius: "16px",
-        padding: "6px 6px 6px 6px",
+        padding: 0,
         boxShadow: "none",
         overflow: "hidden",
         ...(!isScholarshipCard
@@ -141,6 +141,8 @@ export default function DetailsCard({
               height: isMobile ? "32px" : "42px",
               borderRadius: 100,
               marginBottom: { xs: "2rem", md: "20px" },
+              marginLeft: "6px",
+              marginTop: "6px",
             }}
           >
             {image && (
@@ -157,14 +159,14 @@ export default function DetailsCard({
           sx={{
             textAlign: "left",
             overflow: "visible",
-            paddingBottom: { xs: "12px", md: 0 },
+            width: "100%",
           }}
         >
           <Box
             className="title-box"
             sx={{
-              borderRadius: "14px",
-              background: "rgba(30, 30, 30, 0.90)",
+              borderRadius: "0 0 10px 10px",
+              background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.85) -50.79%, rgba(12, 9, 49, 0.85) 69.78%)',
               padding: "10px",
               transition: "all 0.3s ease",
               overflow: "visible",
