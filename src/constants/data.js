@@ -1235,7 +1235,7 @@ export const lifeAtVedam = {
     icon2: "/img/innovation_lab/scroll_component/vr.png",
   },
   clubsatVedam: {
-    subtitle: "Clubs at VST",
+    subtitle: "Clubs@Vedam",
     data: [
       {
         bgImage: "/img/clubsatVedam/Sports_Club_N.jpeg",
