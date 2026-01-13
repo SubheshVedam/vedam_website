@@ -77,7 +77,7 @@ export const expertsData = [
     name: "Ashish G",
     logo: "/img/companies/apple.png",
     designation: "Software Engineer",
-    info: "NSIT, Ex Mentor Graphics & OYO",
+    info: "Google, Salesforce & Amazon",
     rating: 4.2,
     linkedIn: "https://www.linkedin.com/in/ashishgautamdev/",
   },
@@ -832,7 +832,7 @@ export const homeScreenData = {
     ],
   },
   year4: {
-    title: "Jobs of 2029 - Specialised Tracks",
+    title: "Jobs of 2030 - Specialised Tracks",
     subtitle:
       "Master your journey with Specialisation tracks that will be in-demand jobs of the time!",
     secondTitle: "Skills & Technologies",
@@ -1333,9 +1333,9 @@ export const faqsScreenData = [
       },
       {
         id: 13,
-        title: "I did my 12th in 2023 or before, Am I eligible to apply?",
+        title: "I did my 12th in 2024 or before, Am I eligible to apply?",
         description:
-          "You should have completed your 12th grade education in 2024 or 2025 with more than 50% Marks in PCM and 12th board overall. If you meet these requirements, we invite you to join us and embark on an exciting journey toward a future in technology.",
+          "You should have completed your 12th grade education in 2025 or 2026 with more than 50% Marks in PCM and 12th board overall. If you meet these requirements, we invite you to join us and embark on an exciting journey toward a future in technology.",
       },
       // Add more questions as needed
     ],
@@ -1353,14 +1353,14 @@ export const faqsScreenData = [
         id: 21,
         title: "How Many attempts can I give?",
         description:
-          "At Vedam School of Technology, candidates can attempt the Vedam Scholastic Aptitude Test (VSAT) up to two times to improve their scores.",
+          "At Vedam School of Technology, candidates can attempt the Vedam Scholastic Aptitude Test (VSAT) up to three times to improve their scores.",
       },
       {
         id: 25,
         title:
-          "If a student takes the VSAT twice, is the better score considered?",
+          "If a student takes the VSAT thrice, is the better score considered?",
         description:
-          "Students can take the VSAT twice, but it's not a best-of-two. A second attempt is treated as a new application, requiring the full selection process again, with evaluation relative to others in that round. Scholarships from earlier rounds won't carry forward.",
+          "Students can take the VSAT thrice, but it's not a best-of-three. All attempts is treated as a new application, requiring the full selection process again, with evaluation relative to others in that round. Scholarships from earlier rounds won't carry forward.",
       },
       {
         id: 22,
@@ -1428,7 +1428,7 @@ export const faqsScreenData = [
         title:
           "What financing options are available for paying the college fees?",
         description:
-          "We offer multiple financing options to make college fees more accessible, including education loans from IDFC, Yes Bank, HDFC, RBL, and Propelled. Each option comes with different terms and benefits to suit your needs. Once you are selected, our team will guide you through the process and provide exact details to help you choose the best financing plan.",
+          "We offer multiple financing options to make college fees more accessible, including education loans from Jodo and Propelled. Each option comes with different terms and benefits to suit your needs. Once you are selected, our team will guide you through the process and provide exact details to help you choose the best financing plan.",
       },
       {
         id: 42,
