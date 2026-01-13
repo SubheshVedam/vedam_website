@@ -371,7 +371,7 @@ export const VedamInovationLab = () => {
             key={index}
             sx={{
               flex: 1,
-              height: isMobile ? "220px" : "300px",
+              height: isMobile ? "220px" : "282px",
               borderRadius: "16px",
               overflow: "hidden",
             }}>
