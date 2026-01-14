@@ -141,7 +141,7 @@ export const expertsData = [
 ];
 export const instructorData = [
   {
-    imageUrl: "/img/instructors/Subhesh_New.png",
+    imageUrl: "/img/instructors/Subhesh_New.webp",
     name: "Subhesh Kumar",
     logo: "/img/instructors/google.webp",
     designation: "6 yrs+ teaching experience",
@@ -151,7 +151,7 @@ export const instructorData = [
     isGoogle: true
   },
   {
-    imageUrl: "/img/instructors/Aman_Instructor.png",
+    imageUrl: "/img/instructors/Aman_Instructor.webp",
     name: "Aman Kumar",
     logo: "/img/instructors/Microsoft_Logo.png",
     designation: "SDE at Apple",
@@ -161,7 +161,7 @@ export const instructorData = [
     isGoogle: true
   },
   {
-    imageUrl: "/img/instructors/Pankaj_New.png",
+    imageUrl: "/img/instructors/Pankaj_New.webp",
     name: "Pankaj Kumar",
     logo: "/img/instructors/birdeye.png",
     designation: "Backend Lead at Vedam",
@@ -171,7 +171,7 @@ export const instructorData = [
       "https://www.linkedin.com/in/gargpk",
   },
   {
-    imageUrl: "/img/instructors/Prasanna_New.png",
+    imageUrl: "/img/instructors/Prasanna_New.webp",
     name: "Prasanna Swain",
     logo: "/img/instructors/pollard_banknote.png",
     designation: "Frontend Lead at Vedam",
@@ -180,7 +180,7 @@ export const instructorData = [
     linkedIn: "https://www.linkedin.com/in/prasanna-swain/",
   },
   {
-    imageUrl: "/img/instructors/Jasbir_Instructor.png",
+    imageUrl: "/img/instructors/Jasbir_Instructor.webp",
     name: "Jasbir Singh",
     logo: "/img/instructors/Cars24_Logo.jpeg",
     designation: "6 Yrs+ Dev teaching exp.",
@@ -190,7 +190,7 @@ export const instructorData = [
     facultyType: "Visiting Faculty"
   },
   {
-    imageUrl: "/img/instructors/Rupesh_New.png",
+    imageUrl: "/img/instructors/Rupesh_New.webp",
     name: "Rupesh Kumar",
     logo: "/img/instructors/algoprep.png",
     designation: "DSA Instructor at Vedam",
@@ -869,25 +869,25 @@ export const homeScreenData = {
     data: [
       {
         id: 1,
-        image: "/img/inTheNews/img1.png",
+        image: "/img/inTheNews/img1.webp",
         alt: "News Article 1",
         link: "https://education21.in/vedam-school-of-technology-pune-welcomes-founding-batch-with-ai-first-orientation-week/",
       },
       {
         id: 2,
-        image: "/img/inTheNews/img3.png",
+        image: "/img/inTheNews/img3.webp",
         alt: "News Article 3",
         link: "https://www.financialexpress.com/jobs-career/education-vedam-school-of-technology-acquires-algoprep-aims-to-launch-ai-native-tech-curriculum-3809339/",
       },
       {
         id: 3,
-        image: "/img/inTheNews/img4.png",
+        image: "/img/inTheNews/img4.webp",
         alt: "News Article 4",
         link: "https://www.passionateinmarketing.com/vedam-school-of-technology-set-to-revolutionize-computer-science-education-in-india/",
       },
       {
         id: 4,
-        image: "/img/inTheNews/img2.png",
+        image: "/img/inTheNews/img2.webp",
         alt: "News Article 2",
         link: "https://sugermint.com/vedam-school-of-technology-opens-doors-to-founding-batch/",
       },
@@ -937,7 +937,7 @@ export const admissionScreenData = {
   },
   keyDates: {
     subtitle: "Key Dates",
-    headerText: "December Intake Dates",
+    headerText: "January Intake Dates",
     firstArray: [
       "VSAT Test",
       "Last Date to Apply",
@@ -946,11 +946,11 @@ export const admissionScreenData = {
       "Final Offer",
     ],
     secondArray: [
-      "23rd December",
-      "22nd December",
-      "24th December 2025",
-      "5th January 2026 onwards",
-      "On or before 12th January 2026, If selected",
+      "16th January",
+      "15th January",
+      "Within 2 Days of the Exam",
+      "Within 5 Days of the Exam",
+      "Within 15 Days, If selected",
     ],
   },
   admissionProcess: {
@@ -969,7 +969,7 @@ export const admissionScreenData = {
         title: "Apply Online",
         subtitle:
           "Complete your profile and reserve your slot for the Vedam Scholastic Aptitude Test (VSAT).",
-        subtitle1: "Last to apply for Early Intake 1 is 22nd December",
+        subtitle1: "Last date to apply for Jan Intake is 15th January",
         showButton: true,
       },
       {
@@ -978,7 +978,7 @@ export const admissionScreenData = {
         title: "Take the VSAT",
         subtitle:
           "It is an entrance test conducted online.",
-        subtitle1: "The next VSAT is on 23rd December",
+        subtitle1: "The next VSAT is on 16th January",
         showButton: false,
       },
       {
@@ -1029,19 +1029,19 @@ export const admissionScreenData = {
       "Empowering students with the resources to compete in the new age program. Upto 100% scholarships are available",
     data: [
       {
-        bgImage: "/img/scholarship/img1.png",
+        bgImage: "/img/scholarship/img1.webp",
         title: "Merit Based Scholarship (Upto 100%)",
         description:
           "Recognizes academic excellence, unique talent and leadership potential.",
       },
       {
-        bgImage: "/img/scholarship/img2.png",
+        bgImage: "/img/scholarship/img2.webp",
         title: "Women in Tech Scholarship (Upto 20%)",
         description:
           "Empowering and supporting women in tech for growth and success.",
       },
       {
-        bgImage: "/img/scholarship/img3.png",
+        bgImage: "/img/scholarship/img3.webp",
         title: "Need Based Scholarship (Upto 30%)",
         description:
           "Focused on specific fields of study or demonstrating financial needs.",

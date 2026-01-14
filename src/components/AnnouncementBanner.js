@@ -3,7 +3,7 @@ import { Box, Typography, Stack } from "@mui/material";
 import { useState, useEffect } from "react";
 
 export default function AnnouncementBanner() {
-  const targetDate = new Date("2025-12-22T23:59:59").getTime();
+  const targetDate = new Date("2026-01-15T23:59:59").getTime();
 
   const [timeLeft, setTimeLeft] = useState(null);
 
@@ -112,7 +112,7 @@ export default function AnnouncementBanner() {
           variant="body2"
           component="span"
           sx={{ fontSize: { xs: 11, sm: 16 } }}>
-          <strong>Admissions for 2026 (Early Intake 1) closes in</strong>
+          <strong>Admissions for Jan Intake closes in</strong>
         </Typography>
         {timerItems ? (
           <Stack

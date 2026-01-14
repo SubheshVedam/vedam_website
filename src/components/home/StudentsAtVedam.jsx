@@ -47,7 +47,7 @@ export const StudentsAtVedam = () => {
                             }}
                         >
                             <Image
-                                src="/img/studentsAtVedam/img.png"
+                                src="/img/studentsAtVedam/img.webp"
                                 alt="Students at Vedam"
                                 width={1200}
                                 height={400}

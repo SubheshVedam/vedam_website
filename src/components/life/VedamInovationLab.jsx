@@ -18,11 +18,11 @@ export const VedamInovationLab = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const zones = [
-    { name: "AI + Mac Zone", images: ["/img/innovation_lab/img01.png", "/img/innovation_lab/img02.png"] },
-    { name: "Robotics Zone", images: ["/img/innovation_lab/img03.png", "/img/innovation_lab/img04.png"] },
-    { name: "Drone Zone", images: ["/img/innovation_lab/img05.png", "/img/innovation_lab/img06.png"] },
-    { name: "VC Fund Linkage", images: ["/img/innovation_lab/img07.png", "/img/innovation_lab/img08.png"] },
-    { name: "Projects you'll Build", images: ["/img/innovation_lab/img09.png", "/img/innovation_lab/img10.png"] },
+    { name: "AI + Mac Zone", images: ["/img/innovation_lab/img01.webp", "/img/innovation_lab/img02.webp"] },
+    { name: "Robotics Zone", images: ["/img/innovation_lab/img03.webp", "/img/innovation_lab/img04.webp"] },
+    { name: "Drone Zone", images: ["/img/innovation_lab/img05.webp", "/img/innovation_lab/img06.webp"] },
+    { name: "VC Fund Linkage", images: ["/img/innovation_lab/img07.webp", "/img/innovation_lab/img08.webp"] },
+    { name: "Projects you'll Build", images: ["/img/innovation_lab/img09.webp", "/img/innovation_lab/img10.webp"] },
   ];
 
   const handlePrevZone = () => {
