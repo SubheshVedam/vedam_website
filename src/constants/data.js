@@ -946,8 +946,8 @@ export const admissionScreenData = {
       "Final Offer",
     ],
     secondArray: [
-      "16th January",
-      "15th January",
+      "10th Feb 2026",
+      "9th Feb 2026",
       "Within 2 Days of the Exam",
       "Within 5 Days of the Exam",
       "Within 15 Days, If selected",
@@ -969,7 +969,7 @@ export const admissionScreenData = {
         title: "Apply Online",
         subtitle:
           "Complete your profile and reserve your slot for the Vedam Scholastic Aptitude Test (VSAT).",
-        subtitle1: "Last date to apply for Jan Intake is 15th January",
+        subtitle1: "Last date to apply for Feb Intake is 9th February",
         showButton: true,
       },
       {
@@ -978,7 +978,7 @@ export const admissionScreenData = {
         title: "Take the VSAT",
         subtitle:
           "It is an entrance test conducted online.",
-        subtitle1: "The next VSAT is on 16th January",
+        subtitle1: "The next VSAT is on 10th February",
         showButton: false,
       },
       {
