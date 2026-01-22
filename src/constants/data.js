@@ -1337,6 +1337,12 @@ export const faqsScreenData = [
         description:
           "You should have completed your 12th grade education in 2025 or 2026 with more than 50% Marks in PCM and 12th board overall. If you meet these requirements, we invite you to join us and embark on an exciting journey toward a future in technology.",
       },
+      {
+        id: 14,
+        title: "Do you accept applicants from Open Schooling (NIOS/Open Board)?",
+        description:
+          "No, we do not accept applications from Open Schooling boards (including NIOS or any other open boards). Admission is open only to students who have completed their qualifying education through a regular, recognized board.",
+      },
       // Add more questions as needed
     ],
   },
