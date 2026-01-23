@@ -30,7 +30,7 @@ const FOOTER_LINKS = [
 const SOCIAL_LINKS = [
   {
     name: "YouTube",
-    url: "https://www.youtube.com/@VedamSchoolofTech_Official",
+    url: "https://www.youtube.com/@vedamschooloftechnology",
     icon: <YouTubeIcon sx={{ color: "white" }} />,
   },
   {

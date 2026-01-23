@@ -1359,14 +1359,14 @@ export const faqsScreenData = [
         id: 21,
         title: "How Many attempts can I give?",
         description:
-          "At Vedam School of Technology, candidates can attempt the Vedam Scholastic Aptitude Test (VSAT) up to three times to improve their scores.",
+          "At Vedam School of Technology, candidates can attempt the Vedam Scholastic Aptitude Test (VSAT) up to two times to improve their scores.",
       },
       {
         id: 25,
         title:
-          "If a student takes the VSAT thrice, is the better score considered?",
+          "If a student takes the VSAT twice, is the better score considered?",
         description:
-          "Students can take the VSAT thrice, but it's not a best-of-three. All attempts is treated as a new application, requiring the full selection process again, with evaluation relative to others in that round. Scholarships from earlier rounds won't carry forward.",
+          "Students can take the VSAT twice, but it's not a best-of-two. All attempts is treated as a new application, requiring the full selection process again, with evaluation relative to others in that round. Scholarships from earlier rounds won't carry forward.",
       },
       {
         id: 22,
