@@ -103,7 +103,10 @@ const NewsSection = () => {
                   src={headline.image}
                   alt={headline.alt || `News ${index + 1}`}
                   fill
-                  style={{ objectFit: '' }}
+                  style={{
+                    objectFit: 'cover',
+                    objectPosition: headline.objectPosition || 'center',
+                  }}
                   sizes="(max-width: 600px) 75vw, 300px"
                 />
               </Box>

@@ -890,6 +890,7 @@ export const homeScreenData = {
         image: "/img/inTheNews/img2.webp",
         alt: "News Article 2",
         link: "https://sugermint.com/vedam-school-of-technology-opens-doors-to-founding-batch/",
+        objectPosition: "top",
       },
       // {
       //   id: 5,
@@ -1491,4 +1492,3 @@ export const teamVedamScreenData = {
     },
   ],
 };
-
