@@ -1428,7 +1428,7 @@ export const faqsScreenData = [
         id: 40,
         title: "What is the fees structure of the program?",
         description:
-          "The total Course fee for our comprehensive 4-year program is ₹18 Lakhs (Excluding hostel and mess fee), covering a curriculum designed to equip students with cutting-edge knowledge and industry-relevant skills. To explore a detailed breakdown of the fee structure and available financing options, please visit our official admissions page: https://vedam.org/admission",
+          "The total course fee for our comprehensive 4-year program for the academic year 2025 was 18 Lakh (excluding hostel and mess charges). The fee for the academic year 2026 will be announced soon. For a detailed breakdown of the fee structure and available financing options, please visit our official admissions page: https://vedam.org/admission",
       },
       {
         id: 41,
