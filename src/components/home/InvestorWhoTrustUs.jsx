@@ -1,7 +1,8 @@
 'use client'
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+import { homeScreenData } from "@/constants/data";
 
 export const InvestorWhoTrustUs = () => {
   // Carousel refs and state
@@ -128,6 +129,20 @@ export const InvestorWhoTrustUs = () => {
           )
         )}
       </Box>
+
+      <Typography
+        variant={"subtitle1"}
+        textAlign={"center"}
+        sx={{
+          marginTop: { xs: "16px", md: "32px" },
+          fontSize: { xs: "6px", md: "8px" },
+          fontFamily: "Inter",
+          color: "#1E1E1E",
+          lineHeight: "150%",
+        }}
+      >
+        {homeScreenData.investorWhoTrustUs.bottomText}
+      </Typography>
     </Box>
   );
 };

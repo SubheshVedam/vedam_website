@@ -421,6 +421,8 @@ export const homeScreenData = {
       { id: 6, img: "/img/investors/westbridge.webp" },
       { id: 7, img: "/img/investors/prime.webp" },
     ],
+    bottomText:
+      "*Investor Network of SET Education's parent organization",
   },
   whyVedam: {
     title: "",
@@ -704,6 +706,7 @@ export const homeScreenData = {
   },
   Recognitionawards: {
     subtitle: "Recognition & Awards",
+    bottomText: "*Recognition & Awards of SET Education's parent organization"
   },
   aiFirst: {
     title: "",

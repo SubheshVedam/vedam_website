@@ -1,6 +1,8 @@
 import React from "react";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Image from "next/image";
+
+import { homeScreenData } from "@/constants/data";
 
 const awards = [
     { img: "/img/rewards/Image1.png" },
@@ -74,6 +76,27 @@ const RecognitionAwards = () => {
                     </Box>
                 ))}
             </Box>
+            <Box sx={{
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center'
+            }}>
+                <Typography
+                    variant={"subtitle1"}
+                    textAlign={"center"}
+                    sx={{
+                        marginTop: { xs: "16px", md: "32px" },
+                        fontSize: { xs: "6px", md: "8px" },
+                        fontFamily: "Inter",
+                        color: "#1E1E1E",
+                        lineHeight: "150%",
+                    }}
+                >
+                    {homeScreenData.Recognitionawards.bottomText}
+                </Typography>
+            </Box>
+
         </Box>
     );
 };
