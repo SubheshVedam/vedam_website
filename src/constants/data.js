@@ -941,7 +941,7 @@ export const admissionScreenData = {
   },
   keyDates: {
     subtitle: "Key Dates",
-    headerText: "January Intake Dates",
+    headerText: "Intake Dates",
     firstArray: [
       "VSAT Test",
       "Last Date to Apply",
