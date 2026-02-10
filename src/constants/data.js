@@ -1466,7 +1466,7 @@ export const faqsScreenData = [
 export const teamVedamScreenData = {
   subtitle: "Team Vedam",
   description:
-    "Vedam School of Technology is an initiative by entrepreneurs - Piyush Nangru, Ashish Munjal and Ankur Jain. They come with an experience of running a Series C funded higher education company for the past 6 years that has already skilled more than 10,000 students through its education for the masses approach.",
+    "Vedam School of Technology is an initiative by entrepreneurs - Piyush Nangru. They come with an experience of running a Series C funded higher education company for the past 6 years that has already skilled more than 10,000 students through its education for the masses approach.",
 
   data: [
     {
@@ -1476,22 +1476,6 @@ export const teamVedamScreenData = {
       designation: "Co-Founder",
       description:
         "With a passion for startups, Piyush is currently the Co-Founder at Vedam. Piyush joined Crownit as a founding member and headed the marketing and business development aspect of the business. An engineer from NSIT and an MBA from IMT Ghaziabad, Piyush started his venture in the Cultural Tourism space",
-    },
-    {
-      id: 1,
-      name: "Ashish Munjal",
-      imageUrl: "/img/teamVedam/ashish_munjal.webp",
-      designation: "Co-Founder",
-      description:
-        "With a great appetite for startups, Ashish is currently the Co-Founder at Vedam. Earlier, he was the Co-Founder at Crownit where he headed Consumer and Business growth. An MBA from IMT Ghaziabad and a certified CFA, Ashish has diverse experience in various roles with Bank of America and handled Sales and Operations at Knowlarity.",
-    },
-    {
-      id: 2,
-      name: "Ankur Jain",
-      imageUrl: "/img/teamVedam/ankur_jain.webp",
-      designation: "Co-Founder",
-      description:
-        "Ankur’s exposure to the education industry makes him an ideal fit for taking charge of Vedam’s growth and expansion. More than 15 years of demonstrated expertise in Sales, Marketing and Business Development, he has previously worked with Amazon, Airtel and YourStory and is the founder of HostelFund",
-    },
+    }
   ],
 };
