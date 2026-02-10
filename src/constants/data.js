@@ -1466,7 +1466,7 @@ export const faqsScreenData = [
 export const teamVedamScreenData = {
   subtitle: "Team Vedam",
   description:
-    "Vedam School of Technology is an initiative by entrepreneurs - Piyush Nangru. They come with an experience of running a Series C funded higher education company for the past 6 years that has already skilled more than 10,000 students through its education for the masses approach.",
+    "Vedam School of Technology is an initiative by entrepreneur - Piyush Nangru. He comes with an experience of running a Series C funded higher education company for the past 6 years that has already skilled more than 10,000 students through its education for the masses approach.",
 
   data: [
     {
