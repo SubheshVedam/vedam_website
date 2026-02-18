@@ -1463,19 +1463,30 @@ export const faqsScreenData = [
   },
 ];
 
-export const teamVedamScreenData = {
-  subtitle: "Team Vedam",
-  description:
-    "Vedam School of Technology is an initiative by entrepreneur - Piyush Nangru. He comes with an experience of running a Series C funded higher education company for the past 6 years that has already skilled more than 10,000 students through its education for the masses approach.",
-
-  data: [
-    {
-      id: 0,
-      name: "Piyush Nangru",
-      imageUrl: "/img/teamVedam/pitush_nangru.webp",
-      designation: "Co-Founder",
-      description:
-        "With a passion for startups, Piyush is currently the Co-Founder at Vedam. Piyush joined Crownit as a founding member and headed the marketing and business development aspect of the business. An engineer from NSIT and an MBA from IMT Ghaziabad, Piyush started his venture in the Cultural Tourism space",
-    }
-  ],
-};
+export const teamVedamScreenData = [
+  {
+    subtitle: "About our Co Founder",
+    description:
+      "Vedam School of Technology is an initiative by entrepreneur - Piyush Nangru. He comes with an experience of running a Series C funded higher education company for the past 6 years that has already skilled more than 10,000 students through its education for the masses approach.",
+    data: [
+      {
+        id: 0,
+        name: "Piyush Nangru",
+        imageUrl: "/img/teamVedam/pitush_nangru.webp",
+        designation: "Co-Founder",
+        description:
+          "With a passion for startups, Piyush is currently the Co-Founder at Vedam. Piyush joined Crownit as a founding member and headed the marketing and business development aspect of the business. An engineer from NSIT and an MBA from IMT Ghaziabad, Piyush started his venture in the Cultural Tourism space",
+      },
+    ],
+  },
+  {
+    subtitle: "Note from founder",
+    description:
+      "India Produces 1.5 Million Engineers Every Year. But only Top 1% secure high paying tech roles. Why? Because traditional colleges focus on theory, not real-world skills.We have seen brilliant, hardworking students trapped in this outdated system - graduating with just a degree, lacking hands-on coding expertise, and struggling in endless placement cycles. This is why we built Vedam School of Technology.Vedam is a 4-year, on-campus Computer Science & AI program designed to create the next generation of global tech leaders. Here, students don`t just study tech-they build it from Day 1.",
+  },
+  {
+    subtitle: "About Us",
+    description:
+      "Vedam School of Technology is an initiative by Elevate Education Technology Private Limited. Elevate is a Series C funded higher education company that has already skilled more than 10,000 students in last 7 years through its philosophy of education for the masses",
+  },
+];

@@ -130,8 +130,8 @@ export default function RootLayout({ children }) {
             `,
           }}
         />
-        <AnnouncementBanner />
         <EmotionCacheProvider>
+          <AnnouncementBanner />
           <Layout>
             <Navbar />
             {children}
@@ -140,7 +140,6 @@ export default function RootLayout({ children }) {
         </EmotionCacheProvider>
       </body>
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
-
     </html>
   );
 }
