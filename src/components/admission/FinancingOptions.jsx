@@ -51,7 +51,7 @@ export const FinancingOptions = () => {
               height={28}
               style={{ marginRight: 8 }}
             />
-            <Typography variant="h6" sx={{ color: "#FF9000", fontWeight: 700 }}>
+            <Typography component="h4" variant="h4" sx={{ color: "#FF9000", fontWeight: 700 }}>
               Loan at Zero Cost EMI
             </Typography>
           </Box>
@@ -85,7 +85,7 @@ export const FinancingOptions = () => {
               height={28}
               style={{ marginRight: 8 }}
             />
-            <Typography variant="h6" sx={{ color: "#FF9000", fontWeight: 700 }}>
+            <Typography component="h4" variant="h4" sx={{ color: "#FF9000", fontWeight: 700 }}>
               Education Loan from a Bank
             </Typography>
           </Box>

@@ -179,7 +179,8 @@ export default function DetailsCard({
             }}
           >
             <Typography
-              variant="h6"
+              component="h4"
+              variant="h4"
               sx={{
                 color: "white",
                 fontWeight: "bold",

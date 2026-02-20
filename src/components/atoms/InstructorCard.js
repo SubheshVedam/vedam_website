@@ -85,7 +85,8 @@ export default function InstructorCard({
         >
           <Box sx={{ mb: 1 }}>
             <Typography
-              variant="h6"
+              component="div"
+              variant="body1"
               sx={{
                 fontFamily: "Inter",
                 color: "#1E1E1E",

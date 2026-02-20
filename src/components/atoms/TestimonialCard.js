@@ -61,7 +61,8 @@ export default function TestimonialCard({ image, text, name, designation, linked
               </Box>
               <Box>
                 <Typography
-                  variant="h6"
+                  component="div"
+                  variant="body1"
                   sx={{
                     color: "#6C10BC",
                     fontWeight: 700,

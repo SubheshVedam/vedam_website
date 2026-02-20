@@ -161,7 +161,8 @@ export const InCollaborationWith = () => {
         }}
       >
         <Typography
-          variant="h4"
+          component="h3"
+          variant="h3"
           style={{
             fontSize: "clamp(1.2rem, 2vw, 2rem)",
             lineHeight: "120%",

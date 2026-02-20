@@ -1085,7 +1085,7 @@ competitive interest rates.`,
 export const lifeAtVedam = {
   hero: {
     background_video: "/vid/LifeAtVedam.mp4",
-    title: "Life@VST",
+    title: "Life at Vedam School of Technology",
     subtitle: "Make memories, learn, grow, and cherish every moment joyfully",
   },
   clubsAtVst: [
@@ -1239,7 +1239,7 @@ export const lifeAtVedam = {
     icon2: "/img/innovation_lab/scroll_component/vr.png",
   },
   clubsatVedam: {
-    subtitle: "Clubs@Vedam",
+    subtitle: "Student Clubs at Vedam",
     data: [
       {
         bgImage: "/img/clubsatVedam/Sports_Club_N.jpeg",

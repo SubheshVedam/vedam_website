@@ -61,7 +61,8 @@ export const AIYear3 = () => {
       }}
     >
       <Typography
-        variant="h5"
+        component="h3"
+        variant="h3"
         style={{
           fontSize: "clamp(1rem, 2vw, 1.2rem)",
           fontFamily: "Inter",
@@ -74,7 +75,8 @@ export const AIYear3 = () => {
         {homeScreenData.year3.title}
       </Typography>
       <Typography
-        variant="h5"
+        component="p"
+        variant="body1"
         style={{
           fontSize: "clamp(10px, 2vw, 14px)",
           fontFamily: "Inter",
@@ -87,7 +89,8 @@ export const AIYear3 = () => {
         {homeScreenData.year3.subtitle}
       </Typography>
       <Typography
-        variant="h5"
+        component="h4"
+        variant="h4"
         sx={{
           fontSize: "14px",
           fontFamily: "Inter",
@@ -136,7 +139,8 @@ export const AIYear3 = () => {
         ))}
       </Box>
       <Typography
-        variant="h5"
+        component="h4"
+        variant="h4"
         sx={{
           fontSize: "14px",
           fontFamily: "Inter",

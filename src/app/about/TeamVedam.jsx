@@ -109,7 +109,8 @@ const TeamVedam = () => {
                     }}
                   >
                     <Typography
-                      variant="h5"
+                      component="h3"
+                      variant="h3"
                       sx={{
                         color: "#FFA41A",
                         fontSize: { xs: "1rem", md: "2rem" },
@@ -120,7 +121,8 @@ const TeamVedam = () => {
                       {item.name}
                     </Typography>
                     <Typography
-                      variant="h5"
+                      component="p"
+                      variant="body1"
                       sx={{
                         color: "#1F1F1F",
                         fontSize: { xs: "12px", md: "1rem" },
@@ -131,7 +133,8 @@ const TeamVedam = () => {
                       {item.designation}
                     </Typography>
                     <Typography
-                      variant="h5"
+                      component="p"
+                      variant="body1"
                       sx={{
                         marginTop: { xs: "1rem", md: "1.4rem" },
                         color: "#1F1F1F",

@@ -458,12 +458,14 @@ export const ClubsAtVst = () => {
                 }}
               >
                 <Typography
-                  variant="h6"
+                  component="h3"
+                  variant="h3"
                   sx={{
                     fontSize: "18px",
                     fontWeight: "500",
                     fontFamily: "Inter",
                     color: activeIndex === index ? "#6C10BC" : "#000",
+                    margin: 0,
                   }}
                 >
                   {club.rightSideText || `Club ${index + 1}`}
@@ -537,12 +539,14 @@ export const ClubsAtVst = () => {
                   }}
                 >
                   <Typography
-                    variant="h6"
+                    component="h3"
+                    variant="h3"
                     sx={{
                       fontSize: "18px",
                       fontWeight: "600",
                       fontFamily: "Inter",
                       color: activeIndex === index ? "#6C10BC" : "#000",
+                      margin: 0,
                     }}
                   >
                     {club.rightSideText || `Club ${index + 1}`}

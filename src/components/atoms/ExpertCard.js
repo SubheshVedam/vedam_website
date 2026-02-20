@@ -62,8 +62,8 @@ export default function ExpertCard({
       >
         <Box>
           <Typography
-            variant="h6"
             component="div"
+            variant="body1"
             sx={{ color: "text.primary", fontWeight: "bold", fontSize: { xs: '17px', sm: '20px' } }}
           >
             {name}

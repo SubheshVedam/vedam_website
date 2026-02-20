@@ -110,7 +110,8 @@ export default function Footer() {
           {FOOTER_LINKS.map((column) => (
             <Grid item xs={6} sm={6} md={3} key={column.title}>
               <Typography
-                variant="h6"
+                component="h2"
+                variant="h2"
                 sx={{
                   fontWeight: 500,
                   mb: { xs: "8px", sm: "16px" },
@@ -145,7 +146,8 @@ export default function Footer() {
           {/* Social Links Column */}
           <Grid item xs={12} sm={6} md={3} sx={{ mt: { xs: 2, sm: 0 } }}>
             <Typography
-              variant="h6"
+              component="h2"
+              variant="h2"
               sx={{
                 fontWeight: 400,
                 mb: { xs: "8px", sm: "16px" },

@@ -45,7 +45,8 @@ export const CardContainer = ({
 
         {subtitle && !subtitle2 && (
           <Typography
-            variant="h4"
+            component="h2"
+            variant="h2"
             fontFamily={"Inter"}
             sx={{
               fontWeight: "700",
@@ -63,12 +64,13 @@ export const CardContainer = ({
 
         {subtitle2 && (
           <Typography
+            component="h2"
+            variant="h2"
             fontFamily="Inter"
             sx={{
               background: "linear-gradient(90deg, #FB7F05 0%, #6C10BC 42.11%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
-
               textAlign: "center",
               fontStyle: "normal",
               fontWeight: 700,
@@ -79,7 +81,6 @@ export const CardContainer = ({
           >
             {subtitle2}
           </Typography>
-
         )}
 
         {showSubtitleBottomBorder && (

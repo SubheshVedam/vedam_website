@@ -83,7 +83,8 @@ export const VideoWithText = ({ title, subtitle, isImg, videoUrl, imageUrl }) =>
       >
         {/* Title with Animation */}
         <Typography
-          variant="h3"
+          component="h1"
+          variant="h1"
           sx={{
             fontWeight: "bold",
             whiteSpace: "pre-line",

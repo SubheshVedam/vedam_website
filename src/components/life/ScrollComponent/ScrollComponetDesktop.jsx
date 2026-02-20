@@ -78,7 +78,8 @@ export const ScrollComponentDesktop = () => {
                   {/* Text Content */}
                   <Box sx={{ flex: 1 }}>
                     <Typography
-                      variant="h6"
+                      component="div"
+                      variant="body1"
                       sx={{
                         fontFamily: "Inter",
                         fontSize: "1.125rem",

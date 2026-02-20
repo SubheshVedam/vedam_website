@@ -80,7 +80,8 @@ export const EdgeAtVedam = () => {
             }}
           >
             <Typography
-              variant="h6"
+              component="h4"
+              variant="h4"
               sx={{
                 fontFamily: "Inter, sans-serif",
                 fontSize: "clamp(1.125rem, 2.5vw, 1.375rem)",

@@ -265,11 +265,13 @@ export const FeeStructure = () => {
             .map((item) => (
               <Typography
                 key={item.year1}
-                variant="h6"
+                component="div"
+                variant="body1"
                 sx={{
                   color: "white",
                   fontFamily: "Inter",
                   fontSize: "24px",
+                  fontWeight: 600,
                 }}
               >
                 {item.year1}
@@ -282,11 +284,13 @@ export const FeeStructure = () => {
             .map((item) => (
               <Typography
                 key={item.total}
-                variant="h6"
+                component="div"
+                variant="body1"
                 sx={{
                   color: "white",
                   fontFamily: "Inter",
                   fontSize: "24px",
+                  fontWeight: 600,
                 }}
               >
                 ₹ {item.total}
@@ -986,11 +990,13 @@ export const FeeStructure = () => {
             .map((item) => (
               <Typography
                 key={item.year1}
-                variant="h6"
+                component="div"
+                variant="body1"
                 sx={{
                   color: "white",
                   fontFamily: "Inter",
                   fontSize: "18px",
+                  fontWeight: 600,
                 }}
               >
                 {item.year1}
@@ -1004,11 +1010,13 @@ export const FeeStructure = () => {
             .map((item) => (
               <Typography
                 key={item.total}
-                variant="h6"
+                component="div"
+                variant="body1"
                 sx={{
                   color: "white",
                   fontFamily: "Inter",
                   fontSize: "18px",
+                  fontWeight: 600,
                 }}
               >
                 ₹ {item.total}
