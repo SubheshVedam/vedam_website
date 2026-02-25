@@ -5,7 +5,7 @@ import WhyVedam from "@/components/WhyVedam";
 import { homeScreenData } from "@/constants/data";
 import { Box, useMediaQuery, useTheme } from "@mui/material";
 import Image from "next/image";
-import React, { Fragment, useEffect, useRef, useState } from "react";
+import React, { Fragment, useState } from "react";
 
 const SectionSkeleton = ({ height = 320 }) => (
   <Box
@@ -25,37 +25,6 @@ const SectionSkeleton = ({ height = 320 }) => (
     }}
   />
 );
-
-const LazySection = ({ children, height = 320, rootMargin = "300px 0px" }) => {
-  const wrapperRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    if (isVisible || !wrapperRef.current) {
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries.some((entry) => entry.isIntersecting)) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin }
-    );
-
-    observer.observe(wrapperRef.current);
-
-    return () => observer.disconnect();
-  }, [isVisible, rootMargin]);
-
-  return (
-    <Box ref={wrapperRef} sx={{ minHeight: isVisible ? "auto" : height }}>
-      {isVisible ? children : <SectionSkeleton height={height} />}
-    </Box>
-  );
-};
 
 const InCollaborationWith = dynamic(
   () => import("@/components/home/InCollaborationWith").then((m) => m.InCollaborationWith),
@@ -108,6 +77,8 @@ const Home = () => {
   const theme = useTheme();
   const isLarge = useMediaQuery(theme.breakpoints.up("xl"));
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const [showIframe1, setShowIframe1] = useState(false);
+  const [videoUrl1, setVideoUrl1] = useState("");
   const [showIframe2, setShowIframe2] = useState(false);
   const [videoUrl2, setVideoUrl2] = useState("");
 
@@ -225,20 +196,12 @@ const Home = () => {
       id: "students-at-vedam",
       subtitle: isMobile ? "Meet the Students at Vedam" : "",
       // subtitle: "",
-      render: () => (
-        <LazySection height={360}>
-          <StudentsAtVedam />
-        </LazySection>
-      ),
+      render: () => <StudentsAtVedam />,
     },
     {
       id: "vedam-vs",
       subtitle: homeScreenData.vedamVs.subtitle,
-      render: () => (
-        <LazySection height={320}>
-          <VedamVs />
-        </LazySection>
-      ),
+      render: () => <VedamVs />,
       titleChildContainer: {
         marginBottom: { xs: "1rem", md: "2.5rem" },
       },
@@ -249,102 +212,66 @@ const Home = () => {
       title: homeScreenData.techTeam.title,
       subtitle: "Hear from our Co-Founder",
       render: () =>
-      (
-        <LazySection height={360}>
-          {renderVideoCard(
-            showIframe2,
-            videoUrl2,
-            () => {
-              setVideoUrl2(
-                "https://www.youtube.com/embed/eePpgq00LLw?autoplay=1&si=0YJjFMtSU96LI9Kn"
-              );
-              setShowIframe2(true);
-            },
-            "/img/hear_from_founder_thumbnail.jpeg",
-            "Video thumbnail2",
-            {
-              borderRadius: { xs: "16px", md: "22px" },
-              boxShadow: "0px 18px 38px rgba(0,0,0,0.12)",
-            }
-          )}
-        </LazySection>
-      ),
+        renderVideoCard(
+          showIframe2,
+          videoUrl2,
+          () => {
+            setVideoUrl2(
+              "https://www.youtube.com/embed/eePpgq00LLw?autoplay=1&si=0YJjFMtSU96LI9Kn"
+            );
+            setShowIframe2(true);
+          },
+          "/img/hear_from_founder_thumbnail.jpeg",
+          "Video thumbnail2",
+          {
+            borderRadius: { xs: "16px", md: "22px" },
+            boxShadow: "0px 18px 38px rgba(0,0,0,0.12)",
+          }
+        ),
     },
     {
       id: "image-grid",
       title: homeScreenData.fromEducationToEntrance.title,
       subtitle: homeScreenData.fromEducationToEntrance.subtitle,
-      render: () => (
-        <LazySection height={360}>
-          <ImageGrid />
-        </LazySection>
-      ),
+      render: () => <ImageGrid />,
       // linearGradientSubtitle: "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)",
     },
     {
       id: "instructors",
       title: homeScreenData.instructor.title,
       subtitle: homeScreenData.instructor.subtitle,
-      render: () => (
-        <LazySection height={300}>
-          <Instructors />
-        </LazySection>
-      ),
+      render: () => <Instructors />,
     },
     {
       id: "learn-from",
       title: homeScreenData.learnFrom.title,
       subtitle: homeScreenData.learnFrom.subtitle,
-      render: () => (
-        <LazySection height={320}>
-          <LearnFrom />
-        </LazySection>
-      ),
+      render: () => <LearnFrom />,
     },
     {
       id: "speaker",
       subtitle: "Mentorship & Guidance from the Best in the Industry",
-      render: () => (
-        <LazySection height={280}>
-          <Speaker />
-        </LazySection>
-      ),
+      render: () => <Speaker />,
     },
     {
       id: "what-people",
       subtitle: homeScreenData.whatPeople.subtitle,
-      render: () => (
-        <LazySection height={320}>
-          <WhatPeople />
-        </LazySection>
-      ),
+      render: () => <WhatPeople />,
     },
     {
       id: "recognition-awards",
       subtitle: homeScreenData.Recognitionawards.subtitle,
-      render: () => (
-        <LazySection height={260}>
-          <RecognitionAwards />
-        </LazySection>
-      ),
+      render: () => <RecognitionAwards />,
     },
     {
       id: "investors",
       subtitle: homeScreenData.investorWhoTrustUs.subtitle,
-      render: () => (
-        <LazySection height={260}>
-          <InvestorWhoTrustUs />
-        </LazySection>
-      ),
+      render: () => <InvestorWhoTrustUs />,
     },
     {
       id: "news",
       subtitle: homeScreenData.intheHeadlines.subtitle,
-      render: () => (
-        <LazySection height={300}>
-          <NewsSection />
-        </LazySection>
-      ),
+      render: () => <NewsSection />,
     },
   ];
 
@@ -363,7 +290,6 @@ const Home = () => {
           title={homeScreenData.hero.title}
           subtitle={homeScreenData.hero.subtitle}
           videoUrl={homeScreenData.hero.background_video}
-          videoPosterUrl="/img/VideothumbnaillifeVST.jpg"
         />
         <SectionStack
           widthContainerProps={{
@@ -375,9 +301,7 @@ const Home = () => {
           sections={heroSections}
         />
       </Box>
-      <LazySection height={420} rootMargin="450px 0px">
-        <AIFirstCurriculum />
-      </LazySection>
+      <AIFirstCurriculum />
       <Box
         sx={{
           display: "flex",
