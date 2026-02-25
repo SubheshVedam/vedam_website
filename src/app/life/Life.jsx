@@ -24,6 +24,7 @@ const Life = () => {
         title={lifeAtVedam.hero.title}
         titleLinearGradient="linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)"
         videoUrl={lifeAtVedam.hero.background_video}
+        videoPosterUrl="/img/life_vedam_bg_NN.jpeg"
         subtitle={lifeAtVedam.hero.subtitle}
         showApplyNowButton={false}
       // isImg={true}

@@ -70,6 +70,7 @@ const Admission = () => {
         title={admissionScreenData.hero.title}
         subtitle={admissionScreenData.hero.subtitle}
         videoUrl={homeScreenData.hero.background_video}
+        videoPosterUrl="/img/thumbnailADYPU.webp"
       />
       <SectionStack
         cardDefaults={{}}

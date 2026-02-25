@@ -119,12 +119,14 @@ export const InCollaborationWith = () => {
               overflow: "hidden",
             }}
           >
-            <img
+            <Image
               src="/img/thumbnailADYPU.webp"
-              width={"100%"}
-              height="100%"
-              style={{ objectFit: "cover", width: "100%", height: "100%", aspectRatio: "2.07/1" }}
               alt="Collaboration Thumbnail"
+              fill
+              sizes="(max-width: 900px) 100vw, 55vw"
+              style={{
+                objectFit: "cover",
+              }}
             />
             <Box
               sx={{
