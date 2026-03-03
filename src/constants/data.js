@@ -1471,14 +1471,4 @@ export const teamVedamScreenData = [
       },
     ],
   },
-  {
-    subtitle: "Note from founder",
-    description:
-      "India Produces 1.5 Million Engineers Every Year. But only Top 1% secure high paying tech roles. Why? Because traditional colleges focus on theory, not real-world skills.We have seen brilliant, hardworking students trapped in this outdated system - graduating with just a degree, lacking hands-on coding expertise, and struggling in endless placement cycles. This is why we built Vedam School of Technology.Vedam is a 4-year, on-campus Computer Science & AI program designed to create the next generation of global tech leaders. Here, students don`t just study tech-they build it from Day 1.",
-  },
-  {
-    subtitle: "About Us",
-    description:
-      "Vedam School of Technology is an initiative by Elevate Education Technology Private Limited. Elevate is a Series C funded higher education company that has already skilled more than 10,000 students in last 7 years through its philosophy of education for the masses",
-  },
 ];
