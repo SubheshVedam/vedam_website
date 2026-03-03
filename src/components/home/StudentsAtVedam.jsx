@@ -60,6 +60,8 @@ export const StudentsAtVedam = () => {
                             sx={{
                                 display: { xs: "block", md: "none" },
                                 width: "100%",
+                                borderRadius: "16px",
+                                overflow: "hidden",
                             }}
                         >
                             <Image
