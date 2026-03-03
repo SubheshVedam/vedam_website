@@ -221,7 +221,7 @@ const Home = () => {
             );
             setShowIframe2(true);
           },
-          "/img/hear_from_founder_thumbnail.jpeg",
+          "/img/hear_from_founder_thumbnail.webp",
           "Video thumbnail2",
           {
             borderRadius: { xs: "16px", md: "22px" },

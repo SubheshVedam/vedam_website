@@ -147,11 +147,11 @@ export const FinancingPartners = () => {
 
     const propelldData = [
         { label: "Loan Type", value: "Normal (Unsecured)" },
-        { label: "Interest Rate (%)", value: "13.5%-14%" },
-        { label: "Max Loan Amount", value: "Upto 100% of total fees" },
+        { label: "Interest Rate (%)", value: "13%- 15%" },
+        { label: "Max Loan Amount", value: "Upto 100% of tuition fees" },
         {
-            label: "Margin (College fee portion to be borne by the applicant)",
-            value: "Nil",
+            label: "Moratorium period (only interests to be paid during these period)",
+            value: "4 years",
         },
         { label: "Tenure", value: "10 years" },
         { label: "Processing Charges", value: "1% (incl GST)" },
@@ -160,8 +160,8 @@ export const FinancingPartners = () => {
 
     const jodoData = [
         { label: "Loan Type", value: "Normal (Unsecured)" },
-        { label: "Interest Rate (%)", value: "0%" },
-        { label: "Max Loan Amount", value: "Upto 100% of total fees" },
+        { label: "Interest Rate % (Monthly)", value: "0.66%" },
+        { label: "Max Loan Amount", value: "Upto 100% of total Course fees" },
         { label: "Tenure", value: "11 months" },
         { label: "Processing Charges", value: "1% (incl GST)" },
         { label: "Downpayment", value: "1st EMI" },
