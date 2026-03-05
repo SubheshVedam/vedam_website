@@ -111,35 +111,70 @@ const SingleCountText = ({ count, text, isHref }) => {
 };
 
 export const FeeStructure = () => {
-  const createTableRows = () => {
-    const data = homeScreenData.FeeStructure.leftSideYearTable.filter(
-      (row) => row.id !== "8"
+  const semesterRows = homeScreenData.FeeStructure.leftSideYearTable
+    .filter((row) => row.semester)
+    .sort((a, b) => Number(a.id) - Number(b.id));
+
+  const totalCourseRow = homeScreenData.FeeStructure.leftSideYearTable.find(
+    (row) => row.id === "8"
+  );
+
+  const parseAmount = (value) =>
+    Number(String(value ?? "0").replace(/[^0-9.-]/g, "")) || 0;
+
+  const formatAmount = (value) => value.toLocaleString("en-IN");
+
+  const seatBlockFee = 50000;
+  const refundableSecurityDeposit = 30000;
+  const recurringUpskillingFee =
+    parseAmount(semesterRows[1]?.amount1) ||
+    Math.max(
+      parseAmount(semesterRows[0]?.amount1) -
+        seatBlockFee -
+        refundableSecurityDeposit,
+      0
     );
 
-    const yearGroups = {
-      "Year 1": [],
-      "Year 2": [],
-      "Year 3": [],
-      "Year 4": [],
-    };
+  const subtotalValues = semesterRows.map((row) => parseAmount(row.amount1));
+  const tuitionValues = semesterRows.map((row) => parseAmount(row.amount2));
+  const payableValues = semesterRows.map((row) => parseAmount(row.total));
+  const semesterHeaders = semesterRows.map((_, index) => `Sem ${index + 1}`);
 
-    data.forEach((row) => {
-      if (row.year1) {
-        yearGroups[row.year1].push(row);
-      } else {
-        const lastYear = Object.keys(yearGroups)
-          .reverse()
-          .find((year) => yearGroups[year].length > 0);
-        if (lastYear) {
-          yearGroups[lastYear].push(row);
-        }
-      }
-    });
+  const subtotalTotal =
+    parseAmount(totalCourseRow?.amount1) ||
+    subtotalValues.reduce((sum, value) => sum + value, 0);
+  const tuitionTotal =
+    parseAmount(totalCourseRow?.amount2) ||
+    tuitionValues.reduce((sum, value) => sum + value, 0);
+  const payableTotal =
+    parseAmount(totalCourseRow?.total) ||
+    payableValues.reduce((sum, value) => sum + value, 0);
 
-    return yearGroups;
-  };
-
-  const yearGroups = createTableRows();
+  const courseFeeRows = [
+    {
+      label: "Seat Block Fee",
+      values: semesterRows.map((_, index) => (index === 0 ? seatBlockFee : null)),
+      total: seatBlockFee,
+    },
+    {
+      label: "Refundable Security Deposit",
+      values: semesterRows.map((_, index) =>
+        index === 0 ? refundableSecurityDeposit : null
+      ),
+      total: refundableSecurityDeposit,
+    },
+    {
+      label: "Upskilling Fee",
+      values: semesterRows.map(() => recurringUpskillingFee),
+      total: recurringUpskillingFee * semesterRows.length,
+    },
+    {
+      label: "Sub Total",
+      values: subtotalValues,
+      total: subtotalTotal,
+      emphasize: true,
+    },
+  ];
 
   const div1 = (
     <Box
@@ -168,9 +203,7 @@ export const FeeStructure = () => {
         >
           <Table
             sx={{
-              minWidth: "100%",
-              borderRadius: "21px",
-              padding: "10px",
+              minWidth: "1150px",
               borderCollapse: "separate",
               borderSpacing: 0,
               overflow: "hidden",
@@ -178,124 +211,180 @@ export const FeeStructure = () => {
             }}
           >
             <TableHead>
-              <TableRow sx={{ background: "rgba(146, 62, 218, 1)" }}>
-                <SingleTableCell text="Year" isHead isFirstColumn isFirstRow />
-                <SingleTableCell text="Semester" isHead isFirstRow />
-                <SingleTableCell text="Tuition Fees" isHead isFirstRow />
-                <SingleTableCell text="Upskilling Fees" isHead isFirstRow />
-                <SingleTableCell text="Total" isHead isLastColumn isFirstRow />
+              <TableRow>
+                <TableCell
+                  sx={{
+                    border: "1px solid rgba(30, 30, 30, 0.4)",
+                    backgroundColor: "#DDDDDD",
+                    minWidth: "280px",
+                    padding: "14px 16px",
+                  }}
+                />
+                {semesterHeaders.map((header) => (
+                  <TableCell
+                    key={header}
+                    align="center"
+                    sx={{
+                      border: "1px solid rgba(30, 30, 30, 0.4)",
+                      backgroundColor: "#DDDDDD",
+                      minWidth: "105px",
+                      padding: "14px 12px",
+                      fontWeight: 600,
+                      color: "#1E1E1E",
+                    }}
+                  >
+                    {header}
+                  </TableCell>
+                ))}
+                <TableCell
+                  align="center"
+                  sx={{
+                    border: "1px solid rgba(30, 30, 30, 0.4)",
+                    backgroundColor: "#DDDDDD",
+                    minWidth: "145px",
+                    padding: "14px 12px",
+                    fontWeight: 700,
+                    color: "#1E1E1E",
+                  }}
+                >
+                  Total
+                </TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {Object.entries(yearGroups).map(([year, rows], yearIndex) =>
-                rows.map((row, rowIndex) => {
-                  const isLastRow =
-                    year === "Year 4" && rowIndex === rows.length - 1;
-                  const isFirstRowOfYear = rowIndex === 0;
-                  const isVeryFirstYear = year === "Year 1";
-                  const isVeryLastYear = year === "Year 4";
-
-                  return (
-                    <TableRow key={row.id}>
-                      {isFirstRowOfYear && (
-                        <TableCell
-                          align="center"
-                          rowSpan={rows.length}
-                          sx={{
-                            whiteSpace: "nowrap",
-                            border: "1px solid rgba(186, 107, 255, 0.3)",
-                            paddingY: "16px",
-                            fontWeight: "400",
-                            color: "rgba(30, 30, 30, 1)",
-                            verticalAlign: "middle",
-                            borderBottomLeftRadius: isVeryLastYear
-                              ? "12px"
-                              : "0px",
-                            borderTopRightRadius: "0px",
-                            borderBottomRightRadius: "0px",
-                          }}
-                        >
-                          {year}
-                        </TableCell>
-                      )}
-                      <SingleTableCell
-                        isFirst={true}
-                        text={row.semester}
-                        isLastRow={isLastRow}
-                      />
-                      <SingleTableCell
-                        text={row.amount1}
-                        isLastRow={isLastRow}
-                      />
-                      <SingleTableCell
-                        text={row.amount2}
-                        isLastRow={isLastRow}
-                      />
-                      <SingleTableCell
-                        text={"₹" + row.total}
-                        isFirst={true}
-                        isLastColumn
-                        isLastRow={isLastRow}
-                      />
-                    </TableRow>
-                  );
-                })
-              )}
+              {courseFeeRows.map((row) => (
+                <TableRow key={row.label}>
+                  <TableCell
+                    sx={{
+                      border: "1px solid rgba(30, 30, 30, 0.4)",
+                      backgroundColor: row.emphasize ? "#EDEDED" : "#F8F8F8",
+                      padding: "14px 16px",
+                      fontWeight: row.emphasize ? 700 : 500,
+                      color: "#1E1E1E",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    {row.label}
+                  </TableCell>
+                  {row.values.map((value, index) => (
+                    <TableCell
+                      key={`${row.label}-semester-${index}`}
+                      align="center"
+                      sx={{
+                        border: "1px solid rgba(30, 30, 30, 0.4)",
+                        backgroundColor: row.emphasize ? "#EDEDED" : "#F8F8F8",
+                        padding: "14px 12px",
+                        fontWeight: row.emphasize ? 700 : 500,
+                        color: "#1E1E1E",
+                      }}
+                    >
+                      {value === null ? "-" : formatAmount(value)}
+                    </TableCell>
+                  ))}
+                  <TableCell
+                    align="center"
+                    sx={{
+                      border: "1px solid rgba(30, 30, 30, 0.4)",
+                      backgroundColor: row.emphasize ? "#EDEDED" : "#F8F8F8",
+                      padding: "14px 12px",
+                      fontWeight: 700,
+                      color: "#1E1E1E",
+                    }}
+                  >
+                    {formatAmount(row.total)}
+                  </TableCell>
+                </TableRow>
+              ))}
+              <TableRow>
+                <TableCell colSpan={semesterHeaders.length + 2} sx={{ border: "none", height: "12px", backgroundColor: "#fff", padding: 0 }} />
+              </TableRow>
+              <TableRow>
+                <TableCell
+                  sx={{
+                    border: "1px solid rgba(30, 30, 30, 0.4)",
+                    backgroundColor: "#F8F8F8",
+                    padding: "14px 16px",
+                    fontWeight: 600,
+                    color: "#1E1E1E",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  Tuition Fee
+                </TableCell>
+                {tuitionValues.map((value, index) => (
+                  <TableCell
+                    key={`tuition-${index}`}
+                    align="center"
+                    sx={{
+                      border: "1px solid rgba(30, 30, 30, 0.4)",
+                      backgroundColor: "#F8F8F8",
+                      padding: "14px 12px",
+                      fontWeight: 500,
+                      color: "#1E1E1E",
+                    }}
+                  >
+                    {formatAmount(value)}
+                  </TableCell>
+                ))}
+                <TableCell
+                  align="center"
+                  sx={{
+                    border: "1px solid rgba(30, 30, 30, 0.4)",
+                    backgroundColor: "#F8F8F8",
+                    padding: "14px 12px",
+                    fontWeight: 700,
+                    color: "#1E1E1E",
+                  }}
+                >
+                  {formatAmount(tuitionTotal)}
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell colSpan={semesterHeaders.length + 2} sx={{ border: "none", height: "12px", backgroundColor: "#fff", padding: 0 }} />
+              </TableRow>
+              <TableRow>
+                <TableCell
+                  sx={{
+                    border: "1px solid rgba(30, 30, 30, 0.4)",
+                    backgroundColor: "#EDEDED",
+                    padding: "14px 16px",
+                    fontWeight: 700,
+                    color: "#1E1E1E",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  Payable Course Fee
+                </TableCell>
+                {payableValues.map((value, index) => (
+                  <TableCell
+                    key={`payable-${index}`}
+                    align="center"
+                    sx={{
+                      border: "1px solid rgba(30, 30, 30, 0.4)",
+                      backgroundColor: "#EDEDED",
+                      padding: "14px 12px",
+                      fontWeight: 700,
+                      color: "#1E1E1E",
+                    }}
+                  >
+                    {formatAmount(value)}
+                  </TableCell>
+                ))}
+                <TableCell
+                  align="center"
+                  sx={{
+                    border: "1px solid rgba(30, 30, 30, 0.4)",
+                    backgroundColor: "#EDEDED",
+                    padding: "14px 12px",
+                    fontWeight: 700,
+                    color: "#1E1E1E",
+                  }}
+                >
+                  {formatAmount(payableTotal)}
+                </TableCell>
+              </TableRow>
             </TableBody>
           </Table>
-        </Box>
-      </Box>
-
-      <Box
-        sx={{
-          width: "100%",
-          height: "60px",
-          marginBottom: "20px",
-          borderRadius: "12px",
-          background: "linear-gradient(90deg, #FF7829 0%, #7B2CBF 100%)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          paddingX: "40px",
-        }}
-      >
-        <Box>
-          {homeScreenData.FeeStructure.leftSideYearTable
-            .filter((item) => item.id === "8")
-            .map((item) => (
-              <Typography
-                key={item.year1}
-                component="div"
-                variant="body1"
-                sx={{
-                  color: "white",
-                  fontFamily: "Inter",
-                  fontSize: "24px",
-                  fontWeight: 600,
-                }}
-              >
-                {item.year1}
-              </Typography>
-            ))}
-        </Box>
-        <Box>
-          {homeScreenData.FeeStructure.leftSideYearTable
-            .filter((item) => item.id === "8")
-            .map((item) => (
-              <Typography
-                key={item.total}
-                component="div"
-                variant="body1"
-                sx={{
-                  color: "white",
-                  fontFamily: "Inter",
-                  fontSize: "24px",
-                  fontWeight: 600,
-                }}
-              >
-                ₹ {item.total}
-              </Typography>
-            ))}
         </Box>
       </Box>
 
