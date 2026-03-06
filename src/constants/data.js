@@ -1497,7 +1497,7 @@ export const teamVedamScreenData = [
       {
         id: 0,
         name: "Piyush Nangru",
-        imageUrl: "/img/teamVedam/pitush_nangru.webp",
+        imageUrl: "/img/about/piyush-nangru-cofounder.webp",
         designation: "Co-founder",
         description: "",
         attributes: [
