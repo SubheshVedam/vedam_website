@@ -541,11 +541,13 @@ const TeamVedam = () => {
               <Box
                 sx={{
                   order: { xs: 1, md: 2 },
-                  flex: { xs: "0 0 auto", md: "0 0 36%" },
+                  flex: { xs: "0 0 auto", md: "0 0 auto" },
+                  width: { xs: "100%", md: "auto" },
                   display: "flex",
                   flexDirection: "column",
                   alignItems: { xs: "flex-start", md: "flex-end" },
                   gap: 1,
+                  minWidth: 0,
                 }}
               >
                 {/* Mobile: pre-composed card image (orange bg + decoration + name pill all baked in) */}
@@ -568,10 +570,11 @@ const TeamVedam = () => {
                   alt={item.name}
                   sx={{
                     display: { xs: "none", md: "block" },
-                    width: "100%",
-                    maxWidth: 320,
+                    width: 300,
+                    maxWidth: "40vw",
                     height: "auto",
                     borderRadius: "16px",
+                    flexShrink: 0,
                   }}
                 />
               </Box>
@@ -580,7 +583,8 @@ const TeamVedam = () => {
               <Box
                 sx={{
                   order: { xs: 2, md: 1 },
-                  flex: { xs: "1 1 auto", md: "1 1 56%" },
+                  flex: 1,
+                  minWidth: 0,
                   display: "flex",
                   flexDirection: "column",
                   gap: { xs: 1, md: 1.5 },
