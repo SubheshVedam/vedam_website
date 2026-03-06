@@ -217,7 +217,7 @@ const Home = () => {
           videoUrl2,
           () => {
             setVideoUrl2(
-              "https://www.youtube.com/embed/eePpgq00LLw?autoplay=1&si=0YJjFMtSU96LI9Kn"
+              "https://www.youtube.com/embed/kxkRisXZg8Y?autoplay=1&si=0YJjFMtSU96LI9Kn"
             );
             setShowIframe2(true);
           },
