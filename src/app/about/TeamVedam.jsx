@@ -327,6 +327,8 @@ const TeamVedam = () => {
             width: 596,
             height: 596,
             pointerEvents: "none",
+            transform: "scale(0.9)",
+            transformOrigin: "top right",
           }}
         >
           {/* Vector background: fills the container */}
