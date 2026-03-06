@@ -7,7 +7,6 @@
  */
 import React from "react";
 import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
-import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import EmojiEventsOutlinedIcon from "@mui/icons-material/EmojiEventsOutlined";
 import TrendingUpOutlinedIcon from "@mui/icons-material/TrendingUpOutlined";
 import SendOutlinedIcon from "@mui/icons-material/SendOutlined";
@@ -45,6 +44,12 @@ const figmaAssets = {
   checkmark: "/img/about/figma/checkmark.png",
   techMindsPhoto: "/img/about/figma/tech-minds-photo.png",
   cofoundenVector: "/img/about/figma/cofounder-vector.svg",
+  pillIconTechLeader: "/img/about/figma/pill-icon-vector.svg",
+  pillIconInnerTechLeader: "/img/about/figma/pill-apple-intelligence.png",
+  pillBgScalable: "/img/about/figma/pill-bg-scalable.svg",
+  pillBgEntrepreneur: "/img/about/figma/pill-bg-entrepreneur.svg",
+  pillIconScalable: "/img/about/figma/pill-icon-scalable.png",
+  pillIconEntrepreneur: "/img/about/figma/pill-icon-entrepreneur.png",
 };
 
 // Value prop icons for "Our Source <Code>"
@@ -85,55 +90,27 @@ const TeamVedam = () => {
             width: { xs: "100%", lg: "55%" },
           }}
         >
-          {/* Mobile: gradient title */}
-          <Box sx={{ display: { xs: "flex", lg: "none" }, alignItems: "flex-start" }}>
+          {/* Unified gradient title — matches Co-founder heading style */}
+          <Box sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
             <Typography
-              component="span"
+              component="h2"
               sx={{
-                fontFamily: "Outfit, sans-serif",
-                fontWeight: 700,
-                fontSize: "1.5rem",
-                background: "linear-gradient(90deg, #F97D03 0%, #8A18FF 45.167%)",
+                fontFamily: "var(--font-outfit), sans-serif",
+                fontWeight: 600,
+                fontSize: { xs: "1.5rem", md: "2rem" },
+                background: "linear-gradient(90deg, #FB7F05 0%, #6C10BC 42.108%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
-                letterSpacing: "-0.48px",
-                lineHeight: 1.2,
+                letterSpacing: { xs: "-0.48px", md: "-0.72px" },
+                lineHeight: 1,
               }}
             >
               Our Source &lt;Code&gt;
             </Typography>
           </Box>
-
-          {/* Desktop: non-gradient title */}
-          <Box sx={{ display: { xs: "none", lg: "flex" }, alignItems: "flex-start", gap: 0.75 }}>
-            <Typography
-              component="span"
-              sx={{
-                fontFamily: "Inter",
-                fontWeight: 700,
-                fontSize: { md: "2.25rem", lg: "2.5rem" },
-                color: "#2D1B4E",
-                lineHeight: 1.2,
-              }}
-            >
-              Our Source{" "}
-              <Box
-                component="span"
-                sx={{ color: colors.purpleLight, fontWeight: 700 }}
-              >
-                &lt;Code&gt;
-              </Box>
-            </Typography>
-            <Typography
-              component="span"
-              sx={{ fontSize: "0.65rem", color: "#666", alignSelf: "flex-start", mt: 0.5 }}
-            >
-              ®
-            </Typography>
-          </Box>
           <Typography
             sx={{
-              fontFamily: "Outfit, Inter, sans-serif",
+              fontFamily: "var(--font-outfit), sans-serif",
               fontWeight: 600,
               fontSize: { xs: "0.875rem", md: "1.125rem" },
               color: "#1F1F1F",
@@ -143,27 +120,23 @@ const TeamVedam = () => {
             {aboutSourceCodeData.problemStatement}
           </Typography>
 
-          {/* Mobile-only hero image — inline between headline and body */}
+          {/* Mobile-only hero image — natural aspect ratio */}
           <Box
             component="img"
             src={aboutSourceCodeData.heroImage}
             alt=""
             sx={{
-              display: { xs: "block", lg: "none" },
-              width: { xs: 230, sm: 280, md: 320 },
-              height: { xs: 230, sm: 280, md: 320 },
-              mx: "auto",
-              my: 0.5,
-              objectFit: "cover",
-              objectPosition: "center center",
-              borderRadius: "50%",
-              clipPath: "circle(50% at 50% 50%)",
+              display: { xs: "block", md: "none" },
+              width: "100%",
+              height: "auto",
+              borderTopRightRadius: "22px",
+              borderBottomLeftRadius: "22px",
             }}
           />
 
           <Typography
             sx={{
-              fontFamily: "Outfit, Inter, sans-serif",
+              fontFamily: "var(--font-outfit), sans-serif",
               fontWeight: 600,
               fontSize: { xs: "0.8125rem", md: "1.0625rem" },
               color: "#1F1F1F",
@@ -174,7 +147,7 @@ const TeamVedam = () => {
           </Typography>
           <Typography
             sx={{
-              fontFamily: "Outfit, Inter, sans-serif",
+              fontFamily: "var(--font-outfit), sans-serif",
               fontSize: { xs: "0.75rem", md: "1rem" },
               color: "#444",
               lineHeight: 1.65,
@@ -184,7 +157,7 @@ const TeamVedam = () => {
           </Typography>
           <Typography
             sx={{
-              fontFamily: "Outfit, Inter, sans-serif",
+              fontFamily: "var(--font-outfit), sans-serif",
               fontSize: { xs: "0.75rem", md: "1rem" },
               color: "#444",
               lineHeight: 1.65,
@@ -218,7 +191,7 @@ const TeamVedam = () => {
                 />
                 <Typography
                   sx={{
-                    fontFamily: "Outfit, sans-serif",
+                    fontFamily: "var(--font-outfit), sans-serif",
                     fontSize: { xs: "0.75rem", md: 16 },
                     fontWeight: 400,
                     color: colors.text,
@@ -255,7 +228,7 @@ const TeamVedam = () => {
                   boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
                 }}
               >
-                <Typography sx={{ fontFamily: "Outfit, sans-serif", fontSize: 10, color: "#1E1E1E", textAlign: "center", lineHeight: 1.2 }}>
+                <Typography sx={{ fontFamily: "var(--font-outfit), sans-serif", fontSize: 10, color: "#1E1E1E", textAlign: "center", lineHeight: 1.2 }}>
                   Merit<br />Driven
                 </Typography>
               </Box>
@@ -285,7 +258,7 @@ const TeamVedam = () => {
                 alt=""
                 sx={{ position: "absolute", top: -8, left: "24px", width: 27, height: 42, pointerEvents: "none" }}
               />
-              <Typography sx={{ fontFamily: "Outfit, sans-serif", fontSize: 10, color: "#1E1E1E", textAlign: "center", lineHeight: 1.2 }}>
+              <Typography sx={{ fontFamily: "var(--font-outfit), sans-serif", fontSize: 10, color: "#1E1E1E", textAlign: "center", lineHeight: 1.2 }}>
                 Outcome<br />Focused
               </Typography>
             </Box>
@@ -303,7 +276,7 @@ const TeamVedam = () => {
                   boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
                 }}
               >
-                <Typography sx={{ fontFamily: "Outfit, sans-serif", fontSize: 10, color: "#1E1E1E", textAlign: "center", lineHeight: 1.2 }}>
+                <Typography sx={{ fontFamily: "var(--font-outfit), sans-serif", fontSize: 10, color: "#1E1E1E", textAlign: "center", lineHeight: 1.2 }}>
                   Industry<br />Relevant
                 </Typography>
               </Box>
@@ -400,7 +373,7 @@ const TeamVedam = () => {
             />
             <Typography
               sx={{
-                fontFamily: "Outfit, Inter, sans-serif",
+                fontFamily: "var(--font-outfit), sans-serif",
                 fontSize: 16,
                 color: "#1E1E1E",
                 textAlign: "center",
@@ -412,7 +385,7 @@ const TeamVedam = () => {
             </Typography>
           </Box>
 
-          {/* Merit Driven card */}
+          {/* Merit Driven card — Figma 1304:980 */}
           <Box
             sx={{
               position: "absolute",
@@ -424,27 +397,29 @@ const TeamVedam = () => {
               overflow: "hidden",
               backgroundColor: "#fff",
               borderLeft: "6px solid #F97D03",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
               boxSizing: "border-box",
               boxShadow: "0 2px 12px rgba(0,0,0,0.08)",
             }}
           >
             <Typography
               sx={{
-                fontFamily: "Outfit, Inter, sans-serif",
+                position: "absolute",
+                top: 50,
+                left: "50%",
+                transform: "translateX(-50%)",
+                fontFamily: "var(--font-outfit), sans-serif",
                 fontSize: 16,
                 color: "#1E1E1E",
                 textAlign: "center",
-                lineHeight: 1.1,
+                lineHeight: "normal",
+                whiteSpace: "nowrap",
               }}
             >
               Merit<br />Driven
             </Typography>
           </Box>
 
-          {/* Merit badge floating above the card */}
+          {/* Merit badge — centered horizontally over the card */}
           <Box
             component="img"
             src={figmaAssets.cardMeritBadge}
@@ -488,7 +463,7 @@ const TeamVedam = () => {
             />
             <Typography
               sx={{
-                fontFamily: "Outfit, Inter, sans-serif",
+                fontFamily: "var(--font-outfit), sans-serif",
                 fontSize: 16,
                 color: "#1E1E1E",
                 textAlign: "center",
@@ -523,7 +498,7 @@ const TeamVedam = () => {
         <Box sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start", mb: 2 }}>
           <Typography
             sx={{
-              fontFamily: "Outfit, sans-serif",
+              fontFamily: "var(--font-outfit), sans-serif",
               fontWeight: 400,
               fontSize: { xs: "0.75rem", md: "1rem" },
               background: "linear-gradient(90deg, #FB7F05 0%, #6C10BC 42.108%)",
@@ -538,7 +513,7 @@ const TeamVedam = () => {
           <Typography
             component="h2"
             sx={{
-              fontFamily: "Outfit, sans-serif",
+              fontFamily: "var(--font-outfit), sans-serif",
               fontWeight: 600,
               fontSize: { xs: "1.5rem", md: "2rem" },
               background: "linear-gradient(90deg, #FB7F05 0%, #6C10BC 42.108%)",
@@ -613,7 +588,7 @@ const TeamVedam = () => {
               >
                 <Typography
                   sx={{
-                    fontFamily: "Outfit, sans-serif",
+                    fontFamily: "var(--font-outfit), sans-serif",
                     fontWeight: 600,
                     fontSize: { xs: "0.75rem", md: "1rem" },
                     color: "#2B135C",
@@ -624,7 +599,7 @@ const TeamVedam = () => {
                 </Typography>
                 <Typography
                   sx={{
-                    fontFamily: "Outfit, sans-serif",
+                    fontFamily: "var(--font-outfit), sans-serif",
                     fontSize: { xs: "0.75rem", md: "1rem" },
                     color: "#1E1E1E",
                     lineHeight: 1.55,
@@ -637,7 +612,7 @@ const TeamVedam = () => {
                     <Typography
                       key={i}
                       sx={{
-                        fontFamily: "Outfit, sans-serif",
+                        fontFamily: "var(--font-outfit), sans-serif",
                         fontSize: { xs: "0.75rem", md: "1rem" },
                         color: "#1E1E1E",
                         lineHeight: 1.55,
@@ -648,63 +623,105 @@ const TeamVedam = () => {
                   ))}
                 </Box>
 
-                {/* Attribute pills */}
+                {/* Mobile cards — no icon, 84×37, border-left 1px, justify-between (Figma 1304:627) */}
                 <Box
                   sx={{
-                    display: "flex",
-                    flexWrap: "wrap",
-                    gap: { xs: 1.25, md: 1 },
-                    mt: { xs: 0.5, md: 1.5 },
-                    justifyContent: { xs: "space-between", md: "flex-start" },
+                    display: { xs: "flex", md: "none" },
+                    justifyContent: "space-between",
+                    width: "100%",
+                    mt: 0.5,
                   }}
                 >
                   {item.attributes?.map((attr, i) => {
-                    const Icon = attributeIcons[attr.icon];
                     const borderColors = ["#C200DB", "#F97D03", "#8A18FF"];
                     return (
                       <Box
                         key={i}
                         sx={{
-                          display: "inline-flex",
+                          width: 84,
+                          height: 37,
+                          borderRadius: "6px",
+                          bgcolor: "#fff",
+                          borderLeft: `1px solid ${borderColors[i]}`,
+                          boxShadow: "0px 0px 6px 0px rgba(138,24,255,0.27)",
+                          overflow: "hidden",
+                          display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
-                          gap: { xs: 0, md: 0.75 },
-                          px: { xs: 0, md: 1.75 },
-                          py: { xs: 0, md: 0.875 },
-                          width: { xs: 84, md: "auto" },
-                          height: { xs: 37, md: "auto" },
-                          borderRadius: { xs: "6px", md: "999px" },
-                          bgcolor: "#fff",
-                          border: { xs: `1px solid ${borderColors[i]}`, md: "1px solid #EDEDED" },
-                          borderLeft: { xs: `1px solid ${borderColors[i]}`, md: "1px solid #EDEDED" },
-                          boxShadow: "0 0 6px rgba(138,24,255,0.27)",
                         }}
                       >
-                        {Icon && (
-                          <Icon
-                            sx={{
-                              display: { xs: "none", md: "inline-flex" },
-                              fontSize: 20,
-                              color: i === 1 ? colors.orange : colors.purple,
-                            }}
-                          />
-                        )}
                         <Typography
                           sx={{
-                            fontFamily: "Outfit, sans-serif",
-                            fontSize: { xs: "0.625rem", md: "0.8125rem" },
-                            fontWeight: { xs: 400, md: 600 },
+                            fontFamily: "var(--font-outfit), sans-serif",
+                            fontSize: 10,
+                            fontWeight: 400,
                             color: "#000",
                             textAlign: "center",
-                            lineHeight: 1.3,
+                            lineHeight: "normal",
+                            whiteSpace: "pre-line",
                           }}
                         >
-                          {attr.label}
+                          {attr.label.replace(" ", "\n")}
                         </Typography>
                       </Box>
                     );
                   })}
                 </Box>
+
+                {/* Desktop cards — with unique icons, 200×64, border-left 3px (Figma 1304:1029) */}
+                {(() => {
+                  const borderColors = ["#C200DB", "#F97D03", "#8A18FF"];
+                  const cardIcons = [
+                    <Box key="icon-0" sx={{ position: "relative", width: 40, height: 40, flexShrink: 0 }}>
+                      <Box component="img" src={figmaAssets.pillIconTechLeader} alt="" sx={{ position: "absolute", inset: 0, width: "100%", height: "100%" }} />
+                      <Box component="img" src={figmaAssets.pillIconInnerTechLeader} alt="" sx={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: 27, height: 32, objectFit: "contain" }} />
+                    </Box>,
+                    <Box key="icon-1" sx={{ position: "relative", width: 40, height: 40, flexShrink: 0 }}>
+                      <Box component="img" src={figmaAssets.pillBgScalable} alt="" sx={{ position: "absolute", inset: 0, width: "100%", height: "100%" }} />
+                      <Box component="img" src={figmaAssets.pillIconScalable} alt="" sx={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: 22, height: 22, objectFit: "contain" }} />
+                    </Box>,
+                    <Box key="icon-2" sx={{ position: "relative", width: 40, height: 40, flexShrink: 0 }}>
+                      <Box component="img" src={figmaAssets.pillBgEntrepreneur} alt="" sx={{ position: "absolute", inset: 0, width: "100%", height: "100%" }} />
+                      <Box component="img" src={figmaAssets.pillIconEntrepreneur} alt="" sx={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: 22, height: 22, objectFit: "contain" }} />
+                    </Box>,
+                  ];
+                  return (
+                    <Box sx={{ display: { xs: "none", md: "flex" }, gap: "22px", mt: 1.5, alignItems: "center" }}>
+                      {item.attributes?.map((attr, i) => (
+                        <Box
+                          key={i}
+                          sx={{
+                            display: "inline-flex",
+                            alignItems: "center",
+                            gap: "7px",
+                            width: 200,
+                            height: 64,
+                            px: "9px",
+                            borderRadius: "18px",
+                            bgcolor: "#fff",
+                            borderLeft: `3px solid ${borderColors[i]}`,
+                            boxShadow: "0px 0px 15px 0px rgba(116,30,205,0.2)",
+                            overflow: "hidden",
+                          }}
+                        >
+                          {cardIcons[i]}
+                          <Typography
+                            sx={{
+                              fontFamily: "var(--font-outfit), sans-serif",
+                              fontSize: "1rem",
+                              fontWeight: 500,
+                              color: "#000",
+                              lineHeight: 1.3,
+                              whiteSpace: "pre-line",
+                            }}
+                          >
+                            {attr.label.replace(" ", "\n")}
+                          </Typography>
+                        </Box>
+                      ))}
+                    </Box>
+                  );
+                })()}
               </Box>
             </React.Fragment>
           ))}
@@ -741,7 +758,7 @@ const TeamVedam = () => {
         >
           <Typography
             sx={{
-              fontFamily: "Outfit, sans-serif",
+              fontFamily: "var(--font-outfit), sans-serif",
               fontWeight: 500,
               fontSize: { xs: "0.75rem", md: 16 },
               color: "#fff",
@@ -761,7 +778,7 @@ const TeamVedam = () => {
         <Box sx={{ width: "100%" }}>
           <Typography
             sx={{
-              fontFamily: "Outfit, sans-serif",
+              fontFamily: "var(--font-outfit), sans-serif",
               fontSize: { xs: "0.75rem", md: 16 },
               fontWeight: 400,
               background: "linear-gradient(90deg, #FB7F05 0%, #6C10BC 42.108%)",
@@ -776,7 +793,7 @@ const TeamVedam = () => {
           <Typography
             component="h2"
             sx={{
-              fontFamily: "Outfit, sans-serif",
+              fontFamily: "var(--font-outfit), sans-serif",
               fontWeight: 600,
               fontSize: { xs: "1.5rem", md: 36 },
               lineHeight: 1,
@@ -807,25 +824,21 @@ const TeamVedam = () => {
                 maxWidth: "100%",
                 height: { xs: 180, md: "auto" },
                 aspectRatio: { xs: "auto", md: "510 / 305" },
+                width: { xs: "100%", md: "45%" },
+                maxWidth: { md: 510 },
+                height: { xs: 180, md: 305 },
                 borderTopRightRadius: { xs: "22px", md: "36px" },
                 borderBottomLeftRadius: { xs: "22px", md: "36px" },
                 objectFit: "cover",
                 flexShrink: 0,
               }}
             />
-            <Box
-              sx={{
-                width: { xs: "100%", md: 511 },
-                maxWidth: "100%",
-                height: "auto",
-                minWidth: 0,
-              }}
-            >
+            <Box sx={{ flex: 1, minWidth: 0, height: { xs: "auto", md: 305 }, overflow: "hidden" }}>
               <Typography
                 sx={{
-                  fontFamily: "Outfit, sans-serif",
+                  fontFamily: "var(--font-outfit), sans-serif",
                   fontWeight: 600,
-                  fontSize: { xs: "0.75rem", md: 16 },
+                  fontSize: { xs: "0.75rem", md: 15 },
                   color: "#2B135C",
                 }}
               >
@@ -834,8 +847,8 @@ const TeamVedam = () => {
               <Box sx={{ height: { xs: 8, md: 12 } }} />
               <Typography
                 sx={{
-                  fontFamily: "Outfit, sans-serif",
-                  fontSize: { xs: "0.75rem", md: 16 },
+                  fontFamily: "var(--font-outfit), sans-serif",
+                  fontSize: { xs: "0.75rem", md: 15 },
                   color: "#1E1E1E",
                   lineHeight: 1.55,
                 }}
@@ -851,12 +864,11 @@ const TeamVedam = () => {
                 Subhesh is working alongside a team of experienced engineers, product builders and industry practitioners from leading technology companies. Together, they have designed a Computer Science & AI program grounded in how technology is actually built and used today.
               </Typography>
               <Box sx={{ display: "flex", flexDirection: "column", gap: 1, mt: 1.5 }}>
-                <Typography sx={{ fontFamily: "Outfit, sans-serif", fontSize: { xs: "0.75rem", md: 16 }, color: "#1E1E1E", lineHeight: 1.55 }}>
+                <Typography sx={{ fontFamily: "var(--font-outfit), sans-serif", fontSize: { xs: "0.75rem", md: 15 }, color: "#1E1E1E", lineHeight: 1.55 }}>
                   Rather than treating industry exposure as an add-on, Vedam integrates it directly into the curriculum from how concepts are taught to how students practice and apply them.
-                </Typography>
-                <Typography sx={{ fontFamily: "Outfit, sans-serif", fontSize: { xs: "0.75rem", md: 16 }, color: "#1E1E1E", lineHeight: 1.55 }}>
                   This collective approach ensures that learning is hands-on, current and aligned with real engineering expectations from Day 1.
                 </Typography>
+
               </Box>
             </Box>
           </Box>
@@ -871,6 +883,7 @@ const TeamVedam = () => {
 
   return (
     <PageSection
+      paddingTop={{ xs: "0.75rem", md: "10rem" }}
       sx={{
         backgroundImage:
           "linear-gradient(180deg, rgba(138, 24, 255, 0.08) 18.819%, rgba(255, 255, 255, 0.08) 50%), linear-gradient(90deg, #FFFFFF 0%, #FFFFFF 100%)",
