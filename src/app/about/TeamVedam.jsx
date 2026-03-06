@@ -87,7 +87,7 @@ const TeamVedam = () => {
             display: "flex",
             flexDirection: "column",
             gap: { xs: 1.25, md: 1.75 },
-            width: { xs: "100%", lg: "55%" },
+            width: { xs: "100%", md: "45%", lg: "55%" },
           }}
         >
           {/* Unified gradient title — matches Co-founder heading style */}
@@ -293,15 +293,15 @@ const TeamVedam = () => {
         {/* Right: Landing vector + cards — absolutely positioned on desktop */}
         <Box
           sx={{
-            display: { xs: "none", lg: "block" },
+            display: { xs: "none", md: "block" },
             position: "absolute",
             top: -22,
-            right: -150,
+            right: { md: -50, lg: -150 },
             width: 596,
             height: 596,
             pointerEvents: "none",
             transform: "scale(0.9)",
-            transformOrigin: "top right",
+            transformOrigin: "top left",
           }}
         >
           {/* Vector background: fills the container */}
@@ -385,7 +385,7 @@ const TeamVedam = () => {
             </Typography>
           </Box>
 
-          {/* Merit Driven card — Figma 1304:980 */}
+          {/* Merit Driven card */}
           <Box
             sx={{
               position: "absolute",
