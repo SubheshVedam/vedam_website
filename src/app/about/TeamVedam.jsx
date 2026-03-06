@@ -124,12 +124,6 @@ const TeamVedam = () => {
                 &lt;Code&gt;
               </Box>
             </Typography>
-            <Typography
-              component="span"
-              sx={{ fontSize: "0.65rem", color: "#666", alignSelf: "flex-start", mt: 0.5 }}
-            >
-              ®
-            </Typography>
           </Box>
           <Typography
             sx={{
