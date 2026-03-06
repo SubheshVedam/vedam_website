@@ -674,18 +674,14 @@ export const homeScreenData = {
     rightSideText: [
       {
         id: 1,
-        text: "Seat blocking fee of INR 50,000 will be adjusted against the 1st semester fee",
-      },
-      {
-        id: 2,
         text: "The fees mentioned in the table is the Course fees, This is exclusive of Hostel & Mess fees",
       },
       {
-        id: 3,
+        id: 2,
         text: "Hostel and mess services are available on the ADYPU campus, subject to availability and offered on a first-come, first-served basis",
       },
       {
-        id: 4,
+        id: 3,
         text: "Additional fees payable directly to the University, over and above the course fee: one-time Application Fee (₹1,500), Registration Fee (₹5,000), Uniform Fee (₹5,000), Sports Activity Fee (₹5,000), and Examination Fee (₹3,000 per semester)",
       },
     ],

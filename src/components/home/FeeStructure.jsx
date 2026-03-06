@@ -1039,7 +1039,7 @@ export const FeeStructure = () => {
           gap: "16px",
         }}
       >
-        {homeScreenData.FeeStructure.leftSideYearTableMobile.map((row, idx) => (
+        {homeScreenData.FeeStructure.leftSideYearTableMobile.map((row) => (
           <Accordion
             key={row.id}
             sx={{
@@ -1076,26 +1076,73 @@ export const FeeStructure = () => {
             >
               <Table sx={{ width: "100%" }}>
                 <TableBody>
-                  <TableRow
-                    sx={{
-                      "& .MuiTableCell-root": {
-                        border: "1px solid #E0E0E0",
-                      },
-                    }}
-                  >
-                    <SingleTableCell isFirst text="Tution Fees" />
-                    <SingleTableCell text={row.amount1} />
-                  </TableRow>
-                  <TableRow
-                    sx={{
-                      "& .MuiTableCell-root": {
-                        border: "1px solid #E0E0E0",
-                      },
-                    }}
-                  >
-                    <SingleTableCell isFirst text="Upskilling Fees" />
-                    <SingleTableCell text={row.amount2} />
-                  </TableRow>
+                  {row.id === "0" ? (
+                    <>
+                      <TableRow
+                        sx={{
+                          "& .MuiTableCell-root": {
+                            border: "1px solid #E0E0E0",
+                          },
+                        }}
+                      >
+                        <SingleTableCell isFirst text="Seat Block Fee" />
+                        <SingleTableCell text="50,000" />
+                      </TableRow>
+                      <TableRow
+                        sx={{
+                          "& .MuiTableCell-root": {
+                            border: "1px solid #E0E0E0",
+                          },
+                        }}
+                      >
+                        <SingleTableCell isFirst text="Refundable Security Deposit" />
+                        <SingleTableCell text="30,000" />
+                      </TableRow>
+                      <TableRow
+                        sx={{
+                          "& .MuiTableCell-root": {
+                            border: "1px solid #E0E0E0",
+                          },
+                        }}
+                      >
+                        <SingleTableCell isFirst text="Upskilling Fee" />
+                        <SingleTableCell text="71,500" />
+                      </TableRow>
+                      <TableRow
+                        sx={{
+                          "& .MuiTableCell-root": {
+                            border: "1px solid #E0E0E0",
+                          },
+                        }}
+                      >
+                        <SingleTableCell isFirst text="Tuition Fee" />
+                        <SingleTableCell text="1,50,000" />
+                      </TableRow>
+                    </>
+                  ) : (
+                    <>
+                      <TableRow
+                        sx={{
+                          "& .MuiTableCell-root": {
+                            border: "1px solid #E0E0E0",
+                          },
+                        }}
+                      >
+                        <SingleTableCell isFirst text="Tution Fees" />
+                        <SingleTableCell text={row.amount1} />
+                      </TableRow>
+                      <TableRow
+                        sx={{
+                          "& .MuiTableCell-root": {
+                            border: "1px solid #E0E0E0",
+                          },
+                        }}
+                      >
+                        <SingleTableCell isFirst text="Upskilling Fees" />
+                        <SingleTableCell text={row.amount2} />
+                      </TableRow>
+                    </>
+                  )}
                   <TableRow
                     sx={{
                       "& .MuiTableCell-root": {
