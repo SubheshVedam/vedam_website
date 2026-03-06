@@ -2,6 +2,8 @@
 
 import React from "react";
 import { Box, Button, Typography } from "@mui/material";
+import EastRoundedIcon from "@mui/icons-material/EastRounded";
+import AccessTimeFilledRoundedIcon from "@mui/icons-material/AccessTimeFilledRounded";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -65,18 +67,24 @@ export const InCollaborationWith = () => {
 
           const buttonSx = card.isExplore
             ? {
-              backgroundColor: "rgba(251, 127, 5, 1)",
+              background: "linear-gradient(102deg, #FB7F05 0%, #F05D06 100%)",
               color: "#fff",
-              border: "1px solid rgba(251, 127, 5, 1)",
+              border: "1px solid rgba(240, 93, 6, 0.95)",
+              boxShadow: "0px 10px 24px rgba(240, 93, 6, 0.3)",
               "&:hover": {
-                backgroundColor: "rgba(225, 113, 0, 1)",
-                borderColor: "rgba(225, 113, 0, 1)",
+                background: "linear-gradient(102deg, #FF8E1F 0%, #F5670A 100%)",
+                borderColor: "rgba(245, 103, 10, 1)",
+                boxShadow: "0px 14px 28px rgba(240, 93, 6, 0.35)",
+                transform: "translateY(-2px)",
               },
             }
             : {
-              backgroundColor: "rgba(255, 244, 231, 1)",
-              color: "#1E1E1E",
-              border: "1px solid rgba(251, 127, 5, 0.65)",
+              background:
+                "linear-gradient(180deg, rgba(255, 251, 245, 1) 0%, rgba(255, 240, 221, 1) 100%)",
+              color: "#A25709",
+              border: "1px solid rgba(241, 151, 62, 0.65)",
+              boxShadow:
+                "inset 0px 1px 0px rgba(255, 255, 255, 0.8), 0px 6px 18px rgba(241, 151, 62, 0.15)",
               cursor: "default",
             };
 
@@ -146,23 +154,53 @@ export const InCollaborationWith = () => {
               </Typography>
               <Button
                 {...buttonProps}
+                disableRipple={!card.isExplore}
                 sx={{
                   alignSelf: "center",
-                  fontSize: { xs: "1.2rem", md: "1.3rem" },
+                  fontSize: { xs: "1.05rem", md: "1.12rem" },
                   lineHeight: 1,
                   textTransform: "none",
-                  fontWeight: 500,
-                  borderRadius: "14px",
-                  px: "26px",
-                  py: "8px",
-                  minWidth: "200px",
-                  boxShadow: card.isExplore
-                    ? "0px 4px 10px rgba(0, 0, 0, 0.15)"
-                    : "none",
+                  fontWeight: 700,
+                  letterSpacing: "0.01em",
+                  borderRadius: "999px",
+                  px: "20px",
+                  py: "10px",
+                  minWidth: "212px",
+                  transition:
+                    "transform 220ms ease, box-shadow 220ms ease, background 220ms ease, border-color 220ms ease",
                   ...buttonSx,
                 }}
               >
-                {card.buttonText}
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "8px",
+                  }}
+                >
+                  {card.isExplore ? (
+                    <>
+                      <Typography
+                        component="span"
+                        sx={{ fontWeight: 700, fontSize: "inherit", lineHeight: 1 }}
+                      >
+                        Explore Campus
+                      </Typography>
+                      <EastRoundedIcon sx={{ fontSize: "1.2rem" }} />
+                    </>
+                  ) : (
+                    <>
+                      <AccessTimeFilledRoundedIcon sx={{ fontSize: "1rem" }} />
+                      <Typography
+                        component="span"
+                        sx={{ fontWeight: 700, fontSize: "inherit", lineHeight: 1 }}
+                      >
+                        Coming Soon
+                      </Typography>
+                    </>
+                  )}
+                </Box>
               </Button>
             </Box>
           );
