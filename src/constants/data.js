@@ -1455,19 +1455,56 @@ export const faqsScreenData = [
   },
 ];
 
+// About Us page: "Our Source <Code>" section
+export const aboutSourceCodeData = {
+  label: "About Us",
+  title: "Our Source <Code>",
+  problemStatement:
+    "India Produces 1.5 Mn+ Engineers Every Year, But only Top 1% secure high paying tech roles.",
+  whyHeading: "Why?",
+  whyBody:
+    "Because traditional colleges focus on theory, not real-world skills. We have seen brilliant, hardworking students trapped in this outdated system — graduating with just a degree, lacking hands-on coding expertise, and struggling in endless placement cycles.",
+  solutionIntro:
+    "This is why we built Vedam School of Technology. Vedam is a 4-year, on-campus Computer Science & AI program designed to create the next generation of global tech leaders. Here, students don't just study tech — they build it from Day 1.",
+  highlights: [
+    "Real-world skills",
+    "No outdated systems",
+    "On-campus CS & AI program",
+  ],
+  valueProps: [
+    { label: "Merit Driven", icon: "merit" },
+    { label: "Outcome Focused", icon: "outcome" },
+    { label: "Industry Relevant", icon: "industry" },
+  ],
+  heroImage: "/img/about/robo_station.png",
+};
+
+// About Us page: Co-founder section
 export const teamVedamScreenData = [
   {
-    subtitle: "About our Co Founder",
+    subtitle: "About Our",
+    subtitle2: "Co-founder",
+    useOrangeTheme: true,
+    intro:
+      "Vedam School of Technology is an initiative by entrepreneur - Piyush Nangru.",
     description:
-      "Vedam School of Technology is an initiative by entrepreneur - Piyush Nangru. He comes with an experience of running a Series C funded higher education company for the past 6 years that has already skilled more than 10,000 students through its education for the masses approach.",
+      "He comes with an experience of running a Series C funded higher education company - Elevate Education Technology Private Limited - for the past 7 years, that has already skilled more than 20,000 students through its education for the masses approach.",
+    bullets: [
+      "An NSIT engineer and IMT Ghaziabad MBA, Piyush began his journey as a founding member of Crownit.",
+      "At Vedam, he brings that same entrepreneurial spirit to tech education — crafting hands-on AI and CS learning experiences that prepare students for the jobs of tomorrow.",
+    ],
     data: [
       {
         id: 0,
         name: "Piyush Nangru",
         imageUrl: "/img/teamVedam/pitush_nangru.webp",
-        designation: "Co-Founder",
-        description:
-          "With a passion for startups, Piyush is currently the Co-Founder at Vedam. Piyush joined Crownit as a founding member and headed the marketing and business development aspect of the business. An engineer from NSIT and an MBA from IMT Ghaziabad, Piyush started his venture in the Cultural Tourism space",
+        designation: "Co-founder",
+        description: "",
+        attributes: [
+          { label: "Tech Education Leader", icon: "tech" },
+          { label: "Scalable Impact", icon: "impact" },
+          { label: "Entrepreneur", icon: "entrepreneur" },
+        ],
       },
     ],
   },
