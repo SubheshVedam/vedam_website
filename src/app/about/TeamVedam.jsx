@@ -162,11 +162,14 @@ const TeamVedam = () => {
             alt=""
             sx={{
               display: { xs: "block", lg: "none" },
-              width: "100%",
-              height: 180,
+              width: { xs: 230, sm: 280, md: 320 },
+              height: { xs: 230, sm: 280, md: 320 },
+              mx: "auto",
+              my: 0.5,
               objectFit: "cover",
-              borderTopRightRadius: "22px",
-              borderBottomLeftRadius: "22px",
+              objectPosition: "center center",
+              borderRadius: "50%",
+              clipPath: "circle(50% at 50% 50%)",
             }}
           />
 
@@ -332,7 +335,7 @@ const TeamVedam = () => {
             display: { xs: "none", lg: "block" },
             position: "absolute",
             top: -22,
-            right: -80,
+            right: -150,
             width: 596,
             height: 596,
             pointerEvents: "none",
@@ -357,20 +360,26 @@ const TeamVedam = () => {
           <Box
             sx={{
               position: "absolute",
-              top: 149,
-              right: 0,
+              top: 146,
+              left: 140,
               width: 317,
-              height: 305,
-              borderRadius: "1000px",
+              height: 317,
+              borderRadius: "50%",
+              clipPath: "circle(50% at 50% 50%)",
               overflow: "hidden",
-              opacity: 0.7,
+              opacity: 1,
             }}
           >
             <Box
               component="img"
               src={aboutSourceCodeData.heroImage}
               alt=""
-              sx={{ width: "100%", height: "100%", objectFit: "cover" }}
+              sx={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                objectPosition: "center center",
+              }}
             />
           </Box>
 
@@ -417,8 +426,8 @@ const TeamVedam = () => {
           <Box
             sx={{
               position: "absolute",
-              top: 9,
-              right: 0,
+              top: 54,
+              right: 44,
               width: 108,
               height: 108,
               borderRadius: "30px",
@@ -452,8 +461,8 @@ const TeamVedam = () => {
             alt=""
             sx={{
               position: "absolute",
-              top: 0,
-              right: 31,
+              top: 45,
+              right: 75,
               width: 46,
               height: 45,
               borderRadius: "30px",
@@ -890,7 +899,7 @@ const TeamVedam = () => {
               display: "flex",
               flexDirection: { xs: "column", md: "row" },
               gap: { xs: 2, md: 2.25 },
-              alignItems: { xs: "flex-start", md: "center" },
+              alignItems: { xs: "flex-start", md: "flex-start" },
             }}
           >
             <Box
@@ -899,14 +908,23 @@ const TeamVedam = () => {
               alt=""
               sx={{
                 width: { xs: "100%", md: 510 },
-                height: { xs: 180, md: 305 },
+                maxWidth: "100%",
+                height: { xs: 180, md: "auto" },
+                aspectRatio: { xs: "auto", md: "510 / 305" },
                 borderTopRightRadius: { xs: "22px", md: "36px" },
                 borderBottomLeftRadius: { xs: "22px", md: "36px" },
                 objectFit: "cover",
                 flexShrink: 0,
               }}
             />
-            <Box sx={{ width: { xs: "100%", md: 511 }, height: { xs: "auto", md: 305 } }}>
+            <Box
+              sx={{
+                width: { xs: "100%", md: 511 },
+                maxWidth: "100%",
+                height: "auto",
+                minWidth: 0,
+              }}
+            >
               <Typography
                 sx={{
                   fontFamily: "Outfit, sans-serif",
