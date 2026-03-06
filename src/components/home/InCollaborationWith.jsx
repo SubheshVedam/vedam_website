@@ -12,7 +12,7 @@ const campusCards = [
     id: "gurugram",
     title: "",
     image: "/img/campuses/Gurugram_home_page.webp",
-    description: "Home to India's fastest-growing tech and consulting ecosystem",
+    description: "Home to India's fastest-growing tech ecosystem",
     buttonText: "Coming Soon",
     isExplore: false,
   },
@@ -20,7 +20,7 @@ const campusCards = [
     id: "pune",
     title: "",
     image: "/img/campuses/adypu_home_page.webp",
-    description: "Ajeenkya DY Patil University, Pune, Maharastra",
+    description: "Ajeenkya DY Patil University, Pune, Maharashtra",
     buttonText: "Explore",
     href: "/admission",
     isExplore: true,
@@ -144,10 +144,10 @@ export const InCollaborationWith = () => {
               <Typography
                 sx={{
                   color: "#1E1E1E",
-                  fontSize: { xs: "1.45rem", md: "1.62rem" },
-                  lineHeight: 1.33,
+                  fontSize: { xs: "1.15rem", md: "1.28rem" },
+                  lineHeight: 1.35,
                   textAlign: "center",
-                  minHeight: { md: "84px" },
+                  minHeight: { md: "72px" },
                 }}
               >
                 {card.description}
