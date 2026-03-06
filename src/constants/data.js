@@ -1505,9 +1505,6 @@ export const teamVedamScreenData = [
         designation: "Co-founder",
         description: "",
         attributes: [
-          { label: "Tech Education Leader", icon: "tech" },
-          { label: "Scalable Impact", icon: "impact" },
-          { label: "Entrepreneur", icon: "entrepreneur" },
         ],
       },
     ],

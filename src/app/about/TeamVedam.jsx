@@ -810,6 +810,11 @@ const TeamVedam = () => {
                 borderTopRightRadius: { xs: "22px", md: "36px" },
                 borderBottomLeftRadius: { xs: "22px", md: "36px" },
                 objectFit: "cover",
+                objectPosition: "center center",
+                "@media (min-width:375px) and (max-width:430px)": {
+                  height: 228,
+                  objectPosition: "center bottom",
+                },
                 flexShrink: 0,
               }}
             />
