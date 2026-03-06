@@ -111,6 +111,8 @@ const SingleCountText = ({ count, text, isHref }) => {
 };
 
 export const FeeStructure = () => {
+  const courseFeeNote = homeScreenData.FeeStructure.courseFeeNote;
+
   const semesterRows = homeScreenData.FeeStructure.leftSideYearTable
     .filter((row) => row.semester)
     .sort((a, b) => Number(a.id) - Number(b.id));
@@ -188,7 +190,7 @@ export const FeeStructure = () => {
         minHeight: "800px",
       }}
     >
-      <Box sx={{ width: "100%", marginBottom: "20px" }}>
+      <Box sx={{ width: "100%", marginBottom: { xs: "6px", md: "8px" } }}>
         <Box
           sx={{
             width: "100%",
@@ -198,7 +200,7 @@ export const FeeStructure = () => {
             borderRadius: "22px",
             p: "2px",
             background: "linear-gradient(90deg, #6513AC 0%, #FF7829 100%)",
-            mb: 2,
+            mb: 0,
           }}
         >
           <Table
@@ -422,6 +424,22 @@ export const FeeStructure = () => {
           </Table>
         </Box>
       </Box>
+
+      {courseFeeNote && (
+        <Typography
+          sx={{
+            width: "100%",
+            color: "rgba(30, 30, 30, 1)",
+            fontWeight: 700,
+            fontStyle: "italic",
+            fontSize: { xs: "9px", md: "12px" },
+            lineHeight: "150%",
+            mb: "20px",
+          }}
+        >
+          NOTE : {courseFeeNote}
+        </Typography>
+      )}
 
       <Box
         sx={{
@@ -1094,6 +1112,22 @@ export const FeeStructure = () => {
           </Accordion>
         ))}
       </Box>
+
+      {courseFeeNote && (
+        <Typography
+          sx={{
+            width: "100%",
+            color: "rgba(30, 30, 30, 1)",
+            fontWeight: 700,
+            fontStyle: "italic",
+            fontSize: "9px",
+            lineHeight: "150%",
+            mb: "18px",
+          }}
+        >
+          NOTE : {courseFeeNote}
+        </Typography>
+      )}
 
       <Box
         sx={{
