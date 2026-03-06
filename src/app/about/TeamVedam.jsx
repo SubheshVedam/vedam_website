@@ -85,18 +85,6 @@ const TeamVedam = () => {
             width: { xs: "100%", lg: "55%" },
           }}
         >
-          <Typography
-            sx={{
-              fontSize: { xs: "0.75rem", md: "1rem" },
-              color: "#8A18FF",
-              fontWeight: { xs: 400, md: 600 },
-              fontFamily: "Outfit, Inter, sans-serif",
-              letterSpacing: "-0.24px",
-            }}
-          >
-            {aboutSourceCodeData.label}
-          </Typography>
-
           {/* Mobile: gradient title */}
           <Box sx={{ display: { xs: "flex", lg: "none" }, alignItems: "flex-start" }}>
             <Typography
@@ -583,125 +571,32 @@ const TeamVedam = () => {
                   gap: 1,
                 }}
               >
-                {/* Mobile image with orange bg + vector + name pill */}
+                {/* Mobile: pre-composed card image (orange bg + decoration + name pill all baked in) */}
                 <Box
+                  component="img"
+                  src="/img/about/piyush-nangru-cofounder-card.webp"
+                  alt={item.name}
                   sx={{
                     display: { xs: "block", md: "none" },
-                    position: "relative",
                     width: "100%",
-                    pb: "24px",
+                    height: "auto",
+                    borderRadius: "16px",
                   }}
-                >
-                  <Box
-                    sx={{
-                      position: "relative",
-                      width: "100%",
-                      height: 274,
-                      bgcolor: "#F97D03",
-                      borderTopRightRadius: "32px",
-                      borderBottomLeftRadius: "32px",
-                      overflow: "hidden",
-                    }}
-                  >
-                    {/* Vector decoration */}
-                    <Box
-                      component="img"
-                      src={figmaAssets.cofoundenVector}
-                      alt=""
-                      sx={{
-                        position: "absolute",
-                        top: -10,
-                        right: "calc(100% - 240px)",
-                        width: 70,
-                        height: 96,
-                        pointerEvents: "none",
-                      }}
-                    />
-                    {/* Person photo */}
-                    <Box
-                      component="img"
-                      src={item.imageUrl}
-                      alt={item.name}
-                      sx={{
-                        position: "absolute",
-                        top: 0,
-                        left: "32px",
-                        width: "calc(100% - 32px)",
-                        height: "100%",
-                        objectFit: "cover",
-                        objectPosition: "top",
-                      }}
-                    />
-                  </Box>
-                  {/* Name pill overlaid at bottom */}
-                  <Box
-                    sx={{
-                      position: "absolute",
-                      bottom: 0,
-                      left: 40,
-                      width: 188,
-                      height: 46,
-                      bgcolor: "#FFE4C9",
-                      borderRadius: "24px",
-                      border: "3px solid white",
-                      boxShadow: "0px 0px 15px 0px rgba(249,125,3,0.25)",
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <Typography sx={{ fontFamily: "Outfit, sans-serif", fontWeight: 600, fontSize: 14, color: "#1E1E1E", lineHeight: 1.2 }}>
-                      {item.name}
-                    </Typography>
-                    <Typography sx={{ fontFamily: "Outfit, sans-serif", fontWeight: 400, fontSize: 12, color: "#F97D03", lineHeight: 1.2 }}>
-                      {item.designation}
-                    </Typography>
-                  </Box>
-                </Box>
+                />
 
-                {/* Desktop image layout */}
+                {/* Desktop image layout — same pre-composed card */}
                 <Box
+                  component="img"
+                  src="/img/about/piyush-nangru-cofounder-card.webp"
+                  alt={item.name}
                   sx={{
                     display: { xs: "none", md: "block" },
                     width: "100%",
-                    maxWidth: 280,
-                    borderRadius: "12px",
-                    overflow: "hidden",
-                    bgcolor: colors.orange,
-                    aspectRatio: "3/4",
-                    boxShadow: "0 4px 20px rgba(251,127,5,0.25)",
+                    maxWidth: 320,
+                    height: "auto",
+                    borderRadius: "16px",
                   }}
-                >
-                  <img
-                    src={item.imageUrl}
-                    alt={item.name}
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                  />
-                </Box>
-                <Typography
-                  component="h3"
-                  sx={{
-                    display: { xs: "none", md: "block" },
-                    fontFamily: "Inter",
-                    fontWeight: 700,
-                    fontSize: "1.5rem",
-                    color: "#1F1F1F",
-                  }}
-                >
-                  {item.name}
-                </Typography>
-                <Typography
-                  sx={{
-                    display: { xs: "none", md: "block" },
-                    fontFamily: "Inter",
-                    fontSize: "0.9375rem",
-                    color: colors.orange,
-                    fontWeight: 600,
-                  }}
-                >
-                  {item.designation}
-                </Typography>
+                />
               </Box>
 
               {/* ── Text block (order-2 on mobile, order-1 on desktop) ── */}
@@ -735,11 +630,10 @@ const TeamVedam = () => {
                 >
                   {section.description}
                 </Typography>
-                <Box component="ul" sx={{ m: 0, pl: 2.5, "& li": { mb: 0.75 } }}>
+                <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
                   {section.bullets?.map((bullet, i) => (
                     <Typography
                       key={i}
-                      component="li"
                       sx={{
                         fontFamily: "Outfit, sans-serif",
                         fontSize: { xs: "0.75rem", md: "1rem" },
@@ -954,11 +848,11 @@ const TeamVedam = () => {
                 <br />
                 Subhesh is working alongside a team of experienced engineers, product builders and industry practitioners from leading technology companies. Together, they have designed a Computer Science & AI program grounded in how technology is actually built and used today.
               </Typography>
-              <Box component="ul" sx={{ mt: 1.5, pl: 2.5, mb: 0 }}>
-                <Typography component="li" sx={{ fontFamily: "Outfit, sans-serif", fontSize: { xs: "0.75rem", md: 16 }, color: "#1E1E1E", lineHeight: 1.55 }}>
+              <Box sx={{ display: "flex", flexDirection: "column", gap: 1, mt: 1.5 }}>
+                <Typography sx={{ fontFamily: "Outfit, sans-serif", fontSize: { xs: "0.75rem", md: 16 }, color: "#1E1E1E", lineHeight: 1.55 }}>
                   Rather than treating industry exposure as an add-on, Vedam integrates it directly into the curriculum from how concepts are taught to how students practice and apply them.
                 </Typography>
-                <Typography component="li" sx={{ fontFamily: "Outfit, sans-serif", fontSize: { xs: "0.75rem", md: 16 }, color: "#1E1E1E", lineHeight: 1.55 }}>
+                <Typography sx={{ fontFamily: "Outfit, sans-serif", fontSize: { xs: "0.75rem", md: 16 }, color: "#1E1E1E", lineHeight: 1.55 }}>
                   This collective approach ensures that learning is hands-on, current and aligned with real engineering expectations from Day 1.
                 </Typography>
               </Box>
