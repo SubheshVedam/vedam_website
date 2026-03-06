@@ -85,7 +85,7 @@ export const InCollaborationWith = () => {
         return;
       }
 
-      container.scrollLeft += 56 * deltaSeconds;
+      container.scrollLeft += 76 * deltaSeconds;
 
       if (loopPoint > 0 && container.scrollLeft >= loopPoint) {
         container.scrollLeft -= loopPoint;
