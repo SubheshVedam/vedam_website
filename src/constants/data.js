@@ -369,8 +369,8 @@ export const homeScreenData = {
       "*Placement network of SET Education's parent organization and past success record of Vedam founding team ",
   },
   inCollaborationWith: {
-    title: "We are launching",
-    subtitle: "In Collaboration with",
+    title: "",
+    subtitle: "Our Partner Campuses",
     leftSideImage: "/img/college.webp",
     rightSideText1: "Ajeenkya DY Patil University",
     data: [
