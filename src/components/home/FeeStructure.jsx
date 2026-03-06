@@ -203,7 +203,10 @@ export const FeeStructure = () => {
         >
           <Table
             sx={{
-              minWidth: "1150px",
+              width: "100%",
+              minWidth: { xs: "980px", md: "100%" },
+              borderRadius: "21px",
+              tableLayout: "fixed",
               borderCollapse: "separate",
               borderSpacing: 0,
               overflow: "hidden",
@@ -214,10 +217,10 @@ export const FeeStructure = () => {
               <TableRow>
                 <TableCell
                   sx={{
-                    border: "1px solid rgba(30, 30, 30, 0.4)",
-                    backgroundColor: "#DDDDDD",
-                    minWidth: "280px",
-                    padding: "14px 16px",
+                    border: "1px solid rgba(186, 107, 255, 0.3)",
+                    backgroundColor: "rgba(146, 62, 218, 1)",
+                    width: "230px",
+                    paddingY: "16px",
                   }}
                 />
                 {semesterHeaders.map((header) => (
@@ -225,12 +228,12 @@ export const FeeStructure = () => {
                     key={header}
                     align="center"
                     sx={{
-                      border: "1px solid rgba(30, 30, 30, 0.4)",
-                      backgroundColor: "#DDDDDD",
-                      minWidth: "105px",
-                      padding: "14px 12px",
+                      border: "1px solid rgba(186, 107, 255, 0.3)",
+                      backgroundColor: "rgba(146, 62, 218, 1)",
+                      paddingY: "16px",
+                      paddingX: "8px",
                       fontWeight: 600,
-                      color: "#1E1E1E",
+                      color: "#FFFFFF",
                     }}
                   >
                     {header}
@@ -239,12 +242,13 @@ export const FeeStructure = () => {
                 <TableCell
                   align="center"
                   sx={{
-                    border: "1px solid rgba(30, 30, 30, 0.4)",
-                    backgroundColor: "#DDDDDD",
-                    minWidth: "145px",
-                    padding: "14px 12px",
+                    border: "1px solid rgba(186, 107, 255, 0.3)",
+                    backgroundColor: "rgba(146, 62, 218, 1)",
+                    width: "130px",
+                    paddingY: "16px",
+                    paddingX: "8px",
                     fontWeight: 700,
-                    color: "#1E1E1E",
+                    color: "#FFFFFF",
                   }}
                 >
                   Total
@@ -256,11 +260,14 @@ export const FeeStructure = () => {
                 <TableRow key={row.label}>
                   <TableCell
                     sx={{
-                      border: "1px solid rgba(30, 30, 30, 0.4)",
-                      backgroundColor: row.emphasize ? "#EDEDED" : "#F8F8F8",
-                      padding: "14px 16px",
-                      fontWeight: row.emphasize ? 700 : 500,
-                      color: "#1E1E1E",
+                      border: "1px solid rgba(186, 107, 255, 0.3)",
+                      backgroundColor: row.emphasize
+                        ? "rgba(186, 107, 255, 0.08)"
+                        : "#FFFFFF",
+                      paddingY: "16px",
+                      paddingX: "12px",
+                      fontWeight: row.emphasize ? 600 : 400,
+                      color: "rgba(30, 30, 30, 1)",
                       whiteSpace: "nowrap",
                     }}
                   >
@@ -271,11 +278,14 @@ export const FeeStructure = () => {
                       key={`${row.label}-semester-${index}`}
                       align="center"
                       sx={{
-                        border: "1px solid rgba(30, 30, 30, 0.4)",
-                        backgroundColor: row.emphasize ? "#EDEDED" : "#F8F8F8",
-                        padding: "14px 12px",
-                        fontWeight: row.emphasize ? 700 : 500,
-                        color: "#1E1E1E",
+                        border: "1px solid rgba(186, 107, 255, 0.3)",
+                        backgroundColor: row.emphasize
+                          ? "rgba(186, 107, 255, 0.08)"
+                          : "#FFFFFF",
+                        paddingY: "16px",
+                        paddingX: "8px",
+                        fontWeight: row.emphasize ? 600 : 400,
+                        color: "rgba(30, 30, 30, 1)",
                       }}
                     >
                       {value === null ? "-" : formatAmount(value)}
@@ -284,11 +294,14 @@ export const FeeStructure = () => {
                   <TableCell
                     align="center"
                     sx={{
-                      border: "1px solid rgba(30, 30, 30, 0.4)",
-                      backgroundColor: row.emphasize ? "#EDEDED" : "#F8F8F8",
-                      padding: "14px 12px",
-                      fontWeight: 700,
-                      color: "#1E1E1E",
+                      border: "1px solid rgba(186, 107, 255, 0.3)",
+                      backgroundColor: row.emphasize
+                        ? "rgba(186, 107, 255, 0.08)"
+                        : "#FFFFFF",
+                      paddingY: "16px",
+                      paddingX: "8px",
+                      fontWeight: 600,
+                      color: "rgba(30, 30, 30, 1)",
                     }}
                   >
                     {formatAmount(row.total)}
@@ -296,16 +309,25 @@ export const FeeStructure = () => {
                 </TableRow>
               ))}
               <TableRow>
-                <TableCell colSpan={semesterHeaders.length + 2} sx={{ border: "none", height: "12px", backgroundColor: "#fff", padding: 0 }} />
+                <TableCell
+                  colSpan={semesterHeaders.length + 2}
+                  sx={{
+                    border: "none",
+                    height: "12px",
+                    backgroundColor: "#fff",
+                    padding: 0,
+                  }}
+                />
               </TableRow>
               <TableRow>
                 <TableCell
                   sx={{
-                    border: "1px solid rgba(30, 30, 30, 0.4)",
-                    backgroundColor: "#F8F8F8",
-                    padding: "14px 16px",
+                    border: "1px solid rgba(186, 107, 255, 0.3)",
+                    backgroundColor: "#FFFFFF",
+                    paddingY: "16px",
+                    paddingX: "12px",
                     fontWeight: 600,
-                    color: "#1E1E1E",
+                    color: "rgba(30, 30, 30, 1)",
                     whiteSpace: "nowrap",
                   }}
                 >
@@ -316,11 +338,12 @@ export const FeeStructure = () => {
                     key={`tuition-${index}`}
                     align="center"
                     sx={{
-                      border: "1px solid rgba(30, 30, 30, 0.4)",
-                      backgroundColor: "#F8F8F8",
-                      padding: "14px 12px",
-                      fontWeight: 500,
-                      color: "#1E1E1E",
+                      border: "1px solid rgba(186, 107, 255, 0.3)",
+                      backgroundColor: "#FFFFFF",
+                      paddingY: "16px",
+                      paddingX: "8px",
+                      fontWeight: 400,
+                      color: "rgba(30, 30, 30, 1)",
                     }}
                   >
                     {formatAmount(value)}
@@ -329,27 +352,37 @@ export const FeeStructure = () => {
                 <TableCell
                   align="center"
                   sx={{
-                    border: "1px solid rgba(30, 30, 30, 0.4)",
-                    backgroundColor: "#F8F8F8",
-                    padding: "14px 12px",
-                    fontWeight: 700,
-                    color: "#1E1E1E",
+                    border: "1px solid rgba(186, 107, 255, 0.3)",
+                    backgroundColor: "#FFFFFF",
+                    paddingY: "16px",
+                    paddingX: "8px",
+                    fontWeight: 600,
+                    color: "rgba(30, 30, 30, 1)",
                   }}
                 >
                   {formatAmount(tuitionTotal)}
                 </TableCell>
               </TableRow>
               <TableRow>
-                <TableCell colSpan={semesterHeaders.length + 2} sx={{ border: "none", height: "12px", backgroundColor: "#fff", padding: 0 }} />
+                <TableCell
+                  colSpan={semesterHeaders.length + 2}
+                  sx={{
+                    border: "none",
+                    height: "12px",
+                    backgroundColor: "#fff",
+                    padding: 0,
+                  }}
+                />
               </TableRow>
               <TableRow>
                 <TableCell
                   sx={{
-                    border: "1px solid rgba(30, 30, 30, 0.4)",
-                    backgroundColor: "#EDEDED",
-                    padding: "14px 16px",
-                    fontWeight: 700,
-                    color: "#1E1E1E",
+                    border: "1px solid rgba(186, 107, 255, 0.3)",
+                    backgroundColor: "rgba(186, 107, 255, 0.08)",
+                    paddingY: "16px",
+                    paddingX: "12px",
+                    fontWeight: 600,
+                    color: "rgba(30, 30, 30, 1)",
                     whiteSpace: "nowrap",
                   }}
                 >
@@ -360,11 +393,12 @@ export const FeeStructure = () => {
                     key={`payable-${index}`}
                     align="center"
                     sx={{
-                      border: "1px solid rgba(30, 30, 30, 0.4)",
-                      backgroundColor: "#EDEDED",
-                      padding: "14px 12px",
-                      fontWeight: 700,
-                      color: "#1E1E1E",
+                      border: "1px solid rgba(186, 107, 255, 0.3)",
+                      backgroundColor: "rgba(186, 107, 255, 0.08)",
+                      paddingY: "16px",
+                      paddingX: "8px",
+                      fontWeight: 600,
+                      color: "rgba(30, 30, 30, 1)",
                     }}
                   >
                     {formatAmount(value)}
@@ -373,11 +407,12 @@ export const FeeStructure = () => {
                 <TableCell
                   align="center"
                   sx={{
-                    border: "1px solid rgba(30, 30, 30, 0.4)",
-                    backgroundColor: "#EDEDED",
-                    padding: "14px 12px",
-                    fontWeight: 700,
-                    color: "#1E1E1E",
+                    border: "1px solid rgba(186, 107, 255, 0.3)",
+                    backgroundColor: "rgba(186, 107, 255, 0.08)",
+                    paddingY: "16px",
+                    paddingX: "8px",
+                    fontWeight: 600,
+                    color: "rgba(30, 30, 30, 1)",
                   }}
                 >
                   {formatAmount(payableTotal)}
