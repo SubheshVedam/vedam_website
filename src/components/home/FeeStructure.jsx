@@ -52,37 +52,49 @@ const SingleCountText = ({ count, text, isHref }) => {
       sx={{
         display: "flex",
         alignItems: "flex-start",
-        gap: "10px",
+        gap: { xs: "8px", md: "10px" },
         width: "100%",
+        position: "relative",
+        zIndex: 1,
+        padding: { xs: "10px", md: "12px" },
+        borderRadius: "12px",
+        border: "1px solid rgba(186, 107, 255, 0.24)",
+        background:
+          "linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 248, 241, 0.95) 100%)",
+        boxShadow: "0px 8px 18px rgba(125, 65, 186, 0.07)",
       }}
     >
       <Box
         sx={{
-          backgroundColor: "rgba(186, 107, 255, 1)",
-          width: 28,
-          height: 28,
-          borderRadius: "50%",
+          background: "linear-gradient(135deg, #7B2CBF 0%, #FF7829 100%)",
+          width: { xs: 26, md: 30 },
+          height: { xs: 26, md: 30 },
+          borderRadius: "8px",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          flexShrink: 0,
+          boxShadow: "0px 4px 10px rgba(123, 44, 191, 0.24)",
         }}
       >
         <Typography
           sx={{
             color: "#F9F9F9",
-            fontSize: "14px",
+            fontSize: { xs: "12px", md: "13px" },
+            fontWeight: 700,
             fontFamily: "Inter",
           }}
         >
           {count}
         </Typography>
       </Box>
-      <Box sx={{ width: "80%" }}>
+      <Box sx={{ flex: 1, pt: "1px" }}>
         <Typography
           variant="subtitle2"
           sx={{
-            color: "rgba(30, 30, 30, 1)",
-            fontSize: "12px",
+            color: "rgba(30, 30, 30, 0.92)",
+            fontSize: { xs: "11px", md: "12px" },
+            fontWeight: 500,
             fontFamily: "Inter",
             lineHeight: "150%",
           }}
@@ -91,11 +103,14 @@ const SingleCountText = ({ count, text, isHref }) => {
           {isHref && (
             <Link
               style={{
-                color: "#FFA41A",
-                fontSize: "12px",
+                color: "#F97316",
+                fontSize: "11px",
                 fontFamily: "Inter",
+                fontWeight: 600,
                 lineHeight: "150%",
                 marginLeft: "4px",
+                display: "inline-flex",
+                alignItems: "center",
               }}
               href="https://drive.google.com/file/d/1zJzM9ZOPsJzP5bhZsCRB5xWlho3iAGwt/view?usp=sharing"
               target="_blank"
@@ -446,15 +461,45 @@ export const FeeStructure = () => {
           width: "100%",
           display: "flex",
           flexDirection: "column",
-          gap: "1rem",
-          alignItems: "center",
+          gap: { xs: "8px", md: "10px" },
+          alignItems: "stretch",
           justifyContent: "center",
-          backgroundColor: "rgba(186, 107, 255, 0.08)",
-          borderRadius: "12px",
-          padding: "3rem",
+          background:
+            "linear-gradient(135deg, rgba(123, 44, 191, 0.10) 0%, rgba(255, 120, 41, 0.10) 100%)",
+          border: "1px solid rgba(186, 107, 255, 0.25)",
+          borderRadius: "16px",
+          padding: { xs: "14px", md: "22px" },
+          boxShadow: "0px 12px 28px rgba(106, 55, 162, 0.09)",
           flex: 1,
+          position: "relative",
+          overflow: "hidden",
+          "&::before": {
+            content: '""',
+            position: "absolute",
+            top: "-75px",
+            right: "-75px",
+            width: "170px",
+            height: "170px",
+            borderRadius: "50%",
+            background:
+              "radial-gradient(circle, rgba(255, 120, 41, 0.25) 0%, rgba(255, 120, 41, 0) 70%)",
+          },
         }}
       >
+        <Typography
+          sx={{
+            fontSize: { xs: "11px", md: "13px" },
+            fontWeight: 700,
+            color: "#5C2A93",
+            letterSpacing: "0.06em",
+            textTransform: "uppercase",
+            mb: "2px",
+            position: "relative",
+            zIndex: 1,
+          }}
+        >
+          Important Fee Highlights
+        </Typography>
         {homeScreenData.FeeStructure.rightSideText &&
           homeScreenData.FeeStructure.rightSideText.map((item) => (
             <SingleCountText
@@ -1234,11 +1279,44 @@ export const FeeStructure = () => {
           width: { xs: "100%", md: "50%" },
           display: "flex",
           flexDirection: "column",
-          gap: "1rem",
-          alignItems: "flex-start",
+          gap: { xs: "8px", md: "10px" },
+          alignItems: "stretch",
           justifyContent: "space-between",
+          background:
+            "linear-gradient(135deg, rgba(123, 44, 191, 0.10) 0%, rgba(255, 120, 41, 0.10) 100%)",
+          border: "1px solid rgba(186, 107, 255, 0.25)",
+          borderRadius: "16px",
+          padding: { xs: "14px", md: "20px" },
+          boxShadow: "0px 12px 28px rgba(106, 55, 162, 0.09)",
+          position: "relative",
+          overflow: "hidden",
+          "&::before": {
+            content: '""',
+            position: "absolute",
+            top: "-75px",
+            right: "-75px",
+            width: "170px",
+            height: "170px",
+            borderRadius: "50%",
+            background:
+              "radial-gradient(circle, rgba(255, 120, 41, 0.25) 0%, rgba(255, 120, 41, 0) 70%)",
+          },
         }}
       >
+        <Typography
+          sx={{
+            fontSize: { xs: "11px", md: "13px" },
+            fontWeight: 700,
+            color: "#5C2A93",
+            letterSpacing: "0.06em",
+            textTransform: "uppercase",
+            mb: "2px",
+            position: "relative",
+            zIndex: 1,
+          }}
+        >
+          Important Fee Highlights
+        </Typography>
         {homeScreenData.FeeStructure.rightSideText.map((item) => (
           <SingleCountText
             key={item.id}
