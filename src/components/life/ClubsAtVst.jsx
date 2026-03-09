@@ -22,7 +22,7 @@ const clubImageMap = {
 
 
 const clubVideoMap = {
-  "Open Source Club": "https://www.youtube.com/embed/35z2mEceFqk?autoplay=1&si=0",
+  "Open Source Club": "https://www.youtube.com/embed/hdr7l8Lth9I?autoplay=1",
   "Competitive Coding Club": "https://www.youtube.com/embed/kr8Wus11B8s?autoplay=1&si=0",
   "Entrepreneurship Club": "https://www.youtube.com/embed/0Pp7yhV1-1g?autoplay=1&si=0",
   "Cultural Club": "https://www.youtube.com/embed/qV7SaAdMabw?autoplay=1&si=0",
