@@ -1341,7 +1341,7 @@ export const faqsScreenData = [
         id: 14,
         title: "Do you accept applicants from Open Schooling (NIOS/Open Board)?",
         description:
-          "No, we do not accept applications from Open Schooling boards (including NIOS or any other open boards). Admission is open only to students who have completed their qualifying education through a regular, recognized board.",
+          "We accept applications from students enrolled with NIOS (National Institute of Open Schooling), subject to the condition that their final Class 12 result is officially declared and submitted to us on or before July 2026",
       },
       // Add more questions as needed
     ],
