@@ -74,6 +74,12 @@ export const FunAtVedam = () => {
             thumbnail: "/img/funAtVedam/img3.png",
             videoUrl: "https://www.youtube.com/watch?v=ae-N-YGiGxo"
         },
+        {
+            id: 4,
+            thumbnail: "/img/funAtVedam/img4.webp",
+            videoUrl: "https://www.youtube.com/watch?v=C5j43mSP2mc"
+        },
+
     ];
 
     const scrollLeft = () => {
