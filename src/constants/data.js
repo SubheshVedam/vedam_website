@@ -946,7 +946,7 @@ export const admissionScreenData = {
       "Final Offer",
     ],
     secondArray: [
-      "17th March 2026",
+      " and 18th March 2026",
       "16th March 2026",
       "Within 2 Days of the Exam",
       "Within 5 Days of the Exam",
@@ -978,7 +978,7 @@ export const admissionScreenData = {
         title: "Take the VSAT",
         subtitle:
           "It is an entrance test conducted online.",
-        subtitle1: "The next VSAT is on 17th March",
+        subtitle1: "The next VSAT is on 17th and 18th March",
         showButton: false,
       },
       {
