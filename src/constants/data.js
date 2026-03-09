@@ -946,7 +946,7 @@ export const admissionScreenData = {
       "Final Offer",
     ],
     secondArray: [
-      " and 18th March 2026",
+      "17th and 18th March 2026",
       "16th March 2026",
       "Within 2 Days of the Exam",
       "Within 5 Days of the Exam",
