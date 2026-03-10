@@ -19,17 +19,19 @@ export const AdmissionAndFees = () => {
         {admissionScreenData.admissionAndFees.description}
       </Typography>
       <Box
+        className="glass"
         sx={{
           padding: { xs: "25px 14px", md: "30px 20px" },
           display: "flex",
           flexDirection: { xs: "column", md: "row" },
           alignItems: { xs: "flex-start", md: "flex-start" },
           justifyContent: "space-between",
-          border: "1px solid rgba(108, 16, 188, 0.6)",
-          background: "rgba(108, 16, 188, 0.1)",
-          borderRadius: "16px",
+          border: "1px solid rgba(255,255,255,0.3)",
+          background: "rgba(255,255,255,0.24)",
+          borderRadius: "20px",
           marginTop: "1rem",
           gap: "1rem",
+          boxShadow: "0 14px 30px rgba(42, 19, 91, 0.13)",
         }}
       >
         <Box>
@@ -37,8 +39,8 @@ export const AdmissionAndFees = () => {
             variant="h1"
             sx={{
               fontSize: "clamp(1.4rem, 2vw, 40px)",
-              color: "rgba(108, 16, 188, 1)",
-              fontWeight: "300",
+              color: "#2A135B",
+              fontWeight: 500,
               lineHeight: "100%",
             }}
           >
@@ -79,10 +81,17 @@ export const AdmissionAndFees = () => {
         </Box>
         <Button
           color="inherit"
+          className="liquid-cta"
           sx={{
-            backgroundColor: "#6C10BC",
-            borderRadius: "8px",
+            background:
+              "linear-gradient(124deg, #6C10BC 0%, #2F1B50 44%, #FB7F05 100%)",
+            borderRadius: "12px",
             padding: { xs: "10px 20px", md: "15px 25px" },
+            boxShadow: "0 14px 30px rgba(42, 19, 91, 0.24)",
+            "&:hover": {
+              background:
+                "linear-gradient(124deg, #6C10BC 0%, #2F1B50 44%, #FB7F05 100%)",
+            },
           }}
           href="https://apply.vedam.org/"
           target="_blank"

@@ -8,15 +8,17 @@ import Image from "next/image";
 export default function TestimonialCard({ image, text, name, designation, linkedInUrl }) {
   return (
     <Card
+      className="glass-light glass-hover-lift"
       sx={{
         width: "100%",
         minHeight: { xs: 340, sm: 392 },
         width: { xs: 274, sm: 333 },
         maxWidth: "100%",
         minWidth: { xs: 274, sm: 333 },
-        borderRadius: "16px",
+        borderRadius: "20px",
         padding: "20px 20px 0 20px",
-        boxShadow: "none",
+        border: "1px solid rgba(255,255,255,0.28)",
+        boxShadow: "0 12px 32px rgba(36, 19, 72, 0.12)",
         cursor: "pointer",
       }}
     >
@@ -63,12 +65,12 @@ export default function TestimonialCard({ image, text, name, designation, linked
                 <Typography
                   component="div"
                   variant="body1"
-                  sx={{
-                    color: "#6C10BC",
-                    fontWeight: 700,
-                    fontSize: { xs: 14, sm: 16 },
-                    fontFamily: "Inter",
-                  }}
+                sx={{
+                  color: "#2A135B",
+                  fontWeight: 700,
+                  fontSize: { xs: 14, sm: 16 },
+                  fontFamily: "Inter",
+                }}
                 >
                   {name}
                 </Typography>

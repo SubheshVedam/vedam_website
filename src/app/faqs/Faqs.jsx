@@ -94,6 +94,7 @@ const Faqs = () => {
                 sx={{ width: "100%" }}
               >
                 <Button
+                  className="glass-light"
                   color="inherit"
                   sx={{
                     width: "100%",
@@ -101,9 +102,17 @@ const Faqs = () => {
                     flexDirection: "row",
                     alignItems: "center",
                     justifyContent: "space-between",
-                    backgroundColor: "#FFFFFF",
-                    borderRadius: "12px",
+                    backgroundColor: "rgba(255,255,255,0.28)",
+                    borderRadius: "16px",
+                    border: "1px solid rgba(255,255,255,0.24)",
                     padding: { xs: "10px 20px", md: "30px 40px" },
+                    transition:
+                      "transform 240ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 240ms cubic-bezier(0.22, 1, 0.36, 1)",
+                    "&:hover": {
+                      transform: "translateY(-2px)",
+                      boxShadow: "0 12px 24px rgba(42, 19, 91, 0.16)",
+                      backgroundColor: "rgba(255,255,255,0.34)",
+                    },
                   }}
                   onClick={() => handleToggle(item.id)}
                   aria-expanded={expandedButton === item.id}
@@ -114,7 +123,7 @@ const Faqs = () => {
                     variant="h3"
                     sx={{
                       fontSize: "clamp(14px, 2vw, 20px)",
-                      color: "#1E1E1E",
+                      color: "#1B1332",
                       fontFamily: "Inter",
                       lineHeight: "120%",
                       textAlign: "left",
@@ -139,6 +148,7 @@ const Faqs = () => {
                     sx={{
                       padding: { xs: "10px 20px", md: "30px 40px" },
                       fontSize: { xs: 11, sm: 18 },
+                      color: "#2F1B50",
                     }}
                   >
                     <Typography
@@ -170,7 +180,7 @@ const Faqs = () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <PageSection>
+      <PageSection className="section-gradient">
         <SectionStack sections={sections} />
       </PageSection>
     </>

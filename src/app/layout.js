@@ -9,6 +9,7 @@ import Layout from "@/components/Layout";
 import AnnouncementBanner from "@/components/AnnouncementBanner";
 import Script from "next/script";
 import { GoogleAnalytics } from '@next/third-parties/google'
+import AppThemeProvider from "@/components/AppThemeProvider";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -131,12 +132,14 @@ export default function RootLayout({ children }) {
           }}
         />
         <EmotionCacheProvider>
-          <AnnouncementBanner />
-          <Layout>
-            <Navbar />
-            {children}
-            <Footer />
-          </Layout>
+          <AppThemeProvider>
+            <AnnouncementBanner />
+            <Layout>
+              <Navbar />
+              {children}
+              <Footer />
+            </Layout>
+          </AppThemeProvider>
         </EmotionCacheProvider>
       </body>
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />

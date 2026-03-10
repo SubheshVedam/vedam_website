@@ -21,9 +21,10 @@ export default function DetailsCard({
 
   return (
     <Card
+      className={isFeatured ? "glass-dark glass-hover-lift" : "glass-light glass-hover-lift"}
       sx={{
         position: "relative",
-        backgroundColor: isFeatured ? "#6C10BC" : "#FFFFFF",
+        backgroundColor: isFeatured ? "rgba(47, 27, 80, 0.72)" : "rgba(255,255,255,0.32)",
         maxWidth: "100%",
         height: { xs: isScholarshipCard ? 350 : "auto", md: height, xl: heights },
         maxHeight: {
@@ -35,15 +36,15 @@ export default function DetailsCard({
         //   xs: isScholarshipCard ? 350 : 220,
         // },
         width: "100%",
-        borderRadius: "16px",
+        borderRadius: "20px",
         padding: 0,
-        boxShadow: "none",
+        boxShadow: "0 14px 34px rgba(36, 19, 72, 0.14)",
         justifyContent: "flex-end",
         overflow: "hidden",
         ...(!isScholarshipCard
           ? {
             "&:hover": {
-              backgroundColor: isFeatured ? "#7C20CC" : "#f5f5f5",
+              backgroundColor: isFeatured ? "rgba(47, 27, 80, 0.84)" : "rgba(255,255,255,0.42)",
               transition: "background-color 0.3s ease",
               "& .description-text": {
                 opacity: 1,
@@ -54,7 +55,7 @@ export default function DetailsCard({
           }
           : {
             "&:hover": {
-              backgroundColor: isFeatured ? "#7C20CC" : "#f5f5f5",
+              backgroundColor: isFeatured ? "rgba(47, 27, 80, 0.84)" : "rgba(255,255,255,0.42)",
               transition: "background-color 0.3s ease",
               "& .description-text": {
                 opacity: 1,
@@ -172,7 +173,7 @@ export default function DetailsCard({
             className="title-box"
             sx={{
               borderRadius: "0 0 10px 10px",
-              background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.85) -50.79%, rgba(12, 9, 49, 0.85) 69.78%)',
+              background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.16) -40%, rgba(18, 11, 45, 0.84) 90%)',
               padding: "16px",
               transition: "all 0.3s ease",
               overflow: "visible",

@@ -4,14 +4,16 @@ import { Box, Typography, Link as MuiLink } from "@mui/material";
 export default function PrivacyPolicy() {
   const renderContent = () => (
     <Box
+      className="glass-light"
       sx={{
-        backgroundColor: "#fff",
-        boxShadow: 2,
-        borderRadius: 2,
+        backgroundColor: "rgba(255,255,255,0.34)",
+        boxShadow: "0 14px 32px rgba(42, 19, 91, 0.14)",
+        borderRadius: "22px",
+        border: "1px solid rgba(255,255,255,0.25)",
         padding: { xs: 3, md: 6 },
       }}
     >
-      <Typography variant="h4" fontWeight={700} color="#FB7F05" mb={4}>
+      <Typography variant="h4" fontWeight={700} color="#2A135B" mb={4}>
         Privacy Policy
       </Typography>
 
@@ -216,7 +218,7 @@ export default function PrivacyPolicy() {
   );
 
   return (
-    <PageSection paddingTop={{ xs: "0rem", md: "7rem" }}>
+    <PageSection className="section-gradient" paddingTop={{ xs: "0rem", md: "7rem" }}>
       <SectionStack
         sections={[
           {

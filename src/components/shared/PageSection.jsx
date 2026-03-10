@@ -3,15 +3,19 @@ import { Box } from "@mui/material";
 
 export const PageSection = ({
   children,
-  backgroundColor = "#F9F9F9",
+  backgroundColor = "transparent",
   paddingTop = { xs: "2rem", md: "10rem" },
   paddingBottom = "0px",
   sx = {},
+  className = "",
   ...boxProps
 }) => {
   return (
     <Box
+      className={`section-gradient ${className}`.trim()}
       sx={{
+        position: "relative",
+        isolation: "isolate",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",

@@ -4,7 +4,6 @@ import { detailsData } from "@/constants/data";
 import DetailsCard from "./atoms/DetailsCard";
 
 const WhyVedam = ({ data }) => {
-  console.log(data);
   const dataArr = data ? data : detailsData;
 
   return (

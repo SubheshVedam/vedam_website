@@ -870,6 +870,7 @@ const TeamVedam = () => {
 
   return (
     <PageSection
+      className="section-gradient"
       sx={{
         backgroundImage:
           "linear-gradient(180deg, rgba(138, 24, 255, 0.08) 18.819%, rgba(255, 255, 255, 0.08) 50%), linear-gradient(90deg, #FFFFFF 0%, #FFFFFF 100%)",

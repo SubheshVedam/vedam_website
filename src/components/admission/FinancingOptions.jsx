@@ -31,14 +31,15 @@ export const FinancingOptions = () => {
         }}>
         {/* Card 1 */}
         <Box
+          className="glass-light glass-hover-lift"
           sx={{
             flex: 1,
-            bgcolor: "#fff",
-            borderRadius: 2,
-            boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
+            bgcolor: "rgba(255,255,255,0.3)",
+            borderRadius: "20px",
+            boxShadow: "0 12px 30px rgba(36, 19, 72, 0.12)",
             p: 3,
             mb: { xs: 2, md: 0 },
-            border: "1px solid #eee",
+            border: "1px solid rgba(255,255,255,0.28)",
             display: "flex",
             flexDirection: "column",
             gap: 1,
@@ -66,13 +67,14 @@ export const FinancingOptions = () => {
         </Box>
         {/* Card 2 */}
         <Box
+          className="glass-light glass-hover-lift"
           sx={{
             flex: 1,
-            bgcolor: "#fff",
-            borderRadius: 2,
-            boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
+            bgcolor: "rgba(255,255,255,0.3)",
+            borderRadius: "20px",
+            boxShadow: "0 12px 30px rgba(36, 19, 72, 0.12)",
             p: 3,
-            border: "1px solid #eee",
+            border: "1px solid rgba(255,255,255,0.28)",
             display: "flex",
             flexDirection: "column",
             gap: 1,

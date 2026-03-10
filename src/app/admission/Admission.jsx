@@ -62,6 +62,7 @@ const Admission = () => {
     <PageSection
       paddingTop={0}
       // paddingBottom="-86px"
+      className="section-gradient"
       sx={{
         gap: { xs: "1rem", md: "1.5rem" },
       }}

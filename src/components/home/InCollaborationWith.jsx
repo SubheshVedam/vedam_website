@@ -162,24 +162,22 @@ export const InCollaborationWith = () => {
 
           const buttonSx = card.isExplore
             ? {
-              background: "linear-gradient(102deg, #FB7F05 0%, #F05D06 100%)",
-              color: "#fff",
-              border: "1px solid rgba(240, 93, 6, 0.95)",
-              boxShadow: "0px 10px 24px rgba(240, 93, 6, 0.3)",
+              background: "linear-gradient(120deg, #FB7F05 0%, #FFA41A 66%, #FFD39C 100%)",
+              color: "#231233",
+              border: "1px solid rgba(255, 255, 255, 0.38)",
+              boxShadow: "0px 12px 26px rgba(29, 19, 58, 0.25)",
               "&:hover": {
-                background: "linear-gradient(102deg, #FF8E1F 0%, #F5670A 100%)",
-                borderColor: "rgba(245, 103, 10, 1)",
-                boxShadow: "0px 14px 28px rgba(240, 93, 6, 0.35)",
-                transform: "translateY(-2px)",
+                background: "linear-gradient(120deg, #FB7F05 0%, #FFA41A 66%, #FFD39C 100%)",
+                boxShadow: "0px 16px 30px rgba(29, 19, 58, 0.3)",
+                transform: "translateY(-2px) scale(1.01)",
               },
             }
             : {
-              background:
-                "linear-gradient(180deg, rgba(255, 251, 245, 1) 0%, rgba(255, 240, 221, 1) 100%)",
-              color: "#A25709",
-              border: "1px solid rgba(241, 151, 62, 0.65)",
+              background: "rgba(255, 255, 255, 0.28)",
+              color: "#2A135B",
+              border: "1px solid rgba(255,255,255,0.4)",
               boxShadow:
-                "inset 0px 1px 0px rgba(255, 255, 255, 0.8), 0px 6px 18px rgba(241, 151, 62, 0.15)",
+                "inset 0px 1px 0px rgba(255, 255, 255, 0.65), 0px 8px 18px rgba(42, 19, 91, 0.14)",
               cursor: "default",
             };
 
@@ -188,10 +186,11 @@ export const InCollaborationWith = () => {
               key={`${card.id}-${isDuplicate ? "dup" : "base"}`}
               data-campus-card="true"
               data-duplicate-start={index === campusCards.length ? "true" : undefined}
+              className="glass-light glass-hover-lift"
               sx={{
-                border: "1px solid rgba(30, 30, 30, 0.15)",
+                border: "1px solid rgba(255,255,255,0.3)",
                 borderRadius: "24px",
-                backgroundColor: "#fff",
+                backgroundColor: "rgba(255,255,255,0.28)",
                 padding: "14px",
                 display: isDuplicate ? { xs: "flex", md: "none" } : "flex",
                 flexDirection: "column",
@@ -251,6 +250,7 @@ export const InCollaborationWith = () => {
               </Typography>
               <Button
                 {...buttonProps}
+                className={card.isExplore ? "liquid-cta-orange" : "glass"}
                 disableRipple={!card.isExplore}
                 sx={{
                   alignSelf: "center",

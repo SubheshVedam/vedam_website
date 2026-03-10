@@ -92,15 +92,20 @@ export default function AnnouncementBanner() {
 
   return (
     <Box
+      className="glass-dark"
       sx={{
-        background: "linear-gradient(95.22deg, #FB7F05 2.91%, #6C10BC 99.18%)",
+        borderRadius: 0,
+        borderLeft: "none",
+        borderRight: "none",
+        borderTop: "none",
+        background:
+          "linear-gradient(95deg, rgba(251, 127, 5, 0.92) 2.91%, rgba(108, 16, 188, 0.9) 99.18%)",
         color: "white",
-        opacity: 0.95,
         py: 1,
         position: "sticky",
         top: 0,
         zIndex: 11000,
-        boxShadow: 1,
+        boxShadow: "0 6px 18px rgba(28, 14, 58, 0.25)",
       }}>
       <Stack
         direction={{ xs: "column", sm: "row" }}

@@ -12,6 +12,7 @@ const clubsatVST = lifeAtVedam.clubsatVedam.data;
 const Life = () => {
   return (
     <Box
+      className="section-gradient"
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -30,6 +31,7 @@ const Life = () => {
       />
 
       <Box
+        className="section-gradient"
         sx={{
           backgroundImage: {
             xs: "url(/img/innovation_lab/bg_mob.png)",

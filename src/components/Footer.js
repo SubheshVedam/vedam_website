@@ -60,19 +60,24 @@ export default function Footer() {
     <Box
       component="footer"
       sx={{
-        width: "auto",
+        width: "100%",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        background: "linear-gradient(to right, #6C10BC, #FB7F05)", // Linear gradient from purple to lighter purple
+        background:
+          "linear-gradient(145deg, rgba(42, 19, 91, 0.92) 0%, rgba(47, 27, 80, 0.88) 42%, rgba(251, 127, 5, 0.78) 100%)",
         paddingX: "1rem",
-        paddingY: { xs: 0, sm: "20px" },
-        pb: { xs: "8px", sm: 0 },
+        paddingY: { xs: "16px", sm: "20px" },
+        pb: { xs: "18px", sm: "20px" },
+        mt: { xs: 2, sm: 3 },
       }}
     >
       <Box
+        className="glass-dark"
         sx={{
-          paddingX: "10px",
+          paddingX: { xs: "14px", sm: "22px" },
+          paddingY: { xs: "14px", sm: "18px" },
+          borderRadius: { xs: "18px", sm: "26px" },
           width: { xs: "100%", md: "1024px", xl: "1280px" },
           color: "white",
           display: "flex",
@@ -131,8 +136,9 @@ export default function Footer() {
                     underline="hover"
                     sx={{
                       fontSize: { xs: 11, sm: 16 },
+                      color: "rgba(255,255,255,0.9)",
                       "&:hover": {
-                        color: "#FFA41A",
+                        color: "#FEE5CD",
                       },
                     }}
                   >
@@ -168,22 +174,23 @@ export default function Footer() {
                   color="#FFFFFF"
                   alignItems="center"
                   underline="hover"
+                  sx={{
+                    width: "fit-content",
+                    borderRadius: "11px",
+                    px: "6px",
+                    py: "4px",
+                    transition:
+                      "transform 240ms cubic-bezier(0.22, 1, 0.36, 1), background-color 240ms cubic-bezier(0.22, 1, 0.36, 1)",
+                    "&:hover": {
+                      transform: "translateY(-2px)",
+                      backgroundColor: "rgba(255,255,255,0.12)",
+                    },
+                  }}
                 >
-                  {/* <Image
-                    src={social.icon}
-                    alt={social.name}
-                    width={32}
-                    height={32}
-                    style={{
-                      filter: "brightness(20) invert(1)",
-                      transition: "transform 0.3s",
-                    }}
-                    className="hover:scale-110"
-                  /> */}
                   {social.icon}
                   <Typography
                     fontSize={{ xs: 0, sm: 16 }}
-                    color="white"
+                    color="rgba(255,255,255,0.95)"
                     sx={{
                       "&:hover": {
                         color: "#FFFFFF",
@@ -205,13 +212,14 @@ export default function Footer() {
             flexDirection: { xs: "column", md: "row" },
             justifyContent: "space-between",
             alignItems: "center",
-            borderTop: "1px solid rgba(0, 0, 0, 0.27)",
-            paddingTop: 2,
+            borderTop: "1px solid rgba(255, 255, 255, 0.2)",
+            paddingTop: 1.8,
           }}
         >
           <Typography variant="body2" sx={{
             fontSize: { xs: 10, sm: 14 },
-            paddingBottom: 1,
+            color: "rgba(255,255,255,0.86)",
+            paddingBottom: 0.6,
           }}>
             Copyright © SET Education Technology Pvt. Ltd. 2025
           </Typography>

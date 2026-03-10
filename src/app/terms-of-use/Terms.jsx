@@ -4,7 +4,16 @@ import { Box } from "@mui/material";
 export default function TermsOfUse() {
   const renderContent = () => (
     <Box>
-      <div className="bg-white shadow rounded-lg p-8">
+      <div
+        className="glass-light"
+        style={{
+          borderRadius: "22px",
+          border: "1px solid rgba(255,255,255,0.25)",
+          padding: "2rem",
+          boxShadow: "0 14px 32px rgba(42, 19, 91, 0.14)",
+          color: "#2F1B50",
+        }}
+      >
         <h1 className="text-3xl font-bold text-primary mb-8">Terms of Use</h1>
 
         <div className="space-y-6">
@@ -152,7 +161,7 @@ export default function TermsOfUse() {
   );
 
   return (
-    <PageSection paddingTop={{ xs: "0rem", md: "7rem" }}>
+    <PageSection className="section-gradient" paddingTop={{ xs: "0rem", md: "7rem" }}>
       <SectionStack
         sections={[
           {
@@ -166,4 +175,3 @@ export default function TermsOfUse() {
     </PageSection>
   );
 }
-

@@ -11,15 +11,24 @@ export const CardContainer = ({
   subtitleStyle = {},
   titleChildContainer = {},
   showSubtitleBottomBorder = false,
+  glassVariant = "glass",
+  useGlass = true,
 }) => {
+  const glassClassName = useGlass ? `${glassVariant} glass-hover-lift` : "";
+
   return (
     <Box
+      className={glassClassName}
       sx={{
-        pt: "1rem",
+        position: "relative",
+        pt: "1.15rem",
+        px: { xs: "0.85rem", md: "1.15rem" },
+        pb: { xs: "0.85rem", md: "1rem" },
         display: "flex",
         flexDirection: "column",
         width: "100%",
         marginBottom: { xs: "1rem", md: "2rem", lg: "3rem" },
+        borderRadius: "22px",
         ...containerStyle,
       }}
     >
@@ -54,6 +63,8 @@ export const CardContainer = ({
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               fontSize: "clamp(1.3rem, 2.5vw, 2rem)",
+              textWrap: "balance",
+              ...subtitleStyle,
             }}
             lineHeight={"120%"}
             letterSpacing={"-2%"}

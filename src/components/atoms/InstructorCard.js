@@ -28,6 +28,7 @@ export default function InstructorCard({
   return (
     <Box
       role="img"
+      className="glass-light glass-hover-lift"
       sx={{
         minHeight: "375px",
         minWidth: "300px",
@@ -36,10 +37,10 @@ export default function InstructorCard({
         justifyContent: "space-between",
         padding: "16px",
         borderRadius: "24px",
-        border: "0.5px solid rgba(132, 132, 132, 0.2)",
+        border: "1px solid rgba(255,255,255,0.32)",
         background:
-          "linear-gradient(180deg, rgba(255, 255, 255, 0.80) 0%, #F3E8FF 100%)",
-        boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.10)",
+          "linear-gradient(180deg, rgba(255,255,255,0.35) 0%, rgba(243, 232, 255, 0.2) 100%)",
+        boxShadow: "0 14px 30px rgba(36, 19, 72, 0.12)",
       }}
     >
       {/* Instructor Image at the top */}
@@ -61,14 +62,15 @@ export default function InstructorCard({
         />
       </Box>
       <Box
+        className="glass"
         sx={{
           border: "2px solid transparent",
           borderRadius: "24px",
-          opacity: 0.9,
+          opacity: 1,
           background:
             "linear-gradient(transparent, transparent) padding-box, " +
-            "linear-gradient(to right, #FF8A00, #FF0058) border-box",
-          boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.10)",
+            "linear-gradient(to right, #FB7F05, #6C10BC) border-box",
+          boxShadow: "0 10px 24px rgba(36, 19, 72, 0.14)",
           backgroundClip: "padding-box, border-box", // Ensures transparency inside
         }}
       >
@@ -80,7 +82,7 @@ export default function InstructorCard({
             borderRadius: "24px",
             // border: '1px solid #C200DB',
             background:
-              "linear-gradient(180deg, rgba(255, 255, 255, 0.80) 0%, #F3E8FF 100%)",
+              "linear-gradient(180deg, rgba(255, 255, 255, 0.42) 0%, rgba(243, 232, 255, 0.3) 100%)",
           }}
         >
           <Box sx={{ mb: 1 }}>
@@ -154,9 +156,9 @@ export default function InstructorCard({
                   alignItems: "center",
                   borderRadius: "100px",
                   p: "4px",
-                  backgroundColor: "#FFF",
+                  backgroundColor: "rgba(255,255,255,0.6)",
                   // mx: 2,
-                  boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.10)",
+                  boxShadow: "0px 8px 16px rgba(36, 19, 72, 0.14)",
                 }}
                 onClick={() =>
                   window.open(linkedIn, "_blank", "noopener,noreferrer")

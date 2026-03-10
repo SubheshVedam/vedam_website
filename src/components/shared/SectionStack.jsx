@@ -20,6 +20,8 @@ export const SectionStack = ({
           useCard = true,
           cardProps = {},
           plainWrapperProps = {},
+          useGlass = undefined,
+          glassVariant = undefined,
           key: providedKey,
           ...restCardProps
         } = section;
@@ -38,14 +40,25 @@ export const SectionStack = ({
         if (!useCard) {
           const { sx: defaultPlainSx = {}, ...restPlainDefaults } =
             plainWrapperDefaults;
-          const { sx: plainSx = {}, ...restPlainProps } = plainWrapperProps;
+          const {
+            sx: plainSx = {},
+            className: plainWrapperClassName = "",
+            ...restPlainProps
+          } = plainWrapperProps;
+          const plainUseGlass = useGlass ?? false;
+          const plainGlassClass = plainUseGlass
+            ? `${glassVariant ?? "glass"} glass-hover-lift`
+            : "";
 
           return (
             <Box
               key={key}
+              className={`${plainGlassClass} ${plainWrapperClassName}`.trim()}
               sx={{
                 width: "100%",
                 marginBottom: { xs: "1rem", md: "2rem", lg: "3rem" },
+                borderRadius: plainUseGlass ? "22px" : undefined,
+                padding: plainUseGlass ? { xs: "0.85rem", md: "1rem" } : undefined,
                 ...defaultPlainSx,
                 ...plainSx,
               }}
@@ -63,6 +76,13 @@ export const SectionStack = ({
             {...cardDefaults}
             {...restCardProps}
             {...cardProps}
+            useGlass={useGlass ?? cardProps.useGlass ?? cardDefaults.useGlass ?? true}
+            glassVariant={
+              glassVariant ??
+              cardProps.glassVariant ??
+              cardDefaults.glassVariant ??
+              "glass"
+            }
           >
             {content}
           </CardContainer>

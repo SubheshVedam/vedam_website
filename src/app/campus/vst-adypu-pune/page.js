@@ -22,11 +22,39 @@ export default function VSTADYPUPune() {
     <>
       {/* Modal */}
       {isOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white w-full max-w-4xl p-4 rounded-lg shadow-lg relative">
+        <div
+          className="fixed inset-0 flex items-center justify-center z-50"
+          style={{
+            background: "rgba(17, 10, 33, 0.44)",
+            backdropFilter: "blur(8px)",
+            WebkitBackdropFilter: "blur(8px)",
+            padding: "16px",
+          }}
+        >
+          <div
+            className="glass-modal-shell"
+            style={{
+              width: "100%",
+              maxWidth: "960px",
+              padding: "16px",
+              position: "relative",
+              borderRadius: "24px",
+            }}
+          >
             <button
               onClick={handleClose}
-              className="absolute top-2 right-2 text-gray-600 hover:text-black text-xl"
+              className="glass-icon-button"
+              style={{
+                position: "absolute",
+                top: "12px",
+                right: "12px",
+                color: "#2A135B",
+                width: "34px",
+                height: "34px",
+                borderRadius: "10px",
+                border: "1px solid rgba(255,255,255,0.4)",
+                cursor: "pointer",
+              }}
               aria-label="Close"
             >
               ×
@@ -36,7 +64,11 @@ export default function VSTADYPUPune() {
               width="100%"
               height="600"
               allow="autoplay"
-              className="rounded"
+              className="glass"
+              style={{
+                borderRadius: "18px",
+                border: "1px solid rgba(255,255,255,0.4)",
+              }}
             ></iframe>
           </div>
         </div>

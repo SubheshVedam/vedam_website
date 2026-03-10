@@ -9,13 +9,15 @@ import React, { Fragment, useState } from "react";
 
 const SectionSkeleton = ({ height = 320 }) => (
   <Box
+    className="glass"
     role="status"
     aria-label="Loading section"
     sx={{
       width: "100%",
       minHeight: height,
-      borderRadius: "16px",
-      background: "linear-gradient(90deg, #f2f2f2 0%, #e8e8e8 50%, #f2f2f2 100%)",
+      borderRadius: "22px",
+      background:
+        "linear-gradient(90deg, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.2) 46%, rgba(255,255,255,0.45) 100%)",
       backgroundSize: "200% 100%",
       animation: "pulse 1.2s ease-in-out infinite",
       "@keyframes pulse": {
@@ -278,12 +280,13 @@ const Home = () => {
   return (
     <Fragment>
       <Box
+        className="section-gradient"
         sx={{
           display: "flex",
           flexDirection: "column",
           gap: { xs: "1rem", md: "2rem", lg: "3rem" },
           alignItems: "center",
-          backgroundColor: "#F9F9F9",
+          width: "100%",
         }}
       >
         <VideoWithText
@@ -303,13 +306,14 @@ const Home = () => {
       </Box>
       <AIFirstCurriculum />
       <Box
+        className="section-gradient"
         sx={{
           display: "flex",
           flexDirection: "column",
           gap: "20px",
           alignItems: "center",
           paddingBottom: "16px",
-          backgroundColor: "#F9F9F9",
+          width: "100%",
         }}
       >
         <SectionStack sections={detailSections} />

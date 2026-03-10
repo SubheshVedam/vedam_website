@@ -6,9 +6,9 @@ import { keyframes } from '@emotion/react';
 
 // Animation for subtle pulse effect
 const pulse = keyframes`
-  0% { transform: scale(0.7); }
-  50% { transform: scale(0.8); }
-  100% { transform: scale(0.7); }
+  0% { transform: scale(0.98); }
+  50% { transform: scale(1); }
+  100% { transform: scale(0.98); }
 `;
 
 const FloatingButton = () => {
@@ -25,38 +25,39 @@ const FloatingButton = () => {
       bottom: {xs:'24px',sm:'70px'},
       right: '20px',
       zIndex: 1000,
-      animation: `${pulse} 3s ease-in-out infinite`,
+      animation: `${pulse} 3.4s ease-in-out infinite`,
     }}>
       <Button
+        className="liquid-cta-orange"
         onClick={handleClick}
         sx={{
-          fontSize: "clamp(12px, 2.5vw, 20px)",
-          color: "#F9F9F9",
-          background: "linear-gradient(95.22deg, #FB7F05 2.91%, #6C10BC 99.18%)",
-          borderRadius: "8px",
+          fontSize: "clamp(12px, 2.5vw, 18px)",
+          color: "#231233",
+          background: "linear-gradient(120deg, #FB7F05 0%, #FFA41A 62%, #FFE3BA 100%)",
+          borderRadius: "14px",
           padding: "12px 24px",
-          boxShadow: "0px 0px 11.2px rgba(255, 255, 255, 0.25)",
-          transition: 'all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)',
+          boxShadow: "0px 16px 30px rgba(72, 39, 8, 0.24)",
+          transition: 'all 240ms cubic-bezier(0.22, 1, 0.36, 1)',
           transform: isClicked ? 'translateY(4px) scale(0.98)' : 'none',
           '&:hover': {
-            background: "linear-gradient(95.22deg, #FB7F05 2.91%, #6C10BC 99.18%)",
-            boxShadow: "0px 0px 16px rgba(255, 255, 255, 0.5)",
-            transform: 'translateY(-2px)',
+            background: "linear-gradient(120deg, #FB7F05 0%, #FFA41A 62%, #FFE3BA 100%)",
+            boxShadow: "0px 20px 34px rgba(72, 39, 8, 0.28)",
+            transform: 'translateY(-3px) scale(1.02)',
           },
           '&:active': {
             transform: 'translateY(4px) scale(0.96)',
-            boxShadow: "0px 0px 8px rgba(255, 255, 255, 0.25)",
+            boxShadow: "0px 10px 18px rgba(72, 39, 8, 0.2)",
           },
         }}
         href="https://apply.vedam.org/"
         target="_blank"
         rel="noopener noreferrer"
         endIcon={<OpenInNewIcon sx={{ 
-          color: 'white',
-          transition: 'transform 0.3s ease',
-          transform: 'scale(0.9)',
+          color: '#2A135B',
+          transition: 'transform 240ms cubic-bezier(0.22, 1, 0.36, 1)',
+          transform: 'scale(0.95)',
           '&:hover': {
-            transform: 'scale(1.1)'
+            transform: 'scale(1.06)'
           }
         }} />}
       >

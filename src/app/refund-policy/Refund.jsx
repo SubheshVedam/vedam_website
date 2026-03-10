@@ -15,14 +15,16 @@ import { PageSection, SectionStack } from "@/components";
 export default function Refund() {
   const renderContent = () => (
     <Box
+      className="glass-light"
       sx={{
-        backgroundColor: "#fff",
-        boxShadow: 1,
-        borderRadius: 2,
+        backgroundColor: "rgba(255,255,255,0.34)",
+        boxShadow: "0 14px 32px rgba(42, 19, 91, 0.14)",
+        borderRadius: "22px",
+        border: "1px solid rgba(255,255,255,0.25)",
         p: { xs: 3, sm: 6 },
       }}
     >
-      <Typography variant="h4" color="#FB7F05" fontWeight="bold" mb={4}>
+      <Typography variant="h4" color="#2A135B" fontWeight="bold" mb={4}>
         Vedam Refund Policy
       </Typography>
 
@@ -88,7 +90,7 @@ export default function Refund() {
           </Typography>
           <TableContainer component={Paper} variant="outlined">
             <Table size="small">
-              <TableHead sx={{ backgroundColor: "#eee" }}>
+              <TableHead sx={{ backgroundColor: "rgba(254, 229, 205, 0.75)" }}>
                 <TableRow>
                   <TableCell>Request Made</TableCell>
                   <TableCell>
@@ -130,7 +132,7 @@ export default function Refund() {
           </Typography>
           <TableContainer component={Paper} variant="outlined">
             <Table size="small">
-              <TableHead sx={{ backgroundColor: "#eee" }}>
+              <TableHead sx={{ backgroundColor: "rgba(254, 229, 205, 0.75)" }}>
                 <TableRow>
                   <TableCell>Criteria</TableCell>
                   <TableCell>
@@ -200,7 +202,7 @@ export default function Refund() {
   );
 
   return (
-    <PageSection paddingTop={{ xs: "0rem", md: "7rem" }}>
+    <PageSection className="section-gradient" paddingTop={{ xs: "0rem", md: "7rem" }}>
       <SectionStack
         sections={[
           {

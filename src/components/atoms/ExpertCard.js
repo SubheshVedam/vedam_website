@@ -19,6 +19,7 @@ export default function ExpertCard({
 }) {
   return (
     <Card
+      className="glass-light glass-hover-lift"
       sx={{
         display: "flex",
         flexDirection: { xs: "column", sm: "row" },
@@ -27,12 +28,12 @@ export default function ExpertCard({
         height: { xs: 436, sm: "auto" },
         maxHeight: 436,
         minWidth: { xs: 280, sm: 426 },
-        borderRadius: "16px",
+        borderRadius: "20px",
         padding: "20px",
         overflow: "hidden",
         boxSizing: "border-box",
-        border: "0.5px solid rgba(132, 132, 132, 0.2)",
-        boxShadow: "none",
+        border: "1px solid rgba(255,255,255,0.3)",
+        boxShadow: "0 14px 34px rgba(36, 19, 72, 0.12)",
       }}
     >
       <CardMedia
@@ -42,7 +43,7 @@ export default function ExpertCard({
           height: { xs: 200, sm: 200 },
           objectFit: "cover",
           borderRadius: "8px",
-          backgroundColor: "#F98317",
+          backgroundColor: "rgba(249, 131, 23, 0.55)",
         }}
         image={imageUrl}
         alt="green iguana"
