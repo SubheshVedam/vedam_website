@@ -10,6 +10,7 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   Box,
+  Collapse,
   Container,
   Drawer,
   IconButton,
@@ -28,6 +29,7 @@ import { usePathname } from "next/navigation";
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [campusMenuAnchor, setCampusMenuAnchor] = React.useState(null);
+  const [mobileCampusOpen, setMobileCampusOpen] = React.useState(false);
   const pathname = usePathname();
 
   const handleDrawerToggle = () => {
@@ -68,6 +70,12 @@ export default function Navbar() {
   const handleCampusMenuClose = () => {
     setCampusMenuAnchor(null);
   };
+
+  React.useEffect(() => {
+    if (pathname.startsWith("/admission")) {
+      setMobileCampusOpen(true);
+    }
+  }, [pathname]);
 
   const activeStyle = {
     background: "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)",
@@ -429,8 +437,11 @@ export default function Navbar() {
                   return (
                     <React.Fragment key={`${link.label}-${index}`}>
                       <ListItem
+                        button="true"
+                        onClick={() => setMobileCampusOpen((prev) => !prev)}
                         sx={{
                           backgroundColor: "rgba(108, 16, 188, 0.08)",
+                          cursor: "pointer",
                         }}
                       >
                         <ListItemText
@@ -440,35 +451,46 @@ export default function Navbar() {
                           }}
                           primary={admissionDisplayLabel}
                         />
-                      </ListItem>
-                      {link.children.map((campus) => (
-                        <ListItem
-                          key={campus.path}
-                          button="true"
-                          component={Link}
-                          href={campus.path}
-                          onClick={handleDrawerToggle}
+                        <ArrowDropDownIcon
                           sx={{
-                            pl: 4,
-                            ...(isActive(campus.path) && activeStyle),
+                            color: "#1F1F1F",
+                            transform: mobileCampusOpen
+                              ? "rotate(180deg)"
+                              : "rotate(0deg)",
+                            transition: "transform 200ms ease",
                           }}
-                        >
-                          <ListItemText
+                        />
+                      </ListItem>
+                      <Collapse in={mobileCampusOpen} timeout="auto" unmountOnExit>
+                        {link.children.map((campus) => (
+                          <ListItem
+                            key={campus.path}
+                            button="true"
+                            component={Link}
+                            href={campus.path}
+                            onClick={handleDrawerToggle}
                             sx={{
-                              color: "#1F1F1F",
-                              fontWeight: 600,
-                              fontSize: "14px",
-                              lineHeight: "100%",
-                              letterSpacing: "-2%",
-                              textTransform: "none",
-                              transition: "all 0.3s ease-in-out",
-                              "&:hover": activeStyle,
+                              pl: 4,
                               ...(isActive(campus.path) && activeStyle),
                             }}
-                            primary={campus.label}
-                          />
-                        </ListItem>
-                      ))}
+                          >
+                            <ListItemText
+                              sx={{
+                                color: "#1F1F1F",
+                                fontWeight: 600,
+                                fontSize: "14px",
+                                lineHeight: "100%",
+                                letterSpacing: "-2%",
+                                textTransform: "none",
+                                transition: "all 0.3s ease-in-out",
+                                "&:hover": activeStyle,
+                                ...(isActive(campus.path) && activeStyle),
+                              }}
+                              primary={campus.label}
+                            />
+                          </ListItem>
+                        ))}
+                      </Collapse>
                     </React.Fragment>
                   );
                 }
