@@ -1,5 +1,6 @@
 import React from "react";
 import Admission from "../Admission";
+import { gurugramFeeStructureData } from "@/constants/admissionFeeData";
 
 export const metadata = {
   title: "Admissions & Fees - VST Gurugram | Vedam School of Technology",
@@ -30,7 +31,12 @@ export const metadata = {
 };
 
 const page = () => {
-  return <Admission showHostelFees={false} />;
+  return (
+    <Admission
+      showHostelFees={false}
+      feeStructureData={gurugramFeeStructureData}
+    />
+  );
 };
 
 export default page;

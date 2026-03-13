@@ -14,7 +14,10 @@ import {
   VideoWithText,
 } from "@/components";
 
-const Admission = ({ showHostelFees = true }) => {
+const Admission = ({
+  showHostelFees = true,
+  feeStructureData = undefined,
+}) => {
   const linearGradient = "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)";
   const sections = [
     {
@@ -41,7 +44,12 @@ const Admission = ({ showHostelFees = true }) => {
     {
       id: "fee-structure",
       subtitle: admissionScreenData.feeStructure.subtitle,
-      render: () => <FeeStructure showHostelFees={showHostelFees} />,
+      render: () => (
+        <FeeStructure
+          showHostelFees={showHostelFees}
+          feeStructureData={feeStructureData}
+        />
+      ),
       cardProps: { id: "fees-toggle" },
     },
     {

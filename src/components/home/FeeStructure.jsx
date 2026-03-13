@@ -125,14 +125,17 @@ const SingleCountText = ({ count, text, isHref }) => {
   );
 };
 
-export const FeeStructure = ({ showHostelFees = true }) => {
-  const courseFeeNote = homeScreenData.FeeStructure.courseFeeNote;
+export const FeeStructure = ({
+  showHostelFees = true,
+  feeStructureData = homeScreenData.FeeStructure,
+}) => {
+  const courseFeeNote = feeStructureData?.courseFeeNote;
 
-  const semesterRows = homeScreenData.FeeStructure.leftSideYearTable
+  const semesterRows = (feeStructureData?.leftSideYearTable ?? [])
     .filter((row) => row.semester)
     .sort((a, b) => Number(a.id) - Number(b.id));
 
-  const totalCourseRow = homeScreenData.FeeStructure.leftSideYearTable.find(
+  const totalCourseRow = (feeStructureData?.leftSideYearTable ?? []).find(
     (row) => row.id === "8"
   );
 
@@ -500,8 +503,8 @@ export const FeeStructure = ({ showHostelFees = true }) => {
         >
           Important Fee Highlights
         </Typography>
-        {homeScreenData.FeeStructure.rightSideText &&
-          homeScreenData.FeeStructure.rightSideText.map((item) => (
+        {feeStructureData?.rightSideText &&
+          feeStructureData.rightSideText.map((item) => (
             <SingleCountText
               key={item.id}
               count={item.id}
@@ -1084,7 +1087,7 @@ export const FeeStructure = ({ showHostelFees = true }) => {
           gap: "16px",
         }}
       >
-        {homeScreenData.FeeStructure.leftSideYearTableMobile.map((row) => (
+        {(feeStructureData?.leftSideYearTableMobile ?? []).map((row) => (
           <Accordion
             key={row.id}
             sx={{
@@ -1235,7 +1238,7 @@ export const FeeStructure = ({ showHostelFees = true }) => {
         }}
       >
         <Box>
-          {homeScreenData.FeeStructure.leftSideYearTable
+          {(feeStructureData?.leftSideYearTable ?? [])
             .filter((item) => item.id === "8")
             .map((item) => (
               <Typography
@@ -1255,7 +1258,7 @@ export const FeeStructure = ({ showHostelFees = true }) => {
         </Box>
         <Typography sx={{ fontSize: 40, color: "white" }}></Typography>
         <Box>
-          {homeScreenData.FeeStructure.leftSideYearTable
+          {(feeStructureData?.leftSideYearTable ?? [])
             .filter((item) => item.id === "8")
             .map((item) => (
               <Typography
@@ -1317,7 +1320,7 @@ export const FeeStructure = ({ showHostelFees = true }) => {
         >
           Important Fee Highlights
         </Typography>
-        {homeScreenData.FeeStructure.rightSideText.map((item) => (
+        {(feeStructureData?.rightSideText ?? []).map((item) => (
           <SingleCountText
             key={item.id}
             count={item.id}
