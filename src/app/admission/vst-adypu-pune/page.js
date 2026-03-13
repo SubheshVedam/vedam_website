@@ -1,6 +1,7 @@
 import React from "react";
 import Admission from "../Admission";
 import { adypuPuneFeeStructureData } from "@/constants/admissionFeeData";
+import { AdypuBrochureVideoSection } from "@/components/admission/AdypuBrochureVideoSection";
 
 export const metadata = {
   title: "Admissions & Fees - VST ADYPU Pune | Vedam School of Technology",
@@ -31,7 +32,18 @@ export const metadata = {
 };
 
 const page = () => {
-  return <Admission feeStructureData={adypuPuneFeeStructureData} />;
+  return (
+    <Admission
+      feeStructureData={adypuPuneFeeStructureData}
+      topSections={[
+        {
+          id: "adypu-video-brochure",
+          useCard: false,
+          render: () => <AdypuBrochureVideoSection />,
+        },
+      ]}
+    />
+  );
 };
 
 export default page;

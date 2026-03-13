@@ -240,7 +240,7 @@ export const detailsData = [
 ];
 
 export const admissionCampusLinks = [
-  { label: "VST-Pune", path: "/admission/vst-adypu-pune" },
+  { label: "VST Pune", path: "/admission/vst-adypu-pune" },
   { label: "VST Gurugram", path: "/admission/vst-gurugram" },
 ];
 

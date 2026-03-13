@@ -17,8 +17,14 @@ import {
 const Admission = ({
   showHostelFees = true,
   feeStructureData = undefined,
+  topSections = [],
 }) => {
   const linearGradient = "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)";
+  const normalizedTopSections = Array.isArray(topSections)
+    ? topSections.filter(Boolean)
+    : topSections
+      ? [topSections]
+      : [];
   const sections = [
     {
       id: "admission-and-fees",
@@ -88,7 +94,7 @@ const Admission = ({
             flexDirection: "column",
           },
         }}
-        sections={sections}
+        sections={[...normalizedTopSections, ...sections]}
       />
     </PageSection>
   );
