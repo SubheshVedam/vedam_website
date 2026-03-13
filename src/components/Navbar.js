@@ -4,6 +4,8 @@ import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -18,12 +20,14 @@ import {
   Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { navLinks } from "@/constants/data";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [campusMenuAnchor, setCampusMenuAnchor] = React.useState(null);
   const pathname = usePathname();
 
   const handleDrawerToggle = () => {
@@ -38,7 +42,18 @@ export default function Navbar() {
     if (path === "/") {
       return pathname === "/" || pathname === "/home";
     }
+    if (path.startsWith("/admission")) {
+      return pathname.startsWith("/admission");
+    }
     return pathname === path;
+  };
+
+  const handleCampusMenuOpen = (event) => {
+    setCampusMenuAnchor(event.currentTarget);
+  };
+
+  const handleCampusMenuClose = () => {
+    setCampusMenuAnchor(null);
   };
 
   const activeStyle = {
@@ -115,70 +130,129 @@ export default function Navbar() {
                 alignItems: "center",
               }}
             >
-              {navLinks.slice(0, 4).map((link, index) => (
-                <Link key={index} href={link.path} passHref>
-                  <Button
-                    color="inherit"
-                    sx={{
-                      color: "#1F1F1F",
-                      fontWeight: 500,
-                      fontSize: "14px",
-                      lineHeight: "100%",
-                      letterSpacing: "-2%",
-                      textTransform: "none",
-                      transition: "all 0.3s ease-in-out",
-                      fontFamily: "Inter",
-                      zIndex: "1",
-                      "&:hover": activeStyle,
-                      ...(isActive(link.path) && activeStyle),
-                    }}
-                  >
-                    {link.label}
-                    {link.img && (
-                      <Box
+              {navLinks.slice(0, 4).map((link, index) => {
+                if (link.children?.length) {
+                  return (
+                    <React.Fragment key={index}>
+                      <Button
+                        color="inherit"
+                        onClick={handleCampusMenuOpen}
+                        endIcon={<ArrowDropDownIcon />}
                         sx={{
-                          display: { xs: "none", lg: "block" },
+                          color: "#1F1F1F",
+                          fontWeight: 500,
+                          fontSize: "14px",
+                          lineHeight: "100%",
+                          letterSpacing: "-2%",
+                          textTransform: "none",
+                          transition: "all 0.3s ease-in-out",
+                          fontFamily: "Inter",
+                          zIndex: "1",
+                          "&:hover": activeStyle,
+                          ...(isActive(link.path) && activeStyle),
                         }}
                       >
-                        <Typography
+                        {link.label}
+                      </Button>
+                      <Menu
+                        anchorEl={campusMenuAnchor}
+                        open={Boolean(campusMenuAnchor)}
+                        onClose={handleCampusMenuClose}
+                        anchorOrigin={{
+                          vertical: "bottom",
+                          horizontal: "left",
+                        }}
+                        transformOrigin={{
+                          vertical: "top",
+                          horizontal: "left",
+                        }}
+                      >
+                        {link.children.map((campus) => (
+                          <MenuItem
+                            key={campus.path}
+                            component={Link}
+                            href={campus.path}
+                            onClick={handleCampusMenuClose}
+                            selected={isActive(campus.path)}
+                            sx={{
+                              fontSize: "14px",
+                              fontFamily: "Inter",
+                              minWidth: "220px",
+                            }}
+                          >
+                            {campus.label}
+                          </MenuItem>
+                        ))}
+                      </Menu>
+                    </React.Fragment>
+                  );
+                }
+
+                return (
+                  <Link key={index} href={link.path} passHref>
+                    <Button
+                      color="inherit"
+                      sx={{
+                        color: "#1F1F1F",
+                        fontWeight: 500,
+                        fontSize: "14px",
+                        lineHeight: "100%",
+                        letterSpacing: "-2%",
+                        textTransform: "none",
+                        transition: "all 0.3s ease-in-out",
+                        fontFamily: "Inter",
+                        zIndex: "1",
+                        "&:hover": activeStyle,
+                        ...(isActive(link.path) && activeStyle),
+                      }}
+                    >
+                      {link.label}
+                      {link.img && (
+                        <Box
                           sx={{
-                            fontFamily: "Inter",
-                            fontSize: "0.5rem",
-                            fontStyle: "italic",
-                            fontWeight: 600,
-                            lineHeight: "1.75rem",
-                            background:
-                              "linear-gradient(90deg, #FF7829 0%, #7B2CBF 100%)",
-                            WebkitBackgroundClip: "text",
-                            WebkitTextFillColor: "transparent",
-                            backgroundClip: "text",
-                            color: "transparent",
-                            position: "absolute",
-                            top: "-42%",
-                            right: "13%",
-                            zIndex: " 4",
+                            display: { xs: "none", lg: "block" },
                           }}
                         >
-                          New
-                        </Typography>
-                        <Image
-                          src={link.img}
-                          alt=""
-                          width={25}
-                          height={35}
-                          style={{
-                            zIndex: "2",
-                            position: "absolute",
-                            right: -1,
-                            top: "49%",
-                            transform: "translateY(-50%)",
-                          }}
-                        />
-                      </Box>
-                    )}
-                  </Button>
-                </Link>
-              ))}
+                          <Typography
+                            sx={{
+                              fontFamily: "Inter",
+                              fontSize: "0.5rem",
+                              fontStyle: "italic",
+                              fontWeight: 600,
+                              lineHeight: "1.75rem",
+                              background:
+                                "linear-gradient(90deg, #FF7829 0%, #7B2CBF 100%)",
+                              WebkitBackgroundClip: "text",
+                              WebkitTextFillColor: "transparent",
+                              backgroundClip: "text",
+                              color: "transparent",
+                              position: "absolute",
+                              top: "-42%",
+                              right: "13%",
+                              zIndex: " 4",
+                            }}
+                          >
+                            New
+                          </Typography>
+                          <Image
+                            src={link.img}
+                            alt=""
+                            width={25}
+                            height={35}
+                            style={{
+                              zIndex: "2",
+                              position: "absolute",
+                              right: -1,
+                              top: "49%",
+                              transform: "translateY(-50%)",
+                            }}
+                          />
+                        </Box>
+                      )}
+                    </Button>
+                  </Link>
+                );
+              })}
               <Box sx={{ display: "flex", gap: "1rem" }}>
                 <Button
                   color="inherit"
@@ -253,38 +327,88 @@ export default function Navbar() {
             sx={{ zIndex: 11111 }}
           >
             <List sx={{ width: "250px" }}>
-              {navLinks.map((link, index) => (
-                <ListItem
-                  button="true"
-                  key={index}
-                  component={Link}
-                  href={link.path}
-                  onClick={handleDrawerToggle}
-                  sx={{
-                    ...(isActive(link.path) && activeStyle),
-                  }}
-                >
-                  <ListItemText
+              {navLinks.map((link, index) => {
+                if (link.children?.length) {
+                  return (
+                    <React.Fragment key={`${link.label}-${index}`}>
+                      <ListItem
+                        sx={{
+                          backgroundColor: "rgba(108, 16, 188, 0.08)",
+                        }}
+                      >
+                        <ListItemText
+                          sx={{
+                            color: "#1F1F1F",
+                            fontWeight: 700,
+                          }}
+                          primary={link.label}
+                        />
+                      </ListItem>
+                      {link.children.map((campus) => (
+                        <ListItem
+                          key={campus.path}
+                          button="true"
+                          component={Link}
+                          href={campus.path}
+                          onClick={handleDrawerToggle}
+                          sx={{
+                            pl: 4,
+                            ...(isActive(campus.path) && activeStyle),
+                          }}
+                        >
+                          <ListItemText
+                            sx={{
+                              color: "#1F1F1F",
+                              fontWeight: 600,
+                              fontSize: "14px",
+                              lineHeight: "100%",
+                              letterSpacing: "-2%",
+                              textTransform: "none",
+                              transition: "all 0.3s ease-in-out",
+                              "&:hover": activeStyle,
+                              ...(isActive(campus.path) && activeStyle),
+                            }}
+                            primary={campus.label}
+                          />
+                        </ListItem>
+                      ))}
+                    </React.Fragment>
+                  );
+                }
+
+                return (
+                  <ListItem
+                    button="true"
+                    key={index}
+                    component={Link}
+                    href={link.path}
+                    onClick={handleDrawerToggle}
                     sx={{
-                      color: "#1F1F1F",
-                      fontWeight: 600,
-                      fontSize: "14px",
-                      lineHeight: "100%",
-                      letterSpacing: "-2%",
-                      textTransform: "none",
-                      transition: "all 0.3s ease-in-out",
-                      "&:hover": activeStyle,
                       ...(isActive(link.path) && activeStyle),
                     }}
-                    primary={link.label}
-                  />
-                  {isAuthLink(link.label) && (
-                    <ListItemIcon sx={{ minWidth: "24px", marginLeft: "8px" }}>
-                      <ArrowForwardIcon fontSize="small" />
-                    </ListItemIcon>
-                  )}
-                </ListItem>
-              ))}
+                  >
+                    <ListItemText
+                      sx={{
+                        color: "#1F1F1F",
+                        fontWeight: 600,
+                        fontSize: "14px",
+                        lineHeight: "100%",
+                        letterSpacing: "-2%",
+                        textTransform: "none",
+                        transition: "all 0.3s ease-in-out",
+                        "&:hover": activeStyle,
+                        ...(isActive(link.path) && activeStyle),
+                      }}
+                      primary={link.label}
+                    />
+                    {isAuthLink(link.label) && (
+                      <ListItemIcon sx={{ minWidth: "24px", marginLeft: "8px" }}>
+                        <ArrowForwardIcon fontSize="small" />
+                      </ListItemIcon>
+                    )}
+                  </ListItem>
+                );
+              })}
             </List>
           </Drawer>
         </AppBar>

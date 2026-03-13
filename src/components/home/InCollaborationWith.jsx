@@ -22,7 +22,7 @@ const campusCards = [
     image: "/img/campuses/Adypu_home_page.webp",
     description: "Ajeenkya DY Patil University, Pune, Maharashtra",
     buttonText: "Explore",
-    href: "/admission",
+    href: "/admission/vst-adypu-pune",
     isExplore: true,
   },
   {

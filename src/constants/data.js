@@ -239,9 +239,18 @@ export const detailsData = [
   },
 ];
 
+export const admissionCampusLinks = [
+  { label: "VST ADYPU Pune", path: "/admission/vst-adypu-pune" },
+  { label: "VST Gurugram", path: "/admission/vst-gurugram" },
+];
+
 export const navLinks = [
   { label: "Home", path: "/" },
-  { label: "Admission & Fees", path: "/admission" },
+  {
+    label: "Admission & Fees",
+    path: "/admission/vst-adypu-pune",
+    children: admissionCampusLinks,
+  },
   { label: "Life @ Vedam", path: "/life", img: "/img/Group 1261155759.svg" },
   { label: "FAQs", path: "/faqs" },
   // { label: "About Us", path: "/about" },
