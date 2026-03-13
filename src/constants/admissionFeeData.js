@@ -142,6 +142,12 @@ export const adypuPuneFeeStructureData = {
       total: "2,21,250",
     },
   ],
+  mobileSemesterOneBreakdown: {
+    seatBlockFee: "50,000",
+    refundableSecurityDeposit: "30,000",
+    upskillingFee: "71,250",
+    tuitionFee: "1,50,000",
+  },
   rightSideText: [
     {
       id: 1,
@@ -237,18 +243,84 @@ const gurugramDesktopFeeRows = [
   },
 ];
 
-const gurugramMobileFeeRows = gurugramDesktopFeeRows
-  .filter((row) => row.semester)
-  .map((row, index) => ({
-    ...row,
-    year1: `Semester ${index + 1}`,
-  }));
+const gurugramMobileFeeRows = [
+  {
+    id: "0",
+    year1: "Semester 1",
+    semester: "Semester 1",
+    amount1: "1,64,813",
+    amount2: "1,00,000",
+    total: "2,64,813",
+  },
+  {
+    id: "1",
+    year1: "Semester 2",
+    semester: "Semester 2",
+    amount1: "84,813",
+    amount2: "1,34,500",
+    total: "2,19,313",
+  },
+  {
+    id: "2",
+    year1: "Semester 3",
+    semester: "Semester 3",
+    amount1: "84,813",
+    amount2: "1,34,500",
+    total: "2,19,313",
+  },
+  {
+    id: "3",
+    year1: "Semester 4",
+    semester: "Semester 4",
+    amount1: "84,813",
+    amount2: "1,34,500",
+    total: "2,19,313",
+  },
+  {
+    id: "4",
+    year1: "Semester 5",
+    semester: "Semester 5",
+    amount1: "84,813",
+    amount2: "1,34,500",
+    total: "2,19,313",
+  },
+  {
+    id: "5",
+    year1: "Semester 6",
+    semester: "Semester 6",
+    amount1: "84,813",
+    amount2: "1,34,500",
+    total: "2,19,313",
+  },
+  {
+    id: "6",
+    year1: "Semester 7",
+    semester: "Semester 7",
+    amount1: "84,813",
+    amount2: "1,34,500",
+    total: "2,19,313",
+  },
+  {
+    id: "7",
+    year1: "Semester 8",
+    semester: "Semester 8",
+    amount1: "84,813",
+    amount2: "1,34,500",
+    total: "2,19,313",
+  },
+];
 
 export const gurugramFeeStructureData = {
   ...adypuPuneFeeStructureData,
   headerRightLocation: "VST, Gurugram",
   leftSideYearTable: gurugramDesktopFeeRows,
   leftSideYearTableMobile: gurugramMobileFeeRows,
+  mobileSemesterOneBreakdown: {
+    seatBlockFee: "50,000",
+    refundableSecurityDeposit: "30,000",
+    upskillingFee: "84,813",
+    tuitionFee: "1,00,000",
+  },
   rightSideText: [
     {
       id: 1,

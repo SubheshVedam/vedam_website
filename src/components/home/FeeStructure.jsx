@@ -143,6 +143,7 @@ export const FeeStructure = ({
     Number(String(value ?? "0").replace(/[^0-9.-]/g, "")) || 0;
 
   const formatAmount = (value) => value.toLocaleString("en-IN");
+  const formatAmountString = (value) => formatAmount(parseAmount(value));
 
   const seatBlockFee = 50000;
   const refundableSecurityDeposit = 30000;
@@ -195,6 +196,18 @@ export const FeeStructure = ({
       emphasize: true,
     },
   ];
+
+  const fallbackMobileSemesterOneBreakdown = {
+    seatBlockFee: "50,000",
+    refundableSecurityDeposit: "30,000",
+    upskillingFee: formatAmountString(recurringUpskillingFee),
+    tuitionFee: formatAmountString(semesterRows[0]?.amount2),
+  };
+
+  const mobileSemesterOneBreakdown = {
+    ...fallbackMobileSemesterOneBreakdown,
+    ...(feeStructureData?.mobileSemesterOneBreakdown ?? {}),
+  };
 
   const div1 = (
     <Box
@@ -1134,7 +1147,7 @@ export const FeeStructure = ({
                         }}
                       >
                         <SingleTableCell isFirst text="Seat Block Fee" />
-                        <SingleTableCell text="50,000" />
+                        <SingleTableCell text={mobileSemesterOneBreakdown.seatBlockFee} />
                       </TableRow>
                       <TableRow
                         sx={{
@@ -1144,7 +1157,9 @@ export const FeeStructure = ({
                         }}
                       >
                         <SingleTableCell isFirst text="Refundable Security Deposit" />
-                        <SingleTableCell text="30,000" />
+                        <SingleTableCell
+                          text={mobileSemesterOneBreakdown.refundableSecurityDeposit}
+                        />
                       </TableRow>
                       <TableRow
                         sx={{
@@ -1154,7 +1169,7 @@ export const FeeStructure = ({
                         }}
                       >
                         <SingleTableCell isFirst text="Upskilling Fee" />
-                        <SingleTableCell text="71,500" />
+                        <SingleTableCell text={mobileSemesterOneBreakdown.upskillingFee} />
                       </TableRow>
                       <TableRow
                         sx={{
@@ -1164,7 +1179,7 @@ export const FeeStructure = ({
                         }}
                       >
                         <SingleTableCell isFirst text="Tuition Fee" />
-                        <SingleTableCell text="1,50,000" />
+                        <SingleTableCell text={mobileSemesterOneBreakdown.tuitionFee} />
                       </TableRow>
                     </>
                   ) : (
