@@ -30,7 +30,7 @@ export const metadata = {
 };
 
 const page = () => {
-  return <Admission />;
+  return <Admission showHostelFees={false} />;
 };
 
 export default page;

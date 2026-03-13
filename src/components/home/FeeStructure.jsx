@@ -125,7 +125,7 @@ const SingleCountText = ({ count, text, isHref }) => {
   );
 };
 
-export const FeeStructure = () => {
+export const FeeStructure = ({ showHostelFees = true }) => {
   const courseFeeNote = homeScreenData.FeeStructure.courseFeeNote;
 
   const semesterRows = homeScreenData.FeeStructure.leftSideYearTable
@@ -1338,7 +1338,11 @@ export const FeeStructure = () => {
         alignItems: "stretch",
       }}
     >
-      <FeesToggleButton div1={div1} mdiv1={mdiv1} />
+      <FeesToggleButton
+        div1={div1}
+        mdiv1={mdiv1}
+        showHostelFees={showHostelFees}
+      />
     </Box>
   );
 };
