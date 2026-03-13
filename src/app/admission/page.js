@@ -1,5 +1,6 @@
 import React from "react";
 import Admission from "./Admission";
+import { adypuPuneFeeStructureData } from "@/constants/admissionFeeData";
 
 export const metadata = {
   title: 'Admissions & Fees - Vedam School of Technology',
@@ -23,7 +24,7 @@ export const metadata = {
 };
 
 const page = () => {
-  return <Admission />;
+  return <Admission feeStructureData={adypuPuneFeeStructureData} />;
 };
 
 export default page;

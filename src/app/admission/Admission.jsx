@@ -14,8 +14,18 @@ import {
   VideoWithText,
 } from "@/components";
 
-const Admission = () => {
+const Admission = ({
+  showHostelFees = true,
+  feeStructureData = undefined,
+  topSections = [],
+  facilityAndAmenitiesProps = {},
+}) => {
   const linearGradient = "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)";
+  const normalizedTopSections = Array.isArray(topSections)
+    ? topSections.filter(Boolean)
+    : topSections
+      ? [topSections]
+      : [];
   const sections = [
     {
       id: "admission-and-fees",
@@ -41,7 +51,12 @@ const Admission = () => {
     {
       id: "fee-structure",
       subtitle: admissionScreenData.feeStructure.subtitle,
-      render: () => <FeeStructure />,
+      render: () => (
+        <FeeStructure
+          showHostelFees={showHostelFees}
+          feeStructureData={feeStructureData}
+        />
+      ),
       cardProps: { id: "fees-toggle" },
     },
     {
@@ -53,7 +68,7 @@ const Admission = () => {
       id: "facilities",
       subtitle: "",
       render: () => <Box sx={{ mb: { xs: '-40px', md: '-80px' } }}>
-        <FacilityAndAmenities />
+        <FacilityAndAmenities {...facilityAndAmenitiesProps} />
       </Box>
     },
   ];
@@ -80,7 +95,7 @@ const Admission = () => {
             flexDirection: "column",
           },
         }}
-        sections={sections}
+        sections={[...normalizedTopSections, ...sections]}
       />
     </PageSection>
   );

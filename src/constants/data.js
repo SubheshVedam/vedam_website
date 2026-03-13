@@ -239,9 +239,28 @@ export const detailsData = [
   },
 ];
 
+export const admissionCampusLinks = [
+  {
+    label: "VST Pune",
+    path: "/admission/vst-adypu-pune",
+    image: "/img/campuses/Adypu_home_page.webp",
+    collaborationUniversity: "Ajeenkya DY Patil University",
+  },
+  {
+    label: "VST Gurugram",
+    path: "/admission/vst-gurugram",
+    image: "/img/campuses/Gurugram_home_page_v2.webp",
+    collaborationUniversity: "Sushant University",
+  },
+];
+
 export const navLinks = [
   { label: "Home", path: "/" },
-  { label: "Admission & Fees", path: "/admission" },
+  {
+    label: "Admission & Fees",
+    path: "/admission/vst-adypu-pune",
+    children: admissionCampusLinks,
+  },
   { label: "Life @ Vedam", path: "/life", img: "/img/Group 1261155759.svg" },
   { label: "FAQs", path: "/faqs" },
   // { label: "About Us", path: "/about" },

@@ -3,7 +3,9 @@ import React, { useState } from "react";
 import { Box, useMediaQuery } from "@mui/material";
 import { HostelFees } from "./HostelFee";
 
-const ToggleButton = ({ selectedFee, setSelectedFee }) => {
+const ToggleButton = ({ selectedFee, setSelectedFee, showHostelFees = true }) => {
+  const feeTypes = showHostelFees ? ["tuition", "hostel"] : ["tuition"];
+
   return (
     <Box display="flex" justifyContent="center" mb={2} px={{ xs: 2, sm: 0 }}>
       <Box
@@ -13,8 +15,8 @@ const ToggleButton = ({ selectedFee, setSelectedFee }) => {
           padding: { xs: "0.4rem", sm: "0.5rem" },
           display: "flex",
           position: "relative",
-          width: "21rem",
-          maxWidth: "21rem",
+          width: showHostelFees ? "21rem" : "11rem",
+          maxWidth: showHostelFees ? "21rem" : "11rem",
           height: { xs: "3.5rem", sm: "4.1rem" },
           mx: "auto",
           boxShadow:
@@ -28,11 +30,14 @@ const ToggleButton = ({ selectedFee, setSelectedFee }) => {
           sx={{
             position: "absolute",
             top: { xs: "0.4rem", sm: "0.485rem" },
-            left:
-              selectedFee === "tuition"
+            left: showHostelFees
+              ? selectedFee === "tuition"
                 ? { xs: "0.6rem", sm: "0.8rem" }
-                : { xs: "calc(50% + 0.2rem)", sm: "calc(50% + 0.3rem)" },
-            width: { xs: "calc(50% - 0.6rem)", sm: "calc(50% - 0.8rem)" },
+                : { xs: "calc(50% + 0.2rem)", sm: "calc(50% + 0.3rem)" }
+              : { xs: "0.6rem", sm: "0.8rem" },
+            width: showHostelFees
+              ? { xs: "calc(50% - 0.6rem)", sm: "calc(50% - 0.8rem)" }
+              : { xs: "calc(100% - 1.2rem)", sm: "calc(100% - 1.6rem)" },
             height: { xs: "calc(100% - 0.8rem)", sm: "calc(100% - 1rem)" },
             background: "#6513AC",
             borderRadius: { xs: 2, sm: 2.7 },
@@ -40,7 +45,7 @@ const ToggleButton = ({ selectedFee, setSelectedFee }) => {
             zIndex: 1,
           }}
         />
-        {["tuition", "hostel"].map((type) => (
+        {feeTypes.map((type) => (
           <Box
             key={type}
             onClick={() => setSelectedFee(type)}
@@ -73,16 +78,20 @@ const ToggleButton = ({ selectedFee, setSelectedFee }) => {
   );
 };
 
-const FeesToggleButton = ({ div1, mdiv1 }) => {
+const FeesToggleButton = ({ div1, mdiv1, showHostelFees = true }) => {
   const [selectedFee, setSelectedFee] = useState("tuition");
   const isMobile = useMediaQuery("(max-width:600px)");
 
   const getContent = () => {
     if (selectedFee === "tuition") {
       return isMobile ? mdiv1 : div1;
-    } else {
+    }
+
+    if (showHostelFees) {
       return <HostelFees />;
     }
+
+    return isMobile ? mdiv1 : div1;
   };
 
   return (
@@ -97,6 +106,7 @@ const FeesToggleButton = ({ div1, mdiv1 }) => {
       <ToggleButton
         selectedFee={selectedFee}
         setSelectedFee={setSelectedFee}
+        showHostelFees={showHostelFees}
       />
 
       <Box mt={2}>{getContent()}</Box>
