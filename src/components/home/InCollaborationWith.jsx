@@ -13,8 +13,9 @@ const campusCards = [
     title: "",
     image: "/img/campuses/Gurugram_home_page_v2.webp",
     description: "Sushant University, Gurugram, Delhi NCR",
-    buttonText: "Coming Soon",
-    isExplore: false,
+    buttonText: "Explore Campus",
+    href: "/admission/vst-gurugram",
+    isExplore: true,
   },
   {
     id: "pune",
