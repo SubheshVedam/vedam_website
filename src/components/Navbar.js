@@ -151,6 +151,7 @@ export default function Navbar() {
                     <React.Fragment key={index}>
                       <Button
                         color="inherit"
+                        id="admission-campus-menu-trigger"
                         onClick={handleCampusMenuOpen}
                         endIcon={<ArrowDropDownIcon />}
                         sx={{
@@ -173,6 +174,27 @@ export default function Navbar() {
                         anchorEl={campusMenuAnchor}
                         open={Boolean(campusMenuAnchor)}
                         onClose={handleCampusMenuClose}
+                        MenuListProps={{
+                          "aria-labelledby": "admission-campus-menu-trigger",
+                          sx: {
+                            display: "grid",
+                            gridTemplateColumns: {
+                              xs: "1fr",
+                              sm: "repeat(2, minmax(220px, 1fr))",
+                            },
+                            gap: 1.25,
+                            padding: "12px",
+                            width: { xs: "280px", sm: "520px" },
+                          },
+                        }}
+                        PaperProps={{
+                          sx: {
+                            mt: "8px",
+                            borderRadius: "14px",
+                            border: "1px solid rgba(17, 24, 39, 0.08)",
+                            boxShadow: "0 14px 32px rgba(17, 24, 39, 0.14)",
+                          },
+                        }}
                         anchorOrigin={{
                           vertical: "bottom",
                           horizontal: "left",
@@ -190,12 +212,70 @@ export default function Navbar() {
                             onClick={handleCampusMenuClose}
                             selected={isActive(campus.path)}
                             sx={{
-                              fontSize: "14px",
-                              fontFamily: "Inter",
-                              minWidth: "220px",
+                              display: "flex",
+                              flexDirection: "column",
+                              alignItems: "flex-start",
+                              gap: "10px",
+                              minHeight: "auto",
+                              borderRadius: "10px",
+                              padding: "8px",
+                              transition: "transform 180ms ease, background-color 180ms ease",
+                              "&:hover": {
+                                backgroundColor: "rgba(108, 16, 188, 0.08)",
+                                transform: "translateY(-2px)",
+                              },
+                              "&.Mui-selected": {
+                                backgroundColor: "rgba(108, 16, 188, 0.1)",
+                              },
+                              "&.Mui-selected:hover": {
+                                backgroundColor: "rgba(108, 16, 188, 0.14)",
+                              },
                             }}
                           >
-                            {campus.label}
+                            <Box
+                              sx={{
+                                width: "100%",
+                                height: "106px",
+                                position: "relative",
+                                overflow: "hidden",
+                                borderRadius: "8px",
+                                backgroundColor: "rgba(17, 24, 39, 0.08)",
+                              }}
+                            >
+                              {campus.image && (
+                                <Image
+                                  src={campus.image}
+                                  alt={`${campus.label} campus`}
+                                  fill
+                                  sizes="(max-width: 600px) 260px, 240px"
+                                  style={{
+                                    objectFit: "cover",
+                                  }}
+                                />
+                              )}
+                            </Box>
+                            <Typography
+                              sx={{
+                                fontFamily: "Inter",
+                                fontSize: "16px",
+                                fontWeight: 600,
+                                lineHeight: "120%",
+                                color: "#111827",
+                              }}
+                            >
+                              {campus.label}
+                            </Typography>
+                            <Typography
+                              sx={{
+                                fontFamily: "Inter",
+                                fontSize: "13px",
+                                fontWeight: 400,
+                                lineHeight: "120%",
+                                color: "rgba(17, 24, 39, 0.7)",
+                              }}
+                            >
+                              {campus.location}
+                            </Typography>
                           </MenuItem>
                         ))}
                       </Menu>

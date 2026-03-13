@@ -240,8 +240,18 @@ export const detailsData = [
 ];
 
 export const admissionCampusLinks = [
-  { label: "VST Pune", path: "/admission/vst-adypu-pune" },
-  { label: "VST Gurugram", path: "/admission/vst-gurugram" },
+  {
+    label: "VST Pune",
+    path: "/admission/vst-adypu-pune",
+    image: "/img/campuses/Adypu_home_page.webp",
+    location: "Pune, Maharashtra",
+  },
+  {
+    label: "VST Gurugram",
+    path: "/admission/vst-gurugram",
+    image: "/img/campuses/Gurugram_home_page_v2.webp",
+    location: "Gurugram, Delhi NCR",
+  },
 ];
 
 export const navLinks = [
