@@ -240,7 +240,7 @@ export const detailsData = [
 ];
 
 export const navLinks = [
-  { label: "Home", path: "/home" },
+  { label: "Home", path: "/" },
   { label: "Admission & Fees", path: "/admission" },
   { label: "Life @ Vedam", path: "/life", img: "/img/Group 1261155759.svg" },
   { label: "FAQs", path: "/faqs" },

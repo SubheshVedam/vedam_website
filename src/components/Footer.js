@@ -94,7 +94,7 @@ export default function Footer() {
                 <Box sx={{ width: { xs: 130, sm: 200 }, ml: "-10px" }}>
                   <Image
                     src="/img/Vedam_Final_Logo_White.webp"
-                    alt="Navbar Logo"
+                    alt="Vedam School of Technology logo"
                     width={200}
                     height={200}
                     style={{

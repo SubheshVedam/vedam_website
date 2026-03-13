@@ -4,6 +4,9 @@ import Home from '../app/home/client/Home'
 export const metadata = {
   title: 'Vedam School of Technology | India’s Premier CS & AI College',
   description: 'Welcome to Vedam School of Technology - A premier institution for Computer Science and AI education. Discover our cutting-edge programs, expert faculty, and innovative learning environment.',
+  alternates: {
+    canonical: '/',
+  },
   keywords: [
     'Vedam School of Technology',
     'BTech in Computer Science',
@@ -19,7 +22,7 @@ export const metadata = {
   openGraph: {
     title: 'Home - Vedam School of Technology',
     description: 'Welcome to Vedam School of Technology - A premier institution for Computer Science and AI education. Discover our cutting-edge programs, expert faculty, and innovative learning environment.',
-    url: 'https://www.vedam.org/home',
+    url: 'https://www.vedam.org/',
     siteName: 'Vedam School of Technology',
     type: 'website',
     images: [

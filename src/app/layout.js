@@ -14,6 +14,7 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
+  metadataBase: new URL("https://vedam.org"),
   title: {
     default: "Vedam School of Technology - Computer Science & AI Education",
     template: "%s | Vedam School of Technology",

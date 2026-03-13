@@ -20,12 +20,11 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import { navLinks } from "@/constants/data";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const pathname = usePathname();
-  const router = useRouter();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -36,6 +35,9 @@ export default function Navbar() {
   };
 
   const isActive = (path) => {
+    if (path === "/") {
+      return pathname === "/" || pathname === "/home";
+    }
     return pathname === path;
   };
 
@@ -87,22 +89,23 @@ export default function Navbar() {
             }}
           >
             {/* Logo */}
-            <Image
-              src="/img/vedam_logo.webp"
-              alt="Navbar Logo"
-              width={88}
-              height={34}
-              style={{
-                objectFit: "contain",
-                maxWidth: "100%",
-                cursor: "pointer",
-              }}
-              sx={{
-                width: { xs: "51px", sm: "88px" },
-                height: { xs: "20px", sm: "34px" },
-              }}
-              onClick={() => router.push("/home")}
-            />
+            <Link href="/" aria-label="Go to Vedam School of Technology home">
+              <Image
+                src="/img/vedam_logo.webp"
+                alt="Vedam School of Technology logo"
+                width={88}
+                height={34}
+                style={{
+                  objectFit: "contain",
+                  maxWidth: "100%",
+                  cursor: "pointer",
+                }}
+                sx={{
+                  width: { xs: "51px", sm: "88px" },
+                  height: { xs: "20px", sm: "34px" },
+                }}
+              />
+            </Link>
 
             {/* Desktop Navigation */}
             <Box
