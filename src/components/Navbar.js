@@ -48,6 +48,19 @@ export default function Navbar() {
     return pathname === path;
   };
 
+  const getAdmissionDisplayLabel = (link) => {
+    if (!link.children?.length) {
+      return link.label;
+    }
+
+    const activeCampus = link.children.find(
+      (campus) =>
+        pathname === campus.path || pathname.startsWith(`${campus.path}/`)
+    );
+
+    return activeCampus?.label || link.label;
+  };
+
   const handleCampusMenuOpen = (event) => {
     setCampusMenuAnchor(event.currentTarget);
   };
@@ -132,6 +145,8 @@ export default function Navbar() {
             >
               {navLinks.slice(0, 4).map((link, index) => {
                 if (link.children?.length) {
+                  const admissionDisplayLabel = getAdmissionDisplayLabel(link);
+
                   return (
                     <React.Fragment key={index}>
                       <Button
@@ -152,7 +167,7 @@ export default function Navbar() {
                           ...(isActive(link.path) && activeStyle),
                         }}
                       >
-                        {link.label}
+                        {admissionDisplayLabel}
                       </Button>
                       <Menu
                         anchorEl={campusMenuAnchor}
@@ -329,6 +344,8 @@ export default function Navbar() {
             <List sx={{ width: "250px" }}>
               {navLinks.map((link, index) => {
                 if (link.children?.length) {
+                  const admissionDisplayLabel = getAdmissionDisplayLabel(link);
+
                   return (
                     <React.Fragment key={`${link.label}-${index}`}>
                       <ListItem
@@ -341,7 +358,7 @@ export default function Navbar() {
                             color: "#1F1F1F",
                             fontWeight: 700,
                           }}
-                          primary={link.label}
+                          primary={admissionDisplayLabel}
                         />
                       </ListItem>
                       {link.children.map((campus) => (
