@@ -244,13 +244,13 @@ export const admissionCampusLinks = [
     label: "VST Pune",
     path: "/admission/vst-adypu-pune",
     image: "/img/campuses/Adypu_home_page.webp",
-    location: "Pune, Maharashtra",
+    collaborationUniversity: "Ajeenkya DY Patil University",
   },
   {
     label: "VST Gurugram",
     path: "/admission/vst-gurugram",
     image: "/img/campuses/Gurugram_home_page_v2.webp",
-    location: "Gurugram, Delhi NCR",
+    collaborationUniversity: "Sushant University",
   },
 ];
 

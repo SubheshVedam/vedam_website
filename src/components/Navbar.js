@@ -274,7 +274,7 @@ export default function Navbar() {
                                 color: "rgba(17, 24, 39, 0.7)",
                               }}
                             >
-                              {campus.location}
+                              {campus.collaborationUniversity || campus.location}
                             </Typography>
                           </MenuItem>
                         ))}
