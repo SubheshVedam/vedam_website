@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { Box, Typography, IconButton } from "@mui/material";
 import React, { useState } from "react";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
@@ -147,7 +147,26 @@ const CategoryCarousel = ({ category }) => {
   );
 };
 
-export const FacilityAndAmenities = ({ isV2 }) => {
+const normalizeFlatImage = (item, fallbackIndex) => {
+  if (typeof item === "string") {
+    return {
+      imageUrl: item,
+      alt: `Facility image ${fallbackIndex + 1}`,
+    };
+  }
+
+  return {
+    imageUrl: item?.imageUrl ?? "",
+    alt: item?.alt ?? `Facility image ${fallbackIndex + 1}`,
+  };
+};
+
+export const FacilityAndAmenities = ({ flatImages = [] }) => {
+  const hasFlatGallery = Array.isArray(flatImages) && flatImages.length > 0;
+  const visibleFlatImages = hasFlatGallery
+    ? flatImages.slice(0, 6).map(normalizeFlatImage).filter((item) => item.imageUrl)
+    : [];
+
   return (
     <Box
       sx={{
@@ -197,9 +216,47 @@ export const FacilityAndAmenities = ({ isV2 }) => {
           Facilities & Amenities
         </Typography>
 
-        {categories.map((category) => (
-          <CategoryCarousel key={category.folder} category={category} />
-        ))}
+        {hasFlatGallery ? (
+          <Box
+            sx={{
+              width: "100%",
+              display: "grid",
+              gridTemplateColumns: {
+                xs: "1fr",
+                sm: "repeat(2, minmax(0, 1fr))",
+                md: "repeat(3, minmax(0, 1fr))",
+              },
+              gap: { xs: "14px", md: "20px" },
+            }}
+          >
+            {visibleFlatImages.map((image, index) => (
+              <Box
+                key={`${image.imageUrl}-${index}`}
+                sx={{
+                  width: "100%",
+                  aspectRatio: "16/9",
+                  borderRadius: "16px",
+                  overflow: "hidden",
+                  bgcolor: "#2D1B4E",
+                }}
+              >
+                <img
+                  src={image.imageUrl}
+                  alt={image.alt}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                  }}
+                />
+              </Box>
+            ))}
+          </Box>
+        ) : (
+          categories.map((category) => (
+            <CategoryCarousel key={category.folder} category={category} />
+          ))
+        )}
       </Box>
     </Box>
   );
