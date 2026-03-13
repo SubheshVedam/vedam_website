@@ -38,7 +38,7 @@ const page = () => {
       topSections={[
         {
           id: "adypu-video-brochure",
-          useCard: false,
+          subtitle: "In Collaboration with",
           render: () => <AdypuBrochureVideoSection />,
         },
       ]}
