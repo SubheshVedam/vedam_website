@@ -11,8 +11,8 @@ const campusCards = [
   {
     id: "gurugram",
     title: "",
-    image: "/img/campuses/Gurugram_home_page.webp",
-    description: "Home to India's fastest-growing tech ecosystem",
+    image: "/img/campuses/Gurugram_home_page_v2.webp",
+    description: "Sushant University, Gurugram, Delhi NCR",
     buttonText: "Coming Soon",
     isExplore: false,
   },
@@ -28,9 +28,9 @@ const campusCards = [
   {
     id: "bengaluru",
     title: "",
-    image: "/img/campuses/Bangalore_home_page.webp",
+    image: "/img/campuses/Bangalore_home_page_v2.webp",
     imagePosition: "center 14%",
-    description: "India's Silicon Valley and the heart of the tech revolution",
+    description: "Sri Venkateshwara college of Engineering Autonomous, Bengaluru",
     buttonText: "Coming Soon",
     isExplore: false,
   },
