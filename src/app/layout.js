@@ -1,5 +1,4 @@
 // src/app/layout.js
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -9,9 +8,6 @@ import Layout from "@/components/Layout";
 import AnnouncementBanner from "@/components/AnnouncementBanner";
 import Script from "next/script";
 import { GoogleAnalytics } from '@next/third-parties/google'
-
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   metadataBase: new URL("https://vedam.org"),
@@ -71,7 +67,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en">
       <head>
         <link rel="icon" href="./favicon.ico" />
         <Suspense fallback={null}>
