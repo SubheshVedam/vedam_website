@@ -31,7 +31,7 @@ const campusCards = [
     title: "",
     image: "/img/campuses/Bangalore_home_page_v2.webp",
     imagePosition: "center 14%",
-    description: "Sri Venkateshwara college of Engineering Autonomous, Bengaluru",
+    description: "Sri Venkateshwara College of Engineering Autonomous, Bengaluru",
     buttonText: "Coming Soon",
     isExplore: false,
   },
