@@ -1,6 +1,7 @@
 import React from "react";
 import Admission from "../Admission";
 import { gurugramFeeStructureData } from "@/constants/admissionFeeData";
+import { GurugramBrochureImageSection } from "@/components/admission/GurugramBrochureImageSection";
 
 const gurugramFacilityImages = [
   { imageUrl: "/img/amenities/campus/gurugram_campus_1.webp", alt: "VST Gurugram facility 1" },
@@ -44,6 +45,13 @@ const page = () => {
     <Admission
       showHostelFees={false}
       feeStructureData={gurugramFeeStructureData}
+      topSections={[
+        {
+          id: "gurugram-collaboration-brochure",
+          subtitle: "In Collaboration with",
+          render: () => <GurugramBrochureImageSection />,
+        },
+      ]}
       facilityAndAmenitiesProps={{ flatImages: gurugramFacilityImages }}
     />
   );

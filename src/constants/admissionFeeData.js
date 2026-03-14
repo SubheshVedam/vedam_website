@@ -155,7 +155,7 @@ export const adypuPuneFeeStructureData = {
     },
     {
       id: 2,
-      text: "The fees mentioned in the table is the Course fees, This is exclusive of Hostel & Mess fees",
+      text: "The fees mentioned in the table is the Course fees. This is exclusive of Hostel & Mess fees",
     },
     {
       id: 3,
@@ -328,7 +328,7 @@ export const gurugramFeeStructureData = {
     },
     {
       id: 2,
-      text: "The fees mentioned in the table is the Course fees, This is exclusive of Hostel & Mess fees",
+      text: "The fees mentioned in the table is the Course fees. This is exclusive of Hostel & Mess fees",
     },
     {
       id: 3,
