@@ -29,7 +29,7 @@ const campusCards = [
   {
     id: "bengaluru",
     title: "",
-    image: "/img/campuses/Bangalore_home_page_v2.webp",
+    image: "/img/campuses/Bangalore_home_page.webp",
     imagePosition: "center 14%",
     description: "India's Silicon valley and the heart of the tech revolution",
     buttonText: "Coming Soon",
