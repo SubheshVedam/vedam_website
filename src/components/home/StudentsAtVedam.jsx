@@ -48,7 +48,7 @@ export const StudentsAtVedam = () => {
                             }}
                         >
                             <Image
-                                src="/img/studentSuccess/krishiv_lfx_desktop.webp"
+                                src="/img/studentSuccess/outcomes_desktop.webp"
                                 alt="Student success story at Vedam"
                                 width={2560}
                                 height={846}
@@ -65,7 +65,7 @@ export const StudentsAtVedam = () => {
                             }}
                         >
                             <Image
-                                src="/img/studentSuccess/krishiv%20lfx%20mob.webp"
+                                src="/img/studentSuccess/outcomes_mobile.webp"
                                 alt="Student success story at Vedam"
                                 width={1991}
                                 height={2560}
