@@ -997,7 +997,7 @@ export const admissionScreenData = {
         title: "Take the VSAT",
         subtitle:
           "It is an entrance test conducted online.",
-        subtitle1: "The next VSAT is on 30th March",
+        subtitle1: "The next VSAT is on 31st March",
         showButton: false,
       },
       {
