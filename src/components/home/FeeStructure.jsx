@@ -58,15 +58,15 @@ const SingleCountText = ({ count, text, isHref }) => {
         zIndex: 1,
         padding: { xs: "10px", md: "12px" },
         borderRadius: "12px",
-        border: "1px solid rgba(186, 107, 255, 0.24)",
+        border: "1px solid rgba(108, 16, 188, 0.18)",
         background:
-          "linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 248, 241, 0.95) 100%)",
-        boxShadow: "0px 8px 18px rgba(125, 65, 186, 0.07)",
+          "linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(245, 236, 255, 0.9) 100%)",
+        boxShadow: "0px 8px 18px rgba(108, 16, 188, 0.08)",
       }}
     >
       <Box
         sx={{
-          background: "linear-gradient(135deg, #7B2CBF 0%, #FF7829 100%)",
+          background: "linear-gradient(135deg, #5F2AA8 0%, #8F5BE8 100%)",
           width: { xs: 26, md: 30 },
           height: { xs: 26, md: 30 },
           borderRadius: "8px",
@@ -74,7 +74,7 @@ const SingleCountText = ({ count, text, isHref }) => {
           alignItems: "center",
           justifyContent: "center",
           flexShrink: 0,
-          boxShadow: "0px 4px 10px rgba(123, 44, 191, 0.24)",
+          boxShadow: "0px 4px 10px rgba(95, 42, 168, 0.28)",
         }}
       >
         <Typography
@@ -103,7 +103,7 @@ const SingleCountText = ({ count, text, isHref }) => {
           {isHref && (
             <Link
               style={{
-                color: "#F97316",
+                color: "#6C10BC",
                 fontSize: "11px",
                 fontFamily: "Inter",
                 fontWeight: 600,
@@ -481,11 +481,11 @@ export const FeeStructure = ({
           alignItems: "stretch",
           justifyContent: "center",
           background:
-            "linear-gradient(135deg, rgba(123, 44, 191, 0.10) 0%, rgba(255, 120, 41, 0.10) 100%)",
-          border: "1px solid rgba(186, 107, 255, 0.25)",
+            "linear-gradient(135deg, rgba(108, 16, 188, 0.09) 0%, rgba(176, 132, 245, 0.1) 100%)",
+          border: "1px solid rgba(108, 16, 188, 0.22)",
           borderRadius: "16px",
           padding: { xs: "14px", md: "22px" },
-          boxShadow: "0px 12px 28px rgba(106, 55, 162, 0.09)",
+          boxShadow: "0px 12px 28px rgba(108, 16, 188, 0.12)",
           flex: 1,
           position: "relative",
           overflow: "hidden",
@@ -498,7 +498,7 @@ export const FeeStructure = ({
             height: "170px",
             borderRadius: "50%",
             background:
-              "radial-gradient(circle, rgba(255, 120, 41, 0.25) 0%, rgba(255, 120, 41, 0) 70%)",
+              "radial-gradient(circle, rgba(108, 16, 188, 0.22) 0%, rgba(108, 16, 188, 0) 70%)",
           },
         }}
       >
@@ -506,7 +506,7 @@ export const FeeStructure = ({
           sx={{
             fontSize: { xs: "11px", md: "13px" },
             fontWeight: 700,
-            color: "#5C2A93",
+            color: "#4B1F7A",
             letterSpacing: "0.06em",
             textTransform: "uppercase",
             mb: "2px",
@@ -1301,11 +1301,11 @@ export const FeeStructure = ({
           alignItems: "stretch",
           justifyContent: "space-between",
           background:
-            "linear-gradient(135deg, rgba(123, 44, 191, 0.10) 0%, rgba(255, 120, 41, 0.10) 100%)",
-          border: "1px solid rgba(186, 107, 255, 0.25)",
+            "linear-gradient(135deg, rgba(108, 16, 188, 0.09) 0%, rgba(176, 132, 245, 0.1) 100%)",
+          border: "1px solid rgba(108, 16, 188, 0.22)",
           borderRadius: "16px",
           padding: { xs: "14px", md: "20px" },
-          boxShadow: "0px 12px 28px rgba(106, 55, 162, 0.09)",
+          boxShadow: "0px 12px 28px rgba(108, 16, 188, 0.12)",
           position: "relative",
           overflow: "hidden",
           "&::before": {
@@ -1317,7 +1317,7 @@ export const FeeStructure = ({
             height: "170px",
             borderRadius: "50%",
             background:
-              "radial-gradient(circle, rgba(255, 120, 41, 0.25) 0%, rgba(255, 120, 41, 0) 70%)",
+              "radial-gradient(circle, rgba(108, 16, 188, 0.22) 0%, rgba(108, 16, 188, 0) 70%)",
           },
         }}
       >
@@ -1325,7 +1325,7 @@ export const FeeStructure = ({
           sx={{
             fontSize: { xs: "11px", md: "13px" },
             fontWeight: 700,
-            color: "#5C2A93",
+            color: "#4B1F7A",
             letterSpacing: "0.06em",
             textTransform: "uppercase",
             mb: "2px",
