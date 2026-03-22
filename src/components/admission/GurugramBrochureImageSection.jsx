@@ -64,7 +64,7 @@ export const GurugramBrochureImageSection = () => {
         padding: { xs: "20px", md: "28px" },
         width: "100%",
         background:
-          "linear-gradient(135deg, #FFFFFF 0%, #FFF6EE 56%, #F7EEFF 100%)",
+          "linear-gradient(135deg, #FCF8FF 0%, #F4EBFF 56%, #EBDDFF 100%)",
         boxShadow: "0 16px 30px rgba(42, 19, 91, 0.09)",
         overflow: "hidden",
         "&::before": {
@@ -88,7 +88,7 @@ export const GurugramBrochureImageSection = () => {
           bottom: { xs: -120, md: -150 },
           borderRadius: "50%",
           background:
-            "radial-gradient(circle, rgba(251,127,5,0.16) 0%, rgba(251,127,5,0) 70%)",
+            "radial-gradient(circle, rgba(108,16,188,0.13) 0%, rgba(108,16,188,0) 70%)",
           pointerEvents: "none",
         },
       }}
