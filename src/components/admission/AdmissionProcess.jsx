@@ -45,7 +45,7 @@ export const AdmissionProcess = () => {
 
       stepRefs.current.forEach((step, index) => {
         if (!step) return;
-        
+
         const stepRect = step.getBoundingClientRect();
         const stepTop = stepRect.top - containerTop;
         const stepBottom = stepRect.bottom - containerTop;
@@ -159,7 +159,7 @@ export const AdmissionProcess = () => {
             md: "0 0 80%",
           },
           paddingRight: { xs: "0px", md: "20px" },
-          height: {xs:"40vh",sm:"50vh"},
+          height: { xs: "40vh", sm: "50vh" },
           overflowY: "auto",
           "&::-webkit-scrollbar": { display: "none" },
           scrollbarWidth: "none",
@@ -179,29 +179,29 @@ export const AdmissionProcess = () => {
               gap: { xs: "1rem", md: "1.5rem" },
               paddingBottom: { xs: "1rem", md: "1.5rem" },
               paddingRight: { xs: "10px", md: "20px", lg: "60px" },
-              minHeight: {xs:'20vh',sm:"30vh"},
+              minHeight: { xs: '20vh', sm: "30vh" },
               scrollSnapAlign: "start",
             }}
           >
             {/* Vertical line between steps */}
             {item.id !==
               admissionScreenData.admissionProcess.rightSideArray.length -
-                1 && (
-              <Box
-                sx={{
-                  position: "absolute",
-                  zIndex: 0,
-                  top: 0,
-                  left: { xs: "7px", md: "15px" },
-                  bottom: 0,
-                  height: "100%",
-                  width: "1.5px",
-                  backgroundColor: "#6C10BC",
-                  opacity: activeStep > item.id ? 1 : 0.3,
-                  transition: "opacity 0.3s ease",
-                }}
-              />
-            )}
+              1 && (
+                <Box
+                  sx={{
+                    position: "absolute",
+                    zIndex: 0,
+                    top: 0,
+                    left: { xs: "7px", md: "15px" },
+                    bottom: 0,
+                    height: "100%",
+                    width: "1.5px",
+                    backgroundColor: "#6C10BC",
+                    opacity: activeStep > item.id ? 1 : 0.3,
+                    transition: "opacity 0.3s ease",
+                  }}
+                />
+              )}
 
             {/* Step indicator circle */}
             <Box
@@ -220,7 +220,7 @@ export const AdmissionProcess = () => {
                 transition: "background-color 0.3s ease",
               }}
             />
-            
+
             {/* Step content */}
             <Box
               sx={{

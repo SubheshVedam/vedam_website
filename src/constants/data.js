@@ -242,13 +242,13 @@ export const detailsData = [
 export const admissionCampusLinks = [
   {
     label: "VST Pune",
-    path: "/admission/vst-adypu-pune",
+    path: "/program/vst-adypu-pune",
     image: "/img/campuses/Adypu_home_page.webp",
     collaborationUniversity: "Ajeenkya DY Patil University",
   },
   {
     label: "VST Gurugram",
-    path: "/admission/vst-gurugram",
+    path: "/program/vst-gurugram",
     image: "/img/campuses/Gurugram_home_page_v2.webp",
     collaborationUniversity: "Sushant University",
   },
@@ -257,8 +257,12 @@ export const admissionCampusLinks = [
 export const navLinks = [
   { label: "Home", path: "/" },
   {
-    label: "Admission & Fees",
-    path: "/admission/vst-adypu-pune",
+    label: "Admissions",
+    path: "/admission",
+  },
+  {
+    label: "Program & Fees",
+    path: "/program/vst-adypu-pune",
     children: admissionCampusLinks,
   },
   { label: "Life @ Vedam", path: "/life", img: "/img/Group 1261155759.svg" },

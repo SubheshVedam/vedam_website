@@ -151,7 +151,7 @@ export default function Navbar() {
                 alignItems: "center",
               }}
             >
-              {navLinks.slice(0, 4).map((link, index) => {
+              {navLinks.slice(0, 5).map((link, index) => {
                 if (link.children?.length) {
                   const admissionDisplayLabel = getAdmissionDisplayLabel(link);
 
