@@ -13,10 +13,6 @@ export const ScholarshipProgram = () => {
         right: '50%',
         marginLeft: '-50vw',
         marginRight: '-50vw',
-        backgroundImage: {
-          xs: "url('/img/scholarship/bg_mob.webp')",
-          md: "url('/img/scholarship/bg_web.webp')",
-        },
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -33,7 +29,7 @@ export const ScholarshipProgram = () => {
           right: { xs: '20px', sm: '40px', md: '80px', lg: '120px' },
           width: { xs: '45px', md: '60px' },
           height: { xs: '50px', md: '85px' },
-          backgroundColor: 'white',
+          backgroundColor: '#8A18FF',
           clipPath: 'polygon(0 0, 100% 0, 100% 100%, 50% 85%, 0 100%)',
           zIndex: 10,
         }}
@@ -49,12 +45,17 @@ export const ScholarshipProgram = () => {
         }}
       >
         <Typography
+          component="h2"
           variant="h2"
+          fontFamily="Inter"
+          lineHeight="120%"
+          letterSpacing="-2%"
           sx={{
-            fontSize: { xs: "24px", md: "32px" },
-            color: "white",
-            fontFamily: "Inter",
             fontWeight: "700",
+            background: "linear-gradient(90deg, #FB7F05 0%, #6C10BC 42.11%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            fontSize: "clamp(1.3rem, 2.5vw, 2rem)",
             marginBottom: { xs: "12px", md: "16px" },
           }}
         >
@@ -65,7 +66,7 @@ export const ScholarshipProgram = () => {
           variant="body1"
           sx={{
             fontSize: { xs: "14px", md: "16px" },
-            color: "white",
+            color: "#000000",
             fontFamily: "Inter",
             lineHeight: "150%",
             fontWeight: "400",
@@ -93,8 +94,6 @@ export const ScholarshipProgram = () => {
             >
               <DetailsCard
                 isScholarshipCard={true}
-                description={item.description}
-                title={item.title}
                 bgImage={item.bgImage}
               />
             </Box>

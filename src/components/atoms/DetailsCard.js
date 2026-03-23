@@ -31,9 +31,6 @@ export default function DetailsCard({
           md: height,
           xl: heights
         },
-        // minHeight: {
-        //   xs: isScholarshipCard ? 350 : 220,
-        // },
         width: "100%",
         borderRadius: "16px",
         padding: 0,
@@ -161,55 +158,58 @@ export default function DetailsCard({
             )}
           </Box>
         )}
-        <Box
-          sx={{
-            textAlign: "left",
-            overflow: "visible",
-            width: "100%",
-          }}
-        >
+
+        {!isScholarshipCard && (
           <Box
-            className="title-box"
             sx={{
-              borderRadius: "0 0 10px 10px",
-              background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.85) -50.79%, rgba(12, 9, 49, 0.85) 69.78%)',
-              padding: "16px",
-              transition: "all 0.3s ease",
+              textAlign: "left",
               overflow: "visible",
+              width: "100%",
             }}
           >
-            <Typography
-              component="h4"
-              variant="h4"
+            <Box
+              className="title-box"
               sx={{
-                color: "white",
-                fontWeight: "bold",
-                fontSize: { xs: 14, sm: 20 },
-                lineHeight: { xs: "130%", sm: "150%" },
-                marginBottom: 0,
-              }}
-            >
-              {title}
-            </Typography>
-
-            {/* Description text */}
-            <Typography
-              className="description-text"
-              variant="body2"
-              sx={{
-                color: "white",
-                fontSize: isFeatured ? 14 : { xs: 11, sm: 14 },
-                opacity: 0,
-                maxHeight: 0,
-                marginTop: 0,
-                overflow: "hidden",
+                borderRadius: "0 0 10px 10px",
+                background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.85) -50.79%, rgba(12, 9, 49, 0.85) 69.78%)',
+                padding: "16px",
                 transition: "all 0.3s ease",
+                overflow: "visible",
               }}
             >
-              {description}
-            </Typography>
+              <Typography
+                component="h4"
+                variant="h4"
+                sx={{
+                  color: "white",
+                  fontWeight: "bold",
+                  fontSize: { xs: 14, sm: 20 },
+                  lineHeight: { xs: "130%", sm: "150%" },
+                  marginBottom: 0,
+                }}
+              >
+                {title}
+              </Typography>
+
+              {/* Description text */}
+              <Typography
+                className="description-text"
+                variant="body2"
+                sx={{
+                  color: "white",
+                  fontSize: isFeatured ? 14 : { xs: 11, sm: 14 },
+                  opacity: 0,
+                  maxHeight: 0,
+                  marginTop: 0,
+                  overflow: "hidden",
+                  transition: "all 0.3s ease",
+                }}
+              >
+                {description}
+              </Typography>
+            </Box>
           </Box>
-        </Box>
+        )}
       </CardContent>
     </Card>
   );
