@@ -1,7 +1,7 @@
 import ProgramPage from "./ProgramPage";
 
 export const metadata = {
-  title: "UG Program in Computer Science & Artificial Intelligence",
+  title: "UG Program in Computer Science & Artificial ",
   description:
     "Join Vedam School of Technology's UG program in Computer Science & AI at Sushant University, Gurugram. Apply for the 4-year B.Tech degree program.",
   keywords: [
