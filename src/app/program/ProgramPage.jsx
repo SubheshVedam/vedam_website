@@ -12,18 +12,18 @@ const semesterFees = [
   {
     sem: "Semester 1",
     rows: [
-      { label: "Seat Block Fees",               value: "₹50,000" },
-      { label: "Security Deposit (Refundable)",  value: "₹30,000" },
-      { label: "Upskilling Fee",                 value: "₹84,813" },
-      { label: "Tuition Fee",                    value: "₹1,00,000" },
+      { label: "Seat Block Fees", value: "₹50,000" },
+      { label: "Security Deposit (Refundable)", value: "₹30,000" },
+      { label: "Upskilling Fee", value: "₹84,813" },
+      { label: "Tuition Fee", value: "₹1,00,000" },
     ],
     total: "₹2,64,813",
   },
-  ...["2","3","4","5","6","7","8"].map((n) => ({
+  ...["2", "3", "4", "5", "6", "7", "8"].map((n) => ({
     sem: `Semester ${n}`,
     rows: [
       { label: "Upskilling Fee", value: n === "8" ? "–" : "₹84,813" },
-      { label: "Tuition Fee",    value: n === "8" ? "–" : "₹1,34,500" },
+      { label: "Tuition Fee", value: n === "8" ? "–" : "₹1,34,500" },
     ],
     total: n === "8" ? "–" : "₹2,19,313",
   })),
@@ -32,10 +32,10 @@ const semesterFees = [
 const feeData = {
   headers: ["Fees Component", "Sem 1", "Sem 2", "Sem 3", "Sem 4", "Sem 5", "Sem 6", "Sem 7", "Sem 8", "Total"],
   rows: [
-    { label: "Seat Block Fees",               values: ["₹50,000",   "–",          "–",          "–",          "–",          "–",          "–",          "–",          "–",  "₹50,000"]   },
-    { label: "Security Deposit (Refundable)",  values: ["₹30,000",   "–",          "–",          "–",          "–",          "–",          "–",          "–",          "–",  "₹30,000"]   },
-    { label: "Upskilling Fee",                 values: ["₹84,813",   "₹84,813",    "₹84,813",    "₹84,813",    "₹84,813",    "₹84,813",    "₹84,813",    "₹84,813",    "–",  "₹6,38,500"] },
-    { label: "Tuition Fee",                    values: ["₹1,00,000", "₹1,34,500",  "₹1,34,500",  "₹1,34,500",  "₹1,34,500",  "₹1,34,500",  "₹1,34,500",  "₹1,34,500",  "–",  "₹7,58,500"] },
+    { label: "Seat Block Fees", values: ["₹50,000", "–", "–", "–", "–", "–", "–", "–", "–", "₹50,000"] },
+    { label: "Security Deposit (Refundable)", values: ["₹30,000", "–", "–", "–", "–", "–", "–", "–", "–", "₹30,000"] },
+    { label: "Upskilling Fee", values: ["₹84,813", "₹84,813", "₹84,813", "₹84,813", "₹84,813", "₹84,813", "₹84,813", "₹84,813", "–", "₹6,38,500"] },
+    { label: "Tuition Fee", values: ["₹1,00,000", "₹1,34,500", "₹1,34,500", "₹1,34,500", "₹1,34,500", "₹1,34,500", "₹1,34,500", "₹1,34,500", "–", "₹7,58,500"] },
   ],
   totals: ["₹2,64,813", "₹2,19,313", "₹2,19,313", "₹2,19,313", "₹2,19,313", "₹2,19,313", "₹2,19,313", "₹2,19,313", "–", "₹18,00,000"],
 };
@@ -49,20 +49,20 @@ const feeNotes = [
 
 const loanData = {
   rows: [
-    { label: "Loan Type",               value: "Normal (Unsecured)"      },
-    { label: "Interest Rate (%)",        value: "13% – 15%"               },
-    { label: "Max Loan Amount",          value: "Upto 100% tuition fees"  },
-    { label: "Moratorium Period",        value: "4 years"                 },
-    { label: "Tenure",                   value: "10 years"                },
-    { label: "Processing Charges",       value: "1% (incl. GST)"          },
-    { label: "Tax Benefits Section 8e",  value: "Available"               },
+    { label: "Loan Type", value: "Normal (Unsecured)" },
+    { label: "Interest Rate (%)", value: "13% – 15%" },
+    { label: "Max Loan Amount", value: "Upto 100% tuition fees" },
+    { label: "Moratorium Period", value: "4 years" },
+    { label: "Tenure", value: "10 years" },
+    { label: "Processing Charges", value: "1% (incl. GST)" },
+    { label: "Tax Benefits Section 8e", value: "Available" },
   ],
 };
 
 const scholarships = [
-  { title: "Merit Based Scholarship",   percent: "Upto 100%", desc: "Recognizes academic excellence, unique talent and leadership potential.", img: "/img/program/scholarship-merit.png"  },
-  { title: "Women in Tech Scholarship", percent: "Upto 20%",  desc: "Empowering and supporting women in tech for growth and success.",         img: "/img/program/scholarship-women.png" },
-  { title: "Need Based Scholarship",    percent: "Upto 30%",  desc: "Focused on specific fields of study or demonstrating financial needs.",    img: "/img/program/scholarship-need.png"  },
+  { title: "Merit Based Scholarship", percent: "Upto 100%", desc: "Recognizes academic excellence, unique talent and leadership potential.", img: "/img/program/scholarship-merit.png" },
+  { title: "Women in Tech Scholarship", percent: "Upto 20%", desc: "Empowering and supporting women in tech for growth and success.", img: "/img/program/scholarship-women.png" },
+  { title: "Need Based Scholarship", percent: "Upto 30%", desc: "Focused on specific fields of study or demonstrating financial needs.", img: "/img/program/scholarship-need.png" },
 ];
 
 const campusImages = [
@@ -75,8 +75,8 @@ const campusImages = [
 ];
 
 const gurugramImages = {
-  statsLeft:  [{ num: "10,000+", label: "Registered startups"       }, { num: "Top 5", label: "Leading AI hub in Asia"         }],
-  statsRight: [{ num: "800+",    label: "MNC & Fortune 500's"        }, { num: "#1 in India",    label: "Corporate Hub"          }],
+  statsLeft: [{ num: "10,000+", label: "Registered startups" }, { num: "Top 5", label: "Leading AI hub in Asia" }],
+  statsRight: [{ num: "800+", label: "MNC & Fortune 500's" }, { num: "#1 in India", label: "Corporate Hub" }],
   img1: "/img/program/gurugram-1.png",
   img2: "/img/program/gurugram-2.png",
   img3: "/img/program/gurugram-3.png",
@@ -186,10 +186,10 @@ export default function ProgramPage() {
       <Box
         sx={{
           position: "relative",
-          height: { xs: "319px", md: "600px" },
+          height: { xs: "319px", md: "80vh" },
           display: "flex",
           flexDirection: "column",
-          justifyContent: "flex-end",
+          justifyContent: "center",
           overflow: "hidden",
         }}
       >
@@ -201,33 +201,59 @@ export default function ProgramPage() {
           alt=""
           sx={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 0.6 }}
         />
-        <Box sx={{ position: "absolute", inset: 0, background: "linear-gradient(to right, #2F0E4B 0%, rgba(0,0,0,0) 75%)" }} />
+        {/* Left dark gradient — stronger to match screenshot */}
+        <Box sx={{ position: "absolute", inset: 0, background: "linear-gradient(to right, #1a0533 0%, #2F0E4B 30%, rgba(0,0,0,0) 70%)" }} />
+        {/* Bottom fade for content readability */}
+        <Box sx={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 50%)" }} />
 
         {/* Content */}
         <Box
           sx={{
             position: "relative", zIndex: 1,
             px: { xs: "20px", md: "128px" },
-            pb: { xs: "20px", md: "100px" },
+            pb: { xs: "20px", md: "80px" },
             pt: { xs: "20px", md: "0" },
             display: "flex", flexDirection: "column",
-            gap: { xs: "20px", md: "40px" },
+            gap: { xs: "16px", md: "32px" },
           }}
         >
           {/* Co-brand logos */}
-          <Box sx={{ display: "flex", alignItems: "center", gap: "4px" }}>
-            <Box component="img" src="/img/program/partner-logo.svg" alt="Partner university" sx={{ height: { xs: "27px", md: "40px" }, width: "auto" }} />
-            <Typography sx={{ color: "white", fontFamily: "Inter, sans-serif", fontWeight: 200, fontSize: { xs: "20px", md: "28px" }, transform: "rotate(-45deg)", lineHeight: 1 }}>+</Typography>
-            <Box component="img" src="/img/Vedam_Final_Logo_White.png" alt="Vedam" sx={{ height: { xs: "22px", md: "40px" }, width: "auto" }} />
+          <Box sx={{ display: "flex", alignItems: "center", gap: { xs: "8px", md: "16px" } }}>
+            <Box component="img" src="/img/program/partner-logo.svg" alt="Partner university" sx={{ height: { xs: "27px", md: "48px" }, width: { xs: "82px", md: "138px" } }} />
+            <Typography sx={{
+              color: "white",
+              fontFamily: "Inter, sans-serif",
+              fontWeight: 300,
+              fontSize: { xs: "18px", md: "28px" },
+              lineHeight: 1,
+              mx: { xs: "2px", md: "4px" },
+            }}>
+              ×
+            </Typography>
+            <Box component="img" src="/img/Vedam_Final_Logo_White.png" alt="Vedam" sx={{ height: { xs: "36px", md: "76px" }, width: { xs: "79px", md: "138px" } }} />
           </Box>
 
           {/* Title block */}
-          <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: "12px", md: "20px" } }}>
-            <Box sx={{ display: "flex", flexDirection: "column", gap: "10px", color: "#F9F9F9" }}>
-              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: { xs: "16px", md: "32px" }, letterSpacing: { xs: "-0.32px", md: "-0.64px" }, lineHeight: 1, maxWidth: { xs: 245, md: 520 } }}>
+          <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: "10px", md: "16px" } }}>
+            <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: "8px", md: "12px" }, color: "#F9F9F9" }}>
+              <Typography sx={{
+                fontFamily: "Inter, sans-serif",
+                fontWeight: 700,
+                fontSize: { xs: "16px", md: "32px" },
+                letterSpacing: { xs: "-0.32px", md: "-2%" },
+                lineHeight: { xs: 1.2, md: 1.1 },
+                maxWidth: { xs: 280, md: 480 },
+                color: "#FFFFFF",
+              }}>
                 UG Program in Computer Science &amp; Artificial Intelligence
               </Typography>
-              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 500, fontSize: { xs: "10px", md: "14px" } }}>
+              <Typography sx={{
+                fontFamily: "Inter, sans-serif",
+                fontWeight: 500,
+                fontSize: { xs: "10px", md: "14px" },
+                color: "#F9F9F9",
+                opacity: 0.9,
+              }}>
                 Bachelor of Technology Degree by Sushant University, Gurugram
               </Typography>
             </Box>
@@ -236,37 +262,45 @@ export default function ProgramPage() {
             <Box
               sx={{
                 display: "inline-flex", alignItems: "center",
-                gap: { xs: "6px", md: "10px" },
-                backdropFilter: "blur(14px)", bgcolor: "rgba(135,135,135,0.4)",
+                gap: { xs: "10px", md: "12px" },
+                backdropFilter: "blur(14px)",
+                bgcolor: "rgba(135,135,135,0.35)",
                 borderRadius: "30px",
                 px: { xs: "10px", md: "20px" },
-                py: { xs: "5px", md: "10px" },
+                py: { xs: "10px", md: "16px" },
+                width: "fit-content",
               }}
             >
-              <Box component="img" src="/img/program/ugc-logo.svg" alt="UGC" sx={{ height: { xs: "16px", md: "24px" }, width: "auto" }} />
+              <Box component="img" src="/img/program/ugc-logo.svg" alt="UGC" sx={{ height: { xs: "16px", md: "26px" }, width: { xs: "16px", md: "24px" } }} />
               <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 500, fontSize: { xs: "6px", md: "10px" }, color: "#F9F9F9", whiteSpace: "nowrap" }}>UGC Recognised</Typography>
-              <Typography sx={{ color: "white", fontSize: { xs: "8px", md: "10px" } }}>|</Typography>
-              <Box component="img" src="/img/program/nirf-logo.png" alt="NIRF" sx={{ height: { xs: "16px", md: "24px" }, width: "auto" }} />
+              <Typography sx={{ color: "rgba(255,255,255,0.5)", fontSize: { xs: "10px", md: "14px" } }}>|</Typography>
+              <Box component="img" src="/img/program/nirf-logo.png" alt="NIRF" sx={{ height: { xs: "16px", md: "26px" }, width: "auto" }} />
               <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 500, fontSize: { xs: "6px", md: "10px" }, color: "#F9F9F9", whiteSpace: "nowrap" }}>NIRF Ranked</Typography>
-              <Typography sx={{ color: "white", fontSize: { xs: "8px", md: "10px" } }}>|</Typography>
-              <Box component="img" src="/img/program/naac-logo.png" alt="NAAC" sx={{ height: { xs: "16px", md: "24px" }, width: "auto" }} />
+              <Typography sx={{ color: "rgba(255,255,255,0.5)", fontSize: { xs: "10px", md: "14px" } }}>|</Typography>
+              <Box component="img" src="/img/program/naac-logo.png" alt="NAAC" sx={{ height: { xs: "16px", md: "26px" }, width: "auto" }} />
               <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 500, fontSize: { xs: "6px", md: "10px" }, color: "#F9F9F9", whiteSpace: "nowrap" }}>NAAC Accredited</Typography>
             </Box>
           </Box>
 
           {/* CTA buttons */}
-          <Box sx={{ display: "flex", gap: "12px" }}>
+          <Box sx={{ display: "flex", gap: { xs: "10px", md: "16px" }, mt: { xs: "20px", md: "40px" }, alignItems: "center" }}>
             <Button
               component="a"
               href="https://apply.vedam.org"
               target="_blank"
               variant="contained"
               sx={{
-                bgcolor: "#6C10BC", borderRadius: "8px",
-                px: { xs: "10px", md: "20px" }, py: { xs: "8px", md: "15px" },
-                fontFamily: "Inter, sans-serif", fontWeight: 500,
-                fontSize: { xs: "10px", md: "14px" }, letterSpacing: "-0.28px",
-                textTransform: "none", "&:hover": { bgcolor: "#5a0ea0" },
+                bgcolor: "#6C10BC",
+                borderRadius: "8px",
+                px: { xs: "16px", md: "28px" },
+                py: { xs: "8px", md: "14px" },
+                fontFamily: "Inter, sans-serif",
+                fontWeight: 600,
+                fontSize: { xs: "11px", md: "15px" },
+                letterSpacing: "-0.28px",
+                textTransform: "none",
+                boxShadow: "none",
+                "&:hover": { bgcolor: "#5a0ea0", boxShadow: "none" },
               }}
             >
               Apply Now
@@ -276,38 +310,23 @@ export default function ProgramPage() {
               href="/brochure"
               variant="contained"
               sx={{
-                bgcolor: "rgba(30,30,30,0.6)", borderRadius: "8px",
-                px: { xs: "10px", md: "20px" }, py: { xs: "8px", md: "15px" },
-                fontFamily: "Inter, sans-serif", fontWeight: 500,
-                fontSize: { xs: "10px", md: "14px" }, letterSpacing: "-0.28px",
-                textTransform: "none", "&:hover": { bgcolor: "rgba(30,30,30,0.8)" },
+                bgcolor: "rgba(30,30,30,0.55)",
+                borderRadius: "8px",
+                px: { xs: "16px", md: "28px" },
+                py: { xs: "8px", md: "14px" },
+                fontFamily: "Inter, sans-serif",
+                fontWeight: 600,
+                fontSize: { xs: "11px", md: "15px" },
+                letterSpacing: "-0.28px",
+                textTransform: "none",
+                boxShadow: "none",
+                border: "1px solid rgba(255,255,255,0.15)",
+                "&:hover": { bgcolor: "rgba(30,30,30,0.75)", boxShadow: "none" },
               }}
             >
               Download Brochure
             </Button>
           </Box>
-        </Box>
-
-        {/* Floating campus thumbnails — desktop only */}
-        <Box
-          sx={{
-            display: { xs: "none", md: "flex" },
-            position: "absolute", right: "128px", top: "107px",
-            backdropFilter: "blur(1.75px)", bgcolor: "rgba(249,249,249,0.8)",
-            borderRadius: "20px", p: "10px", gap: "8px", width: "365px",
-          }}
-        >
-          {[
-            { src: "/img/program/campus-1.png", label: "VST Gurugram" },
-            { src: "/img/program/campus-2.png", label: "VST Pune" },
-          ].map(({ src, label }) => (
-            <Box key={label} sx={{ flex: 1, display: "flex", flexDirection: "column", gap: "8px" }}>
-              <Box sx={{ height: "120px", borderRadius: "12px", overflow: "hidden", border: "1px solid rgba(30,30,30,0.2)" }}>
-                <Box component="img" src={src} alt={label} sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
-              </Box>
-              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: "12px", color: "#1E1E1E" }}>{label}</Typography>
-            </Box>
-          ))}
         </Box>
       </Box>
 
@@ -324,9 +343,9 @@ export default function ProgramPage() {
           }}
         >
           {[
-            { title: "4 Years",        body: "Full-time residential program\nB.Tech Degree  by Sushant University", highlight: false },
-            { title: "Partner Campus", body: "Sushant University —\nGurugram, Delhi NCR",                          highlight: true  },
-            { title: "Eligibility",    body: "2025, 2026 12th student with PCM\n(>50% in PCM & 12th boards Overall)", highlight: false },
+            { title: "4 Years", body: "Full-time residential program\nB.Tech Degree  by Sushant University", highlight: false },
+            { title: "Partner Campus", body: "Sushant University —\nGurugram, Delhi NCR", highlight: true },
+            { title: "Eligibility", body: "2025, 2026 12th student with PCM\n(>50% in PCM & 12th boards Overall)", highlight: false },
           ].map(({ title, body, highlight }, i) => (
             <Box
               key={i}
@@ -385,14 +404,13 @@ export default function ProgramPage() {
         </Box>
 
         {/* ── Desktop layout (md+) */}
-        <Box sx={{ display: { xs: "none", md: "block" }, width: "100%", overflowX: "visible" }}>
+        <Box sx={{ display: { xs: "none", md: "block" }, width: "100%" }}>
           <Box
             sx={{
               display: "grid",
               gridTemplateColumns: "1fr 1fr 1fr 1fr",
               gridTemplateRows: "90px 90px 90px 90px",
               gap: "10px",
-              maxWidth: "1024px",
             }}
           >
             <Box sx={{ gridColumn: "1 / span 2", gridRow: "1" }}>
@@ -458,10 +476,10 @@ export default function ProgramPage() {
           </Typography>
         </Box>
         <Box sx={{ display: "flex", alignItems: "center", gap: { xs: "10px 40px", md: "40px" }, flexWrap: "wrap", justifyContent: "center" }}>
-          <Box component="img" src="/img/program/naac-logo.png"      alt="NAAC"    sx={{ height: { xs: "30px", md: "80px" }, width: "auto" }} />
-          <Box component="img" src="/img/program/nirf-logo.png"      alt="NIRF"    sx={{ height: { xs: "30px", md: "80px" }, width: "auto" }} />
+          <Box component="img" src="/img/program/naac-logo.png" alt="NAAC" sx={{ height: { xs: "30px", md: "80px" }, width: "auto" }} />
+          <Box component="img" src="/img/program/nirf-logo.png" alt="NIRF" sx={{ height: { xs: "30px", md: "80px" }, width: "auto" }} />
           <Box component="img" src="/img/program/haryana-emblem.svg" alt="Haryana" sx={{ height: { xs: "40px", md: "80px" }, width: "auto" }} />
-          <Box component="img" src="/img/program/aicte-logo.png"     alt="AICTE"   sx={{ height: { xs: "30px", md: "80px" }, width: "auto" }} />
+          <Box component="img" src="/img/program/aicte-logo.png" alt="AICTE" sx={{ height: { xs: "30px", md: "80px" }, width: "auto" }} />
         </Box>
       </Box>
 
