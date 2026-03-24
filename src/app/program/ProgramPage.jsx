@@ -6,84 +6,6 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Data
-// ─────────────────────────────────────────────────────────────────────────────
-const semesterFees = [
-  {
-    sem: "Semester 1",
-    rows: [
-      { label: "Seat Block Fees", value: "₹50,000" },
-      { label: "Security Deposit (Refundable)", value: "₹30,000" },
-      { label: "Upskilling Fee", value: "₹84,813" },
-      { label: "Tuition Fee", value: "₹1,00,000" },
-    ],
-    total: "₹2,64,813",
-  },
-  ...["2", "3", "4", "5", "6", "7", "8"].map((n) => ({
-    sem: `Semester ${n}`,
-    rows: [
-      { label: "Upskilling Fee", value: n === "8" ? "–" : "₹84,813" },
-      { label: "Tuition Fee", value: n === "8" ? "–" : "₹1,34,500" },
-    ],
-    total: n === "8" ? "–" : "₹2,19,313",
-  })),
-];
-
-const feeData = {
-  headers: ["Fees Component", "Sem 1", "Sem 2", "Sem 3", "Sem 4", "Sem 5", "Sem 6", "Sem 7", "Sem 8", "Total"],
-  rows: [
-    { label: "Seat Block Fees", values: ["₹50,000", "–", "–", "–", "–", "–", "–", "–", "–", "₹50,000"] },
-    { label: "Security Deposit (Refundable)", values: ["₹30,000", "–", "–", "–", "–", "–", "–", "–", "–", "₹30,000"] },
-    { label: "Upskilling Fee", values: ["₹84,813", "₹84,813", "₹84,813", "₹84,813", "₹84,813", "₹84,813", "₹84,813", "₹84,813", "–", "₹6,38,500"] },
-    { label: "Tuition Fee", values: ["₹1,00,000", "₹1,34,500", "₹1,34,500", "₹1,34,500", "₹1,34,500", "₹1,34,500", "₹1,34,500", "₹1,34,500", "–", "₹7,58,500"] },
-  ],
-  totals: ["₹2,64,813", "₹2,19,313", "₹2,19,313", "₹2,19,313", "₹2,19,313", "₹2,19,313", "₹2,19,313", "₹2,19,313", "–", "₹18,00,000"],
-};
-
-const feeNotes = [
-  "Apple Macbook is included in the above course fee.",
-  "The fees mentioned in the table is the Course fees. This is exclusive of Hostel & Mess fees.",
-  "Hostel and mess services are available on the Sushant University campus, subject to availability and offered on a first-come, first-served basis.",
-  "Additional fees payable directly to the University, over and above the course fee: one-time Application Fee (₹1,500), Registration Fee (₹5,000), Uniform Fee (₹5,000), Sports Activity Fee (₹5,000), and Examination Fee (₹3,000 per semester).",
-];
-
-const loanData = {
-  rows: [
-    { label: "Loan Type", value: "Normal (Unsecured)" },
-    { label: "Interest Rate (%)", value: "13% – 15%" },
-    { label: "Max Loan Amount", value: "Upto 100% tuition fees" },
-    { label: "Moratorium Period", value: "4 years" },
-    { label: "Tenure", value: "10 years" },
-    { label: "Processing Charges", value: "1% (incl. GST)" },
-    { label: "Tax Benefits Section 8e", value: "Available" },
-  ],
-};
-
-const scholarships = [
-  { title: "Merit Based Scholarship", percent: "Upto 100%", desc: "Recognizes academic excellence, unique talent and leadership potential.", img: "/img/program/scholarship-merit.png" },
-  { title: "Women in Tech Scholarship", percent: "Upto 20%", desc: "Empowering and supporting women in tech for growth and success.", img: "/img/program/scholarship-women.png" },
-  { title: "Need Based Scholarship", percent: "Upto 30%", desc: "Focused on specific fields of study or demonstrating financial needs.", img: "/img/program/scholarship-need.png" },
-];
-
-const campusImages = [
-  "/img/program/campus-1.png",
-  "/img/program/campus-1.png",
-  "/img/program/campus-2.png",
-  "/img/program/campus-3.png",
-  "/img/program/campus-4.png",
-  "/img/program/campus-5.png",
-];
-
-const gurugramImages = {
-  statsLeft: [{ num: "10,000+", label: "Registered startups" }, { num: "Top 5", label: "Leading AI hub in Asia" }],
-  statsRight: [{ num: "800+", label: "MNC & Fortune 500's" }, { num: "#1 in India", label: "Corporate Hub" }],
-  img1: "/img/program/gurugram-1.png",
-  img2: "/img/program/gurugram-2.png",
-  img3: "/img/program/gurugram-3.png",
-  img4: "/img/program/gurugram-4.png",
-};
-
-// ─────────────────────────────────────────────────────────────────────────────
 // Shared styles
 // ─────────────────────────────────────────────────────────────────────────────
 const gradientText = {
@@ -129,7 +51,6 @@ function SemAccordion({ item, isOpen, onToggle }) {
   const isFirst = item.sem === "Semester 1";
   return (
     <Box sx={{ borderRadius: "8px", overflow: "hidden" }}>
-      {/* Header */}
       <Box
         onClick={onToggle}
         sx={{
@@ -146,7 +67,6 @@ function SemAccordion({ item, isOpen, onToggle }) {
           ? <KeyboardArrowUpIcon sx={{ color: isFirst ? "#F9F9F9" : "#1F1F1F" }} />
           : <KeyboardArrowDownIcon sx={{ color: isFirst ? "#F9F9F9" : "#1F1F1F" }} />}
       </Box>
-      {/* Expanded rows */}
       {isOpen && (
         <Box>
           {item.rows.map(({ label, value }, i) => (
@@ -172,12 +92,24 @@ function SemAccordion({ item, isOpen, onToggle }) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Main component
+// Main component — accepts a `config` prop
 // ─────────────────────────────────────────────────────────────────────────────
-export default function ProgramPage() {
+export default function ProgramPage({ config }) {
   const [feeTab, setFeeTab] = useState("course");
-  const [loanPartner, setLoanPartner] = useState("jodo");
+  const [loanPartner, setLoanPartner] = useState("propelled");
   const [openSem, setOpenSem] = useState(0);
+
+  const {
+    hero,
+    statsBar,
+    citySection,
+    campusSection,
+    accreditations,
+    scholarships,
+    fees,
+    financing,
+    cta,
+  } = config;
 
   return (
     <Box sx={{ bgcolor: "#fff", display: "flex", flexDirection: "column", width: "100%" }}>
@@ -186,27 +118,23 @@ export default function ProgramPage() {
       <Box
         sx={{
           position: "relative",
-          height: { xs: "319px", md: "80vh" },
+          height: { xs: "319px", md: "75vh" },
           display: "flex",
           flexDirection: "column",
-          justifyContent: "center",
+          justifyContent: { xs: "center", md: "flex-end" },
           overflow: "hidden",
         }}
       >
-        {/* Background layers */}
         <Box sx={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at center, #BA6BFF 0%, #933DDE 50%, #7F27CD 75%, #6C10BC 100%)" }} />
         <Box
           component="img"
-          src="/img/program/hero-bg.png"
+          src={hero.bgImage}
           alt=""
           sx={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 0.6 }}
         />
-        {/* Left dark gradient — stronger to match screenshot */}
         <Box sx={{ position: "absolute", inset: 0, background: "linear-gradient(to right, #1a0533 0%, #2F0E4B 30%, rgba(0,0,0,0) 70%)" }} />
-        {/* Bottom fade for content readability */}
         <Box sx={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 50%)" }} />
 
-        {/* Content */}
         <Box
           sx={{
             position: "relative", zIndex: 1,
@@ -219,15 +147,8 @@ export default function ProgramPage() {
         >
           {/* Co-brand logos */}
           <Box sx={{ display: "flex", alignItems: "center", gap: { xs: "8px", md: "16px" } }}>
-            <Box component="img" src="/img/program/partner-logo.svg" alt="Partner university" sx={{ height: { xs: "27px", md: "48px" }, width: { xs: "82px", md: "138px" } }} />
-            <Typography sx={{
-              color: "white",
-              fontFamily: "Inter, sans-serif",
-              fontWeight: 300,
-              fontSize: { xs: "18px", md: "28px" },
-              lineHeight: 1,
-              mx: { xs: "2px", md: "4px" },
-            }}>
+            <Box component="img" src={hero.partnerLogo} alt="Partner university" sx={{ height: { xs: "27px", md: "48px" }, width: { xs: "82px", md: "138px" } }} />
+            <Typography sx={{ color: "white", fontFamily: "Inter, sans-serif", fontWeight: 300, fontSize: { xs: "18px", md: "28px" }, lineHeight: 1, mx: { xs: "2px", md: "4px" } }}>
               ×
             </Typography>
             <Box component="img" src="/img/Vedam_Final_Logo_White.png" alt="Vedam" sx={{ height: { xs: "36px", md: "76px" }, width: { xs: "79px", md: "138px" } }} />
@@ -237,24 +158,17 @@ export default function ProgramPage() {
           <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: "10px", md: "16px" } }}>
             <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: "8px", md: "12px" }, color: "#F9F9F9" }}>
               <Typography sx={{
-                fontFamily: "Inter, sans-serif",
-                fontWeight: 700,
+                fontFamily: "Inter, sans-serif", fontWeight: 700,
                 fontSize: { xs: "16px", md: "32px" },
                 letterSpacing: { xs: "-0.32px", md: "-2%" },
                 lineHeight: { xs: 1.2, md: 1.1 },
                 maxWidth: { xs: 280, md: 480 },
                 color: "#FFFFFF",
               }}>
-                UG Program in Computer Science &amp; Artificial Intelligence
+                {hero.title}
               </Typography>
-              <Typography sx={{
-                fontFamily: "Inter, sans-serif",
-                fontWeight: 500,
-                fontSize: { xs: "10px", md: "14px" },
-                color: "#F9F9F9",
-                opacity: 0.9,
-              }}>
-                Bachelor of Technology Degree by Sushant University, Gurugram
+              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 500, fontSize: { xs: "10px", md: "14px" }, color: "#F9F9F9", opacity: 0.9 }}>
+                {hero.subtitle}
               </Typography>
             </Box>
 
@@ -286,20 +200,15 @@ export default function ProgramPage() {
           <Box sx={{ display: "flex", gap: { xs: "10px", md: "16px" }, mt: { xs: "20px", md: "40px" }, alignItems: "center" }}>
             <Button
               component="a"
-              href="https://apply.vedam.org"
+              href={hero.applyUrl}
               target="_blank"
               variant="contained"
               sx={{
-                bgcolor: "#6C10BC",
-                borderRadius: "8px",
-                px: { xs: "16px", md: "28px" },
-                py: { xs: "8px", md: "14px" },
-                fontFamily: "Inter, sans-serif",
-                fontWeight: 600,
-                fontSize: { xs: "11px", md: "15px" },
-                letterSpacing: "-0.28px",
-                textTransform: "none",
-                boxShadow: "none",
+                bgcolor: "#6C10BC", borderRadius: "8px",
+                px: { xs: "16px", md: "28px" }, py: { xs: "8px", md: "14px" },
+                fontFamily: "Inter, sans-serif", fontWeight: 600,
+                fontSize: { xs: "11px", md: "15px" }, letterSpacing: "-0.28px",
+                textTransform: "none", boxShadow: "none",
                 "&:hover": { bgcolor: "#5a0ea0", boxShadow: "none" },
               }}
             >
@@ -307,19 +216,14 @@ export default function ProgramPage() {
             </Button>
             <Button
               component="a"
-              href="/brochure"
+              href={hero.brochureUrl}
               variant="contained"
               sx={{
-                bgcolor: "rgba(30,30,30,0.55)",
-                borderRadius: "8px",
-                px: { xs: "16px", md: "28px" },
-                py: { xs: "8px", md: "14px" },
-                fontFamily: "Inter, sans-serif",
-                fontWeight: 600,
-                fontSize: { xs: "11px", md: "15px" },
-                letterSpacing: "-0.28px",
-                textTransform: "none",
-                boxShadow: "none",
+                bgcolor: "rgba(30,30,30,0.55)", borderRadius: "8px",
+                px: { xs: "16px", md: "28px" }, py: { xs: "8px", md: "14px" },
+                fontFamily: "Inter, sans-serif", fontWeight: 600,
+                fontSize: { xs: "11px", md: "15px" }, letterSpacing: "-0.28px",
+                textTransform: "none", boxShadow: "none",
                 border: "1px solid rgba(255,255,255,0.15)",
                 "&:hover": { bgcolor: "rgba(30,30,30,0.75)", boxShadow: "none" },
               }}
@@ -342,19 +246,13 @@ export default function ProgramPage() {
             overflow: "hidden",
           }}
         >
-          {[
-            { title: "4 Years", body: "Full-time residential program\nB.Tech Degree  by Sushant University", highlight: false },
-            { title: "Partner Campus", body: "Sushant University —\nGurugram, Delhi NCR", highlight: true },
-            { title: "Eligibility", body: "2025, 2026 12th student with PCM\n(>50% in PCM & 12th boards Overall)", highlight: false },
-          ].map(({ title, body, highlight }, i) => (
+          {statsBar.tiles.map(({ title, body, highlight }, i) => (
             <Box
               key={i}
               sx={{
                 flex: 1, display: "flex", flexDirection: "column", gap: "4px",
-                justifyContent: "center",
-                px: { xs: i === 0 ? "0" : "10px", md: "20px" },
-                py: { xs: "10px", md: 0 },
-                pr: { xs: i === 0 ? "10px" : undefined, md: undefined },
+                px: { xs: "10px", md: "20px" },
+                py: { xs: "10px", md: "20px" },
                 bgcolor: highlight ? "rgba(186,107,255,0.08)" : "#FAFAFA",
               }}
             >
@@ -368,68 +266,61 @@ export default function ProgramPage() {
           ))}
         </Box>
         <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: { xs: "8px", md: "12px" }, color: "#848484", textAlign: "center", letterSpacing: "-0.16px", lineHeight: 1.5, px: "20px" }}>
-          *Admissions open for 2026 intake. Only top 5% applicants are selected.
+          {statsBar.footnote}
         </Typography>
       </Box>
 
-      {/* ── 3. WHY GURUGRAM? ────────────────────────────────────────────────── */}
+      {/* ── 3. CITY SECTION (Why Gurugram / Why Pune?) ──────────────────────── */}
       <Box sx={{ ...sectionPad, display: "flex", flexDirection: "column", gap: { xs: "10px", md: "20px" } }}>
         <Box sx={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-          <Typography sx={gradientText}>Why Gurugram?</Typography>
+          <Typography sx={gradientText}>{citySection.heading}</Typography>
           <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: { xs: 500, md: 600 }, fontSize: { xs: "10px", md: "16px" }, color: "#1E1E1E", lineHeight: 1.5, letterSpacing: { xs: "-0.2px", md: "-0.32px" }, maxWidth: 1024 }}>
-            Gurugram is where India&apos;s corporate world lives. From Fortune 500 headquarters to global tech giants, the city puts you at the centre of India&apos;s biggest economy.
+            {citySection.description}
           </Typography>
         </Box>
 
-        {/* ── Mobile layout (xs only) */}
+        {/* Mobile */}
         <Box sx={{ display: { xs: "flex", md: "none" }, flexDirection: "column", gap: "4px" }}>
-          <StatsTile stats={gurugramImages.statsLeft} />
+          <StatsTile stats={citySection.statsLeft} />
           <Box sx={{ display: "flex", gap: "4px", height: "111px" }}>
             <Box sx={{ flex: 1, borderRadius: "10px", overflow: "hidden" }}>
-              <Box component="img" src={gurugramImages.img1} alt="Gurugram" sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <Box component="img" src={citySection.img1} alt="" sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </Box>
             <Box sx={{ flex: 1, borderRadius: "10px", overflow: "hidden" }}>
-              <Box component="img" src={gurugramImages.img2} alt="Gurugram skyline" sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <Box component="img" src={citySection.img2} alt="" sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </Box>
           </Box>
-          <StatsTile stats={gurugramImages.statsRight} />
+          <StatsTile stats={citySection.statsRight} />
           <Box sx={{ display: "flex", gap: "4px", height: "111px" }}>
             <Box sx={{ flex: 1, borderRadius: "10px", overflow: "hidden" }}>
-              <Box component="img" src={gurugramImages.img3} alt="Gurugram city" sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <Box component="img" src={citySection.img4} alt="" sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </Box>
             <Box sx={{ flex: 1, borderRadius: "10px", overflow: "hidden" }}>
-              <Box component="img" src={gurugramImages.img4} alt="Gurugram tech" sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <Box component="img" src={citySection.img3} alt="" sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </Box>
           </Box>
         </Box>
 
-        {/* ── Desktop layout (md+) */}
+        {/* Desktop */}
         <Box sx={{ display: { xs: "none", md: "block" }, width: "100%" }}>
-          <Box
-            sx={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr 1fr 1fr",
-              gridTemplateRows: "90px 90px 90px 90px",
-              gap: "10px",
-            }}
-          >
+          <Box sx={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gridTemplateRows: "90px 90px 90px 90px", gap: "10px" }}>
             <Box sx={{ gridColumn: "1 / span 2", gridRow: "1" }}>
-              <StatsTile stats={gurugramImages.statsLeft} />
+              <StatsTile stats={citySection.statsLeft} />
             </Box>
             <Box sx={{ gridColumn: "1", gridRow: "2 / span 3", borderRadius: "24px", overflow: "hidden" }}>
-              <Box component="img" src={gurugramImages.img1} alt="Gurugram" sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <Box component="img" src={citySection.img1} alt="" sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </Box>
             <Box sx={{ gridColumn: "2", gridRow: "2 / span 3", borderRadius: "24px", overflow: "hidden", height: "290px" }}>
-              <Box component="img" src={gurugramImages.img3} alt="Gurugram city" sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <Box component="img" src={citySection.img3} alt="" sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </Box>
             <Box sx={{ gridColumn: "3", gridRow: "1 / span 3", borderRadius: "24px", overflow: "hidden" }}>
-              <Box component="img" src={gurugramImages.img4} alt="Gurugram tech" sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <Box component="img" src={citySection.img4} alt="" sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </Box>
             <Box sx={{ gridColumn: "4", gridRow: "1 / span 3", borderRadius: "24px", overflow: "hidden" }}>
-              <Box component="img" src={gurugramImages.img2} alt="Gurugram skyline" sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <Box component="img" src={citySection.img2} alt="" sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </Box>
             <Box sx={{ gridColumn: "3 / span 2", gridRow: "4" }}>
-              <StatsTile stats={gurugramImages.statsRight} />
+              <StatsTile stats={citySection.statsRight} />
             </Box>
           </Box>
         </Box>
@@ -440,22 +331,22 @@ export default function ProgramPage() {
         <Box sx={{ display: "flex", flexDirection: "column", gap: "8px" }}>
           <Typography sx={gradientText}>Campus &amp; Amenities</Typography>
           <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: { xs: 500, md: 600 }, fontSize: { xs: "10px", md: "16px" }, color: "#1E1E1E", lineHeight: 1.5, maxWidth: 1024 }}>
-            Sushant University&apos;s Gurugram campus is located minutes away from Cyber City, Golf Course Road, and the NCR startup corridor. The campus combines modern academic infrastructure with proximity to India&apos;s fastest-growing district.
+            {campusSection.description}
           </Typography>
         </Box>
 
-        {/* Mobile: 2-col grid, 3 rows */}
+        {/* Mobile */}
         <Box sx={{ display: { xs: "grid", md: "none" }, gridTemplateColumns: "1fr 1fr", gap: "4px" }}>
-          {campusImages.map((src, i) => (
+          {campusSection.images.map((src, i) => (
             <Box key={i} sx={{ height: "115px", borderRadius: "4px", overflow: "hidden" }}>
               <Box component="img" src={src} alt={`Campus ${i + 1}`} sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </Box>
           ))}
         </Box>
 
-        {/* Desktop: 3-col grid, 2 rows */}
+        {/* Desktop */}
         <Box sx={{ display: { xs: "none", md: "flex" }, flexDirection: "column", gap: "20px" }}>
-          {[campusImages.slice(0, 3), campusImages.slice(3)].map((row, ri) => (
+          {[campusSection.images.slice(0, 3), campusSection.images.slice(3)].map((row, ri) => (
             <Box key={ri} sx={{ display: "flex", gap: "20px" }}>
               {row.map((src, i) => (
                 <Box key={i} sx={{ flex: 1, height: "250px", borderRadius: "12px", overflow: "hidden" }}>
@@ -472,14 +363,13 @@ export default function ProgramPage() {
         <Box sx={{ display: "flex", flexDirection: "column", gap: "8px", width: "100%" }}>
           <Typography sx={gradientText}>Accreditations &amp; Recognitions</Typography>
           <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: { xs: 500, md: 600 }, fontSize: { xs: "10px", md: "16px" }, color: "#1E1E1E", lineHeight: 1.5, maxWidth: 1024 }}>
-            Your degree isn&apos;t just a certificate — it&apos;s a nationally recognised credential backed by India&apos;s top regulatory bodies, independent quality assessors, and international ranking frameworks.
+            {accreditations.description}
           </Typography>
         </Box>
         <Box sx={{ display: "flex", alignItems: "center", gap: { xs: "10px 40px", md: "40px" }, flexWrap: "wrap", justifyContent: "center" }}>
-          <Box component="img" src="/img/program/naac-logo.png" alt="NAAC" sx={{ height: { xs: "30px", md: "80px" }, width: "auto" }} />
-          <Box component="img" src="/img/program/nirf-logo.png" alt="NIRF" sx={{ height: { xs: "30px", md: "80px" }, width: "auto" }} />
-          <Box component="img" src="/img/program/haryana-emblem.svg" alt="Haryana" sx={{ height: { xs: "40px", md: "80px" }, width: "auto" }} />
-          <Box component="img" src="/img/program/aicte-logo.png" alt="AICTE" sx={{ height: { xs: "30px", md: "80px" }, width: "auto" }} />
+          {accreditations.logos.map(({ src, alt, height, width }) => (
+            <Box key={alt} component="img" src={src} alt={alt} sx={{ height: { xs: height.xs, md: height.md }, width: width ? { xs: width.xs, md: width.md } : "auto" }} />
+          ))}
         </Box>
       </Box>
 
@@ -488,13 +378,13 @@ export default function ProgramPage() {
         <Box sx={{ display: "flex", flexDirection: "column", gap: "8px" }}>
           <Typography sx={gradientText}>Scholarship Program</Typography>
           <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: { xs: 500, md: 600 }, fontSize: { xs: "10px", md: "16px" }, color: "#1E1E1E", lineHeight: 1.5 }}>
-            Talent shouldn&apos;t wait on finances. Vedam rewards merit, achievement, and potential — with scholarships that make the best education accessible to the best students.
+            {scholarships.description}
           </Typography>
         </Box>
 
-        {/* Mobile: horizontal card rows */}
+        {/* Mobile */}
         <Box sx={{ display: { xs: "flex", md: "none" }, flexDirection: "column", gap: "4px" }}>
-          {scholarships.map(({ title, percent, desc, img }) => (
+          {scholarships.items.map(({ title, percent, desc, img }) => (
             <Box
               key={title}
               sx={{
@@ -517,9 +407,9 @@ export default function ProgramPage() {
           ))}
         </Box>
 
-        {/* Desktop: tall vertical dark cards */}
+        {/* Desktop */}
         <Box sx={{ display: { xs: "none", md: "flex" }, flexDirection: "row", gap: "20px", justifyContent: "space-between" }}>
-          {scholarships.map(({ title, percent, desc, img }) => (
+          {scholarships.items.map(({ title, percent, desc, img }) => (
             <Box
               key={title}
               sx={{
@@ -554,8 +444,7 @@ export default function ProgramPage() {
       <Box sx={{ ...sectionPad, display: "flex", flexDirection: "column", gap: { xs: "0px", md: "20px" } }}>
         <Typography sx={{ ...gradientText, mb: { xs: "0px", md: "0px" } }}>Fee Structure</Typography>
 
-        {/* Tab selector */}
-        <Box sx={{ display: "flex", gap: "20px", borderBottom: "1px solid rgba(0,0,0,0.15)", mt: { xs: "10px", md: 0 }, px: { xs: "0px", md: "0px" } }}>
+        <Box sx={{ display: "flex", gap: "20px", borderBottom: "1px solid rgba(0,0,0,0.15)", mt: { xs: "10px", md: 0 } }}>
           {[{ id: "course", label: "Course Fees" }, { id: "hostel", label: "Hostel Fees" }].map(({ id, label }) => (
             <Box
               key={id}
@@ -575,9 +464,9 @@ export default function ProgramPage() {
 
         {feeTab === "course" ? (
           <>
-            {/* ── Mobile: accordion per semester */}
+            {/* Mobile: accordion */}
             <Box sx={{ display: { xs: "flex", md: "none" }, flexDirection: "column", gap: "8px", mt: "8px" }}>
-              {semesterFees.map((item, idx) => (
+              {fees.semesterFees.map((item, idx) => (
                 <SemAccordion
                   key={item.sem}
                   item={item}
@@ -585,30 +474,23 @@ export default function ProgramPage() {
                   onToggle={() => setOpenSem(openSem === idx ? -1 : idx)}
                 />
               ))}
-              {/* Total Course Fee */}
-              <Box
-                sx={{
-                  bgcolor: "#FF9900", borderRadius: "8px",
-                  display: "flex", justifyContent: "space-between",
-                  px: "10px", py: "10px",
-                }}
-              >
+              <Box sx={{ bgcolor: "#FF9900", borderRadius: "8px", display: "flex", justifyContent: "space-between", px: "10px", py: "10px" }}>
                 <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: "16px", color: "#1F1F1F", letterSpacing: "-0.32px", lineHeight: 1.5 }}>Total Course Fee</Typography>
-                <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: "16px", color: "#1E1E1E", letterSpacing: "-0.32px", lineHeight: 1.5 }}>₹18,00,000</Typography>
+                <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: "16px", color: "#1E1E1E", letterSpacing: "-0.32px", lineHeight: 1.5 }}>{fees.totalCourseFee}</Typography>
               </Box>
             </Box>
 
-            {/* ── Desktop: table */}
+            {/* Desktop: table */}
             <Box sx={{ display: { xs: "none", md: "block" }, width: "100%", overflowX: "auto" }}>
               <Box sx={{ minWidth: "900px", border: "0.5px solid rgba(0,0,0,0.2)", borderRadius: "24px", overflow: "hidden", bgcolor: "white" }}>
                 <Box sx={{ display: "grid", gridTemplateColumns: "2fr repeat(9, 1fr)" }}>
-                  {feeData.headers.map((h, i) => (
-                    <Box key={i} sx={{ bgcolor: "#F4ECFA", p: "10px", borderRight: i < feeData.headers.length - 1 ? "0.5px solid rgba(0,0,0,0.1)" : "none" }}>
+                  {fees.feeData.headers.map((h, i) => (
+                    <Box key={i} sx={{ bgcolor: "#F4ECFA", p: "10px 20px", borderRight: i < fees.feeData.headers.length - 1 ? "0.5px solid rgba(0,0,0,0.1)" : "none" }}>
                       <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: "12px", color: "black", letterSpacing: "-0.24px", whiteSpace: "nowrap" }}>{h}</Typography>
                     </Box>
                   ))}
                 </Box>
-                {feeData.rows.map(({ label, values }, ri) => (
+                {fees.feeData.rows.map(({ label, values }, ri) => (
                   <Box key={ri} sx={{ display: "grid", gridTemplateColumns: "2fr repeat(9, 1fr)", borderTop: "0.5px solid rgba(30,30,30,0.2)" }}>
                     <Box sx={{ p: "10px", pl: "20px", borderRight: "0.5px solid rgba(0,0,0,0.1)" }}>
                       <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: "12px", color: "black", letterSpacing: "-0.24px", whiteSpace: "nowrap" }}>{label}</Typography>
@@ -624,8 +506,8 @@ export default function ProgramPage() {
                   <Box sx={{ bgcolor: "#BA6BFF", p: "10px", pl: "20px", borderRight: "0.5px solid rgba(0,0,0,0.1)" }}>
                     <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: "12px", color: "#1E1E1E", letterSpacing: "-0.24px" }}>Total Payable Fees</Typography>
                   </Box>
-                  {feeData.totals.map((v, i) => (
-                    <Box key={i} sx={{ bgcolor: "#BA6BFF", p: "10px", textAlign: "center", borderRight: i < feeData.totals.length - 1 ? "0.5px solid rgba(0,0,0,0.1)" : "none" }}>
+                  {fees.feeData.totals.map((v, i) => (
+                    <Box key={i} sx={{ bgcolor: "#BA6BFF", p: "10px", textAlign: "center", borderRight: i < fees.feeData.totals.length - 1 ? "0.5px solid rgba(0,0,0,0.1)" : "none" }}>
                       <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: "12px", color: "#1E1E1E", letterSpacing: "-0.24px", whiteSpace: "nowrap" }}>{v}</Typography>
                     </Box>
                   ))}
@@ -638,8 +520,8 @@ export default function ProgramPage() {
               <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: "12px", color: "#6C10BC", letterSpacing: "-0.24px", lineHeight: 1.5 }}>
                 Important Fee Highlights
               </Typography>
-              <Box component="ol" sx={{ m: 0, pl: "18px" }}>
-                {feeNotes.map((note, i) => (
+              <Box component="ol" sx={{ m: 0, pl: "18px", "& li::marker": { fontSize: { xs: "10px", md: "13px" }, fontWeight: 500, color: "#1F1F1F" } }}>
+                {fees.feeNotes.map((note, i) => (
                   <Box component="li" key={i}>
                     <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 500, fontSize: { xs: "10px", md: "12px" }, color: "#1F1F1F", letterSpacing: { xs: "-0.2px", md: "-0.24px" }, lineHeight: 2 }}>
                       {note}
@@ -651,32 +533,36 @@ export default function ProgramPage() {
           </>
         ) : (
           <Typography sx={{ fontFamily: "Inter, sans-serif", fontSize: "14px", color: "#848484", mt: "16px" }}>
-            Hostel fee details coming soon. Please contact admissions for more information.
+            {fees.hostelPlaceholder}
           </Typography>
         )}
       </Box>
 
       {/* ── 8. FINANCING OPTIONS ────────────────────────────────────────────── */}
       <Box sx={{ ...sectionPad, display: "flex", flexDirection: "column", gap: { xs: "10px", md: "40px" } }}>
-        <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: "10px", md: "20px" }, maxWidth: 1024 }}>
+        <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: "10px", md: "20px" }, maxWidth: "100%" }}>
           <Box sx={{ display: "flex", flexDirection: "column", gap: "8px" }}>
             <Typography sx={gradientText}>Financing Options</Typography>
             <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: { xs: 500, md: 600 }, fontSize: { xs: "10px", md: "16px" }, color: "#1E1E1E", lineHeight: 1.5 }}>
-              At Vedam School of Technology, we understand that flexibility and convenience in fee payments are important to our students and their families. To make this process easier and more accessible, we have partnered with recognized financial companies.
+              {financing.description}
             </Typography>
           </Box>
 
-          <Box sx={{ display: "flex", flexDirection: "column", border: "0.5px solid rgba(0,0,0,0.1)", borderRadius: "8px", overflow: "hidden" }}>
+          <Box sx={{ display: "flex", flexDirection: { xs: "column", md: "row" }, border: "0.5px solid rgba(0,0,0,0.1)", borderRadius: "8px", overflow: "hidden" }}>
             <Box sx={{ flex: 1, bgcolor: "#F9F9F9", px: { xs: "20px", md: "40px" }, py: "20px", display: "flex", flexDirection: "column", gap: "10px" }}>
-              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, color: "#6C10BC", fontSize: { xs: "16px", md: "20px" }, lineHeight: 1.5 }}>Loan at Zero Cost EMI</Typography>
+              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, color: "#6C10BC", fontSize: { xs: "16px", md: "20px" }, lineHeight: 1.5 }}>
+                {financing.zeroEmi.title}
+              </Typography>
               <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: { xs: 500, md: 600 }, color: "#1E1E1E", fontSize: { xs: "10px", md: "12px" }, lineHeight: 1.5 }}>
-                You can pay your annual course fee in monthly installments with no interest, no processing fee, and no hidden charges. We&apos;ve partnered trusted fintech company working with over 2,500 institutions, to offer this option.
+                {financing.zeroEmi.description}
               </Typography>
             </Box>
-            <Box sx={{ flex: 1, bgcolor: "#fff", px: { xs: "20px", md: "40px" }, py: "20px", display: "flex", flexDirection: "column", gap: "10px", borderTop: "0.5px solid rgba(0,0,0,0.1)" }}>
-              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, color: "#6C10BC", fontSize: { xs: "16px", md: "20px" }, lineHeight: 1.5 }}>Education Loan from a Bank</Typography>
+            <Box sx={{ flex: 1, bgcolor: "#fff", px: { xs: "20px", md: "40px" }, py: "20px", display: "flex", flexDirection: "column", gap: "10px", borderTop: { xs: "0.5px solid rgba(0,0,0,0.1)", md: "none" }, borderLeft: { xs: "none", md: "0.5px solid rgba(0,0,0,0.1)" } }}>
+              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, color: "#6C10BC", fontSize: { xs: "16px", md: "20px" }, lineHeight: 1.5 }}>
+                {financing.bankLoan.title}
+              </Typography>
               <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: { xs: 500, md: 600 }, color: "#1E1E1E", fontSize: { xs: "10px", md: "12px" }, lineHeight: 1.5 }}>
-                You can also access education loans through our trusted banking partners, making it easier for you to finance your education with flexible repayment options and competitive interest rates.
+                {financing.bankLoan.description}
               </Typography>
             </Box>
           </Box>
@@ -685,52 +571,47 @@ export default function ProgramPage() {
         {/* Financing Partners */}
         <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: "10px", md: "20px" } }}>
           <Typography sx={gradientText}>Financing Partners</Typography>
-
-          {/* Partner selector */}
-          <Box sx={{ display: "inline-flex", gap: "4px", alignItems: "center", border: "1px solid #6C10BC", borderRadius: "24px", p: "5px", alignSelf: "flex-start" }}>
-            {[{ id: "propelled", label: "Propelled" }, { id: "jodo", label: "Jodo Cred Plan" }].map(({ id, label }) => (
-              <Box
-                key={id}
-                onClick={() => setLoanPartner(id)}
-                sx={{ px: "20px", py: "10px", cursor: "pointer", borderRadius: "14px", bgcolor: loanPartner === id ? "#6C10BC" : "transparent" }}
-              >
-                <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: { xs: "8px", md: "14px" }, color: loanPartner === id ? "#F9F9F9" : "#6C10BC", letterSpacing: "-0.16px", lineHeight: 1.2, whiteSpace: "nowrap" }}>
-                  {label}
-                </Typography>
-              </Box>
-            ))}
-          </Box>
-
-          {/* Loan table */}
-          <Box sx={{ width: { xs: "100%", md: "512px" }, border: "0.5px solid #6C10BC", borderRadius: "12px", overflow: "hidden", bgcolor: "white" }}>
-            {loanData.rows.map(({ label, value }, i) => (
-              <Box
-                key={i}
-                sx={{ display: "grid", gridTemplateColumns: "1fr 1fr", borderBottom: i < loanData.rows.length - 1 ? "0.5px solid rgba(30,30,30,0.2)" : "none" }}
-              >
-                <Box sx={{ bgcolor: "#F4ECFA", p: "10px", borderRight: "0.5px solid rgba(30,30,30,0.2)" }}>
-                  <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: i === 0 ? 700 : 500, fontSize: { xs: "10px", md: "12px" }, color: "black", letterSpacing: { xs: "-0.2px", md: "-0.24px" }, lineHeight: 1.5 }}>
+          <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: { xs: "10px", md: "20px" } }}>
+            <Box sx={{ display: "inline-flex", gap: "4px", alignItems: "center", border: "1px solid #6C10BC", borderRadius: "24px", p: "5px" }}>
+              {financing.loanPartners.map(({ id, label }) => (
+                <Box
+                  key={id}
+                  onClick={() => setLoanPartner(id)}
+                  sx={{ px: "20px", py: "10px", cursor: "pointer", borderRadius: "14px", bgcolor: loanPartner === id ? "#6C10BC" : "transparent" }}
+                >
+                  <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: { xs: "8px", md: "14px" }, color: loanPartner === id ? "#F9F9F9" : "#6C10BC", letterSpacing: "-0.16px", lineHeight: 1.2, whiteSpace: "nowrap" }}>
                     {label}
                   </Typography>
                 </Box>
-                <Box sx={{ p: "10px" }}>
-                  <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: i === 0 ? 700 : 500, fontSize: { xs: "10px", md: "12px" }, color: i === 0 ? "black" : "#1F1F1F", letterSpacing: { xs: "-0.2px", md: "-0.24px" }, lineHeight: 1.5 }}>
-                    {value}
-                  </Typography>
+              ))}
+            </Box>
+
+            {/* Loan table — shows data for selected partner */}
+            <Box sx={{ width: { xs: "100%", md: "512px" }, border: "0.5px solid #6C10BC", borderRadius: "12px", overflow: "hidden", bgcolor: "white" }}>
+              {(financing.loanData[loanPartner] ?? financing.loanData[financing.loanPartners[0]?.id])?.rows.map(({ label, value }, i, arr) => (
+                <Box
+                  key={i}
+                  sx={{ display: "grid", gridTemplateColumns: "1fr 1fr", borderBottom: i < arr.length - 1 ? "0.5px solid rgba(30,30,30,0.2)" : "none" }}
+                >
+                  <Box sx={{ bgcolor: "#F4ECFA", p: "10px", borderRight: "0.5px solid rgba(30,30,30,0.2)" }}>
+                    <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: i === 0 ? 700 : 500, fontSize: { xs: "10px", md: "12px" }, color: "black", letterSpacing: { xs: "-0.2px", md: "-0.24px" }, lineHeight: 1.5 }}>
+                      {label}
+                    </Typography>
+                  </Box>
+                  <Box sx={{ p: "10px" }}>
+                    <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: i === 0 ? 700 : 500, fontSize: { xs: "10px", md: "12px" }, color: "#1F1F1F", letterSpacing: { xs: "-0.2px", md: "-0.24px" }, lineHeight: 1.5 }}>
+                      {value}
+                    </Typography>
+                  </Box>
                 </Box>
-              </Box>
-            ))}
+              ))}
+            </Box>
           </Box>
         </Box>
       </Box>
 
-      {/* ── 9. CTA – BE THE NEXT GEN ENTREPRENEUR ──────────────────────────── */}
-      <Box
-        sx={{
-          bgcolor: "white", display: "flex", alignItems: "center", justifyContent: "center",
-          px: { xs: "20px", md: "37px" }, py: "26px",
-        }}
-      >
+      {/* ── 9. CTA ──────────────────────────────────────────────────────────── */}
+      <Box sx={{ bgcolor: "white", display: "flex", alignItems: "center", justifyContent: "center", px: { xs: "20px", md: "37px" }, py: "26px" }}>
         <Box
           sx={{
             width: "100%", maxWidth: "1048px", height: { xs: "auto", md: "314px" },
@@ -740,24 +621,19 @@ export default function ProgramPage() {
             px: { xs: "24px", md: "43px" }, py: { xs: "40px", md: "0" },
           }}
         >
-          <Box
-            component="img"
-            src="/img/program/cta-bg.svg"
-            alt=""
-            sx={{ position: "absolute", left: "-223px", top: "-41px", width: "596px", height: "596px", pointerEvents: "none" }}
-          />
+          <Box component="img" src="/img/program/cta-bg.svg" alt="" sx={{ position: "absolute", left: "-223px", top: "-41px", width: "596px", height: "596px", pointerEvents: "none" }} />
           <Box sx={{ position: "relative", zIndex: 2, display: "flex", flexDirection: "column", gap: "16px" }}>
             <Box>
               <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, color: "#F9F9F9", fontSize: { xs: "28px", md: "36px" }, letterSpacing: "-0.72px", lineHeight: 1.2 }}>
-                Be the Next
+                {cta.line1}
               </Typography>
               <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, color: "#FB7F05", fontSize: { xs: "28px", md: "36px" }, letterSpacing: "-0.72px", lineHeight: 1.2 }}>
-                Gen Entrepreneur
+                {cta.line2}
               </Typography>
             </Box>
             <Button
               component="a"
-              href="https://apply.vedam.org"
+              href={cta.applyUrl}
               target="_blank"
               variant="contained"
               sx={{
@@ -771,17 +647,19 @@ export default function ProgramPage() {
             </Button>
           </Box>
 
-          {/* Student images — desktop only */}
-          <Box
-            sx={{
-              display: { xs: "none", md: "block" },
-              position: "absolute", right: 0, bottom: 0, top: 0,
-              width: "65%", pointerEvents: "none",
-            }}
-          >
-            <Box component="img" src="/img/program/cta-student-1.png" alt="Student" sx={{ position: "absolute", right: "0", top: "-26px", height: "100%", width: "auto", objectFit: "contain", maxWidth: "45%" }} />
-            <Box component="img" src="/img/program/cta-student-2.png" alt="Student" sx={{ position: "absolute", right: "33%", top: "5px", height: "100%", width: "auto", objectFit: "contain", maxWidth: "35%" }} />
-            <Box component="img" src="/img/program/cta-student-3.png" alt="Student" sx={{ position: "absolute", right: "55%", top: "13px", height: "100%", width: "auto", objectFit: "contain", maxWidth: "28%" }} />
+          <Box sx={{ display: { xs: "none", md: "block" }, position: "absolute", right: 0, bottom: 0, top: 0, width: "65%", pointerEvents: "none" }}>
+            {cta.students.map((src, i) => {
+              const positions = [
+                { right: "0", top: "-26px", maxWidth: "45%" },
+                { right: "33%", top: "5px", maxWidth: "35%" },
+                { right: "55%", top: "13px", maxWidth: "28%" },
+              ];
+              return (
+                <Box key={i} component="img" src={src} alt="Student"
+                  sx={{ position: "absolute", height: "100%", width: "auto", objectFit: "contain", ...positions[i] }}
+                />
+              );
+            })}
           </Box>
         </Box>
       </Box>
