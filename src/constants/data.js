@@ -211,7 +211,7 @@ export const detailsData = [
   {
     image: "/img/whyvedam/first.webp",
     bgImage: "/img/whyvedam/img2.png",
-    title: "Only top 5% get through",
+    title: "Only top 5% get in",
     description:
       "Merit based selection to attract the top talent. Learn with and co-create best codes.",
   },
@@ -228,14 +228,12 @@ export const detailsData = [
     title: "Personal Macbook",
     description:
       "It's your key to a hands-on, immersive and collaborative learning experience in Computer Science and AI. ",
-    // isFeatured: true,
   },
   {
     image: "/img/whyvedam/third.webp",
     bgImage: "/img/whyvedam/img1.png",
     title: "Top Instructors",
-    description:
-      "At Vedam, you’ll learn from the best minds in tech—engineers, researchers, and industry leaders from Google, Microsoft, Amazon, and top startups.",
+    description: "At Vedam, you’ll learn from the best minds in tech—engineers, researchers, and industry leaders from Google, Microsoft, Amazon, and top startups.",
   },
 ];
 
