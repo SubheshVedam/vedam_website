@@ -646,23 +646,28 @@ export default function SeekYourSeniors() {
   };
 
   return (
-    <Box sx={{ bgcolor: "#FAFAFA", display: "flex", flexDirection: "column", width: "100%", overflow: "hidden" }}>
+    <Box
+      sx={{
+        backgroundImage: {
+          xs: "url('/img/seniors/bg-seek-seniors-mob.png')",
+          md: "url('/img/seniors/bg-seek-seniors.png')",
+        },
+        backgroundSize: "cover",
+        backgroundPosition: "center top",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: { xs: "scroll", md: "fixed" },
+        display: "flex",
+        flexDirection: "column",
+        width: "100%",
+        overflow: "hidden",
+      }}
+    >
 
       {/* ── 1. HERO ── */}
       <Box sx={{
-        bgcolor: "white", position: "relative", overflow: "hidden",
+        bgcolor: "transparent", position: "relative", overflow: "hidden",
         ...sectionPad, pt: { xs: "32px", md: "60px" }, pb: { xs: "24px", md: "40px" },
       }}>
-        <Box sx={{
-          position: "absolute", right: "-80px", bottom: "-80px", width: "400px", height: "400px",
-          borderRadius: "50%", background: "radial-gradient(ellipse,rgba(108,16,188,0.08) 0%,transparent 70%)",
-          pointerEvents: "none",
-        }} />
-        <Box sx={{
-          position: "absolute", left: "-80px", top: "40px", width: "350px", height: "350px",
-          borderRadius: "50%", background: "radial-gradient(ellipse,rgba(251,127,5,0.06) 0%,transparent 70%)",
-          pointerEvents: "none",
-        }} />
 
         {/* Mobile */}
         <Box sx={{ display: { xs: "flex", md: "none" }, flexDirection: "column", alignItems: "center", gap: "20px", position: "relative", zIndex: 1 }}>
@@ -741,7 +746,7 @@ export default function SeekYourSeniors() {
       </Box>
 
       {/* ── 2. CLUB PRESIDENTS ── */}
-      <Box sx={{ bgcolor: "white", ...sectionPad, mt: { xs: "8px", md: "12px" } }}>
+      <Box sx={{ bgcolor: "transparent", ...sectionPad, mt: { xs: "8px", md: "12px" } }}>
         <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", mb: { xs: "16px", md: "24px" } }}>
           <Typography sx={sectionHeading}>Meet Your Club Presidents</Typography>
           <Box sx={{ display: { xs: "none", md: "block" } }}>
@@ -759,7 +764,7 @@ export default function SeekYourSeniors() {
       </Box>
 
       {/* ── 3. SENIOR VIDEOS ── */}
-      <Box sx={{ bgcolor: "white", ...sectionPad, mt: { xs: "8px", md: "12px" } }}>
+      <Box sx={{ bgcolor: "transparent", ...sectionPad, mt: { xs: "8px", md: "12px" } }}>
         <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", mb: { xs: "16px", md: "24px" } }}>
           <Typography sx={{ ...sectionHeading, maxWidth: { xs: "220px", md: "none" } }}>
             All your Queries Answered by your Seniors
@@ -780,7 +785,7 @@ export default function SeekYourSeniors() {
 
       {/* ── 4. STUDENT PROJECTS ── */}
       <Box sx={{
-        bgcolor: "white", mt: { xs: "8px", md: "12px" },
+        bgcolor: "transparent", mt: { xs: "8px", md: "12px" },
         px: { xs: "32px", md: "120px" }, // 32px on mobile so arrows (at -14px) have room
         pt: { xs: "24px", md: "48px" },
         pb: { xs: "32px", md: "60px" },
