@@ -76,6 +76,13 @@ const projects = [
     authors: ["Khushi Yadav", "Sirwagya Shekhar"],
     highlightWords: ["emotional wellness"],
   },
+  {
+    name: "AI Mock Interviewer",
+    desc: "An AI-powered interview simulator that helps users practice, improve, and gain confidence by providing real-time questions, feedback, and performance insights.",
+    img: "/img/seniors/img5.png",
+    authors: ["Parth Kshirsagar", "Ved Kumar Singh", "Satyam Kumar Singh", "Nimit Jain", "Yashwardhan"],
+    highlightWords: ["interview simulator"],
+  },
 ];
 
 // ─────────────────────────────────────────────────────────────────────────────
