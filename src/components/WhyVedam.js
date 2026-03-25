@@ -1,5 +1,5 @@
 import React from "react";
-import { Backdrop, Box } from "@mui/material";
+import { Box } from "@mui/material";
 import { detailsData } from "@/constants/data";
 import DetailsCard from "./atoms/DetailsCard";
 
@@ -26,18 +26,6 @@ const WhyVedam = ({ data }) => {
             width: { xs: "100%", sm: "calc(33.33% - 1rem)" },
             position: "relative",
           }}>
-          {/* <Backdrop
-            open={true}
-            sx={{
-              position: "absolute",
-              zIndex: 1,
-              width: "100%",
-              height: "100%",
-              top: 0,
-              left: 0,
-              borderRadius: "16px",
-            }}
-          /> */}
           <DetailsCard
             image=""
             bgImage={item.bgImage}
@@ -56,18 +44,6 @@ const WhyVedam = ({ data }) => {
             width: { xs: "100%", sm: "calc(50% - 1rem)" },
             position: "relative",
           }}>
-          {/* <Backdrop
-            open={true}
-            sx={{
-              position: "absolute",
-              zIndex: 1,
-              width: "100%",
-              height: "100%",
-              top: 0,
-              left: 0,
-              borderRadius: "16px",
-            }}
-          /> */}
           <DetailsCard
             image=""
             bgImage={item.bgImage}

@@ -45,7 +45,7 @@ const Admission = ({
     },
     {
       id: "scholarship",
-      subtitle: '',
+      subtitle: 'Scholarship Program',
       render: () => <ScholarshipProgram />,
     },
     // {

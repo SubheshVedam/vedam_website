@@ -24,7 +24,7 @@ const gradientText = {
 const sectionPad = { px: { xs: "20px", md: "128px" }, py: { xs: "20px", md: "40px" } };
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Sub-components
+// StatsTile
 // ─────────────────────────────────────────────────────────────────────────────
 function StatsTile({ stats }) {
   return (
@@ -47,6 +47,9 @@ function StatsTile({ stats }) {
   );
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// SemAccordion
+// ─────────────────────────────────────────────────────────────────────────────
 function SemAccordion({ item, isOpen, onToggle }) {
   const isFirst = item.sem === "Semester 1";
   return (
@@ -69,16 +72,17 @@ function SemAccordion({ item, isOpen, onToggle }) {
       </Box>
       {isOpen && (
         <Box>
-          {item.rows.map(({ label, value }, i) => (
+          {item.rows.map(({ label, value, isSubTotal }, i) => (
             <Box
               key={i}
               sx={{
-                bgcolor: "rgba(108,16,188,0.08)", display: "flex", justifyContent: "space-between",
+                bgcolor: isSubTotal ? "rgba(108,16,188,0.14)" : "rgba(108,16,188,0.08)",
+                display: "flex", justifyContent: "space-between",
                 px: "10px", py: "8px", borderBottom: "0.5px solid rgba(31,31,31,0.2)",
               }}
             >
-              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 500, fontSize: "12px", color: "#1F1F1F", letterSpacing: "-0.24px", lineHeight: 1.5 }}>{label}</Typography>
-              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 500, fontSize: "12px", color: "#1F1F1F", letterSpacing: "-0.24px", lineHeight: 1.5 }}>{value}</Typography>
+              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: isSubTotal ? 700 : 500, fontSize: "12px", color: isSubTotal ? "#6C10BC" : "#1F1F1F", letterSpacing: "-0.24px", lineHeight: 1.5 }}>{label}</Typography>
+              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: isSubTotal ? 700 : 500, fontSize: "12px", color: isSubTotal ? "#6C10BC" : "#1F1F1F", letterSpacing: "-0.24px", lineHeight: 1.5 }}>{value}</Typography>
             </Box>
           ))}
           <Box sx={{ bgcolor: "rgba(108,16,188,0.08)", display: "flex", justifyContent: "space-between", px: "10px", py: "8px" }}>
@@ -92,7 +96,191 @@ function SemAccordion({ item, isOpen, onToggle }) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Main component — accepts a `config` prop
+// Shared: renders a list of room-type cards + a notes block
+// ─────────────────────────────────────────────────────────────────────────────
+function RoomTypeCards({ roomTypes, notes }) {
+  return (
+    <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: "16px", md: "20px" } }}>
+      {/* Room cards */}
+      {roomTypes.map(({ type, rows }) => (
+        <Box
+          key={type}
+          sx={{
+            border: "1.5px solid transparent",
+            borderRadius: { xs: "12px", md: "16px" },
+            overflow: "hidden",
+            background: "linear-gradient(white, white) padding-box, linear-gradient(135deg, #6C10BC, #FB7F05) border-box",
+          }}
+        >
+          {/* Header */}
+          <Box sx={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
+            <Box sx={{ bgcolor: "rgba(108,16,188,0.08)", p: { xs: "10px 14px", md: "14px 20px" }, borderRight: "0.5px solid rgba(108,16,188,0.2)" }}>
+              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: { xs: "12px", md: "14px" }, color: "#6C10BC" }}>
+                Room Type
+              </Typography>
+            </Box>
+            <Box sx={{ bgcolor: "#6C10BC", p: { xs: "10px 14px", md: "14px 20px" } }}>
+              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: { xs: "12px", md: "14px" }, color: "#fff" }}>
+                {type}
+              </Typography>
+            </Box>
+          </Box>
+
+          {/* Rows */}
+          {rows.map(({ label, value }, i) => (
+            <Box key={i} sx={{ display: "grid", gridTemplateColumns: "1fr 1fr", borderTop: "0.5px solid rgba(108,16,188,0.15)" }}>
+              <Box sx={{ bgcolor: "rgba(108,16,188,0.04)", p: { xs: "10px 14px", md: "12px 20px" }, borderRight: "0.5px solid rgba(108,16,188,0.15)" }}>
+                <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 500, fontSize: { xs: "10px", md: "12px" }, color: "#1F1F1F", whiteSpace: "pre-line", lineHeight: 1.6 }}>
+                  {label}
+                </Typography>
+              </Box>
+              <Box sx={{ p: { xs: "10px 14px", md: "12px 20px" } }}>
+                <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 500, fontSize: { xs: "10px", md: "12px" }, color: "#1F1F1F", lineHeight: 1.6 }}>
+                  {value}
+                </Typography>
+              </Box>
+            </Box>
+          ))}
+        </Box>
+      ))}
+
+      {/* Notes */}
+      {notes?.length > 0 && (
+        <Box
+          sx={{
+            bgcolor: "rgba(108,16,188,0.04)",
+            border: "0.5px solid rgba(108,16,188,0.2)",
+            borderRadius: { xs: "10px", md: "14px" },
+            p: { xs: "14px 16px", md: "20px 24px" },
+            display: "flex",
+            flexDirection: "column",
+            gap: { xs: "10px", md: "12px" },
+          }}
+        >
+          <Box
+            sx={{
+              display: "inline-flex", alignItems: "center",
+              bgcolor: "rgba(108,16,188,0.1)", borderRadius: "6px",
+              px: "10px", py: "4px", width: "fit-content", mb: "4px",
+            }}
+          >
+            <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: { xs: "11px", md: "13px" }, color: "#6C10BC", letterSpacing: "-0.24px" }}>
+              Note
+            </Typography>
+          </Box>
+
+          {notes.map((note, i) => (
+            <Box key={i} sx={{ display: "flex", gap: { xs: "8px", md: "12px" }, alignItems: "flex-start" }}>
+              <Box
+                sx={{
+                  minWidth: { xs: "20px", md: "24px" },
+                  height: { xs: "20px", md: "24px" },
+                  borderRadius: "50%",
+                  bgcolor: "#6C10BC",
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  flexShrink: 0, mt: "1px",
+                }}
+              >
+                <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: { xs: "9px", md: "11px" }, color: "#fff", lineHeight: 1 }}>
+                  {i + 1}
+                </Typography>
+              </Box>
+              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: { xs: "10px", md: "12px" }, color: "#1F1F1F", lineHeight: 1.7 }}>
+                {note}
+              </Typography>
+            </Box>
+          ))}
+        </Box>
+      )}
+    </Box>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Legacy hostel section — Gurugram (flat roomTypes array)
+// ─────────────────────────────────────────────────────────────────────────────
+function LegacyHostelSection({ hostelFees }) {
+  return (
+    <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: "16px", md: "24px" }, mt: { xs: "8px", md: 0 } }}>
+      <RoomTypeCards roomTypes={hostelFees.roomTypes} notes={hostelFees.notes} />
+    </Box>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// New hostel section — Pune (hostelTypes array with Out of Campus / In Campus)
+// ─────────────────────────────────────────────────────────────────────────────
+function MultiTypeHostelSection({ hostelFees }) {
+  const [activeTab, setActiveTab] = useState(hostelFees.hostelTypes[0]?.type ?? "outCampus");
+  const activeHostel = hostelFees.hostelTypes.find((h) => h.type === activeTab);
+
+  return (
+    <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: "16px", md: "24px" }, mt: { xs: "8px", md: 0 } }}>
+
+      {/* Sub-tab: Out of Campus / In Campus */}
+      <Box sx={{ display: "flex", gap: "24px", borderBottom: "1px solid rgba(0,0,0,0.15)" }}>
+        {hostelFees.hostelTypes.map(({ type, label }) => (
+          <Box
+            key={type}
+            onClick={() => setActiveTab(type)}
+            sx={{
+              pb: "10px", cursor: "pointer",
+              borderBottom: activeTab === type ? "2px solid #6C10BC" : "2px solid transparent",
+              fontFamily: "Inter, sans-serif", fontWeight: 600,
+              fontSize: { xs: "12px", md: "15px" },
+              color: activeTab === type ? "#6C10BC" : "#848484",
+              transition: "color 0.2s",
+            }}
+          >
+            {label}
+          </Box>
+        ))}
+      </Box>
+
+      {activeHostel && (
+        <>
+          {/* Hostel title */}
+          <Typography sx={{
+            fontFamily: "Inter, sans-serif", fontWeight: 700,
+            fontSize: { xs: "13px", md: "16px" }, color: "#6C10BC",
+          }}>
+            {activeHostel.title}
+          </Typography>
+
+          <RoomTypeCards roomTypes={activeHostel.roomTypes} notes={activeHostel.notes} />
+        </>
+      )}
+    </Box>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// HostelFeeSection — router: detects shape and picks the right sub-component
+// ─────────────────────────────────────────────────────────────────────────────
+function HostelFeeSection({ hostelFees, hostelPlaceholder }) {
+  if (!hostelFees) {
+    return (
+      <Typography sx={{ fontFamily: "Inter, sans-serif", fontSize: "14px", color: "#848484", mt: "16px" }}>
+        {hostelPlaceholder}
+      </Typography>
+    );
+  }
+
+  // Legacy shape (Gurugram): hostelFees.roomTypes is an array
+  if (Array.isArray(hostelFees.roomTypes)) {
+    return <LegacyHostelSection hostelFees={hostelFees} />;
+  }
+
+  // New shape (Pune): hostelFees.hostelTypes is an array
+  if (Array.isArray(hostelFees.hostelTypes)) {
+    return <MultiTypeHostelSection hostelFees={hostelFees} />;
+  }
+
+  return null;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Main ProgramPage component — accepts a `config` prop
 // ─────────────────────────────────────────────────────────────────────────────
 export default function ProgramPage({ config }) {
   const [feeTab, setFeeTab] = useState("course");
@@ -270,7 +458,7 @@ export default function ProgramPage({ config }) {
         </Typography>
       </Box>
 
-      {/* ── 3. CITY SECTION (Why Gurugram / Why Pune?) ──────────────────────── */}
+      {/* ── 3. CITY SECTION ─────────────────────────────────────────────────── */}
       <Box sx={{ ...sectionPad, display: "flex", flexDirection: "column", gap: { xs: "10px", md: "20px" } }}>
         <Box sx={{ display: "flex", flexDirection: "column", gap: "8px" }}>
           <Typography sx={gradientText}>{citySection.heading}</Typography>
@@ -483,6 +671,7 @@ export default function ProgramPage({ config }) {
             {/* Desktop: table */}
             <Box sx={{ display: { xs: "none", md: "block" }, width: "100%", overflowX: "auto" }}>
               <Box sx={{ minWidth: "900px", border: "0.5px solid rgba(0,0,0,0.2)", borderRadius: "24px", overflow: "hidden", bgcolor: "white" }}>
+                {/* Headers */}
                 <Box sx={{ display: "grid", gridTemplateColumns: "2fr repeat(9, 1fr)" }}>
                   {fees.feeData.headers.map((h, i) => (
                     <Box key={i} sx={{ bgcolor: "#F4ECFA", p: "10px 20px", borderRight: i < fees.feeData.headers.length - 1 ? "0.5px solid rgba(0,0,0,0.1)" : "none" }}>
@@ -490,21 +679,31 @@ export default function ProgramPage({ config }) {
                     </Box>
                   ))}
                 </Box>
-                {fees.feeData.rows.map(({ label, values }, ri) => (
-                  <Box key={ri} sx={{ display: "grid", gridTemplateColumns: "2fr repeat(9, 1fr)", borderTop: "0.5px solid rgba(30,30,30,0.2)" }}>
+                {/* Data rows */}
+                {fees.feeData.rows.map(({ label, values, isSubTotal }, ri) => (
+                  <Box
+                    key={ri}
+                    sx={{
+                      display: "grid",
+                      gridTemplateColumns: "2fr repeat(9, 1fr)",
+                      borderTop: "0.5px solid rgba(30,30,30,0.2)",
+                      bgcolor: isSubTotal ? "rgba(108,16,188,0.08)" : "transparent",
+                    }}
+                  >
                     <Box sx={{ p: "10px", pl: "20px", borderRight: "0.5px solid rgba(0,0,0,0.1)" }}>
-                      <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: "12px", color: "black", letterSpacing: "-0.24px", whiteSpace: "nowrap" }}>{label}</Typography>
+                      <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: "12px", color: isSubTotal ? "#6C10BC" : "black", letterSpacing: "-0.24px", whiteSpace: "nowrap" }}>{label}</Typography>
                     </Box>
                     {values.map((v, ci) => (
                       <Box key={ci} sx={{ p: "10px", textAlign: "center", borderRight: ci < values.length - 1 ? "0.5px solid rgba(0,0,0,0.1)" : "none" }}>
-                        <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 500, fontSize: "12px", color: "black", letterSpacing: "-0.24px", whiteSpace: "nowrap" }}>{v}</Typography>
+                        <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: isSubTotal ? 700 : 500, fontSize: "12px", color: isSubTotal ? "#6C10BC" : "black", letterSpacing: "-0.24px", whiteSpace: "nowrap" }}>{v}</Typography>
                       </Box>
                     ))}
                   </Box>
                 ))}
+                {/* Totals row */}
                 <Box sx={{ display: "grid", gridTemplateColumns: "2fr repeat(9, 1fr)", borderTop: "0.5px solid rgba(30,30,30,0.2)" }}>
                   <Box sx={{ bgcolor: "#BA6BFF", p: "10px", pl: "20px", borderRight: "0.5px solid rgba(0,0,0,0.1)" }}>
-                    <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: "12px", color: "#1E1E1E", letterSpacing: "-0.24px" }}>Total Payable Fees</Typography>
+                    <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: "12px", color: "#1E1E1E", letterSpacing: "-0.24px" }}>Payable Course Fee</Typography>
                   </Box>
                   {fees.feeData.totals.map((v, i) => (
                     <Box key={i} sx={{ bgcolor: "#BA6BFF", p: "10px", textAlign: "center", borderRight: i < fees.feeData.totals.length - 1 ? "0.5px solid rgba(0,0,0,0.1)" : "none" }}>
@@ -532,9 +731,10 @@ export default function ProgramPage({ config }) {
             </Box>
           </>
         ) : (
-          <Typography sx={{ fontFamily: "Inter, sans-serif", fontSize: "14px", color: "#848484", mt: "16px" }}>
-            {fees.hostelPlaceholder}
-          </Typography>
+          <HostelFeeSection
+            hostelFees={fees.hostelFees}
+            hostelPlaceholder={fees.hostelPlaceholder}
+          />
         )}
       </Box>
 
@@ -586,7 +786,7 @@ export default function ProgramPage({ config }) {
               ))}
             </Box>
 
-            {/* Loan table — shows data for selected partner */}
+            {/* Loan table */}
             <Box sx={{ width: { xs: "100%", md: "512px" }, border: "0.5px solid #6C10BC", borderRadius: "12px", overflow: "hidden", bgcolor: "white" }}>
               {(financing.loanData[loanPartner] ?? financing.loanData[financing.loanPartners[0]?.id])?.rows.map(({ label, value }, i, arr) => (
                 <Box

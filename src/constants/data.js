@@ -202,40 +202,40 @@ export const instructorData = [
 ];
 export const detailsData = [
   {
-    image: "/img/whyvedam/first.webp",
-    bgImage: "/img/whyvedam/whyvedam1.webp",
-    title: "Only top 5% get through",
-    description:
-      "Merit based selection to attract the top talent. Learn with and co-create best codes.",
-  },
-  {
     image: "/img/whyvedam/second.webp",
-    bgImage: "/img/whyvedam/whyvedam2.webp",
+    bgImage: "/img/whyvedam/img3.png",
     title: "Code From Day 1",
     description:
       "From Day 1, you'll be writing real code, building projects, and solving industry-relevant problems.",
   },
   {
+    image: "/img/whyvedam/first.webp",
+    bgImage: "/img/whyvedam/img2.png",
+    title: "Only top 5% get through",
+    description:
+      "Merit based selection to attract the top talent. Learn with and co-create best codes.",
+  },
+  {
     image: "/img/whyvedam/fourth.webp",
-    bgImage: "/img/whyvedam/whyvedam3.webp",
+    bgImage: "/img/whyvedam/img5.png",
     title: "AI First Curriculum",
     description:
       "Our AI-First Curriculum is designed to equip students with the skills, tools, and mindset needed to thrive in an AI-powered world.",
   },
   {
-    image: "/img/whyvedam/third.webp",
-    bgImage: "/img/whyvedam/whyvedam4.webp",
-    title: "Top Instructors",
-    description:
-      "At Vedam, you’ll learn from the best minds in tech—engineers, researchers, and industry leaders from Google, Microsoft, Amazon, and top startups.",
-  },
-  {
     image: "/img/whyvedam/fifth.webp",
-    bgImage: "/img/whyvedam/whyvedam5.webp",
+    bgImage: "/img/whyvedam/img4.png",
     title: "Personal Macbook",
     description:
       "It's your key to a hands-on, immersive and collaborative learning experience in Computer Science and AI. ",
     // isFeatured: true,
+  },
+  {
+    image: "/img/whyvedam/third.webp",
+    bgImage: "/img/whyvedam/img1.png",
+    title: "Top Instructors",
+    description:
+      "At Vedam, you’ll learn from the best minds in tech—engineers, researchers, and industry leaders from Google, Microsoft, Amazon, and top startups.",
   },
 ];
 
@@ -266,6 +266,7 @@ export const navLinks = [
     children: admissionCampusLinks,
   },
   { label: "Life @ Vedam", path: "/life", img: "/img/Group 1261155759.svg" },
+  { label: "Seek Your Senior", path: "/seniors" },
   { label: "FAQs", path: "/faqs" },
   // { label: "About Us", path: "/about" },
   { label: "Register Now", path: "https://apply.vedam.org/" }, //Don't reorder register
@@ -888,56 +889,85 @@ export const homeScreenData = {
   intheHeadlines: {
     title: "In The Headlines",
     subtitle: "In The Headlines",
+
     data: [
       {
         id: 1,
-        image: "/img/inTheNews/img1.webp",
+        image: "/img/inTheNews/1.webp",
+        name: "News 24",
         alt: "News Article 1",
-        link: "https://education21.in/vedam-school-of-technology-pune-welcomes-founding-batch-with-ai-first-orientation-week/",
+        sourceLogo: "/img/inTheNews/News24.webp",
+        link: "https://indianews24.asia/vedam-school-of-technology-completes-first-semester-of-ai-focused-computer-science-program/",
       },
       {
         id: 2,
-        image: "/img/inTheNews/img3.webp",
+        image: "/img/inTheNews/2.webp",
+        name: "ET Government",
         alt: "News Article 3",
-        link: "https://www.financialexpress.com/jobs-career/education-vedam-school-of-technology-acquires-algoprep-aims-to-launch-ai-native-tech-curriculum-3809339/",
+        sourceLogo: "/img/inTheNews/ETgovt.webp",
+        link: "https://government.economictimes.indiatimes.com/news/education/vedam-school-of-technology-acquires-algoprep-to-build-indias-first-ai-native-tech-curriculum/120303273",
       },
       {
         id: 3,
-        image: "/img/inTheNews/img4.webp",
+        image: "/img/inTheNews/3.webp",
+        name: "India Education Diary",
         alt: "News Article 4",
-        link: "https://www.passionateinmarketing.com/vedam-school-of-technology-set-to-revolutionize-computer-science-education-in-india/",
+        sourceLogo: "/img/inTheNews/indiaeddiary.webp",
+        link: "https://indiaeducationdiary.in/vedam-school-of-technology-sets-a-new-benchmark-for-computer-science-ai-program-from-the-first-semester/",
       },
       {
         id: 4,
-        image: "/img/inTheNews/img2.webp",
+        image: "/img/inTheNews/4.webp",
+        name: "Skill Outlook",
         alt: "News Article 2",
+        sourceLogo: "/img/inTheNews/skill.webp",
+        link: "https://skilloutlook.com/education/vedam-school-of-technology-sets-a-new-benchmark-for-computer-science-ai-program-from-the-first-semester",
+        objectPosition: "top",
+      },
+      {
+        id: 5,
+        image: "/img/inTheNews/5.webp",
+        name: "Financial Express",
+        alt: "News Article 2",
+        sourceLogo: "/img/inTheNews/finance.webp",
+        link: "https://www.financialexpress.com/jobs-career/education-vedam-school-of-technology-acquires-algoprep-aims-to-launch-ai-native-tech-curriculum-3809339/",
+        objectPosition: "top",
+      },
+      {
+        id: 6,
+        image: "/img/inTheNews/6.webp",
+        name: "Shiksha",
+        alt: "News Article 2",
+        sourceLogo: "/img/inTheNews/shikhsha.webp",
+        link: "https://www.shiksha.com/news/engineering-vedam-school-of-technology-welcomes-inaugural-batch-with-orientation-week-blogId-209076",
+        objectPosition: "top",
+      },
+      {
+        id: 7,
+        image: "/img/inTheNews/7.webp",
+        name: "Eduation 21",
+        alt: "News Article 2",
+        sourceLogo: "/img/inTheNews/edu21.webp",
+        link: "https://education21.in/vedam-school-of-technology-pune-welcomes-founding-batch-with-ai-first-orientation-week/",
+        objectPosition: "top",
+      },
+      {
+        id: 8,
+        image: "/img/inTheNews/8.webp",
+        alt: "News Article 2",
+        sourceLogo: "/img/inTheNews/passion.webp",
+        link: "https://www.passionateinmarketing.com/vedam-school-of-technology-set-to-revolutionize-computer-science-education-in-india/",
+        objectPosition: "top",
+      },
+      {
+        id: 9,
+        image: "/img/inTheNews/9.webp",
+        name: "Passionate In Marketing",
+        alt: "News Article 2",
+        sourceLogo: "/img/inTheNews/sugarmint.webp",
         link: "https://sugermint.com/vedam-school-of-technology-opens-doors-to-founding-batch/",
         objectPosition: "top",
       },
-      // {
-      //   id: 5,
-      //   image: "/img/inTheNews/vedam_in_the_news_5.jpeg",
-      //   alt: "News Article 5",
-      //   link: "https://timesofindia.indiatimes.com/spotlight/leading-ai-focused-computer-science-programme-in-india-inside-vedams-4-year-computer-science-undergraduate-program/articleshow/121819349.cms",
-      // },
-      // {
-      //   id: 6,
-      //   image: "/img/inTheNews/vedam_in_the_news_2.webp",
-      //   alt: "News Article 6",
-      //   link: "https://www.edtechreview.in/news/vedam-school-of-technology-aims-to-transform-computer-science-education-in-india/",
-      // },
-      // {
-      //   id: 7,
-      //   image: "/img/inTheNews/vedam_in_the_news_3.webp",
-      //   alt: "News Article 7",
-      //   link: "https://educationmatters.in/2025/02/vedam-school-of-technology-set-to-revolutionize-computer-science-education-in-india/",
-      // },
-      // {
-      //   id: 8,
-      //   image: "/img/inTheNews/vedam_in_the_news_4.webp",
-      //   alt: "News Article 8",
-      //   link: "https://government.economictimes.indiatimes.com/news/education/vedam-school-of-technology-acquires-algoprep-to-build-indias-first-ai-native-tech-curriculum/120303273?utm_source=latest_news&utm_medium=homepage",
-      // },
     ],
   },
 };

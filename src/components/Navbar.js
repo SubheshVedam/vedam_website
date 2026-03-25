@@ -96,7 +96,7 @@ export default function Navbar() {
       <Box
         sx={{
           height: "0px",
-          minWidth: { md: "1024px" },
+          minWidth: { md: "1200px" },
           width: "100%",
           position: { xs: "inherit", sm: "relative" },
           top: "20px",
@@ -147,11 +147,11 @@ export default function Navbar() {
             <Box
               sx={{
                 display: { xs: "none", sm: "flex" },
-                gap: "60px",
+                gap: "34px",
                 alignItems: "center",
               }}
             >
-              {navLinks.slice(0, 5).map((link, index) => {
+              {navLinks.slice(0, 6).map((link, index) => {
                 if (link.children?.length) {
                   const admissionDisplayLabel = getAdmissionDisplayLabel(link);
 

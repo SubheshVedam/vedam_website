@@ -30,7 +30,7 @@ const NewsSection = () => {
 
   return (
     <WidthContainer>
-      <Box sx={{ position: 'relative' }}>
+      <Box sx={{ position: 'relative', marginTop: "-32px", marginBottom: "-32px" }}>
 
         {/* DESKTOP arrows — top-right corner of the section */}
         <Box
@@ -43,11 +43,11 @@ const NewsSection = () => {
             zIndex: 10,
           }}
         >
-          <NavButton onClick={prev} icon={<ChevronLeftIcon />} variant="outline" />
-          <NavButton onClick={next} icon={<ChevronRightIcon />} variant="outline" />
+          <NavButton onClick={prev} icon={<ChevronLeftIcon />} />
+          <NavButton onClick={next} icon={<ChevronRightIcon />} />
         </Box>
 
-        {/* Cards row — overflow hidden prevents cards spilling outside screen */}
+        {/* Cards row */}
         <Box
           sx={{
             display: 'flex',
@@ -55,6 +55,7 @@ const NewsSection = () => {
             alignItems: 'flex-end',
             overflow: 'hidden',
             width: '100%',
+            minWidth: 0,
           }}
         >
           {/* ACTIVE CARD */}
@@ -62,12 +63,11 @@ const NewsSection = () => {
             sx={{
               flexShrink: 0,
               width: { xs: '100%', md: '400px' },
-              height: { xs: '420px', md: `${ACTIVE_H}px` },
+              maxWidth: '100%',
+              height: { xs: '340px', md: `${ACTIVE_H}px` },
               borderRadius: { xs: '12px', md: '16px' },
               overflow: 'hidden',
               position: 'relative',
-              boxShadow: '0 8px 32px rgba(108,16,188,0.12)',
-              border: '1.5px solid rgba(108,16,188,0.15)',
             }}
           >
             <Image
@@ -114,7 +114,7 @@ const NewsSection = () => {
                   )}
                 </Box>
                 <Typography sx={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: { xs: '12px', md: '13px' }, color: '#1E1E1E', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                  {activeItem.sourceName || 'Read Article'}
+                  {activeItem.name || 'Read Article'}
                 </Typography>
               </Box>
 
@@ -158,7 +158,7 @@ const NewsSection = () => {
           ))}
         </Box>
 
-        {/* MOBILE arrows — on the left/right boundary of the card */}
+        {/* MOBILE arrows */}
         <Box
           sx={{
             display: { xs: 'flex', md: 'none' },
@@ -173,10 +173,10 @@ const NewsSection = () => {
           }}
         >
           <Box sx={{ pointerEvents: 'all', transform: 'translateX(-50%)' }}>
-            <NavButton onClick={prev} icon={<ChevronLeftIcon />} variant="frosted" />
+            <NavButton onClick={prev} icon={<ChevronLeftIcon />} />
           </Box>
           <Box sx={{ pointerEvents: 'all', transform: 'translateX(50%)' }}>
-            <NavButton onClick={next} icon={<ChevronRightIcon />} variant="frosted" />
+            <NavButton onClick={next} icon={<ChevronRightIcon />} />
           </Box>
         </Box>
 
@@ -185,7 +185,7 @@ const NewsSection = () => {
   );
 };
 
-function NavButton({ onClick, icon, variant = 'frosted' }) {
+function NavButton({ onClick, icon }) {
   return (
     <IconButton
       onClick={onClick}
