@@ -40,6 +40,10 @@ export default function Navbar() {
     return label.includes("Login") || label.includes("Register");
   };
 
+  const isPathMatch = (path) => {
+    return pathname === path || pathname.startsWith(`${path}/`);
+  };
+
   const isActive = (path) => {
     if (path === "/") {
       return pathname === "/" || pathname === "/home";
@@ -47,7 +51,11 @@ export default function Navbar() {
     if (path.startsWith("/admission")) {
       return pathname.startsWith("/admission");
     }
-    return pathname === path;
+    return isPathMatch(path);
+  };
+
+  const isCampusLinkActive = (link) => {
+    return link.children?.some((campus) => isPathMatch(campus.path)) ?? false;
   };
 
   const getAdmissionDisplayLabel = (link) => {
@@ -55,10 +63,7 @@ export default function Navbar() {
       return link.label;
     }
 
-    const activeCampus = link.children.find(
-      (campus) =>
-        pathname === campus.path || pathname.startsWith(`${campus.path}/`)
-    );
+    const activeCampus = link.children.find((campus) => isPathMatch(campus.path));
 
     return activeCampus?.label || link.label;
   };
@@ -72,9 +77,9 @@ export default function Navbar() {
   };
 
   React.useEffect(() => {
-    if (pathname.startsWith("/admission")) {
-      setMobileCampusOpen(true);
-    }
+    const hasActiveCampusLink = navLinks.some((link) => isCampusLinkActive(link));
+
+    setMobileCampusOpen(hasActiveCampusLink);
   }, [pathname]);
 
   const activeStyle = {
@@ -174,7 +179,7 @@ export default function Navbar() {
                           fontFamily: "Inter",
                           zIndex: "1",
                           "&:hover": activeStyle,
-                          ...(isActive(link.path) && activeStyle),
+                          ...(isCampusLinkActive(link) && activeStyle),
                         }}
                       >
                         {admissionDisplayLabel}
@@ -219,7 +224,7 @@ export default function Navbar() {
                             component={Link}
                             href={campus.path}
                             onClick={handleCampusMenuClose}
-                            selected={isActive(campus.path)}
+                            selected={isPathMatch(campus.path)}
                             sx={{
                               display: "flex",
                               flexDirection: "column",
@@ -475,7 +480,7 @@ export default function Navbar() {
                             onClick={handleDrawerToggle}
                             sx={{
                               pl: 4,
-                              ...(isActive(campus.path) && activeStyle),
+                              ...(isPathMatch(campus.path) && activeStyle),
                             }}
                           >
                             <ListItemText
@@ -488,7 +493,7 @@ export default function Navbar() {
                                 textTransform: "none",
                                 transition: "all 0.3s ease-in-out",
                                 "&:hover": activeStyle,
-                                ...(isActive(campus.path) && activeStyle),
+                                ...(isPathMatch(campus.path) && activeStyle),
                               }}
                               primary={campus.label}
                             />
