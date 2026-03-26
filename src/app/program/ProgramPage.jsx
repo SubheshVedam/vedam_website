@@ -373,14 +373,17 @@ export default function ProgramPage({ config }) {
                 width: "fit-content",
               }}
             >
-              <Box component="img" src="/img/program/ugc-logo.svg" alt="UGC" sx={{ height: { xs: "16px", md: "26px" }, width: { xs: "16px", md: "24px" } }} />
-              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 500, fontSize: { xs: "6px", md: "10px" }, color: "#F9F9F9", whiteSpace: "nowrap" }}>UGC Recognised</Typography>
-              <Typography sx={{ color: "rgba(255,255,255,0.5)", fontSize: { xs: "10px", md: "14px" } }}>|</Typography>
-              <Box component="img" src="/img/program/nirf-logo.png" alt="NIRF" sx={{ height: { xs: "16px", md: "26px" }, width: "auto" }} />
-              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 500, fontSize: { xs: "6px", md: "10px" }, color: "#F9F9F9", whiteSpace: "nowrap" }}>NIRF Ranked</Typography>
-              <Typography sx={{ color: "rgba(255,255,255,0.5)", fontSize: { xs: "10px", md: "14px" } }}>|</Typography>
-              <Box component="img" src="/img/program/naac-logo.png" alt="NAAC" sx={{ height: { xs: "16px", md: "26px" }, width: "auto" }} />
-              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 500, fontSize: { xs: "6px", md: "10px" }, color: "#F9F9F9", whiteSpace: "nowrap" }}>NAAC Accredited</Typography>
+              {hero.accreditationPill.map(({ src, alt, label, width }, i) => (
+                <React.Fragment key={alt}>
+                  {i > 0 && (
+                    <Typography sx={{ color: "rgba(255,255,255,0.5)", fontSize: { xs: "10px", md: "14px" } }}>|</Typography>
+                  )}
+                  <Box component="img" src={src} alt={alt} sx={{ height: { xs: "16px", md: "26px" }, width: width ?? "auto" }} />
+                  <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 500, fontSize: { xs: "6px", md: "10px" }, color: "#F9F9F9", whiteSpace: "nowrap" }}>
+                    {label}
+                  </Typography>
+                </React.Fragment>
+              ))}
             </Box>
           </Box>
 

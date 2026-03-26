@@ -9,6 +9,11 @@ export const gurugramConfig = {
         subtitle: "Bachelor of Technology Degree by Sushant University, Gurugram",
         applyUrl: "https://apply.vedam.org",
         brochureUrl: "https://drive.google.com/file/d/1WzTusTfoSeYszGtlWtgRdNEZ9ta9EZpJ/view?usp=drive_link",
+        accreditationPill: [
+            { src: "/img/program/ugc-logo.svg", alt: "UGC", label: "UGC Recognised", width: { xs: "16px", md: "24px" } },
+            { src: "/img/program/nirf-logo.png", alt: "NIRF", label: "NIRF Ranked" },
+            { src: "/img/program/naac-logo.png", alt: "NAAC", label: "NAAC Accredited" },
+        ],
     },
 
     statsBar: {
@@ -169,6 +174,11 @@ export const puneConfig = {
         subtitle: "Bachelor of Technology Degree by ADYPU, Pune",
         applyUrl: "https://apply.vedam.org",
         brochureUrl: "https://drive.google.com/file/d/1j04UERHtvzVG0i9r0A8EY5s0dnAT_DT-/view?usp=drive_link",
+        accreditationPill: [
+            { src: "/img/program/ugc-logo.svg", alt: "UGC", label: "UGC Recognised", width: { xs: "16px", md: "24px" } },
+            { src: "/img/program/aicte-logo.png", alt: "AICTE", label: "AICTE Approved" },
+            { src: "/img/program/naac-logo.png", alt: "NAAC", label: "NAAC Accredited" },
+        ],
     },
 
     statsBar: {
