@@ -802,7 +802,7 @@ export default function SeekYourSeniors() {
           <Box sx={{ display: "flex", alignItems: "center", gap: "40px" }}>
             {stats.map(({ num, label }) => (
               <Box key={label} sx={{ display: "flex", alignItems: "center", gap: "10px", flexShrink: 0 }}>
-                <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: "40px", color: "#6C10BC", lineHeight: 1 }}>{num}</Typography>
+                <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: "32px", color: "#6C10BC", lineHeight: 1 }}>{num}</Typography>
                 <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "16px", color: "#1E1E1E", lineHeight: 1.3 }}>{label}</Typography>
               </Box>
             ))}

@@ -3,12 +3,12 @@
 // ─────────────────────────────────────────────────────────────────────────────
 export const gurugramConfig = {
     hero: {
-        bgImage: "/img/program/hero-bg.png",
+        bgImage: "/img/program/hero-bg-ggn.png",
         partnerLogo: "/img/program/partner-logo.svg",
         title: "UG Program in Computer Science & Artificial Intelligence",
         subtitle: "Bachelor of Technology Degree by Sushant University, Gurugram",
         applyUrl: "https://apply.vedam.org",
-        brochureUrl: "/brochure",
+        brochureUrl: "https://drive.google.com/file/d/1WzTusTfoSeYszGtlWtgRdNEZ9ta9EZpJ/view?usp=drive_link",
     },
 
     statsBar: {
@@ -108,7 +108,7 @@ export const gurugramConfig = {
         totalCourseFee: "₹18,00,000",
         // Gurugram uses the legacy single-roomTypes shape
         hostelFees: "",
-        hostelPlaceholder: "",
+        hostelPlaceholder: "Coming soon!",
     },
 
     financing: {
@@ -153,7 +153,7 @@ export const gurugramConfig = {
 
     cta: {
         mobile: "/img/student1.png",
-        desktop: "/img/student.png"
+        desktop: "/img/program/be-the-next.png"
     },
 };
 
@@ -163,12 +163,12 @@ export const gurugramConfig = {
 // ─────────────────────────────────────────────────────────────────────────────
 export const puneConfig = {
     hero: {
-        bgImage: "/img/program/hero-bg.png",
+        bgImage: "/img/program/hero-bg-pune.webp",
         partnerLogo: "/img/program/adypu.png",
         title: "UG Program in Computer Science & Artificial Intelligence",
         subtitle: "Bachelor of Technology Degree by ADYPU, Pune",
         applyUrl: "https://apply.vedam.org",
-        brochureUrl: "/brochure",
+        brochureUrl: "https://drive.google.com/file/d/1j04UERHtvzVG0i9r0A8EY5s0dnAT_DT-/view?usp=drive_link",
     },
 
     statsBar: {
@@ -398,6 +398,6 @@ export const puneConfig = {
 
     cta: {
         mobile: "/img/student1.png",
-        desktop: "/img/student.png"
+        desktop: "/img/program/be-the-next.png"
     },
 };

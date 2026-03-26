@@ -404,7 +404,9 @@ export default function ProgramPage({ config }) {
             </Button>
             <Button
               component="a"
-              // href={hero.brochureUrl}
+              href={hero.brochureUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               variant="contained"
               sx={{
                 bgcolor: "rgba(30,30,30,0.55)", borderRadius: "8px",
@@ -811,7 +813,13 @@ export default function ProgramPage({ config }) {
       </Box>
 
       {/* ── 9. CTA ──────────────────────────────────────────────────────────── */}
-      <Box sx={{ ...sectionPad, bgcolor: "white" }}>
+      <Box
+        component="a"
+        href="https://apply.vedam.org"
+        target="_blank"
+        rel="noopener noreferrer"
+        sx={{ ...sectionPad, bgcolor: "white", display: "block", cursor: "pointer" }}
+      >
         {/* Mobile image */}
         <Box
           component="img"
