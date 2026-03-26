@@ -14,7 +14,7 @@ const campusCards = [
     image: "/img/campuses/Gurugram_home_page_v2.webp",
     description: "Sushant University, Gurugram, Delhi NCR",
     buttonText: "Explore Campus",
-    href: "/admission/vst-gurugram",
+    href: "/program/vst-gurugram",
     isExplore: true,
   },
   {
@@ -23,7 +23,7 @@ const campusCards = [
     image: "/img/campuses/Adypu_home_page.webp",
     description: "Ajeenkya DY Patil University, Pune, Maharashtra",
     buttonText: "Explore",
-    href: "/admission/vst-adypu-pune",
+    href: "/program/vst-adypu-pune",
     isExplore: true,
   },
 ];
