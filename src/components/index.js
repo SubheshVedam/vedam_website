@@ -17,6 +17,7 @@ export { FinancingOptions } from "./admission/FinancingOptions";
 export { ScholarshipProgram } from "./admission/ScholarshipProgram";
 export { FacilityAndAmenities } from "./admission/FacilityAndAmenities";
 export { AdmissionProcess } from "./admission/AdmissionProcess";
+export { DirectInterviewRoute } from "./admission/DirectInterviewRoute";
 export { EdgeAtVedam } from "./life/EdgeAtVedam";
 export { VedamInovationLab } from "./life/VedamInovationLab";
 export { ClubsAtVst } from "./life/ClubsAtVst";

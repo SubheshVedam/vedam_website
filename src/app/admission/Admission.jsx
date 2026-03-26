@@ -4,6 +4,7 @@ import { Box } from "@mui/material";
 import {
   AdmissionAndFees,
   AdmissionProcess,
+  DirectInterviewRoute,
   FacilityAndAmenities,
   FeeStructure,
   FinancingOptions,
@@ -42,6 +43,11 @@ const Admission = ({
       id: "admission-process",
       subtitle: admissionScreenData.admissionProcess.subtitle,
       render: () => <AdmissionProcess />,
+    },
+    {
+      id: "direct-interview-route",
+      useCard: false,
+      render: () => <DirectInterviewRoute />,
     },
     {
       id: "scholarship",
