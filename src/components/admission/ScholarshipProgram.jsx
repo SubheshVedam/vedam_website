@@ -1,105 +1,178 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import { admissionScreenData } from "@/constants/data";
-import DetailsCard from "../atoms/DetailsCard";
+
+const scholarships = {
+  description: "Talent shouldn't wait on finances. Vedam rewards merit, achievement, and potential — with scholarships that make the best education accessible to the best students.",
+  items: [
+    { title: "Merit Based Scholarship", percent: "Upto 100%", desc: "Recognizes academic excellence, unique talent and leadership potential.", img: "/img/program/scholarship-merit.png" },
+    { title: "Women in Tech Scholarship", percent: "Upto 20%", desc: "Empowering and supporting women in tech for growth and success.", img: "/img/program/scholarship-women.png" },
+    { title: "Need Based Scholarship", percent: "Upto 30%", desc: "Focused on specific fields of study or demonstrating financial needs.", img: "/img/program/scholarship-need.png" },
+  ],
+};
 
 export const ScholarshipProgram = () => {
+  const { description, items } = scholarships;
+
   return (
     <Box
       sx={{
-        width: '100vw',
-        position: 'relative',
-        left: '50%',
-        right: '50%',
-        marginLeft: '-50vw',
-        marginRight: '-50vw',
-        backgroundImage: {
-          xs: "url('/img/scholarship/bg_mob.webp')",
-          md: "url('/img/scholarship/bg_web.webp')",
-        },
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        display: 'flex',
-        justifyContent: 'center',
+        display: "flex",
+        flexDirection: "column",
+        marginTop: "-32px",
+        marginBottom: "-32px",
         padding: { xs: "24px 0", md: "32px 0" },
       }}
     >
-      {/* Bookmark Ribbon */}
-      <Box
+      {/* Description */}
+      <Typography
         sx={{
-          position: 'absolute',
-          top: 0,
-          right: { xs: '20px', sm: '40px', md: '80px', lg: '120px' },
-          width: { xs: '45px', md: '60px' },
-          height: { xs: '50px', md: '85px' },
-          backgroundColor: 'white',
-          clipPath: 'polygon(0 0, 100% 0, 100% 100%, 50% 85%, 0 100%)',
-          zIndex: 10,
-        }}
-      />
-
-      <Box
-        sx={{
-          width: { xs: "100%", md: "1024px", xl: "1280px" },
-          boxSizing: 'border-box',
-          display: 'flex',
-          flexDirection: 'column',
-          padding: { xs: '0 10px', sm: '0 0' },
+          fontSize: { xs: "14px", md: "16px" },
+          color: "#1E1E1E",
+          fontFamily: "Inter",
+          fontWeight: 400,
+          lineHeight: "150%",
+          marginBottom: { xs: "12px", md: "16px" },
         }}
       >
-        <Typography
-          variant="h2"
-          sx={{
-            fontSize: { xs: "24px", md: "32px" },
-            color: "white",
-            fontFamily: "Inter",
-            fontWeight: "700",
-            marginBottom: { xs: "12px", md: "16px" },
-          }}
-        >
-          Scholarship Program
-        </Typography>
+        {description}
+      </Typography>
 
-        <Typography
-          variant="body1"
-          sx={{
-            fontSize: { xs: "14px", md: "16px" },
-            color: "white",
-            fontFamily: "Inter",
-            lineHeight: "150%",
-            fontWeight: "400",
-            marginBottom: { xs: "24px", md: "32px" },
-            maxWidth: { md: "600px" },
-          }}
-        >
-          {admissionScreenData.scholarshipProgram.description}
-        </Typography>
-
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: { xs: "column", md: "row" },
-            gap: { xs: "16px", md: "20px" },
-            overflowX: { xs: "visible", md: "visible" },
-          }}
-        >
-          {admissionScreenData.scholarshipProgram.data.map((item, index) => (
+      {/* ── Mobile cards ── */}
+      <Box sx={{ display: { xs: "flex", md: "none" }, flexDirection: "column", gap: "4px" }}>
+        {items.map(({ title, percent, desc, img }) => (
+          <Box
+            key={title}
+            sx={{
+              bgcolor: "black",
+              border: "0.216px solid rgba(132,132,132,0.5)",
+              borderRadius: "10px",
+              overflow: "hidden",
+              display: "flex",
+              alignItems: "center",
+              gap: "17px",
+              px: "10px",
+              py: "8px",
+            }}
+          >
             <Box
-              key={index}
-              sx={{
-                flex: { xs: "1", md: "1" },
-              }}
-            >
-              <DetailsCard
-                isScholarshipCard={true}
-                description={item.description}
-                title={item.title}
-                bgImage={item.bgImage}
-              />
+              component="img"
+              src={img}
+              alt={title}
+              sx={{ width: "64px", height: "64px", objectFit: "contain", flexShrink: 0 }}
+            />
+            <Box sx={{ flex: 1, minWidth: 0 }}>
+              <Typography
+                sx={{
+                  fontFamily: "Inter",
+                  fontWeight: 700,
+                  color: "white",
+                  fontSize: "10px",
+                  letterSpacing: "-0.2px",
+                  lineHeight: 1.2,
+                  mb: "4px",
+                }}
+              >
+                {`${title} (${percent})`}
+              </Typography>
+              <Typography
+                sx={{
+                  fontFamily: "Inter",
+                  fontWeight: 500,
+                  color: "white",
+                  fontSize: "8px",
+                  letterSpacing: "-0.16px",
+                  lineHeight: 1.2,
+                }}
+              >
+                {desc}
+              </Typography>
             </Box>
-          ))}
-        </Box>
+          </Box>
+        ))}
+      </Box>
+
+      {/* ── Desktop cards ── */}
+      <Box
+        sx={{
+          display: { xs: "none", md: "flex" },
+          flexDirection: "row",
+          gap: "20px",
+          justifyContent: "space-between",
+        }}
+      >
+        {items.map(({ title, percent, desc, img }) => (
+          <Box
+            key={title}
+            sx={{
+              flex: 1,
+              bgcolor: "#0E020F",
+              borderRadius: "20px",
+              height: "365px",
+              overflow: "hidden",
+              position: "relative",
+              display: "flex",
+              flexDirection: "column",
+              p: "20px",
+              gap: "12px",
+            }}
+          >
+            <Box
+              component="img"
+              src={img}
+              alt={title}
+              sx={{
+                position: "absolute",
+                bottom: 0,
+                left: "50%",
+                transform: "translateX(-50%)",
+                width: "80%",
+                height: "auto",
+                objectFit: "contain",
+                maxHeight: "260px",
+              }}
+            />
+            <Box sx={{ position: "relative", zIndex: 1, textAlign: "center" }}>
+              <Typography
+                sx={{
+                  fontFamily: "Inter",
+                  fontWeight: 700,
+                  color: "white",
+                  fontSize: "18px",
+                  letterSpacing: "-0.36px",
+                  lineHeight: 1.2,
+                  mb: "4px",
+                }}
+              >
+                {title}
+              </Typography>
+              <Typography
+                sx={{
+                  fontFamily: "Inter",
+                  fontWeight: 600,
+                  color: "#F97D03",
+                  fontSize: "18px",
+                  letterSpacing: "-0.36px",
+                  lineHeight: 1.2,
+                  mb: "8px",
+                }}
+              >
+                {percent}
+              </Typography>
+              <Typography
+                sx={{
+                  fontFamily: "Inter",
+                  fontWeight: 500,
+                  color: "white",
+                  fontSize: "16px",
+                  letterSpacing: "-0.32px",
+                  lineHeight: 1.2,
+                }}
+              >
+                {desc}
+              </Typography>
+            </Box>
+          </Box>
+        ))}
       </Box>
     </Box>
   );

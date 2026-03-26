@@ -14,7 +14,7 @@ const campusCards = [
     image: "/img/campuses/Gurugram_home_page_v2.webp",
     description: "Sushant University, Gurugram, Delhi NCR",
     buttonText: "Explore Campus",
-    href: "/admission/vst-gurugram",
+    href: "/program/vst-gurugram",
     isExplore: true,
   },
   {
@@ -23,17 +23,8 @@ const campusCards = [
     image: "/img/campuses/Adypu_home_page.webp",
     description: "Ajeenkya DY Patil University, Pune, Maharashtra",
     buttonText: "Explore",
-    href: "/admission/vst-adypu-pune",
+    href: "/program/vst-adypu-pune",
     isExplore: true,
-  },
-  {
-    id: "bengaluru",
-    title: "",
-    image: "/img/campuses/Bangalore_home_page.webp",
-    imagePosition: "center 14%",
-    description: "India's Silicon valley and the heart of the tech revolution",
-    buttonText: "Coming Soon",
-    isExplore: false,
   },
 ];
 
@@ -150,7 +141,7 @@ export const InCollaborationWith = () => {
       <Box
         sx={{
           display: { xs: "flex", md: "grid" },
-          gridTemplateColumns: { md: "repeat(3, minmax(0, 1fr))" },
+          gridTemplateColumns: { md: `repeat(${campusCards.length}, minmax(0, 1fr))` },
           gap: { xs: "12px", md: "20px" },
           width: { xs: "max-content", md: "100%" },
         }}
@@ -213,7 +204,7 @@ export const InCollaborationWith = () => {
                   src={card.image}
                   alt={`${card.title} campus`}
                   fill
-                  sizes="(max-width: 900px) 280px, 33vw"
+                  sizes={`(max-width: 900px) 280px, ${Math.round(100 / campusCards.length)}vw`}
                   style={{
                     objectFit: "cover",
                     objectPosition: card.imagePosition ?? "center center",

@@ -4,6 +4,7 @@ import { Box } from "@mui/material";
 import {
   AdmissionAndFees,
   AdmissionProcess,
+  DirectInterviewRoute,
   FacilityAndAmenities,
   FeeStructure,
   FinancingOptions,
@@ -44,33 +45,38 @@ const Admission = ({
       render: () => <AdmissionProcess />,
     },
     {
+      id: "direct-interview-route",
+      useCard: false,
+      render: () => <DirectInterviewRoute />,
+    },
+    {
       id: "scholarship",
-      subtitle: '',
+      subtitle: 'Scholarship Program',
       render: () => <ScholarshipProgram />,
     },
-    {
-      id: "fee-structure",
-      subtitle: admissionScreenData.feeStructure.subtitle,
-      render: () => (
-        <FeeStructure
-          showHostelFees={showHostelFees}
-          feeStructureData={feeStructureData}
-        />
-      ),
-      cardProps: { id: "fees-toggle" },
-    },
-    {
-      id: "financing",
-      subtitle: admissionScreenData.financingOption.subtitle,
-      render: () => <FinancingOptions />,
-    },
-    {
-      id: "facilities",
-      subtitle: "",
-      render: () => <Box sx={{ mb: { xs: '-40px', md: '-80px' } }}>
-        <FacilityAndAmenities {...facilityAndAmenitiesProps} />
-      </Box>
-    },
+    // {
+    //   id: "fee-structure",
+    //   subtitle: admissionScreenData.feeStructure.subtitle,
+    //   render: () => (
+    //     <FeeStructure
+    //       showHostelFees={showHostelFees}
+    //       feeStructureData={feeStructureData}
+    //     />
+    //   ),
+    //   cardProps: { id: "fees-toggle" },
+    // },
+    // {
+    //   id: "financing",
+    //   subtitle: admissionScreenData.financingOption.subtitle,
+    //   render: () => <FinancingOptions />,
+    // },
+    // {
+    //   id: "facilities",
+    //   subtitle: "",
+    //   render: () => <Box sx={{ mb: { xs: '-40px', md: '-80px' } }}>
+    //     <FacilityAndAmenities {...facilityAndAmenitiesProps} />
+    //   </Box>
+    // },
   ];
 
   return (

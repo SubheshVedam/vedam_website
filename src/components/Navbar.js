@@ -40,6 +40,10 @@ export default function Navbar() {
     return label.includes("Login") || label.includes("Register");
   };
 
+  const isPathMatch = (path) => {
+    return pathname === path || pathname.startsWith(`${path}/`);
+  };
+
   const isActive = (path) => {
     if (path === "/") {
       return pathname === "/" || pathname === "/home";
@@ -47,7 +51,11 @@ export default function Navbar() {
     if (path.startsWith("/admission")) {
       return pathname.startsWith("/admission");
     }
-    return pathname === path;
+    return isPathMatch(path);
+  };
+
+  const isCampusLinkActive = (link) => {
+    return link.children?.some((campus) => isPathMatch(campus.path)) ?? false;
   };
 
   const getAdmissionDisplayLabel = (link) => {
@@ -55,10 +63,7 @@ export default function Navbar() {
       return link.label;
     }
 
-    const activeCampus = link.children.find(
-      (campus) =>
-        pathname === campus.path || pathname.startsWith(`${campus.path}/`)
-    );
+    const activeCampus = link.children.find((campus) => isPathMatch(campus.path));
 
     return activeCampus?.label || link.label;
   };
@@ -72,9 +77,9 @@ export default function Navbar() {
   };
 
   React.useEffect(() => {
-    if (pathname.startsWith("/admission")) {
-      setMobileCampusOpen(true);
-    }
+    const hasActiveCampusLink = navLinks.some((link) => isCampusLinkActive(link));
+
+    setMobileCampusOpen(hasActiveCampusLink);
   }, [pathname]);
 
   const activeStyle = {
@@ -96,7 +101,7 @@ export default function Navbar() {
       <Box
         sx={{
           height: "0px",
-          maxWidth: "1040px",
+          minWidth: { md: "1024px" },
           width: "100%",
           position: { xs: "inherit", sm: "relative" },
           top: "20px",
@@ -147,11 +152,11 @@ export default function Navbar() {
             <Box
               sx={{
                 display: { xs: "none", sm: "flex" },
-                gap: "60px",
+                gap: "30px",
                 alignItems: "center",
               }}
             >
-              {navLinks.slice(0, 4).map((link, index) => {
+              {navLinks.slice(0, 6).map((link, index) => {
                 if (link.children?.length) {
                   const admissionDisplayLabel = getAdmissionDisplayLabel(link);
 
@@ -166,14 +171,15 @@ export default function Navbar() {
                           color: "#1F1F1F",
                           fontWeight: 500,
                           fontSize: "14px",
-                          lineHeight: "100%",
+                          lineHeight: "120%",
                           letterSpacing: "-2%",
                           textTransform: "none",
+                          // whiteSpace: "nowrap",
                           transition: "all 0.3s ease-in-out",
                           fontFamily: "Inter",
                           zIndex: "1",
                           "&:hover": activeStyle,
-                          ...(isActive(link.path) && activeStyle),
+                          ...(isCampusLinkActive(link) && activeStyle),
                         }}
                       >
                         {admissionDisplayLabel}
@@ -218,7 +224,7 @@ export default function Navbar() {
                             component={Link}
                             href={campus.path}
                             onClick={handleCampusMenuClose}
-                            selected={isActive(campus.path)}
+                            selected={isPathMatch(campus.path)}
                             sx={{
                               display: "flex",
                               flexDirection: "column",
@@ -299,9 +305,10 @@ export default function Navbar() {
                         color: "#1F1F1F",
                         fontWeight: 500,
                         fontSize: "14px",
-                        lineHeight: "100%",
+                        lineHeight: "120%",
                         letterSpacing: "-2%",
                         textTransform: "none",
+                        // whiteSpace: "nowrap",
                         transition: "all 0.3s ease-in-out",
                         fontFamily: "Inter",
                         zIndex: "1",
@@ -366,6 +373,7 @@ export default function Navbar() {
                     lineHeight: "100%",
                     letterSpacing: "-2%",
                     textTransform: "none",
+                    whiteSpace: "nowrap",
                     transition: "all 0.3s ease-in-out",
                     backgroundColor: "rgba(108, 16, 188, 0.1)",
                     paddingX: "20px",
@@ -393,6 +401,7 @@ export default function Navbar() {
                     lineHeight: "100%",
                     letterSpacing: "-2%",
                     textTransform: "none",
+                    whiteSpace: "nowrap",
                     transition: "all 0.3s ease-in-out",
                     backgroundColor: "#6C10BC",
                     paddingX: "20px",
@@ -471,7 +480,7 @@ export default function Navbar() {
                             onClick={handleDrawerToggle}
                             sx={{
                               pl: 4,
-                              ...(isActive(campus.path) && activeStyle),
+                              ...(isPathMatch(campus.path) && activeStyle),
                             }}
                           >
                             <ListItemText
@@ -484,7 +493,7 @@ export default function Navbar() {
                                 textTransform: "none",
                                 transition: "all 0.3s ease-in-out",
                                 "&:hover": activeStyle,
-                                ...(isActive(campus.path) && activeStyle),
+                                ...(isPathMatch(campus.path) && activeStyle),
                               }}
                               primary={campus.label}
                             />
@@ -511,12 +520,15 @@ export default function Navbar() {
                         color: "#1F1F1F",
                         fontWeight: 600,
                         fontSize: "14px",
-                        lineHeight: "100%",
+                        lineHeight: "130%",
                         letterSpacing: "-2%",
                         textTransform: "none",
                         transition: "all 0.3s ease-in-out",
                         "&:hover": activeStyle,
                         ...(isActive(link.path) && activeStyle),
+                      }}
+                      primaryTypographyProps={{
+                        lineHeight: 1.35,
                       }}
                       primary={link.label}
                     />
