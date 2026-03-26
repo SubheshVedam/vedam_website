@@ -60,13 +60,13 @@ const projects = [
     desc: "An AI-powered assistant that helps users manage schedules, reminders, information, and daily task progress in one place.",
     img: "/img/seniors/img2.png",
     authors: ["Siddhant Pandey"],
-    highlightWords: ["AI-powered"],
+    highlightWords: ["AI-powered assistant"],
   },
   {
     name: "Vaani Setu",
     desc: "A real-time sign-language-to-voice and text converter that enables seamless communication for deaf and mute individuals.",
     img: "/img/seniors/img3.png",
-    authors: ["Awaneesh Gupta", "Agrima Gupta", "Shivansh Ojha", "Sidhant Pande"],
+    authors: ["Aditya Bahuguna", "Aareev Srinivasan", "Shivansh Ojha"],
     highlightWords: ["sign-language-to-voice and text converter"],
   },
   {
@@ -257,6 +257,7 @@ function AuthorCarousel({ authors }) {
 // ─────────────────────────────────────────────────────────────────────────────
 // DesktopCenterCard
 // ─────────────────────────────────────────────────────────────────────────────
+// ─── DesktopCenterCard ───────────────────────────────────────────────────────
 function DesktopCenterCard({ project }) {
   return (
     <Box sx={{
@@ -268,7 +269,11 @@ function DesktopCenterCard({ project }) {
       borderRadius: "28px",
       overflow: "hidden",
       p: "22px 22px 26px 22px",
+      display: "flex",
+      flexDirection: "column",
+      gap: "16px",
     }}>
+      {/* Inner gradient — NO author row inside */}
       <Box sx={{
         background: INNER_GRADIENT,
         borderRadius: "16px",
@@ -304,60 +309,73 @@ function DesktopCenterCard({ project }) {
               sx={{ width: "85%", height: "85%", objectFit: "contain" }} />
           </Box>
         </Box>
-        <AuthorCarousel authors={project.authors} />
       </Box>
+
+      {/* Author scroll — lives in the outer bg-image dark area */}
+      <InfiniteAuthorScroll authors={project.authors} />
     </Box>
   );
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// DesktopSideCard
-// ─────────────────────────────────────────────────────────────────────────────
+// ─── DesktopSideCard ─────────────────────────────────────────────────────────
 function DesktopSideCard({ project }) {
   return (
     <Box sx={{
       width: `${CARD_W}px`,
       flexShrink: 0,
-      background: INNER_GRADIENT,
+      backgroundImage: "url('/img/seniors/desktop_bg2.png')",   // ← same bg so side cards also have the dark shell
+      backgroundSize: "100% 100%",
+      backgroundRepeat: "no-repeat",
       borderRadius: "24px",
       overflow: "hidden",
-      p: "24px 20px 20px",
+      p: "22px 22px 26px 22px",
       display: "flex",
       flexDirection: "column",
-      gap: "20px",
+      gap: "16px",
     }}>
-      <Box sx={{ display: "flex", gap: "20px", alignItems: "flex-start" }}>
-        <Box sx={{ flex: 1 }}>
-          <Typography sx={{
-            fontFamily: "Inter, sans-serif", fontWeight: 700,
-            fontSize: "24px", color: "#6C10BC", mb: "14px",
+      {/* Inner gradient */}
+      <Box sx={{
+        background: INNER_GRADIENT,
+        borderRadius: "16px",
+        p: "24px 20px 20px",
+        display: "flex",
+        flexDirection: "column",
+        gap: "20px",
+      }}>
+        <Box sx={{ display: "flex", gap: "20px", alignItems: "flex-start" }}>
+          <Box sx={{ flex: 1 }}>
+            <Typography sx={{
+              fontFamily: "Inter, sans-serif", fontWeight: 700,
+              fontSize: "24px", color: "#6C10BC", mb: "14px",
+            }}>
+              {project.name}
+            </Typography>
+            <HighlightedText
+              text={`• ${project.desc}`}
+              highlights={project.highlightWords}
+              sx={{
+                fontFamily: "Inter, sans-serif", fontWeight: 400,
+                fontSize: "14px", color: "#1E1E1E", lineHeight: 1.85,
+              }}
+            />
+          </Box>
+          <Box sx={{
+            width: "196px", height: "196px", minWidth: "196px",
+            bgcolor: "white", borderRadius: "16px",
+            display: "flex", alignItems: "center", justifyContent: "center",
+            boxShadow: "0 4px 20px rgba(0,0,0,0.08)", overflow: "hidden",
           }}>
-            {project.name}
-          </Typography>
-          <HighlightedText
-            text={`• ${project.desc}`}
-            highlights={project.highlightWords}
-            sx={{
-              fontFamily: "Inter, sans-serif", fontWeight: 400,
-              fontSize: "14px", color: "#1E1E1E", lineHeight: 1.85,
-            }}
-          />
-        </Box>
-        <Box sx={{
-          width: "196px", height: "196px", minWidth: "196px",
-          bgcolor: "white", borderRadius: "16px",
-          display: "flex", alignItems: "center", justifyContent: "center",
-          boxShadow: "0 4px 20px rgba(0,0,0,0.08)", overflow: "hidden",
-        }}>
-          <Box component="img" src={project.img} alt={project.name}
-            sx={{ width: "85%", height: "85%", objectFit: "contain" }} />
+            <Box component="img" src={project.img} alt={project.name}
+              sx={{ width: "85%", height: "85%", objectFit: "contain" }} />
+          </Box>
         </Box>
       </Box>
-      <AuthorCarousel authors={project.authors} />
+
+      {/* Author scroll — lives in the outer bg-image dark area */}
+      <InfiniteAuthorScroll authors={project.authors} />
     </Box>
   );
 }
-
 // ─────────────────────────────────────────────────────────────────────────────
 // MobileCard — centered layout matching screenshot:
 //   title (centered) → large image → description → infinite author scroll
