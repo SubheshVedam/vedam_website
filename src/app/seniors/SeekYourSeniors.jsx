@@ -857,7 +857,7 @@ export default function SeekYourSeniors() {
         overflow: { xs: "visible", md: "hidden" },
       }}>
         <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", mb: { xs: "24px", md: "36px" } }}>
-          <Typography sx={sectionHeading}>Student Projects</Typography>
+          <Typography sx={sectionHeading}>Student Projects @ Innovation Lab</Typography>
           <Box sx={{ display: { xs: "none", md: "flex" }, gap: "12px" }}>
             <IconButton onClick={prevProject} size="small" sx={{
               width: 44, height: 44, border: "1.5px solid #E0E0E0",
