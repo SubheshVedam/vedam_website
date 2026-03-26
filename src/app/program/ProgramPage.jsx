@@ -21,6 +21,15 @@ const gradientText = {
   display: "inline-block",
 };
 
+const sectionDescriptionText = {
+  fontFamily: "Inter, sans-serif",
+  fontWeight: { xs: 400, md: 400 },
+  fontSize: { xs: "10px", md: "16px" },
+  color: "#1E1E1E",
+  lineHeight: 1.5,
+  letterSpacing: { xs: "-0.2px", md: "-0.32px" },
+};
+
 const sectionPad = { px: { xs: "20px", md: "128px" }, py: { xs: "20px", md: "40px" } };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -467,7 +476,7 @@ export default function ProgramPage({ config }) {
       <Box sx={{ ...sectionPad, display: "flex", flexDirection: "column", gap: { xs: "10px", md: "20px" } }}>
         <Box sx={{ display: "flex", flexDirection: "column", gap: "8px" }}>
           <Typography sx={gradientText}>{citySection.heading}</Typography>
-          <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: citySection.descriptionFontWeight ?? { xs: 500, md: 600 }, fontSize: { xs: "10px", md: "16px" }, color: "#1E1E1E", lineHeight: 1.5, letterSpacing: { xs: "-0.2px", md: "-0.32px" }, maxWidth: 1024 }}>
+          <Typography sx={{ ...sectionDescriptionText, maxWidth: 1024 }}>
             {citySection.description}
           </Typography>
         </Box>
@@ -523,7 +532,7 @@ export default function ProgramPage({ config }) {
       <Box sx={{ ...sectionPad, display: "flex", flexDirection: "column", gap: { xs: "10px", md: "20px" } }}>
         <Box sx={{ display: "flex", flexDirection: "column", gap: "8px" }}>
           <Typography sx={gradientText}>Campus &amp; Amenities</Typography>
-          <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: { xs: 500, md: 600 }, fontSize: { xs: "10px", md: "16px" }, color: "#1E1E1E", lineHeight: 1.5, maxWidth: 1024 }}>
+          <Typography sx={{ ...sectionDescriptionText, maxWidth: 1024 }}>
             {campusSection.description}
           </Typography>
         </Box>
@@ -555,7 +564,7 @@ export default function ProgramPage({ config }) {
       <Box sx={{ ...sectionPad, display: "flex", flexDirection: "column", gap: { xs: "10px", md: "40px" } }}>
         <Box sx={{ display: "flex", flexDirection: "column", gap: "8px", width: "100%" }}>
           <Typography sx={gradientText}>Accreditations &amp; Recognitions</Typography>
-          <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: { xs: 500, md: 600 }, fontSize: { xs: "10px", md: "16px" }, color: "#1E1E1E", lineHeight: 1.5, maxWidth: 1024 }}>
+          <Typography sx={{ ...sectionDescriptionText, maxWidth: 1024 }}>
             {accreditations.description}
           </Typography>
         </Box>
@@ -570,7 +579,7 @@ export default function ProgramPage({ config }) {
       <Box sx={{ ...sectionPad, display: "flex", flexDirection: "column", gap: { xs: "20px", md: "20px" } }}>
         <Box sx={{ display: "flex", flexDirection: "column", gap: "8px" }}>
           <Typography sx={gradientText}>Scholarship Program</Typography>
-          <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: { xs: 500, md: 600 }, fontSize: { xs: "10px", md: "16px" }, color: "#1E1E1E", lineHeight: 1.5 }}>
+          <Typography sx={sectionDescriptionText}>
             {scholarships.description}
           </Typography>
         </Box>
@@ -748,7 +757,7 @@ export default function ProgramPage({ config }) {
         <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: "10px", md: "20px" }, maxWidth: "100%" }}>
           <Box sx={{ display: "flex", flexDirection: "column", gap: "8px" }}>
             <Typography sx={gradientText}>Financing Options</Typography>
-            <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: { xs: 500, md: 600 }, fontSize: { xs: "10px", md: "16px" }, color: "#1E1E1E", lineHeight: 1.5 }}>
+            <Typography sx={sectionDescriptionText}>
               {financing.description}
             </Typography>
           </Box>
