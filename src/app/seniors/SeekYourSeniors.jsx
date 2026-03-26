@@ -311,7 +311,6 @@ function DesktopCenterCard({ project }) {
         </Box>
       </Box>
 
-      {/* Author scroll — lives in the outer bg-image dark area */}
       <InfiniteAuthorScroll authors={project.authors} />
     </Box>
   );
@@ -323,7 +322,7 @@ function DesktopSideCard({ project }) {
     <Box sx={{
       width: `${CARD_W}px`,
       flexShrink: 0,
-      backgroundImage: "url('/img/seniors/desktop_bg2.png')",   // ← same bg so side cards also have the dark shell
+      backgroundImage: "url('/img/seniors/desktop_bg2.png')",
       backgroundSize: "100% 100%",
       backgroundRepeat: "no-repeat",
       borderRadius: "24px",
@@ -371,17 +370,11 @@ function DesktopSideCard({ project }) {
         </Box>
       </Box>
 
-      {/* Author scroll — lives in the outer bg-image dark area */}
       <InfiniteAuthorScroll authors={project.authors} />
     </Box>
   );
 }
-// ─────────────────────────────────────────────────────────────────────────────
-// MobileCard — centered layout matching screenshot:
-//   title (centered) → large image → description → infinite author scroll
-//   → dot indicators
-//   Arrows float at left/right center edges OUTSIDE the card
-// ─────────────────────────────────────────────────────────────────────────────
+
 function MobileCard({ project, onPrev, onNext, current, total }) {
   const arrowBtn = {
     position: "absolute",
@@ -804,10 +797,10 @@ export default function SeekYourSeniors() {
       {/* ── 4. STUDENT PROJECTS ── */}
       <Box sx={{
         bgcolor: "transparent", mt: { xs: "8px", md: "12px" },
-        px: { xs: "32px", md: "120px" }, // 32px on mobile so arrows (at -14px) have room
+        px: { xs: "32px", md: "120px" },
         pt: { xs: "24px", md: "48px" },
         pb: { xs: "32px", md: "60px" },
-        overflow: { xs: "visible", md: "hidden" }, // visible on mobile so arrows aren't clipped
+        overflow: { xs: "visible", md: "hidden" },
       }}>
         <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", mb: { xs: "24px", md: "36px" } }}>
           <Typography sx={sectionHeading}>Student Projects</Typography>
