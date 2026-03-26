@@ -107,29 +107,7 @@ export const gurugramConfig = {
         ],
         totalCourseFee: "₹18,00,000",
         // Gurugram uses the legacy single-roomTypes shape
-        hostelFees: {
-            roomTypes: [
-                {
-                    type: "3 Sharing Room",
-                    rows: [
-                        { label: "Hostel Fee per Semester\n[Accommodation + Mess + Laundry Charges]", value: "₹1,12,000/-" },
-                        { label: "Hostel Fee per Year\n[Accommodation + Mess + Laundry Charges]", value: "₹2,24,000/-" },
-                        { label: "Security Deposit (Refundable)", value: "₹10,000/-" },
-                        { label: "Room Features", value: "Attached Washroom, AC, high speed WiFi" },
-                        { label: "Applicable for", value: "Boys and Girls" },
-                        { label: "NOTE", value: "Electricity to be charged on actuals" },
-                    ],
-                },
-            ],
-            notes: [
-                "Students need to pay accommodation cost for the entire year to book a bed. Mess and laundry charges will have to be paid at the time of moving in.",
-                "There are very few beds left in ADYPU hostel for girls, which are getting allocated on a first cum first basis.",
-                "There are no more beds left in the ADYPU hostel for boys.",
-                "Hostel accommodation fee is non refundable. Students will be charged for the entire year, even if one plans to vacate mid-year.",
-                "Fee are applicable for the academic year 2025 - 26 and may increase by 7 - 10% annually from the second year onwards due to inflation adjustment.",
-                "Should you wish to book, please contact Vedam team at connect@vedam.org to check availability and proceed accordingly.",
-            ],
-        },
+        hostelFees: "",
         hostelPlaceholder: "",
     },
 
