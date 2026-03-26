@@ -372,19 +372,20 @@ function DesktopCenterCard({ project }) {
 // ─── DesktopSideCard ─────────────────────────────────────────────────────────
 function DesktopSideCard({ project }) {
   return (
-    <Box sx={{
-      width: `${CARD_W}px`,
-      flexShrink: 0,
-      backgroundImage: "url('/img/seniors/desktop_bg2.png')",
-      backgroundSize: "100% 100%",
-      backgroundRepeat: "no-repeat",
-      borderRadius: "24px",
-      overflow: "hidden",
-      p: "22px 22px 26px 22px",
-      display: "flex",
-      flexDirection: "column",
-      gap: "16px",
-    }}>
+    <Box
+      sx={{
+        width: `${CARD_W}px`,
+        flexShrink: 0,
+        borderRadius: "36px",
+        border: "2px solid rgba(255, 255, 255, 0.00)",
+        background: "#E8D1FF",
+        boxShadow: "0 0 12.8px 8px rgba(249, 125, 3, 0.10)",
+        overflow: "hidden",
+        p: "15px",
+        display: "flex",
+        flexDirection: "column",
+        gap: "16px",
+      }}>
       {/* Inner gradient */}
       <Box sx={{
         background: INNER_GRADIENT,
