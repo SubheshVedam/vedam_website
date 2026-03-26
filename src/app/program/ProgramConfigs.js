@@ -24,12 +24,12 @@ export const gurugramConfig = {
         heading: "Why Gurugram?",
         description: "Gurugram is where India's corporate world lives. From Fortune 500 headquarters to global tech giants, the city puts you at the centre of India's biggest economy.",
         statsLeft: [
-            { num: "10,000+", label: "Registered startups" },
-            { num: "Top 5", label: "Leading AI hub in Asia" },
+            { num: "10,000+", label: "Registered Startups across NCR" },
+            { num: "#1", label: "Tech hub of North India" },
         ],
         statsRight: [
-            { num: "800+", label: "MNC & Fortune 500's" },
-            { num: "#1 in India", label: "Corporate Hub" },
+            { num: "Top 5", label: "Leading AI hub in Asia" },
+            { num: "600+", label: "MNC’s & Fortune 500’s" },
         ],
         img1: "/img/program/gurugram-1.png",
         img2: "/img/program/gurugram-2.png",
@@ -190,12 +190,12 @@ export const puneConfig = {
         heading: "Why Pune?",
         description: "Pune is where engineering talent gets built. Home to one of India's largest concentrations of manufacturing, IT and deep tech companies - the city gives engineering students something most campuses can't: proximity to real industry.",
         statsLeft: [
-            { num: "50,000+", label: "Registered Companies" },
+            { num: "50000+", label: "MNCs & Enterprises" },
             { num: "#2", label: "Largest IT hub in Maharashtra" },
         ],
         statsRight: [
-            { num: "3200+", label: "Registered Startups" },
-            { num: "#1", label: "Most Liveable City in India" },
+            { num: "3200+", label: "Oxford of the East" },
+            { num: "#1", label: "India's education capital" },
         ],
         img1: "/img/program/whypune1.png",
         img2: "/img/program/whypune2.png",

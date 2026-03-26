@@ -404,7 +404,7 @@ export default function ProgramPage({ config }) {
             </Button>
             <Button
               component="a"
-              href={hero.brochureUrl}
+              // href={hero.brochureUrl}
               variant="contained"
               sx={{
                 bgcolor: "rgba(30,30,30,0.55)", borderRadius: "8px",
