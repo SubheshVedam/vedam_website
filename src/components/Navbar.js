@@ -96,7 +96,7 @@ export default function Navbar() {
       <Box
         sx={{
           height: "0px",
-          minWidth: { md: "1040px" },
+          minWidth: { md: "1024px" },
           width: "100%",
           position: { xs: "inherit", sm: "relative" },
           top: "20px",
@@ -147,7 +147,7 @@ export default function Navbar() {
             <Box
               sx={{
                 display: { xs: "none", sm: "flex" },
-                gap: "34px",
+                gap: "30px",
                 alignItems: "center",
               }}
             >
@@ -166,9 +166,10 @@ export default function Navbar() {
                           color: "#1F1F1F",
                           fontWeight: 500,
                           fontSize: "14px",
-                          lineHeight: "100%",
+                          lineHeight: "120%",
                           letterSpacing: "-2%",
                           textTransform: "none",
+                          // whiteSpace: "nowrap",
                           transition: "all 0.3s ease-in-out",
                           fontFamily: "Inter",
                           zIndex: "1",
@@ -299,9 +300,10 @@ export default function Navbar() {
                         color: "#1F1F1F",
                         fontWeight: 500,
                         fontSize: "14px",
-                        lineHeight: "100%",
+                        lineHeight: "120%",
                         letterSpacing: "-2%",
                         textTransform: "none",
+                        // whiteSpace: "nowrap",
                         transition: "all 0.3s ease-in-out",
                         fontFamily: "Inter",
                         zIndex: "1",
@@ -366,6 +368,7 @@ export default function Navbar() {
                     lineHeight: "100%",
                     letterSpacing: "-2%",
                     textTransform: "none",
+                    whiteSpace: "nowrap",
                     transition: "all 0.3s ease-in-out",
                     backgroundColor: "rgba(108, 16, 188, 0.1)",
                     paddingX: "20px",
@@ -393,6 +396,7 @@ export default function Navbar() {
                     lineHeight: "100%",
                     letterSpacing: "-2%",
                     textTransform: "none",
+                    whiteSpace: "nowrap",
                     transition: "all 0.3s ease-in-out",
                     backgroundColor: "#6C10BC",
                     paddingX: "20px",
@@ -511,12 +515,15 @@ export default function Navbar() {
                         color: "#1F1F1F",
                         fontWeight: 600,
                         fontSize: "14px",
-                        lineHeight: "100%",
+                        lineHeight: "130%",
                         letterSpacing: "-2%",
                         textTransform: "none",
                         transition: "all 0.3s ease-in-out",
                         "&:hover": activeStyle,
                         ...(isActive(link.path) && activeStyle),
+                      }}
+                      primaryTypographyProps={{
+                        lineHeight: 1.35,
                       }}
                       primary={link.label}
                     />
