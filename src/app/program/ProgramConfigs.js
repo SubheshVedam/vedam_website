@@ -153,7 +153,7 @@ export const gurugramConfig = {
 
     cta: {
         mobile: "/img/student1.png",
-        desktop: "/img/program/be-the-next.png"
+        desktop: "/img/student.png"
     },
 };
 
@@ -398,6 +398,6 @@ export const puneConfig = {
 
     cta: {
         mobile: "/img/student1.png",
-        desktop: "/img/program/be-the-next.png"
+        desktop: "/img/student.png"
     },
 };
