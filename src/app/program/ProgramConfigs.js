@@ -28,6 +28,7 @@ export const gurugramConfig = {
     citySection: {
         heading: "Why Gurugram?",
         description: "Gurugram is where India's corporate world lives. From Fortune 500 headquarters to global tech giants, the city puts you at the centre of India's biggest economy.",
+        descriptionFontWeight: { xs: 400, md: 400 },
         statsLeft: [
             { num: "10,000+", label: "Registered Startups across NCR" },
             { num: "#1", label: "Tech hub of North India" },
@@ -193,6 +194,7 @@ export const puneConfig = {
     citySection: {
         heading: "Why Pune?",
         description: "Pune is where engineering talent gets built. Home to one of India's largest concentrations of manufacturing, IT and deep tech companies - the city gives engineering students something most campuses can't: proximity to real industry.",
+        descriptionFontWeight: { xs: 400, md: 400 },
         statsLeft: [
             { num: "50000+", label: "MNCs & Enterprises" },
             { num: "#2", label: "Largest IT hub in Maharashtra" },

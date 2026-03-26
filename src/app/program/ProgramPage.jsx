@@ -467,7 +467,7 @@ export default function ProgramPage({ config }) {
       <Box sx={{ ...sectionPad, display: "flex", flexDirection: "column", gap: { xs: "10px", md: "20px" } }}>
         <Box sx={{ display: "flex", flexDirection: "column", gap: "8px" }}>
           <Typography sx={gradientText}>{citySection.heading}</Typography>
-          <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: { xs: 500, md: 600 }, fontSize: { xs: "10px", md: "16px" }, color: "#1E1E1E", lineHeight: 1.5, letterSpacing: { xs: "-0.2px", md: "-0.32px" }, maxWidth: 1024 }}>
+          <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: citySection.descriptionFontWeight ?? { xs: 500, md: 600 }, fontSize: { xs: "10px", md: "16px" }, color: "#1E1E1E", lineHeight: 1.5, letterSpacing: { xs: "-0.2px", md: "-0.32px" }, maxWidth: 1024 }}>
             {citySection.description}
           </Typography>
         </Box>
