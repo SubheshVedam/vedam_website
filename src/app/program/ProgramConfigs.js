@@ -151,7 +151,7 @@ export const gurugramConfig = {
         },
     },
 
-     cta: {
+    cta: {
         mobile: "/img/student1.png",
         desktop: "/img/student.png"
     },
@@ -164,7 +164,7 @@ export const gurugramConfig = {
 export const puneConfig = {
     hero: {
         bgImage: "/img/program/hero-bg.png",
-        partnerLogo: "/img/program/partner-logo.svg",
+        partnerLogo: "/img/program/adypu.png",
         title: "UG Program in Computer Science & Artificial Intelligence",
         subtitle: "Bachelor of Technology Degree by ADYPU, Pune",
         applyUrl: "https://apply.vedam.org",
