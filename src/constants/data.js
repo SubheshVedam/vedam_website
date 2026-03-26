@@ -263,7 +263,7 @@ export const navLinks = [
     path: "/program/vst-adypu-pune",
     children: admissionCampusLinks,
   },
-  { label: "Life @ Vedam", path: "/life", img: "/img/Group 1261155759.svg" },
+  { label: "Life @ Vedam", path: "/life" },
   { label: "Seek Your Senior", path: "/seniors" },
   { label: "FAQs", path: "/faqs" },
   // { label: "About Us", path: "/about" },

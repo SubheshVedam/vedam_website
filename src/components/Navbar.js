@@ -96,7 +96,7 @@ export default function Navbar() {
       <Box
         sx={{
           height: "0px",
-          minWidth: { md: "1200px" },
+          minWidth: { md: "1040px" },
           width: "100%",
           position: { xs: "inherit", sm: "relative" },
           top: "20px",
