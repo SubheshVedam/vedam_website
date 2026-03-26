@@ -133,7 +133,52 @@ function CarouselNav({ onPrev, onNext }) {
 // ─────────────────────────────────────────────────────────────────────────────
 // InfiniteAuthorScroll — single-line infinite marquee of author name pills
 // ─────────────────────────────────────────────────────────────────────────────
-function InfiniteAuthorScroll({ authors }) {
+
+function useIsDesktop() {
+  const [isDesktop, setIsDesktop] = useState(() =>
+    typeof window !== "undefined"
+      ? window.matchMedia("(min-width: 900px)").matches
+      : true
+  );
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 900px)");
+    setIsDesktop(mq.matches);
+    const handler = (e) => setIsDesktop(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+
+  return isDesktop;
+}
+
+function StaticAuthorPills({ authors }) {
+  return (
+    <Box sx={{ display: "flex", flexWrap: "wrap", gap: "8px", width: "100%" }}>
+      {authors.map((name, i) => (
+        <Box
+          key={i}
+          sx={{
+            display: "inline-flex", alignItems: "center", gap: "4px",
+            border: "1px solid rgba(108,16,188,0.25)",
+            bgcolor: "white",
+            borderRadius: "20px", px: "10px", py: "4px",
+          }}
+        >
+          <PersonIcon sx={{ fontSize: 11, color: "#6C10BC" }} />
+          <Typography sx={{
+            fontFamily: "Inter, sans-serif", fontWeight: 500,
+            fontSize: "11px", color: "#1E1E1E", whiteSpace: "nowrap",
+          }}>
+            {name}
+          </Typography>
+        </Box>
+      ))}
+    </Box>
+  );
+}
+
+function MarqueeAuthorScroll({ authors }) {
   const trackRef = useRef(null);
   const animIdRef = useRef(null);
   const posRef = useRef(0);
@@ -203,9 +248,17 @@ function InfiniteAuthorScroll({ authors }) {
   );
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// AuthorCarousel — desktop only, one author at a time with arrows
-// ─────────────────────────────────────────────────────────────────────────────
+function InfiniteAuthorScroll({ authors }) {
+  const isDesktop = useIsDesktop();
+  const threshold = isDesktop ? 3 : 2;
+  const useMarquee = authors.length >= threshold;
+
+  return useMarquee
+    ? <MarqueeAuthorScroll authors={authors} />
+    : <StaticAuthorPills authors={authors} />;
+}
+
+
 function AuthorCarousel({ authors }) {
   const [idx, setIdx] = useState(0);
   const n = authors.length;
