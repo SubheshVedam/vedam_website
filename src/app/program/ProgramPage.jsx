@@ -811,57 +811,31 @@ export default function ProgramPage({ config }) {
       </Box>
 
       {/* ── 9. CTA ──────────────────────────────────────────────────────────── */}
-      <Box sx={{ bgcolor: "white", display: "flex", alignItems: "center", justifyContent: "center", px: { xs: "20px", md: "37px" }, py: "26px" }}>
+      <Box sx={{ ...sectionPad, bgcolor: "white" }}>
+        {/* Mobile image */}
         <Box
+          component="img"
+          src={cta.mobile}
+          alt=""
           sx={{
-            width: "100%", maxWidth: "1048px", height: { xs: "auto", md: "314px" },
-            borderRadius: "22px", overflow: "hidden",
-            background: "linear-gradient(90deg, #2B135C 24%, #8A18FF 100%)",
-            position: "relative", display: "flex", alignItems: "center",
-            px: { xs: "24px", md: "43px" }, py: { xs: "40px", md: "0" },
+            display: { xs: "block", md: "none" },
+            width: "100%",
+            height: "auto",
+            objectFit: "cover",
           }}
-        >
-          <Box component="img" src="/img/program/cta-bg.svg" alt="" sx={{ position: "absolute", left: "-223px", top: "-41px", width: "596px", height: "596px", pointerEvents: "none" }} />
-          <Box sx={{ position: "relative", zIndex: 2, display: "flex", flexDirection: "column", gap: "16px" }}>
-            <Box>
-              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, color: "#F9F9F9", fontSize: { xs: "28px", md: "36px" }, letterSpacing: "-0.72px", lineHeight: 1.2 }}>
-                {cta.line1}
-              </Typography>
-              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, color: "#FB7F05", fontSize: { xs: "28px", md: "36px" }, letterSpacing: "-0.72px", lineHeight: 1.2 }}>
-                {cta.line2}
-              </Typography>
-            </Box>
-            <Button
-              component="a"
-              href={cta.applyUrl}
-              target="_blank"
-              variant="contained"
-              sx={{
-                bgcolor: "#FB7F05", borderRadius: "8px", px: "20px", py: "15px",
-                fontFamily: "Inter, sans-serif", fontWeight: 500, fontSize: "14px",
-                letterSpacing: "-0.28px", textTransform: "none", width: "130px",
-                "&:hover": { bgcolor: "#e07004" },
-              }}
-            >
-              Apply Now
-            </Button>
-          </Box>
-
-          <Box sx={{ display: { xs: "none", md: "block" }, position: "absolute", right: 0, bottom: 0, top: 0, width: "65%", pointerEvents: "none" }}>
-            {cta.students.map((src, i) => {
-              const positions = [
-                { right: "0", top: "-26px", maxWidth: "45%" },
-                { right: "33%", top: "5px", maxWidth: "35%" },
-                { right: "55%", top: "13px", maxWidth: "28%" },
-              ];
-              return (
-                <Box key={i} component="img" src={src} alt="Student"
-                  sx={{ position: "absolute", height: "100%", width: "auto", objectFit: "contain", ...positions[i] }}
-                />
-              );
-            })}
-          </Box>
-        </Box>
+        />
+        {/* Desktop image */}
+        <Box
+          component="img"
+          src={cta.desktop}
+          alt=""
+          sx={{
+            display: { xs: "none", md: "block" },
+            width: "100%",
+            height: "auto",
+            objectFit: "cover",
+          }}
+        />
       </Box>
 
     </Box>

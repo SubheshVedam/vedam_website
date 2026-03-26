@@ -43,9 +43,9 @@ const clubPresidents = [
 ];
 const seniorVideos = [
   { title: "Get upto 100% Scholarship!", duration: "", thumb: "/img/seniors/thumbnail1.webp", videoId: "cWqa2o0gD-M" },
-  { title: "Explore Vedam School of Technology", duration: "10:23", thumb: "/img/seniors/thumbnail2.webp", videoId: "jors40NYq-Y" },
-  { title: "How I cracked VSAT", duration: "12:45", thumb: "/img/seniors/thumbnail3.webp", videoId: "-0isF9k7dgg" },
-  { title: "Inside the VSAT Interview", duration: "12:45", thumb: "/img/seniors/thumbnail4.webp", videoId: "ZQvmp9LwVTs" },
+  { title: "Explore Vedam School of Technology", duration: "", thumb: "/img/seniors/thumbnail2.webp", videoId: "jors40NYq-Y" },
+  { title: "How I cracked VSAT", duration: "", thumb: "/img/seniors/thumbnail3.webp", videoId: "-0isF9k7dgg" },
+  { title: "Inside the VSAT Interview", duration: "", thumb: "/img/seniors/thumbnail4.webp", videoId: "ZQvmp9LwVTs" },
 ];
 const projects = [
   {

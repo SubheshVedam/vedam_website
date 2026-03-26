@@ -151,15 +151,9 @@ export const gurugramConfig = {
         },
     },
 
-    cta: {
-        line1: "Be the Next",
-        line2: "Gen Entrepreneur",
-        applyUrl: "https://apply.vedam.org",
-        students: [
-            "/img/program/cta-student-1.png",
-            "/img/program/cta-student-2.png",
-            "/img/program/cta-student-3.png",
-        ],
+     cta: {
+        mobile: "/img/student1.png",
+        desktop: "/img/student.png"
     },
 };
 
@@ -404,13 +398,7 @@ export const puneConfig = {
     },
 
     cta: {
-        line1: "Be the Next",
-        line2: "Gen Entrepreneur",
-        applyUrl: "https://apply.vedam.org",
-        students: [
-            "/img/program/cta-student-1.png",
-            "/img/program/cta-student-2.png",
-            "/img/program/cta-student-3.png",
-        ],
+        mobile: "/img/student1.png",
+        desktop: "/img/student.png"
     },
 };
