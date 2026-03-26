@@ -34,12 +34,12 @@ const heroPhotos1 = [
   "/img/seniors/cl2.png",
 ];
 const clubPresidents = [
-  { club: "Open-source Club Head", name: "Sidhant Pande", batch: "Batch of 2029", img: "/img/seniors/stu3.webp", linkedin: "#" },
-  { club: "Competitive Coding Club Head", name: "Aayush Bhatt", batch: "Batch of 2029", img: "/img/seniors/stu2.webp", linkedin: "#" },
-  { club: "Entrepreneurship Club Head", name: "Shivansh Ojha", batch: "Batch of 2029", img: "/img/seniors/stu6.webp", linkedin: "#" },
-  { club: "Cultural Club Head", name: "Revansh Heda", batch: "Batch of 2029", img: "/img/seniors/stu4.webp", linkedin: "#" },
-  { club: "Sports Club Head", name: "Lokendar Sangawa", batch: "Batch of 2029", img: "/img/seniors/stu1.webp", linkedin: "#" },
-  { club: "ESports Club Head", name: "Aryan Mehta", batch: "Batch of 2029", img: "/img/seniors/stu5.webp", linkedin: "#" },
+  { club: "Open-source Club Head", name: "Sidhant Pande", batch: "Batch of 2029", img: "/img/seniors/stu3.webp", linkedin: "https://www.linkedin.com/in/sidhantpande/" },
+  { club: "Competitive Coding Club Head", name: "Aayush Bhatt", batch: "Batch of 2029", img: "/img/seniors/stu2.webp", linkedin: "https://www.linkedin.com/in/aayushbhattt/" },
+  { club: "Entrepreneurship Club Head", name: "Shivansh Ojha", batch: "Batch of 2029", img: "/img/seniors/stu6.webp", linkedin: "https://www.linkedin.com/in/iamshivanshojha/" },
+  { club: "Cultural Club Head", name: "Revansh Heda", batch: "Batch of 2029", img: "/img/seniors/stu4.webp", linkedin: "https://www.linkedin.com/in/revansh-heda/" },
+  { club: "Sports Club Head", name: "Lokendar Sangawa", batch: "Batch of 2029", img: "/img/seniors/stu1.webp", linkedin: "https://www.linkedin.com/in/lokender-sangawa/" },
+  { club: "ESports Club Head", name: "Saksham Palial", batch: "Batch of 2029", img: "/img/seniors/stu5.webp", linkedin: "https://www.linkedin.com/in/sakshampalial/" },
 ];
 const seniorVideos = [
   { title: "Get upto 100% Scholarship!", duration: "", thumb: "/img/seniors/thumbnail1.webp", videoId: "cWqa2o0gD-M" },
