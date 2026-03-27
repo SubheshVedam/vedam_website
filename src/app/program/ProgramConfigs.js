@@ -109,7 +109,7 @@ export const gurugramConfig = {
             "Apple Macbook is included in the above course fee.",
             "The fees mentioned in the table is the Course fees. This is exclusive of Hostel & Mess fees.",
             "Hostel and mess services are available on the Sushant University campus, subject to availability and offered on a first-come, first-served basis.",
-            "Additional fees payable directly to the University, over and above the course fee: one-time Application Fee (₹1,500), Registration Fee (₹5,000), Uniform Fee (₹5,000), Sports Activity Fee (₹5,000), and Examination Fee (₹3,000 per semester).",
+            "The following are additional fees payable directly to the University, over and above the course fee. These include One-time component of Admission Fee (₹45,000) and Application Fee (₹1,500); the Examination Fee is ₹4,000 per semester.",
         ],
         totalCourseFee: "₹18,00,000",
         // Gurugram uses the legacy single-roomTypes shape
