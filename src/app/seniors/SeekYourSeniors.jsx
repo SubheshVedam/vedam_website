@@ -46,6 +46,7 @@ const seniorVideos = [
   { title: "Explore Vedam School of Technology", duration: "", thumb: "/img/seniors/thumbnail2.webp", videoId: "jors40NYq-Y" },
   { title: "How I cracked VSAT", duration: "", thumb: "/img/seniors/thumbnail3.webp", videoId: "-0isF9k7dgg" },
   { title: "Inside the VSAT Interview", duration: "", thumb: "/img/seniors/thumbnail4.webp", videoId: "ZQvmp9LwVTs" },
+  { title: "JEE 97.16% to Vedam", duration: "", thumb: "/img/seniors/thumbnail5.webp", videoId: "XvTqUQL1JIY" },
 ];
 const projects = [
   {

@@ -18,7 +18,7 @@ export const gurugramConfig = {
 
     statsBar: {
         tiles: [
-            { title: "4 Years", body: "Full-time residential program B.Tech Degree by Sushant University", highlight: false },
+            { title: "4 Years", body: "B.Tech in CS with specialisation in AI by Sushant University", highlight: false },
             { title: "Partner Campus", body: "Sushant University — Gurugram, Delhi NCR", highlight: true },
             { title: "Eligibility", body: "2025, 2026 12th student with PCM (>50% in PCM & 12th boards Overall)", highlight: false },
         ],
@@ -177,14 +177,14 @@ export const puneConfig = {
         brochureUrl: "https://drive.google.com/file/d/1j04UERHtvzVG0i9r0A8EY5s0dnAT_DT-/view?usp=drive_link",
         accreditationPill: [
             { src: "/img/program/ugc-logo.svg", alt: "UGC", label: "UGC Recognised", width: { xs: "16px", md: "24px" } },
-            { src: "/img/program/aicte-logo.png", alt: "AICTE", label: "AICTE Approved" },
+            { src: "/img/program/nirf-logo.png", alt: "NIRF", label: "NIRF Ranked" },
             { src: "/img/program/naac-logo.png", alt: "NAAC", label: "NAAC Accredited" },
         ],
     },
 
     statsBar: {
         tiles: [
-            { title: "4 Years", body: "Full-time residential, CS(AI) B.Tech Degree by ADYPU", highlight: false },
+            { title: "4 Years", body: "B.Tech Degree in CS[AI] by ADYPU", highlight: false },
             { title: "Partner Campus", body: "Ajeenkya DY Patil University - DY Patil Knowledge City, Pune", highlight: true },
             { title: "Eligibility", body: "2025, 2026 12th student with PCM (>50% in PCM & 12th boards Overall)", highlight: false },
         ],
