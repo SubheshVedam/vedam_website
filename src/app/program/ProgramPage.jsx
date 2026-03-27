@@ -315,7 +315,7 @@ export default function ProgramPage({ config }) {
       <Box
         sx={{
           position: "relative",
-          height: { xs: "319px", md: "85vh", lg: "75vh" },
+          height: { xs: "319px", md: "600px", lg: "650px" },
           display: "flex",
           flexDirection: "column",
           justifyContent: { xs: "center", md: "flex-end" },
