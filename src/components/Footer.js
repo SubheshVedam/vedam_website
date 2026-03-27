@@ -35,7 +35,7 @@ const SOCIAL_LINKS = [
   },
   {
     name: "Instagram",
-    url: "https://www.instagram.com/vedamschooloftech_official/?igsh=MTRscTNtdGxnNG1yMQ%3D%3D#",
+    url: "https://www.instagram.com/vedamschooloftechnology?igsh=Znd3MXh0aDY5OXAy",
     icon: <InstagramIcon sx={{ color: "white" }} />,
   },
   {
