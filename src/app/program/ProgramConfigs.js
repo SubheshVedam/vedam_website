@@ -61,7 +61,8 @@ export const gurugramConfig = {
             { src: "/img/program/naac-logo.png", alt: "NAAC", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
             { src: "/img/program/nirf-logo.png", alt: "NIRF", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
             { src: "/img/program/haryana-emblem.svg", alt: "Haryana", height: { xs: "40px", md: "80px" }, width: { xs: "40px", md: "80px" } },
-            { src: "/img/program/aicte-logo.png", alt: "AICTE", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
+            { src: "/img/program/aiu.webp", alt: "AIU", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
+            { src: "/img/program/ugc.webp", alt: "UGC", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
         ],
     },
 
