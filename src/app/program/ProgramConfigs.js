@@ -227,7 +227,9 @@ export const puneConfig = {
             { src: "/img/program/naac-logo.png", alt: "NAAC", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
             { src: "/img/program/nirf-logo.png", alt: "NIRF", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
             { src: "/img/program/mh-logo.png", alt: "GOVT OF MAHARASHTRA", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
-            { src: "/img/program/aicte-logo.png", alt: "AICTE", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
+            { src: "/img/program/aiu.webp", alt: "AIU", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
+            { src: "/img/program/nba.webp", alt: "NBA", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
+            { src: "/img/program/ugc.webp", alt: "UGC", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
         ],
     },
 

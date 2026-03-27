@@ -568,7 +568,7 @@ export default function ProgramPage({ config }) {
             {accreditations.description}
           </Typography>
         </Box>
-        <Box sx={{ display: "flex", alignItems: "center", gap: { xs: "10px 40px", md: "40px" }, flexWrap: "wrap", justifyContent: "center" }}>
+        <Box sx={{ display: "flex", alignItems: "center", gap: { xs: "10px 20px", md: "40px" }, flexWrap: "wrap", justifyContent: "center" }}>
           {accreditations.logos.map(({ src, alt, height, width }) => (
             <Box key={alt} component="img" src={src} alt={alt} sx={{ height: { xs: height.xs, md: height.md }, width: width ? { xs: width.xs, md: width.md } : "auto" }} />
           ))}
