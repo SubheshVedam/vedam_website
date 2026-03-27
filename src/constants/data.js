@@ -264,7 +264,8 @@ export const navLinks = [
     children: admissionCampusLinks,
   },
   { label: "Life @ Vedam", path: "/life" },
-  { label: "Seek Your Senior", path: "/seniors" },
+
+  { label: "Seek Your Senior", path: "/seniors", img: "/img/Group 1261155759.svg" },
   { label: "FAQs", path: "/faqs" },
   // { label: "About Us", path: "/about" },
   { label: "Register Now", path: "https://apply.vedam.org/" }, //Don't reorder register
