@@ -512,7 +512,7 @@ export const homeScreenData = {
         {
           id: 1,
           icon: "/img/vedamvs/right/second.webp",
-          text: "Theoritical approach",
+          text: "Theoretical approach",
         },
         {
           id: 2,
@@ -1044,7 +1044,7 @@ export const admissionScreenData = {
       {
         id: 3,
         step: "Step 4",
-        title: "Recieve your Admission Results",
+        title: "Receive your Admission Results",
         subtitle:
           "Result shall be announced in 10 days time of your interview, along with scholarships, in case you are eligible for any.",
         showButton: false,
