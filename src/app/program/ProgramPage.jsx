@@ -315,7 +315,7 @@ export default function ProgramPage({ config }) {
       <Box
         sx={{
           position: "relative",
-          height: { xs: "319px", md: "85vh", lg: "75vh" },
+          height: { xs: "319px", md: "600px", lg: "650px" },
           display: "flex",
           flexDirection: "column",
           justifyContent: { xs: "center", md: "flex-end" },
@@ -568,7 +568,7 @@ export default function ProgramPage({ config }) {
             {accreditations.description}
           </Typography>
         </Box>
-        <Box sx={{ display: "flex", alignItems: "center", gap: { xs: "10px 40px", md: "40px" }, flexWrap: "wrap", justifyContent: "center" }}>
+        <Box sx={{ display: "flex", alignItems: "center", gap: { xs: "10px 20px", md: "40px" }, flexWrap: "wrap", justifyContent: "center" }}>
           {accreditations.logos.map(({ src, alt, height, width }) => (
             <Box key={alt} component="img" src={src} alt={alt} sx={{ height: { xs: height.xs, md: height.md }, width: width ? { xs: width.xs, md: width.md } : "auto" }} />
           ))}

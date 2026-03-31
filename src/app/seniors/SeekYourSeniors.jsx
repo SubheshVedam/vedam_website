@@ -46,6 +46,7 @@ const seniorVideos = [
   { title: "Explore Vedam School of Technology", duration: "", thumb: "/img/seniors/thumbnail2.webp", videoId: "jors40NYq-Y" },
   { title: "How I cracked VSAT", duration: "", thumb: "/img/seniors/thumbnail3.webp", videoId: "-0isF9k7dgg" },
   { title: "Inside the VSAT Interview", duration: "", thumb: "/img/seniors/thumbnail4.webp", videoId: "ZQvmp9LwVTs" },
+  { title: "JEE 97.16% to Vedam", duration: "", thumb: "/img/seniors/thumbnail5.webp", videoId: "XvTqUQL1JIY" },
 ];
 const projects = [
   {
@@ -99,7 +100,9 @@ const sectionHeading = {
   fontFamily: "Inter, sans-serif",
   fontWeight: 700,
   fontSize: { xs: "24px", md: "36px" },
-  color: "#FB7F05",
+  background: "linear-gradient(90deg, #FB7F05 0%, #6C10BC 42.11%)",
+  WebkitBackgroundClip: "text",
+  WebkitTextFillColor: "transparent",
   lineHeight: 1.3,
 };
 const sectionPad = { px: { xs: "20px", md: "120px" }, py: { xs: "24px", md: "40px" } };
@@ -739,8 +742,10 @@ export default function SeekYourSeniors() {
           <Box sx={{ textAlign: "center" }}>
             <Typography sx={{
               fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: "28px",
-              background: "linear-gradient(90deg,#6C10BC 0%,#FB7F05 100%)",
-              WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
+              background: "linear-gradient(90deg, #FB7F05 0%, #6C10BC 42.11%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+
               backgroundClip: "text", lineHeight: 1.2,
             }}>Class of 2029</Typography>
             <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 500, fontSize: "16px", color: "#1E1E1E", mt: "4px" }}>

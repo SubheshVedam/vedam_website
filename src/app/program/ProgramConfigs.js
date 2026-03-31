@@ -18,7 +18,7 @@ export const gurugramConfig = {
 
     statsBar: {
         tiles: [
-            { title: "4 Years", body: "Full-time residential program B.Tech Degree by Sushant University", highlight: false },
+            { title: "4 Years", body: "B.Tech in CS with specialisation in AI by Sushant University", highlight: false },
             { title: "Partner Campus", body: "Sushant University — Gurugram, Delhi NCR", highlight: true },
             { title: "Eligibility", body: "2025, 2026 12th student with PCM (>50% in PCM & 12th boards Overall)", highlight: false },
         ],
@@ -61,7 +61,8 @@ export const gurugramConfig = {
             { src: "/img/program/naac-logo.png", alt: "NAAC", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
             { src: "/img/program/nirf-logo.png", alt: "NIRF", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
             { src: "/img/program/haryana-emblem.svg", alt: "Haryana", height: { xs: "40px", md: "80px" }, width: { xs: "40px", md: "80px" } },
-            { src: "/img/program/aicte-logo.png", alt: "AICTE", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
+            { src: "/img/program/aiu.webp", alt: "AIU", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
+            { src: "/img/program/ugc.webp", alt: "UGC", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
         ],
     },
 
@@ -109,7 +110,7 @@ export const gurugramConfig = {
             "Apple Macbook is included in the above course fee.",
             "The fees mentioned in the table is the Course fees. This is exclusive of Hostel & Mess fees.",
             "Hostel and mess services are available on the Sushant University campus, subject to availability and offered on a first-come, first-served basis.",
-            "Additional fees payable directly to the University, over and above the course fee: one-time Application Fee (₹1,500), Registration Fee (₹5,000), Uniform Fee (₹5,000), Sports Activity Fee (₹5,000), and Examination Fee (₹3,000 per semester).",
+            "The following are additional fees payable directly to the University, over and above the course fee. These include One-time component of Admission Fee (₹45,000) and Application Fee (₹1,500); the Examination Fee is ₹4,000 per semester.",
         ],
         totalCourseFee: "₹18,00,000",
         // Gurugram uses the legacy single-roomTypes shape
@@ -177,14 +178,14 @@ export const puneConfig = {
         brochureUrl: "https://drive.google.com/file/d/1j04UERHtvzVG0i9r0A8EY5s0dnAT_DT-/view?usp=drive_link",
         accreditationPill: [
             { src: "/img/program/ugc-logo.svg", alt: "UGC", label: "UGC Recognised", width: { xs: "16px", md: "24px" } },
-            { src: "/img/program/aicte-logo.png", alt: "AICTE", label: "AICTE Approved" },
+            { src: "/img/program/nirf-logo.png", alt: "NIRF", label: "NIRF Ranked" },
             { src: "/img/program/naac-logo.png", alt: "NAAC", label: "NAAC Accredited" },
         ],
     },
 
     statsBar: {
         tiles: [
-            { title: "4 Years", body: "Full-time residential, CS(AI) B.Tech Degree by ADYPU", highlight: false },
+            { title: "4 Years", body: "B.Tech Degree in CS[AI] by ADYPU", highlight: false },
             { title: "Partner Campus", body: "Ajeenkya DY Patil University - DY Patil Knowledge City, Pune", highlight: true },
             { title: "Eligibility", body: "2025, 2026 12th student with PCM (>50% in PCM & 12th boards Overall)", highlight: false },
         ],
@@ -227,7 +228,9 @@ export const puneConfig = {
             { src: "/img/program/naac-logo.png", alt: "NAAC", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
             { src: "/img/program/nirf-logo.png", alt: "NIRF", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
             { src: "/img/program/mh-logo.png", alt: "GOVT OF MAHARASHTRA", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
-            { src: "/img/program/aicte-logo.png", alt: "AICTE", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
+            { src: "/img/program/aiu.webp", alt: "AIU", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
+            { src: "/img/program/nba.webp", alt: "NBA", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
+            { src: "/img/program/ugc.webp", alt: "UGC", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
         ],
     },
 

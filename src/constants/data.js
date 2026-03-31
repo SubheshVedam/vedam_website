@@ -264,7 +264,8 @@ export const navLinks = [
     children: admissionCampusLinks,
   },
   { label: "Life @ Vedam", path: "/life" },
-  { label: "Seek Your Senior", path: "/seniors" },
+
+  { label: "Seek Your Senior", path: "/seniors", img: "/img/Group 1261155759.svg" },
   { label: "FAQs", path: "/faqs" },
   // { label: "About Us", path: "/about" },
   { label: "Register Now", path: "https://apply.vedam.org/" }, //Don't reorder register
@@ -511,7 +512,7 @@ export const homeScreenData = {
         {
           id: 1,
           icon: "/img/vedamvs/right/second.webp",
-          text: "Theoritical approach",
+          text: "Theoretical approach",
         },
         {
           id: 2,
@@ -997,8 +998,8 @@ export const admissionScreenData = {
       "Final Offer",
     ],
     secondArray: [
-      "31st March 2026",
-      "30th March 2026",
+      "14th April 2026",
+      "13th April 2026",
       "Within 2 Days of the Exam",
       "Within 5 Days of the Exam",
       "Within 15 Days, If selected",
@@ -1020,7 +1021,7 @@ export const admissionScreenData = {
         title: "Apply Online",
         subtitle:
           "Complete your profile and reserve your slot for the Vedam Scholastic Aptitude Test (VSAT).",
-        subtitle1: "Last date to apply for March Intake is 30th March",
+        subtitle1: "Last date to apply for March Intake is 13th April",
         showButton: true,
       },
       {
@@ -1029,7 +1030,7 @@ export const admissionScreenData = {
         title: "Take the VSAT",
         subtitle:
           "It is an entrance test conducted online.",
-        subtitle1: "The next VSAT is on 31st March",
+        subtitle1: "The next VSAT is on 14th April",
         showButton: false,
       },
       {
@@ -1043,7 +1044,7 @@ export const admissionScreenData = {
       {
         id: 3,
         step: "Step 4",
-        title: "Recieve your Admission Results",
+        title: "Receive your Admission Results",
         subtitle:
           "Result shall be announced in 10 days time of your interview, along with scholarships, in case you are eligible for any.",
         showButton: false,
