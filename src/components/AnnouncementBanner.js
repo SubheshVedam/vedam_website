@@ -112,7 +112,7 @@ export default function AnnouncementBanner() {
           variant="body2"
           component="span"
           sx={{ fontSize: { xs: 11, sm: 16 } }}>
-          <strong>Admissions for March Intake closes in</strong>
+          <strong>Admissions for April Intake closes in</strong>
         </Typography>
         {timerItems ? (
           <Stack
