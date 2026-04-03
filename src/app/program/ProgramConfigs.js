@@ -4,7 +4,7 @@
 export const gurugramConfig = {
     hero: {
         bgImage: "/img/program/hero-bg-ggn.png",
-        partnerLogo: "/img/program/partner-logo.svg",
+        partnerLogo: "/img/program/sushant.png",
         title: "UG Program in Computer Science & Artificial Intelligence",
         subtitle: "Bachelor of Technology Degree by Sushant University, Gurugram",
         applyUrl: "https://apply.vedam.org",
