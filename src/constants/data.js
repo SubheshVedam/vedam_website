@@ -265,7 +265,7 @@ export const navLinks = [
   },
   { label: "Life @ Vedam", path: "/life" },
 
-  { label: "Seek Your Senior", path: "/seniors", img: "/img/Group 1261155759.svg" },
+  { label: "Seek Your Seniors", path: "/seniors", img: "/img/Group 1261155759.svg" },
   { label: "FAQs", path: "/faqs" },
   // { label: "About Us", path: "/about" },
   { label: "Register Now", path: "https://apply.vedam.org/" }, //Don't reorder register
@@ -1021,7 +1021,7 @@ export const admissionScreenData = {
         title: "Apply Online",
         subtitle:
           "Complete your profile and reserve your slot for the Vedam Scholastic Aptitude Test (VSAT).",
-        subtitle1: "Last date to apply for March Intake is 13th April",
+        subtitle1: "Last date to apply for April Intake is 13th April",
         showButton: true,
       },
       {
