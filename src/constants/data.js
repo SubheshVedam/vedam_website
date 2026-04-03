@@ -1021,7 +1021,7 @@ export const admissionScreenData = {
         title: "Apply Online",
         subtitle:
           "Complete your profile and reserve your slot for the Vedam Scholastic Aptitude Test (VSAT).",
-        subtitle1: "Last date to apply for March Intake is 13th April",
+        subtitle1: "Last date to apply for April Intake is 13th April",
         showButton: true,
       },
       {
