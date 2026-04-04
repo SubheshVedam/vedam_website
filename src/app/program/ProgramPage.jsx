@@ -683,12 +683,18 @@ export default function ProgramPage({ config }) {
             </Box>
 
             {/* Desktop: table */}
-            <Box sx={{ display: { xs: "none", md: "block" }, width: "100%", overflowX: "auto" }}>
+            <Box sx={{
+              display: { xs: "none", md: "block" }, width: "100%", overflowX: "auto", scrollbarWidth: "none",
+              msOverflowStyle: "none",
+              "&::-webkit-scrollbar": {
+                display: "none",
+              },
+            }}>
               <Box sx={{ minWidth: "900px", border: "0.5px solid rgba(0,0,0,0.2)", borderRadius: "24px", overflow: "hidden", bgcolor: "white" }}>
                 {/* Headers */}
                 <Box sx={{ display: "grid", gridTemplateColumns: "2fr repeat(9, 1fr)" }}>
                   {fees.feeData.headers.map((h, i) => (
-                    <Box key={i} sx={{ bgcolor: "#F4ECFA", p: "10px 20px", borderRight: i < fees.feeData.headers.length - 1 ? "0.5px solid rgba(0,0,0,0.1)" : "none" }}>
+                    <Box key={i} sx={{ bgcolor: "#F4ECFA", p: "10px 20px", borderRight: i < fees.feeData.headers.length - 1 ? "0.5px solid rgba(0,0,0,0.1)" : "none", ...(i === 0 && { minWidth: "210px" }) }}>
                       <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: "12px", color: "black", letterSpacing: "-0.24px", whiteSpace: "nowrap" }}>{h}</Typography>
                     </Box>
                   ))}
@@ -704,7 +710,7 @@ export default function ProgramPage({ config }) {
                       bgcolor: isSubTotal ? "rgba(108,16,188,0.08)" : "transparent",
                     }}
                   >
-                    <Box sx={{ p: "10px", pl: "20px", borderRight: "0.5px solid rgba(0,0,0,0.1)" }}>
+                    <Box sx={{ p: "10px", pl: "20px", borderRight: "0.5px solid rgba(0,0,0,0.1)", minWidth: "210px" }}>
                       <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: "12px", color: isSubTotal ? "#6C10BC" : "black", letterSpacing: "-0.24px", whiteSpace: "nowrap" }}>{label}</Typography>
                     </Box>
                     {values.map((v, ci) => (
@@ -716,7 +722,7 @@ export default function ProgramPage({ config }) {
                 ))}
                 {/* Totals row */}
                 <Box sx={{ display: "grid", gridTemplateColumns: "2fr repeat(9, 1fr)", borderTop: "0.5px solid rgba(30,30,30,0.2)" }}>
-                  <Box sx={{ bgcolor: "#BA6BFF", p: "10px", pl: "20px", borderRight: "0.5px solid rgba(0,0,0,0.1)" }}>
+                  <Box sx={{ bgcolor: "#BA6BFF", p: "10px", pl: "20px", borderRight: "0.5px solid rgba(0,0,0,0.1)", minWidth: "210px" }}>
                     <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: "12px", color: "#1E1E1E", letterSpacing: "-0.24px" }}>Payable Course Fee</Typography>
                   </Box>
                   {fees.feeData.totals.map((v, i) => (

@@ -78,7 +78,7 @@ export const gurugramConfig = {
     fees: {
         semesterFees: [
             {
-                sem: "Semester 1",
+                sem: "Sem 1",
                 rows: [
                     { label: "Seat Block Fees", value: "₹50,000" },
                     { label: "Security Deposit (Refundable)", value: "₹30,000" },
@@ -88,7 +88,7 @@ export const gurugramConfig = {
                 total: "₹2,64,813",
             },
             ...["2", "3", "4", "5", "6", "7", "8"].map((n) => ({
-                sem: `Semester ${n}`,
+                sem: `Sem ${n}`,
                 rows: [
                     { label: "Upskilling Fee", value: n === "8" ? "–" : "₹84,813" },
                     { label: "Tuition Fee", value: n === "8" ? "–" : "₹1,34,500" },
@@ -97,7 +97,7 @@ export const gurugramConfig = {
             })),
         ],
         feeData: {
-            headers: ["Fees Component", "Semester 1", "Semester 2", "Semester 3", "Semester 4", "Semester 5", "Semester 6", "Semester 7", "Semester 8", "Total"],
+            headers: ["Fees Component", "Sem 1", "Sem 2", "Sem 3", "Sem 4", "Sem 5", "Sem 6", "Sem 7", "Sem 8", "Total"],
             rows: [
                 { label: "Seat Block Fees", values: ["₹50,000", "–", "–", "–", "–", "–", "–", "–", "₹50,000"] },
                 { label: "Security Deposit (Refundable)", values: ["₹30,000", "–", "–", "–", "–", "–", "–", "–", "₹30,000"] },

@@ -101,7 +101,7 @@ export default function Navbar() {
       <Box
         sx={{
           height: "0px",
-          minWidth: { md: "1160px" },
+          minWidth: { md: "1024px" },
           width: "100%",
           position: { xs: "inherit", sm: "relative" },
           top: "20px",
@@ -172,7 +172,7 @@ export default function Navbar() {
                           fontWeight: 500,
                           fontSize: "14px",
                           lineHeight: "120%",
-                          letterSpacing: "-2%",
+                          letterSpacing: "-5%",
                           textTransform: "none",
                           // whiteSpace: "nowrap",
                           transition: "all 0.3s ease-in-out",
@@ -318,9 +318,13 @@ export default function Navbar() {
                     >
                       {link.label}
                       {link.img && (
+                        // After
                         <Box
                           sx={{
-                            display: { xs: "none", lg: "block" },
+                            display: "none",
+                            "@media (min-width: 1024px)": {
+                              display: "block",
+                            },
                           }}
                         >
                           <Typography
