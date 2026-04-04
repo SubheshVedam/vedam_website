@@ -185,7 +185,7 @@ export const puneConfig = {
 
     statsBar: {
         tiles: [
-            { title: "4 Years", body: "B.Tech Degree in CS[AI] by ADYPU", highlight: false },
+            { title: "4 Years", body: "B.Tech in CS with Specialisation in AI by Ajeenkya DY Patil University", highlight: false },
             { title: "Partner Campus", body: "Ajeenkya DY Patil University - DY Patil Knowledge City, Pune", highlight: true },
             { title: "Eligibility", body: "2025, 2026 12th student with PCM (>50% in PCM & 12th boards Overall)", highlight: false },
         ],
