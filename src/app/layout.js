@@ -8,6 +8,7 @@ import Layout from "@/components/Layout";
 import AnnouncementBanner from "@/components/AnnouncementBanner";
 import Script from "next/script";
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata = {
   metadataBase: new URL("https://vedam.org"),
@@ -141,6 +142,7 @@ export default function RootLayout({ children }) {
             <Footer />
           </Layout>
         </EmotionCacheProvider>
+        <Analytics />
       </body>
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
     </html>
