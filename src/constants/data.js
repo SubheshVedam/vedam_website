@@ -771,8 +771,8 @@ export const homeScreenData = {
     outcomeArray: [
       {
         id: 0,
-        text: "Build Hotstar like Feed with Search & Categories",
-        icon: "/img/outcomes/year1.jpg",
+        text: "Build a Real-Time Chat platform like WhatsApp",
+        icon: "/img/outcomes/year2_2.jpg",
       },
       {
         id: 1,
@@ -789,7 +789,7 @@ export const homeScreenData = {
   year2: {
     title: "Full Stack Mastery",
     subtitle:
-      "You can learn everything needed to build a fully functional web application and launch it successfully.",
+      "You can learn everything needed to build a fully functional _2eb application and launch it successfully.",
     secondTitle: "Skills & Technologies",
     secondArray: [
       "Advanced DSA",
@@ -811,8 +811,8 @@ export const homeScreenData = {
       },
       {
         id: 1,
-        text: "Build a Real-Time Chat platform like WhatsApp",
-        icon: "/img/outcomes/year2_2.jpg",
+        text: "Build Hotstar like Feed with Search & Categories ",
+        icon: "/img/outcomes/year1.jpg",
       },
       {
         id: 2,
