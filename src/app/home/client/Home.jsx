@@ -222,7 +222,7 @@ const Home = () => {
           title={homeScreenData.hero.title}
           subtitle={homeScreenData.hero.subtitle}
           videoUrl={homeScreenData.hero.background_video}
-          showPosterImage={false}
+          posterImageUrl="/img/hear_from_founder_thumbnail.webp"
         />
         <SectionStack
           widthContainerProps={{
