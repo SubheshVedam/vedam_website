@@ -40,8 +40,13 @@ export default function PlayableVideoCard({
         />
       ) : (
         <Box
+          component="button"
+          type="button"
+          aria-label="Play founder video"
           onClick={() => setIsPlaying(true)}
           sx={{
+            border: "none",
+            padding: 0,
             cursor: "pointer",
             width: "100%",
             height: "100%",
@@ -52,6 +57,7 @@ export default function PlayableVideoCard({
             src={thumbnailSrc}
             alt={thumbnailAlt}
             fill
+            sizes="100vw"
             style={{ objectFit: "cover", borderRadius: "inherit" }}
           />
           <Box

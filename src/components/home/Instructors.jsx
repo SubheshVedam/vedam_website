@@ -31,6 +31,7 @@ export const Instructors = () => {
         <Box sx={{ position: "relative" }}>
             <IconButton
                 onClick={scrollLeft}
+                aria-label="Scroll instructors left"
                 sx={{
                     position: "absolute",
                     left: 0,
@@ -39,6 +40,8 @@ export const Instructors = () => {
                     zIndex: 100,
                     opacity: 0.8,
                     backgroundColor: "background.paper",
+                    width: 44,
+                    height: 44,
                     "&:hover": {
                         backgroundColor: "background.paper",
                     },
@@ -79,6 +82,7 @@ export const Instructors = () => {
 
             <IconButton
                 onClick={scrollRight}
+                aria-label="Scroll instructors right"
                 sx={{
                     position: "absolute",
                     right: 0,
@@ -87,6 +91,8 @@ export const Instructors = () => {
                     zIndex: 100,
                     opacity: 0.8,
                     backgroundColor: "background.paper",
+                    width: 44,
+                    height: 44,
                     "&:hover": {
                         backgroundColor: "background.paper",
                     },

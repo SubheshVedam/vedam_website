@@ -31,6 +31,7 @@ export const WhatPeople = () => {
     <Box sx={{ position: "relative" }}>
       <IconButton
         onClick={scrollLeft}
+        aria-label="Scroll testimonials left"
         sx={{
           position: "absolute",
           left: 0,
@@ -39,6 +40,8 @@ export const WhatPeople = () => {
           zIndex: 100,
           opacity: 0.8,
           backgroundColor: "background.paper",
+          width: 44,
+          height: 44,
           "&:hover": {
             backgroundColor: "background.paper",
           },
@@ -74,6 +77,7 @@ export const WhatPeople = () => {
 
       <IconButton
         onClick={scrollRight}
+        aria-label="Scroll testimonials right"
         sx={{
           position: "absolute",
           right: 0,
@@ -82,6 +86,8 @@ export const WhatPeople = () => {
           zIndex: 100,
           opacity: 0.8,
           backgroundColor: "background.paper",
+          width: 44,
+          height: 44,
           "&:hover": {
             backgroundColor: "background.paper",
           },

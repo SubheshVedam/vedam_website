@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { Box } from "@mui/material";
 import { detailsData } from "@/constants/data";
 
@@ -39,10 +40,7 @@ const WhyVedam = ({ data }) => {
               height: { xs: "240px", md: "200px" },
               borderRadius: "16px",
               overflow: "hidden",
-              backgroundImage: `url(${item.bgImage})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
+              backgroundColor: "#1a0533",
               cursor: "pointer",
               "&:hover .whyvedam-desc": {
                 opacity: 1,
@@ -51,6 +49,17 @@ const WhyVedam = ({ data }) => {
               },
             }}
           >
+            <Image
+              src={item.bgImage}
+              alt=""
+              fill
+              sizes="(max-width: 900px) 50vw, 208px"
+              style={{
+                objectFit: "cover",
+                objectPosition: "center",
+              }}
+            />
+
             {/* Title + description pinned to bottom */}
             <Box
               sx={{
@@ -66,7 +75,7 @@ const WhyVedam = ({ data }) => {
               }}
             >
               <Box
-                component="h4"
+                component="div"
                 sx={{
                   color: "white",
                   fontWeight: "bold",
@@ -108,10 +117,6 @@ const WhyVedam = ({ data }) => {
             position: "relative",
             borderRadius: "16px",
             overflow: "hidden",
-            backgroundImage: `url(${featuredItem.bgImage})`,
-            backgroundSize: "100% auto",
-            backgroundPosition: "top center",
-            backgroundRepeat: "no-repeat",
             backgroundColor: "#1a0533",
             cursor: "pointer",
             "&:hover .whyvedam-feat-desc": {
@@ -121,6 +126,17 @@ const WhyVedam = ({ data }) => {
             },
           }}
         >
+          <Image
+            src={featuredItem.bgImage}
+            alt=""
+            fill
+            sizes="(max-width: 900px) 100vw, 640px"
+            style={{
+              objectFit: "cover",
+              objectPosition: "top center",
+            }}
+          />
+
           {/* Title pinned to bottom */}
           <Box
             sx={{
@@ -136,7 +152,7 @@ const WhyVedam = ({ data }) => {
             }}
           >
             <Box
-              component="h4"
+              component="div"
               sx={{
                 color: "white",
                 fontWeight: "bold",
