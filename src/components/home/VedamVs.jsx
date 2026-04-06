@@ -122,6 +122,7 @@ export const VedamVs = () => {
       {/* Left Scroll Button - Only visible on mobile */}
       <IconButton
         onClick={scrollLeft}
+        aria-label="Scroll Vedam comparison cards left"
         sx={{
           display: { xs: "flex", md: "none" },
           position: "absolute",
@@ -131,6 +132,8 @@ export const VedamVs = () => {
           zIndex: 100,
           opacity: 0.8,
           backgroundColor: "white",
+          width: 44,
+          height: 44,
           "&:hover": {
             backgroundColor: "white",
           },
@@ -266,7 +269,7 @@ export const VedamVs = () => {
             }}
             headerTextStyle={{ color: "rgba(12, 38, 81, 1)" }}
             textArrayTextStyle={{
-              color: "rgba(132, 132, 132, 1)",
+              color: "rgba(77, 77, 77, 1)",
             }}
           />
         </Box>
@@ -338,7 +341,7 @@ export const VedamVs = () => {
           }}
           headerTextStyle={{ color: "rgba(12, 38, 81, 1)" }}
           textArrayTextStyle={{
-            color: "rgba(132, 132, 132, 1)",
+            color: "rgba(77, 77, 77, 1)",
           }}
         />
       </Box>
@@ -346,6 +349,7 @@ export const VedamVs = () => {
       {/* Right Scroll Button - Only visible on mobile */}
       <IconButton
         onClick={scrollRight}
+        aria-label="Scroll Vedam comparison cards right"
         sx={{
           display: { xs: "flex", md: "none" },
           position: "absolute",
@@ -355,6 +359,8 @@ export const VedamVs = () => {
           zIndex: 100,
           opacity: 0.8,
           backgroundColor: "white",
+          width: 44,
+          height: 44,
           "&:hover": {
             backgroundColor: "white",
           },

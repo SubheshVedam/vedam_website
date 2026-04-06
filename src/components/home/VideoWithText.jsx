@@ -1,10 +1,16 @@
-"use client";
 import React from "react";
+import Image from "next/image";
 import { Box, Typography } from "@mui/material";
-import { homeScreenData } from "@/constants/data";
 import Button from "@mui/material/Button";
 
-export const VideoWithText = ({ title, subtitle, isImg, videoUrl, imageUrl }) => {
+export const VideoWithText = ({
+  title,
+  subtitle,
+  isImg,
+  videoUrl,
+  imageUrl,
+  posterImageUrl = "/img/optimized/video_thumbnail_1280.jpg",
+}) => {
   return (
     <Box
       sx={{
@@ -29,35 +35,55 @@ export const VideoWithText = ({ title, subtitle, isImg, videoUrl, imageUrl }) =>
 
       {/* Background Media */}
       {!isImg ? (
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            zIndex: 0,
-          }}
-          className="responsive-video"
-        >
-          <source src={videoUrl} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <>
+          <Box
+            sx={{
+              position: "absolute",
+              inset: 0,
+              zIndex: 0,
+            }}
+          >
+            <Image
+              src={posterImageUrl}
+              alt=""
+              fill
+              priority
+              fetchPriority="high"
+              sizes="100vw"
+              style={{ objectFit: "cover" }}
+            />
+          </Box>
+
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              zIndex: 0,
+            }}
+            className="responsive-video"
+            aria-hidden="true"
+          >
+            <source src={videoUrl} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </>
       ) : (
-        <img
-          src={imageUrl || "/img/life_vedam_bg.jpeg"}
-          alt="Background"
+        <Image
+          src={imageUrl || posterImageUrl}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
           style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
             objectFit: "cover",
             zIndex: 0,
           }}
@@ -143,7 +169,7 @@ export const VideoWithText = ({ title, subtitle, isImg, videoUrl, imageUrl }) =>
           <Button
             sx={{
               fontSize: { xs: "0.875rem", sm: "1rem" },
-              color: "#F9F9F9",
+              color: "#1F1F1F",
               order: { xs: 1, sm: 2 },
               backgroundColor: "#FF7829",
               borderRadius: "1rem",
@@ -159,6 +185,7 @@ export const VideoWithText = ({ title, subtitle, isImg, videoUrl, imageUrl }) =>
             }}
             href="https://apply.vedam.org/"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Apply Now
           </Button>

@@ -43,8 +43,8 @@ const NewsSection = () => {
             zIndex: 10,
           }}
         >
-          <NavButton onClick={prev} icon={<ChevronLeftIcon />} />
-          <NavButton onClick={next} icon={<ChevronRightIcon />} />
+          <NavButton onClick={prev} icon={<ChevronLeftIcon />} label="Show previous headline" />
+          <NavButton onClick={next} icon={<ChevronRightIcon />} label="Show next headline" />
         </Box>
 
         {/* Cards row */}
@@ -121,6 +121,7 @@ const NewsSection = () => {
               <Box
                 component="a"
                 href={activeItem.link}
+                aria-label={`Read ${activeItem.name || 'article'} on ${activeItem.sourceName || 'the source site'}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 sx={{
@@ -173,10 +174,10 @@ const NewsSection = () => {
           }}
         >
           <Box sx={{ pointerEvents: 'all', transform: 'translateX(-50%)' }}>
-            <NavButton onClick={prev} icon={<ChevronLeftIcon />} />
+            <NavButton onClick={prev} icon={<ChevronLeftIcon />} label="Show previous headline" />
           </Box>
           <Box sx={{ pointerEvents: 'all', transform: 'translateX(50%)' }}>
-            <NavButton onClick={next} icon={<ChevronRightIcon />} />
+            <NavButton onClick={next} icon={<ChevronRightIcon />} label="Show next headline" />
           </Box>
         </Box>
 
@@ -185,12 +186,13 @@ const NewsSection = () => {
   );
 };
 
-function NavButton({ onClick, icon }) {
+function NavButton({ onClick, icon, label }) {
   return (
     <IconButton
       onClick={onClick}
+      aria-label={label}
       sx={{
-        width: '40px', height: '40px', borderRadius: '50%',
+        width: '44px', height: '44px', borderRadius: '50%',
         color: '#6C10BC',
         bgcolor: '#fff',
         border: '1.5px solid rgba(108,16,188,0.25)',
