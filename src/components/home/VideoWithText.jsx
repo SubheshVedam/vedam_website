@@ -9,6 +9,7 @@ export const VideoWithText = ({
   isImg,
   videoUrl,
   imageUrl,
+  showPosterImage = true,
   posterImageUrl = "/img/hear_from_founder_thumbnail.webp",
 }) => {
   return (
@@ -36,23 +37,25 @@ export const VideoWithText = ({
       {/* Background Media */}
       {!isImg ? (
         <>
-          <Box
-            sx={{
-              position: "absolute",
-              inset: 0,
-              zIndex: 0,
-            }}
-          >
-            <Image
-              src={posterImageUrl}
-              alt=""
-              fill
-              priority
-              fetchPriority="high"
-              sizes="100vw"
-              style={{ objectFit: "cover" }}
-            />
-          </Box>
+          {showPosterImage && posterImageUrl && (
+            <Box
+              sx={{
+                position: "absolute",
+                inset: 0,
+                zIndex: 0,
+              }}
+            >
+              <Image
+                src={posterImageUrl}
+                alt=""
+                fill
+                priority
+                fetchPriority="high"
+                sizes="100vw"
+                style={{ objectFit: "cover" }}
+              />
+            </Box>
+          )}
 
           <video
             autoPlay
