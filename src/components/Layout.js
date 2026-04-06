@@ -4,7 +4,7 @@ import FloatingButton from './FloatingButton';
 const Layout = ({ children }) => {
   return (
     <>
-      <main id="main-content">{children}</main>
+      {children}
       <FloatingButton />
     </>
   );

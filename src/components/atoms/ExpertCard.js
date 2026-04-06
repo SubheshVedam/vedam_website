@@ -1,6 +1,7 @@
 import * as React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import Image from "next/image";
 import { Box } from "@mui/material";
@@ -43,25 +44,19 @@ export default function ExpertCard({
           gap: { xs: "8px", sm: 0 },
         }}
       >
-        <Box
+        <CardMedia
+          component="img"
           sx={{
             width: { xs: 136, sm: 150 },
             height: { xs: 200, sm: 200 },
+            objectFit: "cover",
             borderRadius: "8px",
             backgroundColor: "#F98317",
             flexShrink: 0,
-            position: "relative",
-            overflow: "hidden",
           }}
-        >
-          <Image
-            src={imageUrl}
-            alt={name}
-            fill
-            sizes="(max-width: 600px) 136px, 150px"
-            style={{ objectFit: "cover" }}
-          />
-        </Box>
+          image={imageUrl}
+          alt={name}
+        />
         <CardContent
           sx={{
             display: "flex",
@@ -154,49 +149,46 @@ export default function ExpertCard({
             </Box>
 
             {/* LinkedIn pill — same as mobile */}
-            {linkedIn && (
-              <Box
-                sx={{
+            <Box
+              sx={{
+                borderRadius: "100px",
+                position: "relative",
+                width: "60px",
+                height: "32px",
+                flexShrink: 0,
+                "&::before": {
+                  content: '""',
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  backgroundColor: "#6C10BC",
+                  opacity: 0.08,
                   borderRadius: "100px",
-                  position: "relative",
-                  width: "60px",
-                  height: "40px",
-                  flexShrink: 0,
-                  "&::before": {
-                    content: '""',
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    backgroundColor: "#6C10BC",
-                    opacity: 0.08,
-                    borderRadius: "100px",
-                    zIndex: 1,
-                  },
+                  zIndex: 1,
+                },
+              }}
+            >
+              <a
+                href={linkedIn}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  zIndex: 2,
                 }}
               >
-                <a
-                  href={linkedIn}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Open ${name}'s LinkedIn profile`}
-                  style={{
-                    position: "absolute",
-                    inset: 0,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    zIndex: 2,
-                  }}
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <path d="M0.473381 2.63518C0.157227 2.34173 0 1.97849 0 1.5463C0 1.11411 0.158067 0.73489 0.473381 0.440597C0.789535 0.147146 1.1965 0 1.69512 0C2.19373 0 2.58473 0.147146 2.90004 0.440597C3.2162 0.734049 3.37342 1.10318 3.37342 1.5463C3.37342 1.98942 3.21536 2.34173 2.90004 2.63518C2.58389 2.92863 2.1828 3.07578 1.69512 3.07578C1.20743 3.07578 0.789535 2.92863 0.473381 2.63518ZM3.10773 4.31853V13.3155H0.264855V4.31853H3.10773Z" fill="#6C10BC" />
-                    <path d="M12.5715 5.20725C13.1912 5.87991 13.5006 6.80316 13.5006 7.97865V13.1565H10.8007V8.34357C10.8007 7.75078 10.6468 7.29 10.3399 6.96207C10.033 6.63414 9.61934 6.46934 9.10139 6.46934C8.58343 6.46934 8.16972 6.6333 7.86282 6.96207C7.55591 7.29 7.40204 7.75078 7.40204 8.34357V13.1565H4.68616V4.29326H7.40204V5.46874C7.677 5.07692 8.04782 4.76749 8.51365 4.53963C8.97947 4.31176 9.50331 4.19824 10.086 4.19824C11.1236 4.19824 11.9526 4.53458 12.5715 5.2064V5.20725Z" fill="#6C10BC" />
-                  </svg>
-                </a>
-              </Box>
-            )}
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M0.473381 2.63518C0.157227 2.34173 0 1.97849 0 1.5463C0 1.11411 0.158067 0.73489 0.473381 0.440597C0.789535 0.147146 1.1965 0 1.69512 0C2.19373 0 2.58473 0.147146 2.90004 0.440597C3.2162 0.734049 3.37342 1.10318 3.37342 1.5463C3.37342 1.98942 3.21536 2.34173 2.90004 2.63518C2.58389 2.92863 2.1828 3.07578 1.69512 3.07578C1.20743 3.07578 0.789535 2.92863 0.473381 2.63518ZM3.10773 4.31853V13.3155H0.264855V4.31853H3.10773Z" fill="#6C10BC" />
+                  <path d="M12.5715 5.20725C13.1912 5.87991 13.5006 6.80316 13.5006 7.97865V13.1565H10.8007V8.34357C10.8007 7.75078 10.6468 7.29 10.3399 6.96207C10.033 6.63414 9.61934 6.46934 9.10139 6.46934C8.58343 6.46934 8.16972 6.6333 7.86282 6.96207C7.55591 7.29 7.40204 7.75078 7.40204 8.34357V13.1565H4.68616V4.29326H7.40204V5.46874C7.677 5.07692 8.04782 4.76749 8.51365 4.53963C8.97947 4.31176 9.50331 4.19824 10.086 4.19824C11.1236 4.19824 11.9526 4.53458 12.5715 5.2064V5.20725Z" fill="#6C10BC" />
+                </svg>
+              </a>
+            </Box>
           </Box>
         </CardContent>
       </Box>
@@ -239,49 +231,46 @@ export default function ExpertCard({
         </Box>
 
         {/* LinkedIn pill — fixed width, same height */}
-        {linkedIn && (
-          <Box
-            sx={{
+        <Box
+          sx={{
+            borderRadius: "100px",
+            position: "relative",
+            width: "60px",
+            height: "36px",
+            flexShrink: 0,
+            "&::before": {
+              content: '""',
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: "#6C10BC",
+              opacity: 0.08,
               borderRadius: "100px",
-              position: "relative",
-              width: "60px",
-              height: "40px",
-              flexShrink: 0,
-              "&::before": {
-                content: '""',
-                position: "absolute",
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                backgroundColor: "#6C10BC",
-                opacity: 0.08,
-                borderRadius: "100px",
-                zIndex: 1,
-              },
+              zIndex: 1,
+            },
+          }}
+        >
+          <a
+            href={linkedIn}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              position: "absolute",
+              inset: 0,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              zIndex: 2,
             }}
           >
-            <a
-              href={linkedIn}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Open ${name}'s LinkedIn profile`}
-              style={{
-                position: "absolute",
-                inset: 0,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                zIndex: 2,
-              }}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M0.473381 2.63518C0.157227 2.34173 0 1.97849 0 1.5463C0 1.11411 0.158067 0.73489 0.473381 0.440597C0.789535 0.147146 1.1965 0 1.69512 0C2.19373 0 2.58473 0.147146 2.90004 0.440597C3.2162 0.734049 3.37342 1.10318 3.37342 1.5463C3.37342 1.98942 3.21536 2.34173 2.90004 2.63518C2.58389 2.92863 2.1828 3.07578 1.69512 3.07578C1.20743 3.07578 0.789535 2.92863 0.473381 2.63518ZM3.10773 4.31853V13.3155H0.264855V4.31853H3.10773Z" fill="#6C10BC" />
-                <path d="M12.5715 5.20725C13.1912 5.87991 13.5006 6.80316 13.5006 7.97865V13.1565H10.8007V8.34357C10.8007 7.75078 10.6468 7.29 10.3399 6.96207C10.033 6.63414 9.61934 6.46934 9.10139 6.46934C8.58343 6.46934 8.16972 6.6333 7.86282 6.96207C7.55591 7.29 7.40204 7.75078 7.40204 8.34357V13.1565H4.68616V4.29326H7.40204V5.46874C7.677 5.07692 8.04782 4.76749 8.51365 4.53963C8.97947 4.31176 9.50331 4.19824 10.086 4.19824C11.1236 4.19824 11.9526 4.53458 12.5715 5.2064V5.20725Z" fill="#6C10BC" />
-              </svg>
-            </a>
-          </Box>
-        )}
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M0.473381 2.63518C0.157227 2.34173 0 1.97849 0 1.5463C0 1.11411 0.158067 0.73489 0.473381 0.440597C0.789535 0.147146 1.1965 0 1.69512 0C2.19373 0 2.58473 0.147146 2.90004 0.440597C3.2162 0.734049 3.37342 1.10318 3.37342 1.5463C3.37342 1.98942 3.21536 2.34173 2.90004 2.63518C2.58389 2.92863 2.1828 3.07578 1.69512 3.07578C1.20743 3.07578 0.789535 2.92863 0.473381 2.63518ZM3.10773 4.31853V13.3155H0.264855V4.31853H3.10773Z" fill="#6C10BC" />
+              <path d="M12.5715 5.20725C13.1912 5.87991 13.5006 6.80316 13.5006 7.97865V13.1565H10.8007V8.34357C10.8007 7.75078 10.6468 7.29 10.3399 6.96207C10.033 6.63414 9.61934 6.46934 9.10139 6.46934C8.58343 6.46934 8.16972 6.6333 7.86282 6.96207C7.55591 7.29 7.40204 7.75078 7.40204 8.34357V13.1565H4.68616V4.29326H7.40204V5.46874C7.677 5.07692 8.04782 4.76749 8.51365 4.53963C8.97947 4.31176 9.50331 4.19824 10.086 4.19824C11.1236 4.19824 11.9526 4.53458 12.5715 5.2064V5.20725Z" fill="#6C10BC" />
+            </svg>
+          </a>
+        </Box>
       </Box>
     </Card>
   );

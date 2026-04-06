@@ -89,15 +89,11 @@ export default function TestimonialCard({ image, text, name, designation, linked
             {/* LinkedIn Icon */}
             {linkedInUrl && (
               <IconButton
-                component="a"
-                href={linkedInUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Open ${name}'s LinkedIn profile`}
+                onClick={() => window.open(linkedInUrl, "_blank")}
                 sx={{
                   padding: 0,
-                  width: 40,
-                  height: 40,
+                  width: '24px',
+                  height: '24px',
                 }}
               >
                 <Image

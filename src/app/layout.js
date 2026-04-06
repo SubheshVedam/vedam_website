@@ -96,9 +96,11 @@ export default function RootLayout({ children }) {
         </noscript>
         <EmotionCacheProvider>
           <AnnouncementBanner />
-          <Navbar />
-          <Layout>{children}</Layout>
-          <Footer />
+          <Layout>
+            <Navbar />
+            {children}
+            <Footer />
+          </Layout>
         </EmotionCacheProvider>
         <DeferredThirdPartyScripts />
       </body>

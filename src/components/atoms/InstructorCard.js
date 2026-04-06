@@ -57,7 +57,6 @@ export default function InstructorCard({
           src={imageUrl}
           alt={name}
           fill
-          sizes="(max-width: 600px) 300px, 320px"
           style={{ objectFit: "cover", objectPosition: "top" }}
         />
       </Box>
@@ -148,15 +147,8 @@ export default function InstructorCard({
               </Typography>
               {/* <span style={{ color: "#A4A4A4" }}>|</span> */}
               <Button
-                component="a"
-                href={linkedIn}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Open ${name}'s LinkedIn profile`}
                 sx={{
-                  minWidth: 40,
-                  width: 40,
-                  height: 40,
+                  width: "20px",
                   justifyContent: "center",
                   display: "flex",
                   alignItems: "center",
@@ -166,6 +158,9 @@ export default function InstructorCard({
                   // mx: 2,
                   boxShadow: "0px 0px 4px 0px rgba(0, 0, 0, 0.10)",
                 }}
+                onClick={() =>
+                  window.open(linkedIn, "_blank", "noopener,noreferrer")
+                }
               >
                 {" "}
                 <Image

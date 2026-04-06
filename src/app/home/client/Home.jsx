@@ -25,16 +25,6 @@ const SectionSkeleton = ({ height = 320 }) => (
   />
 );
 
-const deferredSectionStyle = (xsMinHeight, mdMinHeight = xsMinHeight) => ({
-  contentVisibility: {
-    xs: "visible",
-    md: "auto",
-  },
-  containIntrinsicSize: {
-    md: `${mdMinHeight}px`,
-  },
-});
-
 const InCollaborationWith = dynamic(
   () => import("@/components/home/InCollaborationWith").then((m) => m.InCollaborationWith),
   { loading: () => <SectionSkeleton height={260} /> }
@@ -121,7 +111,6 @@ const Home = () => {
       id: "students-at-vedam",
       subtitle: "Meet the Students at Vedam",
       render: () => <StudentsAtVedam />,
-      containerStyle: deferredSectionStyle(420, 560),
       titleChildContainer: {
         display: { xs: "flex", md: "none" },
       },
@@ -130,7 +119,6 @@ const Home = () => {
       id: "vedam-vs",
       subtitle: homeScreenData.vedamVs.subtitle,
       render: () => <VedamVs />,
-      containerStyle: deferredSectionStyle(420, 620),
       titleChildContainer: {
         marginBottom: { xs: "1rem", md: "2.5rem" },
       },
@@ -140,7 +128,6 @@ const Home = () => {
       id: "founder-video",
       title: homeScreenData.techTeam.title,
       subtitle: "Hear from our Co-Founder",
-      containerStyle: deferredSectionStyle(280, 640),
       render: () => (
         <PlayableVideoCard
           embedUrl="https://www.youtube.com/embed/kxkRisXZg8Y?autoplay=1&si=0YJjFMtSU96LI9Kn"
@@ -158,7 +145,6 @@ const Home = () => {
       title: homeScreenData.fromEducationToEntrance.title,
       subtitle: homeScreenData.fromEducationToEntrance.subtitle,
       render: () => <ImageGrid />,
-      containerStyle: deferredSectionStyle(220, 320),
       // linearGradientSubtitle: "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)",
     },
     {
@@ -166,44 +152,37 @@ const Home = () => {
       title: homeScreenData.instructor.title,
       subtitle: homeScreenData.instructor.subtitle,
       render: () => <Instructors />,
-      containerStyle: deferredSectionStyle(360, 420),
     },
     {
       id: "learn-from",
       title: homeScreenData.learnFrom.title,
       subtitle: homeScreenData.learnFrom.subtitle,
       render: () => <LearnFrom />,
-      containerStyle: deferredSectionStyle(360, 420),
     },
     {
       id: "speaker",
       subtitle: "Mentorship & Guidance from the Best in the Industry",
       render: () => <Speaker />,
-      containerStyle: deferredSectionStyle(540, 560),
     },
     {
       id: "what-people",
       subtitle: homeScreenData.whatPeople.subtitle,
       render: () => <WhatPeople />,
-      containerStyle: deferredSectionStyle(360, 420),
     },
     {
       id: "recognition-awards",
       subtitle: homeScreenData.Recognitionawards.subtitle,
       render: () => <RecognitionAwards />,
-      containerStyle: deferredSectionStyle(340, 420),
     },
     {
       id: "investors",
       subtitle: homeScreenData.investorWhoTrustUs.subtitle,
       render: () => <InvestorWhoTrustUs />,
-      containerStyle: deferredSectionStyle(220, 280),
     },
     {
       id: "news",
       subtitle: homeScreenData.intheHeadlines.subtitle,
       render: () => <NewsSection />,
-      containerStyle: deferredSectionStyle(360, 420),
     },
   ];
 
@@ -222,7 +201,6 @@ const Home = () => {
           title={homeScreenData.hero.title}
           subtitle={homeScreenData.hero.subtitle}
           videoUrl={homeScreenData.hero.background_video}
-          posterImageUrl="/img/optimized/video_thumbnail_1280.jpg"
         />
         <SectionStack
           widthContainerProps={{
@@ -234,14 +212,7 @@ const Home = () => {
           sections={heroSections}
         />
       </Box>
-      <Box
-        sx={{
-          width: "100%",
-          ...deferredSectionStyle(960, 780),
-        }}
-      >
-        <AIFirstCurriculum />
-      </Box>
+      <AIFirstCurriculum />
       <Box
         sx={{
           display: "flex",

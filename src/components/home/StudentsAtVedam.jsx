@@ -52,7 +52,6 @@ export const StudentsAtVedam = () => {
                                 alt="Student success story at Vedam"
                                 width={2560}
                                 height={846}
-                                sizes="(max-width: 899px) 0px, 100vw"
                                 style={{ width: "100%", height: "auto" }}
                             />
                         </Box>
@@ -70,7 +69,6 @@ export const StudentsAtVedam = () => {
                                 alt="Student success story at Vedam"
                                 width={1991}
                                 height={2560}
-                                sizes="100vw"
                                 style={{ width: "100%", height: "auto" }}
                             />
                         </Box>
@@ -108,7 +106,6 @@ export const StudentsAtVedam = () => {
                                         alt="Students at Vedam"
                                         width={1200}
                                         height={400}
-                                        sizes="(max-width: 899px) 0px, 100vw"
                                         style={{ width: "100%", height: "auto" }}
                                     />
                                 </Box>
@@ -124,7 +121,6 @@ export const StudentsAtVedam = () => {
                                         alt="Students at Vedam"
                                         width={400}
                                         height={600}
-                                        sizes="100vw"
                                         style={{ width: "100%", height: "auto" }}
                                     />
                                 </Box>
@@ -178,10 +174,11 @@ export const StudentsAtVedam = () => {
                         handleSlideChange((activeSlide - 1 + totalSlides) % totalSlides)
                     }
                     aria-label="Previous slide"
+                    size="small"
                     sx={{
                         border: "1px solid #D9D9D9",
-                        width: 44,
-                        height: 44,
+                        width: 34,
+                        height: 34,
                         color: "#1C1C1C",
                     }}
                 >
@@ -197,24 +194,14 @@ export const StudentsAtVedam = () => {
                             onClick={() => handleSlideChange(slideIndex)}
                             aria-label={`Go to slide ${slideIndex + 1}`}
                             sx={{
-                                width: 28,
-                                height: 28,
+                                width: 10,
+                                height: 10,
                                 borderRadius: "50%",
                                 border: "none",
                                 padding: 0,
                                 cursor: "pointer",
-                                backgroundColor: "transparent",
-                                display: "inline-flex",
-                                alignItems: "center",
-                                justifyContent: "center",
-                                "&::before": {
-                                    content: '""',
-                                    width: 10,
-                                    height: 10,
-                                    borderRadius: "50%",
-                                    backgroundColor:
-                                        activeSlide === slideIndex ? "#FB7F05" : "#D0D0D0",
-                                },
+                                backgroundColor:
+                                    activeSlide === slideIndex ? "#FB7F05" : "#D0D0D0",
                             }}
                         />
                     ))}
@@ -223,10 +210,11 @@ export const StudentsAtVedam = () => {
                 <IconButton
                     onClick={() => handleSlideChange((activeSlide + 1) % totalSlides)}
                     aria-label="Next slide"
+                    size="small"
                     sx={{
                         border: "1px solid #D9D9D9",
-                        width: 44,
-                        height: 44,
+                        width: 34,
+                        height: 34,
                         color: "#1C1C1C",
                     }}
                 >
