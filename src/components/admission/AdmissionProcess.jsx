@@ -10,7 +10,9 @@ import {
 } from "@mui/material";
 import { admissionScreenData } from "@/constants/data";
 
-export const AdmissionProcess = () => {
+export const AdmissionProcess = ({ rightSideSteps }) => {
+  const steps =
+    rightSideSteps ?? admissionScreenData.admissionProcess.rightSideArray;
   const [activeStep, setActiveStep] = useState(0);
   const containerRef = useRef(null);
   const stepRefs = useRef([]);
@@ -20,10 +22,10 @@ export const AdmissionProcess = () => {
 
   // Initialize step refs array
   useEffect(() => {
-    stepRefs.current = Array(admissionScreenData.admissionProcess.rightSideArray.length)
+    stepRefs.current = Array(steps.length)
       .fill()
       .map((_, i) => stepRefs.current[i] || null);
-  }, []);
+  }, [steps.length]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -167,7 +169,7 @@ export const AdmissionProcess = () => {
           paddingRight: { xs: "0px", md: "20px", lg: "40px" },
         }}
       >
-        {admissionScreenData.admissionProcess.rightSideArray.map((item, index) => (
+        {steps.map((item, index) => (
           <Box
             key={item.id}
             ref={el => (stepRefs.current[index] = el)}
@@ -184,9 +186,7 @@ export const AdmissionProcess = () => {
             }}
           >
             {/* Vertical line between steps */}
-            {item.id !==
-              admissionScreenData.admissionProcess.rightSideArray.length -
-              1 && (
+            {item.id !== steps.length - 1 && (
                 <Box
                   sx={{
                     position: "absolute",

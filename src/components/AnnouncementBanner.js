@@ -1,44 +1,55 @@
 "use client";
 import { Box, Typography, Stack } from "@mui/material";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 
-export default function AnnouncementBanner() {
-  const targetDate = new Date("2026-04-13T23:59:59").getTime();
+/** Used only when the sheet is missing or the closing date is not parseable. */
+const FALLBACK_CLOSING_END_MS = new Date("2026-04-13T23:59:59").getTime();
+
+export default function AnnouncementBanner({ applicationClosingEndMs }) {
+  const targetDate = useMemo(() => {
+    if (
+      typeof applicationClosingEndMs === "number" &&
+      !Number.isNaN(applicationClosingEndMs)
+    ) {
+      return applicationClosingEndMs;
+    }
+    return FALLBACK_CLOSING_END_MS;
+  }, [applicationClosingEndMs]);
 
   const [timeLeft, setTimeLeft] = useState(null);
 
-  function calculateTimeLeft() {
-    const now = new Date().getTime();
-    const difference = targetDate - now;
-
-    return {
-      days: String(
-        Math.max(0, Math.floor(difference / (1000 * 60 * 60 * 24)))
-      ).padStart(2, "0"),
-      hours: String(
-        Math.max(
-          0,
-          Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-        )
-      ).padStart(2, "0"),
-      minutes: String(
-        Math.max(0, Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)))
-      ).padStart(2, "0"),
-      seconds: String(
-        Math.max(0, Math.floor((difference % (1000 * 60)) / 1000))
-      ).padStart(2, "0"),
-      expired: difference < 0,
-    };
-  }
-
   useEffect(() => {
+    function calculateTimeLeft() {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      return {
+        days: String(
+          Math.max(0, Math.floor(difference / (1000 * 60 * 60 * 24)))
+        ).padStart(2, "0"),
+        hours: String(
+          Math.max(
+            0,
+            Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+          )
+        ).padStart(2, "0"),
+        minutes: String(
+          Math.max(0, Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)))
+        ).padStart(2, "0"),
+        seconds: String(
+          Math.max(0, Math.floor((difference % (1000 * 60)) / 1000))
+        ).padStart(2, "0"),
+        expired: difference < 0,
+      };
+    }
+
     setTimeLeft(calculateTimeLeft());
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [targetDate]);
 
   const timerSegments =
     timeLeft && !timeLeft.expired
@@ -112,7 +123,7 @@ export default function AnnouncementBanner() {
           variant="body2"
           component="span"
           sx={{ fontSize: { xs: 11, sm: 16 } }}>
-          <strong>Admissions for April Intake closes in</strong>
+          <strong>Admissions close in</strong>
         </Typography>
         {timerItems ? (
           <Stack
