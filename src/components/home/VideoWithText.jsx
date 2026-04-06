@@ -88,7 +88,7 @@ export const VideoWithText = ({ title, subtitle, isImg, videoUrl, imageUrl }) =>
           sx={{
             fontWeight: "bold",
             whiteSpace: "pre-line",
-            fontFamily: "Inter",
+            fontFamily: "var(--font-inter), sans-serif",
             fontSize: {
               xs: "1.75rem",
               sm: "2.25rem",
@@ -104,19 +104,6 @@ export const VideoWithText = ({ title, subtitle, isImg, videoUrl, imageUrl }) =>
             marginBottom: { xs: "1rem", md: "1.5rem" },
             textAlign: "center",
             maxWidth: "100%",
-            animation: "slideDownFadeIn 1.2s ease-out forwards",
-            opacity: 0,
-            transform: "translateY(-50px)",
-            "@keyframes slideDownFadeIn": {
-              "0%": {
-                opacity: 0,
-                transform: "translateY(-100px)",
-              },
-              "100%": {
-                opacity: 1,
-                transform: "translateY(0)",
-              },
-            },
           }}
         >
           {title}
@@ -126,7 +113,7 @@ export const VideoWithText = ({ title, subtitle, isImg, videoUrl, imageUrl }) =>
           variant="subtitle1"
           sx={{
             marginBottom: { xs: "1.5rem", md: "2rem" },
-            fontFamily: "Inter",
+            fontFamily: "var(--font-inter), sans-serif",
             fontSize: {
               xs: "1rem",
               sm: "1.125rem",

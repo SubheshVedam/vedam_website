@@ -37,7 +37,7 @@ const Faqs = () => {
         <Typography
           component="h1"
           variant="h1"
-          fontFamily={"Inter"}
+          fontFamily={"var(--font-inter), sans-serif"}
           sx={{
             fontWeight: "700",
             background: "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)",
@@ -62,7 +62,7 @@ const Faqs = () => {
           <Typography
             component="h2"
             variant="h2"
-            fontFamily={"Inter"}
+            fontFamily={"var(--font-inter), sans-serif"}
             sx={{
               fontWeight: "700",
               background: "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)",
@@ -115,7 +115,7 @@ const Faqs = () => {
                     sx={{
                       fontSize: "clamp(14px, 2vw, 20px)",
                       color: "#1E1E1E",
-                      fontFamily: "Inter",
+                      fontFamily: "var(--font-inter), sans-serif",
                       lineHeight: "120%",
                       textAlign: "left",
                       textTransform: "none",
@@ -146,7 +146,7 @@ const Faqs = () => {
                       variant="body1"
                       sx={{
                         fontSize: { xs: 11, sm: 18 },
-                        fontFamily: "Inter",
+                        fontFamily: "var(--font-inter), sans-serif",
                         lineHeight: 1.6,
                         color: "#1E1E1E",
                         whiteSpace: "pre-line",

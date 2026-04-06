@@ -176,7 +176,7 @@ export default function Navbar() {
                           textTransform: "none",
                           // whiteSpace: "nowrap",
                           transition: "all 0.3s ease-in-out",
-                          fontFamily: "Inter",
+                          fontFamily: "var(--font-inter), sans-serif",
                           zIndex: "1",
                           "&:hover": activeStyle,
                           ...(isCampusLinkActive(link) && activeStyle),
@@ -270,7 +270,7 @@ export default function Navbar() {
                             </Box>
                             <Typography
                               sx={{
-                                fontFamily: "Inter",
+                                fontFamily: "var(--font-inter), sans-serif",
                                 fontSize: "16px",
                                 fontWeight: 600,
                                 lineHeight: "120%",
@@ -281,7 +281,7 @@ export default function Navbar() {
                             </Typography>
                             <Typography
                               sx={{
-                                fontFamily: "Inter",
+                                fontFamily: "var(--font-inter), sans-serif",
                                 fontSize: "13px",
                                 fontWeight: 400,
                                 lineHeight: "120%",
@@ -310,7 +310,7 @@ export default function Navbar() {
                         textTransform: "none",
                         // whiteSpace: "nowrap",
                         transition: "all 0.3s ease-in-out",
-                        fontFamily: "Inter",
+                        fontFamily: "var(--font-inter), sans-serif",
                         zIndex: "1",
                         "&:hover": activeStyle,
                         ...(isActive(link.path) && activeStyle),
@@ -329,7 +329,7 @@ export default function Navbar() {
                         >
                           <Typography
                             sx={{
-                              fontFamily: "Inter",
+                              fontFamily: "var(--font-inter), sans-serif",
                               fontSize: "0.5rem",
                               fontStyle: "italic",
                               fontWeight: 600,
@@ -383,7 +383,7 @@ export default function Navbar() {
                     paddingX: "20px",
                     paddingY: "10px",
                     borderRadius: "8px",
-                    fontFamily: "Inter",
+                    fontFamily: "var(--font-inter), sans-serif",
                     "&:hover": activeStyle,
                     ...(isActive(navLinks[navLinks.length - 2].path) && {
                       ...activeStyle,
@@ -411,7 +411,7 @@ export default function Navbar() {
                     paddingX: "20px",
                     paddingY: "10px",
                     borderRadius: "8px",
-                    fontFamily: "Inter",
+                    fontFamily: "var(--font-inter), sans-serif",
                     "&:hover": activeStyle,
                     ...(isActive(navLinks[navLinks.length - 1].path) && {
                       ...activeStyle,

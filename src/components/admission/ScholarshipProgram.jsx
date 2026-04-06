@@ -28,7 +28,7 @@ export const ScholarshipProgram = () => {
         sx={{
           fontSize: { xs: "14px", md: "16px" },
           color: "#1E1E1E",
-          fontFamily: "Inter",
+          fontFamily: "var(--font-inter), sans-serif",
           fontWeight: 400,
           lineHeight: "150%",
           marginBottom: { xs: "12px", md: "16px" },
@@ -63,7 +63,7 @@ export const ScholarshipProgram = () => {
             <Box sx={{ flex: 1, minWidth: 0 }}>
               <Typography
                 sx={{
-                  fontFamily: "Inter",
+                  fontFamily: "var(--font-inter), sans-serif",
                   fontWeight: 700,
                   color: "white",
                   fontSize: "10px",
@@ -76,7 +76,7 @@ export const ScholarshipProgram = () => {
               </Typography>
               <Typography
                 sx={{
-                  fontFamily: "Inter",
+                  fontFamily: "var(--font-inter), sans-serif",
                   fontWeight: 500,
                   color: "white",
                   fontSize: "8px",
@@ -134,7 +134,7 @@ export const ScholarshipProgram = () => {
             <Box sx={{ position: "relative", zIndex: 1, textAlign: "center" }}>
               <Typography
                 sx={{
-                  fontFamily: "Inter",
+                  fontFamily: "var(--font-inter), sans-serif",
                   fontWeight: 700,
                   color: "white",
                   fontSize: "18px",
@@ -147,7 +147,7 @@ export const ScholarshipProgram = () => {
               </Typography>
               <Typography
                 sx={{
-                  fontFamily: "Inter",
+                  fontFamily: "var(--font-inter), sans-serif",
                   fontWeight: 600,
                   color: "#F97D03",
                   fontSize: "18px",
@@ -160,7 +160,7 @@ export const ScholarshipProgram = () => {
               </Typography>
               <Typography
                 sx={{
-                  fontFamily: "Inter",
+                  fontFamily: "var(--font-inter), sans-serif",
                   fontWeight: 500,
                   color: "white",
                   fontSize: "16px",

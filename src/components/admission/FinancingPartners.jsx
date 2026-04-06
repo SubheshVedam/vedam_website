@@ -51,7 +51,7 @@ const ToggleButton = ({ selectedPartner, setSelectedPartner }) => {
                             justifyContent: "center",
                             color: selectedPartner === type ? "#fff" : "#6513AC",
                             fontWeight: 600,
-                            fontFamily: "Inter",
+                            fontFamily: "var(--font-inter), sans-serif",
                             height: "100%",
                             fontSize: { xs: "0.85rem", sm: "0.9rem", md: "0.95rem" },
                             px: { xs: 1, sm: 0 },
@@ -107,7 +107,7 @@ const FinancingTable = ({ data }) => {
                                 color: "#1E1E1E",
                                 lineHeight: 1.4,
                                 textAlign: { xs: "left", md: "center" },
-                                fontFamily: "Inter",
+                                fontFamily: "var(--font-inter), sans-serif",
                             }}
                         >
                             {row.label}
@@ -130,7 +130,7 @@ const FinancingTable = ({ data }) => {
                                 color: "#333",
                                 lineHeight: 1.4,
                                 textAlign: { xs: "left", md: "center" },
-                                fontFamily: "Inter",
+                                fontFamily: "var(--font-inter), sans-serif",
                             }}
                         >
                             {row.value}

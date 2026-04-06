@@ -97,7 +97,7 @@ const STEP = Math.round(CARD_W / 2 + (CARD_W * SIDE_SCALE) / 2 + VISIBLE_GAP);
 const INNER_GRADIENT = "linear-gradient(111deg, #FFF 41.85%, #8A18FF 173.62%)";
 
 const sectionHeading = {
-  fontFamily: "Inter, sans-serif",
+  fontFamily: "var(--font-inter), sans-serif",
   fontWeight: 700,
   fontSize: { xs: "24px", md: "36px" },
   background: "linear-gradient(90deg, #FB7F05 0%, #6C10BC 42.11%)",
@@ -170,7 +170,7 @@ function StaticAuthorPills({ authors }) {
         >
           <PersonIcon sx={{ fontSize: 11, color: "#6C10BC" }} />
           <Typography sx={{
-            fontFamily: "Inter, sans-serif", fontWeight: 500,
+            fontFamily: "var(--font-inter), sans-serif", fontWeight: 500,
             fontSize: "11px", color: "#1E1E1E", whiteSpace: "nowrap",
           }}>
             {name}
@@ -239,7 +239,7 @@ function MarqueeAuthorScroll({ authors }) {
           >
             <PersonIcon sx={{ fontSize: 11, color: "#6C10BC" }} />
             <Typography sx={{
-              fontFamily: "Inter, sans-serif", fontWeight: 500,
+              fontFamily: "var(--font-inter), sans-serif", fontWeight: 500,
               fontSize: "11px", color: "#1E1E1E", whiteSpace: "nowrap",
             }}>
               {name}
@@ -290,7 +290,7 @@ function AuthorCarousel({ authors }) {
       }}>
         <PersonIcon sx={{ fontSize: 15, color: "#6C10BC", flexShrink: 0 }} />
         <Typography sx={{
-          fontFamily: "Inter, sans-serif", fontWeight: 500, fontSize: "13px",
+          fontFamily: "var(--font-inter), sans-serif", fontWeight: 500, fontSize: "13px",
           color: "#1E1E1E", whiteSpace: "nowrap",
         }}>
           {authors[idx]}
@@ -302,7 +302,7 @@ function AuthorCarousel({ authors }) {
         </IconButton>
       )}
       {n > 1 && (
-        <Typography sx={{ fontFamily: "Inter, sans-serif", fontSize: "11px", color: "rgba(108,16,188,0.5)" }}>
+        <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "11px", color: "rgba(108,16,188,0.5)" }}>
           {idx + 1}/{n}
         </Typography>
       )}
@@ -341,7 +341,7 @@ function DesktopCenterCard({ project }) {
         <Box sx={{ display: "flex", gap: "20px", alignItems: "flex-start" }}>
           <Box sx={{ flex: 1 }}>
             <Typography sx={{
-              fontFamily: "Inter, sans-serif", fontWeight: 700,
+              fontFamily: "var(--font-inter), sans-serif", fontWeight: 700,
               fontSize: "24px", color: "#6C10BC", mb: "14px",
             }}>
               {project.name}
@@ -350,7 +350,7 @@ function DesktopCenterCard({ project }) {
               text={`• ${project.desc}`}
               highlights={project.highlightWords}
               sx={{
-                fontFamily: "Inter, sans-serif", fontWeight: 400,
+                fontFamily: "var(--font-inter), sans-serif", fontWeight: 400,
                 fontSize: "14px", color: "#1E1E1E", lineHeight: 1.85,
               }}
             />
@@ -401,7 +401,7 @@ function DesktopSideCard({ project }) {
         <Box sx={{ display: "flex", gap: "20px", alignItems: "flex-start" }}>
           <Box sx={{ flex: 1 }}>
             <Typography sx={{
-              fontFamily: "Inter, sans-serif", fontWeight: 700,
+              fontFamily: "var(--font-inter), sans-serif", fontWeight: 700,
               fontSize: "24px", color: "#6C10BC", mb: "14px",
             }}>
               {project.name}
@@ -410,7 +410,7 @@ function DesktopSideCard({ project }) {
               text={`• ${project.desc}`}
               highlights={project.highlightWords}
               sx={{
-                fontFamily: "Inter, sans-serif", fontWeight: 400,
+                fontFamily: "var(--font-inter), sans-serif", fontWeight: 400,
                 fontSize: "14px", color: "#1E1E1E", lineHeight: 1.85,
               }}
             />
@@ -488,7 +488,7 @@ function MobileCard({ project, onPrev, onNext, current, total }) {
 
           {/* Title — centered */}
           <Typography sx={{
-            fontFamily: "Inter, sans-serif",
+            fontFamily: "var(--font-inter), sans-serif",
             fontWeight: 700,
             fontSize: "18px",
             color: "#6C10BC",
@@ -524,7 +524,7 @@ function MobileCard({ project, onPrev, onNext, current, total }) {
             text={project.desc}
             highlights={project.highlightWords}
             sx={{
-              fontFamily: "Inter, sans-serif",
+              fontFamily: "var(--font-inter), sans-serif",
               fontWeight: 400,
               fontSize: "12px",
               color: "#1E1E1E",
@@ -569,7 +569,7 @@ function PresidentCard({ club, name, batch, img, linkedin, index }) {
         display: "flex", flexDirection: "column", alignItems: "center",
       }}>
         <Typography sx={{
-          fontFamily: "Inter, sans-serif", fontWeight: 700,
+          fontFamily: "var(--font-inter), sans-serif", fontWeight: 700,
           fontSize: { xs: "16px", md: "18px" }, color: textColor,
           lineHeight: 1.4, mb: { xs: "10px", md: "14px" },
           minHeight: { xs: "34px", md: "44px" }, textAlign: "center",
@@ -585,14 +585,14 @@ function PresidentCard({ club, name, batch, img, linkedin, index }) {
         </Box>
         <Box sx={{ height: "1px", bgcolor: dividerColor, mb: "10px", width: "100%" }} />
         <Typography sx={{
-          fontFamily: "Inter, sans-serif", fontWeight: 600,
+          fontFamily: "var(--font-inter), sans-serif", fontWeight: 600,
           fontSize: "18px", color: textColor, mb: "4px", alignSelf: "flex-start",
         }}>
           {name}
         </Typography>
         <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%" }}>
           <Typography sx={{
-            fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "14px", color: subTextColor,
+            fontFamily: "var(--font-inter), sans-serif", fontWeight: 400, fontSize: "14px", color: subTextColor,
           }}>
             {batch}
           </Typography>
@@ -673,13 +673,13 @@ function VideoCard({ title, duration, thumb, videoId }) {
         display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: "8px",
       }}>
         <Typography sx={{
-          fontFamily: "Inter, sans-serif", fontWeight: 600,
+          fontFamily: "var(--font-inter), sans-serif", fontWeight: 600,
           fontSize: { xs: "16px", md: "19px" }, color: "#1E1E1E", lineHeight: 1.4, flex: 1,
         }}>
           {title}
         </Typography>
         <Typography sx={{
-          fontFamily: "Inter, sans-serif", fontWeight: 500,
+          fontFamily: "var(--font-inter), sans-serif", fontWeight: 500,
           fontSize: "12px", color: "#848484", whiteSpace: "nowrap", mt: "2px",
         }}>
           {duration}
@@ -741,14 +741,14 @@ export default function SeekYourSeniors() {
         <Box sx={{ display: { xs: "flex", md: "none" }, flexDirection: "column", alignItems: "center", gap: "20px", position: "relative", zIndex: 1 }}>
           <Box sx={{ textAlign: "center" }}>
             <Typography sx={{
-              fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: "28px",
+              fontFamily: "var(--font-inter), sans-serif", fontWeight: 700, fontSize: "28px",
               background: "linear-gradient(90deg, #FB7F05 0%, #6C10BC 42.11%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
 
               backgroundClip: "text", lineHeight: 1.2,
             }}>Class of 2029</Typography>
-            <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 500, fontSize: "16px", color: "#1E1E1E", mt: "4px" }}>
+            <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 500, fontSize: "16px", color: "#1E1E1E", mt: "4px" }}>
               From 19 Indian States
             </Typography>
           </Box>
@@ -766,8 +766,8 @@ export default function SeekYourSeniors() {
           }}>
             {stats1.map(({ num, label }) => (
               <Box key={label} sx={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: "22px", color: "#FFF", lineHeight: 1 }}>{num}</Typography>
-                <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "11px", color: "#FFF", lineHeight: 1.3 }}>{label}</Typography>
+                <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 700, fontSize: "22px", color: "#FFF", lineHeight: 1 }}>{num}</Typography>
+                <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 400, fontSize: "11px", color: "#FFF", lineHeight: 1.3 }}>{label}</Typography>
               </Box>
             ))}
           </Box>
@@ -786,12 +786,12 @@ export default function SeekYourSeniors() {
             </Box>
             <Box sx={{ textAlign: "center", minWidth: 320 }}>
               <Typography sx={{
-                fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: "48px",
+                fontFamily: "var(--font-inter), sans-serif", fontWeight: 700, fontSize: "48px",
                 background: "linear-gradient(90deg,#6C10BC 0%,#FB7F05 100%)",
                 WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
                 backgroundClip: "text", lineHeight: 1.1,
               }}>Class of 2029</Typography>
-              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 500, fontSize: "22px", color: "#1E1E1E", mt: "6px" }}>
+              <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 500, fontSize: "22px", color: "#1E1E1E", mt: "6px" }}>
                 From 19 Indian States
               </Typography>
             </Box>
@@ -807,8 +807,8 @@ export default function SeekYourSeniors() {
           <Box sx={{ display: "flex", alignItems: "center", gap: "40px" }}>
             {stats.map(({ num, label }) => (
               <Box key={label} sx={{ display: "flex", alignItems: "center", gap: "10px", flexShrink: 0 }}>
-                <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: "32px", color: "#6C10BC", lineHeight: 1 }}>{num}</Typography>
-                <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "16px", color: "#1E1E1E", lineHeight: 1.3 }}>{label}</Typography>
+                <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 700, fontSize: "32px", color: "#6C10BC", lineHeight: 1 }}>{num}</Typography>
+                <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 400, fontSize: "16px", color: "#1E1E1E", lineHeight: 1.3 }}>{label}</Typography>
               </Box>
             ))}
           </Box>

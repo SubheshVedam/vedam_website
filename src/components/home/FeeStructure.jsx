@@ -82,7 +82,7 @@ const SingleCountText = ({ count, text, isHref }) => {
             color: "#F9F9F9",
             fontSize: { xs: "12px", md: "13px" },
             fontWeight: 700,
-            fontFamily: "Inter",
+            fontFamily: "var(--font-inter), sans-serif",
           }}
         >
           {count}
@@ -95,7 +95,7 @@ const SingleCountText = ({ count, text, isHref }) => {
             color: "rgba(30, 30, 30, 0.92)",
             fontSize: { xs: "11px", md: "12px" },
             fontWeight: 500,
-            fontFamily: "Inter",
+            fontFamily: "var(--font-inter), sans-serif",
             lineHeight: "150%",
           }}
         >
@@ -105,7 +105,7 @@ const SingleCountText = ({ count, text, isHref }) => {
               style={{
                 color: "#6C10BC",
                 fontSize: "11px",
-                fontFamily: "Inter",
+                fontFamily: "var(--font-inter), sans-serif",
                 fontWeight: 600,
                 lineHeight: "150%",
                 marginLeft: "4px",
@@ -764,7 +764,7 @@ export const FeeStructure = ({
               style={{
                 color: "#FFA41A",
                 fontSize: "inherit",
-                fontFamily: "Inter",
+                fontFamily: "var(--font-inter), sans-serif",
                 lineHeight: "150%",
                 marginLeft: "4px",
               }}
@@ -787,7 +787,7 @@ export const FeeStructure = ({
               style={{
                 color: "#FFA41A",
                 fontSize: "inherit",
-                fontFamily: "Inter",
+                fontFamily: "var(--font-inter), sans-serif",
                 lineHeight: "150%",
               }}
               href="mailto:connect@vedam.org">
@@ -1050,7 +1050,7 @@ export const FeeStructure = ({
               style={{
                 color: "#FFA41A",
                 fontSize: "inherit",
-                fontFamily: "Inter",
+                fontFamily: "var(--font-inter), sans-serif",
                 lineHeight: "150%",
               }}
               href="mailto:connect@vedam.org">
@@ -1262,7 +1262,7 @@ export const FeeStructure = ({
                 variant="body1"
                 sx={{
                   color: "white",
-                  fontFamily: "Inter",
+                  fontFamily: "var(--font-inter), sans-serif",
                   fontSize: "18px",
                   fontWeight: 600,
                 }}
@@ -1282,7 +1282,7 @@ export const FeeStructure = ({
                 variant="body1"
                 sx={{
                   color: "white",
-                  fontFamily: "Inter",
+                  fontFamily: "var(--font-inter), sans-serif",
                   fontSize: "18px",
                   fontWeight: 600,
                 }}

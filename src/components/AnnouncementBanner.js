@@ -4,6 +4,12 @@ import { useState, useEffect } from "react";
 
 export default function AnnouncementBanner() {
   const targetDate = new Date("2026-04-13T23:59:59").getTime();
+  const placeholderSegments = [
+    { label: "Days", value: "00" },
+    { label: "Hours", value: "00" },
+    { label: "Minutes", value: "00" },
+    { label: "Seconds", value: "00" },
+  ];
 
   const [timeLeft, setTimeLeft] = useState(null);
 
@@ -48,47 +54,52 @@ export default function AnnouncementBanner() {
         { label: "Minutes", value: timeLeft.minutes },
         { label: "Seconds", value: timeLeft.seconds },
       ]
-      : null;
+      : placeholderSegments;
 
-  const timerItems = timerSegments
-    ? timerSegments.flatMap(({ label, value }, index) => {
-      const content = (
-        <Stack
-          key={`segment-${label}`}
-          spacing={0.25}
-          alignItems="center"
-          sx={{
-            textAlign: "center",
-            minWidth: { xs: 42, sm: 52 },
-            lineHeight: 1.1,
-          }}>
-          <Typography
-            variant="body2"
-            sx={{ fontWeight: 700, fontSize: { xs: 13, sm: 16 }, lineHeight: 1 }}>
-            {value}
-          </Typography>
-          <Typography
-            variant="caption"
-            sx={{ fontSize: { xs: 10, sm: 11 }, lineHeight: 1 }}>
-            {label}
-          </Typography>
-        </Stack>
-      );
-      if (index === timerSegments.length - 1) {
-        return [content];
-      }
-      return [
-        content,
+  const timerItems = timerSegments.flatMap(({ label, value }, index) => {
+    const content = (
+      <Stack
+        key={`segment-${label}`}
+        spacing={0.25}
+        alignItems="center"
+        sx={{
+          textAlign: "center",
+          minWidth: { xs: 42, sm: 52 },
+          lineHeight: 1.1,
+        }}>
         <Typography
-          key={`separator-${label}`}
           variant="body2"
-          component="span"
-          sx={{ fontWeight: 700, fontSize: { xs: 16, sm: 20 } }}>
-          :
-        </Typography>,
-      ];
-    })
-    : null;
+          sx={{
+            fontWeight: 700,
+            fontSize: { xs: 13, sm: 16 },
+            lineHeight: 1,
+            fontVariantNumeric: "tabular-nums",
+          }}>
+          {value}
+        </Typography>
+        <Typography
+          variant="caption"
+          sx={{ fontSize: { xs: 10, sm: 11 }, lineHeight: 1 }}>
+          {label}
+        </Typography>
+      </Stack>
+    );
+
+    if (index === timerSegments.length - 1) {
+      return [content];
+    }
+
+    return [
+      content,
+      <Typography
+        key={`separator-${label}`}
+        variant="body2"
+        component="span"
+        sx={{ fontWeight: 700, fontSize: { xs: 16, sm: 20 } }}>
+        :
+      </Typography>,
+    ];
+  });
 
   return (
     <Box
@@ -97,6 +108,7 @@ export default function AnnouncementBanner() {
         color: "white",
         opacity: 0.95,
         py: 1,
+        minHeight: { xs: 74, sm: 58 },
         position: "sticky",
         top: 0,
         zIndex: 11000,
@@ -111,26 +123,30 @@ export default function AnnouncementBanner() {
         <Typography
           variant="body2"
           component="span"
-          sx={{ fontSize: { xs: 11, sm: 16 } }}>
+          sx={{ fontSize: { xs: 11, sm: 16 }, minHeight: { xs: 16, sm: 24 } }}>
           <strong>Admissions for April Intake closes in</strong>
         </Typography>
-        {timerItems ? (
-          <Stack
-            direction="row"
-            spacing={{ xs: 0.4, sm: 0.6 }}
-            alignItems="center"
-            justifyContent="center"
-            sx={{ flexWrap: { xs: "wrap", sm: "nowrap" }, rowGap: 0.5 }}>
-            {timerItems}
-          </Stack>
-        ) : timeLeft?.expired ? (
+        {timeLeft?.expired ? (
           <Typography
             variant="body2"
             component="span"
             sx={{ fontWeight: 600, fontSize: { xs: 13, sm: 16 } }}>
             Admissions window closed
           </Typography>
-        ) : null}
+        ) : (
+          <Stack
+            direction="row"
+            spacing={{ xs: 0.4, sm: 0.6 }}
+            alignItems="center"
+            justifyContent="center"
+            sx={{
+              flexWrap: { xs: "wrap", sm: "nowrap" },
+              rowGap: 0.5,
+              visibility: timeLeft ? "visible" : "hidden",
+            }}>
+            {timerItems}
+          </Stack>
+        )}
       </Stack>
     </Box>
   );

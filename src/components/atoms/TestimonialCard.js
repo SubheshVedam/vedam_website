@@ -67,7 +67,7 @@ export default function TestimonialCard({ image, text, name, designation, linked
                     color: "#6C10BC",
                     fontWeight: 700,
                     fontSize: { xs: 14, sm: 16 },
-                    fontFamily: "Inter",
+                    fontFamily: "var(--font-inter), sans-serif",
                   }}
                 >
                   {name}
@@ -77,7 +77,7 @@ export default function TestimonialCard({ image, text, name, designation, linked
                   sx={{
                     color: "#000",
                     fontSize: { xs: 10, sm: 12 },
-                    fontFamily: "Inter",
+                    fontFamily: "var(--font-inter), sans-serif",
                     fontWeight: 500,
                   }}
                 >
@@ -113,7 +113,7 @@ export default function TestimonialCard({ image, text, name, designation, linked
             sx={{
               color: "text.primary",
               fontSize: { xs: 14, sm: 16 },
-              fontFamily: "Inter",
+              fontFamily: "var(--font-inter), sans-serif",
             }}
           >
             {text}

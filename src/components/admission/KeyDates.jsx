@@ -18,7 +18,7 @@ export const KeyDates = () => {
       >
         <Typography
           sx={{
-            fontFamily: "Inter",
+            fontFamily: "var(--font-inter), sans-serif",
             fontWeight: "700",
             fontSize: "clamp(14px, 2vw, 20px)",
             lineHeight: "100%",
@@ -56,7 +56,7 @@ export const KeyDates = () => {
                   fontWeight: "400",
                   lineHeight: "100%",
                   color: "#1E1E1E",
-                  fontFamily: "Inter",
+                  fontFamily: "var(--font-inter), sans-serif",
                 }}
               >
                 {item}
@@ -91,7 +91,7 @@ export const KeyDates = () => {
                   fontWeight: "200",
                   lineHeight: "150%",
                   color: "#1E1E1E",
-                  fontFamily: "Inter",
+                  fontFamily: "var(--font-inter), sans-serif",
                 }}
               >
                 {item}
@@ -135,7 +135,7 @@ export const KeyDates = () => {
                     fontWeight: "400",
                     lineHeight: "150%",
                     color: "#1E1E1E",
-                    fontFamily: "Inter",
+                    fontFamily: "var(--font-inter), sans-serif",
                     textAlign: "center",
                   }}
                 >
@@ -156,7 +156,7 @@ export const KeyDates = () => {
                     fontWeight: "200",
                     lineHeight: "150%",
                     color: "#1E1E1E",
-                    fontFamily: "Inter",
+                    fontFamily: "var(--font-inter), sans-serif",
                   }}
                 >
                   {admissionScreenData.keyDates.secondArray[index]}
