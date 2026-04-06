@@ -463,7 +463,7 @@ export const ClubsAtVst = () => {
                   sx={{
                     fontSize: "18px",
                     fontWeight: "500",
-                    fontFamily: "var(--font-inter), sans-serif",
+                    fontFamily: "Inter",
                     color: activeIndex === index ? "#6C10BC" : "#000",
                     margin: 0,
                   }}
@@ -488,7 +488,7 @@ export const ClubsAtVst = () => {
                     fontSize: "14px",
                     lineHeight: "150%",
                     fontWeight: "400",
-                    fontFamily: "var(--font-inter), sans-serif",
+                    fontFamily: "Inter",
                     color: "#555",
                   }}
                 >
@@ -544,7 +544,7 @@ export const ClubsAtVst = () => {
                     sx={{
                       fontSize: "18px",
                       fontWeight: "600",
-                      fontFamily: "var(--font-inter), sans-serif",
+                      fontFamily: "Inter",
                       color: activeIndex === index ? "#6C10BC" : "#000",
                       margin: 0,
                     }}
@@ -569,7 +569,7 @@ export const ClubsAtVst = () => {
                       fontSize: "14px",
                       lineHeight: "150%",
                       fontWeight: "400",
-                      fontFamily: "var(--font-inter), sans-serif",
+                      fontFamily: "Inter",
                       color: "#555",
                     }}
                   >

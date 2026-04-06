@@ -13,7 +13,7 @@ const gradientText = {
   WebkitBackgroundClip: "text",
   WebkitTextFillColor: "transparent",
   backgroundClip: "text",
-  fontFamily: "var(--font-inter), sans-serif",
+  fontFamily: "Inter, sans-serif",
   fontWeight: 700,
   fontSize: { xs: "20px", md: "36px" },
   lineHeight: 1.2,
@@ -22,7 +22,7 @@ const gradientText = {
 };
 
 const sectionDescriptionText = {
-  fontFamily: "var(--font-inter), sans-serif",
+  fontFamily: "Inter, sans-serif",
   fontWeight: { xs: 400, md: 400 },
   fontSize: { xs: "10px", md: "16px" },
   color: "#1E1E1E",
@@ -48,8 +48,8 @@ function StatsTile({ stats }) {
     >
       {stats.map(({ num, label }) => (
         <Box key={label}>
-          <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 700, color: "#FF9900", fontSize: { xs: "10px", md: "24px" }, lineHeight: 1.5 }}>{num}</Typography>
-          <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 600, fontSize: { xs: "10px", md: "16px" }, color: "#F9F9F9", lineHeight: 1.5, letterSpacing: { xs: "-0.2px", md: "-0.32px" } }}>{label}</Typography>
+          <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, color: "#FF9900", fontSize: { xs: "10px", md: "24px" }, lineHeight: 1.5 }}>{num}</Typography>
+          <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: { xs: "10px", md: "16px" }, color: "#F9F9F9", lineHeight: 1.5, letterSpacing: { xs: "-0.2px", md: "-0.32px" } }}>{label}</Typography>
         </Box>
       ))}
     </Box>
@@ -72,7 +72,7 @@ function SemAccordion({ item, isOpen, onToggle }) {
           borderRadius: isOpen ? "8px 8px 0 0" : "8px",
         }}
       >
-        <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 700, fontSize: "16px", letterSpacing: "-0.32px", color: isFirst ? "#F9F9F9" : "#1F1F1F", lineHeight: 1.5 }}>
+        <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: "16px", letterSpacing: "-0.32px", color: isFirst ? "#F9F9F9" : "#1F1F1F", lineHeight: 1.5 }}>
           {item.sem}
         </Typography>
         {isOpen
@@ -90,13 +90,13 @@ function SemAccordion({ item, isOpen, onToggle }) {
                 px: "10px", py: "8px", borderBottom: "0.5px solid rgba(31,31,31,0.2)",
               }}
             >
-              <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: isSubTotal ? 700 : 500, fontSize: "12px", color: isSubTotal ? "#6C10BC" : "#1F1F1F", letterSpacing: "-0.24px", lineHeight: 1.5 }}>{label}</Typography>
-              <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: isSubTotal ? 700 : 500, fontSize: "12px", color: isSubTotal ? "#6C10BC" : "#1F1F1F", letterSpacing: "-0.24px", lineHeight: 1.5 }}>{value}</Typography>
+              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: isSubTotal ? 700 : 500, fontSize: "12px", color: isSubTotal ? "#6C10BC" : "#1F1F1F", letterSpacing: "-0.24px", lineHeight: 1.5 }}>{label}</Typography>
+              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: isSubTotal ? 700 : 500, fontSize: "12px", color: isSubTotal ? "#6C10BC" : "#1F1F1F", letterSpacing: "-0.24px", lineHeight: 1.5 }}>{value}</Typography>
             </Box>
           ))}
           <Box sx={{ bgcolor: "rgba(108,16,188,0.08)", display: "flex", justifyContent: "space-between", px: "10px", py: "8px" }}>
-            <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 700, fontSize: "12px", color: "#6C10BC", letterSpacing: "-0.24px", lineHeight: 1.5 }}>Total</Typography>
-            <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 500, fontSize: "12px", color: "#6C10BC", letterSpacing: "-0.24px", lineHeight: 1.5 }}>{item.total}</Typography>
+            <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: "12px", color: "#6C10BC", letterSpacing: "-0.24px", lineHeight: 1.5 }}>Total</Typography>
+            <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 500, fontSize: "12px", color: "#6C10BC", letterSpacing: "-0.24px", lineHeight: 1.5 }}>{item.total}</Typography>
           </Box>
         </Box>
       )}
@@ -124,12 +124,12 @@ function RoomTypeCards({ roomTypes, notes }) {
           {/* Header */}
           <Box sx={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
             <Box sx={{ bgcolor: "rgba(108,16,188,0.08)", p: { xs: "10px 14px", md: "14px 20px" }, borderRight: "0.5px solid rgba(108,16,188,0.2)" }}>
-              <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 700, fontSize: { xs: "12px", md: "14px" }, color: "#6C10BC" }}>
+              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: { xs: "12px", md: "14px" }, color: "#6C10BC" }}>
                 Room Type
               </Typography>
             </Box>
             <Box sx={{ bgcolor: "#6C10BC", p: { xs: "10px 14px", md: "14px 20px" } }}>
-              <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 700, fontSize: { xs: "12px", md: "14px" }, color: "#fff" }}>
+              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: { xs: "12px", md: "14px" }, color: "#fff" }}>
                 {type}
               </Typography>
             </Box>
@@ -139,12 +139,12 @@ function RoomTypeCards({ roomTypes, notes }) {
           {rows.map(({ label, value }, i) => (
             <Box key={i} sx={{ display: "grid", gridTemplateColumns: "1fr 1fr", borderTop: "0.5px solid rgba(108,16,188,0.15)" }}>
               <Box sx={{ bgcolor: "rgba(108,16,188,0.04)", p: { xs: "10px 14px", md: "12px 20px" }, borderRight: "0.5px solid rgba(108,16,188,0.15)" }}>
-                <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 500, fontSize: { xs: "10px", md: "12px" }, color: "#1F1F1F", whiteSpace: "pre-line", lineHeight: 1.6 }}>
+                <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 500, fontSize: { xs: "10px", md: "12px" }, color: "#1F1F1F", whiteSpace: "pre-line", lineHeight: 1.6 }}>
                   {label}
                 </Typography>
               </Box>
               <Box sx={{ p: { xs: "10px 14px", md: "12px 20px" } }}>
-                <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 500, fontSize: { xs: "10px", md: "12px" }, color: "#1F1F1F", lineHeight: 1.6 }}>
+                <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 500, fontSize: { xs: "10px", md: "12px" }, color: "#1F1F1F", lineHeight: 1.6 }}>
                   {value}
                 </Typography>
               </Box>
@@ -173,7 +173,7 @@ function RoomTypeCards({ roomTypes, notes }) {
               px: "10px", py: "4px", width: "fit-content", mb: "4px",
             }}
           >
-            <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 700, fontSize: { xs: "11px", md: "13px" }, color: "#6C10BC", letterSpacing: "-0.24px" }}>
+            <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: { xs: "11px", md: "13px" }, color: "#6C10BC", letterSpacing: "-0.24px" }}>
               Note
             </Typography>
           </Box>
@@ -190,11 +190,11 @@ function RoomTypeCards({ roomTypes, notes }) {
                   flexShrink: 0, mt: "1px",
                 }}
               >
-                <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 700, fontSize: { xs: "9px", md: "11px" }, color: "#fff", lineHeight: 1 }}>
+                <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: { xs: "9px", md: "11px" }, color: "#fff", lineHeight: 1 }}>
                   {i + 1}
                 </Typography>
               </Box>
-              <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 400, fontSize: { xs: "10px", md: "12px" }, color: "#1F1F1F", lineHeight: 1.7 }}>
+              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: { xs: "10px", md: "12px" }, color: "#1F1F1F", lineHeight: 1.7 }}>
                 {note}
               </Typography>
             </Box>
@@ -235,7 +235,7 @@ function MultiTypeHostelSection({ hostelFees }) {
             sx={{
               pb: "10px", cursor: "pointer",
               borderBottom: activeTab === type ? "2px solid #6C10BC" : "2px solid transparent",
-              fontFamily: "var(--font-inter), sans-serif", fontWeight: 600,
+              fontFamily: "Inter, sans-serif", fontWeight: 600,
               fontSize: { xs: "12px", md: "15px" },
               color: activeTab === type ? "#6C10BC" : "#848484",
               transition: "color 0.2s",
@@ -250,7 +250,7 @@ function MultiTypeHostelSection({ hostelFees }) {
         <>
           {/* Hostel title */}
           <Typography sx={{
-            fontFamily: "var(--font-inter), sans-serif", fontWeight: 700,
+            fontFamily: "Inter, sans-serif", fontWeight: 700,
             fontSize: { xs: "13px", md: "16px" }, color: "#6C10BC",
           }}>
             {activeHostel.title}
@@ -269,7 +269,7 @@ function MultiTypeHostelSection({ hostelFees }) {
 function HostelFeeSection({ hostelFees, hostelPlaceholder }) {
   if (!hostelFees) {
     return (
-      <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "14px", color: "#848484", mt: "16px" }}>
+      <Typography sx={{ fontFamily: "Inter, sans-serif", fontSize: "14px", color: "#848484", mt: "16px" }}>
         {hostelPlaceholder}
       </Typography>
     );
@@ -345,7 +345,7 @@ export default function ProgramPage({ config }) {
           {/* Co-brand logos */}
           <Box sx={{ display: "flex", alignItems: "center", gap: { xs: "8px", md: "16px" } }}>
             <Box component="img" src={hero.partnerLogo} alt="Partner university" sx={{ height: { xs: "27px", md: "48px" }, width: { xs: "82px", md: "138px" } }} />
-            <Typography sx={{ color: "white", fontFamily: "var(--font-inter), sans-serif", fontWeight: 300, fontSize: { xs: "18px", md: "28px" }, lineHeight: 1, mx: { xs: "2px", md: "4px" } }}>
+            <Typography sx={{ color: "white", fontFamily: "Inter, sans-serif", fontWeight: 300, fontSize: { xs: "18px", md: "28px" }, lineHeight: 1, mx: { xs: "2px", md: "4px" } }}>
               ×
             </Typography>
             <Box component="img" src="/img/Vedam_Final_Logo_White.png" alt="Vedam" sx={{ height: { xs: "36px", md: "76px" }, width: { xs: "79px", md: "138px" } }} />
@@ -355,7 +355,7 @@ export default function ProgramPage({ config }) {
           <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: "10px", md: "16px" } }}>
             <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: "8px", md: "12px" }, color: "#F9F9F9" }}>
               <Typography sx={{
-                fontFamily: "var(--font-inter), sans-serif", fontWeight: 700,
+                fontFamily: "Inter, sans-serif", fontWeight: 700,
                 fontSize: { xs: "16px", md: "32px" },
                 letterSpacing: { xs: "-0.32px", md: "-2%" },
                 lineHeight: { xs: 1.2, md: 1.1 },
@@ -364,7 +364,7 @@ export default function ProgramPage({ config }) {
               }}>
                 {hero.title}
               </Typography>
-              <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 500, fontSize: { xs: "10px", md: "14px" }, color: "#F9F9F9", opacity: 0.9 }}>
+              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 500, fontSize: { xs: "10px", md: "14px" }, color: "#F9F9F9", opacity: 0.9 }}>
                 {hero.subtitle}
               </Typography>
             </Box>
@@ -388,7 +388,7 @@ export default function ProgramPage({ config }) {
                     <Typography sx={{ color: "rgba(255,255,255,0.5)", fontSize: { xs: "10px", md: "14px" } }}>|</Typography>
                   )}
                   <Box component="img" src={src} alt={alt} sx={{ height: { xs: "16px", md: "26px" }, width: width ?? "auto" }} />
-                  <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 500, fontSize: { xs: "6px", md: "10px" }, color: "#F9F9F9", whiteSpace: "nowrap" }}>
+                  <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 500, fontSize: { xs: "6px", md: "10px" }, color: "#F9F9F9", whiteSpace: "nowrap" }}>
                     {label}
                   </Typography>
                 </React.Fragment>
@@ -406,7 +406,7 @@ export default function ProgramPage({ config }) {
               sx={{
                 bgcolor: "#6C10BC", borderRadius: "8px",
                 px: { xs: "16px", md: "28px" }, py: { xs: "8px", md: "14px" },
-                fontFamily: "var(--font-inter), sans-serif", fontWeight: 600,
+                fontFamily: "Inter, sans-serif", fontWeight: 600,
                 fontSize: { xs: "11px", md: "15px" }, letterSpacing: "-0.28px",
                 textTransform: "none", boxShadow: "none",
                 "&:hover": { bgcolor: "#5a0ea0", boxShadow: "none" },
@@ -423,7 +423,7 @@ export default function ProgramPage({ config }) {
               sx={{
                 bgcolor: "rgba(30,30,30,0.55)", borderRadius: "8px",
                 px: { xs: "16px", md: "28px" }, py: { xs: "8px", md: "14px" },
-                fontFamily: "var(--font-inter), sans-serif", fontWeight: 600,
+                fontFamily: "Inter, sans-serif", fontWeight: 600,
                 fontSize: { xs: "11px", md: "15px" }, letterSpacing: "-0.28px",
                 textTransform: "none", boxShadow: "none",
                 border: "1px solid rgba(255,255,255,0.15)",
@@ -458,16 +458,16 @@ export default function ProgramPage({ config }) {
                 bgcolor: highlight ? "rgba(186,107,255,0.08)" : "#FAFAFA",
               }}
             >
-              <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 700, color: "#6C10BC", fontSize: { xs: "10px", md: "20px" }, whiteSpace: "nowrap" }}>
+              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, color: "#6C10BC", fontSize: { xs: "10px", md: "20px" }, whiteSpace: "nowrap" }}>
                 {title}
               </Typography>
-              <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 600, color: "#1E1E1E", fontSize: { xs: "6px", md: "16px" }, whiteSpace: "pre-wrap", lineHeight: { xs: 1.3, md: 1.5 } }}>
+              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 600, color: "#1E1E1E", fontSize: { xs: "6px", md: "16px" }, whiteSpace: "pre-wrap", lineHeight: { xs: 1.3, md: 1.5 } }}>
                 {body}
               </Typography>
             </Box>
           ))}
         </Box>
-        <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 600, fontSize: { xs: "8px", md: "12px" }, color: "#848484", textAlign: "center", letterSpacing: "-0.16px", lineHeight: 1.5, px: "20px" }}>
+        <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: { xs: "8px", md: "12px" }, color: "#848484", textAlign: "center", letterSpacing: "-0.16px", lineHeight: 1.5, px: "20px" }}>
           {statsBar.footnote}
         </Typography>
       </Box>
@@ -598,10 +598,10 @@ export default function ProgramPage({ config }) {
             >
               <Box component="img" src={img} alt={title} sx={{ width: "64px", height: "64px", objectFit: "contain", flexShrink: 0 }} />
               <Box sx={{ flex: 1, minWidth: 0 }}>
-                <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 700, color: "white", fontSize: "10px", letterSpacing: "-0.2px", lineHeight: 1.2, mb: "4px" }}>
+                <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, color: "white", fontSize: "10px", letterSpacing: "-0.2px", lineHeight: 1.2, mb: "4px" }}>
                   {`${title} (${percent})`}
                 </Typography>
-                <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 500, color: "white", fontSize: "8px", letterSpacing: "-0.16px", lineHeight: 1.2 }}>
+                <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 500, color: "white", fontSize: "8px", letterSpacing: "-0.16px", lineHeight: 1.2 }}>
                   {desc}
                 </Typography>
               </Box>
@@ -633,9 +633,9 @@ export default function ProgramPage({ config }) {
                 }}
               />
               <Box sx={{ position: "relative", zIndex: 1, textAlign: "center" }}>
-                <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 700, color: "white", fontSize: "18px", letterSpacing: "-0.36px", lineHeight: 1.2, mb: "4px" }}>{title}</Typography>
-                <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 600, color: "#F97D03", fontSize: "18px", letterSpacing: "-0.36px", lineHeight: 1.2, mb: "8px" }}>{percent}</Typography>
-                <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 500, color: "white", fontSize: "16px", letterSpacing: "-0.32px", lineHeight: 1.2 }}>{desc}</Typography>
+                <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, color: "white", fontSize: "18px", letterSpacing: "-0.36px", lineHeight: 1.2, mb: "4px" }}>{title}</Typography>
+                <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 600, color: "#F97D03", fontSize: "18px", letterSpacing: "-0.36px", lineHeight: 1.2, mb: "8px" }}>{percent}</Typography>
+                <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 500, color: "white", fontSize: "16px", letterSpacing: "-0.32px", lineHeight: 1.2 }}>{desc}</Typography>
               </Box>
             </Box>
           ))}
@@ -654,7 +654,7 @@ export default function ProgramPage({ config }) {
               sx={{
                 pb: "10px", cursor: "pointer",
                 borderBottom: feeTab === id ? "2px solid #1E1E1E" : "2px solid transparent",
-                fontFamily: "var(--font-inter), sans-serif", fontWeight: 700,
+                fontFamily: "Inter, sans-serif", fontWeight: 700,
                 fontSize: { xs: "12px", md: "16px" }, letterSpacing: "-0.32px",
                 color: feeTab === id ? "#1E1E1E" : "#848484",
               }}
@@ -677,8 +677,8 @@ export default function ProgramPage({ config }) {
                 />
               ))}
               <Box sx={{ bgcolor: "#FF9900", borderRadius: "8px", display: "flex", justifyContent: "space-between", px: "10px", py: "10px" }}>
-                <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 700, fontSize: "16px", color: "#1F1F1F", letterSpacing: "-0.32px", lineHeight: 1.5 }}>Total Course Fee</Typography>
-                <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 600, fontSize: "16px", color: "#1E1E1E", letterSpacing: "-0.32px", lineHeight: 1.5 }}>{fees.totalCourseFee}</Typography>
+                <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: "16px", color: "#1F1F1F", letterSpacing: "-0.32px", lineHeight: 1.5 }}>Total Course Fee</Typography>
+                <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: "16px", color: "#1E1E1E", letterSpacing: "-0.32px", lineHeight: 1.5 }}>{fees.totalCourseFee}</Typography>
               </Box>
             </Box>
 
@@ -695,7 +695,7 @@ export default function ProgramPage({ config }) {
                 <Box sx={{ display: "grid", gridTemplateColumns: "2fr repeat(9, 1fr)" }}>
                   {fees.feeData.headers.map((h, i) => (
                     <Box key={i} sx={{ bgcolor: "#F4ECFA", p: "10px 20px", borderRight: i < fees.feeData.headers.length - 1 ? "0.5px solid rgba(0,0,0,0.1)" : "none", ...(i === 0 && { minWidth: "210px" }) }}>
-                      <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 700, fontSize: "12px", color: "black", letterSpacing: "-0.24px", whiteSpace: "nowrap" }}>{h}</Typography>
+                      <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: "12px", color: "black", letterSpacing: "-0.24px", whiteSpace: "nowrap" }}>{h}</Typography>
                     </Box>
                   ))}
                 </Box>
@@ -711,11 +711,11 @@ export default function ProgramPage({ config }) {
                     }}
                   >
                     <Box sx={{ p: "10px", pl: "20px", borderRight: "0.5px solid rgba(0,0,0,0.1)", minWidth: "210px" }}>
-                      <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 700, fontSize: "12px", color: isSubTotal ? "#6C10BC" : "black", letterSpacing: "-0.24px", whiteSpace: "nowrap" }}>{label}</Typography>
+                      <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: "12px", color: isSubTotal ? "#6C10BC" : "black", letterSpacing: "-0.24px", whiteSpace: "nowrap" }}>{label}</Typography>
                     </Box>
                     {values.map((v, ci) => (
                       <Box key={ci} sx={{ p: "10px", textAlign: "center", borderRight: ci < values.length - 1 ? "0.5px solid rgba(0,0,0,0.1)" : "none" }}>
-                        <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: isSubTotal ? 700 : 500, fontSize: "12px", color: isSubTotal ? "#6C10BC" : "black", letterSpacing: "-0.24px", whiteSpace: "nowrap" }}>{v}</Typography>
+                        <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: isSubTotal ? 700 : 500, fontSize: "12px", color: isSubTotal ? "#6C10BC" : "black", letterSpacing: "-0.24px", whiteSpace: "nowrap" }}>{v}</Typography>
                       </Box>
                     ))}
                   </Box>
@@ -723,11 +723,11 @@ export default function ProgramPage({ config }) {
                 {/* Totals row */}
                 <Box sx={{ display: "grid", gridTemplateColumns: "2fr repeat(9, 1fr)", borderTop: "0.5px solid rgba(30,30,30,0.2)" }}>
                   <Box sx={{ bgcolor: "#BA6BFF", p: "10px", pl: "20px", borderRight: "0.5px solid rgba(0,0,0,0.1)", minWidth: "210px" }}>
-                    <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 700, fontSize: "12px", color: "#1E1E1E", letterSpacing: "-0.24px" }}>Payable Course Fee</Typography>
+                    <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: "12px", color: "#1E1E1E", letterSpacing: "-0.24px" }}>Payable Course Fee</Typography>
                   </Box>
                   {fees.feeData.totals.map((v, i) => (
                     <Box key={i} sx={{ bgcolor: "#BA6BFF", p: "10px", textAlign: "center", borderRight: i < fees.feeData.totals.length - 1 ? "0.5px solid rgba(0,0,0,0.1)" : "none" }}>
-                      <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 700, fontSize: "12px", color: "#1E1E1E", letterSpacing: "-0.24px", whiteSpace: "nowrap" }}>{v}</Typography>
+                      <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: "12px", color: "#1E1E1E", letterSpacing: "-0.24px", whiteSpace: "nowrap" }}>{v}</Typography>
                     </Box>
                   ))}
                 </Box>
@@ -736,13 +736,13 @@ export default function ProgramPage({ config }) {
 
             {/* Fee highlights */}
             <Box sx={{ display: "flex", flexDirection: "column", gap: "8px", maxWidth: 742, mt: { xs: "8px", md: 0 } }}>
-              <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 700, fontSize: "12px", color: "#6C10BC", letterSpacing: "-0.24px", lineHeight: 1.5 }}>
+              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: "12px", color: "#6C10BC", letterSpacing: "-0.24px", lineHeight: 1.5 }}>
                 Important Fee Highlights
               </Typography>
               <Box component="ol" sx={{ m: 0, pl: "18px", "& li::marker": { fontSize: { xs: "10px", md: "13px" }, fontWeight: 500, color: "#1F1F1F" } }}>
                 {fees.feeNotes.map((note, i) => (
                   <Box component="li" key={i}>
-                    <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 500, fontSize: { xs: "10px", md: "12px" }, color: "#1F1F1F", letterSpacing: { xs: "-0.2px", md: "-0.24px" }, lineHeight: 2 }}>
+                    <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 500, fontSize: { xs: "10px", md: "12px" }, color: "#1F1F1F", letterSpacing: { xs: "-0.2px", md: "-0.24px" }, lineHeight: 2 }}>
                       {note}
                     </Typography>
                   </Box>
@@ -770,18 +770,18 @@ export default function ProgramPage({ config }) {
 
           <Box sx={{ display: "flex", flexDirection: { xs: "column", md: "row" }, border: "0.5px solid rgba(0,0,0,0.1)", borderRadius: "8px", overflow: "hidden" }}>
             <Box sx={{ flex: 1, bgcolor: "#F9F9F9", px: { xs: "20px", md: "40px" }, py: "20px", display: "flex", flexDirection: "column", gap: "10px" }}>
-              <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 700, color: "#6C10BC", fontSize: { xs: "16px", md: "20px" }, lineHeight: 1.5 }}>
+              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, color: "#6C10BC", fontSize: { xs: "16px", md: "20px" }, lineHeight: 1.5 }}>
                 {financing.zeroEmi.title}
               </Typography>
-              <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: { xs: 500, md: 600 }, color: "#1E1E1E", fontSize: { xs: "10px", md: "12px" }, lineHeight: 1.5 }}>
+              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: { xs: 500, md: 600 }, color: "#1E1E1E", fontSize: { xs: "10px", md: "12px" }, lineHeight: 1.5 }}>
                 {financing.zeroEmi.description}
               </Typography>
             </Box>
             <Box sx={{ flex: 1, bgcolor: "#fff", px: { xs: "20px", md: "40px" }, py: "20px", display: "flex", flexDirection: "column", gap: "10px", borderTop: { xs: "0.5px solid rgba(0,0,0,0.1)", md: "none" }, borderLeft: { xs: "none", md: "0.5px solid rgba(0,0,0,0.1)" } }}>
-              <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 700, color: "#6C10BC", fontSize: { xs: "16px", md: "20px" }, lineHeight: 1.5 }}>
+              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, color: "#6C10BC", fontSize: { xs: "16px", md: "20px" }, lineHeight: 1.5 }}>
                 {financing.bankLoan.title}
               </Typography>
-              <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: { xs: 500, md: 600 }, color: "#1E1E1E", fontSize: { xs: "10px", md: "12px" }, lineHeight: 1.5 }}>
+              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: { xs: 500, md: 600 }, color: "#1E1E1E", fontSize: { xs: "10px", md: "12px" }, lineHeight: 1.5 }}>
                 {financing.bankLoan.description}
               </Typography>
             </Box>
@@ -799,7 +799,7 @@ export default function ProgramPage({ config }) {
                   onClick={() => setLoanPartner(id)}
                   sx={{ px: "20px", py: "10px", cursor: "pointer", borderRadius: "14px", bgcolor: loanPartner === id ? "#6C10BC" : "transparent" }}
                 >
-                  <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 600, fontSize: { xs: "8px", md: "14px" }, color: loanPartner === id ? "#F9F9F9" : "#6C10BC", letterSpacing: "-0.16px", lineHeight: 1.2, whiteSpace: "nowrap" }}>
+                  <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: { xs: "8px", md: "14px" }, color: loanPartner === id ? "#F9F9F9" : "#6C10BC", letterSpacing: "-0.16px", lineHeight: 1.2, whiteSpace: "nowrap" }}>
                     {label}
                   </Typography>
                 </Box>
@@ -814,12 +814,12 @@ export default function ProgramPage({ config }) {
                   sx={{ display: "grid", gridTemplateColumns: "1fr 1fr", borderBottom: i < arr.length - 1 ? "0.5px solid rgba(30,30,30,0.2)" : "none" }}
                 >
                   <Box sx={{ bgcolor: "#F4ECFA", p: "10px", borderRight: "0.5px solid rgba(30,30,30,0.2)" }}>
-                    <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: i === 0 ? 700 : 500, fontSize: { xs: "10px", md: "12px" }, color: "black", letterSpacing: { xs: "-0.2px", md: "-0.24px" }, lineHeight: 1.5 }}>
+                    <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: i === 0 ? 700 : 500, fontSize: { xs: "10px", md: "12px" }, color: "black", letterSpacing: { xs: "-0.2px", md: "-0.24px" }, lineHeight: 1.5 }}>
                       {label}
                     </Typography>
                   </Box>
                   <Box sx={{ p: "10px" }}>
-                    <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: i === 0 ? 700 : 500, fontSize: { xs: "10px", md: "12px" }, color: "#1F1F1F", letterSpacing: { xs: "-0.2px", md: "-0.24px" }, lineHeight: 1.5 }}>
+                    <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: i === 0 ? 700 : 500, fontSize: { xs: "10px", md: "12px" }, color: "#1F1F1F", letterSpacing: { xs: "-0.2px", md: "-0.24px" }, lineHeight: 1.5 }}>
                       {value}
                     </Typography>
                   </Box>

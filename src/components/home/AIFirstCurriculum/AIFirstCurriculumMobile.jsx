@@ -34,7 +34,7 @@ const SingleCard = ({ data, onClick, expandIn }) => {
               fontSize: "14px",
               fontWeight: "700",
               lineHeight: "100%",
-              fontFamily: "var(--font-inter), sans-serif",
+              fontFamily: "Inter",
               color: "#1E1E1E",
             }}
           >

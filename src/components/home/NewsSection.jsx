@@ -107,13 +107,13 @@ const NewsSection = () => {
                     <Image src={activeItem.sourceLogo} alt={activeItem.sourceName || 'Source'} fill style={{ objectFit: 'cover' }} />
                   ) : (
                     <Box sx={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', bgcolor: '#6C10BC' }}>
-                      <Typography sx={{ color: '#fff', fontWeight: 700, fontSize: '13px', fontFamily: "var(--font-inter), sans-serif" }}>
+                      <Typography sx={{ color: '#fff', fontWeight: 700, fontSize: '13px', fontFamily: 'Inter, sans-serif' }}>
                         {(activeItem.sourceName || 'N')[0].toUpperCase()}
                       </Typography>
                     </Box>
                   )}
                 </Box>
-                <Typography sx={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 600, fontSize: { xs: '12px', md: '13px' }, color: '#1E1E1E', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                <Typography sx={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: { xs: '12px', md: '13px' }, color: '#1E1E1E', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                   {activeItem.name || 'Read Article'}
                 </Typography>
               </Box>

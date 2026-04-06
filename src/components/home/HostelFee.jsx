@@ -380,7 +380,7 @@ export const HostelContent = ({ selectedHostelType }) => {
                                     style={{
                                         color: "#000000",
                                         fontSize: "inherit",
-                                        fontFamily: "var(--font-inter), sans-serif",
+                                        fontFamily: "Inter",
                                         lineHeight: "150%",
                                         marginLeft: "4px",
                                     }}
@@ -397,7 +397,7 @@ export const HostelContent = ({ selectedHostelType }) => {
                                     style={{
                                         color: "#000000",
                                         fontSize: "inherit",
-                                        fontFamily: "var(--font-inter), sans-serif",
+                                        fontFamily: "Inter",
                                         lineHeight: "150%",
                                     }}
                                     href="mailto:connect@vedam.org"
@@ -433,7 +433,7 @@ export const HostelContent = ({ selectedHostelType }) => {
                                         fontSize: { xs: 12, sm: 14 },
                                         color: "#000",
                                         lineHeight: 1.6,
-                                        fontFamily: "var(--font-inter), sans-serif",
+                                        fontFamily: "Inter",
                                     }}
                                 >
                                     {text}
@@ -990,7 +990,7 @@ export const HostelContent = ({ selectedHostelType }) => {
                                     style={{
                                         color: "#000000",
                                         fontSize: "inherit",
-                                        fontFamily: "var(--font-inter), sans-serif",
+                                        fontFamily: "Inter",
                                         lineHeight: "150%",
                                     }}
                                     href="mailto:connect@vedam.org"
@@ -1026,7 +1026,7 @@ export const HostelContent = ({ selectedHostelType }) => {
                                         fontSize: { xs: 12, sm: 14 },
                                         color: "#000",
                                         lineHeight: 1.6,
-                                        fontFamily: "var(--font-inter), sans-serif",
+                                        fontFamily: "Inter",
                                     }}
                                 >
                                     {text}

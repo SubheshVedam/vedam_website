@@ -52,7 +52,7 @@ export const VedamInovationLab = () => {
           sx={{
             color: "#1E1E1E",
             textAlign: "center",
-            fontFamily: "var(--font-inter), sans-serif",
+            fontFamily: "Inter",
             fontSize: { xs: "12px", sm: "24px" },
             fontStyle: "normal",
             fontWeight: 400,
@@ -215,7 +215,7 @@ export const VedamInovationLab = () => {
           sx={{
             color: "#5E00AF",
             textAlign: "center",
-            fontFamily: "var(--font-inter), sans-serif",
+            fontFamily: "Inter",
             fontSize: {
               xs: "16px",
               sm: "24px",
@@ -247,7 +247,7 @@ export const VedamInovationLab = () => {
               sx={{
                 borderRadius: "12px",
                 textTransform: "none",
-                fontFamily: "var(--font-inter), sans-serif",
+                fontFamily: "Inter",
                 fontSize: "18px",
                 fontWeight: 500,
                 boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.15)",
@@ -308,7 +308,7 @@ export const VedamInovationLab = () => {
             sx={{
               borderRadius: "12px",
               textTransform: "none",
-              fontFamily: "var(--font-inter), sans-serif",
+              fontFamily: "Inter",
               fontSize: "16px",
               fontWeight: 500,
               boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.15)",

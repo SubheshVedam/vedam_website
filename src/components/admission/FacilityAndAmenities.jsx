@@ -35,7 +35,7 @@ const CategoryCarousel = ({ category }) => {
             color: '#8A18FF',
             fontWeight: 600,
             fontSize: { xs: '20px', md: '30px' },
-            fontFamily: "var(--font-inter), sans-serif",
+            fontFamily: 'Inter, sans-serif',
           }}
         >
           {category.name}

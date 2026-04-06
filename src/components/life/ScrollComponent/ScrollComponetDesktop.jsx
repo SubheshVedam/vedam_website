@@ -81,7 +81,7 @@ export const ScrollComponentDesktop = () => {
                       component="div"
                       variant="body1"
                       sx={{
-                        fontFamily: "var(--font-inter), sans-serif",
+                        fontFamily: "Inter",
                         fontSize: "1.125rem",
                         fontWeight: 600,
                         lineHeight: "1.3",

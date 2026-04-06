@@ -10,7 +10,7 @@ export const AdmissionAndFees = () => {
         variant="subtitle1"
         sx={{
           fontSize: { xs: "14px", md: "1rem" },
-          fontFamily: "var(--font-inter), sans-serif",
+          fontFamily: "Inter",
           fontWeight: "400",
           lineHeight: "150%",
           color: "rgba(30, 30, 30, 1)",
@@ -58,14 +58,14 @@ export const AdmissionAndFees = () => {
                 variant="body1"
                 sx={{
                   fontWeight: "300",
-                  fontFamily: "var(--font-inter), sans-serif",
+                  fontFamily: "Inter",
                   fontSize: "clamp(14px, 2vw, 16px)",
                 }}
               >
                 <strong
                   style={{
                     fontWeight: "450",
-                    fontFamily: "var(--font-inter), sans-serif",
+                    fontFamily: "Inter",
                     fontSize: "clamp(14px, 2vw, 16px)",
                     lineHeight: "150%",
                   }}
@@ -92,7 +92,7 @@ export const AdmissionAndFees = () => {
             sx={{
               fontSize: "clamp(12px, 2vw, 16px)",
               color: "#FFFFFF",
-              fontFamily: "var(--font-inter), sans-serif",
+              fontFamily: "Inter",
               lineHeight: "100%",
               textTransform: "none",
             }}

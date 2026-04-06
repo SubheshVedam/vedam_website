@@ -36,7 +36,7 @@ export const CardContainer = ({
           <Typography
             variant="subtitle2"
             fontWeight={"600"}
-            fontFamily={"var(--font-inter), sans-serif"}
+            fontFamily={"Inter"}
             style={{ lineHeight: "150%", letterSpacing: "-2%" }}
           >
             {title}
@@ -47,7 +47,7 @@ export const CardContainer = ({
           <Typography
             component="h2"
             variant="h2"
-            fontFamily={"var(--font-inter), sans-serif"}
+            fontFamily={"Inter"}
             sx={{
               fontWeight: "700",
               background: linearGradientSubtitle,
@@ -66,7 +66,7 @@ export const CardContainer = ({
           <Typography
             component="h2"
             variant="h2"
-            fontFamily="var(--font-inter), sans-serif"
+            fontFamily="Inter"
             sx={{
               background: "linear-gradient(90deg, #FB7F05 0%, #6C10BC 42.11%)",
               WebkitBackgroundClip: "text",
