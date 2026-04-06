@@ -9,7 +9,7 @@ export const VideoWithText = ({
   isImg,
   videoUrl,
   imageUrl,
-  posterImageUrl = "/img/hear_from_founder_thumbnail.webp",
+  posterImageUrl = "/img/optimized/video_thumbnail_1280.jpg",
 }) => {
   return (
     <Box
