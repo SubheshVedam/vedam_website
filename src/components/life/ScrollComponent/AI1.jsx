@@ -61,7 +61,7 @@ const AI1 = () => {
                         md: '2rem', 
                         lg: '2.25rem' 
                     },
-                    fontFamily: 'Inter',
+                    fontFamily: "var(--font-inter), sans-serif",
                     fontWeight: 500,
                     color: 'white',
                     lineHeight: '1.2',
@@ -76,7 +76,7 @@ const AI1 = () => {
                         md: '1.125rem', 
                         lg: '1.25rem' 
                     },
-                    fontFamily: 'Inter',
+                    fontFamily: "var(--font-inter), sans-serif",
                     fontWeight: 300,
                     color: 'rgba(255, 255, 255, 0.9)',
                     lineHeight: '1.5',

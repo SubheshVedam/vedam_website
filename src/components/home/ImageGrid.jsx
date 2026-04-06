@@ -79,7 +79,7 @@ export const ImageGrid = () => {
         sx={{
           marginTop: { xs: "16px", md: "32px" },
           fontSize: { xs: "6px", md: "8px" },
-          fontFamily: "Inter",
+          fontFamily: "var(--font-inter), sans-serif",
           color: "#1E1E1E",
           lineHeight: "150%",
         }}

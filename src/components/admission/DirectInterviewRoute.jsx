@@ -47,7 +47,7 @@ const nodeBaseSx = {
   px: 1,
   py: 0.65,
   borderRadius: "10px",
-  fontFamily: "Inter",
+  fontFamily: "var(--font-inter), sans-serif",
   fontWeight: 700,
   fontSize: "10px",
   lineHeight: 1,
@@ -73,7 +73,7 @@ export const DirectInterviewRoute = () => {
       <Typography
         component="h2"
         sx={{
-          fontFamily: "Inter",
+          fontFamily: "var(--font-inter), sans-serif",
           fontWeight: 700,
           fontSize: "clamp(1.3rem, 2.5vw, 2rem)",
           lineHeight: "120%",
@@ -93,7 +93,7 @@ export const DirectInterviewRoute = () => {
         sx={{
           mt: 1.5,
           maxWidth: "760px",
-          fontFamily: "Inter",
+          fontFamily: "var(--font-inter), sans-serif",
           fontWeight: 500,
           fontSize: { xs: "14px", md: "19px" },
           lineHeight: 1.5,
@@ -117,7 +117,7 @@ export const DirectInterviewRoute = () => {
           <Typography
             sx={{
               mt: 1.5,
-              fontFamily: "Inter",
+              fontFamily: "var(--font-inter), sans-serif",
               fontSize: { xs: "14px", md: "18px" },
               lineHeight: 1.55,
               color: "#6A6A6A",
@@ -143,7 +143,7 @@ export const DirectInterviewRoute = () => {
               py: 1.1,
               borderRadius: "999px",
               textTransform: "none",
-              fontFamily: "Inter",
+              fontFamily: "var(--font-inter), sans-serif",
               fontWeight: 700,
               fontSize: { xs: "14px", md: "16px" },
               background: "linear-gradient(90deg, #6C10BC 0%, #7B2CBF 100%)",
@@ -224,7 +224,7 @@ function StepHeader({ step, title }) {
       >
         <Typography
           sx={{
-            fontFamily: "Inter",
+            fontFamily: "var(--font-inter), sans-serif",
             fontWeight: 600,
             fontSize: { xs: "13px", md: "14px" },
             lineHeight: 1,
@@ -237,7 +237,7 @@ function StepHeader({ step, title }) {
 
       <Typography
         sx={{
-          fontFamily: "Inter",
+          fontFamily: "var(--font-inter), sans-serif",
           fontWeight: 800,
           fontSize: { xs: "22px", md: "28px" },
           lineHeight: 1.1,
@@ -257,7 +257,7 @@ function SimpleStep({ step, title, description }) {
       <Typography
         sx={{
           mt: 1.25,
-          fontFamily: "Inter",
+          fontFamily: "var(--font-inter), sans-serif",
           fontSize: { xs: "14px", md: "18px" },
           lineHeight: 1.55,
           color: "#7A7A7A",
@@ -307,7 +307,7 @@ function EvaluationCard({
 
         <Typography
           sx={{
-            fontFamily: "Inter",
+            fontFamily: "var(--font-inter), sans-serif",
             fontWeight: 700,
             fontSize: { xs: "16px", md: "18px" },
             lineHeight: 1.2,
@@ -334,7 +334,7 @@ function EvaluationCard({
             key={bullet}
             component="li"
             sx={{
-              fontFamily: "Inter",
+              fontFamily: "var(--font-inter), sans-serif",
               fontWeight: 500,
               fontSize: { xs: "13px", md: "15px" },
               lineHeight: 1.45,
@@ -351,7 +351,7 @@ function EvaluationCard({
           {footer && (
             <Typography
               sx={{
-                fontFamily: "Inter",
+                fontFamily: "var(--font-inter), sans-serif",
                 fontWeight: 700,
                 fontSize: { xs: "12px", md: "14px" },
                 lineHeight: 1.45,
@@ -367,7 +367,7 @@ function EvaluationCard({
               {footerPrefix && (
                 <Typography
                   sx={{
-                    fontFamily: "Inter",
+                    fontFamily: "var(--font-inter), sans-serif",
                     fontWeight: 700,
                     fontSize: { xs: "12px", md: "14px" },
                     lineHeight: 1.45,
@@ -382,7 +382,7 @@ function EvaluationCard({
                   component="a"
                   href={footerLinkHref}
                   sx={{
-                    fontFamily: "Inter",
+                    fontFamily: "var(--font-inter), sans-serif",
                     fontWeight: 700,
                     fontSize: { xs: "12px", md: "14px" },
                     lineHeight: 1.45,

@@ -1,11 +1,10 @@
-"use client";
 import dynamic from "next/dynamic";
 import { SectionStack, VideoWithText } from "@/components";
 import WhyVedam from "@/components/WhyVedam";
 import { homeScreenData } from "@/constants/data";
-import { Box, useMediaQuery, useTheme } from "@mui/material";
-import Image from "next/image";
-import React, { Fragment, useState } from "react";
+import { Box } from "@mui/material";
+import React, { Fragment } from "react";
+import PlayableVideoCard from "@/components/home/PlayableVideoCard";
 
 const SectionSkeleton = ({ height = 320 }) => (
   <Box
@@ -74,90 +73,6 @@ const RecognitionAwards = dynamic(() => import("@/components/home/RecognitionAwa
 });
 
 const Home = () => {
-  const theme = useTheme();
-  const isLarge = useMediaQuery(theme.breakpoints.up("xl"));
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const [showIframe1, setShowIframe1] = useState(false);
-  const [videoUrl1, setVideoUrl1] = useState("");
-  const [showIframe2, setShowIframe2] = useState(false);
-  const [videoUrl2, setVideoUrl2] = useState("");
-
-  const renderVideoCard = (
-    isVisible,
-    videoUrl,
-    onPlay,
-    thumbnailSrc,
-    thumbnailAlt,
-    containerSx = {}
-  ) => (
-    <Box
-      sx={{
-        position: "relative",
-        width: "100%",
-        height: isMobile ? "220px" : isLarge ? "680px" : "580px",
-        borderRadius: "16px",
-        overflow: "hidden",
-        backgroundColor: "#000",
-        ...containerSx,
-      }}
-    >
-      {isVisible ? (
-        <iframe
-          width="100%"
-          height="100%"
-          style={{
-            borderRadius: "inherit",
-            border: "none",
-          }}
-          src={videoUrl}
-          title="YouTube video player"
-          loading="lazy"
-          className="techTeamImage"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
-      ) : (
-        <Box
-          onClick={onPlay}
-          sx={{
-            cursor: "pointer",
-            width: "100%",
-            height: "100%",
-            position: "relative",
-          }}
-        >
-          <Image
-            src={thumbnailSrc}
-            alt={thumbnailAlt}
-            fill
-            style={{ objectFit: "cover", borderRadius: "inherit" }}
-          />
-          <Box
-            sx={{
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-              background: "rgba(0,0,0,0.6)",
-              padding: "12px 16px",
-              borderRadius: "100px",
-            }}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width={40}
-              height={40}
-              fill="#fff"
-              viewBox="0 0 24 24"
-            >
-              <path d="M8 5v14l11-7z" />
-            </svg>
-          </Box>
-        </Box>
-      )}
-    </Box>
-  );
-
   const heroSections = [
     {
       id: "collaboration",
@@ -194,9 +109,11 @@ const Home = () => {
   const detailSections = [
     {
       id: "students-at-vedam",
-      subtitle: isMobile ? "Meet the Students at Vedam" : "",
-      // subtitle: "",
+      subtitle: "Meet the Students at Vedam",
       render: () => <StudentsAtVedam />,
+      titleChildContainer: {
+        display: { xs: "flex", md: "none" },
+      },
     },
     {
       id: "vedam-vs",
@@ -211,23 +128,17 @@ const Home = () => {
       id: "founder-video",
       title: homeScreenData.techTeam.title,
       subtitle: "Hear from our Co-Founder",
-      render: () =>
-        renderVideoCard(
-          showIframe2,
-          videoUrl2,
-          () => {
-            setVideoUrl2(
-              "https://www.youtube.com/embed/kxkRisXZg8Y?autoplay=1&si=0YJjFMtSU96LI9Kn"
-            );
-            setShowIframe2(true);
-          },
-          "/img/hear_from_founder_thumbnail.webp",
-          "Video thumbnail2",
-          {
+      render: () => (
+        <PlayableVideoCard
+          embedUrl="https://www.youtube.com/embed/kxkRisXZg8Y?autoplay=1&si=0YJjFMtSU96LI9Kn"
+          thumbnailSrc="/img/hear_from_founder_thumbnail.webp"
+          thumbnailAlt="Video thumbnail2"
+          containerSx={{
             borderRadius: { xs: "16px", md: "22px" },
             boxShadow: "0px 18px 38px rgba(0,0,0,0.12)",
-          }
-        ),
+          }}
+        />
+      ),
     },
     {
       id: "image-grid",

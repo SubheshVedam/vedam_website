@@ -13,7 +13,7 @@ export const FinancingOptions = () => {
         sx={{
           textAlign: "left",
           color: "rgba(31, 31, 31, 1)",
-          fontFamily: "Inter",
+          fontFamily: "var(--font-inter), sans-serif",
           fontSize: "clamp(14px, 2vw, 20px)",
           fontWeight: "500",
           lineHeight: "150%",
@@ -58,7 +58,7 @@ export const FinancingOptions = () => {
           <Typography
             sx={{
               color: "#1F1F1F",
-              fontFamily: "Inter",
+              fontFamily: "var(--font-inter), sans-serif",
               fontSize: 16,
             }}>
             {VST_FinancingOptions.body.card1.description}
@@ -92,7 +92,7 @@ export const FinancingOptions = () => {
           <Typography
             sx={{
               color: "#1F1F1F",
-              fontFamily: "Inter",
+              fontFamily: "var(--font-inter), sans-serif",
               fontSize: 16,
             }}>
             {VST_FinancingOptions.body.card2.description}

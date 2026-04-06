@@ -83,7 +83,7 @@ export const EdgeAtVedam = () => {
               component="h4"
               variant="h4"
               sx={{
-                fontFamily: "Inter, sans-serif",
+                fontFamily: "var(--font-inter), sans-serif",
                 fontSize: "clamp(1.125rem, 2.5vw, 1.375rem)",
                 fontWeight: 700,
                 color: "#000",
@@ -96,7 +96,7 @@ export const EdgeAtVedam = () => {
             <Typography
               variant="body2"
               sx={{
-                fontFamily: "Inter, sans-serif",
+                fontFamily: "var(--font-inter), sans-serif",
                 fontSize: "clamp(0.875rem, 2vw, 1rem)",
                 fontWeight: 400,
                 color: "#000",

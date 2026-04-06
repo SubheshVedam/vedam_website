@@ -34,7 +34,7 @@ const SingleCard = ({ icon, text, isCurriculum }) => {
         <Typography
           variant="subtitle1"
           sx={{
-            fontFamily: "Inter",
+            fontFamily: "var(--font-inter), sans-serif",
             fontSize: "12px",
             fontWeight: "450",
             color: "rgba(0, 0, 0, 1)",
@@ -65,7 +65,7 @@ export const AIYear1 = () => {
         variant="h3"
         style={{
           fontSize: "clamp(1rem, 2vw, 1.2rem)",
-          fontFamily: "Inter",
+          fontFamily: "var(--font-inter), sans-serif",
           fontWeight: "700",
           color: "rgba(108, 16, 188, 1)",
           lineHeight: "100%",
@@ -79,7 +79,7 @@ export const AIYear1 = () => {
         variant="body1"
         style={{
           fontSize: "clamp(10px, 2vw, 14px)",
-          fontFamily: "Inter",
+          fontFamily: "var(--font-inter), sans-serif",
           fontWeight: "500",
           color: "rgba(132, 132, 132, 1)",
           marginBottom: "2rem",
@@ -93,7 +93,7 @@ export const AIYear1 = () => {
         variant="h4"
         sx={{
           fontSize: "14px",
-          fontFamily: "Inter",
+          fontFamily: "var(--font-inter), sans-serif",
           fontWeight: "700",
           color: "rgba(12, 38, 81, 1)",
           marginBottom: "0.5rem",
@@ -127,7 +127,7 @@ export const AIYear1 = () => {
               variant="subtitle1"
               sx={{
                 fontSize: "10px",
-                fontFamily: "Inter",
+                fontFamily: "var(--font-inter), sans-serif",
                 fontWeight: "350",
                 color: "rgba(30, 30, 30, 1)",
                 whiteSpace: "nowrap",
@@ -143,7 +143,7 @@ export const AIYear1 = () => {
         variant="h4"
         sx={{
           fontSize: "14px",
-          fontFamily: "Inter",
+          fontFamily: "var(--font-inter), sans-serif",
           fontWeight: "700",
           color: "rgba(12, 38, 81, 1)",
           lineHeight: "100%",
