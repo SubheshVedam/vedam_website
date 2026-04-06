@@ -35,7 +35,7 @@ const SingleCard = ({ data, onClick, expandIn }) => {
               fontSize: "0.875rem",
               fontWeight: 600,
               lineHeight: "1.3",
-              fontFamily: "var(--font-inter), sans-serif",
+              fontFamily: "Inter",
               color: "#1B9BA7",
               textAlign: "left",
               backgroundClip: expandIn ? "text" : "unset",
@@ -78,7 +78,7 @@ const SingleCard = ({ data, onClick, expandIn }) => {
                 fontSize: "0.75rem",
                 fontWeight: 400,
                 lineHeight: "1.4",
-                fontFamily: "var(--font-inter), sans-serif",
+                fontFamily: "Inter",
                 color: "#666",
               }}
             >

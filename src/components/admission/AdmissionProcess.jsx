@@ -236,7 +236,7 @@ export const AdmissionProcess = () => {
                   fontWeight: "600",
                   fontSize: "clamp(12px, 2vw, 20px)",
                   color: "#6C10BC",
-                  fontFamily: "var(--font-inter), sans-serif",
+                  fontFamily: "Inter",
                   lineHeight: "100%",
                   marginBottom: "4px",
                 }}
@@ -249,7 +249,7 @@ export const AdmissionProcess = () => {
                   fontWeight: "400",
                   fontSize: "clamp(1rem, 2vw, 2rem)",
                   color: "rgba(31, 31, 31, 1)",
-                  fontFamily: "var(--font-inter), sans-serif",
+                  fontFamily: "Inter",
                   lineHeight: "100%",
                   marginBottom: { xs: "12px", md: "16px" },
                 }}
@@ -271,7 +271,7 @@ export const AdmissionProcess = () => {
                     sx={{
                       color: "#6C10BC",
                       fontSize: "clamp(12px, 2vw, 14px)",
-                      fontFamily: "var(--font-inter), sans-serif",
+                      fontFamily: "Inter",
                       fontWeight: "500",
                       lineHeight: "150%",
                       marginBottom: "0.5rem",
@@ -287,7 +287,7 @@ export const AdmissionProcess = () => {
                   fontWeight: "250",
                   fontSize: "clamp(14px, 2vw, 20px)",
                   color: "rgba(31, 31, 31, 1)",
-                  fontFamily: "var(--font-inter), sans-serif",
+                  fontFamily: "Inter",
                   lineHeight: "150%",
                 }}
               >
@@ -298,7 +298,7 @@ export const AdmissionProcess = () => {
                 sx={{
                   fontWeight: "600",
                   fontSize: "clamp(0.6rem, 2vw, 0.8rem)",
-                  fontFamily: "var(--font-inter), sans-serif",
+                  fontFamily: "Inter",
                   color: "rgba(108, 16, 188, 1)",
                   marginTop: "0.5rem",
                 }}
@@ -324,7 +324,7 @@ export const AdmissionProcess = () => {
                     sx={{
                       color: "#FFFFFF",
                       fontSize: "clamp(14px, 2vw, 20px)",
-                      fontFamily: "var(--font-inter), sans-serif",
+                      fontFamily: "Inter",
                     }}
                   >
                     Apply Now

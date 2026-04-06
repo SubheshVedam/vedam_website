@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Box, Button, Typography } from "@mui/material";
 import EastRoundedIcon from "@mui/icons-material/EastRounded";
 import AccessTimeFilledRoundedIcon from "@mui/icons-material/AccessTimeFilledRounded";
@@ -29,14 +29,109 @@ const campusCards = [
 ];
 
 export const InCollaborationWith = () => {
+  const scrollContainerRef = useRef(null);
+  const mobileCarouselCards = [...campusCards, ...campusCards];
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container || typeof window === "undefined") {
+      return undefined;
+    }
+
+    const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const isMobile = () => window.matchMedia("(max-width: 899.95px)").matches;
+    const passiveEvent = { passive: true };
+
+    let rafId;
+    let resumeTimeoutId;
+    let lastFrameTime = 0;
+    let loopPoint = 0;
+    let paused = false;
+
+    const recalculateLoopPoint = () => {
+      const duplicateStartNode = container.querySelector("[data-duplicate-start='true']");
+      loopPoint = duplicateStartNode ? duplicateStartNode.offsetLeft : container.scrollWidth / 2;
+    };
+
+    const animate = (timestamp) => {
+      rafId = window.requestAnimationFrame(animate);
+
+      if (!isMobile() || reducedMotionQuery.matches) {
+        lastFrameTime = timestamp;
+        return;
+      }
+
+      if (!loopPoint) {
+        recalculateLoopPoint();
+      }
+
+      if (!lastFrameTime) {
+        lastFrameTime = timestamp;
+        return;
+      }
+
+      const deltaSeconds = (timestamp - lastFrameTime) / 1000;
+      lastFrameTime = timestamp;
+
+      if (paused) {
+        return;
+      }
+
+      container.scrollLeft += 76 * deltaSeconds;
+
+      if (loopPoint > 0 && container.scrollLeft >= loopPoint) {
+        container.scrollLeft -= loopPoint;
+      }
+    };
+
+    const pauseAndResume = () => {
+      paused = true;
+      if (resumeTimeoutId) {
+        window.clearTimeout(resumeTimeoutId);
+      }
+      resumeTimeoutId = window.setTimeout(() => {
+        paused = false;
+      }, 1800);
+    };
+
+    const handleResize = () => {
+      recalculateLoopPoint();
+      if (!isMobile()) {
+        container.scrollLeft = 0;
+      }
+    };
+
+    recalculateLoopPoint();
+    rafId = window.requestAnimationFrame(animate);
+
+    window.addEventListener("resize", handleResize);
+    container.addEventListener("touchstart", pauseAndResume, passiveEvent);
+    container.addEventListener("touchmove", pauseAndResume, passiveEvent);
+    container.addEventListener("mousedown", pauseAndResume);
+    container.addEventListener("wheel", pauseAndResume, passiveEvent);
+
+    return () => {
+      if (rafId) {
+        window.cancelAnimationFrame(rafId);
+      }
+      if (resumeTimeoutId) {
+        window.clearTimeout(resumeTimeoutId);
+      }
+      window.removeEventListener("resize", handleResize);
+      container.removeEventListener("touchstart", pauseAndResume);
+      container.removeEventListener("touchmove", pauseAndResume);
+      container.removeEventListener("mousedown", pauseAndResume);
+      container.removeEventListener("wheel", pauseAndResume);
+    };
+  }, []);
+
   return (
     <Box
+      ref={scrollContainerRef}
       sx={{
         width: "100%",
         overflowX: { xs: "auto", md: "visible" },
-        scrollSnapType: { xs: "x mandatory", md: "none" },
-        scrollPaddingInline: { xs: "12px", md: 0 },
-        WebkitOverflowScrolling: "touch",
+        scrollSnapType: "none",
         pb: { xs: "8px", md: 0 },
         "&::-webkit-scrollbar": {
           height: "6px",
@@ -51,7 +146,8 @@ export const InCollaborationWith = () => {
           width: { xs: "max-content", md: "100%" },
         }}
       >
-        {campusCards.map((card) => {
+        {mobileCarouselCards.map((card, index) => {
+          const isDuplicate = index >= campusCards.length;
           const buttonProps = card.href
             ? { component: Link, href: card.href }
             : { component: "button", type: "button" };
@@ -81,17 +177,18 @@ export const InCollaborationWith = () => {
 
           return (
             <Box
-              key={card.id}
+              key={`${card.id}-${isDuplicate ? "dup" : "base"}`}
+              data-campus-card="true"
+              data-duplicate-start={index === campusCards.length ? "true" : undefined}
               sx={{
                 border: "1px solid rgba(30, 30, 30, 0.15)",
                 borderRadius: "24px",
                 backgroundColor: "#fff",
                 padding: "14px",
-                display: "flex",
+                display: isDuplicate ? { xs: "flex", md: "none" } : "flex",
                 flexDirection: "column",
                 gap: "18px",
                 flex: { xs: "0 0 280px", md: "1 1 auto" },
-                scrollSnapAlign: { xs: "start", md: "none" },
               }}
             >
               <Box

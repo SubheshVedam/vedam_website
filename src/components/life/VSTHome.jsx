@@ -79,7 +79,7 @@ export const VSTHome = () => {
                     sx={{
                         color: "#000",
                         textAlign: "left",
-                        fontFamily: "var(--font-inter), sans-serif",
+                        fontFamily: "Inter",
                         fontSize: {
                             xs: "12px", // 0px and up
                             sm: "18px", // 600px and up

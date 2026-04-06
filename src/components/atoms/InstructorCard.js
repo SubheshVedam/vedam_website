@@ -88,7 +88,7 @@ export default function InstructorCard({
               component="div"
               variant="body1"
               sx={{
-                fontFamily: "var(--font-inter), sans-serif",
+                fontFamily: "Inter",
                 color: "#1E1E1E",
                 fontSize: 22,
                 fontWeight: 600,
@@ -101,7 +101,7 @@ export default function InstructorCard({
             <Typography
               variant="subtitle2"
               sx={{
-                fontFamily: "var(--font-inter), sans-serif",
+                fontFamily: "Inter",
                 color: "#363636",
                 fontSize: 12,
                 fontWeight: 500,

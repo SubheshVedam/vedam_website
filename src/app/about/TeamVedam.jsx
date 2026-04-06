@@ -90,7 +90,7 @@ const TeamVedam = () => {
             <Typography
               component="span"
               sx={{
-                fontFamily: "var(--font-outfit), sans-serif",
+                fontFamily: "Outfit, sans-serif",
                 fontWeight: 700,
                 fontSize: "1.5rem",
                 background: "linear-gradient(90deg, #F97D03 0%, #8A18FF 45.167%)",
@@ -109,7 +109,7 @@ const TeamVedam = () => {
             <Typography
               component="span"
               sx={{
-                fontFamily: "var(--font-inter), sans-serif",
+                fontFamily: "Inter",
                 fontWeight: 700,
                 fontSize: { md: "2.25rem", lg: "2.5rem" },
                 color: "#2D1B4E",
@@ -127,7 +127,7 @@ const TeamVedam = () => {
           </Box>
           <Typography
             sx={{
-              fontFamily: "var(--font-outfit), var(--font-inter), sans-serif",
+              fontFamily: "Outfit, Inter, sans-serif",
               fontWeight: 600,
               fontSize: { xs: "0.875rem", md: "1.125rem" },
               color: "#1F1F1F",
@@ -157,7 +157,7 @@ const TeamVedam = () => {
 
           <Typography
             sx={{
-              fontFamily: "var(--font-outfit), var(--font-inter), sans-serif",
+              fontFamily: "Outfit, Inter, sans-serif",
               fontWeight: 600,
               fontSize: { xs: "0.8125rem", md: "1.0625rem" },
               color: "#1F1F1F",
@@ -168,7 +168,7 @@ const TeamVedam = () => {
           </Typography>
           <Typography
             sx={{
-              fontFamily: "var(--font-outfit), var(--font-inter), sans-serif",
+              fontFamily: "Outfit, Inter, sans-serif",
               fontSize: { xs: "0.75rem", md: "1rem" },
               color: "#444",
               lineHeight: 1.65,
@@ -178,7 +178,7 @@ const TeamVedam = () => {
           </Typography>
           <Typography
             sx={{
-              fontFamily: "var(--font-outfit), var(--font-inter), sans-serif",
+              fontFamily: "Outfit, Inter, sans-serif",
               fontSize: { xs: "0.75rem", md: "1rem" },
               color: "#444",
               lineHeight: 1.65,
@@ -212,7 +212,7 @@ const TeamVedam = () => {
                 />
                 <Typography
                   sx={{
-                    fontFamily: "var(--font-outfit), sans-serif",
+                    fontFamily: "Outfit, sans-serif",
                     fontSize: { xs: "0.75rem", md: 16 },
                     fontWeight: 400,
                     color: colors.text,
@@ -249,7 +249,7 @@ const TeamVedam = () => {
                   boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
                 }}
               >
-                <Typography sx={{ fontFamily: "var(--font-outfit), sans-serif", fontSize: 10, color: "#1E1E1E", textAlign: "center", lineHeight: 1.2 }}>
+                <Typography sx={{ fontFamily: "Outfit, sans-serif", fontSize: 10, color: "#1E1E1E", textAlign: "center", lineHeight: 1.2 }}>
                   Merit<br />Driven
                 </Typography>
               </Box>
@@ -279,7 +279,7 @@ const TeamVedam = () => {
                 alt=""
                 sx={{ position: "absolute", top: -8, left: "24px", width: 27, height: 42, pointerEvents: "none" }}
               />
-              <Typography sx={{ fontFamily: "var(--font-outfit), sans-serif", fontSize: 10, color: "#1E1E1E", textAlign: "center", lineHeight: 1.2 }}>
+              <Typography sx={{ fontFamily: "Outfit, sans-serif", fontSize: 10, color: "#1E1E1E", textAlign: "center", lineHeight: 1.2 }}>
                 Outcome<br />Focused
               </Typography>
             </Box>
@@ -297,7 +297,7 @@ const TeamVedam = () => {
                   boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
                 }}
               >
-                <Typography sx={{ fontFamily: "var(--font-outfit), sans-serif", fontSize: 10, color: "#1E1E1E", textAlign: "center", lineHeight: 1.2 }}>
+                <Typography sx={{ fontFamily: "Outfit, sans-serif", fontSize: 10, color: "#1E1E1E", textAlign: "center", lineHeight: 1.2 }}>
                   Industry<br />Relevant
                 </Typography>
               </Box>
@@ -394,7 +394,7 @@ const TeamVedam = () => {
             />
             <Typography
               sx={{
-                fontFamily: "var(--font-outfit), var(--font-inter), sans-serif",
+                fontFamily: "Outfit, Inter, sans-serif",
                 fontSize: 16,
                 color: "#1E1E1E",
                 textAlign: "center",
@@ -427,7 +427,7 @@ const TeamVedam = () => {
           >
             <Typography
               sx={{
-                fontFamily: "var(--font-outfit), var(--font-inter), sans-serif",
+                fontFamily: "Outfit, Inter, sans-serif",
                 fontSize: 16,
                 color: "#1E1E1E",
                 textAlign: "center",
@@ -482,7 +482,7 @@ const TeamVedam = () => {
             />
             <Typography
               sx={{
-                fontFamily: "var(--font-outfit), var(--font-inter), sans-serif",
+                fontFamily: "Outfit, Inter, sans-serif",
                 fontSize: 16,
                 color: "#1E1E1E",
                 textAlign: "center",
@@ -517,7 +517,7 @@ const TeamVedam = () => {
         <Box sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start", mb: 2 }}>
           <Typography
             sx={{
-              fontFamily: "var(--font-outfit), sans-serif",
+              fontFamily: "Outfit, sans-serif",
               fontWeight: 400,
               fontSize: { xs: "0.75rem", md: "1rem" },
               background: "linear-gradient(90deg, #FB7F05 0%, #6C10BC 42.108%)",
@@ -532,7 +532,7 @@ const TeamVedam = () => {
           <Typography
             component="h2"
             sx={{
-              fontFamily: "var(--font-outfit), sans-serif",
+              fontFamily: "Outfit, sans-serif",
               fontWeight: 600,
               fontSize: { xs: "1.5rem", md: "2rem" },
               background: "linear-gradient(90deg, #FB7F05 0%, #6C10BC 42.108%)",
@@ -607,7 +607,7 @@ const TeamVedam = () => {
               >
                 <Typography
                   sx={{
-                    fontFamily: "var(--font-outfit), sans-serif",
+                    fontFamily: "Outfit, sans-serif",
                     fontWeight: 600,
                     fontSize: { xs: "0.75rem", md: "1rem" },
                     color: "#2B135C",
@@ -618,7 +618,7 @@ const TeamVedam = () => {
                 </Typography>
                 <Typography
                   sx={{
-                    fontFamily: "var(--font-outfit), sans-serif",
+                    fontFamily: "Outfit, sans-serif",
                     fontSize: { xs: "0.75rem", md: "1rem" },
                     color: "#1E1E1E",
                     lineHeight: 1.55,
@@ -631,7 +631,7 @@ const TeamVedam = () => {
                     <Typography
                       key={i}
                       sx={{
-                        fontFamily: "var(--font-outfit), sans-serif",
+                        fontFamily: "Outfit, sans-serif",
                         fontSize: { xs: "0.75rem", md: "1rem" },
                         color: "#1E1E1E",
                         lineHeight: 1.55,
@@ -685,7 +685,7 @@ const TeamVedam = () => {
                         )}
                         <Typography
                           sx={{
-                            fontFamily: "var(--font-outfit), sans-serif",
+                            fontFamily: "Outfit, sans-serif",
                             fontSize: { xs: "0.625rem", md: "0.8125rem" },
                             fontWeight: { xs: 400, md: 600 },
                             color: "#000",
@@ -735,7 +735,7 @@ const TeamVedam = () => {
         >
           <Typography
             sx={{
-              fontFamily: "var(--font-outfit), sans-serif",
+              fontFamily: "Outfit, sans-serif",
               fontWeight: 500,
               fontSize: { xs: "0.75rem", md: 16 },
               color: "#fff",
@@ -755,7 +755,7 @@ const TeamVedam = () => {
         <Box sx={{ width: "100%" }}>
           <Typography
             sx={{
-              fontFamily: "var(--font-outfit), sans-serif",
+              fontFamily: "Outfit, sans-serif",
               fontSize: { xs: "0.75rem", md: 16 },
               fontWeight: 400,
               background: "linear-gradient(90deg, #FB7F05 0%, #6C10BC 42.108%)",
@@ -770,7 +770,7 @@ const TeamVedam = () => {
           <Typography
             component="h2"
             sx={{
-              fontFamily: "var(--font-outfit), sans-serif",
+              fontFamily: "Outfit, sans-serif",
               fontWeight: 600,
               fontSize: { xs: "1.5rem", md: 36 },
               lineHeight: 1,
@@ -822,7 +822,7 @@ const TeamVedam = () => {
             >
               <Typography
                 sx={{
-                  fontFamily: "var(--font-outfit), sans-serif",
+                  fontFamily: "Outfit, sans-serif",
                   fontWeight: 600,
                   fontSize: { xs: "0.75rem", md: 16 },
                   color: "#2B135C",
@@ -833,7 +833,7 @@ const TeamVedam = () => {
               <Box sx={{ height: { xs: 8, md: 12 } }} />
               <Typography
                 sx={{
-                  fontFamily: "var(--font-outfit), sans-serif",
+                  fontFamily: "Outfit, sans-serif",
                   fontSize: { xs: "0.75rem", md: 16 },
                   color: "#1E1E1E",
                   lineHeight: 1.55,
@@ -850,10 +850,10 @@ const TeamVedam = () => {
                 Subhesh is working alongside a team of experienced engineers, product builders and industry practitioners from leading technology companies. Together, they have designed a Computer Science & AI program grounded in how technology is actually built and used today.
               </Typography>
               <Box sx={{ display: "flex", flexDirection: "column", gap: 1, mt: 1.5 }}>
-                <Typography sx={{ fontFamily: "var(--font-outfit), sans-serif", fontSize: { xs: "0.75rem", md: 16 }, color: "#1E1E1E", lineHeight: 1.55 }}>
+                <Typography sx={{ fontFamily: "Outfit, sans-serif", fontSize: { xs: "0.75rem", md: 16 }, color: "#1E1E1E", lineHeight: 1.55 }}>
                   Rather than treating industry exposure as an add-on, Vedam integrates it directly into the curriculum from how concepts are taught to how students practice and apply them.
                 </Typography>
-                <Typography sx={{ fontFamily: "var(--font-outfit), sans-serif", fontSize: { xs: "0.75rem", md: 16 }, color: "#1E1E1E", lineHeight: 1.55 }}>
+                <Typography sx={{ fontFamily: "Outfit, sans-serif", fontSize: { xs: "0.75rem", md: 16 }, color: "#1E1E1E", lineHeight: 1.55 }}>
                   This collective approach ensures that learning is hands-on, current and aligned with real engineering expectations from Day 1.
                 </Typography>
               </Box>
