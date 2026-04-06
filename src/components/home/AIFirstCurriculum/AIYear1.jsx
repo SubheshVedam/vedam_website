@@ -81,7 +81,7 @@ export const AIYear1 = () => {
           fontSize: "clamp(10px, 2vw, 14px)",
           fontFamily: "var(--font-inter), sans-serif",
           fontWeight: "500",
-          color: "rgba(77, 77, 77, 1)",
+          color: "rgba(132, 132, 132, 1)",
           marginBottom: "2rem",
           lineHeight: "100%",
         }}

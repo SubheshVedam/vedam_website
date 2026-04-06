@@ -130,12 +130,7 @@ export default function Footer() {
                     color="inherit"
                     underline="hover"
                     sx={{
-                      display: "flex",
-                      alignItems: "center",
-                      minHeight: { xs: "auto", sm: 44 },
-                      py: { xs: 0, sm: 0.25 },
                       fontSize: { xs: 11, sm: 16 },
-                      lineHeight: { xs: 1.4, sm: 1.5 },
                       "&:hover": {
                         color: "#FFA41A",
                       },
@@ -166,7 +161,6 @@ export default function Footer() {
                 <Link
                   key={social.name}
                   href={social.url}
-                  aria-label={`Visit Vedam on ${social.name}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   display="flex"
@@ -174,10 +168,6 @@ export default function Footer() {
                   color="#FFFFFF"
                   alignItems="center"
                   underline="hover"
-                  sx={{
-                    minHeight: 44,
-                    py: { xs: 0.5, sm: 0.25 },
-                  }}
                 >
                   {/* <Image
                     src={social.icon}

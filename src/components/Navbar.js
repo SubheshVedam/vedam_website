@@ -430,7 +430,6 @@ export default function Navbar() {
             <IconButton
               sx={{ display: { xs: "block", sm: "none" } }}
               onClick={handleDrawerToggle}
-              aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
             >
               <MenuIcon />
             </IconButton>
