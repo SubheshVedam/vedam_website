@@ -789,7 +789,7 @@ export const homeScreenData = {
   year2: {
     title: "Full Stack Mastery",
     subtitle:
-      "You can learn everything needed to build a fully functional _2eb application and launch it successfully.",
+      "You can learn everything needed to build a fully functional web application and launch it successfully.",
     secondTitle: "Skills & Technologies",
     secondArray: [
       "Advanced DSA",
