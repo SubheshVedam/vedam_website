@@ -1,6 +1,9 @@
 import React from "react";
 import Admission from "./Admission";
 import { adypuPuneFeeStructureData } from "@/constants/admissionFeeData";
+import { getVsatIntakeFromSheet } from "@/lib/vsatSheet";
+
+export const revalidate = 3600;
 
 export const metadata = {
   title: 'Admissions & Fees - Vedam School of Technology',
@@ -23,8 +26,9 @@ export const metadata = {
   },
 };
 
-const page = () => {
-  return <Admission feeStructureData={adypuPuneFeeStructureData} />;
-};
-
-export default page;
+export default async function Page() {
+  const vsatIntake = await getVsatIntakeFromSheet();
+  return (
+    <Admission feeStructureData={adypuPuneFeeStructureData} vsatIntake={vsatIntake} />
+  );
+}

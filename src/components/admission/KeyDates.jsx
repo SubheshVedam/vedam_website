@@ -2,7 +2,9 @@ import React from "react";
 import { Box, Typography } from "@mui/material";
 import { admissionScreenData } from "@/constants/data";
 
-export const KeyDates = () => {
+export const KeyDates = ({ secondRowValues }) => {
+  const secondRow =
+    secondRowValues ?? admissionScreenData.keyDates.secondArray;
   return (
     <Box>
       {/* Header Box */}
@@ -76,7 +78,7 @@ export const KeyDates = () => {
             borderBottomRightRadius: "16px",
           }}
         >
-          {admissionScreenData.keyDates.secondArray.map((item, index) => (
+          {secondRow.map((item, index) => (
             <Box
               key={`desktop-content-${index}`}
               sx={{
@@ -159,7 +161,7 @@ export const KeyDates = () => {
                     fontFamily: "Inter",
                   }}
                 >
-                  {admissionScreenData.keyDates.secondArray[index]}
+                  {secondRow[index]}
                 </Typography>
               </Box>
             </Box>

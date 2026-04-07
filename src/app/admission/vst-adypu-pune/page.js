@@ -1,6 +1,9 @@
 import React from "react";
 import Admission from "../Admission";
 import { adypuPuneFeeStructureData } from "@/constants/admissionFeeData";
+import { getVsatIntakeFromSheet } from "@/lib/vsatSheet";
+
+export const revalidate = 3600;
 import { AdypuBrochureVideoSection } from "@/components/admission/AdypuBrochureVideoSection";
 
 export const metadata = {
@@ -31,10 +34,12 @@ export const metadata = {
   },
 };
 
-const page = () => {
+export default async function Page() {
+  const vsatIntake = await getVsatIntakeFromSheet();
   return (
     <Admission
       feeStructureData={adypuPuneFeeStructureData}
+      vsatIntake={vsatIntake}
       topSections={[
         {
           id: "adypu-video-brochure",
@@ -44,6 +49,4 @@ const page = () => {
       ]}
     />
   );
-};
-
-export default page;
+}

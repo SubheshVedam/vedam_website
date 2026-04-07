@@ -1,6 +1,9 @@
 import React from "react";
 import Admission from "../Admission";
 import { gurugramFeeStructureData } from "@/constants/admissionFeeData";
+import { getVsatIntakeFromSheet } from "@/lib/vsatSheet";
+
+export const revalidate = 3600;
 import { GurugramBrochureImageSection } from "@/components/admission/GurugramBrochureImageSection";
 
 const gurugramFacilityImages = [
@@ -40,11 +43,13 @@ export const metadata = {
   },
 };
 
-const page = () => {
+export default async function Page() {
+  const vsatIntake = await getVsatIntakeFromSheet();
   return (
     <Admission
       showHostelFees={false}
       feeStructureData={gurugramFeeStructureData}
+      vsatIntake={vsatIntake}
       topSections={[
         {
           id: "gurugram-collaboration-brochure",
@@ -55,6 +60,4 @@ const page = () => {
       facilityAndAmenitiesProps={{ flatImages: gurugramFacilityImages }}
     />
   );
-};
-
-export default page;
+}

@@ -6,6 +6,9 @@ import { Suspense } from "react";
 import EmotionCacheProvider from "@/components/EmotionCacheProvider";
 import Layout from "@/components/Layout";
 import AnnouncementBanner from "@/components/AnnouncementBanner";
+import { getVsatIntakeFromSheet } from "@/lib/vsatSheet";
+
+export const revalidate = 3600;
 import Script from "next/script";
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { Analytics } from "@vercel/analytics/next";
@@ -66,7 +69,9 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const vsatIntake = await getVsatIntakeFromSheet();
+
   return (
     <html lang="en">
       <head>
@@ -135,7 +140,9 @@ export default function RootLayout({ children }) {
           }}
         />
         <EmotionCacheProvider>
-          <AnnouncementBanner />
+          <AnnouncementBanner
+            applicationClosingEndMs={vsatIntake?.applicationClosingEndMs}
+          />
           <Layout>
             <Navbar />
             {children}
