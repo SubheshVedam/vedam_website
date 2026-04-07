@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Box, Typography, Button } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
@@ -110,7 +110,6 @@ function SemAccordion({ item, isOpen, onToggle }) {
 function RoomTypeCards({ roomTypes, notes }) {
   return (
     <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: "16px", md: "20px" } }}>
-      {/* Room cards */}
       {roomTypes.map(({ type, rows }) => (
         <Box
           key={type}
@@ -121,7 +120,6 @@ function RoomTypeCards({ roomTypes, notes }) {
             background: "linear-gradient(white, white) padding-box, linear-gradient(135deg, #6C10BC, #FB7F05) border-box",
           }}
         >
-          {/* Header */}
           <Box sx={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
             <Box sx={{ bgcolor: "rgba(108,16,188,0.08)", p: { xs: "10px 14px", md: "14px 20px" }, borderRight: "0.5px solid rgba(108,16,188,0.2)" }}>
               <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: { xs: "12px", md: "14px" }, color: "#6C10BC" }}>
@@ -135,7 +133,6 @@ function RoomTypeCards({ roomTypes, notes }) {
             </Box>
           </Box>
 
-          {/* Rows */}
           {rows.map(({ label, value }, i) => (
             <Box key={i} sx={{ display: "grid", gridTemplateColumns: "1fr 1fr", borderTop: "0.5px solid rgba(108,16,188,0.15)" }}>
               <Box sx={{ bgcolor: "rgba(108,16,188,0.04)", p: { xs: "10px 14px", md: "12px 20px" }, borderRight: "0.5px solid rgba(108,16,188,0.15)" }}>
@@ -153,7 +150,6 @@ function RoomTypeCards({ roomTypes, notes }) {
         </Box>
       ))}
 
-      {/* Notes */}
       {notes?.length > 0 && (
         <Box
           sx={{
@@ -205,9 +201,6 @@ function RoomTypeCards({ roomTypes, notes }) {
   );
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// Legacy hostel section — Gurugram (flat roomTypes array)
-// ─────────────────────────────────────────────────────────────────────────────
 function LegacyHostelSection({ hostelFees }) {
   return (
     <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: "16px", md: "24px" }, mt: { xs: "8px", md: 0 } }}>
@@ -216,17 +209,12 @@ function LegacyHostelSection({ hostelFees }) {
   );
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// New hostel section — Pune (hostelTypes array with Out of Campus / In Campus)
-// ─────────────────────────────────────────────────────────────────────────────
 function MultiTypeHostelSection({ hostelFees }) {
   const [activeTab, setActiveTab] = useState(hostelFees.hostelTypes[0]?.type ?? "outCampus");
   const activeHostel = hostelFees.hostelTypes.find((h) => h.type === activeTab);
 
   return (
     <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: "16px", md: "24px" }, mt: { xs: "8px", md: 0 } }}>
-
-      {/* Sub-tab: Out of Campus / In Campus */}
       <Box sx={{ display: "flex", gap: "24px", borderBottom: "1px solid rgba(0,0,0,0.15)" }}>
         {hostelFees.hostelTypes.map(({ type, label }) => (
           <Box
@@ -248,14 +236,12 @@ function MultiTypeHostelSection({ hostelFees }) {
 
       {activeHostel && (
         <>
-          {/* Hostel title */}
           <Typography sx={{
             fontFamily: "Inter, sans-serif", fontWeight: 700,
             fontSize: { xs: "13px", md: "16px" }, color: "#6C10BC",
           }}>
             {activeHostel.title}
           </Typography>
-
           <RoomTypeCards roomTypes={activeHostel.roomTypes} notes={activeHostel.notes} />
         </>
       )}
@@ -263,9 +249,6 @@ function MultiTypeHostelSection({ hostelFees }) {
   );
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// HostelFeeSection — router: detects shape and picks the right sub-component
-// ─────────────────────────────────────────────────────────────────────────────
 function HostelFeeSection({ hostelFees, hostelPlaceholder }) {
   if (!hostelFees) {
     return (
@@ -274,17 +257,12 @@ function HostelFeeSection({ hostelFees, hostelPlaceholder }) {
       </Typography>
     );
   }
-
-  // Legacy shape (Gurugram): hostelFees.roomTypes is an array
   if (Array.isArray(hostelFees.roomTypes)) {
     return <LegacyHostelSection hostelFees={hostelFees} />;
   }
-
-  // New shape (Pune): hostelFees.hostelTypes is an array
   if (Array.isArray(hostelFees.hostelTypes)) {
     return <MultiTypeHostelSection hostelFees={hostelFees} />;
   }
-
   return null;
 }
 
@@ -295,6 +273,31 @@ export default function ProgramPage({ config }) {
   const [feeTab, setFeeTab] = useState("course");
   const [loanPartner, setLoanPartner] = useState("propelled");
   const [openSem, setOpenSem] = useState(0);
+  const [showBrochureWidget, setShowBrochureWidget] = useState(false);
+  const [widgetInstance, setWidgetInstance] = useState(0);
+  const widgetContainerRef = useRef(null);
+
+  const widgetHtml = `
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <base target="_blank" />
+        <style>body{margin:0;padding:0;}</style>
+      </head>
+      <body>
+        <div class="npf_wgts" data-height="360px" data-w="a7933df0565e4ea9a0414057c751118c" style="width:100%"></div>
+        <script type="text/javascript">
+          var s=document.createElement("script");
+          s.type="text/javascript";
+          s.async=true;
+          s.src="https://widgets.in6.nopaperforms.com/emwgts.js";
+          document.body.appendChild(s);
+        </script>
+      </body>
+    </html>
+  `;
 
   const {
     hero,
@@ -414,12 +417,14 @@ export default function ProgramPage({ config }) {
             >
               Apply Now
             </Button>
+
+            {/* Download Brochure — opens NoPaperForms widget modal */}
             <Button
-              component="a"
-              href={hero.brochureUrl}
-              target="_blank"
-              rel="noopener noreferrer"
               variant="contained"
+              onClick={() => {
+                setWidgetInstance((count) => count + 1);
+                setShowBrochureWidget(true);
+              }}
               sx={{
                 bgcolor: "rgba(30,30,30,0.55)", borderRadius: "8px",
                 px: { xs: "16px", md: "28px" }, py: { xs: "8px", md: "14px" },
@@ -435,6 +440,69 @@ export default function ProgramPage({ config }) {
           </Box>
         </Box>
       </Box>
+
+      {showBrochureWidget && (
+        <Box
+          sx={{
+            position: "fixed",
+            inset: 0,
+            backgroundColor: "rgba(0,0,0,0.6)",
+            zIndex: 1300,
+            alignItems: "center",
+            justifyContent: "center",
+            padding: { xs: "16px", sm: "24px" },
+          }}
+          display="flex"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Download brochure form"
+          onClick={() => setShowBrochureWidget(false)}
+        >
+          <Box
+            sx={{
+              position: "relative",
+              backgroundColor: "#fff",
+              width: "100%",
+              maxWidth: { xs: "96vw", sm: "700px" },
+              borderRadius: "16px",
+              padding: { xs: "12px", sm: "16px" },
+              maxHeight: "90vh",
+              boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
+              display: "flex",
+              flexDirection: "column",
+              gap: "12px",
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Button
+              onClick={() => setShowBrochureWidget(false)}
+              sx={{
+                alignSelf: "flex-end",
+                minWidth: "auto",
+                padding: "6px 12px",
+              }}
+            >
+              Close
+            </Button>
+            <Box
+              sx={{
+                width: "100%",
+                borderRadius: "12px",
+                overflow: "hidden",
+              }}
+              key={widgetInstance}
+            >
+              <iframe
+                ref={widgetContainerRef}
+                title="Download brochure form"
+                srcDoc={widgetHtml}
+                style={{ width: "100%", height: "360px", border: "none" }}
+                sandbox="allow-forms allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-top-navigation allow-top-navigation-by-user-activation allow-downloads"
+              />
+            </Box>
+          </Box>
+        </Box>
+      )}
 
       {/* ── 2. STATS BAR ────────────────────────────────────────────────────── */}
       <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: "8px", md: "12px" }, alignItems: "center", pb: { xs: "20px", md: "40px" } }}>
@@ -686,12 +754,9 @@ export default function ProgramPage({ config }) {
             <Box sx={{
               display: { xs: "none", md: "block" }, width: "100%", overflowX: "auto", scrollbarWidth: "none",
               msOverflowStyle: "none",
-              "&::-webkit-scrollbar": {
-                display: "none",
-              },
+              "&::-webkit-scrollbar": { display: "none" },
             }}>
               <Box sx={{ minWidth: "900px", border: "0.5px solid rgba(0,0,0,0.2)", borderRadius: "24px", overflow: "hidden", bgcolor: "white" }}>
-                {/* Headers */}
                 <Box sx={{ display: "grid", gridTemplateColumns: "2fr repeat(9, 1fr)" }}>
                   {fees.feeData.headers.map((h, i) => (
                     <Box key={i} sx={{ bgcolor: "#F4ECFA", p: "10px 20px", borderRight: i < fees.feeData.headers.length - 1 ? "0.5px solid rgba(0,0,0,0.1)" : "none", ...(i === 0 && { minWidth: "210px" }) }}>
@@ -699,7 +764,6 @@ export default function ProgramPage({ config }) {
                     </Box>
                   ))}
                 </Box>
-                {/* Data rows */}
                 {fees.feeData.rows.map(({ label, values, isSubTotal }, ri) => (
                   <Box
                     key={ri}
@@ -720,7 +784,6 @@ export default function ProgramPage({ config }) {
                     ))}
                   </Box>
                 ))}
-                {/* Totals row */}
                 <Box sx={{ display: "grid", gridTemplateColumns: "2fr repeat(9, 1fr)", borderTop: "0.5px solid rgba(30,30,30,0.2)" }}>
                   <Box sx={{ bgcolor: "#BA6BFF", p: "10px", pl: "20px", borderRight: "0.5px solid rgba(0,0,0,0.1)", minWidth: "210px" }}>
                     <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: "12px", color: "#1E1E1E", letterSpacing: "-0.24px" }}>Payable Course Fee</Typography>
@@ -806,7 +869,6 @@ export default function ProgramPage({ config }) {
               ))}
             </Box>
 
-            {/* Loan table */}
             <Box sx={{ width: { xs: "100%", md: "512px" }, border: "0.5px solid #6C10BC", borderRadius: "12px", overflow: "hidden", bgcolor: "white" }}>
               {(financing.loanData[loanPartner] ?? financing.loanData[financing.loanPartners[0]?.id])?.rows.map(({ label, value }, i, arr) => (
                 <Box
@@ -838,7 +900,6 @@ export default function ProgramPage({ config }) {
         rel="noopener noreferrer"
         sx={{ ...sectionPad, bgcolor: "white", display: "block", cursor: "pointer" }}
       >
-        {/* Mobile image */}
         <Box
           component="img"
           src={cta.mobile}
@@ -847,10 +908,9 @@ export default function ProgramPage({ config }) {
             display: { xs: "block", md: "none" },
             width: "100%",
             height: "auto",
-            objectFit: "cover",
+            objectFit: "cover"
           }}
         />
-        {/* Desktop image */}
         <Box
           component="img"
           src={cta.desktop}
@@ -859,7 +919,7 @@ export default function ProgramPage({ config }) {
             display: { xs: "none", md: "block" },
             width: "100%",
             height: "auto",
-            objectFit: "cover",
+            objectFit: "cover"
           }}
         />
       </Box>
