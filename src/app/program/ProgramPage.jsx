@@ -535,7 +535,7 @@ export default function ProgramPage({ config }) {
             </Box>
           ))}
         </Box>
-        <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: { xs: "8px", md: "12px" }, color: "#848484", textAlign: "center", letterSpacing: "-0.16px", lineHeight: 1.5, px: "20px" }}>
+        <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 800, fontSize: { xs: "10px", md: "13px" }, color: "#848484", textAlign: "center", letterSpacing: "-0.16px", lineHeight: 1.5, px: "20px" }}>
           {statsBar.footnote}
         </Typography>
       </Box>
