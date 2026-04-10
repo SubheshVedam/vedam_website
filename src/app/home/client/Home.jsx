@@ -3,10 +3,11 @@ import dynamic from "next/dynamic";
 import { SectionStack, VideoWithText } from "@/components";
 import WhyVedam from "@/components/WhyVedam";
 import { homeScreenData } from "@/constants/data";
-import { Box, useMediaQuery, useTheme } from "@mui/material";
+import { Box } from "@mui/material";
 import Image from "next/image";
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect, useRef } from "react";
 
+// ─── Skeleton placeholder (stable height prevents CLS) ───────────────────────
 const SectionSkeleton = ({ height = 320 }) => (
   <Box
     role="status"
@@ -14,6 +15,7 @@ const SectionSkeleton = ({ height = 320 }) => (
     sx={{
       width: "100%",
       minHeight: height,
+      height: height,
       borderRadius: "16px",
       background: "linear-gradient(90deg, #f2f2f2 0%, #e8e8e8 50%, #f2f2f2 100%)",
       backgroundSize: "200% 100%",
@@ -26,113 +28,147 @@ const SectionSkeleton = ({ height = 320 }) => (
   />
 );
 
+// ─── IntersectionObserver-based lazy renderer ─────────────────────────────────
+// Defers rendering of below-fold sections until they're 200px from the viewport.
+// This dramatically reduces TBT on mobile by not hydrating everything at once.
+const LazySection = ({ children, fallbackHeight = 320 }) => {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    if (!("IntersectionObserver" in window)) {
+      setVisible(true);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+    const el = ref.current;
+    if (el) observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      style={{ minHeight: visible ? "auto" : fallbackHeight, width: "100%" }}
+    >
+      {visible ? children : <SectionSkeleton height={fallbackHeight} />}
+    </div>
+  );
+};
+
+// ─── Lazy-loaded sections ─────────────────────────────────────────────────────
 const InCollaborationWith = dynamic(
   () => import("@/components/home/InCollaborationWith").then((m) => m.InCollaborationWith),
-  { loading: () => <SectionSkeleton height={260} /> }
+  { loading: () => <SectionSkeleton height={260} />, ssr: false }
 );
 const AIFirstCurriculum = dynamic(
   () => import("@/components/home/AIFirstCurriculum/AIFirstCurriculum").then((m) => m.AIFirstCurriculum),
-  { loading: () => <SectionSkeleton height={420} /> }
+  { loading: () => <SectionSkeleton height={420} />, ssr: false }
 );
 const ImageGrid = dynamic(
   () => import("@/components/home/ImageGrid").then((m) => m.ImageGrid),
-  { loading: () => <SectionSkeleton height={360} /> }
+  { loading: () => <SectionSkeleton height={360} />, ssr: false }
 );
 const InvestorWhoTrustUs = dynamic(
   () => import("@/components/home/InvestorWhoTrustUs").then((m) => m.InvestorWhoTrustUs),
-  { loading: () => <SectionSkeleton height={260} /> }
+  { loading: () => <SectionSkeleton height={260} />, ssr: false }
 );
 const LearnFrom = dynamic(
   () => import("@/components/home/LearnFrom").then((m) => m.LearnFrom),
-  { loading: () => <SectionSkeleton height={320} /> }
+  { loading: () => <SectionSkeleton height={320} />, ssr: false }
 );
 const VedamVs = dynamic(
   () => import("@/components/home/VedamVs").then((m) => m.VedamVs),
-  { loading: () => <SectionSkeleton height={320} /> }
+  { loading: () => <SectionSkeleton height={320} />, ssr: false }
 );
 const WhatPeople = dynamic(
   () => import("@/components/home/WhatPeople").then((m) => m.WhatPeople),
-  { loading: () => <SectionSkeleton height={320} /> }
+  { loading: () => <SectionSkeleton height={320} />, ssr: false }
 );
 const StudentsAtVedam = dynamic(
   () => import("@/components/home/StudentsAtVedam").then((m) => m.StudentsAtVedam),
-  { loading: () => <SectionSkeleton height={360} /> }
+  { loading: () => <SectionSkeleton height={360} />, ssr: false }
 );
 const Speaker = dynamic(
   () => import("@/components/home/Speaker").then((m) => m.Speaker),
-  { loading: () => <SectionSkeleton height={280} /> }
+  { loading: () => <SectionSkeleton height={280} />, ssr: false }
 );
 const Instructors = dynamic(
   () => import("@/components/home/Instructors").then((m) => m.Instructors),
-  { loading: () => <SectionSkeleton height={300} /> }
+  { loading: () => <SectionSkeleton height={300} />, ssr: false }
 );
-const NewsSection = dynamic(() => import("@/components/home/NewsSection"), {
-  loading: () => <SectionSkeleton height={300} />,
-});
-const RecognitionAwards = dynamic(() => import("@/components/home/RecognitionAwards"), {
-  loading: () => <SectionSkeleton height={260} />,
-});
+const NewsSection = dynamic(
+  () => import("@/components/home/NewsSection"),
+  { loading: () => <SectionSkeleton height={300} />, ssr: false }
+);
+const RecognitionAwards = dynamic(
+  () => import("@/components/home/RecognitionAwards"),
+  { loading: () => <SectionSkeleton height={260} />, ssr: false }
+);
 
-const Home = () => {
-  const theme = useTheme();
-  const isLarge = useMediaQuery(theme.breakpoints.up("xl"));
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const [showIframe1, setShowIframe1] = useState(false);
-  const [videoUrl1, setVideoUrl1] = useState("");
-  const [showIframe2, setShowIframe2] = useState(false);
-  const [videoUrl2, setVideoUrl2] = useState("");
+// ─── VideoCard ────────────────────────────────────────────────────────────────
+// Uses CSS sx breakpoints instead of useMediaQuery hooks → zero JS runtime cost
+const VideoCard = ({
+  thumbnailSrc,
+  thumbnailAlt,
+  iframeTitle,
+  embedUrl,
+  priority = false,
+  containerSx = {},
+}) => {
+  const [playing, setPlaying] = useState(false);
 
-  const renderVideoCard = (
-    isVisible,
-    videoUrl,
-    onPlay,
-    thumbnailSrc,
-    thumbnailAlt,
-    containerSx = {}
-  ) => (
+  return (
     <Box
       sx={{
         position: "relative",
         width: "100%",
-        height: isMobile ? "220px" : isLarge ? "680px" : "580px",
+        height: { xs: "220px", sm: "580px", xl: "680px" },
         borderRadius: "16px",
         overflow: "hidden",
         backgroundColor: "#000",
         ...containerSx,
       }}
     >
-      {isVisible ? (
+      {playing ? (
         <iframe
           width="100%"
           height="100%"
-          style={{
-            borderRadius: "inherit",
-            border: "none",
-          }}
-          src={videoUrl}
-          title="YouTube video player"
+          style={{ border: "none", borderRadius: "inherit" }}
+          src={`${embedUrl}?autoplay=1`}
+          title={iframeTitle}
           loading="lazy"
-          className="techTeamImage"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
+          allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+          sandbox="allow-scripts allow-same-origin allow-presentation allow-popups"
+          referrerPolicy="strict-origin-when-cross-origin"
         />
       ) : (
         <Box
-          onClick={onPlay}
-          sx={{
-            cursor: "pointer",
-            width: "100%",
-            height: "100%",
-            position: "relative",
-          }}
+          role="button"
+          tabIndex={0}
+          aria-label={`Play ${iframeTitle}`}
+          onClick={() => setPlaying(true)}
+          onKeyDown={(e) => e.key === "Enter" && setPlaying(true)}
+          sx={{ cursor: "pointer", width: "100%", height: "100%", position: "relative" }}
         >
           <Image
             src={thumbnailSrc}
             alt={thumbnailAlt}
             fill
+            priority={priority}
+            sizes="(max-width: 600px) 100vw, (max-width: 1536px) 80vw, 1200px"
             style={{ objectFit: "cover", borderRadius: "inherit" }}
           />
           <Box
+            aria-hidden="true"
             sx={{
               position: "absolute",
               top: "50%",
@@ -141,6 +177,7 @@ const Home = () => {
               background: "rgba(0,0,0,0.6)",
               padding: "12px 16px",
               borderRadius: "100px",
+              pointerEvents: "none",
             }}
           >
             <svg
@@ -149,6 +186,8 @@ const Home = () => {
               height={40}
               fill="#fff"
               viewBox="0 0 24 24"
+              aria-hidden="true"
+              focusable="false"
             >
               <path d="M8 5v14l11-7z" />
             </svg>
@@ -157,7 +196,23 @@ const Home = () => {
       )}
     </Box>
   );
+};
 
+// ─── Main page component ──────────────────────────────────────────────────────
+const Home = () => {
+  // Replaced 3× useMediaQuery (MUI) with a single native matchMedia listener.
+  // MUI's useMediaQuery triggers a re-render + theme lookup on every breakpoint
+  // change — native matchMedia is passive and costs nothing on mobile paint.
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 600px)");
+    setIsMobile(mq.matches);
+    const handler = (e) => setIsMobile(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+
+  // ── Hero sections (above the fold — NOT wrapped in LazySection) ─────────────
   const heroSections = [
     {
       id: "collaboration",
@@ -165,24 +220,6 @@ const Home = () => {
       subtitle: homeScreenData.inCollaborationWith.subtitle,
       render: () => <InCollaborationWith />,
     },
-    // {
-    //   id: "tech-video",
-    //   title: homeScreenData.techTeam.title,
-    //   subtitle: homeScreenData.techTeam.subtitle,
-    //   render: () =>
-    //     renderVideoCard(
-    //       showIframe1,
-    //       videoUrl1,
-    //       () => {
-    //         setVideoUrl1(
-    //           "https://www.youtube.com/embed/zHquRUSxP8o?autoplay=1&si=MjqF-PfmelA2too8"
-    //         );
-    //         setShowIframe1(true);
-    //       },
-    //       "/img/video_thumbnail.jpg",
-    //       "Video thumbnail"
-    //     ),
-    // },
     {
       id: "why-vedam",
       title: homeScreenData.whyVedam.title,
@@ -191,87 +228,121 @@ const Home = () => {
     },
   ];
 
+  // ── Below-fold sections (all wrapped in LazySection) ─────────────────────────
   const detailSections = [
     {
       id: "students-at-vedam",
       subtitle: isMobile ? "Meet the Students at Vedam" : "",
-      // subtitle: "",
-      render: () => <StudentsAtVedam />,
+      render: () => (
+        <LazySection fallbackHeight={360}>
+          <StudentsAtVedam />
+        </LazySection>
+      ),
     },
     {
       id: "vedam-vs",
       subtitle: homeScreenData.vedamVs.subtitle,
-      render: () => <VedamVs />,
-      titleChildContainer: {
-        marginBottom: { xs: "1rem", md: "2.5rem" },
-      },
+      render: () => (
+        <LazySection fallbackHeight={320}>
+          <VedamVs />
+        </LazySection>
+      ),
+      titleChildContainer: { marginBottom: { xs: "1rem", md: "2.5rem" } },
       linearGradientSubtitle: "linear-gradient(90deg, #FB7F05 0%, #6C10BC 42.11%)",
     },
     {
       id: "founder-video",
       title: homeScreenData.techTeam.title,
       subtitle: "Hear from our Co-Founder",
-      render: () =>
-        renderVideoCard(
-          showIframe2,
-          videoUrl2,
-          () => {
-            setVideoUrl2(
-              "https://www.youtube.com/embed/kxkRisXZg8Y?autoplay=1&si=0YJjFMtSU96LI9Kn"
-            );
-            setShowIframe2(true);
-          },
-          "/img/hear_from_founder_thumbnail.webp",
-          "Video thumbnail2",
-          {
-            borderRadius: { xs: "16px", md: "22px" },
-            boxShadow: "0px 18px 38px rgba(0,0,0,0.12)",
-          }
-        ),
+      render: () => (
+        <LazySection fallbackHeight={580}>
+          <VideoCard
+            thumbnailSrc="/img/hear_from_founder_thumbnail.webp"
+            thumbnailAlt="Watch our Co-Founder talk about Vedam"
+            iframeTitle="Vedam Co-Founder video"
+            embedUrl="https://www.youtube.com/embed/kxkRisXZg8Y"
+            containerSx={{
+              borderRadius: { xs: "16px", md: "22px" },
+              boxShadow: "0px 18px 38px rgba(0,0,0,0.12)",
+            }}
+          />
+        </LazySection>
+      ),
     },
     {
       id: "image-grid",
       title: homeScreenData.fromEducationToEntrance.title,
       subtitle: homeScreenData.fromEducationToEntrance.subtitle,
-      render: () => <ImageGrid />,
-      // linearGradientSubtitle: "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)",
+      render: () => (
+        <LazySection fallbackHeight={360}>
+          <ImageGrid />
+        </LazySection>
+      ),
     },
     {
       id: "instructors",
       title: homeScreenData.instructor.title,
       subtitle: homeScreenData.instructor.subtitle,
-      render: () => <Instructors />,
+      render: () => (
+        <LazySection fallbackHeight={300}>
+          <Instructors />
+        </LazySection>
+      ),
     },
     {
       id: "learn-from",
       title: homeScreenData.learnFrom.title,
       subtitle: homeScreenData.learnFrom.subtitle,
-      render: () => <LearnFrom />,
+      render: () => (
+        <LazySection fallbackHeight={320}>
+          <LearnFrom />
+        </LazySection>
+      ),
     },
     {
       id: "speaker",
       subtitle: "Mentorship & Guidance from the Best in the Industry",
-      render: () => <Speaker />,
+      render: () => (
+        <LazySection fallbackHeight={280}>
+          <Speaker />
+        </LazySection>
+      ),
     },
     {
       id: "what-people",
       subtitle: homeScreenData.whatPeople.subtitle,
-      render: () => <WhatPeople />,
+      render: () => (
+        <LazySection fallbackHeight={320}>
+          <WhatPeople />
+        </LazySection>
+      ),
     },
     {
       id: "recognition-awards",
       subtitle: homeScreenData.Recognitionawards.subtitle,
-      render: () => <RecognitionAwards />,
+      render: () => (
+        <LazySection fallbackHeight={260}>
+          <RecognitionAwards />
+        </LazySection>
+      ),
     },
     {
       id: "investors",
       subtitle: homeScreenData.investorWhoTrustUs.subtitle,
-      render: () => <InvestorWhoTrustUs />,
+      render: () => (
+        <LazySection fallbackHeight={260}>
+          <InvestorWhoTrustUs />
+        </LazySection>
+      ),
     },
     {
       id: "news",
       subtitle: homeScreenData.intheHeadlines.subtitle,
-      render: () => <NewsSection />,
+      render: () => (
+        <LazySection fallbackHeight={300}>
+          <NewsSection />
+        </LazySection>
+      ),
     },
   ];
 
@@ -290,6 +361,7 @@ const Home = () => {
           title={homeScreenData.hero.title}
           subtitle={homeScreenData.hero.subtitle}
           videoUrl={homeScreenData.hero.background_video}
+        // isImg={homeScreenData.hero.background_hero_image}
         />
         <SectionStack
           widthContainerProps={{
@@ -301,7 +373,12 @@ const Home = () => {
           sections={heroSections}
         />
       </Box>
-      <AIFirstCurriculum />
+
+      {/* AIFirstCurriculum is below the fold — defer it too */}
+      <LazySection fallbackHeight={420}>
+        <AIFirstCurriculum />
+      </LazySection>
+
       <Box
         sx={{
           display: "flex",
@@ -314,7 +391,7 @@ const Home = () => {
       >
         <SectionStack sections={detailSections} />
       </Box>
-    </Fragment >
+    </Fragment>
   );
 };
 
