@@ -3,16 +3,16 @@
 // ─────────────────────────────────────────────────────────────────────────────
 export const gurugramConfig = {
     hero: {
-        bgImage: "/img/program/hero-bg-ggn.png",
-        partnerLogo: "/img/program/sushant.png",
+        bgImage: "/img/program/hero-bg-ggn.webp",
+        partnerLogo: "/img/program/sushant.webp",
         title: "UG Program in Computer Science & Artificial Intelligence",
         subtitle: "Bachelor of Technology Degree by Sushant University, Gurugram",
         applyUrl: "https://apply.vedam.org",
         brochureUrl: "https://drive.google.com/file/d/1WzTusTfoSeYszGtlWtgRdNEZ9ta9EZpJ/view?usp=drive_link",
         accreditationPill: [
             { src: "/img/program/ugc-logo.svg", alt: "UGC", label: "UGC Recognised", width: { xs: "16px", md: "24px" } },
-            { src: "/img/program/nirf-logo.png", alt: "NIRF", label: "NIRF Ranked" },
-            { src: "/img/program/naac-logo.png", alt: "NAAC", label: "NAAC Accredited" },
+            { src: "/img/program/nirf-logo.webp", alt: "NIRF", label: "NIRF Ranked" },
+            { src: "/img/program/naac-logo.webp", alt: "NAAC", label: "NAAC Accredited" },
         ],
     },
 
@@ -37,29 +37,29 @@ export const gurugramConfig = {
             { num: "Top 5", label: "Leading AI hub in Asia" },
             { num: "600+", label: "MNC’s & Fortune 500’s" },
         ],
-        img1: "/img/program/gurugram-1.png",
-        img2: "/img/program/gurugram-2.png",
-        img3: "/img/program/gurugram-3.png",
-        img4: "/img/program/gurugram-4.png",
+        img1: "/img/program/gurugram-1.webp",
+        img2: "/img/program/gurugram-2.webp",
+        img3: "/img/program/gurugram-3.webp",
+        img4: "/img/program/gurugram-4.webp",
     },
 
     campusSection: {
         description: "Sushant University's Gurugram campus is located minutes away from Cyber City, Golf Course Road, and the NCR startup corridor. The campus combines modern academic infrastructure with proximity to India's fastest-growing district.",
         images: [
-            "/img/program/campus-2.png",
-            "/img/program/campus-1.png",
-            "/img/program/campus-3.png",
-            "/img/program/campus-4.png",
-            "/img/program/campus-5.png",
-            "/img/program/campus-6.png",
+            "/img/program/campus-2.webp",
+            "/img/program/campus-1.webp",
+            "/img/program/campus-3.webp",
+            "/img/program/campus-4.webp",
+            "/img/program/campus-5.webp",
+            "/img/program/campus-6.webp",
         ],
     },
 
     accreditations: {
         description: "Your degree isn't just a certificate — it's a nationally recognised credential backed by India's top regulatory bodies, independent quality assessors, and international ranking frameworks.",
         logos: [
-            { src: "/img/program/naac-logo.png", alt: "NAAC", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
-            { src: "/img/program/nirf-logo.png", alt: "NIRF", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
+            { src: "/img/program/naac-logo.webp", alt: "NAAC", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
+            { src: "/img/program/nirf-logo.webp", alt: "NIRF", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
             { src: "/img/program/haryana-emblem.svg", alt: "Haryana", height: { xs: "40px", md: "80px" }, width: { xs: "40px", md: "80px" } },
             { src: "/img/program/aiu.webp", alt: "AIU", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
             { src: "/img/program/ugc.webp", alt: "UGC", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
@@ -69,9 +69,9 @@ export const gurugramConfig = {
     scholarships: {
         description: "Talent shouldn't wait on finances. Vedam rewards merit, achievement, and potential — with scholarships that make the best education accessible to the best students.",
         items: [
-            { title: "Merit Based Scholarship", percent: "Upto 100%", desc: "Recognizes academic excellence, unique talent and leadership potential.", img: "/img/program/scholarship-merit.png" },
-            { title: "Women in Tech Scholarship", percent: "Upto 20%", desc: "Empowering and supporting women in tech for growth and success.", img: "/img/program/scholarship-women.png" },
-            { title: "Need Based Scholarship", percent: "Upto 30%", desc: "Focused on specific fields of study or demonstrating financial needs.", img: "/img/program/scholarship-need.png" },
+            { title: "Merit Based Scholarship", percent: "Upto 100%", desc: "Recognizes academic excellence, unique talent and leadership potential.", img: "/img/program/scholarship-merit.webp" },
+            { title: "Women in Tech Scholarship", percent: "Upto 20%", desc: "Empowering and supporting women in tech for growth and success.", img: "/img/program/scholarship-women.webp" },
+            { title: "Need Based Scholarship", percent: "Upto 30%", desc: "Focused on specific fields of study or demonstrating financial needs.", img: "/img/program/scholarship-need.webp" },
         ],
     },
 
@@ -159,8 +159,8 @@ export const gurugramConfig = {
     },
 
     cta: {
-        mobile: "/img/student1.png",
-        desktop: "/img/student.png"
+        mobile: "/img/student1.webp",
+        desktop: "/img/student.webp"
     },
 };
 
@@ -171,15 +171,15 @@ export const gurugramConfig = {
 export const puneConfig = {
     hero: {
         bgImage: "/img/program/hero-bg-pune.webp",
-        partnerLogo: "/img/program/adypu.png",
+        partnerLogo: "/img/program/adypu.webp",
         title: "UG Program in Computer Science & Artificial Intelligence",
         subtitle: "Bachelor of Technology Degree by ADYPU, Pune",
         applyUrl: "https://apply.vedam.org",
         brochureUrl: "https://drive.google.com/file/d/1j04UERHtvzVG0i9r0A8EY5s0dnAT_DT-/view?usp=drive_link",
         accreditationPill: [
             { src: "/img/program/ugc-logo.svg", alt: "UGC", label: "UGC Recognised", width: { xs: "16px", md: "24px" } },
-            { src: "/img/program/nirf-logo.png", alt: "NIRF", label: "NIRF Ranked" },
-            { src: "/img/program/naac-logo.png", alt: "NAAC", label: "NAAC Accredited" },
+            { src: "/img/program/nirf-logo.webp", alt: "NIRF", label: "NIRF Ranked" },
+            { src: "/img/program/naac-logo.webp", alt: "NAAC", label: "NAAC Accredited" },
         ],
     },
 
@@ -204,10 +204,10 @@ export const puneConfig = {
             { num: "3200+", label: "Oxford of the East" },
             { num: "#1", label: "India's education capital" },
         ],
-        img1: "/img/program/whypune1.png",
-        img2: "/img/program/whypune2.png",
-        img3: "/img/program/whypune3.png",
-        img4: "/img/program/whypune4.png",
+        img1: "/img/program/whypune1.webp",
+        img2: "/img/program/whypune2.webp",
+        img3: "/img/program/whypune3.webp",
+        img4: "/img/program/whypune4.webp",
     },
 
     campusSection: {
@@ -225,9 +225,9 @@ export const puneConfig = {
     accreditations: {
         description: "Your degree isn't just a certificate — it's a nationally recognised credential backed by India's top regulatory bodies, independent quality assessors, and international ranking frameworks.",
         logos: [
-            { src: "/img/program/naac-logo.png", alt: "NAAC", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
-            { src: "/img/program/nirf-logo.png", alt: "NIRF", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
-            { src: "/img/program/mh-logo.png", alt: "GOVT OF MAHARASHTRA", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
+            { src: "/img/program/naac-logo.webp", alt: "NAAC", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
+            { src: "/img/program/nirf-logo.webp", alt: "NIRF", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
+            { src: "/img/program/mh-logo.webp", alt: "GOVT OF MAHARASHTRA", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
             { src: "/img/program/aiu.webp", alt: "AIU", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
             { src: "/img/program/nba.webp", alt: "NBA", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
             { src: "/img/program/ugc.webp", alt: "UGC", height: { xs: "30px", md: "80px" }, width: { xs: "auto", md: "auto" } },
@@ -237,9 +237,9 @@ export const puneConfig = {
     scholarships: {
         description: "We believe every deserving student should have access to world-class education. ADYPU and Vedam jointly offer scholarships that recognise talent, support diversity, and remove financial barriers.",
         items: [
-            { title: "Merit Based Scholarship", percent: "Upto 100%", desc: "Recognizes academic excellence, unique talent and leadership potential.", img: "/img/program/scholarship-merit.png" },
-            { title: "Women in Tech Scholarship", percent: "Upto 20%", desc: "Empowering and supporting women in tech for growth and success.", img: "/img/program/scholarship-women.png" },
-            { title: "Need Based Scholarship", percent: "Upto 30%", desc: "Focused on specific fields of study or demonstrating financial needs.", img: "/img/program/scholarship-need.png" },
+            { title: "Merit Based Scholarship", percent: "Upto 100%", desc: "Recognizes academic excellence, unique talent and leadership potential.", img: "/img/program/scholarship-merit.webp" },
+            { title: "Women in Tech Scholarship", percent: "Upto 20%", desc: "Empowering and supporting women in tech for growth and success.", img: "/img/program/scholarship-women.webp" },
+            { title: "Need Based Scholarship", percent: "Upto 30%", desc: "Focused on specific fields of study or demonstrating financial needs.", img: "/img/program/scholarship-need.webp" },
         ],
     },
 
@@ -413,7 +413,7 @@ export const puneConfig = {
     },
 
     cta: {
-        mobile: "/img/student1.png",
-        desktop: "/img/student.png"
+        mobile: "/img/student1.webp",
+        desktop: "/img/student.webp"
     },
 };

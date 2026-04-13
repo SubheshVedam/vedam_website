@@ -112,7 +112,7 @@ export const GurugramBrochureImageSection = () => {
             position: "absolute",
             inset: 0,
             borderRadius: "inherit",
-            backgroundImage: 'url("/img/campuses/gurugram_collaboration_piyush.jpeg")',
+            backgroundImage: 'url("/img/campuses/gurugram_collaboration_piyush.webp")',
             backgroundRepeat: "no-repeat",
             backgroundSize: { xs: "cover", md: "108% auto" },
             backgroundPosition: { xs: "center -20px", md: "30% -30px" },

@@ -11,7 +11,7 @@ import Image from "next/image";
 
 export const testimonialData = [
   {
-    image: "/img/testimonials/img1.png",
+    image: "/img/testimonials/img1.webp",
     text: `My experience at Vedam School of Technology so far has been nothing short of mesmerizing. 🌟
       From the very first day, I felt a sense of belonging, surrounded by mentors who genuinely care, peers who constantly inspire, and an environment that encourages curiosity and innovation.
 `,
@@ -20,7 +20,7 @@ export const testimonialData = [
     linkedInUrl: "https://www.linkedin.com/in/nishtha-vadhwani-9a95a2219/",
   },
   {
-    image: "/img/testimonials/img2.png",
+    image: "/img/testimonials/img2.webp",
     text: `My journey at Vedam School of Technology has been truly enriching. I’ve had the opportunity to learn many new things and grow both academically and personally. The guidance from our mentors has been extremely valuable. They don’t just teach, they guide like seniors who genuinely care about our progress and well-being.
 `,
     name: "Sharav Yadav",
@@ -28,42 +28,42 @@ export const testimonialData = [
     linkedInUrl: "https://www.linkedin.com/in/sharav-yadav-s52/",
   },
   {
-    image: "/img/testimonials/img3.png",
+    image: "/img/testimonials/img3.webp",
     text: `My first 100 days at Vedam School of Technology have been full of learning and new experiences. The supportive environment, hands-on sessions, and encouraging faculty have helped me grow both technically and personally. I’ve learned to think more practically, collaborate better, and stay curious about new technologies.`,
     name: "Awaneesh Gupta",
     designation: "Student at Vedam",
     linkedInUrl: "https://www.linkedin.com/in/awaneesh-gupta/",
   },
   {
-    image: "/img/testimonials/img4.png",
+    image: "/img/testimonials/img4.webp",
     text: `My journey at Vedam has been truly transformative! Under the guidance of Subhesh Sir, we’ve grown from learners to builders ; creating real-world projects and products for Vedam students. Problem-solving in DSA now feels effortless and genuinely fun!`,
     name: "Sidhant Pande",
     designation: "Student at Vedam",
     linkedInUrl: "https://www.linkedin.com/in/sidhantpande/",
   },
   {
-    image: "/img/testimonials/img5.png",
+    image: "/img/testimonials/img5.webp",
     text: `My experience at Vedam has been amazing! With mentors like Subhesh Sir and Rupesh Sir for DSA, Prasanna Sir for Web Development, and Pankaj Sir for Math, learning has been truly engaging. The contests make learning fun, and I’m excited for the next four years to be as incredible as these first few months!`,
     name: "Aayush Bhatt",
     designation: "Student at Vedam",
     linkedInUrl: "https://www.linkedin.com/in/aayush-bhatt217/",
   },
   {
-    image: "/img/testimonials/img6.png",
+    image: "/img/testimonials/img6.webp",
     text: `My academic journey at Vedam has been truly enriching! From Shubesh Sir’s Java classes to Prasanna Sir’s creative web sessions and Anuj Khanna Sir’s engaging communication classes — every lesson has boosted my skills and confidence`,
     name: "Aaradhy Chinche",
     designation: "Student at Vedam",
     linkedInUrl: "https://www.linkedin.com/in/aaradhy-chinche/",
   },
   {
-    image: "/img/testimonials/img7.png",
+    image: "/img/testimonials/img7.webp",
     text: `So far it has been a great journey .I have enjoyed the activities and club events .The teacher are amazing ,especially Subhesh sir's class is the most interesting. I solved more than 60 dsa problems and its not been as hard as i was told on internet, special thanks to subhesh sir for that.`,
     name: "Krishiv Mahajan",
     designation: "Student at Vedam",
     linkedInUrl: "https://www.linkedin.com/in/krishiv-mahajan/",
   },
   {
-    image: "/img/testimonials/img8.png",
+    image: "/img/testimonials/img8.webp",
     text: `It has been really good experience , got to know a lot about tech since I joined this college and get to know a lot of things even everyday. I am able to really see the advantage which Vedam promised that it would be really good learning through Industry Based Mentors and thats the same case.`,
     name: "Navneet Singh",
     designation: "Student at Vedam",
@@ -73,16 +73,16 @@ export const testimonialData = [
 
 export const expertsData = [
   {
-    imageUrl: "/img/experts/ashishG.png",
+    imageUrl: "/img/experts/ashishG.webp",
     name: "Ashish G",
-    logo: "/img/companies/apple.png",
+    logo: "/img/companies/apple.webp",
     designation: "Software Engineer",
     info: "Google, Salesforce & Amazon",
     rating: 4.2,
     linkedIn: "https://www.linkedin.com/in/ashishgautamdev/",
   },
   {
-    imageUrl: "/img/experts/amanpreet.png",
+    imageUrl: "/img/experts/amanpreet.webp",
     name: "Amanpreet Singh",
     logo: "/img/companies/google.webp",
     designation: "Software Engineer",
@@ -92,9 +92,9 @@ export const expertsData = [
       "https://www.linkedin.com/in/amanpreet-singh-b79598a3/?originalSubdomain=in",
   },
   {
-    imageUrl: "/img/experts/senthurpandian.jpeg",
+    imageUrl: "/img/experts/senthurpandian.webp",
     name: "Manivannan",
-    logo: "/img/companies/microsoft-logo.png",
+    logo: "/img/companies/microsoft-logo.webp",
     designation: "Senior Software Engineer",
     info: "13+ Years of Experience, Amazon Interview Panel Member",
     rating: 4.9,
@@ -102,9 +102,9 @@ export const expertsData = [
   },
 
   {
-    imageUrl: "/img/experts/ekta.jpeg",
+    imageUrl: "/img/experts/ekta.webp",
     name: "Ekta Shah",
-    logo: "/img/companies/msci_logo.png",
+    logo: "/img/companies/msci_logo.webp",
     designation: "Data Scientist ",
     info: "Board Member-Board of Studies at NMIMS, Visiting Faculty at MU",
     rating: 4.9,
@@ -112,7 +112,7 @@ export const expertsData = [
   },
 
   {
-    imageUrl: "/img/experts/bradford.jpeg",
+    imageUrl: "/img/experts/bradford.webp",
     name: "Bradford Tuckfield",
     logo: "/img/companies/wharton_logo.webp",
     designation: "PhD",
@@ -121,7 +121,7 @@ export const expertsData = [
     linkedIn: "https://www.linkedin.com/in/bradford-tuckfield-80565b25/",
   },
   {
-    imageUrl: "/img/experts/nischay.jpeg",
+    imageUrl: "/img/experts/nischay.webp",
     name: "Nishchay Agrawal",
     logo: "/img/companies/walmart.webp",
     designation: "Data Scientist",
@@ -130,9 +130,9 @@ export const expertsData = [
     linkedIn: "https://www.linkedin.com/in/nishchay-agrawal-157404170/",
   },
   {
-    imageUrl: "/img/experts/basant.png",
+    imageUrl: "/img/experts/basant.webp",
     name: "Basant Rawat",
-    logo: "/img/companies/Angel_One_Logo.png",
+    logo: "/img/companies/Angel_One_Logo.webp",
     designation: "SDE 2",
     info: "Mentored over 20,000 Minutes, Ex Hexaware",
     rating: 4.9,
@@ -153,7 +153,7 @@ export const instructorData = [
   {
     imageUrl: "/img/instructors/Aman_Instructor.webp",
     name: "Aman Kumar",
-    logo: "/img/instructors/Microsoft_Logo.png",
+    logo: "/img/instructors/Microsoft_Logo.webp",
     designation: "SDE at Apple",
     info: "Ex-Microsoft",
     college: "B.Tech. from DTU (formely DCE)",
@@ -163,7 +163,7 @@ export const instructorData = [
   {
     imageUrl: "/img/instructors/Pankaj_New.webp",
     name: "Pankaj Kumar",
-    logo: "/img/instructors/birdeye.png",
+    logo: "/img/instructors/birdeye.webp",
     designation: "Backend Lead at Vedam",
     info: "Ex-Birdeye",
     college: "B.Tech. from GD University",
@@ -173,7 +173,7 @@ export const instructorData = [
   {
     imageUrl: "/img/instructors/Prasanna_New.webp",
     name: "Prasanna Swain",
-    logo: "/img/instructors/pollard_banknote.png",
+    logo: "/img/instructors/pollard_banknote.webp",
     designation: "Frontend Lead at Vedam",
     info: "Ex-Pollard Banknote",
     college: "B.Tech. from DTU (formely DCE)",
@@ -182,7 +182,7 @@ export const instructorData = [
   {
     imageUrl: "/img/instructors/Jasbir_Instructor.webp",
     name: "Jasbir Singh",
-    logo: "/img/instructors/Cars24_Logo.jpeg",
+    logo: "/img/instructors/Cars24_Logo.webp",
     designation: "6 Yrs+ Dev teaching exp.",
     info: "Tech Lead",
     college: "B.Tech. from DTU (formely DCE)",
@@ -192,7 +192,7 @@ export const instructorData = [
   {
     imageUrl: "/img/instructors/Rupesh_New.webp",
     name: "Rupesh Kumar",
-    logo: "/img/instructors/algoprep.png",
+    logo: "/img/instructors/algoprep.webp",
     designation: "DSA Instructor at Vedam",
     info: "Ex-AlgoPrep",
     college: "B.Tech. from DTU (formely DCE)",
@@ -203,35 +203,35 @@ export const instructorData = [
 export const detailsData = [
   {
     image: "/img/whyvedam/second.webp",
-    bgImage: "/img/whyvedam/img3.png",
+    bgImage: "/img/whyvedam/img3.webp",
     title: "Code From Day 1",
     description:
       "From Day 1, you'll be writing real code, building projects, and solving industry-relevant problems.",
   },
   {
     image: "/img/whyvedam/first.webp",
-    bgImage: "/img/whyvedam/img2.png",
+    bgImage: "/img/whyvedam/img2.webp",
     title: "Only top 5% get in",
     description:
       "Merit based selection to attract the top talent. Learn with and co-create best codes.",
   },
   {
     image: "/img/whyvedam/fourth.webp",
-    bgImage: "/img/whyvedam/img5.png",
+    bgImage: "/img/whyvedam/img5.webp",
     title: "AI First Curriculum",
     description:
       "Our AI-First Curriculum is designed to equip students with the skills, tools, and mindset needed to thrive in an AI-powered world.",
   },
   {
     image: "/img/whyvedam/fifth.webp",
-    bgImage: "/img/whyvedam/img4.png",
+    bgImage: "/img/whyvedam/img4.webp",
     title: "Personal Macbook",
     description:
       "It's your key to a hands-on, immersive and collaborative learning experience in Computer Science and AI. ",
   },
   {
     image: "/img/whyvedam/third.webp",
-    bgImage: "/img/whyvedam/img1.png",
+    bgImage: "/img/whyvedam/img1.webp",
     title: "Top Instructors",
     description: "At Vedam, you’ll learn from the best minds in tech—engineers, researchers, and industry leaders from Google, Microsoft, Amazon, and top startups.",
   },
@@ -289,7 +289,7 @@ export const homeScreenData = {
       },
       {
         id: 1,
-        imageUrl: "/img/companies/microsoft-logo.png",
+        imageUrl: "/img/companies/microsoft-logo.webp",
       },
       {
         id: 2,
@@ -325,11 +325,11 @@ export const homeScreenData = {
       },
       {
         id: 10,
-        imageUrl: "/img/companies/Intuit_Logo.png",
+        imageUrl: "/img/companies/Intuit_Logo.webp",
       },
       {
         id: 11,
-        imageUrl: "/img/companies/Amex_Logo.png",
+        imageUrl: "/img/companies/Amex_Logo.webp",
       },
       {
         id: 12,
@@ -337,51 +337,51 @@ export const homeScreenData = {
       },
       {
         id: 13,
-        imageUrl: "/img/companies/Goldman_Sachs.png",
+        imageUrl: "/img/companies/Goldman_Sachs.webp",
       },
       {
         id: 14,
-        imageUrl: "/img/companies/Sprinklr_Logo.png",
+        imageUrl: "/img/companies/Sprinklr_Logo.webp",
       },
       {
         id: 15,
-        imageUrl: "/img/companies/Bosch_Logo.png",
+        imageUrl: "/img/companies/Bosch_Logo.webp",
       },
       {
         id: 16,
-        imageUrl: "/img/companies/Atlassian-Logo.png",
+        imageUrl: "/img/companies/Atlassian-Logo.webp",
       },
       {
         id: 17,
-        imageUrl: "/img/companies/Airtel-Logo.png",
+        imageUrl: "/img/companies/Airtel-Logo.webp",
       },
       {
         id: 18,
-        imageUrl: "/img/companies/delhivery_logo.png",
+        imageUrl: "/img/companies/delhivery_logo.webp",
       },
       {
         id: 19,
-        imageUrl: "/img/companies/HCL image.png",
+        imageUrl: "/img/companies/HCL image.webp",
       },
       {
         id: 20,
-        imageUrl: "/img/companies/KPMG-logo (1).png",
+        imageUrl: "/img/companies/KPMG-logo (1).webp",
       },
       {
         id: 21,
-        imageUrl: "/img/companies/Deloitte.png",
+        imageUrl: "/img/companies/Deloitte.webp",
       },
       {
         id: 22,
-        imageUrl: "/img/companies/jpmc-logo.png",
+        imageUrl: "/img/companies/jpmc-logo.webp",
       },
       {
         id: 23,
-        imageUrl: "/img/companies/Samsung_Logo_(RGB).png",
+        imageUrl: "/img/companies/Samsung_Logo_(RGB).webp",
       },
       {
         id: 24,
-        imageUrl: "/img/companies/zivame-logo-2019.png",
+        imageUrl: "/img/companies/zivame-logo-2019.webp",
       },
       {
         id: 25,
@@ -429,7 +429,7 @@ export const homeScreenData = {
   techTeam: {
     title: "",
     subtitle: "Tech Minds behind Vedam",
-    image: "/img/tech_team.jpeg",
+    image: "/img/tech_team.webp",
     // image: "/img/tech_team.webp",
   },
   investorWhoTrustUs: {
@@ -772,17 +772,17 @@ export const homeScreenData = {
       {
         id: 0,
         text: "Build a Real-Time Chat platform like WhatsApp",
-        icon: "/img/outcomes/year2_2.jpg",
+        icon: "/img/outcomes/year2_2.webp",
       },
       {
         id: 1,
         text: "Build a database like IMDb for storage & ratings",
-        icon: "/img/outcomes/year1_2.jpg",
+        icon: "/img/outcomes/year1_2.webp",
       },
       {
         id: 2,
         text: "Participate in TechCrunch & Hackathons",
-        icon: "/img/outcomes/year1_3.jpg",
+        icon: "/img/outcomes/year1_3.webp",
       },
     ],
   },
@@ -807,17 +807,17 @@ export const homeScreenData = {
       {
         id: 0,
         text: "Develop an end to end Job Portal like LinkedIn",
-        icon: "/img/outcomes/year2_1.jpg",
+        icon: "/img/outcomes/year2_1.webp",
       },
       {
         id: 1,
         text: "Build Hotstar like Feed with Search & Categories ",
-        icon: "/img/outcomes/year1.jpg",
+        icon: "/img/outcomes/year1.webp",
       },
       {
         id: 2,
         text: "Participate in competitions like SIH, GSoC, & ICPC",
-        icon: "/img/outcomes/year2_3.jpg",
+        icon: "/img/outcomes/year2_3.webp",
       },
     ],
   },
@@ -839,17 +839,17 @@ export const homeScreenData = {
       {
         id: 0,
         text: "Build a Movie Recommendation System",
-        icon: "/img/outcomes/year3_1.jpg",
+        icon: "/img/outcomes/year3_1.webp",
       },
       {
         id: 1,
         text: "Create a Google Doc-like documentation Platform",
-        icon: "/img/outcomes/year3_2.jpg",
+        icon: "/img/outcomes/year3_2.webp",
       },
       {
         id: 2,
         text: "Go for Industry Internship- Formal Experience",
-        icon: "/img/outcomes/year3_3.jpg",
+        icon: "/img/outcomes/year3_3.webp",
       },
     ],
   },
@@ -871,17 +871,17 @@ export const homeScreenData = {
       {
         id: 0,
         text: "Build a Cryptocurrency Wallet like Coinbase",
-        icon: "/img/outcomes/year4_1.jpg",
+        icon: "/img/outcomes/year4_1.webp",
       },
       {
         id: 1,
         text: "Build a robot that detects and avoids obstacles.",
-        icon: "/img/outcomes/year4_2.jpg",
+        icon: "/img/outcomes/year4_2.webp",
       },
       {
         id: 2,
         text: "Prepare for Placements in top Tech Companies",
-        icon: "/img/outcomes/year4_3.jpg",
+        icon: "/img/outcomes/year4_3.webp",
       },
     ],
   },
@@ -1063,7 +1063,7 @@ export const admissionScreenData = {
   },
   facilityAndAmenities: {
     subtitle: "Facilities & Amenities",
-    image: "/img/Auditorium_ADYPU.jpg",
+    image: "/img/Auditorium_ADYPU.webp",
     imageArray: [
       { id: 0, imageUrl: "/img/amenities/Amenities_1.jpeg" },
       { id: 1, imageUrl: "/img/amenities/Amenities_2.jpeg" },
@@ -1199,14 +1199,14 @@ export const lifeAtVedam = {
     data: [
       {
         id: 0,
-        image: "/img/innovation_lab/edgen1.jpg",
+        image: "/img/innovation_lab/edgen1.webp",
         title: "Shadow a CTO",
         subtitle:
           "Spend a day at leading tech StartUps and know a day in the life of tech leaders and software engineers.",
       },
       {
         id: 1,
-        image: "/img/innovation_lab/edgen2.jpg",
+        image: "/img/innovation_lab/edgen2.webp",
         title: "Global Exposure",
         subtitle:
           "Travel and participate in global tech conferences, hackathons and international coding competitions.",
@@ -1256,35 +1256,35 @@ export const lifeAtVedam = {
     title: "AI Zone",
     subtitle:
       "High-performance Mac Studios + Vision Pro for your AI & XR experiments.",
-    icon1: "/img/innovation_lab/scroll_component/laptop.png",
-    icon2: "/img/innovation_lab/scroll_component/vr.png",
+    icon1: "/img/innovation_lab/scroll_component/laptop.webp",
+    icon2: "/img/innovation_lab/scroll_component/vr.webp",
   },
   Robotics: {
     title: "Robo Station",
     subtitle:
       "Hands-on 3D printers, Arduino/Raspberry Pi kits & robotics arms.",
-    icon1: "/img/innovation_lab/scroll_component/Robotics.png",
-    icon2: "/img/innovation_lab/scroll_component/Robotics2.png",
+    icon1: "/img/innovation_lab/scroll_component/Robotics.webp",
+    icon2: "/img/innovation_lab/scroll_component/Robotics2.webp",
   },
   Drone: {
     title: "Drone Dock",
     subtitle:
       "Full-scale drone simulators, 3D-printing integration & visual tracking.",
-    icon1: "/img/innovation_lab/scroll_component/Drone.png",
-    icon2: "/img/innovation_lab/scroll_component/vr.png",
+    icon1: "/img/innovation_lab/scroll_component/Drone.webp",
+    icon2: "/img/innovation_lab/scroll_component/vr.webp",
   },
   Vc: {
     title: "Fund Linkage",
     subtitle: "Get upto 1 Cr of Funding.",
-    icon1: "/img/innovation_lab/scroll_component/Vc.png",
-    icon2: "/img/innovation_lab/scroll_component/vr.png",
+    icon1: "/img/innovation_lab/scroll_component/Vc.webp",
+    icon2: "/img/innovation_lab/scroll_component/vr.webp",
   },
   Projects: {
     title: "Projects",
     subtitle:
       "Build AI models, smart devices, AR/VR tools, drones, and startup-ready prototypes.",
-    icon1: "/img/innovation_lab/scroll_component/Drone.png",
-    icon2: "/img/innovation_lab/scroll_component/vr.png",
+    icon1: "/img/innovation_lab/scroll_component/Drone.webp",
+    icon2: "/img/innovation_lab/scroll_component/vr.webp",
   },
   clubsatVedam: {
     subtitle: "Student Clubs at Vedam",
@@ -1532,7 +1532,7 @@ export const aboutSourceCodeData = {
     { label: "Outcome Focused", icon: "outcome" },
     { label: "Industry Relevant", icon: "industry" },
   ],
-  heroImage: "/img/about/robo_station.png",
+  heroImage: "/img/about/robo_station.webp",
 };
 
 // About Us page: Co-founder section

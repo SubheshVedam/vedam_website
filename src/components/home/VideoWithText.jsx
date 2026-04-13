@@ -50,7 +50,7 @@ export const VideoWithText = ({ title, subtitle, isImg, videoUrl, imageUrl }) =>
         </video>
       ) : (
         <img
-          src={imageUrl || "/img/life_vedam_bg.jpeg"}
+          src={imageUrl || "/img/life_vedam_bg.webp"}
           alt="Background"
           style={{
             position: "absolute",

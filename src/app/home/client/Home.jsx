@@ -179,7 +179,7 @@ const Home = () => {
     //         );
     //         setShowIframe1(true);
     //       },
-    //       "/img/video_thumbnail.jpg",
+    //       "/img/video_thumbnail.webp",
     //       "Video thumbnail"
     //     ),
     // },

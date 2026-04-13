@@ -5,10 +5,10 @@ import Image from "next/image";
 import { homeScreenData } from "@/constants/data";
 
 const awards = [
-    { img: "/img/rewards/Image1.png" },
-    { img: "/img/rewards/Image2.png" },
-    { img: "/img/rewards/Image3.png" },
-    { img: "/img/rewards/Image4.png" },
+    { img: "/img/rewards/Image1.webp" },
+    { img: "/img/rewards/Image2.webp" },
+    { img: "/img/rewards/Image3.webp" },
+    { img: "/img/rewards/Image4.webp" },
 ];
 
 const RecognitionAwards = () => {
