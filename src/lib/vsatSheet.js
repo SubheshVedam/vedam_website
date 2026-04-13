@@ -30,6 +30,29 @@ function slugHeader(cell) {
 
 const MS_PER_DAY = 86400000;
 const SHEETS_EPOCH_UTC = Date.UTC(1899, 11, 30);
+const IST_TIMEZONE = "Asia/Kolkata";
+const IST_OFFSET_HOURS = 5;
+const IST_OFFSET_MINUTES = 30;
+
+function getDatePartsInTimeZone(date, timeZone = IST_TIMEZONE) {
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).formatToParts(date);
+  return {
+    year: Number(parts.find((p) => p.type === "year")?.value),
+    month: Number(parts.find((p) => p.type === "month")?.value),
+    day: Number(parts.find((p) => p.type === "day")?.value),
+  };
+}
+
+function toIstDayKey(date) {
+  if (!date || Number.isNaN(date.getTime())) return null;
+  const { year, month, day } = getDatePartsInTimeZone(date);
+  return year * 10000 + month * 100 + day;
+}
 
 function parseCellToDate(value) {
   if (value == null || value === "") return null;
@@ -37,11 +60,36 @@ function parseCellToDate(value) {
     return new Date(SHEETS_EPOCH_UTC + value * MS_PER_DAY);
   }
   if (typeof value === "string") {
-    const t = Date.parse(value);
+    const trimmed = value.trim();
+    // If sheet provides a datetime string without timezone, treat it as UTC.
+    const utcLike = trimmed.match(
+      /^(\d{4})[-/](\d{1,2})[-/](\d{1,2})[ T](\d{1,2}):(\d{2})(?::(\d{2}))?$/,
+    );
+    if (utcLike) {
+      const [
+        ,
+        year,
+        month,
+        day,
+        hour,
+        minute,
+        second = "0",
+      ] = utcLike;
+      const d = new Date(
+        Date.UTC(
+          Number(year),
+          Number(month) - 1,
+          Number(day),
+          Number(hour),
+          Number(minute),
+          Number(second),
+        ),
+      );
+      if (!Number.isNaN(d.getTime())) return d;
+    }
+    const t = Date.parse(trimmed);
     if (!Number.isNaN(t)) return new Date(t);
-    const m = value
-      .trim()
-      .match(/^(\d{1,2})[/-](\d{1,2})[/-](\d{4})$/);
+    const m = trimmed.match(/^(\d{1,2})[/-](\d{1,2})[/-](\d{4})$/);
     if (m) {
       const d = new Date(
         Date.UTC(Number(m[3]), Number(m[2]) - 1, Number(m[1])),
@@ -57,6 +105,7 @@ function formatIntakeDisplay(value) {
   const d = parseCellToDate(value);
   if (d && !Number.isNaN(d.getTime())) {
     return d.toLocaleDateString("en-GB", {
+      timeZone: IST_TIMEZONE,
       day: "numeric",
       month: "long",
       year: "numeric",
@@ -65,24 +114,23 @@ function formatIntakeDisplay(value) {
   return String(value).trim();
 }
 
-function startOfTodayLocal() {
-  const d = new Date();
-  d.setHours(0, 0, 0, 0);
-  return d;
+function startOfTodayIstDayKey() {
+  return toIstDayKey(new Date());
 }
 
-/** End of local calendar day for countdown (matches prior banner: 23:59:59.999). */
+/** End of IST calendar day for countdown (23:59:59.999 IST). */
 function applicationClosingDeadlineMs(closingParsed) {
   if (!closingParsed || Number.isNaN(closingParsed.getTime())) return null;
-  return new Date(
-    closingParsed.getFullYear(),
-    closingParsed.getMonth(),
-    closingParsed.getDate(),
-    23,
-    59,
+  const { year, month, day } = getDatePartsInTimeZone(closingParsed);
+  return Date.UTC(
+    year,
+    month - 1,
+    day,
+    23 - IST_OFFSET_HOURS,
+    59 - IST_OFFSET_MINUTES,
     59,
     999,
-  ).getTime();
+  );
 }
 
 function resolveColumnIndices(headerRow) {
@@ -121,9 +169,9 @@ function pickIntakeRow(rows, vstIdx) {
 
   if (withParsed.length === 0) return null;
 
-  const today = startOfTodayLocal();
+  const todayIstDayKey = startOfTodayIstDayKey();
   const future = withParsed.filter(
-    (e) => e.vstParsed && e.vstParsed >= today,
+    (e) => e.vstParsed && toIstDayKey(e.vstParsed) >= todayIstDayKey,
   );
   const pool = future.length > 0 ? future : withParsed;
 

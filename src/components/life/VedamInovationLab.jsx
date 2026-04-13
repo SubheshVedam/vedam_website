@@ -130,7 +130,7 @@ export const VedamInovationLab = () => {
                 alignItems: "center",
               }}>
               <Image
-                src="/img/VideothumbnaillifeVST.jpg"
+                src="/img/VideothumbnaillifeVST.webp"
                 alt="Video thumbnail"
                 width={2000}
                 height={1200}
@@ -173,7 +173,7 @@ export const VedamInovationLab = () => {
               overflow: "hidden",
             }}>
             <Image
-              src="/img/innovation_lab/image2.jpg"
+              src="/img/innovation_lab/image2.webp"
               alt="Innovation Lab"
               width={600}
               height={282}
@@ -196,7 +196,7 @@ export const VedamInovationLab = () => {
             overflow: "hidden",
           }}>
           <Image
-            src="/img/innovation_lab/image2.jpg"
+            src="/img/innovation_lab/image2.webp"
             alt="Innovation Lab"
             width={600}
             height={214}

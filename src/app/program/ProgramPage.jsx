@@ -351,7 +351,7 @@ export default function ProgramPage({ config }) {
             <Typography sx={{ color: "white", fontFamily: "Inter, sans-serif", fontWeight: 300, fontSize: { xs: "18px", md: "28px" }, lineHeight: 1, mx: { xs: "2px", md: "4px" } }}>
               ×
             </Typography>
-            <Box component="img" src="/img/Vedam_Final_Logo_White.png" alt="Vedam" sx={{ height: { xs: "36px", md: "76px" }, width: { xs: "79px", md: "138px" } }} />
+            <Box component="img" src="/img/Vedam_Final_Logo_White.webp" alt="Vedam" sx={{ height: { xs: "36px", md: "76px" }, width: { xs: "79px", md: "138px" } }} />
           </Box>
 
           {/* Title block */}

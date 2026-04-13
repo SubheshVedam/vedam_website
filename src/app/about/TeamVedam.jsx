@@ -39,11 +39,11 @@ const gradientPurple = `linear-gradient(90deg, ${colors.purple} 0%, ${colors.ora
 
 const figmaAssets = {
   landingVector: "/img/about/figma/landing-vector.svg",
-  cardOutcomeIcon: "/img/about/figma/card-outcome-icon.png",
-  cardMeritBadge: "/img/about/figma/card-merit-badge.png",
-  cardIndustryIcon: "/img/about/figma/card-industry-icon.png",
-  checkmark: "/img/about/figma/checkmark.png",
-  techMindsPhoto: "/img/about/figma/tech-minds-photo.png",
+  cardOutcomeIcon: "/img/about/figma/card-outcome-icon.webp",
+  cardMeritBadge: "/img/about/figma/card-merit-badge.webp",
+  cardIndustryIcon: "/img/about/figma/card-industry-icon.webp",
+  checkmark: "/img/about/figma/checkmark.webp",
+  techMindsPhoto: "/img/about/figma/tech-minds-photo.webp",
   cofoundenVector: "/img/about/figma/cofounder-vector.svg",
 };
 

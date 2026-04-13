@@ -97,7 +97,7 @@ export default function TestimonialCard({ image, text, name, designation, linked
                 }}
               >
                 <Image
-                  src="/img/testimonials/LinkedIn.png"
+                  src="/img/testimonials/LinkedIn.webp"
                   alt="LinkedIn"
                   width={32}
                   height={32}

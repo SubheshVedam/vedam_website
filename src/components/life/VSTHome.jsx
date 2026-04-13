@@ -22,10 +22,10 @@ export const VSTHome = () => {
     const animationIdRef = useRef(null);
 
     const innovationImages = [
-        "/img/vst_home/Image_1.jpg",
-        "/img/vst_home/Image_2.jpg",
-        "/img/vst_home/Image_3.jpg",
-        "/img/vst_home/Image_4.jpg",
+        "/img/vst_home/Image_1.webp",
+        "/img/vst_home/Image_2.webp",
+        "/img/vst_home/Image_3.webp",
+        "/img/vst_home/Image_4.webp",
     ];
 
     useEffect(() => {
@@ -138,7 +138,7 @@ export const VSTHome = () => {
                             // borderRadius: "16px",
                         }}>
                         <Image
-                            src="/img/vst_home/thumbnail.jpg"
+                            src="/img/vst_home/thumbnail.webp"
                             alt="Video thumbnail"
                             width={2000}
                             height={1200}

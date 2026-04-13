@@ -129,8 +129,8 @@ export default function DetailsCard({
             }}
           >
             <Image
-              // src={"/img/macBook.png"}
-              // src={"/img/whyvedam/img1.png"}
+              // src={"/img/macBook.webp"}
+              // src={"/img/whyvedam/img1.webp"}
               alt="profile icon"
               width={260}
               height={100}
