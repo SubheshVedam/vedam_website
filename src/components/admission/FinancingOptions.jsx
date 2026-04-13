@@ -45,7 +45,7 @@ export const FinancingOptions = () => {
           }}>
           <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
             <img
-              src="/img/financingOptions/loanIcon.png"
+              src="/img/financingOptions/loanIcon.webp"
               alt="Loan Icon"
               width={28}
               height={28}
@@ -79,7 +79,7 @@ export const FinancingOptions = () => {
           }}>
           <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
             <img
-              src="/img/financingOptions/eduLoanIcon.png"
+              src="/img/financingOptions/eduLoanIcon.webp"
               alt="Loan Icon"
               width={28}
               height={28}

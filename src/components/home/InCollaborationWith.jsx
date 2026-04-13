@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Box, Button, Typography } from "@mui/material";
 import EastRoundedIcon from "@mui/icons-material/EastRounded";
 import AccessTimeFilledRoundedIcon from "@mui/icons-material/AccessTimeFilledRounded";
@@ -12,6 +12,7 @@ const campusCards = [
     id: "gurugram",
     title: "",
     image: "/img/campuses/Gurugram_home_page_v2.webp",
+    videoUrl: "https://www.youtube.com/embed/rh1wLCzDwow?autoplay=1",
     description: "Sushant University, Gurugram, Delhi NCR",
     buttonText: "Explore Campus",
     href: "/program/vst-gurugram",
@@ -21,6 +22,7 @@ const campusCards = [
     id: "pune",
     title: "",
     image: "/img/campuses/Adypu_home_page.webp",
+    videoUrl: "https://www.youtube.com/embed/jors40NYq-Y?autoplay=1",
     description: "Ajeenkya DY Patil University, Pune, Maharashtra",
     buttonText: "Explore",
     href: "/program/vst-adypu-pune",
@@ -31,6 +33,7 @@ const campusCards = [
 export const InCollaborationWith = () => {
   const scrollContainerRef = useRef(null);
   const mobileCarouselCards = [...campusCards, ...campusCards];
+  const [activeVideo, setActiveVideo] = useState({});
 
   useEffect(() => {
     const container = scrollContainerRef.current;
@@ -148,6 +151,7 @@ export const InCollaborationWith = () => {
       >
         {mobileCarouselCards.map((card, index) => {
           const isDuplicate = index >= campusCards.length;
+          const isVideoActive = activeVideo[card.id];
           const buttonProps = card.href
             ? { component: Link, href: card.href }
             : { component: "button", type: "button" };
@@ -191,6 +195,7 @@ export const InCollaborationWith = () => {
                 flex: { xs: "0 0 280px", md: "1 1 auto" },
               }}
             >
+              {/* Image / Video area */}
               <Box
                 sx={{
                   position: "relative",
@@ -198,38 +203,87 @@ export const InCollaborationWith = () => {
                   aspectRatio: "4 / 3",
                   borderRadius: "18px",
                   overflow: "hidden",
+                  backgroundColor: "#000",
                 }}
               >
-                <Image
-                  src={card.image}
-                  alt={`${card.title} campus`}
-                  fill
-                  sizes={`(max-width: 900px) 280px, ${Math.round(100 / campusCards.length)}vw`}
-                  style={{
-                    objectFit: "cover",
-                    objectPosition: card.imagePosition ?? "center center",
-                  }}
-                />
-                <Box
-                  sx={{
-                    position: "absolute",
-                    top: { xs: "14px", md: "18px" },
-                    left: "50%",
-                    transform: "translateX(-50%)",
-                    color: "#fff",
-                    fontWeight: 700,
-                    fontSize: { xs: "2rem", md: "2.2rem" },
-                    letterSpacing: "0.06em",
-                    lineHeight: 1,
-                    textTransform: "uppercase",
-                    textShadow: "0 4px 14px rgba(0, 0, 0, 0.32)",
-                    textAlign: "center",
-                    width: "100%",
-                  }}
-                >
-                  {card.title}
-                </Box>
+                {isVideoActive ? (
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    style={{ border: "none", display: "block" }}
+                    src={card.videoUrl}
+                    title={`${card.description} video`}
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                ) : (
+                  <Box
+                    onClick={() =>
+                      setActiveVideo((prev) => ({ ...prev, [card.id]: true }))
+                    }
+                    sx={{ cursor: "pointer", width: "100%", height: "100%", position: "relative" }}
+                  >
+                    <Image
+                      src={card.image}
+                      alt={`${card.description} campus`}
+                      fill
+                      sizes={`(max-width: 900px) 280px, ${Math.round(100 / campusCards.length)}vw`}
+                      style={{
+                        objectFit: "cover",
+                        objectPosition: card.imagePosition ?? "center center",
+                      }}
+                    />
+                    {/* Title overlay — preserved from original */}
+                    <Box
+                      sx={{
+                        position: "absolute",
+                        top: { xs: "14px", md: "18px" },
+                        left: "50%",
+                        transform: "translateX(-50%)",
+                        color: "#fff",
+                        fontWeight: 700,
+                        fontSize: { xs: "2rem", md: "2.2rem" },
+                        letterSpacing: "0.06em",
+                        lineHeight: 1,
+                        textTransform: "uppercase",
+                        textShadow: "0 4px 14px rgba(0, 0, 0, 0.32)",
+                        textAlign: "center",
+                        width: "100%",
+                      }}
+                    >
+                      {card.title}
+                    </Box>
+                    {/* Play button overlay */}
+                    <Box
+                      sx={{
+                        position: "absolute",
+                        top: "50%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                        background: "rgba(0,0,0,0.6)",
+                        padding: "12px 16px",
+                        borderRadius: "100px",
+                        transition: "background 200ms ease",
+                        "&:hover": {
+                          background: "rgba(0,0,0,0.8)",
+                        },
+                      }}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={40}
+                        height={40}
+                        fill="#fff"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </Box>
+                  </Box>
+                )}
               </Box>
+
               <Typography
                 sx={{
                   color: "#1E1E1E",

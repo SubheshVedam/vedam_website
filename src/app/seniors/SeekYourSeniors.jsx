@@ -23,15 +23,15 @@ const stats1 = [
   { num: "Weekly", label: "Events" },
 ];
 const heroPhotos = [
-  "/img/seniors/class1.png",
-  "/img/seniors/class3.png",
-  "/img/seniors/class2.png",
-  "/img/seniors/class4.png",
+  "/img/seniors/class1.webp",
+  "/img/seniors/class3.webp",
+  "/img/seniors/class2.webp",
+  "/img/seniors/class4.webp",
 ];
 const heroPhotos1 = [
-  "/img/seniors/cl1.png",
-  "/img/seniors/cl3.png",
-  "/img/seniors/cl2.png",
+  "/img/seniors/cl1.webp",
+  "/img/seniors/cl3.webp",
+  "/img/seniors/cl2.webp",
 ];
 const clubPresidents = [
   { club: "Open-source Club Head", name: "Sidhant Pande", batch: "Batch of 2029", img: "/img/seniors/stu3.webp", linkedin: "https://www.linkedin.com/in/sidhantpande/" },
@@ -52,35 +52,35 @@ const projects = [
   {
     name: "Motif",
     desc: "A platform that helps aspiring entrepreneurs discover startup ideas, build business plans, and access resources to launch and grow their businesses.",
-    img: "/img/seniors/img1.png",
+    img: "/img/seniors/img1.webp",
     authors: ["Awaneesh Gupta", "Agrima Gupta"],
     highlightWords: ["entrepreneurs", "grow their businesses"],
   },
   {
     name: "AI Chatbot",
     desc: "An AI-powered assistant that helps users manage schedules, reminders, information, and daily task progress in one place.",
-    img: "/img/seniors/img2.png",
+    img: "/img/seniors/img2.webp",
     authors: ["Siddhant Pandey"],
     highlightWords: ["AI-powered assistant"],
   },
   {
     name: "Vaani Setu",
     desc: "A real-time sign-language-to-voice and text converter that enables seamless communication for deaf and mute individuals.",
-    img: "/img/seniors/img3.png",
+    img: "/img/seniors/img3.webp",
     authors: ["Aditya Bahuguna", "Aareev Srinivasan", "Shivansh Ojha"],
     highlightWords: ["sign-language-to-voice and text converter"],
   },
   {
     name: "Unmutte",
     desc: "An emotional wellness app designed to help users express, understand, and manage their mental and emotional well-being.",
-    img: "/img/seniors/img4.png",
+    img: "/img/seniors/img4.webp",
     authors: ["Khushi Yadav", "Sirwagya Shekhar"],
     highlightWords: ["emotional wellness"],
   },
   {
     name: "AI Mock Interviewer",
     desc: "An AI-powered interview simulator that helps users practice, improve, and gain confidence by providing real-time questions, feedback, and performance insights.",
-    img: "/img/seniors/img5.png",
+    img: "/img/seniors/img5.webp",
     authors: ["Parth Kshirsagar", "Ved Kumar Singh", "Satyam Kumar Singh", "Nimit Jain", "Yashwardhan"],
     highlightWords: ["interview simulator"],
   },
@@ -319,7 +319,7 @@ function DesktopCenterCard({ project }) {
     <Box sx={{
       width: `${CARD_W}px`,
       flexShrink: 0,
-      backgroundImage: "url('/img/seniors/desktop_bg2.png')",
+      backgroundImage: "url('/img/seniors/desktop_bg2.webp')",
       backgroundSize: "100% 100%",
       backgroundRepeat: "no-repeat",
       borderRadius: "28px",
@@ -464,7 +464,7 @@ function MobileCard({ project, onPrev, onNext, current, total }) {
 
       {/* ── Card body — inset so arrows can protrude ── */}
       <Box sx={{
-        backgroundImage: "url('/img/seniors/mobile_bg2.png')",
+        backgroundImage: "url('/img/seniors/mobile_bg2.webp')",
         backgroundSize: "100% 100%",
         backgroundRepeat: "no-repeat",
         borderRadius: "26px",
@@ -548,7 +548,7 @@ function MobileCard({ project, onPrev, onNext, current, total }) {
 // ─────────────────────────────────────────────────────────────────────────────
 function PresidentCard({ club, name, batch, img, linkedin, index }) {
   const isBg1 = index % 2 === 0;
-  const bgImage = isBg1 ? "url('/img/seniors/bg1.png')" : "url('/img/seniors/bg2.png')";
+  const bgImage = isBg1 ? "url('/img/seniors/bg1.webp')" : "url('/img/seniors/bg2.webp')";
   const textColor = isBg1 ? "#1E1E1E" : "#FFFFFF";
   const subTextColor = isBg1 ? "#1E1E1E" : "rgba(255,255,255,0.85)";
   const dividerColor = isBg1 ? "#EEEEEE" : "rgba(255,255,255,0.2)";
@@ -604,7 +604,7 @@ function PresidentCard({ club, name, batch, img, linkedin, index }) {
               borderRadius: "12px", textDecoration: "none",
             }}
           >
-            <Box component="img" src="/img/linkedInIcon.png" alt="LinkedIn"
+            <Box component="img" src="/img/linkedInIcon.webp" alt="LinkedIn"
               sx={{ width: "14px", height: "14px", objectFit: "contain" }}
               onError={(e) => { e.target.style.display = "none"; }} />
             <OpenInNewIcon sx={{ fontSize: "12px", color: isBg1 ? "#6C10BC" : "#FFFFFF" }} />
@@ -717,8 +717,8 @@ export default function SeekYourSeniors() {
     <Box
       sx={{
         backgroundImage: {
-          xs: "url('/img/seniors/bg-seek-seniors-mob.png')",
-          md: "url('/img/seniors/bg-seek-seniors.png')",
+          xs: "url('/img/seniors/bg-seek-seniors-mob.webp')",
+          md: "url('/img/seniors/bg-seek-seniors.webp')",
         },
         backgroundSize: "cover",
         backgroundPosition: "center top",

@@ -220,6 +220,24 @@ const Home = () => {
       subtitle: homeScreenData.inCollaborationWith.subtitle,
       render: () => <InCollaborationWith />,
     },
+    // {
+    //   id: "tech-video",
+    //   title: homeScreenData.techTeam.title,
+    //   subtitle: homeScreenData.techTeam.subtitle,
+    //   render: () =>
+    //     renderVideoCard(
+    //       showIframe1,
+    //       videoUrl1,
+    //       () => {
+    //         setVideoUrl1(
+    //           "https://www.youtube.com/embed/zHquRUSxP8o?autoplay=1&si=MjqF-PfmelA2too8"
+    //         );
+    //         setShowIframe1(true);
+    //       },
+    //       "/img/video_thumbnail.webp",
+    //       "Video thumbnail"
+    //     ),
+    // },
     {
       id: "why-vedam",
       title: homeScreenData.whyVedam.title,

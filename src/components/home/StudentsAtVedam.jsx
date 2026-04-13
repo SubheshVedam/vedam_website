@@ -117,7 +117,7 @@ export const StudentsAtVedam = () => {
                                     }}
                                 >
                                     <Image
-                                        src="/img/studentsAtVedam/imgMob.png"
+                                        src="/img/studentsAtVedam/imgMob.webp"
                                         alt="Students at Vedam"
                                         width={400}
                                         height={600}
@@ -148,7 +148,7 @@ export const StudentsAtVedam = () => {
                                 >
                                     Watch Video
                                     <Image
-                                        src="/img/studentsAtVedam/youtube.png"
+                                        src="/img/studentsAtVedam/youtube.webp"
                                         alt="YouTube"
                                         width={20}
                                         height={20}
