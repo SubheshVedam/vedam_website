@@ -92,6 +92,7 @@ export const VideoWithText = ({ title, subtitle, isImg, videoUrl, imageUrl }) =>
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
+          transform: "translateY(-20px)",
         }}
       >
         {/* Title with Animation */}
@@ -118,8 +119,6 @@ export const VideoWithText = ({ title, subtitle, isImg, videoUrl, imageUrl }) =>
             textAlign: "center",
             maxWidth: "100%",
             animation: "slideDownFadeIn 1.2s ease-out forwards",
-            opacity: 0,
-            transform: "translateY(-50px)",
             "@keyframes slideDownFadeIn": {
               "0%": {
                 opacity: 0,
