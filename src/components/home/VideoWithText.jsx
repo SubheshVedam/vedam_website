@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import { homeScreenData } from "@/constants/data";
 import Button from "@mui/material/Button";
+import Image from "next/image";
 
 export const VideoWithText = ({ title, subtitle, isImg, videoUrl, imageUrl }) => {
   return (
@@ -15,6 +15,10 @@ export const VideoWithText = ({ title, subtitle, isImg, videoUrl, imageUrl }) =>
         alignItems: "center",
         justifyContent: "center",
         overflow: "hidden",
+        aspectRatio: "16/9",
+        minHeight: "100vh",
+        backgroundColor: "#000",
+
       }}
     >
       {/* Overlay */}
@@ -28,12 +32,20 @@ export const VideoWithText = ({ title, subtitle, isImg, videoUrl, imageUrl }) =>
       />
 
       {/* Background Media */}
-      {!isImg ? (
+      {!isImg ? <>
+        <Image
+          src="/img/college.webp"
+          alt="Hero"
+          fill
+          priority
+          style={{ objectFit: "cover", minWidth: "500px", minHeight: "400px" }}
+        />
         <video
           autoPlay
           loop
           muted
           playsInline
+          preload="none"
           style={{
             position: "absolute",
             top: 0,
@@ -48,9 +60,10 @@ export const VideoWithText = ({ title, subtitle, isImg, videoUrl, imageUrl }) =>
           <source src={videoUrl} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-      ) : (
+      </> : (
         <img
           src={imageUrl || "/img/life_vedam_bg.webp"}
+          fetchPriority="high"
           alt="Background"
           style={{
             position: "absolute",
@@ -79,6 +92,7 @@ export const VideoWithText = ({ title, subtitle, isImg, videoUrl, imageUrl }) =>
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
+          transform: "translateY(-20px)",
         }}
       >
         {/* Title with Animation */}
@@ -105,16 +119,12 @@ export const VideoWithText = ({ title, subtitle, isImg, videoUrl, imageUrl }) =>
             textAlign: "center",
             maxWidth: "100%",
             animation: "slideDownFadeIn 1.2s ease-out forwards",
-            opacity: 0,
-            transform: "translateY(-50px)",
             "@keyframes slideDownFadeIn": {
               "0%": {
                 opacity: 0,
-                transform: "translateY(-100px)",
               },
               "100%": {
                 opacity: 1,
-                transform: "translateY(0)",
               },
             },
           }}

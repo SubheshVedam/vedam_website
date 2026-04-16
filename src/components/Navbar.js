@@ -140,6 +140,8 @@ export default function Navbar() {
                   objectFit: "contain",
                   maxWidth: "100%",
                   cursor: "pointer",
+                  width: "88px",
+                  height: "auto",
                 }}
                 sx={{
                   width: { xs: "51px", sm: "88px" },
