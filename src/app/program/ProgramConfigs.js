@@ -319,9 +319,9 @@ export const puneConfig = {
                     title: "ADYPU Hostel [In Campus]",
                     roomTypes: [
                         {
-                            type: "4 Sharing Room",
+                            type: "4 Sharing Room (Standard)",
                             rows: [
-                                { label: "Accommodation Cost per Year", value: "₹11,0000/-" },
+                                { label: "Accommodation Cost per Year", value: "₹1,10,000/-" },
                                 { label: "Mess Charges per Month", value: "₹5,500/- (as per 2025-2026 charges, new charges to be updated)" },
                                 { label: "Laundry Charges per Year", value: "₹7,000/-" },
                                 { label: "Hostel Fee per Year\n[Accommodation + Mess + Laundry Charges]", value: "₹1,83,000/-" },
@@ -332,7 +332,7 @@ export const puneConfig = {
                             ],
                         },
                         {
-                            type: "3 Sharing Room",
+                            type: "3 Sharing Room (Premium)",
                             rows: [
                                 { label: "Accommodation Cost per Year", value: "₹1,35,000/-" },
                                 { label: "Mess Charges per Month", value: "₹5,500/- (as per 2025-2026 charges, new charges to be updated)" },
@@ -345,15 +345,28 @@ export const puneConfig = {
                             ],
                         },
                         {
-                            type: "5 Sharing Room",
+                            type: "4 Sharing Room (Premium AC)",
                             rows: [
-                                { label: "Accommodation Cost per Year", value: "₹1,50,000/-" },
-                                { label: "Mess Charges per Month", value: "₹5,500/-" },
-                                { label: "Laundry Charges per Year", value: "₹6,000/-" },
-                                { label: "Hostel Fee per Year\n[Accommodation + Mess + Laundry Charges]", value: "₹2,22,000/-" },
+                                { label: "Accommodation Cost per Year", value: "₹1,85,000/-" },
+                                { label: "Mess Charges per Month", value: "₹5,500/- (as per 2025-2026 charges, new charges to be updated)" },
+                                { label: "Laundry Charges per Year", value: "₹7,000/-" },
+                                { label: "Hostel Fee per Year\n[Accommodation + Mess + Laundry Charges]", value: "₹2,58,000/-" },
                                 { label: "Security Deposit (Refundable)", value: "₹20,000/-" },
-                                { label: "Room Features", value: "Attached Washroom, AC" },
-                                { label: "Applicable for", value: "Boys only" },
+                                { label: "Room Features", value: "Attached Washroom, AC, 1 Bed, 1 Side Drawer, 1 mattress, 1 Chair, 1 Study Table, 1 Cupboard" },
+                                { label: "Applicable for", value: "Boys & Girls" },
+                                { label: "NOTE", value: "Electricity to be charged on actuals" },
+                            ],
+                        },
+                        {
+                            type: "4 Sharing Room (Supreme)",
+                            rows: [
+                                { label: "Accommodation Cost per Year", value: "₹2,20,000/-" },
+                                { label: "Mess Charges per Month", value: "₹5,500/- (as per 2025-2026 charges, new charges to be updated)" },
+                                { label: "Laundry Charges per Year", value: "₹7,000/-" },
+                                { label: "Hostel Fee per Year\n[Accommodation + Mess + Laundry Charges]", value: "₹2,93,000/-" },
+                                { label: "Security Deposit (Refundable)", value: "₹20,000/-" },
+                                { label: "Room Features", value: "Attached Washroom, 1 Bed, 1 Side Drawer, 1 mattress,1 Chair, 1 Study Table, 1 Cupboard, TV, Oven, AC, Refrigerator" },
+                                { label: "Applicable for", value: "Boys Only" },
                                 { label: "NOTE", value: "Electricity to be charged on actuals" },
                             ],
                         },
