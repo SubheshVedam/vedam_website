@@ -22,12 +22,13 @@ const SingleCard = ({ icon, text, isCurriculum }) => {
         alt="icon"
         width={250}
         height={114}
-        objectFit="cover"
+
         style={{
           width: "100%",
           height: "100%",
           aspectRatio: "1.51:1.",
           borderRadius: "10px 10px 0 0",
+          objectFit: "cover"
         }}
       />
       <Box sx={{ padding: "5px 10px 10px 10px" }}>

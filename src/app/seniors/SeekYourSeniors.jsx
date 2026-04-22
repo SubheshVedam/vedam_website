@@ -11,16 +11,17 @@ import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 // Data
 // ─────────────────────────────────────────────────────────────────────────────
 const stats = [
-  { num: "20+", label: "Industry sessions" },
+  { num: "8+", label: "Paid Internships in Year 1" },
   { num: "10+", label: "Teams building at Innovation Lab" },
   { num: "6", label: "Student run clubs" },
-  { num: "Weekly", label: "Events" },
+  { num: "7", label: "JEE Mains 95+ %ilers" },
 ];
 const stats1 = [
-  { num: "20+", label: "Industry sessions" },
+  { num: "8+", label: "Paid Internships in Year 1" },
   { num: "6", label: "Student run clubs" },
   { num: "10+", label: "Teams building at Innovation Lab" },
-  { num: "Weekly", label: "Events" },
+  { num: "7", label: "JEE Mains 95+ %ilers" },
+
 ];
 const heroPhotos = [
   "/img/seniors/class1.webp",
@@ -81,7 +82,7 @@ const projects = [
     name: "AI Mock Interviewer",
     desc: "An AI-powered interview simulator that helps users practice, improve, and gain confidence by providing real-time questions, feedback, and performance insights.",
     img: "/img/seniors/img5.webp",
-    authors: ["Parth Kshirsagar", "Ved Kumar Singh", "Satyam Kumar Singh", "Nimit Jain", "Yashwardhan"],
+    authors: ["Parth Kshirsagar", "Ved Kumar Singh", "Satyam Kumar Singh", "Nimit Jain", "Yashvardhan"],
     highlightWords: ["interview simulator"],
   },
 ];

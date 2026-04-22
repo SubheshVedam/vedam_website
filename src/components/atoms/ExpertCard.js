@@ -102,7 +102,7 @@ export default function ExpertCard({
             position: "relative",
             mt: { xs: "12px", sm: 0 },
           }}>
-            <Image src={logo} layout="fill" objectFit="contain" alt="logo" />
+            <Image src={logo} fill alt="logo" style={{ objectFit: "contain" }} />
           </Box>
 
           <Typography
