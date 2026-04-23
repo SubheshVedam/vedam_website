@@ -892,6 +892,14 @@ export const homeScreenData = {
     data: [
       {
         id: 1,
+        image: "/img/inTheNews/10.jpg",
+        name: "Times of India",
+        alt: "News Article 1",
+        sourceLogo: "/img/inTheNews/TOI.webp",
+        link: "https://timesofindia.indiatimes.com/business/india-business/vedam-school-of-technology-first-year-students-reportedly-secure-lfx-mentorship-cncf-karmada-with-rs-2-73-lakh-stipend-and-rs-4-5-lakh-via-bug-bounties-in-hackerone/articleshow/130394810.cms",
+      },
+      {
+        id: 2,
         image: "/img/inTheNews/1.webp",
         name: "News 24",
         alt: "News Article 1",
@@ -899,7 +907,7 @@ export const homeScreenData = {
         link: "https://indianews24.asia/vedam-school-of-technology-completes-first-semester-of-ai-focused-computer-science-program/",
       },
       {
-        id: 2,
+        id: 3,
         image: "/img/inTheNews/2.webp",
         name: "ET Government",
         alt: "News Article 3",
@@ -907,7 +915,7 @@ export const homeScreenData = {
         link: "https://government.economictimes.indiatimes.com/news/education/vedam-school-of-technology-acquires-algoprep-to-build-indias-first-ai-native-tech-curriculum/120303273",
       },
       {
-        id: 3,
+        id: 4,
         image: "/img/inTheNews/3.webp",
         name: "India Education Diary",
         alt: "News Article 4",
@@ -915,7 +923,7 @@ export const homeScreenData = {
         link: "https://indiaeducationdiary.in/vedam-school-of-technology-sets-a-new-benchmark-for-computer-science-ai-program-from-the-first-semester/",
       },
       {
-        id: 4,
+        id: 5,
         image: "/img/inTheNews/4.webp",
         name: "Skill Outlook",
         alt: "News Article 2",
@@ -924,7 +932,7 @@ export const homeScreenData = {
         objectPosition: "top",
       },
       {
-        id: 5,
+        id: 6,
         image: "/img/inTheNews/5.webp",
         name: "Financial Express",
         alt: "News Article 2",
@@ -933,7 +941,7 @@ export const homeScreenData = {
         objectPosition: "top",
       },
       {
-        id: 6,
+        id: 7,
         image: "/img/inTheNews/6.webp",
         name: "Shiksha",
         alt: "News Article 2",
@@ -942,7 +950,7 @@ export const homeScreenData = {
         objectPosition: "top",
       },
       {
-        id: 7,
+        id: 8,
         image: "/img/inTheNews/7.webp",
         name: "Eduation 21",
         alt: "News Article 2",
@@ -951,7 +959,7 @@ export const homeScreenData = {
         objectPosition: "top",
       },
       {
-        id: 8,
+        id: 9,
         image: "/img/inTheNews/8.webp",
         alt: "News Article 2",
         sourceLogo: "/img/inTheNews/passion.webp",
@@ -959,7 +967,7 @@ export const homeScreenData = {
         objectPosition: "top",
       },
       {
-        id: 9,
+        id: 10,
         image: "/img/inTheNews/9.webp",
         name: "Passionate In Marketing",
         alt: "News Article 2",
