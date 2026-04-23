@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Box, Typography } from "@mui/material";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
@@ -138,6 +138,87 @@ function StatCards({ stats }) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
+// LogoMarquee — RAF-based infinite marquee for placement partner logos (mobile)
+// ─────────────────────────────────────────────────────────────────────────────
+function LogoMarquee({ logos }) {
+    const trackRef = useRef(null);
+    const animIdRef = useRef(null);
+    const posRef = useRef(0);
+    const pausedRef = useRef(false);
+
+    useEffect(() => {
+        const track = trackRef.current;
+        if (!track || logos.length === 0) return;
+
+        const speed = 0.6;
+
+        const animate = () => {
+            if (!pausedRef.current) {
+                posRef.current -= speed;
+                const halfWidth = track.scrollWidth / 2;
+                if (Math.abs(posRef.current) >= halfWidth) {
+                    posRef.current = 0;
+                }
+                track.style.transform = `translateX(${posRef.current}px)`;
+            }
+            animIdRef.current = requestAnimationFrame(animate);
+        };
+
+        animIdRef.current = requestAnimationFrame(animate);
+        return () => cancelAnimationFrame(animIdRef.current);
+    }, [logos]);
+
+    // Triple-duplicate for a seamless loop even on wider mobile screens
+    const repeated = [...logos, ...logos, ...logos];
+
+    return (
+        <Box
+            sx={{
+                display: { xs: "block", md: "none" },
+                overflow: "hidden",
+                maskImage:
+                    "linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)",
+                WebkitMaskImage:
+                    "linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)",
+            }}
+            onMouseEnter={() => {
+                pausedRef.current = true;
+            }}
+            onMouseLeave={() => {
+                pausedRef.current = false;
+            }}
+        >
+            <Box
+                ref={trackRef}
+                sx={{
+                    display: "inline-flex",
+                    gap: "36px",
+                    alignItems: "center",
+                    flexWrap: "nowrap",
+                    willChange: "transform",
+                }}
+            >
+                {repeated.map(({ src, alt }, i) => (
+                    <Box
+                        key={`${alt}-${i}`}
+                        component="img"
+                        src={src}
+                        alt={alt}
+                        sx={{
+                            height: "16px",
+                            width: "auto",
+                            objectFit: "contain",
+                            flexShrink: 0,
+                            opacity: 0.85,
+                        }}
+                    />
+                ))}
+            </Box>
+        </Box>
+    );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
 // TestimonialCard
 // ─────────────────────────────────────────────────────────────────────────────
 function TestimonialCard({ item }) {
@@ -232,7 +313,8 @@ export default function PlacementsPage({ config }) {
     const [canScrollLeft, setCanScrollLeft] = useState(false);
     const [canScrollRight, setCanScrollRight] = useState(true);
 
-    const { hero, placementExpertise, techExpertise, testimonials, globalOutcomes, internships } = config;
+    const { hero, placementExpertise, techExpertise, testimonials, globalOutcomes, internships } =
+        config;
 
     const handleScroll = (dir) => {
         const el = scrollRef.current;
@@ -248,7 +330,13 @@ export default function PlacementsPage({ config }) {
         <Box sx={{ bgcolor: "#fff", display: "flex", flexDirection: "column", width: "100%" }}>
 
             {/* ── 1. HERO ───────────────────────────────────────────────────── */}
-            <Box sx={{ ...sectionPad, pt: { xs: "12px", md: "124px" }, pb: { xs: "12px", md: "24px" } }}>
+            <Box
+                sx={{
+                    ...sectionPad,
+                    pt: { xs: "12px", md: "124px" },
+                    pb: { xs: "12px", md: "24px" },
+                }}
+            >
                 <Box
                     component="img"
                     src={hero.bgDesktop}
@@ -276,11 +364,19 @@ export default function PlacementsPage({ config }) {
             </Box>
 
             {/* ── 2. PROVEN PLACEMENT EXPERTISE ───────────────────────────── */}
-            <Box sx={{ ...sectionPad, display: "flex", flexDirection: "column", gap: { xs: "12px", md: "20px" } }}>
-
+            <Box
+                sx={{
+                    ...sectionPad,
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: { xs: "12px", md: "20px" },
+                }}
+            >
                 <Box sx={{ display: "flex", flexDirection: "column", gap: "8px" }}>
                     <Typography sx={gradientText}>{placementExpertise.heading}</Typography>
-                    <Typography sx={{ ...bodyText, maxWidth: 840 }}>{placementExpertise.description}</Typography>
+                    <Typography sx={{ ...bodyText, maxWidth: 840 }}>
+                        {placementExpertise.description}
+                    </Typography>
                 </Box>
 
                 {/* ── Stat cards ── */}
@@ -291,17 +387,34 @@ export default function PlacementsPage({ config }) {
                     component="img"
                     src={placementExpertise.imageDesktop}
                     alt="Placement expertise"
-                    sx={{ display: { xs: "none", md: "block" }, width: "100%", height: "auto", borderRadius: "16px" }}
+                    sx={{
+                        display: { xs: "none", md: "block" },
+                        width: "100%",
+                        height: "auto",
+                        borderRadius: "16px",
+                    }}
                 />
                 <Box
                     component="img"
                     src={placementExpertise.imageMobile}
                     alt="Placement expertise"
-                    sx={{ display: { xs: "block", md: "none" }, width: "100%", height: "auto", borderRadius: "10px" }}
+                    sx={{
+                        display: { xs: "block", md: "none" },
+                        width: "100%",
+                        height: "auto",
+                        borderRadius: "10px",
+                    }}
                 />
 
                 {/* Placement Partners */}
-                <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: "14px", md: "20px" }, mt: "40px" }}>
+                <Box
+                    sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: { xs: "14px", md: "20px" },
+                        mt: "40px",
+                    }}
+                >
                     <Typography
                         sx={{
                             fontFamily: "Inter, sans-serif",
@@ -341,48 +454,25 @@ export default function PlacementsPage({ config }) {
                         ))}
                     </Box>
 
-                    {/* Mobile — infinite marquee */}
-                    <Box
-                        sx={{
-                            display: { xs: "block", md: "none" },
-                            overflow: "hidden",
-                            maskImage: "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
-                            WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
-                            "@keyframes marquee": {
-                                "0%": { transform: "translateX(0)" },
-                                "100%": { transform: "translateX(-50%)" },
-                            },
-                        }}
-                    >
-                        <Box
-                            sx={{
-                                display: "flex",
-                                width: "max-content",
-                                animation: "marquee 18s linear infinite",
-                                gap: "36px",
-                                alignItems: "center",
-                                "&:hover": { animationPlayState: "paused" },
-                            }}
-                        >
-                            {[...placementExpertise.partners.logos, ...placementExpertise.partners.logos].map(({ src, alt }, i) => (
-                                <Box
-                                    key={`${alt}-${i}`}
-                                    component="img"
-                                    src={src}
-                                    alt={alt}
-                                    sx={{ height: "16px", width: "auto", objectFit: "contain", flexShrink: 0, opacity: 0.85 }}
-                                />
-                            ))}
-                        </Box>
-                    </Box>
+                    {/* Mobile — RAF-based infinite marquee */}
+                    <LogoMarquee logos={placementExpertise.partners.logos} />
                 </Box>
             </Box>
 
             {/* ── 3. PROVEN TECH EXPERTISE ─────────────────────────────────── */}
-            <Box sx={{ ...sectionPad, display: "flex", flexDirection: "column", gap: { xs: "12px", md: "24px" } }}>
+            <Box
+                sx={{
+                    ...sectionPad,
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: { xs: "12px", md: "24px" },
+                }}
+            >
                 <Box sx={{ display: "flex", flexDirection: "column", gap: "8px" }}>
                     <Typography sx={gradientText}>{techExpertise.heading}</Typography>
-                    <Typography sx={{ ...bodyText, maxWidth: 840 }}>{techExpertise.description}</Typography>
+                    <Typography sx={{ ...bodyText, maxWidth: 840 }}>
+                        {techExpertise.description}
+                    </Typography>
                 </Box>
 
                 {/* ── Stat cards ── */}
@@ -390,7 +480,14 @@ export default function PlacementsPage({ config }) {
             </Box>
 
             {/* ── 4. TESTIMONIALS ──────────────────────────────────────────── */}
-            <Box sx={{ px: { xs: "20px", md: "128px" }, display: "flex", flexDirection: "column", gap: { xs: "20px", md: "20px" } }}>
+            <Box
+                sx={{
+                    px: { xs: "20px", md: "128px" },
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: { xs: "20px", md: "20px" },
+                }}
+            >
                 <Typography
                     sx={{
                         fontFamily: "Inter, sans-serif",
@@ -409,10 +506,19 @@ export default function PlacementsPage({ config }) {
                             onClick={() => handleScroll("left")}
                             sx={{
                                 display: { xs: "none", md: "flex" },
-                                position: "absolute", left: -20, top: "50%", transform: "translateY(-50%)",
-                                zIndex: 2, width: 40, height: 40, borderRadius: "50%",
-                                bgcolor: "#fff", boxShadow: "0 2px 12px rgba(0,0,0,0.15)",
-                                alignItems: "center", justifyContent: "center", cursor: "pointer",
+                                position: "absolute",
+                                left: -20,
+                                top: "50%",
+                                transform: "translateY(-50%)",
+                                zIndex: 2,
+                                width: 40,
+                                height: 40,
+                                borderRadius: "50%",
+                                bgcolor: "#fff",
+                                boxShadow: "0 2px 12px rgba(0,0,0,0.15)",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                cursor: "pointer",
                                 border: "1px solid rgba(108,16,188,0.2)",
                             }}
                         >
@@ -424,10 +530,19 @@ export default function PlacementsPage({ config }) {
                             onClick={() => handleScroll("right")}
                             sx={{
                                 display: { xs: "none", md: "flex" },
-                                position: "absolute", right: -20, top: "50%", transform: "translateY(-50%)",
-                                zIndex: 2, width: 40, height: 40, borderRadius: "50%",
-                                bgcolor: "#fff", boxShadow: "0 2px 12px rgba(0,0,0,0.15)",
-                                alignItems: "center", justifyContent: "center", cursor: "pointer",
+                                position: "absolute",
+                                right: -20,
+                                top: "50%",
+                                transform: "translateY(-50%)",
+                                zIndex: 2,
+                                width: 40,
+                                height: 40,
+                                borderRadius: "50%",
+                                bgcolor: "#fff",
+                                boxShadow: "0 2px 12px rgba(0,0,0,0.15)",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                cursor: "pointer",
                                 border: "1px solid rgba(108,16,188,0.2)",
                             }}
                         >
@@ -440,7 +555,9 @@ export default function PlacementsPage({ config }) {
                         onScroll={(e) => {
                             const el = e.currentTarget;
                             setCanScrollLeft(el.scrollLeft > 0);
-                            setCanScrollRight(el.scrollLeft + el.offsetWidth < el.scrollWidth - 4);
+                            setCanScrollRight(
+                                el.scrollLeft + el.offsetWidth < el.scrollWidth - 4
+                            );
                         }}
                         sx={{
                             display: "flex",
@@ -460,7 +577,14 @@ export default function PlacementsPage({ config }) {
             </Box>
 
             {/* ── 5. GLOBAL OUTCOMES ───────────────────────────────────────── */}
-            <Box sx={{ ...sectionPad, display: "flex", flexDirection: "column", gap: { xs: "12px", md: "24px" } }}>
+            <Box
+                sx={{
+                    ...sectionPad,
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: { xs: "12px", md: "24px" },
+                }}
+            >
                 <Box sx={{ display: "flex", flexDirection: "column", gap: "4px" }}>
                     <Typography sx={gradientText}>{globalOutcomes.heading}</Typography>
                     <Typography
@@ -483,30 +607,52 @@ export default function PlacementsPage({ config }) {
                             component="img"
                             src={card.desktop}
                             alt={card.alt}
-                            sx={{ flex: 1, width: 0, height: "auto", borderRadius: "20px", objectFit: "cover" }}
+                            sx={{
+                                flex: 1,
+                                width: 0,
+                                height: "auto",
+                                borderRadius: "20px",
+                                objectFit: "cover",
+                            }}
                         />
                     ))}
                 </Box>
 
                 {/* Mobile: stacked */}
-                <Box sx={{ display: { xs: "flex", md: "none" }, flexDirection: "column", gap: "10px" }}>
+                <Box
+                    sx={{
+                        display: { xs: "flex", md: "none" },
+                        flexDirection: "column",
+                        gap: "10px",
+                    }}
+                >
                     {globalOutcomes.cards.map((card, i) => (
                         <Box
                             key={i}
                             component="img"
                             src={card.mobile}
                             alt={card.alt}
-                            sx={{ width: "100%", height: "auto", borderRadius: "12px", objectFit: "cover" }}
+                            sx={{
+                                width: "100%",
+                                height: "auto",
+                                borderRadius: "12px",
+                                objectFit: "cover",
+                            }}
                         />
                     ))}
                 </Box>
             </Box>
 
             {/* ── 6. INTERNSHIPS IN FIRST YEAR ─────────────────────────────── */}
-            <Box sx={{
-                px: { xs: "20px", md: "128px" },
-                pb: { xs: "20px", md: "40px" }, display: "flex", flexDirection: "column", gap: { xs: "12px", md: "24px" }
-            }}>
+            <Box
+                sx={{
+                    px: { xs: "20px", md: "128px" },
+                    pb: { xs: "20px", md: "40px" },
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: { xs: "12px", md: "24px" },
+                }}
+            >
                 <Box sx={{ display: "flex", flexDirection: "column", gap: "4px" }}>
                     <Typography sx={gradientText}>{internships.heading}</Typography>
                     <Typography
@@ -535,7 +681,13 @@ export default function PlacementsPage({ config }) {
                             component="img"
                             src={item.desktop}
                             alt={item.alt}
-                            sx={{ width: "100%", height: "auto", borderRadius: "14px", objectFit: "cover", display: "block" }}
+                            sx={{
+                                width: "100%",
+                                height: "auto",
+                                borderRadius: "14px",
+                                objectFit: "cover",
+                                display: "block",
+                            }}
                         />
                     ))}
                 </Box>
@@ -554,7 +706,13 @@ export default function PlacementsPage({ config }) {
                             component="img"
                             src={item.mobile}
                             alt={item.alt}
-                            sx={{ width: "100%", height: "auto", borderRadius: "10px", objectFit: "cover", display: "block" }}
+                            sx={{
+                                width: "100%",
+                                height: "auto",
+                                borderRadius: "10px",
+                                objectFit: "cover",
+                                display: "block",
+                            }}
                         />
                     ))}
                 </Box>
