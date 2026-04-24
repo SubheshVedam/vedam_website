@@ -6,6 +6,7 @@ import { FunAtVedam } from "@/components/life/FunAtVedam";
 import { lifeAtVedam } from "@/constants/data";
 import { ScrollComponent } from "@/components/life/ScrollComponent/ScrollComponent";
 import Clubs from "@/components/Clubs"
+import NoesisPage from "@/app/noesis/page";
 
 const clubsatVST = lifeAtVedam.clubsatVedam.data;
 
@@ -68,6 +69,10 @@ const Life = () => {
             },
           ]}
         />
+      </Box>
+
+      <Box sx={{ width: "100%" }}>
+        <NoesisPage />
       </Box>
 
       <SectionStack
