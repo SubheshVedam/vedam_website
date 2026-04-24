@@ -265,9 +265,10 @@ export const navLinks = [
   },
   { label: "Placements", path: "/placement" },
 
-  { label: "Life @ Vedam", path: "/life" },
+
 
   { label: "Seek Your Seniors", path: "/seniors", img: "/img/Group 1261155759.svg" },
+  { label: "Life @ Vedam", path: "/life" },
   { label: "FAQs", path: "/faqs" },
   // { label: "About Us", path: "/about" },
   { label: "Sign Up", path: "https://apply.vedam.org/" }, //Don't reorder register
