@@ -263,13 +263,15 @@ export const navLinks = [
     path: "/program/vst-adypu-pune",
     children: admissionCampusLinks,
   },
+  { label: "Placements", path: "/placement" },
+
   { label: "Life @ Vedam", path: "/life" },
 
   { label: "Seek Your Seniors", path: "/seniors", img: "/img/Group 1261155759.svg" },
   { label: "FAQs", path: "/faqs" },
   // { label: "About Us", path: "/about" },
-  { label: "Register Now", path: "https://apply.vedam.org/" }, //Don't reorder register
-  { label: "Login", path: "https://apply.vedam.org/" }, //Don't reorder login
+  { label: "Sign Up", path: "https://apply.vedam.org/" }, //Don't reorder register
+  // { label: "Login", path: "https://apply.vedam.org/" }, //Don't reorder login
 ];
 
 export const homeScreenData = {

@@ -370,10 +370,11 @@ export default function Navbar() {
                 );
               })}
               <Box sx={{ display: "flex", gap: "1rem" }}>
+                {/* Second-to-last link — plain style, no target="_blank" */}
                 <Button
                   color="inherit"
                   sx={{
-                    color: "#6C10BC",
+                    color: "#1F1F1F",
                     fontWeight: 400,
                     fontSize: "14px",
                     lineHeight: "100%",
@@ -381,23 +382,17 @@ export default function Navbar() {
                     textTransform: "none",
                     whiteSpace: "nowrap",
                     transition: "all 0.3s ease-in-out",
-                    backgroundColor: "rgba(108, 16, 188, 0.1)",
-                    paddingX: "20px",
-                    paddingY: "10px",
-                    borderRadius: "8px",
                     fontFamily: "Inter",
                     "&:hover": activeStyle,
-                    ...(isActive(navLinks[navLinks.length - 2].path) && {
-                      ...activeStyle,
-                      backgroundColor: "transparent",
-                    }),
+                    ...(isActive(navLinks[navLinks.length - 2].path) && activeStyle),
                   }}
-                  target="_blank"
                   href={navLinks[navLinks.length - 2].path}
+                  component={Link}
                 >
                   {navLinks[navLinks.length - 2].label}
                 </Button>
 
+                {/* Last link — purple background + opens in new tab */}
                 <Button
                   color="inherit"
                   sx={{
