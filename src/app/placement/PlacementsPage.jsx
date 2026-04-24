@@ -682,7 +682,7 @@ export default function PlacementsPage({ config }) {
                             src={item.desktop}
                             alt={item.alt}
                             sx={{
-                                width: "100%",
+                                width: "80%",
                                 height: "auto",
                                 borderRadius: "14px",
                                 objectFit: "cover",
