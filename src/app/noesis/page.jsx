@@ -139,7 +139,7 @@ function StatsMarquee({ items }) {
                         </Typography>
                         <Typography
                             component="span"
-                            sx={{ color: "#FF6B00", mx: "24px", fontSize: "10px" }}
+                            sx={{ color: "#FF9900", mx: "24px", fontSize: "10px" }}
                         >
 
                         </Typography>
@@ -237,19 +237,25 @@ function HeroSection({ hero }) {
         <Box
             sx={{
                 ...sectionPad,
-                pt: { xs: "20px", md: "80px" },
+                pt: { xs: "20px", md: "0px" },
                 pb: { xs: "0px", md: "0px" },
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
-                gap: { xs: "14px", md: "24px" },
+                justifyContent: "center",
+                gap: { xs: "14px", md: "48px" },
+                height: { xs: "240px", md: "100vh" },
+                backgroundImage: 'url(/img/noesis/hero-bg.webp)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
             }}
         >
             <Typography
                 sx={{
                     fontFamily: "Inter, sans-serif",
                     fontWeight: 800,
-                    fontSize: { xs: "22px", md: "40px" },
+                    fontSize: { xs: "16px", md: "40px" },
                     color: "#fff",
                     textAlign: "center",
                     lineHeight: 1.15,
@@ -257,7 +263,7 @@ function HeroSection({ hero }) {
                 }}
             >
                 The Official{" "}
-                <Box component="span" sx={{ color: "#FF6B00" }}>
+                <Box component="span" sx={{ color: "#FF9900" }}>
                     Techno-Cultural Fest
                 </Box>
                 <br />
@@ -473,7 +479,7 @@ export default function NoesisPage({ config = noesisConfig }) {
                     }}
                 >
                     Moments from{" "}
-                    <Box component="span" sx={{ color: "#FF6B00" }}>NOESIS'26</Box>
+                    <Box component="span" sx={{ color: "#FF9900" }}>NOESIS'26</Box>
                 </Typography>
 
                 <Box sx={{ position: "relative", display: { xs: "none", md: "block" } }}>
@@ -504,7 +510,7 @@ export default function NoesisPage({ config = noesisConfig }) {
                             }}
                         >
                             <span style={{ color: "#fff", fontSize: "24px" }}>MOMENTS FROM </span>
-                            <span style={{ color: "#FF6B00", fontSize: "24px" }}>NOESIS 26</span>
+                            <span style={{ color: "#FF9900", fontSize: "24px" }}>NOESIS 26</span>
                         </Typography>
                     </Box>
                 </Box>
