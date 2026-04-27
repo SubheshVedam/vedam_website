@@ -174,7 +174,6 @@ function LogoMarquee({ logos }) {
     return (
         <Box
             sx={{
-                display: { xs: "block", md: "none" },
                 overflow: "hidden",
                 maskImage:
                     "linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)",
@@ -192,7 +191,7 @@ function LogoMarquee({ logos }) {
                 ref={trackRef}
                 sx={{
                     display: "inline-flex",
-                    gap: "36px",
+                    gap: { xs: "36px", md: "48px" },
                     alignItems: "center",
                     flexWrap: "nowrap",
                     willChange: "transform",
@@ -205,11 +204,13 @@ function LogoMarquee({ logos }) {
                         src={src}
                         alt={alt}
                         sx={{
-                            height: "16px",
+                            height: { xs: "16px", md: "32px" },
                             width: "auto",
                             objectFit: "contain",
                             flexShrink: 0,
                             opacity: 0.85,
+                            transition: "opacity 0.2s",
+                            "&:hover": { opacity: 1 },
                         }}
                     />
                 ))}
@@ -426,35 +427,7 @@ export default function PlacementsPage({ config }) {
                         {placementExpertise.partners.heading}
                     </Typography>
 
-                    {/* Desktop — static row */}
-                    <Box
-                        sx={{
-                            display: { xs: "none", md: "flex" },
-                            flexWrap: "wrap",
-                            gap: "40px",
-                            alignItems: "center",
-                            justifyContent: "space-between",
-                        }}
-                    >
-                        {placementExpertise.partners.logos.map(({ src, alt }) => (
-                            <Box
-                                key={alt}
-                                component="img"
-                                src={src}
-                                alt={alt}
-                                sx={{
-                                    height: "32px",
-                                    width: "auto",
-                                    objectFit: "contain",
-                                    opacity: 0.85,
-                                    transition: "opacity 0.2s",
-                                    "&:hover": { opacity: 1 },
-                                }}
-                            />
-                        ))}
-                    </Box>
-
-                    {/* Mobile — RAF-based infinite marquee */}
+                    {/* Infinite marquee for both mobile and desktop */}
                     <LogoMarquee logos={placementExpertise.partners.logos} />
                 </Box>
             </Box>
