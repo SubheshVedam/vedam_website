@@ -56,38 +56,51 @@ const sectionPad = {
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
-// MobileStatsMarquee
+// StatsMarquee — RAF-based infinite marquee for both mobile AND desktop
 // ─────────────────────────────────────────────────────────────────────────────
-function MobileStatsMarquee({ items }) {
+function StatsMarquee({ items }) {
     const trackRef = useRef(null);
+    const animIdRef = useRef(null);
     const posRef = useRef(0);
-    const rafRef = useRef(null);
+    const pausedRef = useRef(false);
 
     useEffect(() => {
         const track = trackRef.current;
-        if (!track) return;
+        if (!track || items.length === 0) return;
+
         const speed = 0.5;
+
         const animate = () => {
-            posRef.current -= speed;
-            const half = track.scrollWidth / 2;
-            if (Math.abs(posRef.current) >= half) posRef.current = 0;
-            track.style.transform = `translateX(${posRef.current}px)`;
-            rafRef.current = requestAnimationFrame(animate);
+            if (!pausedRef.current) {
+                posRef.current -= speed;
+                const halfWidth = track.scrollWidth / 2;
+                if (Math.abs(posRef.current) >= halfWidth) {
+                    posRef.current = 0;
+                }
+                track.style.transform = `translateX(${posRef.current}px)`;
+            }
+            animIdRef.current = requestAnimationFrame(animate);
         };
-        rafRef.current = requestAnimationFrame(animate);
-        return () => cancelAnimationFrame(rafRef.current);
-    }, []);
+
+        animIdRef.current = requestAnimationFrame(animate);
+        return () => cancelAnimationFrame(animIdRef.current);
+    }, [items]);
 
     const repeated = [...items, ...items, ...items];
 
     return (
         <Box
             sx={{
-                display: { xs: "block", md: "none" },
                 background: "linear-gradient(135deg, #1a0030 0%, #0d0018 60%, #1a0030 100%)",
                 overflow: "hidden",
                 py: "12px",
+                maskImage:
+                    "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
+                WebkitMaskImage:
+                    "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
             }}
+            onMouseEnter={() => { pausedRef.current = true; }}
+            onMouseLeave={() => { pausedRef.current = false; }}
         >
             <Box
                 ref={trackRef}
@@ -105,8 +118,8 @@ function MobileStatsMarquee({ items }) {
                             sx={{
                                 fontFamily: "Inter, sans-serif",
                                 fontWeight: 800,
-                                fontSize: "12px",
-                                color: "#FF6B00",
+                                fontSize: { xs: "12px", md: "14px" },
+                                color: "#FFF",
                                 letterSpacing: "0.04em",
                             }}
                         >
@@ -117,8 +130,8 @@ function MobileStatsMarquee({ items }) {
                             sx={{
                                 fontFamily: "Inter, sans-serif",
                                 fontWeight: 500,
-                                fontSize: "12px",
-                                color: "#aaa",
+                                fontSize: { xs: "12px", md: "14px" },
+                                color: "#FFF",
                                 ml: "6px",
                             }}
                         >
@@ -126,9 +139,9 @@ function MobileStatsMarquee({ items }) {
                         </Typography>
                         <Typography
                             component="span"
-                            sx={{ color: "#FF6B00", mx: "16px", fontSize: "10px" }}
+                            sx={{ color: "#FF6B00", mx: "24px", fontSize: "10px" }}
                         >
-                            ◆
+
                         </Typography>
                     </Box>
                 ))}
@@ -138,7 +151,7 @@ function MobileStatsMarquee({ items }) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// VideoThumbnail — no chips inside, just the frame + play button
+// VideoThumbnail
 // ─────────────────────────────────────────────────────────────────────────────
 function VideoThumbnail({ videoFrame, youtubeId }) {
     const [playing, setPlaying] = useState(false);
@@ -180,7 +193,6 @@ function VideoThumbnail({ videoFrame, youtubeId }) {
                         alt="NOESIS Official After Movie 2026"
                         sx={{ width: "100%", height: "auto", display: "block" }}
                     />
-                    {/* Play button */}
                     <Box
                         sx={{
                             position: "absolute",
@@ -218,7 +230,7 @@ function VideoThumbnail({ videoFrame, youtubeId }) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// HeroSection — video + chips as image assets floating outside the frame
+// HeroSection
 // ─────────────────────────────────────────────────────────────────────────────
 function HeroSection({ hero }) {
     return (
@@ -252,20 +264,13 @@ function HeroSection({ hero }) {
                 of Vedam School of Technology
             </Typography>
 
-            {/*
-              Outer wrapper: wider than the video so chips can bleed outside.
-              On mobile the video is 245px wide; we give the wrapper more room.
-              On desktop the video is 60% of the section — same logic.
-            */}
             <Box
                 sx={{
                     position: "relative",
                     width: { xs: "100%", md: "70%" },
-                    // Enough horizontal padding so chips don't clip
                     px: { xs: "32px", md: "48px" },
                 }}
             >
-                {/* ENJOY chip — top-left, partially outside the video */}
                 <Box
                     component="img"
                     src={hero.enjoyChip}
@@ -280,11 +285,7 @@ function HeroSection({ hero }) {
                         pointerEvents: "none",
                     }}
                 />
-
-                {/* Video frame */}
                 <VideoThumbnail videoFrame={hero.videoFrame} youtubeId={hero.youtubeId} />
-
-                {/* COMPETE chip — bottom-right, partially outside the video */}
                 <Box
                     component="img"
                     src={hero.competeChip}
@@ -316,7 +317,7 @@ export default function NoesisPage({ config = noesisConfig }) {
             {/* ── 1. HERO ── */}
             <HeroSection hero={hero} />
 
-            {/* ── 2. STATS BAR ── */}
+            {/* ── 2. STATS BAR — desktop image, infinite marquee for mobile ── */}
             <Box sx={{ display: { xs: "none", md: "block" }, pt: "16px" }}>
                 <Box
                     component="img"
@@ -325,7 +326,9 @@ export default function NoesisPage({ config = noesisConfig }) {
                     sx={{ width: "100%", height: "auto", display: "block" }}
                 />
             </Box>
-            <MobileStatsMarquee items={stats.items} />
+            <Box sx={{ display: { xs: "block", md: "none" }, pt: "16px" }}>
+                <StatsMarquee items={stats.items} />
+            </Box>
 
             {/* ── 3. ABOUT SECTION ── */}
             <Box sx={{ ...sectionPad, pt: { xs: "24px", md: "40px" }, pb: { xs: "0px", md: "0px" } }}>
