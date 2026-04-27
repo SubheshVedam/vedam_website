@@ -356,7 +356,7 @@ export const homeScreenData = {
       },
       {
         id: 17,
-        imageUrl: "/img/companies/Airtel-Logo.webp",
+        imageUrl: "/img/companies/airtel.webp",
       },
       {
         id: 18,
@@ -364,11 +364,11 @@ export const homeScreenData = {
       },
       {
         id: 19,
-        imageUrl: "/img/companies/HCL image.webp",
+        imageUrl: "/img/companies/hcl.webp",
       },
       {
         id: 20,
-        imageUrl: "/img/companies/KPMG-logo (1).webp",
+        imageUrl: "/img/companies/kpmg.webp",
       },
       {
         id: 21,
