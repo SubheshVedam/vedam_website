@@ -1,10 +1,13 @@
 "use client";
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 import Button from "@mui/material/Button";
 import Image from "next/image";
 
 export const VideoWithText = ({ title, subtitle, isImg, videoUrl, imageUrl }) => {
+
+  const isMobile = useMediaQuery('(max-width:600px)');
+
   return (
     <Box
       sx={{
@@ -31,21 +34,22 @@ export const VideoWithText = ({ title, subtitle, isImg, videoUrl, imageUrl }) =>
         }}
       />
 
-      {/* Background Media */}
-      {!isImg ? <>
+      {isMobile || isImg ? (
         <Image
-          src="/img/college.webp"
-          alt="Hero"
+          src={imageUrl || "/img/life_vedam_bg.webp"}
+          alt="Background"
           fill
           priority
-          style={{ objectFit: "cover", minWidth: "500px", minHeight: "400px" }}
+          sizes="100vw"
+          style={{ objectFit: "cover" }}
         />
+      ) : (
         <video
           autoPlay
           loop
           muted
           playsInline
-          preload="none"
+          preload="auto"
           style={{
             position: "absolute",
             top: 0,
@@ -53,29 +57,10 @@ export const VideoWithText = ({ title, subtitle, isImg, videoUrl, imageUrl }) =>
             width: "100%",
             height: "100%",
             objectFit: "cover",
-            zIndex: 0,
           }}
-          className="responsive-video"
         >
           <source src={videoUrl} type="video/mp4" />
-          Your browser does not support the video tag.
         </video>
-      </> : (
-        <img
-          src={imageUrl || "/img/life_vedam_bg.webp"}
-          fetchPriority="high"
-          alt="Background"
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            zIndex: 0,
-          }}
-          className="responsive-image"
-        />
       )}
 
       {/* Content Container */}
