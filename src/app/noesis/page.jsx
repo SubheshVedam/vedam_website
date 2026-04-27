@@ -91,9 +91,9 @@ function StatsMarquee({ items }) {
     return (
         <Box
             sx={{
-                background: "linear-gradient(135deg, #1a0030 0%, #0d0018 60%, #1a0030 100%)",
+                background: "linear-gradient(135deg, #000000 0%, #8800FF 100%)",
                 overflow: "hidden",
-                py: "12px",
+                py: { xs: "8px", md: "20px" },
                 maskImage:
                     "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
                 WebkitMaskImage:
@@ -118,7 +118,7 @@ function StatsMarquee({ items }) {
                             sx={{
                                 fontFamily: "Inter, sans-serif",
                                 fontWeight: 800,
-                                fontSize: { xs: "12px", md: "14px" },
+                                fontSize: { xs: "12px", md: "19px" },
                                 color: "#FFF",
                                 letterSpacing: "0.04em",
                             }}
@@ -139,7 +139,7 @@ function StatsMarquee({ items }) {
                         </Typography>
                         <Typography
                             component="span"
-                            sx={{ color: "#FF9900", mx: "24px", fontSize: "10px" }}
+                            sx={{ color: "#FF9900", mx: { xs: "12px", md: "24px" }, fontSize: "10px" }}
                         >
 
                         </Typography>
@@ -323,16 +323,8 @@ export default function NoesisPage({ config = noesisConfig }) {
             {/* ── 1. HERO ── */}
             <HeroSection hero={hero} />
 
-            {/* ── 2. STATS BAR — desktop image, infinite marquee for mobile ── */}
-            <Box sx={{ display: { xs: "none", md: "block" }, pt: "16px" }}>
-                <Box
-                    component="img"
-                    src={stats.desktopImage}
-                    alt="Event stats"
-                    sx={{ width: "100%", height: "auto", display: "block" }}
-                />
-            </Box>
-            <Box sx={{ display: { xs: "block", md: "none" }, pt: "16px" }}>
+            {/* ── 2. STATS BAR — infinite marquee for both desktop and mobile ── */}
+            <Box sx={{ pt: "16px", pb: "16px" }}>
                 <StatsMarquee items={stats.items} />
             </Box>
 
