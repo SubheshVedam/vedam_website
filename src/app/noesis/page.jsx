@@ -3,13 +3,12 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Box, Typography } from "@mui/material";
 
-// ─────────────────────────────────────────────────────────────────────────────
-// Config — all asset paths live in /img/noesis/
-// ─────────────────────────────────────────────────────────────────────────────
 export const noesisConfig = {
     hero: {
         videoFrame: "/img/noesis/video_frame.webp",
         youtubeId: "gGndsY1Fpho",
+        enjoyChip: "/img/noesis/enjoy.webp",
+        competeChip: "/img/noesis/complete.webp",
     },
     stats: {
         desktopImage: "/img/noesis/3dayevents.webp",
@@ -51,16 +50,13 @@ export const noesisConfig = {
     },
 };
 
-// ─────────────────────────────────────────────────────────────────────────────
-// Shared tokens
-// ─────────────────────────────────────────────────────────────────────────────
 const sectionPad = {
     px: { xs: "20px", md: "128px" },
     py: { xs: "20px", md: "40px" },
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
-// MobileStatsMarquee — RAF-based infinite ticker for mobile
+// MobileStatsMarquee
 // ─────────────────────────────────────────────────────────────────────────────
 function MobileStatsMarquee({ items }) {
     const trackRef = useRef(null);
@@ -142,7 +138,7 @@ function MobileStatsMarquee({ items }) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// VideoThumbnail — shows thumbnail with chips + play button; swaps to iframe
+// VideoThumbnail — no chips inside, just the frame + play button
 // ─────────────────────────────────────────────────────────────────────────────
 function VideoThumbnail({ videoFrame, youtubeId }) {
     const [playing, setPlaying] = useState(false);
@@ -184,47 +180,6 @@ function VideoThumbnail({ videoFrame, youtubeId }) {
                         alt="NOESIS Official After Movie 2026"
                         sx={{ width: "100%", height: "auto", display: "block" }}
                     />
-
-                    {/* ENJOY chip */}
-                    <Box
-                        sx={{
-                            position: "absolute",
-                            top: { xs: "12px", md: "20px" },
-                            left: { xs: "12px", md: "20px" },
-                            bgcolor: "#8800FF",
-                            color: "#fff",
-                            fontFamily: "Inter, sans-serif",
-                            fontWeight: 700,
-                            fontSize: { xs: "10px", md: "13px" },
-                            letterSpacing: "0.1em",
-                            px: "12px",
-                            py: "4px",
-                            borderRadius: "20px",
-                        }}
-                    >
-                        ENJOY
-                    </Box>
-
-                    {/* COMPETE chip */}
-                    <Box
-                        sx={{
-                            position: "absolute",
-                            bottom: { xs: "12px", md: "20px" },
-                            right: { xs: "12px", md: "20px" },
-                            bgcolor: "#FF6B00",
-                            color: "#fff",
-                            fontFamily: "Inter, sans-serif",
-                            fontWeight: 700,
-                            fontSize: { xs: "10px", md: "13px" },
-                            letterSpacing: "0.1em",
-                            px: "12px",
-                            py: "4px",
-                            borderRadius: "20px",
-                        }}
-                    >
-                        COMPETE
-                    </Box>
-
                     {/* Play button */}
                     <Box
                         sx={{
@@ -263,55 +218,87 @@ function VideoThumbnail({ videoFrame, youtubeId }) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// SpeakerCard
+// HeroSection — video + chips as image assets floating outside the frame
 // ─────────────────────────────────────────────────────────────────────────────
-function SpeakerCard({ item }) {
+function HeroSection({ hero }) {
     return (
         <Box
             sx={{
-                borderRadius: { xs: "12px", md: "16px" },
-                overflow: "hidden",
-                bgcolor: "#111",
-                border: "1px solid #2a2a2a",
+                ...sectionPad,
+                pt: { xs: "20px", md: "80px" },
+                pb: { xs: "0px", md: "0px" },
                 display: "flex",
                 flexDirection: "column",
+                alignItems: "center",
+                gap: { xs: "14px", md: "24px" },
             }}
         >
-            <Box
-                component="img"
-                src={item.img}
-                alt={item.name}
+            <Typography
                 sx={{
-                    width: "100%",
-                    aspectRatio: "1",
-                    objectFit: "cover",
-                    objectPosition: "top",
-                    display: "block",
+                    fontFamily: "Inter, sans-serif",
+                    fontWeight: 800,
+                    fontSize: { xs: "22px", md: "40px" },
+                    color: "#fff",
+                    textAlign: "center",
+                    lineHeight: 1.15,
+                    letterSpacing: { xs: "-0.4px", md: "-0.8px" },
                 }}
-            />
-            <Box sx={{ p: { xs: "14px", md: "20px" } }}>
-                <Typography
+            >
+                The Official{" "}
+                <Box component="span" sx={{ color: "#FF6B00" }}>
+                    Techno-Cultural Fest
+                </Box>
+                <br />
+                of Vedam School of Technology
+            </Typography>
+
+            {/*
+              Outer wrapper: wider than the video so chips can bleed outside.
+              On mobile the video is 245px wide; we give the wrapper more room.
+              On desktop the video is 60% of the section — same logic.
+            */}
+            <Box
+                sx={{
+                    position: "relative",
+                    width: { xs: "100%", md: "70%" },
+                    // Enough horizontal padding so chips don't clip
+                    px: { xs: "32px", md: "48px" },
+                }}
+            >
+                {/* ENJOY chip — top-left, partially outside the video */}
+                <Box
+                    component="img"
+                    src={hero.enjoyChip}
+                    alt="ENJOY"
                     sx={{
-                        fontFamily: "Inter, sans-serif",
-                        fontWeight: 700,
-                        fontSize: { xs: "16px", md: "20px" },
-                        color: "#fff",
-                        lineHeight: 1.2,
+                        position: "absolute",
+                        top: { xs: "-8px", md: "-12px" },
+                        left: { xs: "0px", md: "8px" },
+                        width: { xs: "72px", md: "100px" },
+                        height: "auto",
+                        zIndex: 10,
+                        pointerEvents: "none",
                     }}
-                >
-                    {item.name}
-                </Typography>
-                <Typography
+                />
+
+                {/* Video frame */}
+                <VideoThumbnail videoFrame={hero.videoFrame} youtubeId={hero.youtubeId} />
+
+                {/* COMPETE chip — bottom-right, partially outside the video */}
+                <Box
+                    component="img"
+                    src={hero.competeChip}
+                    alt="COMPETE"
                     sx={{
-                        fontFamily: "Inter, sans-serif",
-                        fontWeight: 400,
-                        fontSize: { xs: "12px", md: "14px" },
-                        color: "#888",
-                        mt: "4px",
+                        position: "absolute",
+                        bottom: { xs: "-8px", md: "-12px" },
+                        right: { xs: "0px", md: "8px" },
+                        width: { xs: "88px", md: "120px" },
+                        height: "auto",
+                        zIndex: 10,
+                        pointerEvents: "none",
                     }}
-                >
-                    {item.role}
-                </Typography>
+                />
             </Box>
         </Box>
     );
@@ -327,49 +314,10 @@ export default function NoesisPage({ config = noesisConfig }) {
         <Box sx={{ bgcolor: "#000", minHeight: "100vh", display: "flex", flexDirection: "column", width: "100%" }}>
 
             {/* ── 1. HERO ── */}
-            <Box
-                sx={{
-                    ...sectionPad,
-                    pt: { xs: "20px", md: "80px" },
-                    pb: { xs: "0px", md: "0px" },
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    gap: { xs: "14px", md: "24px" },
-                }}
-            >
-                <Typography
-                    sx={{
-                        fontFamily: "Inter, sans-serif",
-                        fontWeight: 800,
-                        fontSize: { xs: "22px", md: "40px" },
-                        color: "#fff",
-                        textAlign: "center",
-                        lineHeight: 1.15,
-                        letterSpacing: { xs: "-0.4px", md: "-0.8px" },
-                    }}
-                >
-                    The Official{" "}
-                    <Box component="span" sx={{ color: "#FF6B00" }}>
-                        Techno-Cultural Fest
-                    </Box>
-                    <br />
-                    of Vedam School of Technology
-                </Typography>
-
-                <Box sx={{ width: { xs: "245px", md: "60%" } }}>
-                    <VideoThumbnail videoFrame={hero.videoFrame} youtubeId={hero.youtubeId} />
-                </Box>
-            </Box>
+            <HeroSection hero={hero} />
 
             {/* ── 2. STATS BAR ── */}
-            {/* Desktop: pre-designed image */}
-            <Box
-                sx={{
-                    display: { xs: "none", md: "block" },
-                    pt: "16px",
-                }}
-            >
+            <Box sx={{ display: { xs: "none", md: "block" }, pt: "16px" }}>
                 <Box
                     component="img"
                     src={stats.desktopImage}
@@ -377,19 +325,10 @@ export default function NoesisPage({ config = noesisConfig }) {
                     sx={{ width: "100%", height: "auto", display: "block" }}
                 />
             </Box>
-
-            {/* Mobile: RAF infinite marquee */}
             <MobileStatsMarquee items={stats.items} />
 
             {/* ── 3. ABOUT SECTION ── */}
-            <Box
-                sx={{
-                    ...sectionPad,
-                    pt: { xs: "24px", md: "40px" },
-                    pb: { xs: "0px", md: "0px" },
-                }}
-            >
-                {/* Desktop: text left, logo right */}
+            <Box sx={{ ...sectionPad, pt: { xs: "24px", md: "40px" }, pb: { xs: "0px", md: "0px" } }}>
                 <Box
                     sx={{
                         display: { xs: "none", md: "flex" },
@@ -417,7 +356,6 @@ export default function NoesisPage({ config = noesisConfig }) {
                     />
                 </Box>
 
-                {/* Mobile: logo top, text below */}
                 <Box sx={{ display: { xs: "flex", md: "none" }, flexDirection: "column", gap: "12px" }}>
                     <Box
                         component="img"
@@ -441,81 +379,40 @@ export default function NoesisPage({ config = noesisConfig }) {
 
             {/* ── 4. IMAGE GRID ── */}
             <Box sx={{ ...sectionPad, pt: { xs: "20px", md: "28px" } }}>
-
-                {/* ── Desktop: img1 left 2/3, img2+img3 stacked right 1/3, img4 circle on boundary ── */}
                 <Box
                     sx={{
                         display: { xs: "none", md: "flex" },
                         flexDirection: "row",
                         gap: "12px",
                         position: "relative",
-                        // Fix a shared height so left and right columns are equal
                         alignItems: "stretch",
                     }}
                 >
-                    {/* Left column — img1, 2/3 width */}
-                    <Box
-                        sx={{
-                            flex: "0 0 calc(66.6667% - 6px)", // 2/3 minus half of 12px gap
-                            position: "relative",
-                        }}
-                    >
+                    <Box sx={{ flex: "0 0 calc(66.6667% - 6px)", position: "relative" }}>
                         <Box
                             component="img"
                             src={about.imagesDesktop[0]}
                             alt="NOESIS moment 1"
-                            sx={{
-                                width: "100%",
-                                height: "100%",
-                                borderRadius: "14px",
-                                objectFit: "cover",
-                                display: "block",
-                            }}
+                            sx={{ width: "100%", height: "100%", borderRadius: "14px", objectFit: "cover", display: "block" }}
                         />
                     </Box>
-
-                    {/* Right column — img2 and img3 stacked, 1/3 width */}
-                    <Box
-                        sx={{
-                            flex: "0 0 calc(33.3333% - 6px)", // 1/3 minus half of 12px gap
-                            display: "flex",
-                            flexDirection: "column",
-                            gap: "12px",
-                        }}
-                    >
+                    <Box sx={{ flex: "0 0 calc(33.3333% - 6px)", display: "flex", flexDirection: "column", gap: "12px" }}>
                         <Box
                             component="img"
                             src={about.imagesDesktop[1]}
                             alt="NOESIS moment 2"
-                            sx={{
-                                width: "100%",
-                                flex: 1,
-                                borderRadius: "14px",
-                                objectFit: "cover",
-                                display: "block",
-                                minHeight: 0, // allow flex shrink
-                            }}
+                            sx={{ width: "100%", flex: 1, borderRadius: "14px", objectFit: "cover", display: "block", minHeight: 0 }}
                         />
                         <Box
                             component="img"
                             src={about.imagesDesktop[2]}
                             alt="NOESIS moment 3"
-                            sx={{
-                                width: "100%",
-                                flex: 1,
-                                borderRadius: "14px",
-                                objectFit: "cover",
-                                display: "block",
-                                minHeight: 0,
-                            }}
+                            sx={{ width: "100%", flex: 1, borderRadius: "14px", objectFit: "cover", display: "block", minHeight: 0 }}
                         />
                     </Box>
-
-                    {/* img4 — circle centred on the column boundary (left: 66.67%), vertically centred */}
                     <Box
                         sx={{
                             position: "absolute",
-                            // Place circle centre at the exact column dividing line
                             left: "66.6667%",
                             top: "50%",
                             transform: "translate(-50%, -50%)",
@@ -535,17 +432,11 @@ export default function NoesisPage({ config = noesisConfig }) {
                     </Box>
                 </Box>
 
-                {/* Mobile: single image */}
                 <Box
                     component="img"
                     src={about.imageMobile}
                     alt="NOESIS moments"
-                    sx={{
-                        display: { xs: "block", md: "none" },
-                        width: "100%",
-                        height: "auto",
-                        borderRadius: "12px",
-                    }}
+                    sx={{ display: { xs: "block", md: "none" }, width: "100%", height: "auto", borderRadius: "12px" }}
                 />
             </Box>
 
@@ -567,7 +458,6 @@ export default function NoesisPage({ config = noesisConfig }) {
 
             {/* ── 6. MOMENTS ── */}
             <Box sx={{ ...sectionPad, pt: { xs: "24px", md: "40px" } }}>
-                {/* Mobile heading */}
                 <Typography
                     sx={{
                         display: { xs: "block", md: "none" },
@@ -583,27 +473,13 @@ export default function NoesisPage({ config = noesisConfig }) {
                     <Box component="span" sx={{ color: "#FF6B00" }}>NOESIS'26</Box>
                 </Typography>
 
-                {/* Desktop: vertical label + image */}
-                <Box
-                    sx={{
-                        position: "relative",
-                        display: { xs: "none", md: "block" },
-                    }}
-                >
+                <Box sx={{ position: "relative", display: { xs: "none", md: "block" } }}>
                     <Box
                         component="img"
                         src={moments.desktop}
                         alt="Moments from NOESIS 26"
-                        sx={{
-                            width: "100%",
-                            height: "auto",
-                            borderRadius: "12px",
-                            objectFit: "cover",
-                            display: "block",
-                        }}
+                        sx={{ width: "100%", height: "auto", borderRadius: "12px", objectFit: "cover", display: "block" }}
                     />
-
-                    {/* Vertical Text Overlay */}
                     <Box
                         sx={{
                             position: "absolute",
@@ -630,7 +506,6 @@ export default function NoesisPage({ config = noesisConfig }) {
                     </Box>
                 </Box>
 
-                {/* Mobile: image */}
                 <Box
                     component="img"
                     src={moments.mobile}
@@ -654,7 +529,6 @@ export default function NoesisPage({ config = noesisConfig }) {
                     Industry Leaders on Stage
                 </Typography>
 
-                {/* Desktop: 3 speaker cards */}
                 <Box
                     sx={{
                         display: { xs: "none", md: "grid" },
@@ -663,11 +537,16 @@ export default function NoesisPage({ config = noesisConfig }) {
                     }}
                 >
                     {speakers.desktop.map((s) => (
-                        <Box component="img" src={s.img} alt="Speaker" sx={{ width: "100%", height: "auto", borderRadius: "12px" }} />
+                        <Box
+                            key={s.name}
+                            component="img"
+                            src={s.img}
+                            alt={s.name}
+                            sx={{ width: "100%", height: "auto", borderRadius: "12px" }}
+                        />
                     ))}
                 </Box>
 
-                {/* Mobile: single combined image */}
                 <Box
                     component="img"
                     src={speakers.mobileImage}
