@@ -203,35 +203,35 @@ export const instructorData = [
 export const detailsData = [
   {
     image: "/img/whyvedam/second.webp",
-    bgImage: "/img/whyvedam/img3.webp",
+    bgImage: "https://images.ctfassets.net/wrc4czfp4sk8/x7LFjvr08DO6OFdEMK3J8/15040b91013e99f8f3b90a662b6f9502/whyvedam_img3.webp",
     title: "Code From Day 1",
     description:
       "From Day 1, you'll be writing real code, building projects, and solving industry-relevant problems.",
   },
   {
     image: "/img/whyvedam/first.webp",
-    bgImage: "/img/whyvedam/img2.webp",
+    bgImage: "https://images.ctfassets.net/wrc4czfp4sk8/3UpvMPYAIdysslB38IU9A7/884b9b8582eb5498bd93b12cd5889429/whyvedam_img2.webp",
     title: "Only top 5% get in",
     description:
       "Merit based selection to attract the top talent. Learn with and co-create best codes.",
   },
   {
     image: "/img/whyvedam/fourth.webp",
-    bgImage: "/img/whyvedam/img5.webp",
+    bgImage: "https://images.ctfassets.net/wrc4czfp4sk8/IsbGYmE5XyKgr8842gM22/90f4fddac071823379eb30f75a90d641/whyvedam_img5.webp",
     title: "AI First Curriculum",
     description:
       "Our AI-First Curriculum is designed to equip students with the skills, tools, and mindset needed to thrive in an AI-powered world.",
   },
   {
     image: "/img/whyvedam/fifth.webp",
-    bgImage: "/img/whyvedam/img4.webp",
+    bgImage: "https://images.ctfassets.net/wrc4czfp4sk8/1SfPYgnhoE02t0LIyccU3w/2ed2f6ff21198e7e1ac22f8032aabf99/whyvedam_img4.webp",
     title: "Personal Macbook",
     description:
       "It's your key to a hands-on, immersive and collaborative learning experience in Computer Science and AI. ",
   },
   {
     image: "/img/whyvedam/third.webp",
-    bgImage: "/img/whyvedam/img1.webp",
+    bgImage: "https://images.ctfassets.net/wrc4czfp4sk8/193cyh2cnCd5hxQ1pe2HYT/772ac4612e0638dac9e3d8e6e61c49c6/whyvedam_img1.webp",
     title: "Top Instructors",
     description: "At Vedam, you’ll learn from the best minds in tech—engineers, researchers, and industry leaders from Google, Microsoft, Amazon, and top startups.",
   },
@@ -277,7 +277,7 @@ export const navLinks = [
 
 export const homeScreenData = {
   hero: {
-    background_video: "/vid/videoBgNew.mp4",
+    background_video: "https://videos.ctfassets.net/wrc4czfp4sk8/4fonsHsRvBl7la2ILlHnqi/fa21fc7b029440bf8a1be2075ea8c4ea/videoBgNew.mp4",
     title: "Learn Tech by Building\u00A0It",
     subtitle:
       "Vedam's 4-year UG OnCampus program prepares you for startups, innovation, and leadership with industry driven coursework and hands-on projects.",

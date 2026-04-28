@@ -1,4 +1,3 @@
-// src/app/layout.js
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -7,11 +6,12 @@ import EmotionCacheProvider from "@/components/EmotionCacheProvider";
 import Layout from "@/components/Layout";
 import AnnouncementBanner from "@/components/AnnouncementBanner";
 import { getVsatIntakeFromSheet } from "@/lib/vsatSheet";
-
-export const revalidate = 3600;
 import Script from "next/script";
-import { GoogleAnalytics } from '@next/third-parties/google'
+import GoogleAnalytics from '@/components/google-analytics';
+import { GoogleAnalytics as GA4 } from '@next/third-parties/google';
 import { Analytics } from "@vercel/analytics/next";
+import CookieBanner from "@/components/CookieBanner";
+export const revalidate = 3600;
 
 export const metadata = {
   metadataBase: new URL("https://vedam.org"),
@@ -69,6 +69,7 @@ export const metadata = {
   },
 };
 
+
 export default async function RootLayout({ children }) {
   const vsatIntake = await getVsatIntakeFromSheet();
 
@@ -82,12 +83,52 @@ export default async function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
         />
         <link rel="icon" href="./favicon.ico" />
-        <Suspense fallback={null}>
-          {/* <GoogleAnalytics /> */}
-        </Suspense>
+      </head>
+      <body>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-K7ZDF4K4"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+            title="gtm"
+          />
+        </noscript>
+
+
+        <Script id="consent-defaults" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('consent', 'default', {
+              analytics_storage: 'denied',
+              ad_storage: 'denied',
+              functionality_storage: 'denied',
+              personalization_storage: 'denied',
+              wait_for_update: 500
+            });
+          `}
+        </Script>
+
+        <EmotionCacheProvider>
+          <AnnouncementBanner
+            applicationClosingEndMs={vsatIntake?.applicationClosingEndMs}
+          />
+          <Layout>
+            <Navbar />
+            {children}
+            <Footer />
+          </Layout>
+
+          <CookieBanner />
+        </EmotionCacheProvider>
+
+        <Analytics />
+
+        {/* GTM — fires after consent defaults are set */}
         <Script
           id="gtm"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -99,59 +140,44 @@ export default async function RootLayout({ children }) {
           }}
         />
 
+        {/* Clarity — lazy, only after page load */}
         <Script
           id="microsoft-clarity"
           strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               (function(c,l,a,r,i,t,y){
-                  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-              })(window, document, "clarity", "script", "r428jp90kq");
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window,document,"clarity","script","r428jp90kq");
             `,
           }}
         />
-      </head>
-      <body>
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-K7ZDF4K4"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-            title="gtm"
-          ></iframe>
-        </noscript>
+
+        {/* NoPaperForms — lazy */}
         <Script
           id="nopaperforms-tracker"
           strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
-              var npf_d='https://apply.vedam.org'; 
-              var npf_c='6380'; 
+              var npf_d='https://apply.vedam.org';
+              var npf_c='6380';
               var npf_m='1';
-              var s=document.createElement("script"); 
+              var s=document.createElement("script");
               s.type="text/javascript";
-              s.async=true; 
+              s.async=true;
               s.src="https://track.nopaperforms.com/js/track.js";
               document.body.appendChild(s);
             `,
           }}
         />
-        <EmotionCacheProvider>
-          <AnnouncementBanner
-            applicationClosingEndMs={vsatIntake?.applicationClosingEndMs}
-          />
-          <Layout>
-            <Navbar />
-            {children}
-            <Footer />
-          </Layout>
-        </EmotionCacheProvider>
-        <Analytics />
+
+        <Suspense fallback={null}>
+          <GoogleAnalytics />
+        </Suspense>
+        <GA4 gaId={process.env.NEXT_PUBLIC_GA_ID} />
       </body>
-      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
     </html>
   );
 }

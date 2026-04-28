@@ -36,11 +36,12 @@ export const VideoWithText = ({ title, subtitle, isImg, videoUrl, imageUrl }) =>
 
       {isMobile || isImg ? (
         <Image
-          src={imageUrl || "/img/life_vedam_bg.webp"}
+          src={imageUrl || "https://images.ctfassets.net/wrc4czfp4sk8/67xsgUFQRCncH7QceNrOzZ/2f2a99fbd11d28fea8627b2758ba49e0/life_vedam_bg.webp"}
           alt="Background"
           fill
           priority
           sizes="100vw"
+          fetchPriority="high"
           style={{ objectFit: "cover" }}
         />
       ) : (

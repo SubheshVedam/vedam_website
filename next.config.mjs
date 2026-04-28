@@ -1,3 +1,9 @@
+import bundleAnalyzer from '@next/bundle-analyzer';
+
+const withBundleAnalyzer = bundleAnalyzer({
+  enabled: process.env.ANALYZE === 'true',
+});
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -11,7 +17,19 @@ const nextConfig = {
         protocol: "https",
         hostname: "ozuzizemngdbzejrptqh.supabase.co",
       },
+      {
+        protocol: "https",
+        hostname: "images.ctfassets.net"
+      }
     ],
+  },
+  async headers() {
+    return [
+      {
+        source: '/_next/static/(.*)',
+        headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
+      },
+    ];
   },
   async redirects() {
     return [
@@ -23,4 +41,4 @@ const nextConfig = {
     ];
   },
 };
-export default nextConfig;
+export default withBundleAnalyzer(nextConfig);

@@ -11,7 +11,7 @@ const campusCards = [
   {
     id: "gurugram",
     title: "",
-    image: "/img/campuses/Gurugram_home_page_v2.webp",
+    image: "https://images.ctfassets.net/wrc4czfp4sk8/2UwQyAY0Fl77qoz5EcBWKi/0a854c87c8611357cb1758baf9e22668/campuses_Gurugram_home_page_v2.webp",
     videoUrl: "https://www.youtube.com/embed/rh1wLCzDwow?autoplay=1",
     description: "Sushant University, Gurugram, Delhi NCR",
     buttonText: "Explore Campus",
@@ -21,7 +21,7 @@ const campusCards = [
   {
     id: "pune",
     title: "",
-    image: "/img/campuses/Adypu_home_page.webp",
+    image: "https://images.ctfassets.net/wrc4czfp4sk8/OEJ5JkhwQJQknPWV7JC4N/6449fa0a57cef3eb64407f37e3bfdaef/campuses_Adypu_home_page.webp",
     videoUrl: "https://www.youtube.com/embed/jors40NYq-Y?autoplay=1",
     description: "Ajeenkya DY Patil University, Pune, Maharashtra",
     buttonText: "Explore",
