@@ -12,7 +12,7 @@ const campusCards = [
     id: "gurugram",
     title: "",
     image: "/img/campuses/Gurugram_home_page_v2.webp",
-    videoUrl: "https://www.youtube.com/embed/rh1wLCzDwow?autoplay=1",
+    videoUrl: "https://www.youtube.com/embed/l_Mkp9BufSA?si=-F5MvHh6fz2p6S-D&autoplay=1",
     description: "Sushant University, Gurugram, Delhi NCR",
     buttonText: "Explore Campus",
     href: "/program/vst-gurugram",
