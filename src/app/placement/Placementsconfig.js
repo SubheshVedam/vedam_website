@@ -78,7 +78,7 @@ export const placementConfig = {
                 role: "SDE I",
                 company: "Amazon",
                 companyLogo: "/img/placement/logos/amazon.webp",
-                photo: "/img/placement/testimonials/pranjal.webp",
+                photo: "/img/placement/testimonials/pranjall.webp",
                 quote:
                     `"I wasted countless hours on DSA resources before landing under the guidance of a mentor. He is an experienced teacher and one who makes learning a delightful experience. Really mind-blowing. I wish the team all the best."`,
             },
