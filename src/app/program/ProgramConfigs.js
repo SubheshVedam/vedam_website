@@ -325,7 +325,7 @@ export const puneConfig = {
                                 { label: "Mess Charges per Month", value: "₹5,500/- (as per 2025-2026 charges, new charges to be updated)" },
                                 { label: "Laundry Charges per Year", value: "₹7,000/-" },
                                 { label: "Hostel Fee per Year\n[Accommodation + Mess + Laundry Charges]", value: "₹1,83,000/-" },
-                                { label: "Security Deposit (Refundable)", value: "₹20,000/-" },
+                                { label: "Security Deposit (Refundable)", value: "₹10,000/-" },
                                 { label: "Room Features", value: "Common Washroom, Non AC, 1 Bed, 1 Side Drawer, 1 mattress, 1 Chair, 1 Study Table, 1 Cupboard" },
                                 { label: "Applicable for", value: "Boys & Girls" },
                                 { label: "NOTE", value: "Electricity to be charged on actuals" },
