@@ -30,6 +30,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [campusMenuAnchor, setCampusMenuAnchor] = React.useState(null);
   const [mobileCampusOpen, setMobileCampusOpen] = React.useState(false);
+  const [isScrolled, setIsScrolled] = React.useState(false);
   const pathname = usePathname();
 
   const handleDrawerToggle = () => {
@@ -82,6 +83,17 @@ export default function Navbar() {
     setMobileCampusOpen(hasActiveCampusLink);
   }, [pathname]);
 
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const activeStyle = {
     background: "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)",
     WebkitBackgroundClip: "text",
@@ -90,22 +102,36 @@ export default function Navbar() {
 
   return (
     <Container
+      maxWidth={isScrolled ? false : "lg"}
+      disableGutters={isScrolled}
       sx={{
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         width: "100%",
-        height: { xs: "auto", sm: "0px" },
+        height: { xs: "auto", sm: isScrolled ? "76px" : "0px" },
+        transition: "height 260ms ease, background-color 260ms ease, border-color 260ms ease, box-shadow 260ms ease",
+        ...(isScrolled && {
+          position: { xs: "static", sm: "sticky" },
+          top: { sm: "44px" },
+          zIndex: { sm: 10990 },
+          backgroundColor: { sm: "#FFFFFF" },
+          borderBottom: { sm: "2px solid #1B73E8" },
+          boxShadow: { sm: "0 1px 0 rgba(17, 24, 39, 0.08)" },
+        }),
       }}
     >
       <Box
         sx={{
-          height: "0px",
-          minWidth: { md: "1024px" },
+          minWidth: { md: isScrolled ? 0 : "1024px" },
           width: "100%",
           position: { xs: "inherit", sm: "relative" },
-          top: "20px",
-          height: { xs: "auto", sm: "10px" },
+          top: { sm: isScrolled ? 0 : "20px" },
+          height: { xs: "auto", sm: isScrolled ? "76px" : "10px" },
+          transition: "height 260ms ease, top 260ms ease, padding 260ms ease, width 260ms ease",
+          ...(isScrolled && {
+            width: { sm: "100%", md: "1024px", xl: "1280px" },
+          }),
         }}
       >
         <AppBar
@@ -114,19 +140,22 @@ export default function Navbar() {
             backgroundColor: "#FFFFFF",
             width: "100%",
             paddingX: { xs: 0, sm: "20px" },
-            borderRadius: { xs: 0, sm: "15px" },
-            opacity: { xs: 1, sm: 0.7 },
-            borderBottom: "1px solid #ccc",
+            borderRadius: { xs: 0, sm: isScrolled ? 0 : "15px" },
+            opacity: { xs: 1, sm: isScrolled ? 1 : 0.7 },
+            borderBottom: isScrolled ? "none" : "1px solid #ccc",
             position: { xs: "static", sm: "absolute" },
+            transition: "opacity 260ms ease, padding 260ms ease, border-radius 260ms ease, border-color 260ms ease, inset 260ms ease",
+            ...(isScrolled && { inset: { sm: 0 } }),
           }}
         >
           <Toolbar
             sx={{
-              height: { xs: "40px", sm: "80px" },
+              height: { xs: "40px", sm: isScrolled ? "76px" : "80px" },
               justifyContent: "space-between",
               padding: "0 !important",
               boxSizing: "border-box",
-              gap: "2rem",
+              gap: { sm: isScrolled ? "2.25rem" : "2rem" },
+              transition: "height 260ms ease, gap 260ms ease",
             }}
           >
             {/* Logo */}
@@ -154,8 +183,9 @@ export default function Navbar() {
             <Box
               sx={{
                 display: { xs: "none", sm: "flex" },
-                gap: "30px",
+                gap: isScrolled ? "28px" : "30px",
                 alignItems: "center",
+                transition: "gap 260ms ease",
               }}
             >
               {navLinks.slice(0, 6).map((link, index) => {
@@ -176,8 +206,7 @@ export default function Navbar() {
                           lineHeight: "120%",
                           letterSpacing: "-5%",
                           textTransform: "none",
-                          // whiteSpace: "nowrap",
-                          transition: "all 0.3s ease-in-out",
+                          transition: "color 220ms ease",
                           fontFamily: "Inter",
                           zIndex: "1",
                           "&:hover": activeStyle,
@@ -310,8 +339,7 @@ export default function Navbar() {
                         lineHeight: "120%",
                         letterSpacing: "-2%",
                         textTransform: "none",
-                        // whiteSpace: "nowrap",
-                        transition: "all 0.3s ease-in-out",
+                        transition: "color 220ms ease",
                         fontFamily: "Inter",
                         zIndex: "1",
                         "&:hover": activeStyle,
@@ -369,7 +397,7 @@ export default function Navbar() {
                   </Link>
                 );
               })}
-              <Box sx={{ display: "flex", gap: "1rem" }}>
+              <Box sx={{ display: "flex", gap: isScrolled ? "2rem" : "1rem", alignItems: "center", transition: "gap 260ms ease" }}>
                 {/* Second-to-last link — plain style, no target="_blank" */}
                 <Button
                   color="inherit"
@@ -381,7 +409,7 @@ export default function Navbar() {
                     letterSpacing: "-2%",
                     textTransform: "none",
                     whiteSpace: "nowrap",
-                    transition: "all 0.3s ease-in-out",
+                    transition: "color 220ms ease",
                     fontFamily: "Inter",
                     "&:hover": activeStyle,
                     ...(isActive(navLinks[navLinks.length - 2].path) && activeStyle),
@@ -403,11 +431,11 @@ export default function Navbar() {
                     letterSpacing: "-2%",
                     textTransform: "none",
                     whiteSpace: "nowrap",
-                    transition: "all 0.3s ease-in-out",
+                    transition: "padding 260ms ease, border-radius 260ms ease, background-color 220ms ease, color 220ms ease",
                     backgroundColor: "#6C10BC",
-                    paddingX: "20px",
-                    paddingY: "10px",
-                    borderRadius: "8px",
+                    paddingX: isScrolled ? "28px" : "20px",
+                    paddingY: isScrolled ? "16px" : "10px",
+                    borderRadius: isScrolled ? "10px" : "8px",
                     fontFamily: "Inter",
                     "&:hover": activeStyle,
                     ...(isActive(navLinks[navLinks.length - 1].path) && {
