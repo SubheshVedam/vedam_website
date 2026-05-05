@@ -190,7 +190,7 @@ function RoomTypeCards({ roomTypes, notes }) {
                   {i + 1}
                 </Typography>
               </Box>
-              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: { xs: "10px", md: "12px" }, color: "#1F1F1F", lineHeight: 1.7 }}>
+              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: { xs: "10px", md: "12px" }, color: "#1F1F1F", lineHeight: 1.7, whiteSpace: "pre-line" }}>
                 {note}
               </Typography>
             </Box>

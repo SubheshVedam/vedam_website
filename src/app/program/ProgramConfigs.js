@@ -1,6 +1,28 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // GURUGRAM CONFIG
 // ─────────────────────────────────────────────────────────────────────────────
+const createGurugramInCampusHostelRoomType = ({
+    type,
+    hostelFeePerYear,
+    registrationFee,
+    securityDeposit,
+    paymentMode,
+    roomFeatures,
+    applicableFor,
+    note,
+}) => ({
+    type,
+    rows: [
+        { label: "Hostel Fee per Year (Accommodation + Mess)", value: hostelFeePerYear },
+        { label: "Registration Fee (Non-Refundable)", value: registrationFee },
+        { label: "Security Deposit (Refundable)", value: securityDeposit },
+        { label: "Payment Mode", value: paymentMode },
+        { label: "Room Features", value: roomFeatures },
+        { label: "Applicable for", value: applicableFor },
+        { label: "Note", value: note },
+    ],
+});
+
 export const gurugramConfig = {
     hero: {
         bgImage: "/img/program/hero-bg-ggn.webp",
@@ -113,9 +135,68 @@ export const gurugramConfig = {
             "The following are additional fees payable directly to the University, over and above the course fee. These include One-time component of Admission Fee (₹45,000) and Application Fee (₹1,500); the Examination Fee is ₹4,000 per semester.",
         ],
         totalCourseFee: "₹18,00,000",
-        // Gurugram uses the legacy single-roomTypes shape
-        hostelFees: "",
-        hostelPlaceholder: "Coming soon!",
+        hostelFees: {
+            hostelTypes: [
+                {
+                    type: "inCampus",
+                    label: "In Campus",
+                    title: "Sushant University Hostel [In Campus]",
+                    roomTypes: [
+                        createGurugramInCampusHostelRoomType({
+                            type: "Premium Room",
+                            hostelFeePerYear: "₹1,95,000 (Triple Sharing) or 2,60,000 (Double sharing)",
+                            registrationFee: "₹5,000",
+                            securityDeposit: "₹15,000",
+                            paymentMode: "Annual; one time payment",
+                            roomFeatures: "Premium furniture and finishings: Bed with Storage, Almirah, Study Table & Chair, Bedside Table, Window AC, Attached Washroom with Geyser",
+                            applicableFor: "Boys & Girls",
+                            note: "Electricity to be charged at slabs => 0–300 units Included, 301–500 units at ₹10/unit, Above 500 units at ₹15/unit",
+                        }),
+                        createGurugramInCampusHostelRoomType({
+                            type: "Deluxe Room (with balcony)",
+                            hostelFeePerYear: "₹1,65,000 (Triple Sharing) or ₹2,10,000 (Double sharing) or ₹3,85,000 (Single)",
+                            registrationFee: "₹5,000",
+                            securityDeposit: "₹15,000",
+                            paymentMode: "Annual; one time payment",
+                            roomFeatures: "Bed with Storage, Almirah, Study Table & Chair, Bedside Table, Window AC, Attached Washroom with Geyser",
+                            applicableFor: "Boys & Girls",
+                            note: "Electricity to be charged at slabs => 0–300 units Included, 301–500 units at ₹10/unit, Above 500 units at ₹15/unit",
+                        }),
+                        createGurugramInCampusHostelRoomType({
+                            type: "Deluxe Room (without balcony)",
+                            hostelFeePerYear: "₹1,45,000 (Triple Sharing) or ₹1,90,000 (Double sharing) or ₹3,65,000 (Single sharing)",
+                            registrationFee: "₹5,000",
+                            securityDeposit: "₹15,000",
+                            paymentMode: "Annual; one time payment",
+                            roomFeatures: "Bed with Storage, Almirah, Study Table & Chair, Bedside Table, Window AC, Attached Washroom with Geyser",
+                            applicableFor: "Only Boys",
+                            note: "Electricity to be charged at slabs => 0–300 units Included, 301–500 units at ₹10/unit, Above 500 units at ₹15/unit",
+                        }),
+                    ],
+                    notes: [
+                        [
+                            "Fees:",
+                            "a. Covers 10 months.",
+                            "b. Hostel must be vacated during June and July. No stay is allowed during this period, even on a pro-rata basis.",
+                        ].join("\n"),
+                        "Dining: 4 meals daily, including breakfast, lunch, snacks, and dinner.",
+                        [
+                            "Services:",
+                            "a. Cleaning: Daily, with extra cleaning available if needed.",
+                            "b. Laundry: Paid external service at approximately Rs 17 per cloth with ironing.",
+                        ].join("\n"),
+                        [
+                            "Additional Information:",
+                            "a. Power Backup: 24x7 continuous availability.",
+                            "b. WiFi: Available on all floors with approximately 50 Mbps speed.",
+                            "c. Security: 24x7 guards, CCTV surveillance, and warden presence.",
+                            "d. Distance: Approximately 200 meters from the academic block.",
+                        ].join("\n"),
+                    ],
+                },
+            ],
+        },
+        hostelPlaceholder: "",
     },
 
     financing: {
@@ -168,6 +249,46 @@ export const gurugramConfig = {
 // ─────────────────────────────────────────────────────────────────────────────
 // PUNE CONFIG
 // ─────────────────────────────────────────────────────────────────────────────
+const createPuneHostelRoomType = ({
+    type,
+    hostelFeePerYear,
+    securityDeposit,
+    roomFeatures,
+    applicableFor,
+    note = [
+        "Electricity to be charged on actuals.",
+    ].join("\n"),
+}) => ({
+    type,
+    rows: [
+        { label: "Hostel Fee per Year (Accommodation + Mess + Laundry Charges)", value: hostelFeePerYear },
+        { label: "Security Deposit (Refundable)", value: securityDeposit },
+        { label: "Room Features", value: roomFeatures },
+        { label: "Applicable for", value: applicableFor },
+        { label: "Note", value: note },
+    ],
+});
+
+const createPuneOutCampusHostelRoomType = ({
+    type,
+    hostelFeePerYear,
+    securityDeposit,
+    paymentTerms,
+    roomFeatures,
+    note = [
+        "Electricity to be charged at 18/- per unit",
+    ].join("\n"),
+}) => ({
+    type,
+    rows: [
+        { label: "Hostel Fee per Year (Accommodation + Mess + Laundry Charges)", value: hostelFeePerYear },
+        { label: "Security Deposit (Refundable)", value: securityDeposit },
+        { label: "Payment Terms", value: paymentTerms },
+        { label: "Room Features", value: roomFeatures },
+        { label: "Note", value: note },
+    ],
+});
+
 export const puneConfig = {
     hero: {
         bgImage: "/img/program/hero-bg-pune.webp",
@@ -290,27 +411,51 @@ export const puneConfig = {
                 {
                     type: "outCampus",
                     label: "Out of Campus",
-                    title: "YourSpace Hostel [Out of Campus]",
+                    title: " Union Living [Out of Campus]",
                     roomTypes: [
-                        {
+                        createPuneOutCampusHostelRoomType({
+                            type: "4 Sharing Room",
+                            hostelFeePerYear: "₹1,85,000/-",
+                            paymentTerms: "1st Installment: 1,10,000 (To be paid at the time of hostel booking) and 2nd Installment: 75,000 (To be paid by 30th November 2026)",
+                            securityDeposit: "₹15,000/-",
+                            roomFeatures: "AC, Attached Washroom with Geyser, 100 MBPS Wifi, 1 Bed with Storage, 1 Mattress, 1 Wardrobe, 1 Study Table & Chair",
+                        }),
+                        createPuneOutCampusHostelRoomType({
                             type: "3 Sharing Room",
-                            rows: [
-                                { label: "Hostel Fee per Semester\n[Accommodation + Mess + Laundry Charges]", value: "₹1,12,000/-" },
-                                { label: "Hostel Fee per Year\n[Accommodation + Mess + Laundry Charges]", value: "₹2,24,000/-" },
-                                { label: "Security Deposit (Refundable)", value: "₹10,000/-" },
-                                { label: "Room Features", value: "Attached Washroom, AC, high speed WiFi" },
-                                { label: "Applicable for", value: "Boys and Girls" },
-                                { label: "NOTE", value: "Electricity to be charged on actuals" },
-                            ],
-                        },
+                            hostelFeePerYear: "₹1,99,500/-",
+                            paymentTerms: "1st Installment: 1,20,000 (To be paid at the time of hostel booking) and 2nd Installment: 79,500 (To be paid by 30th November 2026)",
+                            securityDeposit: "₹15,000/-",
+                            roomFeatures: "AC, Attached Washroom with Geyser, 100 MBPS Wifi, 1 Bed with Storage, 1 Mattress, 1 Wardrobe, 1 Study Table & Chair",
+                        }),
+                        createPuneOutCampusHostelRoomType({
+                            type: "2 Sharing Room",
+                            hostelFeePerYear: "₹2,20,000/-",
+                            paymentTerms: "1st Installment: 1,35,000 (To be paid at the time of hostel booking) and 2nd Installment: 85,000 (To be paid by 30th November 2026)",
+                            securityDeposit: "₹15,000/-",
+                            roomFeatures: "AC, Attached Washroom with Geyser, 100 MBPS Wifi, 1 Bed with Storage, 1 Mattress, 1 Wardrobe, 1 Study Table & Chair",
+                        }),
                     ],
                     notes: [
-                        "There will be a free transportation service provided to Vedam students in the morning and evening for traveling between hostel and university.",
-                        "Students need to pay 1 semester fee to book a bed.",
-                        "Hostel fee is non refundable. Students will be charged for the entire year, even if one plans to vacate mid-year.",
-                        "Fee are applicable for the academic year 2025 - 26 and may increase by 7 - 10% annually from the second year onwards due to inflation adjustment.",
-                        "You can find more details about YourSpace Hostel for Vedam Students here.",
-                        "Should you wish to book, please contact Vedam team at connect@vedam.org.",
+                        "The property is Union Living, Lohegaon, which is less than 1 KM away from ADYPU, Pune.",
+                        [
+                            "The following are included in the Mess and Laundry fees:",
+                            "a. 4 Meals daily, 7 days a week: Breakfast, Lunch, Snacks & Dinner",
+                            "b. Laundry [56 garments per month per student (Wash + Iron)]",
+                        ].join("\n"),
+                        "The deposit carries an exit fee of ₹4,000/- per student per academic session, which shall be deducted from the student’s security deposit at the time of checkout, along with any other charges or penalties applicable.",
+                        "The security deposit must be topped up promptly if it is drawn down due to damages (beyond regular wear and tear), fines, or any other recoverable amounts. The deposit must be maintained at ₹15,000/- at all times.",
+                        "Students cannot opt out of hostels in the middle of an academic year. Academic year covers 11 months (15th July 2026 – 14th June 2027). Knowing this, if students want to discontinue in middle of academic year, full year fee will be chargeable.",
+                        [
+                            "Housekeeping:",
+                            "a. Room Cleaning: Alternate day (every other day) per room.",
+                            "b. Common Areas: Daily cleaning and maintenance of all corridors, lobbies, staircases, and shared spaces.",
+                            "c. Garbage Disposal: Daily collection and disposal from all floors.",
+                            "d. Linen (bed sheets, pillow covers, blankets, towels) is not provided by Union Living. Students are expected to arrange their own linen.",
+                        ].join("\n"),
+                        "Common Amenities: Common Pantry, Water Dispensers, Washing Machines, Study Zone, Gaming Zone, Canteen, Gymnasium.",
+                        "CCTV surveillance covering all common areas, entry/exit points, corridors, and terrace.",
+                        "Medical Aid: Doctor available on call (charges as per actuals).",
+                        "Biometric / access-controlled entry.",
                     ],
                 },
                 {
@@ -318,67 +463,36 @@ export const puneConfig = {
                     label: "In Campus",
                     title: "ADYPU Hostel [In Campus]",
                     roomTypes: [
-                        {
+                        createPuneHostelRoomType({
                             type: "4 Sharing Room (Standard)",
-                            rows: [
-                                { label: "Accommodation Cost per Year", value: "₹1,10,000/-" },
-                                { label: "Mess Charges per Month", value: "₹5,500/- (as per 2025-2026 charges, new charges to be updated)" },
-                                { label: "Laundry Charges per Year", value: "₹7,000/-" },
-                                { label: "Hostel Fee per Year\n[Accommodation + Mess + Laundry Charges]", value: "₹1,83,000/-" },
-                                { label: "Security Deposit (Refundable)", value: "₹10,000/-" },
-                                { label: "Room Features", value: "Common Washroom, Non AC, 1 Bed, 1 Side Drawer, 1 mattress, 1 Chair, 1 Study Table, 1 Cupboard" },
-                                { label: "Applicable for", value: "Boys & Girls" },
-                                { label: "NOTE", value: "Electricity to be charged on actuals" },
-                            ],
-                        },
-                        {
+                            hostelFeePerYear: "₹1,83,000/-",
+                            securityDeposit: "₹10,000/-",
+                            roomFeatures: "Common Washroom, Non AC, 1 Bed, 1 Side Drawer, 1 mattress, 1 Chair, 1 Study Table, 1 Cupboard",
+                            applicableFor: "Boys & Girls",
+                        }),
+                        createPuneHostelRoomType({
                             type: "3 Sharing Room (Premium)",
-                            rows: [
-                                { label: "Accommodation Cost per Year", value: "₹1,35,000/-" },
-                                { label: "Mess Charges per Month", value: "₹5,500/- (as per 2025-2026 charges, new charges to be updated)" },
-                                { label: "Laundry Charges per Year", value: "₹7,000/-" },
-                                { label: "Hostel Fee per Year\n[Accommodation + Mess + Laundry Charges]", value: "₹2,08,000/-" },
-                                { label: "Security Deposit (Refundable)", value: "₹20,000/-" },
-                                { label: "Room Features", value: "Common Washroom, Non AC, 1 Bed, 1 Side Drawer, 1 mattress, 1 Chair, 1 Study Table, 1 Cupboard" },
-                                { label: "Applicable for", value: "Boys & Girls" },
-                                { label: "NOTE", value: "Electricity to be charged on actuals" },
-                            ],
-                        },
-                        {
+                            hostelFeePerYear: "₹2,08,000/-",
+                            securityDeposit: "₹20,000/-",
+                            roomFeatures: "Common Washroom, Non AC, 1 Bed, 1 Side Drawer, 1 mattress, 1 Chair, 1 Study Table, 1 Cupboard",
+                            applicableFor: "Boys & Girls",
+                        }),
+                        createPuneHostelRoomType({
                             type: "4 Sharing Room (Premium AC)",
-                            rows: [
-                                { label: "Accommodation Cost per Year", value: "₹1,85,000/-" },
-                                { label: "Mess Charges per Month", value: "₹5,500/- (as per 2025-2026 charges, new charges to be updated)" },
-                                { label: "Laundry Charges per Year", value: "₹7,000/-" },
-                                { label: "Hostel Fee per Year\n[Accommodation + Mess + Laundry Charges]", value: "₹2,58,000/-" },
-                                { label: "Security Deposit (Refundable)", value: "₹20,000/-" },
-                                { label: "Room Features", value: "Attached Washroom, AC, 1 Bed, 1 Side Drawer, 1 mattress, 1 Chair, 1 Study Table, 1 Cupboard" },
-                                { label: "Applicable for", value: "Boys & Girls" },
-                                { label: "NOTE", value: "Electricity to be charged on actuals" },
-                            ],
-                        },
-                        {
+                            hostelFeePerYear: "₹2,58,000/-",
+                            securityDeposit: "₹20,000/-",
+                            roomFeatures: "Attached Washroom, AC, 1 Bed, 1 Side Drawer, 1 mattress, 1 Chair, 1 Study Table, 1 Cupboard",
+                            applicableFor: "Boys & Girls",
+                        }),
+                        createPuneHostelRoomType({
                             type: "4 Sharing Room (Supreme)",
-                            rows: [
-                                { label: "Accommodation Cost per Year", value: "₹2,20,000/-" },
-                                { label: "Mess Charges per Month", value: "₹5,500/- (as per 2025-2026 charges, new charges to be updated)" },
-                                { label: "Laundry Charges per Year", value: "₹7,000/-" },
-                                { label: "Hostel Fee per Year\n[Accommodation + Mess + Laundry Charges]", value: "₹2,93,000/-" },
-                                { label: "Security Deposit (Refundable)", value: "₹20,000/-" },
-                                { label: "Room Features", value: "Attached Washroom, 1 Bed, 1 Side Drawer, 1 mattress,1 Chair, 1 Study Table, 1 Cupboard, TV, Oven, AC, Refrigerator" },
-                                { label: "Applicable for", value: "Boys Only" },
-                                { label: "NOTE", value: "Electricity to be charged on actuals" },
-                            ],
-                        },
+                            hostelFeePerYear: "₹2,93,000/-",
+                            securityDeposit: "₹20,000/-",
+                            roomFeatures: "Attached Washroom, 1 Bed, 1 Side Drawer, 1 mattress,1 Chair, 1 Study Table, 1 Cupboard, TV, Oven, AC, Refrigerator",
+                            applicableFor: "Boys Only",
+                        }),
                     ],
-                    notes: [
-                        "Students need to pay accommodation cost for the entire year to book a bed. Mess and laundry charges will have to be paid at the time of moving in.",
-                        "There are very few beds left in ADYPU hostel for girls, which are getting allocated on a first cum first basis.",
-                        "There are no more beds left in the ADYPU hostel for boys.",
-                        "Hostel accommodation fee is non refundable. Students will be charged for the entire year, even if one plans to vacate mid-year.",
-                        "Fee are applicable for the academic year 2025 - 26 and may increase by 7 - 10% annually from the second year onwards due to inflation adjustment.",
-                        "Should you wish to book, please contact Vedam team at connect@vedam.org to check availability and proceed accordingly.",
-                    ],
+                    notes: [],
                 },
             ],
         },
