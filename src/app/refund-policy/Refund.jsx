@@ -66,7 +66,7 @@ export default function Refund() {
           <Typography paragraph>
             Semester fees, if paid, are refundable as per the{" "}
             <Link
-              href="https://www.ugc.gov.in/pdfnews/1654477_Fee-Refund-Policy-2024-25.pdf"
+              href="https://www.ugc.gov.in/pdfnews/1857727_Fee-Refund-Policy-2025-26.pdf"
               color="primary"
               underline="hover"
             >

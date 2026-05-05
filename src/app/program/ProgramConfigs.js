@@ -140,7 +140,7 @@ export const gurugramConfig = {
                 {
                     type: "inCampus",
                     label: "In Campus",
-                    title: "Sushant University Hostel [In Campus]",
+                    title: "Sushant University Hostel",
                     roomTypes: [
                         createGurugramInCampusHostelRoomType({
                             type: "Premium Room",
@@ -411,26 +411,26 @@ export const puneConfig = {
                 {
                     type: "outCampus",
                     label: "Out of Campus",
-                    title: " Union Living [Out of Campus]",
+                    title: " Union Living [Only for Boys]",
                     roomTypes: [
                         createPuneOutCampusHostelRoomType({
                             type: "4 Sharing Room",
                             hostelFeePerYear: "₹1,85,000/-",
-                            paymentTerms: "1st Installment: 1,10,000 (To be paid at the time of hostel booking) and 2nd Installment: 75,000 (To be paid by 30th November 2026)",
+                            paymentTerms: "1st Installment: ₹1,10,000 (To be paid at the time of hostel booking) and 2nd Installment: ₹75,000 (To be paid by 30th November 2026)",
                             securityDeposit: "₹15,000/-",
                             roomFeatures: "AC, Attached Washroom with Geyser, 100 MBPS Wifi, 1 Bed with Storage, 1 Mattress, 1 Wardrobe, 1 Study Table & Chair",
                         }),
                         createPuneOutCampusHostelRoomType({
                             type: "3 Sharing Room",
                             hostelFeePerYear: "₹1,99,500/-",
-                            paymentTerms: "1st Installment: 1,20,000 (To be paid at the time of hostel booking) and 2nd Installment: 79,500 (To be paid by 30th November 2026)",
+                            paymentTerms: "1st Installment: ₹1,20,000 (To be paid at the time of hostel booking) and 2nd Installment: ₹79,500 (To be paid by 30th November 2026)",
                             securityDeposit: "₹15,000/-",
                             roomFeatures: "AC, Attached Washroom with Geyser, 100 MBPS Wifi, 1 Bed with Storage, 1 Mattress, 1 Wardrobe, 1 Study Table & Chair",
                         }),
                         createPuneOutCampusHostelRoomType({
                             type: "2 Sharing Room",
                             hostelFeePerYear: "₹2,20,000/-",
-                            paymentTerms: "1st Installment: 1,35,000 (To be paid at the time of hostel booking) and 2nd Installment: 85,000 (To be paid by 30th November 2026)",
+                            paymentTerms: "1st Installment: ₹1,35,000 (To be paid at the time of hostel booking) and 2nd Installment: ₹85,000 (To be paid by 30th November 2026)",
                             securityDeposit: "₹15,000/-",
                             roomFeatures: "AC, Attached Washroom with Geyser, 100 MBPS Wifi, 1 Bed with Storage, 1 Mattress, 1 Wardrobe, 1 Study Table & Chair",
                         }),
@@ -461,7 +461,7 @@ export const puneConfig = {
                 {
                     type: "inCampus",
                     label: "In Campus",
-                    title: "ADYPU Hostel [In Campus]",
+                    title: "ADYPU Hostel",
                     roomTypes: [
                         createPuneHostelRoomType({
                             type: "4 Sharing Room (Standard)",
