@@ -106,7 +106,13 @@ const sectionHeading = {
   WebkitTextFillColor: "transparent",
   lineHeight: 1.3,
 };
-const sectionPad = { px: { xs: "20px", md: "120px" }, py: { xs: "24px", md: "40px" } };
+const homePageWidth = {
+  maxWidth: "1280px",
+  width: { xs: "100%", md: "1024px", xl: "1280px" },
+  mx: "auto",
+};
+
+const sectionPad = { ...homePageWidth, px: "10px", py: { xs: "24px", md: "40px" } };
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Helpers
@@ -857,7 +863,8 @@ export default function SeekYourSeniors() {
       {/* ── 4. STUDENT PROJECTS ── */}
       <Box sx={{
         bgcolor: "transparent", mt: { xs: "8px", md: "12px" },
-        px: { xs: "32px", md: "120px" },
+        ...homePageWidth,
+        px: "10px",
         pt: { xs: "24px", md: "48px" },
         pb: { xs: "32px", md: "60px" },
         overflow: { xs: "visible", md: "hidden" },

@@ -31,8 +31,15 @@ const bodyText = {
 };
 
 // Every section gets this — nothing bleeds edge-to-edge
+const homePageWidth = {
+    maxWidth: "1280px",
+    width: { xs: "100%", md: "1024px", xl: "1280px" },
+    mx: "auto",
+};
+
 const sectionPad = {
-    px: { xs: "20px", md: "128px" },
+    ...homePageWidth,
+    px: "10px",
     py: { xs: "20px", md: "40px" },
 };
 
@@ -455,7 +462,8 @@ export default function PlacementsPage({ config }) {
             {/* ── 4. TESTIMONIALS ──────────────────────────────────────────── */}
             <Box
                 sx={{
-                    px: { xs: "20px", md: "128px" },
+                    ...homePageWidth,
+                    px: "10px",
                     display: "flex",
                     flexDirection: "column",
                     gap: { xs: "20px", md: "20px" },
@@ -619,7 +627,8 @@ export default function PlacementsPage({ config }) {
             {/* ── 6. INTERNSHIPS IN FIRST YEAR ─────────────────────────────── */}
             <Box
                 sx={{
-                    px: { xs: "20px", md: "128px" },
+                    ...homePageWidth,
+                    px: "10px",
                     pb: { xs: "20px", md: "40px" },
                     display: "flex",
                     flexDirection: "column",

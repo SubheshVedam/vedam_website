@@ -30,7 +30,13 @@ const sectionDescriptionText = {
   letterSpacing: { xs: "-0.2px", md: "-0.32px" },
 };
 
-const sectionPad = { px: { xs: "20px", md: "128px" }, py: { xs: "20px", md: "40px" } };
+const homePageWidth = {
+  maxWidth: "1280px",
+  width: { xs: "100%", md: "1024px", xl: "1280px" },
+  mx: "auto",
+};
+
+const sectionPad = { ...homePageWidth, px: "10px", py: { xs: "20px", md: "40px" } };
 
 // ─────────────────────────────────────────────────────────────────────────────
 // StatsTile
@@ -338,7 +344,8 @@ export default function ProgramPage({ config }) {
         <Box
           sx={{
             position: "relative", zIndex: 1,
-            px: { xs: "20px", md: "128px" },
+            ...homePageWidth,
+            px: "10px",
             pb: { xs: "20px", md: "80px" },
             pt: { xs: "20px", md: "0" },
             display: "flex", flexDirection: "column",
@@ -512,7 +519,8 @@ export default function ProgramPage({ config }) {
             height: { xs: "60px", md: "120px" },
             display: "flex", flexDirection: "row",
             alignItems: "stretch",
-            px: { xs: "20px", md: "128px" },
+            ...homePageWidth,
+            px: "10px",
             overflow: "hidden",
           }}
         >

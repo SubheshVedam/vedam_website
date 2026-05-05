@@ -51,7 +51,10 @@ export const noesisConfig = {
 };
 
 const sectionPad = {
-    px: { xs: "20px", md: "128px" },
+    maxWidth: "1280px",
+    width: { xs: "100%", md: "1024px", xl: "1280px" },
+    mx: "auto",
+    px: "10px",
     py: { xs: "20px", md: "40px" },
 };
 
