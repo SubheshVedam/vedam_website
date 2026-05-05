@@ -70,7 +70,7 @@ export default function Refund() {
               color="primary"
               underline="hover"
             >
-              UGC Refund Policy 2024-25
+              UGC Refund Policy 2025-26
             </Link>{" "}
           </Typography>
           <Typography paragraph>

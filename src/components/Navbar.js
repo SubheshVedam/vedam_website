@@ -116,7 +116,6 @@ export default function Navbar() {
           top: { sm: "44px" },
           zIndex: { sm: 10990 },
           backgroundColor: { sm: "#FFFFFF" },
-          borderBottom: { sm: "2px solid #1B73E8" },
           boxShadow: { sm: "0 1px 0 rgba(17, 24, 39, 0.08)" },
         }),
       }}

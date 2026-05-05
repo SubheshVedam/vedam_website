@@ -202,7 +202,7 @@ export const gurugramConfig = {
     financing: {
         description: "At Vedam School of Technology, we understand that flexibility and convenience in fee payments are important to our students and their families. To make this process easier and more accessible, we have partnered with recognized financial companies.",
         zeroEmi: {
-            title: "Loan at Zero Cost EMI",
+            title: "Loan at Low Cost EMI",
             description: "You can pay your annual course fee in monthly installments with no interest, no processing fee, and no hidden charges. We've partnered trusted fintech company working with over 2,500 institutions, to offer this option",
         },
         bankLoan: {
@@ -502,7 +502,7 @@ export const puneConfig = {
     financing: {
         description: "At Vedam School of Technology, we understand that flexibility and convenience in fee payments are important to our students and their families. To make this process easier and more accessible, we have partnered with recognized financial companies.",
         zeroEmi: {
-            title: "Loan at Zero Cost EMI",
+            title: "Loan at Low Cost EMI",
             description: "You can pay your annual course fee in monthly installments with no interest, no processing fee, and no hidden charges. We've partnered trusted fintech company working with over 2,500 institutions, to offer this option",
         },
         bankLoan: {
