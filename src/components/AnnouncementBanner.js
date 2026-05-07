@@ -114,7 +114,7 @@ export default function AnnouncementBanner({ applicationClosingEndMs }) {
   return (
     <Box
       sx={{
-        backgroundColor: "#6C10BC",
+        background: "linear-gradient(95.22deg, #FB7F05 2.91%, #6C10BC 99.18%)",
         color: "white",
         py: 1,
         position: "sticky",
