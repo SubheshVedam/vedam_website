@@ -63,9 +63,7 @@ export default function Navbar() {
     if (!link.children?.length) {
       return link.label;
     }
-
     const activeCampus = link.children.find((campus) => isPathMatch(campus.path));
-
     return activeCampus?.label || link.label;
   };
 
@@ -79,18 +77,16 @@ export default function Navbar() {
 
   React.useEffect(() => {
     const hasActiveCampusLink = navLinks.some((link) => isCampusLinkActive(link));
-
     setMobileCampusOpen(hasActiveCampusLink);
   }, [pathname]);
 
+  // ── ONLY CHANGE: trigger at 600px instead of scrollY > 0 ──────────────────
   React.useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
+      setIsScrolled(window.scrollY >= 600);
     };
-
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -111,13 +107,11 @@ export default function Navbar() {
         width: "100%",
         height: { xs: "auto", sm: isScrolled ? "76px" : "0px" },
         transition: "height 260ms ease, background-color 260ms ease, border-color 260ms ease, box-shadow 260ms ease",
-        ...(isScrolled && {
-          position: { xs: "static", sm: "sticky" },
-          top: { sm: "44px" },
-          zIndex: { sm: 10990 },
-          backgroundColor: { sm: "#FFFFFF" },
-          boxShadow: { sm: "0 1px 0 rgba(17, 24, 39, 0.08)" },
-        }),
+        position: { xs: "static", sm: "sticky" },
+        top: { sm: "40px" },
+        zIndex: { sm: 10990 },
+        backgroundColor: { sm: isScrolled ? "0 1px 0 rgba(17, 24, 39, 0.08)" : "transparent" },
+        boxShadow: { sm: isScrolled ? "0 1px 0 rgba(17, 24, 39, 0.08)" : "none" },
       }}
     >
       <Box
@@ -129,334 +123,350 @@ export default function Navbar() {
           height: { xs: "auto", sm: isScrolled ? "76px" : "10px" },
           transition: "height 260ms ease, top 260ms ease, padding 260ms ease, width 260ms ease",
           ...(isScrolled && {
-            width: { sm: "100%", md: "1024px", xl: "1280px" },
+            width: "100%",
           }),
         }}
       >
         <AppBar
           sx={{
             boxShadow: "none",
-            backgroundColor: "#FFFFFF",
             width: "100%",
-            paddingX: { xs: 0, sm: "20px" },
             borderRadius: { xs: 0, sm: isScrolled ? 0 : "15px" },
-            opacity: { xs: 1, sm: isScrolled ? 1 : 0.7 },
             borderBottom: isScrolled ? "none" : "1px solid #ccc",
             position: { xs: "static", sm: "absolute" },
-            transition: "opacity 260ms ease, padding 260ms ease, border-radius 260ms ease, border-color 260ms ease, inset 260ms ease",
+            transition: "opacity 260ms ease, padding 260ms ease, border-radius 260ms ease, border-color 260ms ease, inset 260ms ease, background-color 300ms ease, backdrop-filter 300ms ease, box-shadow 300ms ease",
+
+            backgroundColor: isScrolled
+              ? "rgba(255, 255, 255, 0.70)"
+              : "rgba(255, 255, 255, 0.70)",
+            backdropFilter: isScrolled ? "blur(10px)" : "blur(10px)",
+            WebkitBackdropFilter: isScrolled ? "blur(10px)" : "blur(10px)",
+            borderBottom: isScrolled
+              ? "1px solid rgba(255, 255, 255, 1)"
+              : "1px solid #ccc",
+            boxShadow: isScrolled
+              ? "0px 4px 24px 0px rgba(0, 0, 0, 0.10)"
+              : "none",
+            opacity: { xs: 1, sm: isScrolled ? 1 : 1 },
             ...(isScrolled && { inset: { sm: 0 } }),
           }}
         >
           <Toolbar
             sx={{
               height: { xs: "40px", sm: isScrolled ? "76px" : "80px" },
-              justifyContent: "space-between",
               padding: "0 !important",
               boxSizing: "border-box",
-              gap: { sm: isScrolled ? "2.25rem" : "2rem" },
-              transition: "height 260ms ease, gap 260ms ease",
+              transition: "height 260ms ease",
             }}
           >
-            {/* Logo */}
-            <Link href="/" aria-label="Go to Vedam School of Technology home">
-              <Image
-                src="/img/vedam_logo.webp"
-                alt="Vedam School of Technology logo"
-                width={88}
-                height={34}
-                style={{
-                  objectFit: "contain",
-                  maxWidth: "100%",
-                  cursor: "pointer",
-                  width: "88px",
-                  height: "auto",
-                }}
-                sx={{
-                  width: { xs: "51px", sm: "88px" },
-                  height: { xs: "20px", sm: "34px" },
-                }}
-              />
-            </Link>
-
-            {/* Desktop Navigation */}
             <Box
               sx={{
-                display: { xs: "none", sm: "flex" },
-                gap: isScrolled ? "28px" : "30px",
+                display: "flex",
+                width: "100%",
+                ...(isScrolled && {
+                  maxWidth: { sm: "100%", md: "1024px", xl: "1280px" },
+                  mx: "auto",
+                }),
+                justifyContent: "space-between",
                 alignItems: "center",
-                transition: "gap 260ms ease",
+                gap: { sm: isScrolled ? "8px" : "28px" },
+                transition: "gap 260ms ease, max-width 260ms ease",
+                px: { xs: 0, sm: "20px" },
               }}
             >
-              {navLinks.slice(0, 6).map((link, index) => {
-                if (link.children?.length) {
-                  const admissionDisplayLabel = getAdmissionDisplayLabel(link);
+              {/* Logo */}
+              <Link href="/" aria-label="Go to Vedam School of Technology home">
+                <Image
+                  src="/img/vedam_logo.webp"
+                  alt="Vedam School of Technology logo"
+                  width={88}
+                  height={34}
+                  style={{
+                    objectFit: "contain",
+                    maxWidth: "100%",
+                    cursor: "pointer",
+                    width: "88px",
+                    height: "auto",
+                  }}
+                  sx={{
+                    width: { xs: "51px", sm: "88px" },
+                    height: { xs: "20px", sm: "34px" },
+                  }}
+                />
+              </Link>
+
+              {/* Desktop Navigation */}
+              <Box
+                sx={{
+                  display: { xs: "none", sm: "flex" },
+                  gap: isScrolled ? "8px" : "30px",
+                  alignItems: "center",
+                }}
+              >
+                {navLinks.slice(0, 6).map((link, index) => {
+                  if (link.children?.length) {
+                    const admissionDisplayLabel = getAdmissionDisplayLabel(link);
+                    return (
+                      <React.Fragment key={index}>
+                        <Button
+                          color="inherit"
+                          id="admission-campus-menu-trigger"
+                          onClick={handleCampusMenuOpen}
+                          endIcon={<ArrowDropDownIcon />}
+                          sx={{
+                            color: "#1F1F1F",
+                            fontWeight: 500,
+                            fontSize: "14px",
+                            lineHeight: "120%",
+                            letterSpacing: "-5%",
+                            textTransform: "none",
+                            transition: "color 220ms ease",
+                            fontFamily: "Inter",
+                            zIndex: "1",
+                            "&:hover": activeStyle,
+                            ...(isCampusLinkActive(link) && activeStyle),
+                          }}
+                        >
+                          {admissionDisplayLabel}
+                        </Button>
+                        <Menu
+                          anchorEl={campusMenuAnchor}
+                          open={Boolean(campusMenuAnchor)}
+                          onClose={handleCampusMenuClose}
+                          MenuListProps={{
+                            "aria-labelledby": "admission-campus-menu-trigger",
+                            sx: {
+                              display: "grid",
+                              gridTemplateColumns: {
+                                xs: "1fr",
+                                sm: "repeat(2, minmax(220px, 1fr))",
+                              },
+                              gap: 1.25,
+                              padding: "12px",
+                              width: { xs: "280px", sm: "520px" },
+                            },
+                          }}
+                          PaperProps={{
+                            sx: {
+                              mt: "8px",
+                              borderRadius: "14px",
+                              border: "1px solid rgba(17, 24, 39, 0.08)",
+                              boxShadow: "0 14px 32px rgba(17, 24, 39, 0.14)",
+                            },
+                          }}
+                          anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+                          transformOrigin={{ vertical: "top", horizontal: "left" }}
+                        >
+                          {link.children.map((campus) => (
+                            <MenuItem
+                              key={campus.path}
+                              component={Link}
+                              href={campus.path}
+                              onClick={handleCampusMenuClose}
+                              selected={isPathMatch(campus.path)}
+                              sx={{
+                                display: "flex",
+                                flexDirection: "column",
+                                alignItems: "flex-start",
+                                gap: "10px",
+                                minHeight: "auto",
+                                borderRadius: "10px",
+                                padding: "8px",
+                                transition: "transform 180ms ease, background-color 180ms ease",
+                                "&:hover": {
+                                  backgroundColor: "rgba(108, 16, 188, 0.08)",
+                                  transform: "translateY(-2px)",
+                                },
+                                "&.Mui-selected": {
+                                  backgroundColor: "rgba(108, 16, 188, 0.1)",
+                                },
+                                "&.Mui-selected:hover": {
+                                  backgroundColor: "rgba(108, 16, 188, 0.14)",
+                                },
+                              }}
+                            >
+                              <Box
+                                sx={{
+                                  width: "100%",
+                                  height: "106px",
+                                  position: "relative",
+                                  overflow: "hidden",
+                                  borderRadius: "8px",
+                                  backgroundColor: "rgba(17, 24, 39, 0.08)",
+                                }}
+                              >
+                                {campus.image && (
+                                  <Image
+                                    src={campus.image}
+                                    alt={`${campus.label} campus`}
+                                    fill
+                                    sizes="(max-width: 600px) 260px, 240px"
+                                    style={{ objectFit: "cover" }}
+                                  />
+                                )}
+                              </Box>
+                              <Typography
+                                sx={{
+                                  fontFamily: "Inter",
+                                  fontSize: "16px",
+                                  fontWeight: 600,
+                                  lineHeight: "120%",
+                                  color: "#111827",
+                                }}
+                              >
+                                {campus.label}
+                              </Typography>
+                              <Typography
+                                sx={{
+                                  fontFamily: "Inter",
+                                  fontSize: "13px",
+                                  fontWeight: 400,
+                                  lineHeight: "120%",
+                                  color: "rgba(17, 24, 39, 0.7)",
+                                }}
+                              >
+                                {campus.collaborationUniversity || campus.location}
+                              </Typography>
+                            </MenuItem>
+                          ))}
+                        </Menu>
+                      </React.Fragment>
+                    );
+                  }
 
                   return (
-                    <React.Fragment key={index}>
+                    <Link key={index} href={link.path} passHref>
                       <Button
                         color="inherit"
-                        id="admission-campus-menu-trigger"
-                        onClick={handleCampusMenuOpen}
-                        endIcon={<ArrowDropDownIcon />}
                         sx={{
                           color: "#1F1F1F",
                           fontWeight: 500,
                           fontSize: "14px",
                           lineHeight: "120%",
-                          letterSpacing: "-5%",
+                          letterSpacing: "-2%",
                           textTransform: "none",
                           transition: "color 220ms ease",
                           fontFamily: "Inter",
                           zIndex: "1",
                           "&:hover": activeStyle,
-                          ...(isCampusLinkActive(link) && activeStyle),
+                          ...(isActive(link.path) && activeStyle),
                         }}
                       >
-                        {admissionDisplayLabel}
-                      </Button>
-                      <Menu
-                        anchorEl={campusMenuAnchor}
-                        open={Boolean(campusMenuAnchor)}
-                        onClose={handleCampusMenuClose}
-                        MenuListProps={{
-                          "aria-labelledby": "admission-campus-menu-trigger",
-                          sx: {
-                            display: "grid",
-                            gridTemplateColumns: {
-                              xs: "1fr",
-                              sm: "repeat(2, minmax(220px, 1fr))",
-                            },
-                            gap: 1.25,
-                            padding: "12px",
-                            width: { xs: "280px", sm: "520px" },
-                          },
-                        }}
-                        PaperProps={{
-                          sx: {
-                            mt: "8px",
-                            borderRadius: "14px",
-                            border: "1px solid rgba(17, 24, 39, 0.08)",
-                            boxShadow: "0 14px 32px rgba(17, 24, 39, 0.14)",
-                          },
-                        }}
-                        anchorOrigin={{
-                          vertical: "bottom",
-                          horizontal: "left",
-                        }}
-                        transformOrigin={{
-                          vertical: "top",
-                          horizontal: "left",
-                        }}
-                      >
-                        {link.children.map((campus) => (
-                          <MenuItem
-                            key={campus.path}
-                            component={Link}
-                            href={campus.path}
-                            onClick={handleCampusMenuClose}
-                            selected={isPathMatch(campus.path)}
+                        {link.label}
+                        {link.img && (
+                          <Box
                             sx={{
-                              display: "flex",
-                              flexDirection: "column",
-                              alignItems: "flex-start",
-                              gap: "10px",
-                              minHeight: "auto",
-                              borderRadius: "10px",
-                              padding: "8px",
-                              transition: "transform 180ms ease, background-color 180ms ease",
-                              "&:hover": {
-                                backgroundColor: "rgba(108, 16, 188, 0.08)",
-                                transform: "translateY(-2px)",
-                              },
-                              "&.Mui-selected": {
-                                backgroundColor: "rgba(108, 16, 188, 0.1)",
-                              },
-                              "&.Mui-selected:hover": {
-                                backgroundColor: "rgba(108, 16, 188, 0.14)",
-                              },
+                              display: "none",
+                              "@media (min-width: 1024px)": { display: "block" },
                             }}
                           >
-                            <Box
-                              sx={{
-                                width: "100%",
-                                height: "106px",
-                                position: "relative",
-                                overflow: "hidden",
-                                borderRadius: "8px",
-                                backgroundColor: "rgba(17, 24, 39, 0.08)",
-                              }}
-                            >
-                              {campus.image && (
-                                <Image
-                                  src={campus.image}
-                                  alt={`${campus.label} campus`}
-                                  fill
-                                  sizes="(max-width: 600px) 260px, 240px"
-                                  style={{
-                                    objectFit: "cover",
-                                  }}
-                                />
-                              )}
-                            </Box>
                             <Typography
                               sx={{
                                 fontFamily: "Inter",
-                                fontSize: "16px",
+                                fontSize: "0.5rem",
+                                fontStyle: "italic",
                                 fontWeight: 600,
-                                lineHeight: "120%",
-                                color: "#111827",
+                                lineHeight: "1.75rem",
+                                background: "linear-gradient(90deg, #FF7829 0%, #7B2CBF 100%)",
+                                WebkitBackgroundClip: "text",
+                                WebkitTextFillColor: "transparent",
+                                backgroundClip: "text",
+                                color: "transparent",
+                                position: "absolute",
+                                top: "-42%",
+                                right: "13%",
+                                zIndex: "4",
                               }}
                             >
-                              {campus.label}
+                              New
                             </Typography>
-                            <Typography
-                              sx={{
-                                fontFamily: "Inter",
-                                fontSize: "13px",
-                                fontWeight: 400,
-                                lineHeight: "120%",
-                                color: "rgba(17, 24, 39, 0.7)",
+                            <Image
+                              src={link.img}
+                              alt=""
+                              width={25}
+                              height={35}
+                              style={{
+                                zIndex: "2",
+                                position: "absolute",
+                                right: -1,
+                                top: "49%",
+                                transform: "translateY(-50%)",
                               }}
-                            >
-                              {campus.collaborationUniversity || campus.location}
-                            </Typography>
-                          </MenuItem>
-                        ))}
-                      </Menu>
-                    </React.Fragment>
+                            />
+                          </Box>
+                        )}
+                      </Button>
+                    </Link>
                   );
-                }
+                })}
 
-                return (
-                  <Link key={index} href={link.path} passHref>
-                    <Button
-                      color="inherit"
-                      sx={{
-                        color: "#1F1F1F",
-                        fontWeight: 500,
-                        fontSize: "14px",
-                        lineHeight: "120%",
-                        letterSpacing: "-2%",
-                        textTransform: "none",
-                        transition: "color 220ms ease",
-                        fontFamily: "Inter",
-                        zIndex: "1",
-                        "&:hover": activeStyle,
-                        ...(isActive(link.path) && activeStyle),
-                      }}
-                    >
-                      {link.label}
-                      {link.img && (
-                        // After
-                        <Box
-                          sx={{
-                            display: "none",
-                            "@media (min-width: 1024px)": {
-                              display: "block",
-                            },
-                          }}
-                        >
-                          <Typography
-                            sx={{
-                              fontFamily: "Inter",
-                              fontSize: "0.5rem",
-                              fontStyle: "italic",
-                              fontWeight: 600,
-                              lineHeight: "1.75rem",
-                              background:
-                                "linear-gradient(90deg, #FF7829 0%, #7B2CBF 100%)",
-                              WebkitBackgroundClip: "text",
-                              WebkitTextFillColor: "transparent",
-                              backgroundClip: "text",
-                              color: "transparent",
-                              position: "absolute",
-                              top: "-42%",
-                              right: "13%",
-                              zIndex: " 4",
-                            }}
-                          >
-                            New
-                          </Typography>
-                          <Image
-                            src={link.img}
-                            alt=""
-                            width={25}
-                            height={35}
-                            style={{
-                              zIndex: "2",
-                              position: "absolute",
-                              right: -1,
-                              top: "49%",
-                              transform: "translateY(-50%)",
-                            }}
-                          />
-                        </Box>
-                      )}
-                    </Button>
-                  </Link>
-                );
-              })}
-              <Box sx={{ display: "flex", gap: isScrolled ? "2rem" : "1rem", alignItems: "center", transition: "gap 260ms ease" }}>
-                {/* Second-to-last link — plain style, no target="_blank" */}
-                <Button
-                  color="inherit"
+                <Box
                   sx={{
-                    color: "#1F1F1F",
-                    fontWeight: 400,
-                    fontSize: "14px",
-                    lineHeight: "100%",
-                    letterSpacing: "-2%",
-                    textTransform: "none",
-                    whiteSpace: "nowrap",
-                    transition: "color 220ms ease",
-                    fontFamily: "Inter",
-                    "&:hover": activeStyle,
-                    ...(isActive(navLinks[navLinks.length - 2].path) && activeStyle),
+                    display: "flex",
+                    gap: isScrolled ? "2rem" : "1rem",
+                    alignItems: "center",
+                    transition: "gap 260ms ease",
                   }}
-                  href={navLinks[navLinks.length - 2].path}
-                  component={Link}
                 >
-                  {navLinks[navLinks.length - 2].label}
-                </Button>
+                  <Button
+                    color="inherit"
+                    sx={{
+                      color: "#1F1F1F",
+                      fontWeight: 400,
+                      fontSize: "14px",
+                      lineHeight: "100%",
+                      letterSpacing: "-2%",
+                      textTransform: "none",
+                      whiteSpace: "nowrap",
+                      transition: "color 220ms ease",
+                      fontFamily: "Inter",
+                      "&:hover": activeStyle,
+                      ...(isActive(navLinks[navLinks.length - 2].path) && activeStyle),
+                    }}
+                    href={navLinks[navLinks.length - 2].path}
+                    component={Link}
+                  >
+                    {navLinks[navLinks.length - 2].label}
+                  </Button>
 
-                {/* Last link — purple background + opens in new tab */}
-                <Button
-                  color="inherit"
-                  sx={{
-                    color: "#FFFFFF",
-                    fontWeight: 400,
-                    fontSize: "14px",
-                    lineHeight: "100%",
-                    letterSpacing: "-2%",
-                    textTransform: "none",
-                    whiteSpace: "nowrap",
-                    transition: "padding 260ms ease, border-radius 260ms ease, background-color 220ms ease, color 220ms ease",
-                    backgroundColor: "#6C10BC",
-                    paddingX: isScrolled ? "28px" : "20px",
-                    paddingY: isScrolled ? "16px" : "10px",
-                    borderRadius: isScrolled ? "10px" : "8px",
-                    fontFamily: "Inter",
-                    "&:hover": activeStyle,
-                    ...(isActive(navLinks[navLinks.length - 1].path) && {
-                      ...activeStyle,
-                      backgroundColor: "transparent",
-                    }),
-                  }}
-                  target="_blank"
-                  href={navLinks[navLinks.length - 1].path}
-                >
-                  {navLinks[navLinks.length - 1].label}
-                </Button>
+                  <Button
+                    color="inherit"
+                    sx={{
+                      color: "#FFFFFF",
+                      fontWeight: 400,
+                      fontSize: "14px",
+                      lineHeight: "100%",
+                      letterSpacing: "-2%",
+                      textTransform: "none",
+                      whiteSpace: "nowrap",
+                      transition: "padding 260ms ease, border-radius 260ms ease, background-color 220ms ease, color 220ms ease",
+                      backgroundColor: "#6C10BC",
+                      paddingX: isScrolled ? "28px" : "20px",
+                      paddingY: isScrolled ? "16px" : "10px",
+                      borderRadius: isScrolled ? "10px" : "8px",
+                      fontFamily: "Inter",
+                      "&:hover": activeStyle,
+                      ...(isActive(navLinks[navLinks.length - 1].path) && {
+                        ...activeStyle,
+                        backgroundColor: "transparent",
+                      }),
+                    }}
+                    target="_blank"
+                    href={navLinks[navLinks.length - 1].path}
+                  >
+                    {navLinks[navLinks.length - 1].label}
+                  </Button>
+                </Box>
               </Box>
-            </Box>
 
-            {/* Mobile Menu Button */}
-            <IconButton
-              sx={{ display: { xs: "block", sm: "none" } }}
-              onClick={handleDrawerToggle}
-            >
-              <MenuIcon />
-            </IconButton>
+              {/* Mobile Menu Button */}
+              <IconButton
+                sx={{ display: { xs: "block", sm: "none" } }}
+                onClick={handleDrawerToggle}
+              >
+                <MenuIcon />
+              </IconButton>
+            </Box>{/* end inner content wrapper */}
           </Toolbar>
 
           {/* Drawer for Mobile Navigation */}
@@ -470,7 +480,6 @@ export default function Navbar() {
               {navLinks.map((link, index) => {
                 if (link.children?.length) {
                   const admissionDisplayLabel = getAdmissionDisplayLabel(link);
-
                   return (
                     <React.Fragment key={`${link.label}-${index}`}>
                       <ListItem
@@ -482,18 +491,13 @@ export default function Navbar() {
                         }}
                       >
                         <ListItemText
-                          sx={{
-                            color: "#1F1F1F",
-                            fontWeight: 700,
-                          }}
+                          sx={{ color: "#1F1F1F", fontWeight: 700 }}
                           primary={admissionDisplayLabel}
                         />
                         <ArrowDropDownIcon
                           sx={{
                             color: "#1F1F1F",
-                            transform: mobileCampusOpen
-                              ? "rotate(180deg)"
-                              : "rotate(0deg)",
+                            transform: mobileCampusOpen ? "rotate(180deg)" : "rotate(0deg)",
                             transition: "transform 200ms ease",
                           }}
                         />
@@ -506,10 +510,7 @@ export default function Navbar() {
                             component={Link}
                             href={campus.path}
                             onClick={handleDrawerToggle}
-                            sx={{
-                              pl: 4,
-                              ...(isPathMatch(campus.path) && activeStyle),
-                            }}
+                            sx={{ pl: 4, ...(isPathMatch(campus.path) && activeStyle) }}
                           >
                             <ListItemText
                               sx={{
@@ -539,9 +540,7 @@ export default function Navbar() {
                     component={Link}
                     href={link.path}
                     onClick={handleDrawerToggle}
-                    sx={{
-                      ...(isActive(link.path) && activeStyle),
-                    }}
+                    sx={{ ...(isActive(link.path) && activeStyle) }}
                   >
                     <ListItemText
                       sx={{
@@ -555,9 +554,7 @@ export default function Navbar() {
                         "&:hover": activeStyle,
                         ...(isActive(link.path) && activeStyle),
                       }}
-                      primaryTypographyProps={{
-                        lineHeight: 1.35,
-                      }}
+                      primaryTypographyProps={{ lineHeight: 1.35 }}
                       primary={link.label}
                     />
                     {isAuthLink(link.label) && (

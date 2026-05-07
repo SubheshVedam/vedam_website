@@ -54,15 +54,15 @@ export default function AnnouncementBanner({ applicationClosingEndMs }) {
   const timerSegments =
     timeLeft && !timeLeft.expired
       ? [
-        { label: "Days", value: timeLeft.days },
-        { label: "Hours", value: timeLeft.hours },
-        { label: "Minutes", value: timeLeft.minutes },
-        { label: "Seconds", value: timeLeft.seconds },
+        { label: "Days", shortLabel: "days", value: timeLeft.days },
+        { label: "Hours", shortLabel: "hrs", value: timeLeft.hours },
+        { label: "Minutes", shortLabel: "mins", value: timeLeft.minutes },
+        { label: "Seconds", shortLabel: "secs", value: timeLeft.seconds },
       ]
       : null;
 
   const timerItems = timerSegments
-    ? timerSegments.flatMap(({ label, value }, index) => {
+    ? timerSegments.flatMap(({ label, shortLabel, value }, index) => {
       const content = (
         <Stack
           key={`segment-${label}`}
@@ -72,16 +72,25 @@ export default function AnnouncementBanner({ applicationClosingEndMs }) {
           sx={{
             textAlign: "center",
             lineHeight: 1.1,
-          }}>
+          }}
+        >
           <Typography
             variant="body2"
-            sx={{ fontWeight: 700, fontSize: { xs: 13, sm: 16 }, lineHeight: 1 }}>
+            sx={{ fontWeight: 700, fontSize: { xs: 13, sm: 16 }, lineHeight: 1 }}
+          >
             {value}
           </Typography>
           <Typography
             variant="caption"
-            sx={{ fontSize: { xs: 10, sm: 11 }, lineHeight: 1, fontWeight: 500 }}>
-            {label}
+            sx={{ fontSize: { xs: 10, sm: 11 }, lineHeight: 1, fontWeight: 500 }}
+          >
+            {/* Full label on sm+, abbreviated on xs */}
+            <Box component="span" sx={{ display: { xs: "none", sm: "inline" } }}>
+              {label}
+            </Box>
+            <Box component="span" sx={{ display: { xs: "inline", sm: "none" } }}>
+              {shortLabel}
+            </Box>
           </Typography>
         </Stack>
       );
@@ -94,7 +103,8 @@ export default function AnnouncementBanner({ applicationClosingEndMs }) {
           key={`separator-${label}`}
           variant="body2"
           component="span"
-          sx={{ fontWeight: 700, fontSize: { xs: 13, sm: 16 } }}>
+          sx={{ fontWeight: 700, fontSize: { xs: 13, sm: 16 } }}
+        >
           :
         </Typography>,
       ];
@@ -106,23 +116,25 @@ export default function AnnouncementBanner({ applicationClosingEndMs }) {
       sx={{
         backgroundColor: "#6C10BC",
         color: "white",
-        opacity: 0.95,
         py: 1,
         position: "sticky",
         top: 0,
         zIndex: 11000,
         boxShadow: 1,
-      }}>
+      }}
+    >
       <Stack
         direction="row"
         alignItems="center"
         justifyContent="center"
         spacing={{ xs: 1, sm: 2 }}
-        sx={{ px: 2, flexWrap: "nowrap" }}>
+        sx={{ px: 2, flexWrap: "nowrap" }}
+      >
         <Typography
           variant="body2"
           component="span"
-          sx={{ fontSize: { xs: 11, sm: 16 }, whiteSpace: "nowrap" }}>
+          sx={{ fontSize: { xs: 11, sm: 16 }, whiteSpace: "nowrap" }}
+        >
           <strong>Admissions close in</strong>
         </Typography>
         {timerItems ? (
@@ -131,14 +143,16 @@ export default function AnnouncementBanner({ applicationClosingEndMs }) {
             spacing={{ xs: 0.5, sm: 1 }}
             alignItems="center"
             justifyContent="center"
-            sx={{ flexWrap: "nowrap" }}>
+            sx={{ flexWrap: "nowrap" }}
+          >
             {timerItems}
           </Stack>
         ) : timeLeft?.expired ? (
           <Typography
             variant="body2"
             component="span"
-            sx={{ fontWeight: 600, fontSize: { xs: 11, sm: 16 } }}>
+            sx={{ fontWeight: 600, fontSize: { xs: 11, sm: 16 } }}
+          >
             Admissions window closed
           </Typography>
         ) : null}
