@@ -98,8 +98,8 @@ export default function Navbar() {
 
   return (
     <Container
-      maxWidth={isScrolled ? false : "lg"}
-      disableGutters={isScrolled}
+      maxWidth={false}
+      disableGutters
       sx={{
         display: "flex",
         alignItems: "center",
@@ -116,15 +116,13 @@ export default function Navbar() {
     >
       <Box
         sx={{
-          minWidth: { md: isScrolled ? 0 : "1024px" },
+          minWidth: { md: "1024px" },
           width: "100%",
+          maxWidth: { sm: isScrolled ? "100%" : "1200px" },
           position: { xs: "inherit", sm: "relative" },
           top: { sm: isScrolled ? 0 : "20px" },
           height: { xs: "auto", sm: isScrolled ? "76px" : "10px" },
-          transition: "height 260ms ease, top 260ms ease, padding 260ms ease, width 260ms ease",
-          ...(isScrolled && {
-            width: "100%",
-          }),
+          transition: "height 260ms ease, top 260ms ease, max-width 360ms ease",
         }}
       >
         <AppBar
@@ -163,15 +161,12 @@ export default function Navbar() {
               sx={{
                 display: "flex",
                 width: "100%",
-                ...(isScrolled && {
-                  maxWidth: { sm: "100%", md: "1024px", xl: "1280px" },
-                  mx: "auto",
-                }),
+                maxWidth: { sm: "1200px" },
+                mx: "auto",
                 justifyContent: "space-between",
                 alignItems: "center",
-                gap: { sm: isScrolled ? "8px" : "28px" },
-                transition: "gap 260ms ease, max-width 260ms ease",
-                px: { xs: 0, sm: "20px" },
+                gap: { sm: "28px" },
+                px: { xs: 0, sm: "44px" },
               }}
             >
               {/* Logo */}
@@ -199,7 +194,7 @@ export default function Navbar() {
               <Box
                 sx={{
                   display: { xs: "none", sm: "flex" },
-                  gap: isScrolled ? "8px" : "30px",
+                  gap: "30px",
                   alignItems: "center",
                 }}
               >
@@ -403,9 +398,8 @@ export default function Navbar() {
                 <Box
                   sx={{
                     display: "flex",
-                    gap: isScrolled ? "2rem" : "1rem",
+                    gap: "1rem",
                     alignItems: "center",
-                    transition: "gap 260ms ease",
                   }}
                 >
                   <Button
@@ -439,11 +433,11 @@ export default function Navbar() {
                       letterSpacing: "-2%",
                       textTransform: "none",
                       whiteSpace: "nowrap",
-                      transition: "padding 260ms ease, border-radius 260ms ease, background-color 220ms ease, color 220ms ease",
+                      transition: "background-color 220ms ease, color 220ms ease",
                       backgroundColor: "#6C10BC",
-                      paddingX: isScrolled ? "28px" : "20px",
-                      paddingY: isScrolled ? "16px" : "10px",
-                      borderRadius: isScrolled ? "10px" : "8px",
+                      paddingX: "20px",
+                      paddingY: "10px",
+                      borderRadius: "8px",
                       fontFamily: "Inter",
                       "&:hover": activeStyle,
                       ...(isActive(navLinks[navLinks.length - 1].path) && {
