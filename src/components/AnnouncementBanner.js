@@ -66,11 +66,11 @@ export default function AnnouncementBanner({ applicationClosingEndMs }) {
       const content = (
         <Stack
           key={`segment-${label}`}
-          spacing={0.25}
-          alignItems="center"
+          direction="row"
+          spacing={0.5}
+          alignItems="baseline"
           sx={{
             textAlign: "center",
-            minWidth: { xs: 42, sm: 52 },
             lineHeight: 1.1,
           }}>
           <Typography
@@ -80,7 +80,7 @@ export default function AnnouncementBanner({ applicationClosingEndMs }) {
           </Typography>
           <Typography
             variant="caption"
-            sx={{ fontSize: { xs: 10, sm: 11 }, lineHeight: 1 }}>
+            sx={{ fontSize: { xs: 10, sm: 11 }, lineHeight: 1, fontWeight: 500 }}>
             {label}
           </Typography>
         </Stack>
@@ -94,7 +94,7 @@ export default function AnnouncementBanner({ applicationClosingEndMs }) {
           key={`separator-${label}`}
           variant="body2"
           component="span"
-          sx={{ fontWeight: 700, fontSize: { xs: 16, sm: 20 } }}>
+          sx={{ fontWeight: 700, fontSize: { xs: 13, sm: 16 } }}>
           :
         </Typography>,
       ];
@@ -104,7 +104,7 @@ export default function AnnouncementBanner({ applicationClosingEndMs }) {
   return (
     <Box
       sx={{
-        background: "linear-gradient(95.22deg, #FB7F05 2.91%, #6C10BC 99.18%)",
+        backgroundColor: "#6C10BC",
         color: "white",
         opacity: 0.95,
         py: 1,
@@ -114,31 +114,31 @@ export default function AnnouncementBanner({ applicationClosingEndMs }) {
         boxShadow: 1,
       }}>
       <Stack
-        direction={{ xs: "column", sm: "row" }}
+        direction="row"
         alignItems="center"
         justifyContent="center"
-        spacing={{ xs: 0.5, sm: 2 }}
-        sx={{ px: 2 }}>
+        spacing={{ xs: 1, sm: 2 }}
+        sx={{ px: 2, flexWrap: "nowrap" }}>
         <Typography
           variant="body2"
           component="span"
-          sx={{ fontSize: { xs: 11, sm: 16 } }}>
+          sx={{ fontSize: { xs: 11, sm: 16 }, whiteSpace: "nowrap" }}>
           <strong>Admissions close in</strong>
         </Typography>
         {timerItems ? (
           <Stack
             direction="row"
-            spacing={{ xs: 0.4, sm: 0.6 }}
+            spacing={{ xs: 0.5, sm: 1 }}
             alignItems="center"
             justifyContent="center"
-            sx={{ flexWrap: { xs: "wrap", sm: "nowrap" }, rowGap: 0.5 }}>
+            sx={{ flexWrap: "nowrap" }}>
             {timerItems}
           </Stack>
         ) : timeLeft?.expired ? (
           <Typography
             variant="body2"
             component="span"
-            sx={{ fontWeight: 600, fontSize: { xs: 13, sm: 16 } }}>
+            sx={{ fontWeight: 600, fontSize: { xs: 11, sm: 16 } }}>
             Admissions window closed
           </Typography>
         ) : null}
