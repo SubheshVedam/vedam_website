@@ -108,7 +108,7 @@ export default function Navbar() {
         height: { xs: "auto", sm: isScrolled ? "76px" : "0px" },
         transition: "height 260ms ease, background-color 260ms ease, border-color 260ms ease, box-shadow 260ms ease",
         position: { xs: "static", sm: "sticky" },
-        top: { sm: "40px" },
+        top: { sm: "39px" },
         zIndex: { sm: 10990 },
         backgroundColor: { sm: isScrolled ? "0 1px 0 rgba(17, 24, 39, 0.08)" : "transparent" },
         boxShadow: { sm: isScrolled ? "0 1px 0 rgba(17, 24, 39, 0.08)" : "none" },
