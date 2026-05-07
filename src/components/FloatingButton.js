@@ -4,7 +4,6 @@ import { useState } from 'react';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { keyframes } from '@emotion/react';
 
-// Animation for subtle pulse effect
 const pulse = keyframes`
   0% { transform: scale(0.7); }
   50% { transform: scale(0.8); }
@@ -21,8 +20,9 @@ const FloatingButton = () => {
 
   return (
     <Box sx={{
+      display: { xs: 'block', sm: 'none' },
       position: 'fixed',
-      bottom: {xs:'24px',sm:'70px'},
+      bottom: '24px',
       right: '20px',
       zIndex: 1000,
       animation: `${pulse} 3s ease-in-out infinite`,
@@ -51,7 +51,7 @@ const FloatingButton = () => {
         href="https://apply.vedam.org/"
         target="_blank"
         rel="noopener noreferrer"
-        endIcon={<OpenInNewIcon sx={{ 
+        endIcon={<OpenInNewIcon sx={{
           color: 'white',
           transition: 'transform 0.3s ease',
           transform: 'scale(0.9)',
