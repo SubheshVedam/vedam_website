@@ -3,7 +3,7 @@ import { Box, Typography, Stack } from "@mui/material";
 import { useState, useEffect, useMemo } from "react";
 
 /** Used only when the sheet is missing or the closing date is not parseable. */
-const FALLBACK_CLOSING_END_MS = new Date("2026-04-13T23:59:59").getTime();
+const FALLBACK_CLOSING_END_MS = new Date("2026-05-10T23:59:59").getTime();
 
 export default function AnnouncementBanner({ applicationClosingEndMs }) {
   const targetDate = useMemo(() => {
