@@ -1,18 +1,52 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { Box, Button, IconButton } from "@mui/material";
+import { Box, IconButton } from "@mui/material";
 import KeyboardArrowLeftRoundedIcon from "@mui/icons-material/KeyboardArrowLeftRounded";
 import KeyboardArrowRightRoundedIcon from "@mui/icons-material/KeyboardArrowRightRounded";
+
+const posterBackground = "#0C092F";
+
+const outcomeSlides = [
+    {
+        desktopSrc: "/img/studentSuccess/outcome_home_desktop_1.webp",
+        mobileSrc: "/img/studentSuccess/outcome_home_mobile_1.webp",
+        alt: "Vedam student outcome highlight",
+        desktopHeight: 1386,
+    },
+    {
+        desktopSrc: "/img/studentSuccess/outcome_home_desktop_2.webp",
+        mobileSrc: "/img/studentSuccess/outcome_home_mobile_2.webp",
+        alt: "Vedam student success highlight",
+        desktopHeight: 1383,
+    },
+];
+
+const videoThumbnail = {
+    desktopSrc: "/img/studentSuccess/outcome_home_desktop_3.webp",
+    mobileSrc: "/img/studentSuccess/outcome_home_mobile_3.webp",
+    alt: "Students at Vedam video thumbnail",
+};
 
 export const StudentsAtVedam = () => {
     const [playVideo, setPlayVideo] = useState(false);
     const [activeSlide, setActiveSlide] = useState(0);
 
-    const totalSlides = 2;
+    const videoSlideIndex = outcomeSlides.length;
+    const totalSlides = outcomeSlides.length + 1;
 
-    const videoSlideIndex = 1;
+    useEffect(() => {
+        if (playVideo) {
+            return undefined;
+        }
+
+        const interval = window.setInterval(() => {
+            setActiveSlide((currentSlide) => (currentSlide + 1) % totalSlides);
+        }, 4000);
+
+        return () => window.clearInterval(interval);
+    }, [playVideo, totalSlides]);
 
     const handleSlideChange = (nextSlide) => {
         setActiveSlide(nextSlide);
@@ -23,9 +57,27 @@ export const StudentsAtVedam = () => {
     };
 
     return (
-        <Box sx={{ width: "100%" }}>
+        <Box
+            sx={{
+                width: "100vw",
+                position: "relative",
+                left: "50%",
+                transform: "translateX(-50%)",
+                backgroundColor: posterBackground,
+                py: { xs: "20px", md: "44px" },
+            }}
+        >
             <Box
                 sx={{
+                    maxWidth: "1280px",
+                    width: { xs: "100%", md: "1024px", xl: "1280px" },
+                    mx: "auto",
+                    px: "10px",
+                    boxSizing: "border-box",
+                }}
+            >
+                <Box
+                    sx={{
                     width: "100%",
                     position: "relative",
                     borderRadius: { xs: "0px", md: "16px" },
@@ -40,41 +92,66 @@ export const StudentsAtVedam = () => {
                         transition: "transform 0.45s ease",
                     }}
                 >
-                    <Box sx={{ flex: "0 0 100%", width: "100%" }}>
+                    {outcomeSlides.map((slide) => (
                         <Box
+                            key={slide.desktopSrc}
                             sx={{
-                                display: { xs: "none", md: "block" },
+                                flex: "0 0 100%",
                                 width: "100%",
                             }}
                         >
-                            <Image
-                                src="/img/studentSuccess/outcomes_desktop.webp"
-                                alt="Student success story at Vedam"
-                                width={2560}
-                                height={846}
-                                style={{ width: "100%", height: "auto" }}
-                            />
-                        </Box>
+                            <Box
+                                sx={{
+                                    display: { xs: "none", md: "block" },
+                                    width: "100%",
+                                }}
+                            >
+                                <Image
+                                    src={slide.desktopSrc}
+                                    alt={slide.alt}
+                                    width={3114}
+                                    height={slide.desktopHeight}
+                                    style={{ width: "100%", height: "auto", display: "block" }}
+                                />
+                            </Box>
 
-                        <Box
-                            sx={{
-                                display: { xs: "block", md: "none" },
-                                width: "100%",
-                                borderRadius: "16px",
-                                overflow: "hidden",
-                            }}
-                        >
-                            <Image
-                                src="/img/studentSuccess/outcomes_mobile.webp"
-                                alt="Student success story at Vedam"
-                                width={1991}
-                                height={2560}
-                                style={{ width: "100%", height: "auto" }}
-                            />
+                            <Box
+                                sx={{
+                                    display: { xs: "block", md: "none" },
+                                    width: "100%",
+                                    borderRadius: "16px",
+                                    overflow: "hidden",
+                                }}
+                            >
+                                <Image
+                                    src={slide.mobileSrc}
+                                    alt={slide.alt}
+                                    width={1800}
+                                    height={1674}
+                                    style={{ width: "100%", height: "auto", display: "block" }}
+                                />
+                            </Box>
                         </Box>
-                    </Box>
+                    ))}
 
-                    <Box sx={{ flex: "0 0 100%", width: "100%", position: "relative" }}>
+                    <Box
+                        onClick={() => setPlayVideo(true)}
+                        onKeyDown={(e) => {
+                            if (e.key === "Enter" || e.key === " ") {
+                                setPlayVideo(true);
+                            }
+                        }}
+                        role="button"
+                        tabIndex={0}
+                        aria-label="Play Students at Vedam video"
+                        sx={{
+                            flex: "0 0 100%",
+                            width: "100%",
+                            position: "relative",
+                            cursor: playVideo ? "default" : "pointer",
+                            outline: "none",
+                        }}
+                    >
                         {playVideo ? (
                             <Box
                                 sx={{
@@ -102,11 +179,11 @@ export const StudentsAtVedam = () => {
                                     }}
                                 >
                                     <Image
-                                        src="/img/studentsAtVedam/img.webp"
-                                        alt="Students at Vedam"
-                                        width={1200}
-                                        height={400}
-                                        style={{ width: "100%", height: "auto" }}
+                                        src={videoThumbnail.desktopSrc}
+                                        alt={videoThumbnail.alt}
+                                        width={3114}
+                                        height={1383}
+                                        style={{ width: "100%", height: "auto", display: "block" }}
                                     />
                                 </Box>
 
@@ -117,43 +194,13 @@ export const StudentsAtVedam = () => {
                                     }}
                                 >
                                     <Image
-                                        src="/img/studentsAtVedam/imgMob.webp"
-                                        alt="Students at Vedam"
-                                        width={400}
-                                        height={600}
-                                        style={{ width: "100%", height: "auto" }}
+                                        src={videoThumbnail.mobileSrc}
+                                        alt={videoThumbnail.alt}
+                                        width={1800}
+                                        height={1674}
+                                        style={{ width: "100%", height: "auto", display: "block" }}
                                     />
                                 </Box>
-
-                                <Button
-                                    onClick={() => setPlayVideo(true)}
-                                    sx={{
-                                        position: "absolute",
-                                        bottom: { xs: "20px", md: "60px" },
-                                        left: { xs: "50%", md: "82px" },
-                                        transform: { xs: "translateX(-50%)", md: "none" },
-                                        backgroundColor: "#FFFFFF",
-                                        color: "#000000",
-                                        fontWeight: 600,
-                                        fontSize: { xs: "14px", md: "16px" },
-                                        px: { xs: 2, md: 3 },
-                                        py: { xs: 1, md: 1.5 },
-                                        borderRadius: "10px",
-                                        textTransform: "none",
-                                        display: "flex",
-                                        alignItems: "center",
-                                        gap: 1,
-                                        boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
-                                    }}
-                                >
-                                    Watch Video
-                                    <Image
-                                        src="/img/studentsAtVedam/youtube.webp"
-                                        alt="YouTube"
-                                        width={20}
-                                        height={20}
-                                    />
-                                </Button>
                             </>
                         )}
                     </Box>
@@ -186,7 +233,7 @@ export const StudentsAtVedam = () => {
                 </IconButton>
 
                 <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                    {[0, 1].map((slideIndex) => (
+                    {Array.from({ length: totalSlides }).map((_, slideIndex) => (
                         <Box
                             key={slideIndex}
                             component="button"
@@ -220,6 +267,7 @@ export const StudentsAtVedam = () => {
                 >
                     <KeyboardArrowRightRoundedIcon />
                 </IconButton>
+            </Box>
             </Box>
         </Box>
     );

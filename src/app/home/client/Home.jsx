@@ -250,7 +250,7 @@ const Home = () => {
   const detailSections = [
     {
       id: "students-at-vedam",
-      subtitle: isMobile ? "Meet the Students at Vedam" : "",
+      subtitle: "Meet the Students at Vedam",
       render: () => (
         <LazySection fallbackHeight={360}>
           <StudentsAtVedam />
