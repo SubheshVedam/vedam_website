@@ -364,7 +364,7 @@ export default function ProgramPage({ config }) {
           {/* Title block */}
           <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: "10px", md: "16px" } }}>
             <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: "8px", md: "12px" }, color: "#F9F9F9" }}>
-              <Typography sx={{
+              <Typography component="h1" sx={{
                 fontFamily: "Inter, sans-serif", fontWeight: 700,
                 fontSize: { xs: "16px", md: "32px" },
                 letterSpacing: { xs: "-0.32px", md: "-2%" },
@@ -551,7 +551,7 @@ export default function ProgramPage({ config }) {
       {/* ── 3. CITY SECTION ─────────────────────────────────────────────────── */}
       <Box sx={{ ...sectionPad, display: "flex", flexDirection: "column", gap: { xs: "10px", md: "20px" } }}>
         <Box sx={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-          <Typography sx={gradientText}>{citySection.heading}</Typography>
+          <Typography component="h2" sx={gradientText}>{citySection.heading}</Typography>
           <Typography sx={{ ...sectionDescriptionText, maxWidth: 1024 }}>
             {citySection.description}
           </Typography>
@@ -607,7 +607,7 @@ export default function ProgramPage({ config }) {
       {/* ── 4. CAMPUS & AMENITIES ───────────────────────────────────────────── */}
       <Box sx={{ ...sectionPad, display: "flex", flexDirection: "column", gap: { xs: "10px", md: "20px" } }}>
         <Box sx={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-          <Typography sx={gradientText}>Campus &amp; Amenities</Typography>
+          <Typography component="h2" sx={gradientText}>Campus &amp; Amenities</Typography>
           <Typography sx={{ ...sectionDescriptionText, maxWidth: 1024 }}>
             {campusSection.description}
           </Typography>
@@ -639,7 +639,7 @@ export default function ProgramPage({ config }) {
       {/* ── 5. ACCREDITATIONS & RECOGNITIONS ───────────────────────────────── */}
       <Box sx={{ ...sectionPad, display: "flex", flexDirection: "column", gap: { xs: "10px", md: "40px" } }}>
         <Box sx={{ display: "flex", flexDirection: "column", gap: "8px", width: "100%" }}>
-          <Typography sx={gradientText}>Accreditations &amp; Recognitions</Typography>
+          <Typography component="h2" sx={gradientText}>Accreditations &amp; Recognitions</Typography>
           <Typography sx={{ ...sectionDescriptionText, maxWidth: 1024 }}>
             {accreditations.description}
           </Typography>
@@ -654,7 +654,7 @@ export default function ProgramPage({ config }) {
       {/* ── 6. SCHOLARSHIP PROGRAM ──────────────────────────────────────────── */}
       <Box sx={{ ...sectionPad, display: "flex", flexDirection: "column", gap: { xs: "20px", md: "20px" } }}>
         <Box sx={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-          <Typography sx={gradientText}>Scholarship Program</Typography>
+          <Typography component="h2" sx={gradientText}>Scholarship Program</Typography>
           <Typography sx={sectionDescriptionText}>
             {scholarships.description}
           </Typography>
@@ -720,7 +720,7 @@ export default function ProgramPage({ config }) {
 
       {/* ── 7. FEE STRUCTURE ────────────────────────────────────────────────── */}
       <Box sx={{ ...sectionPad, display: "flex", flexDirection: "column", gap: { xs: "0px", md: "20px" } }}>
-        <Typography sx={{ ...gradientText, mb: { xs: "0px", md: "0px" } }}>Fee Structure</Typography>
+        <Typography component="h2" sx={{ ...gradientText, mb: { xs: "0px", md: "0px" } }}>Fee Structure</Typography>
 
         <Box sx={{ display: "flex", gap: "20px", borderBottom: "1px solid rgba(0,0,0,0.15)", mt: { xs: "10px", md: 0 } }}>
           {[{ id: "course", label: "Course Fees" }, { id: "hostel", label: "Hostel Fees" }].map(({ id, label }) => (
@@ -833,7 +833,7 @@ export default function ProgramPage({ config }) {
       <Box sx={{ ...sectionPad, display: "flex", flexDirection: "column", gap: { xs: "10px", md: "40px" } }}>
         <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: "10px", md: "20px" }, maxWidth: "100%" }}>
           <Box sx={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-            <Typography sx={gradientText}>Financing Options</Typography>
+            <Typography component="h2" sx={gradientText}>Financing Options</Typography>
             <Typography sx={sectionDescriptionText}>
               {financing.description}
             </Typography>
@@ -861,7 +861,7 @@ export default function ProgramPage({ config }) {
 
         {/* Financing Partners */}
         <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: "10px", md: "20px" } }}>
-          <Typography sx={gradientText}>Financing Partners</Typography>
+          <Typography component="h2" sx={gradientText}>Financing Partners</Typography>
           <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: { xs: "10px", md: "20px" } }}>
             <Box sx={{ display: "inline-flex", gap: "4px", alignItems: "center", border: "1px solid #6C10BC", borderRadius: "24px", p: "5px" }}>
               {financing.loanPartners.map(({ id, label }) => (

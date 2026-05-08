@@ -72,7 +72,7 @@ const Life = () => {
       </Box>
 
       <Box sx={{ width: "100%" }}>
-        <NoesisPage />
+        <NoesisPage titleComponent="h2" />
       </Box>
 
       <SectionStack

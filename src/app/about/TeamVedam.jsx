@@ -85,9 +85,23 @@ const TeamVedam = () => {
             width: { xs: "100%", lg: "55%" },
           }}
         >
+          <Box
+            component="h2"
+            sx={{
+              position: "absolute",
+              width: 1,
+              height: 1,
+              overflow: "hidden",
+              clip: "rect(0 0 0 0)",
+              whiteSpace: "nowrap",
+            }}
+          >
+            Our Source Code
+          </Box>
           {/* Mobile: gradient title */}
           <Box sx={{ display: { xs: "flex", lg: "none" }, alignItems: "flex-start" }}>
             <Typography
+              aria-hidden="true"
               component="span"
               sx={{
                 fontFamily: "Outfit, sans-serif",
@@ -107,6 +121,7 @@ const TeamVedam = () => {
           {/* Desktop: non-gradient title */}
           <Box sx={{ display: { xs: "none", lg: "flex" }, alignItems: "flex-start", gap: 0.75 }}>
             <Typography
+              aria-hidden="true"
               component="span"
               sx={{
                 fontFamily: "Inter",
@@ -875,6 +890,19 @@ const TeamVedam = () => {
           "linear-gradient(180deg, rgba(138, 24, 255, 0.08) 18.819%, rgba(255, 255, 255, 0.08) 50%), linear-gradient(90deg, #FFFFFF 0%, #FFFFFF 100%)",
       }}
     >
+      <Box
+        component="h1"
+        sx={{
+          position: "absolute",
+          width: 1,
+          height: 1,
+          overflow: "hidden",
+          clip: "rect(0 0 0 0)",
+          whiteSpace: "nowrap",
+        }}
+      >
+        About Vedam School of Technology
+      </Box>
       <SectionStack sections={sections} />
     </PageSection>
   );

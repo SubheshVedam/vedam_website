@@ -11,7 +11,7 @@ export default function PrivacyPolicy() {
         padding: { xs: 3, md: 6 },
       }}
     >
-      <Typography variant="h4" fontWeight={700} color="#FB7F05" mb={4}>
+      <Typography component="h1" variant="h4" fontWeight={700} color="#FB7F05" mb={4}>
         Privacy Policy
       </Typography>
 
@@ -58,7 +58,7 @@ export default function PrivacyPolicy() {
 
         {/* Section II */}
         <Box component="section">
-          <Typography variant="h5" fontWeight={600} color="secondary" mb={2}>
+          <Typography component="h2" variant="h5" fontWeight={600} color="secondary" mb={2}>
             I. The information we collect and how we use it
           </Typography>
 
@@ -81,7 +81,7 @@ export default function PrivacyPolicy() {
             <li>Automatically as you navigate through our Services</li>
           </ul>
 
-          <Typography variant="h6" fontWeight={600} mt={2} mb={1}>
+          <Typography component="h3" variant="h6" fontWeight={600} mt={2} mb={1}>
             Information You Provide to Us
           </Typography>
           <ul style={{ paddingLeft: "1.25rem", marginBottom: "1rem" }}>
@@ -95,7 +95,7 @@ export default function PrivacyPolicy() {
             </li>
           </ul>
 
-          <Typography variant="h6" fontWeight={600} mt={2} mb={1}>
+          <Typography component="h3" variant="h6" fontWeight={600} mt={2} mb={1}>
             Information We Collect Through Automatic Data Collection
             Technologies
           </Typography>
@@ -108,7 +108,7 @@ export default function PrivacyPolicy() {
             <li>Your activity: Clicks, searches, time spent, page views, etc.</li>
           </ul>
 
-          <Typography variant="h6" fontWeight={600} mt={2} mb={1}>
+          <Typography component="h3" variant="h6" fontWeight={600} mt={2} mb={1}>
             Anonymous or De-Identified Data
           </Typography>
           <Typography>
@@ -197,7 +197,7 @@ export default function PrivacyPolicy() {
           },
         ].map((section, index) => (
           <Box key={index} component="section">
-            <Typography variant="h5" fontWeight={600} color="secondary" mb={2}>
+            <Typography component="h2" variant="h5" fontWeight={600} color="secondary" mb={2}>
               {section.title}
             </Typography>
             {section.content ? (

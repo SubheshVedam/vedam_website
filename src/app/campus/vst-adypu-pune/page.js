@@ -20,6 +20,7 @@ export default function VSTADYPUPune() {
 
   return (
     <>
+      <h1 className="sr-only">VST ADYPU Pune Campus Brochure</h1>
       {/* Modal */}
       {isOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">

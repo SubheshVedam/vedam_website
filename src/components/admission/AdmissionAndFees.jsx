@@ -34,6 +34,7 @@ export const AdmissionAndFees = () => {
       >
         <Box>
           <Typography
+            component="h3"
             variant="h1"
             sx={{
               fontSize: "clamp(1.4rem, 2vw, 40px)",

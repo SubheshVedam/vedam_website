@@ -235,7 +235,7 @@ function VideoThumbnail({ videoFrame, youtubeId }) {
 // ─────────────────────────────────────────────────────────────────────────────
 // HeroSection
 // ─────────────────────────────────────────────────────────────────────────────
-function HeroSection({ hero }) {
+function HeroSection({ hero, titleComponent = "h1" }) {
     return (
         <Box
             sx={{
@@ -255,6 +255,7 @@ function HeroSection({ hero }) {
             }}
         >
             <Typography
+                component={titleComponent}
                 sx={{
                     fontFamily: "Inter, sans-serif",
                     fontWeight: 800,
@@ -317,14 +318,14 @@ function HeroSection({ hero }) {
 // ─────────────────────────────────────────────────────────────────────────────
 // NoesisPage
 // ─────────────────────────────────────────────────────────────────────────────
-export default function NoesisPage({ config = noesisConfig }) {
+export default function NoesisPage({ config = noesisConfig, titleComponent = "h1" }) {
     const { hero, stats, about, sponsors, moments, speakers } = config;
 
     return (
         <Box sx={{ bgcolor: "#000", minHeight: "100vh", display: "flex", flexDirection: "column", width: "100%" }}>
 
             {/* ── 1. HERO ── */}
-            <HeroSection hero={hero} />
+            <HeroSection hero={hero} titleComponent={titleComponent} />
 
             {/* ── 2. STATS BAR — infinite marquee for both desktop and mobile ── */}
             <Box sx={{ pt: "16px", pb: "16px" }}>
@@ -463,6 +464,7 @@ export default function NoesisPage({ config = noesisConfig }) {
             {/* ── 6. MOMENTS ── */}
             <Box sx={{ ...sectionPad, pt: { xs: "24px", md: "40px" } }}>
                 <Typography
+                    component="h2"
                     sx={{
                         display: { xs: "block", md: "none" },
                         fontFamily: "Inter, sans-serif",
@@ -495,6 +497,7 @@ export default function NoesisPage({ config = noesisConfig }) {
                         }}
                     >
                         <Typography
+                            component="h2"
                             sx={{
                                 fontFamily: "Inter, sans-serif",
                                 fontWeight: 800,
@@ -521,6 +524,7 @@ export default function NoesisPage({ config = noesisConfig }) {
             {/* ── 7. INDUSTRY LEADERS ── */}
             <Box sx={{ ...sectionPad, pt: { xs: "24px", md: "40px" }, pb: { xs: "40px", md: "80px" } }}>
                 <Typography
+                    component="h2"
                     sx={{
                         fontFamily: "Inter, sans-serif",
                         fontWeight: 700,

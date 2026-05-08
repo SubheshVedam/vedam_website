@@ -22,7 +22,7 @@ export default function Refund() {
         p: { xs: 3, sm: 6 },
       }}
     >
-      <Typography variant="h4" color="#FB7F05" fontWeight="bold" mb={4}>
+      <Typography component="h1" variant="h4" color="#FB7F05" fontWeight="bold" mb={4}>
         Vedam Refund Policy
       </Typography>
 
@@ -36,7 +36,7 @@ export default function Refund() {
       >
         {/* Overview */}
         <Box>
-          <Typography variant="h5" color="secondary" fontWeight="bold" mb={2}>
+          <Typography component="h2" variant="h5" color="secondary" fontWeight="bold" mb={2}>
             Overview
           </Typography>
           <Typography paragraph>
@@ -80,7 +80,7 @@ export default function Refund() {
 
         {/* General Refund Requests */}
         <Box>
-          <Typography variant="h5" color="secondary" fontWeight="bold" mb={2}>
+          <Typography component="h2" variant="h5" color="secondary" fontWeight="bold" mb={2}>
             General Refund Requests
           </Typography>
           <Typography fontWeight="bold" mb={1}>
@@ -121,7 +121,7 @@ export default function Refund() {
 
         {/* Special Consideration Refund Requests */}
         <Box>
-          <Typography variant="h5" color="secondary" fontWeight="bold" mb={2}>
+          <Typography component="h2" variant="h5" color="secondary" fontWeight="bold" mb={2}>
             Special Consideration Refund Requests
           </Typography>
           <Typography fontWeight="bold" mb={1}>
@@ -153,7 +153,7 @@ export default function Refund() {
 
         {/* Assistance and Queries */}
         <Box>
-          <Typography variant="h5" color="secondary" fontWeight="bold" mb={2}>
+          <Typography component="h2" variant="h5" color="secondary" fontWeight="bold" mb={2}>
             Assistance and Queries
           </Typography>
           <Typography>
@@ -167,7 +167,7 @@ export default function Refund() {
 
         {/* Policy Compliance */}
         <Box>
-          <Typography variant="h5" color="secondary" fontWeight="bold" mb={2}>
+          <Typography component="h2" variant="h5" color="secondary" fontWeight="bold" mb={2}>
             Policy Compliance
           </Typography>
           <Typography>
@@ -179,7 +179,7 @@ export default function Refund() {
 
         {/* Policy Modification */}
         <Box>
-          <Typography variant="h5" color="secondary" fontWeight="bold" mb={2}>
+          <Typography component="h2" variant="h5" color="secondary" fontWeight="bold" mb={2}>
             Policy Modification
           </Typography>
           <Typography>

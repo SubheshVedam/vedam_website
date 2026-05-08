@@ -743,6 +743,19 @@ export default function SeekYourSeniors() {
         bgcolor: "transparent", position: "relative", overflow: "hidden",
         ...sectionPad, pt: { xs: "32px", md: "60px" }, pb: { xs: "24px", md: "40px" },
       }}>
+        <Box
+          component="h1"
+          sx={{
+            position: "absolute",
+            width: 1,
+            height: 1,
+            overflow: "hidden",
+            clip: "rect(0 0 0 0)",
+            whiteSpace: "nowrap",
+          }}
+        >
+          Seek Your Seniors - Class of 2029
+        </Box>
 
         {/* Mobile */}
         <Box sx={{ display: { xs: "flex", md: "none" }, flexDirection: "column", alignItems: "center", gap: "20px", position: "relative", zIndex: 1 }}>
@@ -825,7 +838,7 @@ export default function SeekYourSeniors() {
       {/* ── 2. CLUB PRESIDENTS ── */}
       <Box sx={{ bgcolor: "transparent", ...sectionPad, mt: { xs: "8px", md: "12px" } }}>
         <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", mb: { xs: "16px", md: "24px" } }}>
-          <Typography sx={sectionHeading}>Meet Your Club Presidents</Typography>
+          <Typography component="h2" sx={sectionHeading}>Meet Your Club Presidents</Typography>
           <Box sx={{ display: { xs: "none", md: "block" } }}>
             <CarouselNav onPrev={() => scrollRow(presidentsRef, "prev")} onNext={() => scrollRow(presidentsRef, "next")} />
           </Box>
@@ -843,7 +856,7 @@ export default function SeekYourSeniors() {
       {/* ── 3. SENIOR VIDEOS ── */}
       <Box sx={{ bgcolor: "transparent", ...sectionPad, mt: { xs: "8px", md: "12px" } }}>
         <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", mb: { xs: "16px", md: "24px" } }}>
-          <Typography sx={{ ...sectionHeading, maxWidth: { xs: "220px", md: "none" } }}>
+          <Typography component="h2" sx={{ ...sectionHeading, maxWidth: { xs: "220px", md: "none" } }}>
             All your Queries Answered by your Seniors
           </Typography>
           <Box sx={{ display: { xs: "none", md: "block" } }}>
@@ -870,7 +883,7 @@ export default function SeekYourSeniors() {
         overflow: { xs: "visible", md: "hidden" },
       }}>
         <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", mb: { xs: "24px", md: "36px" } }}>
-          <Typography sx={sectionHeading}>Student Projects @ Innovation Lab</Typography>
+          <Typography component="h2" sx={sectionHeading}>Student Projects @ Innovation Lab</Typography>
           <Box sx={{ display: { xs: "none", md: "flex" }, gap: "12px" }}>
             <IconButton onClick={prevProject} size="small" sx={{
               width: 44, height: 44, border: "1.5px solid #E0E0E0",

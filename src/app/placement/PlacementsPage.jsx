@@ -346,6 +346,19 @@ export default function PlacementsPage({ config }) {
                 }}
             >
                 <Box
+                    component="h1"
+                    sx={{
+                        position: "absolute",
+                        width: 1,
+                        height: 1,
+                        overflow: "hidden",
+                        clip: "rect(0 0 0 0)",
+                        whiteSpace: "nowrap",
+                    }}
+                >
+                    Your Tech Journey, Powered by Vedam
+                </Box>
+                <Box
                     component="img"
                     src={hero.bgDesktop}
                     alt="Your Tech Journey, Powered by Vedam"
@@ -381,7 +394,7 @@ export default function PlacementsPage({ config }) {
                 }}
             >
                 <Box sx={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-                    <Typography sx={gradientText}>{placementExpertise.heading}</Typography>
+                    <Typography component="h2" sx={gradientText}>{placementExpertise.heading}</Typography>
                     <Typography sx={{ ...bodyText, maxWidth: 840 }}>
                         {placementExpertise.description}
                     </Typography>
@@ -424,6 +437,7 @@ export default function PlacementsPage({ config }) {
                     }}
                 >
                     <Typography
+                        component="h2"
                         sx={{
                             fontFamily: "Inter, sans-serif",
                             fontWeight: 700,
@@ -449,7 +463,7 @@ export default function PlacementsPage({ config }) {
                 }}
             >
                 <Box sx={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-                    <Typography sx={gradientText}>{techExpertise.heading}</Typography>
+                    <Typography component="h2" sx={gradientText}>{techExpertise.heading}</Typography>
                     <Typography sx={{ ...bodyText, maxWidth: 840 }}>
                         {techExpertise.description}
                     </Typography>
@@ -470,6 +484,7 @@ export default function PlacementsPage({ config }) {
                 }}
             >
                 <Typography
+                    component="h2"
                     sx={{
                         fontFamily: "Inter, sans-serif",
                         fontWeight: 700,
@@ -567,7 +582,7 @@ export default function PlacementsPage({ config }) {
                 }}
             >
                 <Box sx={{ display: "flex", flexDirection: "column", gap: "4px" }}>
-                    <Typography sx={gradientText}>{globalOutcomes.heading}</Typography>
+                    <Typography component="h2" sx={gradientText}>{globalOutcomes.heading}</Typography>
                     <Typography
                         sx={{
                             fontFamily: "Inter, sans-serif",
@@ -636,7 +651,7 @@ export default function PlacementsPage({ config }) {
                 }}
             >
                 <Box sx={{ display: "flex", flexDirection: "column", gap: "4px" }}>
-                    <Typography sx={gradientText}>{internships.heading}</Typography>
+                    <Typography component="h2" sx={gradientText}>{internships.heading}</Typography>
                     <Typography
                         sx={{
                             fontFamily: "Inter, sans-serif",
