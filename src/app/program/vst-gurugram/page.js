@@ -1,5 +1,52 @@
 import ProgramPage from "../ProgramPage";
 import { gurugramConfig } from "../ProgramConfigs";
+import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+
+const gurugramProgramSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "CollegeOrUniversity",
+            "@id": "https://www.vedam.org/#organization",
+            name: "Vedam School of Technology",
+            alternateName: "Vedam School",
+            url: "https://www.vedam.org/",
+            logo: "https://www.vedam.org/_next/image?url=%2Fimg%2Fvedam_logo.webp&w=256&q=75",
+            sameAs: [
+                "https://www.instagram.com/vedamschooloftechnology",
+                "https://www.youtube.com/@vedamschooloftechnology",
+            ],
+        },
+        {
+            "@type": "Course",
+            name: "CS(AI) Programme at Sushant University Gurugram",
+            description:
+                "4-year on-campus undergraduate programme in Computer Science with Artificial Intelligence specialisation, delivered by Vedam School of Technology at the Sushant University campus in Gurugram, Delhi NCR.",
+            url: "https://www.vedam.org/program/vst-gurugram",
+            educationalCredentialAwarded: "Bachelor of Technology (BTech)",
+            provider: {
+                "@type": "CollegeOrUniversity",
+                name: "Vedam School of Technology",
+                url: "https://www.vedam.org/",
+            },
+            hasCourseInstance: {
+                "@type": "CourseInstance",
+                courseMode: "On-campus",
+                courseWorkload: "P4Y",
+                location: {
+                    "@type": "Place",
+                    name: "Sushant University, Gurugram",
+                    address: {
+                        "@type": "PostalAddress",
+                        addressLocality: "Gurugram",
+                        addressRegion: "Haryana",
+                        addressCountry: "IN",
+                    },
+                },
+            },
+        },
+    ],
+};
 
 export const metadata = {
     title: "Program & Fees - VST Gurugram | Vedam School of Technology",
@@ -43,5 +90,14 @@ export const metadata = {
 };
 
 export default function GurugramProgramPage() {
-    return <ProgramPage config={gurugramConfig} />;
+    return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(gurugramProgramSchema) }}
+            />
+            <BreadcrumbSchema />
+            <ProgramPage config={gurugramConfig} />
+        </>
+    );
 }

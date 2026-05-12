@@ -1,5 +1,52 @@
 import ProgramPage from "../ProgramPage";
 import { puneConfig } from "../ProgramConfigs";
+import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+
+const puneProgramSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "CollegeOrUniversity",
+            "@id": "https://www.vedam.org/#organization",
+            name: "Vedam School of Technology",
+            alternateName: "Vedam School",
+            url: "https://www.vedam.org/",
+            logo: "https://www.vedam.org/_next/image?url=%2Fimg%2Fvedam_logo.webp&w=256&q=75",
+            sameAs: [
+                "https://www.instagram.com/vedamschooloftechnology",
+                "https://www.youtube.com/@vedamschooloftechnology",
+            ],
+        },
+        {
+            "@type": "Course",
+            name: "CS(AI) Programme at ADYPU Pune",
+            description:
+                "4-year on-campus undergraduate programme in Computer Science with Artificial Intelligence specialisation, delivered by Vedam School of Technology at the ADYPU Lohegaon campus in Pune.",
+            url: "https://www.vedam.org/program/vst-adypu-pune",
+            educationalCredentialAwarded: "Bachelor of Technology (BTech)",
+            provider: {
+                "@type": "CollegeOrUniversity",
+                name: "Vedam School of Technology",
+                url: "https://www.vedam.org/",
+            },
+            hasCourseInstance: {
+                "@type": "CourseInstance",
+                courseMode: "On-campus",
+                courseWorkload: "P4Y",
+                location: {
+                    "@type": "Place",
+                    name: "Ajeenkya DY Patil University, Lohegaon, Pune",
+                    address: {
+                        "@type": "PostalAddress",
+                        addressLocality: "Pune",
+                        addressRegion: "Maharashtra",
+                        addressCountry: "IN",
+                    },
+                },
+            },
+        },
+    ],
+};
 
 export const metadata = {
     title: "Program & Fees - VST ADYPU Pune | Vedam School of Technology",
@@ -41,5 +88,14 @@ export const metadata = {
 };
 
 export default function PuneProgramPage() {
-    return <ProgramPage config={puneConfig} />;
+    return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(puneProgramSchema) }}
+            />
+            <BreadcrumbSchema />
+            <ProgramPage config={puneConfig} />
+        </>
+    );
 }

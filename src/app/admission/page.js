@@ -2,6 +2,7 @@ import React from "react";
 import Admission from "./Admission";
 import { adypuPuneFeeStructureData } from "@/constants/admissionFeeData";
 import { getVsatIntakeFromSheet } from "@/lib/vsatSheet";
+import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 
 export const revalidate = 3600;
 
@@ -46,6 +47,9 @@ export const metadata = {
 export default async function Page() {
   const vsatIntake = await getVsatIntakeFromSheet();
   return (
-    <Admission feeStructureData={adypuPuneFeeStructureData} vsatIntake={vsatIntake} />
+    <>
+      <BreadcrumbSchema />
+      <Admission feeStructureData={adypuPuneFeeStructureData} vsatIntake={vsatIntake} />
+    </>
   );
 }

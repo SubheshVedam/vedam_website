@@ -1,6 +1,12 @@
 import PlacementsPage from "./PlacementsPage";
 import { placementConfig } from "./Placementsconfig";
+import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 
 export default function Page() {
-    return <PlacementsPage config={placementConfig} />;
+    return (
+        <>
+            <BreadcrumbSchema />
+            <PlacementsPage config={placementConfig} />
+        </>
+    );
 }
