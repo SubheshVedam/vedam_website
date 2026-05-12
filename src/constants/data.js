@@ -352,7 +352,7 @@ export const homeScreenData = {
       },
       {
         id: 16,
-        imageUrl: "/img/companies/Atlassian-Logo.webp",
+        imageUrl: "/img/companies/atlassian.webp",
       },
       {
         id: 17,
@@ -384,7 +384,7 @@ export const homeScreenData = {
       },
       {
         id: 24,
-        imageUrl: "/img/companies/zivame-logo-2019.webp",
+        imageUrl: "/img/companies/zivame.webp",
       },
       {
         id: 25,
