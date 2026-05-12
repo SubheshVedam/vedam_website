@@ -27,7 +27,7 @@ export const placementConfig = {
         imageDesktop: "/img/placement/placement_expertise.webp",
         imageMobile: "/img/placement/placement_expertise_mob.webp",
         partners: {
-            heading: "Placement Partners",
+            heading: "Our Placement Partners",
             logos: [
                 { src: "/img/placement/partners/amazon.webp", alt: "Amazon" },
                 { src: "/img/placement/partners/razorpay.webp", alt: "Razorpay" },
@@ -62,12 +62,13 @@ export const placementConfig = {
 
     // ── TESTIMONIALS ──────────────────────────────────────────────────────────
     testimonials: {
-        heading: "Testimonials",
+        heading: "Student Testimonials",
         items: [
             {
                 name: "Divya Chopra",
                 role: "Software Engineer II",
                 company: "Google",
+                heading: "Divya Chopra - Software Engineer II, Google",
                 companyLogo: "/img/placement/logos/google.webp",
                 photo: "/img/placement/testimonials/divya.webp",
                 quote:
@@ -77,6 +78,7 @@ export const placementConfig = {
                 name: "Pranjal Sharma",
                 role: "SDE I",
                 company: "Amazon",
+                heading: "Pranjal Sharma - SDE I, Amazon",
                 companyLogo: "/img/placement/logos/amazon.webp",
                 photo: "/img/placement/testimonials/pranjall.webp",
                 quote:
@@ -86,6 +88,7 @@ export const placementConfig = {
                 name: "Harshit Trehan",
                 role: "Software Developer",
                 company: "Atlassian",
+                heading: "Harshit Trehan - Software Developer, Atlassian",
                 companyLogo: "/img/placement/logos/atlassian.webp",
                 photo: "/img/placement/testimonials/harshit.webp",
                 quote:
@@ -95,6 +98,7 @@ export const placementConfig = {
                 name: "Jaivin Phogat",
                 role: "SDE",
                 company: "Directi",
+                heading: "Jaivin Phogat - SDE",
                 companyLogo: "/img/placement/logos/dpworld.webp",
                 photo: "/img/placement/testimonials/jaivin.webp",
                 quote:
@@ -105,18 +109,20 @@ export const placementConfig = {
 
     // ── GLOBAL OUTCOMES ───────────────────────────────────────────────────────
     globalOutcomes: {
-        heading: "Global Outcomes",
-        subheading: "Where builders turn into Global Talent",
+        heading: "Global Outcomes - Where Builders Turn into Global Talent",
+        subheading: "",
         // Two side-by-side cards — each is a pre-designed image
         cards: [
             {
                 desktop: "/img/placement/outcome1.webp",
                 mobile: "/img/placement/outcome1_mob.webp",
+                heading: "LFX Mentorship - Krishiv Mahajan",
                 alt: "LFX Mentorship — Krishiv Mahajan ₹2.73 Lakh Stipend",
             },
             {
                 desktop: "/img/placement/outcome2.webp",
                 mobile: "/img/placement/outcome2_mob.webp",
+                heading: "HackerOne - Muhammad Sharief",
                 alt: "HackerOne — Muhammad Sharief ₹4.59 Lakh Bug Bounties",
             },
         ],
@@ -128,13 +134,13 @@ export const placementConfig = {
         subheading: "Real students. Real results. First year.",
         // 7 pre-designed cards, desktop + mobile variant each
         items: [
-            { desktop: "/img/placement/intern6.webp", mobile: "/img/placement/intern1_mob.webp", alt: "Shubham Barik — AI Engineer Intern" },
-            { desktop: "/img/placement/intern2.webp", mobile: "/img/placement/intern2_mob.webp", alt: "Shivansh Ojha — Technical Program Intern" },
-            { desktop: "/img/placement/intern1.webp", mobile: "/img/placement/intern3_mob.webp", alt: "Sharav Yadav — Web Development Intern" },
-            { desktop: "/img/placement/intern4.webp", mobile: "/img/placement/intern4_mob.webp", alt: "Ketan Bhamre — Web Development Intern" },
-            { desktop: "/img/placement/intern3.webp", mobile: "/img/placement/intern5_mob.webp", alt: "Sirwagya Shekhar — Full Stack Intern" },
-            { desktop: "/img/placement/intern5.webp", mobile: "/img/placement/intern6_mob.webp", alt: "Akash Anand — DevOps Intern" },
-            { desktop: "/img/placement/intern7.webp", mobile: "/img/placement/intern7_mob.webp", alt: "Khushi Yadav — Growth & Partnerships Intern" },
+            { desktop: "/img/placement/intern6.webp", mobile: "/img/placement/intern1_mob.webp", heading: "Shubham Barik, intern at dues innovation", alt: "Shubham Barik — AI Engineer Intern" },
+            { desktop: "/img/placement/intern2.webp", mobile: "/img/placement/intern2_mob.webp", heading: "Shivanch Ojha, intern at Finzie", alt: "Shivansh Ojha — Technical Program Intern" },
+            { desktop: "/img/placement/intern1.webp", mobile: "/img/placement/intern3_mob.webp", heading: "Sharav Yadav, intern at Say labs", alt: "Sharav Yadav — Web Development Intern" },
+            { desktop: "/img/placement/intern4.webp", mobile: "/img/placement/intern4_mob.webp", heading: "Ketan Bhamre, intern at Tantra AI Tech", alt: "Ketan Bhamre — Web Development Intern" },
+            { desktop: "/img/placement/intern3.webp", mobile: "/img/placement/intern5_mob.webp", heading: "Sirwagya Shekhar, Intern at Herenow AI Labs", alt: "Sirwagya Shekhar — Full Stack Intern" },
+            { desktop: "/img/placement/intern5.webp", mobile: "/img/placement/intern6_mob.webp", heading: "Akash Anand, Intern at Kubestellar", alt: "Akash Anand — DevOps Intern" },
+            { desktop: "/img/placement/intern7.webp", mobile: "/img/placement/intern7_mob.webp", heading: "Khushi Yadav, Intern at Alchemist AI", alt: "Khushi Yadav — Growth & Partnerships Intern" },
         ],
     },
 };

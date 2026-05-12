@@ -43,6 +43,15 @@ const sectionPad = {
     py: { xs: "20px", md: "40px" },
 };
 
+const visuallyHidden = {
+    position: "absolute",
+    width: 1,
+    height: 1,
+    overflow: "hidden",
+    clip: "rect(0 0 0 0)",
+    whiteSpace: "nowrap",
+};
+
 // ─────────────────────────────────────────────────────────────────────────────
 // StatCards — reusable for both placement and tech expertise sections
 // ─────────────────────────────────────────────────────────────────────────────
@@ -230,6 +239,10 @@ function LogoMarquee({ logos }) {
 // TestimonialCard
 // ─────────────────────────────────────────────────────────────────────────────
 function TestimonialCard({ item }) {
+    const hiddenHeadingSuffix = item.heading?.startsWith(item.name)
+        ? item.heading.slice(item.name.length)
+        : "";
+
     return (
         <Box
             sx={{
@@ -262,15 +275,22 @@ function TestimonialCard({ item }) {
                 />
                 <Box>
                     <Typography
+                        component="h3"
                         sx={{
                             fontFamily: "Inter, sans-serif",
                             fontWeight: 700,
                             fontSize: { xs: "18px", md: "18px" },
                             color: "#1E1E1E",
                             lineHeight: "22px",
+                            m: 0,
                         }}
                     >
                         {item.name}
+                        {hiddenHeadingSuffix && (
+                            <Box component="span" sx={visuallyHidden}>
+                                {hiddenHeadingSuffix}
+                            </Box>
+                        )}
                     </Typography>
                     <Typography
                         sx={{
@@ -346,19 +366,6 @@ export default function PlacementsPage({ config }) {
                 }}
             >
                 <Box
-                    component="h1"
-                    sx={{
-                        position: "absolute",
-                        width: 1,
-                        height: 1,
-                        overflow: "hidden",
-                        clip: "rect(0 0 0 0)",
-                        whiteSpace: "nowrap",
-                    }}
-                >
-                    Your Tech Journey, Powered by Vedam
-                </Box>
-                <Box
                     component="img"
                     src={hero.bgDesktop}
                     alt="Your Tech Journey, Powered by Vedam"
@@ -394,7 +401,7 @@ export default function PlacementsPage({ config }) {
                 }}
             >
                 <Box sx={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-                    <Typography component="h2" sx={gradientText}>{placementExpertise.heading}</Typography>
+                    <Typography component="h1" sx={gradientText}>{placementExpertise.heading}</Typography>
                     <Typography sx={{ ...bodyText, maxWidth: 840 }}>
                         {placementExpertise.description}
                     </Typography>
@@ -437,7 +444,7 @@ export default function PlacementsPage({ config }) {
                     }}
                 >
                     <Typography
-                        component="h2"
+                        component="h3"
                         sx={{
                             fontFamily: "Inter, sans-serif",
                             fontWeight: 700,
@@ -484,7 +491,7 @@ export default function PlacementsPage({ config }) {
                 }}
             >
                 <Typography
-                    component="h2"
+                    component="h3"
                     sx={{
                         fontFamily: "Inter, sans-serif",
                         fontWeight: 700,
@@ -583,34 +590,37 @@ export default function PlacementsPage({ config }) {
             >
                 <Box sx={{ display: "flex", flexDirection: "column", gap: "4px" }}>
                     <Typography component="h2" sx={gradientText}>{globalOutcomes.heading}</Typography>
-                    <Typography
-                        sx={{
-                            fontFamily: "Inter, sans-serif",
-                            fontWeight: 600,
-                            fontSize: { xs: "12px", md: "16px" },
-                            color: "#1E1E1E",
-                        }}
-                    >
-                        {globalOutcomes.subheading}
-                    </Typography>
+                    {globalOutcomes.subheading && (
+                        <Typography
+                            sx={{
+                                fontFamily: "Inter, sans-serif",
+                                fontWeight: 600,
+                                fontSize: { xs: "12px", md: "16px" },
+                                color: "#1E1E1E",
+                            }}
+                        >
+                            {globalOutcomes.subheading}
+                        </Typography>
+                    )}
                 </Box>
 
                 {/* Desktop: side by side */}
                 <Box sx={{ display: { xs: "none", md: "flex" }, gap: "16px" }}>
                     {globalOutcomes.cards.map((card, i) => (
-                        <Box
-                            key={i}
-                            component="img"
-                            src={card.desktop}
-                            alt={card.alt}
-                            sx={{
-                                flex: 1,
-                                width: 0,
-                                height: "auto",
-                                borderRadius: "20px",
-                                objectFit: "cover",
-                            }}
-                        />
+                        <Box key={i} sx={{ flex: 1, width: 0, position: "relative" }}>
+                            <Typography component="h3" sx={visuallyHidden}>{card.heading}</Typography>
+                            <Box
+                                component="img"
+                                src={card.desktop}
+                                alt={card.alt}
+                                sx={{
+                                    width: "100%",
+                                    height: "auto",
+                                    borderRadius: "20px",
+                                    objectFit: "cover",
+                                }}
+                            />
+                        </Box>
                     ))}
                 </Box>
 
@@ -623,18 +633,20 @@ export default function PlacementsPage({ config }) {
                     }}
                 >
                     {globalOutcomes.cards.map((card, i) => (
-                        <Box
-                            key={i}
-                            component="img"
-                            src={card.mobile}
-                            alt={card.alt}
-                            sx={{
-                                width: "100%",
-                                height: "auto",
-                                borderRadius: "12px",
-                                objectFit: "cover",
-                            }}
-                        />
+                        <Box key={i} sx={{ position: "relative" }}>
+                            <Typography component="h3" sx={visuallyHidden}>{card.heading}</Typography>
+                            <Box
+                                component="img"
+                                src={card.mobile}
+                                alt={card.alt}
+                                sx={{
+                                    width: "100%",
+                                    height: "auto",
+                                    borderRadius: "12px",
+                                    objectFit: "cover",
+                                }}
+                            />
+                        </Box>
                     ))}
                 </Box>
             </Box>
@@ -673,19 +685,21 @@ export default function PlacementsPage({ config }) {
                     }}
                 >
                     {internships.items.map((item, i) => (
-                        <Box
-                            key={i}
-                            component="img"
-                            src={item.desktop}
-                            alt={item.alt}
-                            sx={{
-                                width: "80%",
-                                height: "auto",
-                                borderRadius: "14px",
-                                objectFit: "cover",
-                                display: "block",
-                            }}
-                        />
+                        <Box key={i} sx={{ position: "relative" }}>
+                            <Typography component="h3" sx={visuallyHidden}>{item.heading}</Typography>
+                            <Box
+                                component="img"
+                                src={item.desktop}
+                                alt={item.alt}
+                                sx={{
+                                    width: "80%",
+                                    height: "auto",
+                                    borderRadius: "14px",
+                                    objectFit: "cover",
+                                    display: "block",
+                                }}
+                            />
+                        </Box>
                     ))}
                 </Box>
 
@@ -698,19 +712,21 @@ export default function PlacementsPage({ config }) {
                     }}
                 >
                     {internships.items.map((item, i) => (
-                        <Box
-                            key={i}
-                            component="img"
-                            src={item.mobile}
-                            alt={item.alt}
-                            sx={{
-                                width: "100%",
-                                height: "auto",
-                                borderRadius: "10px",
-                                objectFit: "cover",
-                                display: "block",
-                            }}
-                        />
+                        <Box key={i} sx={{ position: "relative" }}>
+                            <Typography component="h3" sx={visuallyHidden}>{item.heading}</Typography>
+                            <Box
+                                component="img"
+                                src={item.mobile}
+                                alt={item.alt}
+                                sx={{
+                                    width: "100%",
+                                    height: "auto",
+                                    borderRadius: "10px",
+                                    objectFit: "cover",
+                                    display: "block",
+                                }}
+                            />
+                        </Box>
                     ))}
                 </Box>
             </Box>

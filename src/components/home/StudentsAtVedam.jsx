@@ -12,13 +12,13 @@ const outcomeSlides = [
     {
         desktopSrc: "/img/studentSuccess/outcome_home_desktop_1.webp",
         mobileSrc: "/img/studentSuccess/outcome_home_mobile_1.webp",
-        alt: "Vedam student outcome highlight",
+        alt: "Achievements of 1st year students of Vedam school of technology",
         desktopHeight: 1386,
     },
     {
         desktopSrc: "/img/studentSuccess/outcome_home_desktop_2.webp",
         mobileSrc: "/img/studentSuccess/outcome_home_mobile_2.webp",
-        alt: "Vedam student success highlight",
+        alt: "Achievements of 1st year students of Vedam school of technology",
         desktopHeight: 1383,
     },
 ];
@@ -26,7 +26,7 @@ const outcomeSlides = [
 const videoThumbnail = {
     desktopSrc: "/img/studentSuccess/outcome_home_desktop_3.webp",
     mobileSrc: "/img/studentSuccess/outcome_home_mobile_3.webp",
-    alt: "Students at Vedam video thumbnail",
+    alt: "Achievements of 1st year students of Vedam school of technology",
 };
 
 export const StudentsAtVedam = () => {

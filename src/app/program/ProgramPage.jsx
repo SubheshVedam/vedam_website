@@ -335,7 +335,7 @@ export default function ProgramPage({ config }) {
         <Box
           component="img"
           src={hero.bgImage}
-          alt=""
+          alt={hero.bgAlt ?? ""}
           sx={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 0.6 }}
         />
         <Box sx={{ position: "absolute", inset: 0, background: "linear-gradient(to right, #1a0533 0%, #2F0E4B 30%, rgba(0,0,0,0) 70%)" }} />
@@ -354,7 +354,7 @@ export default function ProgramPage({ config }) {
         >
           {/* Co-brand logos */}
           <Box sx={{ display: "flex", alignItems: "center", gap: { xs: "8px", md: "16px" } }}>
-            <Box component="img" src={hero.partnerLogo} alt="Partner university" sx={{ height: { xs: "27px", md: "48px" }, width: { xs: "82px", md: "138px" } }} />
+            <Box component="img" src={hero.partnerLogo} alt={hero.partnerLogoAlt ?? "Partner university"} sx={{ height: { xs: "27px", md: "48px" }, width: { xs: "82px", md: "138px" } }} />
             <Typography sx={{ color: "white", fontFamily: "Inter, sans-serif", fontWeight: 300, fontSize: { xs: "18px", md: "28px" }, lineHeight: 1, mx: { xs: "2px", md: "4px" } }}>
               ×
             </Typography>
@@ -374,7 +374,7 @@ export default function ProgramPage({ config }) {
               }}>
                 {hero.title}
               </Typography>
-              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 500, fontSize: { xs: "10px", md: "14px" }, color: "#F9F9F9", opacity: 0.9 }}>
+              <Typography component="h2" sx={{ fontFamily: "Inter, sans-serif", fontWeight: 500, fontSize: { xs: "10px", md: "14px" }, color: "#F9F9F9", opacity: 0.9, m: 0 }}>
                 {hero.subtitle}
               </Typography>
             </Box>
@@ -562,19 +562,19 @@ export default function ProgramPage({ config }) {
           <StatsTile stats={citySection.statsLeft} />
           <Box sx={{ display: "flex", gap: "4px", height: "111px" }}>
             <Box sx={{ flex: 1, borderRadius: "10px", overflow: "hidden" }}>
-              <Box component="img" src={citySection.img1} alt="" sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <Box component="img" src={citySection.img1} alt={citySection.imageAlts?.[0] ?? ""} sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </Box>
             <Box sx={{ flex: 1, borderRadius: "10px", overflow: "hidden" }}>
-              <Box component="img" src={citySection.img2} alt="" sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <Box component="img" src={citySection.img2} alt={citySection.imageAlts?.[1] ?? ""} sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </Box>
           </Box>
           <StatsTile stats={citySection.statsRight} />
           <Box sx={{ display: "flex", gap: "4px", height: "111px" }}>
             <Box sx={{ flex: 1, borderRadius: "10px", overflow: "hidden" }}>
-              <Box component="img" src={citySection.img4} alt="" sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <Box component="img" src={citySection.img4} alt={citySection.imageAlts?.[3] ?? ""} sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </Box>
             <Box sx={{ flex: 1, borderRadius: "10px", overflow: "hidden" }}>
-              <Box component="img" src={citySection.img3} alt="" sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <Box component="img" src={citySection.img3} alt={citySection.imageAlts?.[2] ?? ""} sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </Box>
           </Box>
         </Box>
@@ -586,16 +586,16 @@ export default function ProgramPage({ config }) {
               <StatsTile stats={citySection.statsLeft} />
             </Box>
             <Box sx={{ gridColumn: "1", gridRow: "2 / span 3", borderRadius: "24px", overflow: "hidden" }}>
-              <Box component="img" src={citySection.img1} alt="" sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <Box component="img" src={citySection.img1} alt={citySection.imageAlts?.[0] ?? ""} sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </Box>
             <Box sx={{ gridColumn: "2", gridRow: "2 / span 3", borderRadius: "24px", overflow: "hidden", height: "290px" }}>
-              <Box component="img" src={citySection.img3} alt="" sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <Box component="img" src={citySection.img3} alt={citySection.imageAlts?.[2] ?? ""} sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </Box>
             <Box sx={{ gridColumn: "3", gridRow: "1 / span 3", borderRadius: "24px", overflow: "hidden" }}>
-              <Box component="img" src={citySection.img4} alt="" sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <Box component="img" src={citySection.img4} alt={citySection.imageAlts?.[3] ?? ""} sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </Box>
             <Box sx={{ gridColumn: "4", gridRow: "1 / span 3", borderRadius: "24px", overflow: "hidden" }}>
-              <Box component="img" src={citySection.img2} alt="" sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <Box component="img" src={citySection.img2} alt={citySection.imageAlts?.[1] ?? ""} sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </Box>
             <Box sx={{ gridColumn: "3 / span 2", gridRow: "4" }}>
               <StatsTile stats={citySection.statsRight} />
@@ -608,6 +608,11 @@ export default function ProgramPage({ config }) {
       <Box sx={{ ...sectionPad, display: "flex", flexDirection: "column", gap: { xs: "10px", md: "20px" } }}>
         <Box sx={{ display: "flex", flexDirection: "column", gap: "8px" }}>
           <Typography component="h2" sx={gradientText}>Campus &amp; Amenities</Typography>
+          {campusSection.subheading && (
+            <Typography component="h3" sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: { xs: "14px", md: "20px" }, color: "#1E1E1E", lineHeight: 1.3, m: 0 }}>
+              {campusSection.subheading}
+            </Typography>
+          )}
           <Typography sx={{ ...sectionDescriptionText, maxWidth: 1024 }}>
             {campusSection.description}
           </Typography>
@@ -617,7 +622,7 @@ export default function ProgramPage({ config }) {
         <Box sx={{ display: { xs: "grid", md: "none" }, gridTemplateColumns: "1fr 1fr", gap: "4px" }}>
           {campusSection.images.map((src, i) => (
             <Box key={i} sx={{ height: "115px", borderRadius: "4px", overflow: "hidden" }}>
-              <Box component="img" src={src} alt={`Campus ${i + 1}`} sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <Box component="img" src={src} alt={campusSection.imageAlts?.[i] ?? `Campus ${i + 1}`} sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </Box>
           ))}
         </Box>
@@ -628,7 +633,7 @@ export default function ProgramPage({ config }) {
             <Box key={ri} sx={{ display: "flex", gap: "20px" }}>
               {row.map((src, i) => (
                 <Box key={i} sx={{ flex: 1, height: "250px", borderRadius: "12px", overflow: "hidden" }}>
-                  <Box component="img" src={src} alt={`Campus ${ri * 3 + i + 1}`} sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                  <Box component="img" src={src} alt={campusSection.imageAlts?.[ri * 3 + i] ?? `Campus ${ri * 3 + i + 1}`} sx={{ width: "100%", height: "100%", objectFit: "cover" }} />
                 </Box>
               ))}
             </Box>
@@ -674,7 +679,7 @@ export default function ProgramPage({ config }) {
             >
               <Box component="img" src={img} alt={title} sx={{ width: "64px", height: "64px", objectFit: "contain", flexShrink: 0 }} />
               <Box sx={{ flex: 1, minWidth: 0 }}>
-                <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, color: "white", fontSize: "10px", letterSpacing: "-0.2px", lineHeight: 1.2, mb: "4px" }}>
+                <Typography component="h3" sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, color: "white", fontSize: "10px", letterSpacing: "-0.2px", lineHeight: 1.2, mb: "4px", mt: 0 }}>
                   {`${title} (${percent})`}
                 </Typography>
                 <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 500, color: "white", fontSize: "8px", letterSpacing: "-0.16px", lineHeight: 1.2 }}>
@@ -709,7 +714,7 @@ export default function ProgramPage({ config }) {
                 }}
               />
               <Box sx={{ position: "relative", zIndex: 1, textAlign: "center" }}>
-                <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, color: "white", fontSize: "18px", letterSpacing: "-0.36px", lineHeight: 1.2, mb: "4px" }}>{title}</Typography>
+                <Typography component="h3" aria-label={`${title} (${percent})`} sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, color: "white", fontSize: "18px", letterSpacing: "-0.36px", lineHeight: 1.2, mb: "4px", mt: 0 }}>{title}</Typography>
                 <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 600, color: "#F97D03", fontSize: "18px", letterSpacing: "-0.36px", lineHeight: 1.2, mb: "8px" }}>{percent}</Typography>
                 <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 500, color: "white", fontSize: "16px", letterSpacing: "-0.32px", lineHeight: 1.2 }}>{desc}</Typography>
               </Box>
@@ -725,9 +730,11 @@ export default function ProgramPage({ config }) {
         <Box sx={{ display: "flex", gap: "20px", borderBottom: "1px solid rgba(0,0,0,0.15)", mt: { xs: "10px", md: 0 } }}>
           {[{ id: "course", label: "Course Fees" }, { id: "hostel", label: "Hostel Fees" }].map(({ id, label }) => (
             <Box
+              component="h3"
               key={id}
               onClick={() => setFeeTab(id)}
               sx={{
+                m: 0,
                 pb: "10px", cursor: "pointer",
                 borderBottom: feeTab === id ? "2px solid #1E1E1E" : "2px solid transparent",
                 fontFamily: "Inter, sans-serif", fontWeight: 700,
@@ -807,7 +814,7 @@ export default function ProgramPage({ config }) {
 
             {/* Fee highlights */}
             <Box sx={{ display: "flex", flexDirection: "column", gap: "8px", maxWidth: 742, mt: { xs: "8px", md: 0 } }}>
-              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: "12px", color: "#6C10BC", letterSpacing: "-0.24px", lineHeight: 1.5 }}>
+              <Typography component="h3" sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: "12px", color: "#6C10BC", letterSpacing: "-0.24px", lineHeight: 1.5, m: 0 }}>
                 Important Fee Highlights
               </Typography>
               <Box component="ol" sx={{ m: 0, pl: "18px", "& li::marker": { fontSize: { xs: "10px", md: "13px" }, fontWeight: 500, color: "#1F1F1F" } }}>
@@ -841,7 +848,7 @@ export default function ProgramPage({ config }) {
 
           <Box sx={{ display: "flex", flexDirection: { xs: "column", md: "row" }, border: "0.5px solid rgba(0,0,0,0.1)", borderRadius: "8px", overflow: "hidden" }}>
             <Box sx={{ flex: 1, bgcolor: "#F9F9F9", px: { xs: "20px", md: "40px" }, py: "20px", display: "flex", flexDirection: "column", gap: "10px" }}>
-              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, color: "#6C10BC", fontSize: { xs: "16px", md: "20px" }, lineHeight: 1.5 }}>
+              <Typography component={financing.zeroEmi.headingComponent ?? "div"} sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, color: "#6C10BC", fontSize: { xs: "16px", md: "20px" }, lineHeight: 1.5, m: 0 }}>
                 {financing.zeroEmi.title}
               </Typography>
               <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: { xs: 500, md: 600 }, color: "#1E1E1E", fontSize: { xs: "10px", md: "12px" }, lineHeight: 1.5 }}>
@@ -849,7 +856,7 @@ export default function ProgramPage({ config }) {
               </Typography>
             </Box>
             <Box sx={{ flex: 1, bgcolor: "#fff", px: { xs: "20px", md: "40px" }, py: "20px", display: "flex", flexDirection: "column", gap: "10px", borderTop: { xs: "0.5px solid rgba(0,0,0,0.1)", md: "none" }, borderLeft: { xs: "none", md: "0.5px solid rgba(0,0,0,0.1)" } }}>
-              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, color: "#6C10BC", fontSize: { xs: "16px", md: "20px" }, lineHeight: 1.5 }}>
+              <Typography component="h3" sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, color: "#6C10BC", fontSize: { xs: "16px", md: "20px" }, lineHeight: 1.5, m: 0 }}>
                 {financing.bankLoan.title}
               </Typography>
               <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: { xs: 500, md: 600 }, color: "#1E1E1E", fontSize: { xs: "10px", md: "12px" }, lineHeight: 1.5 }}>
@@ -861,7 +868,7 @@ export default function ProgramPage({ config }) {
 
         {/* Financing Partners */}
         <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: "10px", md: "20px" } }}>
-          <Typography component="h2" sx={gradientText}>Financing Partners</Typography>
+          <Typography component="h3" sx={gradientText}>Financing Partners</Typography>
           <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: { xs: "10px", md: "20px" } }}>
             <Box sx={{ display: "inline-flex", gap: "4px", alignItems: "center", border: "1px solid #6C10BC", borderRadius: "24px", p: "5px" }}>
               {financing.loanPartners.map(({ id, label }) => (
@@ -911,7 +918,7 @@ export default function ProgramPage({ config }) {
         <Box
           component="img"
           src={cta.mobile}
-          alt=""
+          alt={cta.alt ?? ""}
           sx={{
             display: { xs: "block", md: "none" },
             width: "100%",
@@ -922,7 +929,7 @@ export default function ProgramPage({ config }) {
         <Box
           component="img"
           src={cta.desktop}
-          alt=""
+          alt={cta.alt ?? ""}
           sx={{
             display: { xs: "none", md: "block" },
             width: "100%",

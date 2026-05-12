@@ -4,7 +4,7 @@ import { Box, Typography } from "@mui/material";
 import Button from "@mui/material/Button";
 import Image from "next/image";
 
-export const VideoWithText = ({ title, subtitle, isImg, videoUrl, imageUrl }) => {
+export const VideoWithText = ({ title, subtitle, isImg, videoUrl, imageUrl, imageAlt = "Vedam School of Technology - 4-year CS & AI program, BTech degree by UGC-approved universities" }) => {
   return (
     <Box
       sx={{
@@ -35,7 +35,7 @@ export const VideoWithText = ({ title, subtitle, isImg, videoUrl, imageUrl }) =>
       {!isImg ? <>
         <Image
           src="/img/college.webp"
-          alt="Hero"
+          alt={imageAlt}
           fill
           priority
           style={{ objectFit: "cover", minWidth: "500px", minHeight: "400px" }}
@@ -64,7 +64,7 @@ export const VideoWithText = ({ title, subtitle, isImg, videoUrl, imageUrl }) =>
         <img
           src={imageUrl || "/img/life_vedam_bg.webp"}
           fetchPriority="high"
-          alt="Background"
+          alt={imageAlt}
           style={{
             position: "absolute",
             top: 0,

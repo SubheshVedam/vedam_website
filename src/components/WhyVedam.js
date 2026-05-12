@@ -67,7 +67,7 @@ const WhyVedam = ({ data }) => {
               }}
             >
               <Box
-                component="h4"
+                component="h3"
                 sx={{
                   color: "white",
                   fontWeight: "bold",
@@ -137,7 +137,7 @@ const WhyVedam = ({ data }) => {
             }}
           >
             <Box
-              component="h4"
+              component="h3"
               sx={{
                 color: "white",
                 fontWeight: "bold",

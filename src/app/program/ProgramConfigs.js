@@ -26,7 +26,9 @@ const createGurugramInCampusHostelRoomType = ({
 export const gurugramConfig = {
     hero: {
         bgImage: "/img/program/hero-bg-ggn.webp",
+        bgAlt: "Sushant University Gurugram partnered with Vedam School of Technology",
         partnerLogo: "/img/program/sushant.webp",
+        partnerLogoAlt: "Sushant University logo",
         title: "UG Program in Computer Science & Artificial Intelligence",
         subtitle: "Bachelor of Technology Degree by Sushant University, Gurugram",
         applyUrl: "https://apply.vedam.org",
@@ -63,6 +65,12 @@ export const gurugramConfig = {
         img2: "/img/program/gurugram-2.webp",
         img3: "/img/program/gurugram-3.webp",
         img4: "/img/program/gurugram-4.webp",
+        imageAlts: [
+            "Gurugram corporate hub",
+            "Gurugram city campus surroundings",
+            "Gurugram startup and technology district",
+            "Gurugram Delhi NCR business hub",
+        ],
     },
 
     campusSection: {
@@ -74,6 +82,14 @@ export const gurugramConfig = {
             "/img/program/campus-4.webp",
             "/img/program/campus-5.webp",
             "/img/program/campus-6.webp",
+        ],
+        imageAlts: [
+            "Sushant University entrance",
+            "Sushant University campus",
+            "Sushant University auditorium",
+            "Sushant University sports ground",
+            "Sushant University campus building",
+            "Sushant University tennis court",
         ],
     },
 
@@ -241,7 +257,8 @@ export const gurugramConfig = {
 
     cta: {
         mobile: "/img/student1.webp",
-        desktop: "/img/student.webp"
+        desktop: "/img/student.webp",
+        alt: "Vedam's first year students, global outcomes",
     },
 };
 
@@ -292,7 +309,9 @@ const createPuneOutCampusHostelRoomType = ({
 export const puneConfig = {
     hero: {
         bgImage: "/img/program/hero-bg-pune.webp",
+        bgAlt: "ADYPU Pune partnered with Vedam School of Technology",
         partnerLogo: "/img/program/adypu.webp",
+        partnerLogoAlt: "ADYPU logo",
         title: "UG Program in Computer Science & Artificial Intelligence",
         subtitle: "Bachelor of Technology Degree by ADYPU, Pune",
         applyUrl: "https://apply.vedam.org",
@@ -332,7 +351,8 @@ export const puneConfig = {
     },
 
     campusSection: {
-        description: "Campus in the Heart of Pune's Innovation Ecosystem Vedam sits on a lush, 100-acre campus at Ajeenkya DY Patil University, Lohegaon — just 6 kilometres from Pune International Airport. It's a self-contained ecosystem of education, infrastructure, and community, in India's most liveable city.",
+        subheading: "Campus in the Heart of Pune's Innovation Ecosystem",
+        description: "Vedam sits on a lush, 100-acre campus at Ajeenkya DY Patil University, Lohegaon — just 6 kilometres from Pune International Airport. It's a self-contained ecosystem of education, infrastructure, and community, in India's most liveable city.",
         images: [
             "/img/program/campus1.webp",
             "/img/program/campus2.webp",
@@ -340,6 +360,14 @@ export const puneConfig = {
             "/img/program/campus4.webp",
             "/img/program/campus5.webp",
             "/img/program/campus6.webp",
+        ],
+        imageAlts: [
+            "ADYPU hostel",
+            "ADYPU campus",
+            "ADYPU mac lab",
+            "ADYPU library",
+            "ADYPU sports ground",
+            "ADYPU campus building",
         ],
     },
 
@@ -358,7 +386,7 @@ export const puneConfig = {
     scholarships: {
         description: "We believe every deserving student should have access to world-class education. ADYPU and Vedam jointly offer scholarships that recognise talent, support diversity, and remove financial barriers.",
         items: [
-            { title: "Merit Based Scholarship", percent: "Upto 100%", desc: "Recognizes academic excellence, unique talent and leadership potential.", img: "/img/program/scholarship-merit.webp" },
+            { title: "Merit Based Scholarship", percent: "Up to 100%", desc: "Recognizes academic excellence, unique talent and leadership potential.", img: "/img/program/scholarship-merit.webp" },
             { title: "Women in Tech Scholarship", percent: "Upto 20%", desc: "Empowering and supporting women in tech for growth and success.", img: "/img/program/scholarship-women.webp" },
             { title: "Need Based Scholarship", percent: "Upto 30%", desc: "Focused on specific fields of study or demonstrating financial needs.", img: "/img/program/scholarship-need.webp" },
         ],
@@ -502,7 +530,8 @@ export const puneConfig = {
     financing: {
         description: "At Vedam School of Technology, we understand that flexibility and convenience in fee payments are important to our students and their families. To make this process easier and more accessible, we have partnered with recognized financial companies.",
         zeroEmi: {
-            title: "Loan at Low Cost EMI",
+            title: "Loan at Zero Cost EMI",
+            headingComponent: "h3",
             description: "You can pay your annual course fee in monthly installments with no interest, no processing fee, and no hidden charges. We've partnered trusted fintech company working with over 2,500 institutions, to offer this option",
         },
         bankLoan: {
@@ -541,6 +570,7 @@ export const puneConfig = {
 
     cta: {
         mobile: "/img/student1.webp",
-        desktop: "/img/student.webp"
+        desktop: "/img/student.webp",
+        alt: "Vedam's first-year students, global outcomes",
     },
 };

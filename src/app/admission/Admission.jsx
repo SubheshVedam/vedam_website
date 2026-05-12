@@ -1,6 +1,6 @@
 import React from "react";
 import { admissionScreenData, homeScreenData } from "@/constants/data";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import {
   AdmissionAndFees,
   AdmissionProcess,
@@ -56,6 +56,35 @@ const Admission = ({
       ? [topSections]
       : [];
   const sections = [
+    {
+      id: "apply-now-2026",
+      useCard: false,
+      plainWrapperProps: {
+        sx: {
+          width: "100%",
+          textAlign: "center",
+          marginBottom: { xs: "1rem", md: "1.5rem" },
+        },
+      },
+      render: () => (
+        <Typography
+          component="h2"
+          variant="h2"
+          fontFamily="Inter"
+          sx={{
+            display: "inline-block",
+            fontWeight: "700",
+            background: linearGradient,
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            fontSize: "clamp(1.3rem, 2.5vw, 2rem)",
+            lineHeight: "120%",
+          }}
+        >
+          Apply Now for the 2026 Intake
+        </Typography>
+      ),
+    },
     {
       id: "admission-and-fees",
       subtitle: admissionScreenData.admissionAndFees.subtitle,

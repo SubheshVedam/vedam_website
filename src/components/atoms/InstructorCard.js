@@ -55,7 +55,7 @@ export default function InstructorCard({
       >
         <Image
           src={imageUrl}
-          alt={name}
+          alt="Instructors at Vedam School of Technology"
           fill
           style={{ objectFit: "cover", objectPosition: "top" }}
         />

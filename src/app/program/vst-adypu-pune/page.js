@@ -49,9 +49,9 @@ const puneProgramSchema = {
 };
 
 export const metadata = {
-    title: "Program & Fees - VST ADYPU Pune | Vedam School of Technology",
+    title: "BTech in CS & AI in Pune | New Age College | Vedam",
     description:
-        "Explore the VST ADYPU Pune Computer Science and AI program, fee structure, hostel fees, scholarships, financing options, and campus details.",
+        "Apply for a 4-year BTech in Computer Science & AI in Pune. New age private CS college with industry curriculum, top placements, and startup culture. 2026 batch.",
     keywords: [
         "VST Pune program and fees",
         "Vedam ADYPU Pune program fees",
@@ -70,9 +70,9 @@ export const metadata = {
         "Ajeenkya DY Patil University Vedam",
     ],
     openGraph: {
-        title: "Program & Fees - VST ADYPU Pune",
+        title: "BTech in CS & AI in Pune | New Age College | Vedam",
         description:
-            "Review the VST ADYPU Pune CS & AI program, fees, hostel options, scholarships, financing, and campus details.",
+            "Apply for a 4-year BTech in Computer Science & AI in Pune. New age private CS college with industry curriculum, top placements, and startup culture. 2026 batch.",
         url: "https://www.vedam.org/program/vst-adypu-pune",
         siteName: "Vedam School of Technology",
         type: "website",

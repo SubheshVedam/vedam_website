@@ -1,6 +1,9 @@
+"use client";
+
 import * as React from "react";
 import { Box, Typography, Link, Stack, Grid } from "@mui/material";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -56,6 +59,9 @@ const SOCIAL_LINKS = [
 ];
 
 export default function Footer() {
+  const pathname = usePathname();
+  const headingComponent = pathname === "/placement" ? "h2" : "h3";
+
   return (
     <Box
       component="footer"
@@ -110,8 +116,8 @@ export default function Footer() {
           {FOOTER_LINKS.map((column) => (
             <Grid item xs={6} sm={6} md={3} key={column.title}>
               <Typography
-                component="h2"
-                variant="h2"
+                component={headingComponent}
+                variant="h3"
                 sx={{
                   fontWeight: 500,
                   mb: { xs: "8px", sm: "16px" },
@@ -146,8 +152,8 @@ export default function Footer() {
           {/* Social Links Column */}
           <Grid item xs={12} sm={6} md={3} sx={{ mt: { xs: 2, sm: 0 } }}>
             <Typography
-              component="h2"
-              variant="h2"
+              component={headingComponent}
+              variant="h3"
               sx={{
                 fontWeight: 400,
                 mb: { xs: "8px", sm: "16px" },

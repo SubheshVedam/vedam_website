@@ -7,6 +7,7 @@ export const AdmissionAndFees = () => {
   return (
     <Fragment>
       <Typography
+        component="p"
         variant="subtitle1"
         sx={{
           fontSize: { xs: "14px", md: "1rem" },
@@ -34,7 +35,7 @@ export const AdmissionAndFees = () => {
       >
         <Box>
           <Typography
-            component="h3"
+            component="div"
             variant="h1"
             sx={{
               fontSize: "clamp(1.4rem, 2vw, 40px)",

@@ -7,8 +7,8 @@ import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 export const revalidate = 3600;
 
 export const metadata = {
-  title: 'Admissions & Fees - Vedam School of Technology',
-  description: 'Start your journey in Computer Science and AI at Vedam School of Technology. Explore our BTech programs, check eligibility, understand the admission process, and discover our affordable fee structure and scholarships.',
+  title: 'New Age College for BTech in CS & AI  Admission | Vedam',
+  description: 'Apply for BTech in CS & AI at Vedam. New age private CS college with simple admission process, scholarships up to 100%, and direct admission.',
   keywords: [
     'Vedam School of Technology admissions',
     'Vedam admissions 2026',
@@ -28,8 +28,8 @@ export const metadata = {
     'VST Gurugram admission',
   ],
   openGraph: {
-    title: 'Admissions - Vedam School of Technology',
-    description: 'Apply to Vedam School of Technology - Learn about our Computer Science and AI programs, admission requirements, application process, and scholarship opportunities.',
+    title: 'New Age College for BTech in CS & AI  Admission | Vedam',
+    description: 'Apply for BTech in CS & AI at Vedam. New age private CS college with simple admission process, scholarships up to 100%, and direct admission.',
     url: 'https://www.vedam.org/admission',
     siteName: 'Vedam School of Technology',
     type: 'website',

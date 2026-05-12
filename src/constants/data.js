@@ -280,7 +280,7 @@ export const homeScreenData = {
     background_video: "/vid/videoBgNew.mp4",
     title: "Learn Tech by Building\u00A0It",
     subtitle:
-      "Vedam's 4-year UG OnCampus program prepares you for startups, innovation, and leadership with industry driven coursework and hands-on projects.",
+      "Learn to build real products from Day 1. Vedam's 4-year on-campus CS & AI program prepares you for startups, innovation, and leadership with a B.Tech degree awarded by UGC-approved partner universities.",
   },
   fromEducationToEntrance: {
     // title: "",
@@ -721,7 +721,7 @@ export const homeScreenData = {
   },
   learnFrom: {
     title: "",
-    subtitle: "Meet your Mentors",
+    subtitle: "Meet Your Mentors",
   },
   whatPeople: {
     subtitle: "What students say about us",
@@ -897,7 +897,7 @@ export const homeScreenData = {
         id: 1,
         image: "/img/inTheNews/11.webp",
         name: "Education Times",
-        alt: "News Article 1",
+        alt: "Vedam at Education Times",
         sourceLogo: "/img/inTheNews/ET.webp",
         link: "https://timesofindia.indiatimes.com/business/india-business/vedam-school-of-technology-first-year-students-reportedly-secure-lfx-mentorship-cncf-karmada-with-rs-2-73-lakh-stipend-and-rs-4-5-lakh-via-bug-bounties-in-hackerone/articleshow/130394810.cms",
       },
@@ -905,7 +905,7 @@ export const homeScreenData = {
         id: 2,
         image: "/img/inTheNews/10.webp",
         name: "Times of India",
-        alt: "News Article 2",
+        alt: "Vedam at Times of India",
         sourceLogo: "/img/inTheNews/TOI.webp",
         link: "https://timesofindia.indiatimes.com/business/india-business/vedam-school-of-technology-first-year-students-reportedly-secure-lfx-mentorship-cncf-karmada-with-rs-2-73-lakh-stipend-and-rs-4-5-lakh-via-bug-bounties-in-hackerone/articleshow/130394810.cms",
       },
@@ -913,7 +913,7 @@ export const homeScreenData = {
         id: 3,
         image: "/img/inTheNews/1.webp",
         name: "News 24",
-        alt: "News Article 3",
+        alt: "Vedam at News 24",
         sourceLogo: "/img/inTheNews/News24.webp",
         link: "https://indianews24.asia/vedam-school-of-technology-completes-first-semester-of-ai-focused-computer-science-program/",
       },
@@ -921,7 +921,7 @@ export const homeScreenData = {
         id: 4,
         image: "/img/inTheNews/2.webp",
         name: "ET Government",
-        alt: "News Article 4",
+        alt: "Vedam at ET government",
         sourceLogo: "/img/inTheNews/ETgovt.webp",
         link: "https://government.economictimes.indiatimes.com/news/education/vedam-school-of-technology-acquires-algoprep-to-build-indias-first-ai-native-tech-curriculum/120303273",
       },
@@ -929,7 +929,7 @@ export const homeScreenData = {
         id: 5,
         image: "/img/inTheNews/3.webp",
         name: "India Education Diary",
-        alt: "News Article 4",
+        alt: "Vedam at Education of India",
         sourceLogo: "/img/inTheNews/indiaeddiary.webp",
         link: "https://indiaeducationdiary.in/vedam-school-of-technology-sets-a-new-benchmark-for-computer-science-ai-program-from-the-first-semester/",
       },
@@ -994,14 +994,14 @@ export const admissionScreenData = {
   hero: {
     background_video:
       "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
-    title: "Top 5% will make it\nto the Vedam batch.",
-    subtitle: "Apply Now for 2026 admission",
+    title: "Top 5% will make it to the Vedam batch",
+    subtitle: "Apply Now for the 2026 Intake",
   },
   admissionAndFees: {
     subtitle: "Admission & Fees",
     description:
-      "We look forward to welcoming students who value a talented peer group. Only the top 5% will make it to the Vedam batch. The group study and peer to peer learning increases greatly in such a batch.",
-    applyNow: "Apply Now for 2026 admission",
+      "We look forward to welcoming students who value a talented peer group. Only the top 5% will make it to the Vedam batch. The group study and peer-to-peer learning increase greatly in such a batch.",
+    applyNow: "Apply Now for the 2026 Intake",
     eligibilityStrong: "Eligibility Criteria: ",
     eligibilityText:
       "2025, 2026 12th student with PCM (>50% in PCM & 12th boards Overall)",
@@ -1025,7 +1025,7 @@ export const admissionScreenData = {
     ],
   },
   admissionProcess: {
-    subtitle: "Admission Process",
+    subtitle: "Admission Process 2026",
     leftSideArray: [
       { id: 0, text: "Apply Online" },
       { id: 1, text: "Appear for Test" },

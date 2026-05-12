@@ -231,19 +231,7 @@ export const AdmissionProcess = ({ rightSideSteps }) => {
               }}
             >
               <Typography
-                variant="subtitle1"
-                sx={{
-                  fontWeight: "600",
-                  fontSize: "clamp(12px, 2vw, 20px)",
-                  color: "#6C10BC",
-                  fontFamily: "Inter",
-                  lineHeight: "100%",
-                  marginBottom: "4px",
-                }}
-              >
-                {item.step}
-              </Typography>
-              <Typography
+                component="h3"
                 variant="subtitle1"
                 sx={{
                   fontWeight: "400",
@@ -254,7 +242,7 @@ export const AdmissionProcess = ({ rightSideSteps }) => {
                   marginBottom: { xs: "12px", md: "16px" },
                 }}
               >
-                {item.title}
+                {`${item.step}${item.id === 4 ? ": " : " : "}${item.title}`}
               </Typography>
               {item.id == 4 && (
                 <Box

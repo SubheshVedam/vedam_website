@@ -15,8 +15,8 @@ const organizationSchema = {
 };
 
 export const metadata = {
-  title: 'Vedam School of Technology | India’s Premier CS & AI College',
-  description: 'Welcome to Vedam School of Technology - A premier institution for Computer Science and AI education. Discover our cutting-edge programs, expert faculty, and innovative learning environment.',
+  title: 'New Age College for B.Tech Degree in CS & AI | Vedam school of Technology',
+  description: "Earn a B.Tech degree in CS & AI by UGC-approved universities through Vedam's 4-year New Age program in CS and AI.",
   alternates: {
     canonical: '/',
   },
@@ -33,8 +33,8 @@ export const metadata = {
     'AI and machine learning BTech'
   ],
   openGraph: {
-    title: 'Home - Vedam School of Technology',
-    description: 'Welcome to Vedam School of Technology - A premier institution for Computer Science and AI education. Discover our cutting-edge programs, expert faculty, and innovative learning environment.',
+    title: 'New Age College for B.Tech Degree in CS & AI | Vedam school of Technology',
+    description: "Earn a B.Tech degree in CS & AI by UGC-approved universities through Vedam's 4-year New Age program in CS and AI.",
     url: 'https://www.vedam.org/',
     siteName: 'Vedam School of Technology',
     type: 'website',

@@ -55,7 +55,7 @@ export default function ExpertCard({
             flexShrink: 0,
           }}
           image={imageUrl}
-          alt={name}
+          alt="Mentors at Vedam School of Technology"
         />
         <CardContent
           sx={{

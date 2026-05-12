@@ -49,9 +49,9 @@ const gurugramProgramSchema = {
 };
 
 export const metadata = {
-    title: "Program & Fees - VST Gurugram | Vedam School of Technology",
+    title: "BTech in CS & AI Admission in Gurugram | New Age College | Vedam",
     description:
-        "Explore the VST Gurugram Computer Science and AI program, fee structure, hostel details, scholarships, financing options, and campus information.",
+        "Apply for a 4-year BTech in Computer Science & AI in Gurugram, Delhi NCR. New age private CS college with industry curriculum and top placements.",
     keywords: [
         "VST Gurugram program and fees",
         "Vedam Gurugram program fees",
@@ -72,9 +72,9 @@ export const metadata = {
         "AI engineering college Delhi NCR",
     ],
     openGraph: {
-        title: "Program & Fees - VST Gurugram",
+        title: "BTech in CS & AI Admission in Gurugram | New Age College | Vedam",
         description:
-            "Review the VST Gurugram CS & AI program, fees, hostel details, scholarships, financing, and campus information.",
+            "Apply for a 4-year BTech in Computer Science & AI in Gurugram, Delhi NCR. New age private CS college with industry curriculum and top placements.",
         url: "https://www.vedam.org/program/vst-gurugram",
         siteName: "Vedam School of Technology",
         type: "website",
