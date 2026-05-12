@@ -67,8 +67,10 @@ export default function Navbar() {
     return activeCampus?.label || link.label;
   };
 
-  const handleCampusMenuOpen = (event) => {
-    setCampusMenuAnchor(event.currentTarget);
+  const handleCampusMenuToggle = (event) => {
+    setCampusMenuAnchor((currentAnchor) =>
+      currentAnchor ? null : event.currentTarget
+    );
   };
 
   const handleCampusMenuClose = () => {
@@ -206,7 +208,7 @@ export default function Navbar() {
                         <Button
                           color="inherit"
                           id="admission-campus-menu-trigger"
-                          onClick={handleCampusMenuOpen}
+                          onClick={handleCampusMenuToggle}
                           endIcon={<ArrowDropDownIcon />}
                           sx={{
                             color: "#1F1F1F",
@@ -228,6 +230,7 @@ export default function Navbar() {
                           anchorEl={campusMenuAnchor}
                           open={Boolean(campusMenuAnchor)}
                           onClose={handleCampusMenuClose}
+                          sx={{ zIndex: 12000 }}
                           MenuListProps={{
                             "aria-labelledby": "admission-campus-menu-trigger",
                             sx: {

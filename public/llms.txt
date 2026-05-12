@@ -1,0 +1,160 @@
+# Vedam School of Technology
+
+> Vedam School of Technology is a new-age private computer science college in India, offering a 4-year on-campus undergraduate program in Computer Science with a specialisation in Artificial Intelligence. The BTech degree is awarded by UGC-approved partner universities like Ajeenkya DY Patil University (ADYPU) in Pune and Sushant University in Gurugram. Vedam is known for its industry-driven curriculum, hands-on coding from Day 1, instructors by engineers from Microsoft, Amazon, and other MAANG companies, and selective admission with only the top 5% of applicants offered a seat.
+
+## Key Information
+
+- Type: New age college
+- Founded: 2025
+- Headquarters: India
+- Flagship Program: 4-year undergraduate programme in Computer Science with AI specialisation (CS(AI)), a BTech degree by UGC-approved universities
+
+- Campuses:
+  - Pune (Lohegaon) - partner: Ajeenkya DY Patil University (ADYPU)
+  - Gurugram (Delhi NCR) - partner: Sushant University
+
+- Degree: Bachelor of Technology (BTech), awarded by UGC-approved partner universities
+- Program Duration: 4 years, full-time, on-campus
+- Specialisation: Computer Science with Artificial Intelligence
+- Total Fee: Around 18 lakhs (4-year program)
+- Application Fee: INR 1,000
+- Seat Blocking Fee: INR 50,000 (adjusted against first-semester fee)
+- Acceptance Rate: ~5% (highly selective)
+- Eligibility: All the students who appeared for 12th exam in 2025, 2026 with PCM (>50% in PCM & 12th boards Overall) are eligible.
+- Entrance Exam: Vedam Scholastic Aptitude Test (VSAT) and performance-based selection are also available for high-merit applicants
+- Recognitions: UGC-approved partner universities, NAAC-accredited, NIRF-ranked partner institutions
+
+## What Makes Vedam Different
+
+Vedam is a new age college built to redefine engineering education in India. Unlike traditional engineering colleges that rely on lecture-heavy, theory-first curricula, Vedam's programme emphasises the following:
+
+- Coding from Day 1 where students write 100,000+ lines of code over 4 years
+- AI-first curriculum designed with inputs from Microsoft, Amazon, and other MAANG engineers
+- Hands-on projects, paid internships, and real-world product building
+- Selective peer group with only top 5% of applicants admitted
+- Personal MacBook for every student
+- Mentorship from industry leaders and startup founders
+- Preparation for global tech competitions like Google Summer of Code (GSoC), LFX
+- Placements focused on top tech companies, startups, and MAANG roles
+
+## Programs
+
+- [CS(AI) Programme at ADYPU Pune](https://www.vedam.org/program/vst-adypu-pune): 4-year on-campus programme in computer science with AI specialisation, delivered by Vedam at the ADYPU Lohegaon campus in Pune. B.Tech degree awarded by Ajeenkya DY Patil University (UGC-approved).
+
+- [CS(AI) Programme at Sushant University Gurugram](https://www.vedam.org/program/vst-gurugram): 4-year on-campus program in computer science with AI specialisation, delivered by Vedam at the Sushant University campus in Gurugram, Delhi NCR. B.Tech degree awarded by Sushant University (UGC-approved).
+
+### Admission Steps
+
+1. Apply online and reserve your VSAT slot
+2. Take the Vedam Scholastic Aptitude Test (VSAT) — or skip directly to the interview if you qualify for direct admission
+3. Appear for the personal interview
+4. Receive admission results within 7 days
+5. Block your seat by paying INR 50,000 (adjusted against first-semester fee)
+
+### Performance-Based Selection
+
+Students with strong academic profiles, JEE rankings, or proven technical achievements may qualify for performance based admission — skipping the VSAT and going straight to the personal interview.
+
+## Scholarships
+
+Vedam offers three scholarship categories worth up to 100% of tuition:
+
+- Merit-Based Scholarship: Up to 100% for academic and technical excellence
+- Women in Tech Scholarship: Up to 20% empowering and supporting women in technology
+- Need-Based Scholarship: Up to 30% financial assistance for deserving students
+
+## Fees & Financing
+
+- Total program fee: Around INR 18 lakhs
+- Application fee: INR 1,000
+- Seat blocking fee: INR 50,000 (adjusted against first-semester fee)
+- Hostel and accommodation available at partner university campuses
+- Education loans available at low-cost EMI through financing partners
+- Scholarships up to 100% available based on merit, gender, and need
+
+## Curriculum Highlights
+
+- AI-first curriculum aligned with industry needs
+- Coding from Day 1
+- Industry-led coursework with input from MAANG engineers
+- Annual industry certifications
+- 6-month paid internship
+- Preparation for global competitions (GSoC, ICPC, LFX)
+- Capstone projects and product-building experience
+- Soft skills, leadership, and entrepreneurship training
+
+## Career Outcomes
+
+Graduates of Vedam's CS (AI) programme are prepared for roles such as the following:
+
+- Software Engineer
+- AI/ML Engineer
+- Data Scientist / Data Analyst
+- Backend / Full-Stack Developer
+- Technical Product Manager
+- Startup Founder / Co-founder
+- Research Engineer
+
+Top hiring categories include MAANG companies (Meta, Amazon, Apple, Netflix, Google), Indian unicorns, AI-first startups, and global tech firms.
+
+## About the Partner Universities
+
+### Ajeenkya DY Patil University (ADYPU), Pune
+
+A UGC-approved private university located in Pune, Maharashtra. NAAC-accredited and NIRF-ranked. Vedam delivers the CS(AI) program at the ADYPU Lohegaon campus. The BTech degree is awarded by ADYPU.
+
+- Location: DY Patil University Road, Airport Road, Lohegaon, Pune, Maharashtra
+- Recognition: UGC-approved, NAAC-accredited
+- Campus: Modern infrastructure with hostels, labs, sports facilities, and security
+
+### Sushant University, Gurugram
+
+A UGC-approved private university located in Gurugram, Haryana. NAAC-accredited. Vedam delivers the CS(AI) program at the Sushant University campus, located near Cyber City and Golf Course Road in Delhi NCR. The BTech degree is awarded by Sushant University.
+
+- Location: Gurugram, Delhi NCR, Haryana
+- Recognition: UGC-approved, NAAC-accredited
+- Campus: Located near India's startup and corporate hub just minutes from Cyber City and Golf Course Road
+
+## Brand Identity
+
+- Tagline: Learn Tech by Building It
+- Positioning: A new age private CS college redefining engineering education
+- Core Values: Hands-on learning, industry relevance, selective admission, startup culture, peer-driven excellence
+
+## About
+
+- [Homepage](https://www.vedam.org/): Overview of Vedam, our mission, and programs
+- [FAQs](https://www.vedam.org/faqs): Frequently asked questions about admission, fees, placements, and life at Vedam
+- [Life at Vedam](https://www.vedam.org/life): Campus life, peer learning, extracurricular activities, and student culture
+- [Admission Page](https://www.vedam.org/admission): Detailed admission process, fees, eligibility, and scholarships
+
+## Contact
+
+- Email: connect@vedam.org
+- Phone: +91 92010 10176
+- Application: https://apply.vedam.org/
+- Website: https://www.vedam.org/
+
+## Social Media & Online Presence
+
+- LinkedIn: https://www.linkedin.com/company/vedam-school-of-technology/
+- YouTube: https://www.youtube.com/@vedamschooloftechnology
+- Instagram: https://www.instagram.com/vedamschooloftechnology
+- X (Twitter): https://twitter.com/vedamschooltech
+
+## Common Questions Answered on This Site
+
+- How do I get admission to Vedam's CS(AI) program?
+- What are the course fees at Vedam?
+- Is the BTech degree from Vedam UGC-approved?
+- What is the eligibility for CS(AI) admission at Vedam?
+- What entrance exam does Vedam accept for BTech admission?
+- What scholarships are available at Vedam?
+- Where are Vedam's campuses located?
+- What is the admission process for the 2026 batch?
+- How is Vedam different from traditional engineering colleges?
+- What career outcomes do Vedam graduates achieve?
+
+## Last Updated
+
+April 2026

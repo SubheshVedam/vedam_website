@@ -1,0 +1,158 @@
+# robots.txt for Vedam School of Technology
+# https://www.vedam.org
+# Last updated: May 2026
+
+# ============================================================
+# AI / LLM CRAWLERS — EXPLICITLY ALLOWED
+# Allowing these bots ensures Vedam shows up in AI search tools
+# like ChatGPT, Claude, Gemini, Perplexity, and others
+# ============================================================
+
+# OpenAI — ChatGPT (training data)
+User-agent: GPTBot
+Allow: /
+
+# OpenAI — ChatGPT live browsing
+User-agent: ChatGPT-User
+Allow: /
+
+# OpenAI — SearchGPT
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic — Claude (training)
+User-agent: ClaudeBot
+Allow: /
+
+# Anthropic — Claude (web browsing)
+User-agent: Claude-Web
+Allow: /
+
+# Anthropic — alternate user agent
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Perplexity — user-initiated queries
+User-agent: Perplexity-User
+Allow: /
+
+# Google — Gemini and AI Overviews
+User-agent: Google-Extended
+Allow: /
+
+# Apple — Apple Intelligence / Siri
+User-agent: Applebot-Extended
+Allow: /
+
+# Apple — standard
+User-agent: Applebot
+Allow: /
+
+# Common Crawl — used by many AI training datasets
+User-agent: CCBot
+Allow: /
+
+# Meta — Meta AI / Llama
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# Meta — alternate
+User-agent: FacebookBot
+Allow: /
+
+# ByteDance — Doubao AI / TikTok search
+User-agent: Bytespider
+Allow: /
+
+# DuckDuckGo AI
+User-agent: DuckAssistBot
+Allow: /
+
+# You.com AI search
+User-agent: YouBot
+Allow: /
+
+# Cohere AI
+User-agent: cohere-ai
+Allow: /
+
+# Diffbot — used by some AI tools for structured data
+User-agent: Diffbot
+Allow: /
+
+# Mistral AI
+User-agent: MistralAI-User
+Allow: /
+
+# ============================================================
+# TRADITIONAL SEARCH ENGINES — EXPLICITLY ALLOWED
+# ============================================================
+
+# Google Search
+User-agent: Googlebot
+Allow: /
+
+# Google Image Search
+User-agent: Googlebot-Image
+Allow: /
+
+# Google News
+User-agent: Googlebot-News
+Allow: /
+
+# Microsoft Bing (also powers Copilot)
+User-agent: Bingbot
+Allow: /
+
+# Yahoo
+User-agent: Slurp
+Allow: /
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+
+# Yandex
+User-agent: YandexBot
+Allow: /
+
+# Baidu
+User-agent: Baiduspider
+Allow: /
+
+# ============================================================
+# DEFAULT RULE — ALL OTHER CRAWLERS
+# ============================================================
+
+User-agent: *
+Allow: /
+
+# Block sensitive or low-value pages from all crawlers
+Disallow: /admin/
+Disallow: /admin
+Disallow: /login
+Disallow: /logout
+Disallow: /dashboard/
+Disallow: /api/
+Disallow: /private/
+Disallow: /thank-you
+Disallow: /thankyou
+Disallow: /404
+Disallow: /500
+
+# Block tracking-parameter URLs (avoids duplicate-content indexing)
+Disallow: /*?gclid=
+Disallow: /*?fbclid=
+Disallow: /*?msclkid=
+Disallow: /*?_gl=
+Disallow: /*?utm_
+
+# ============================================================
+# REFERENCES
+# ============================================================
+# llms.txt for AI-curated site index: https://www.vedam.org/llms.txt
+Sitemap: https://www.vedam.org/sitemap.xml
