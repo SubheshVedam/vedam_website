@@ -35,6 +35,7 @@ const homePageWidth = {
     maxWidth: "1280px",
     width: { xs: "100%", md: "1024px", xl: "1280px" },
     mx: "auto",
+    boxSizing: "border-box",
 };
 
 const sectionPad = {
@@ -70,6 +71,7 @@ function StatCards1({ stats }) {
                     key={i}
                     sx={{
                         flex: 1,
+                        minWidth: 0,
                         p: { xs: "10px", md: "20px" },
                         bgcolor: "#F9F2FF",
                         borderRadius: { xs: "10px", md: "14px" },
@@ -118,6 +120,7 @@ function StatCards({ stats }) {
                     key={i}
                     sx={{
                         flex: 1,
+                        minWidth: 0,
                         px: { xs: "14px", md: "20px" },
                         py: { xs: "12px", md: "24px" },
                         bgcolor: "#F6F6F6",
@@ -355,7 +358,7 @@ export default function PlacementsPage({ config }) {
     };
 
     return (
-        <Box sx={{ bgcolor: "#fff", display: "flex", flexDirection: "column", width: "100%" }}>
+        <Box sx={{ bgcolor: "#fff", display: "flex", flexDirection: "column", width: "100%", maxWidth: "100%", overflowX: "hidden" }}>
 
             {/* ── 1. HERO ───────────────────────────────────────────────────── */}
             <Box
@@ -510,7 +513,7 @@ export default function PlacementsPage({ config }) {
                             sx={{
                                 display: { xs: "none", md: "flex" },
                                 position: "absolute",
-                                left: -20,
+                                left: 8,
                                 top: "50%",
                                 transform: "translateY(-50%)",
                                 zIndex: 2,
@@ -534,7 +537,7 @@ export default function PlacementsPage({ config }) {
                             sx={{
                                 display: { xs: "none", md: "flex" },
                                 position: "absolute",
-                                right: -20,
+                                right: 8,
                                 top: "50%",
                                 transform: "translateY(-50%)",
                                 zIndex: 2,
@@ -566,6 +569,7 @@ export default function PlacementsPage({ config }) {
                             display: "flex",
                             gap: { xs: "10px", md: "16px" },
                             overflowX: "auto",
+                            maxWidth: "100%",
                             scrollbarWidth: "none",
                             msOverflowStyle: "none",
                             "&::-webkit-scrollbar": { display: "none" },
@@ -607,7 +611,7 @@ export default function PlacementsPage({ config }) {
                 {/* Desktop: side by side */}
                 <Box sx={{ display: { xs: "none", md: "flex" }, gap: "16px" }}>
                     {globalOutcomes.cards.map((card, i) => (
-                        <Box key={i} sx={{ flex: 1, width: 0, position: "relative" }}>
+                        <Box key={i} sx={{ flex: "1 1 0", minWidth: 0, position: "relative" }}>
                             <Typography component="h3" sx={visuallyHidden}>{card.heading}</Typography>
                             <Box
                                 component="img"
