@@ -24,24 +24,24 @@ export const AdmissionAndFees = () => {
           padding: { xs: "25px 14px", md: "30px 20px" },
           display: "flex",
           flexDirection: { xs: "column", md: "row" },
-          alignItems: { xs: "flex-start", md: "flex-start" },
+          alignItems: { xs: "stretch", md: "center" },
           justifyContent: "space-between",
           border: "1px solid rgba(108, 16, 188, 0.6)",
           background: "rgba(108, 16, 188, 0.1)",
           borderRadius: "16px",
           marginTop: "1rem",
-          gap: "1rem",
+          gap: { xs: "1rem", md: "1.5rem" },
         }}
       >
-        <Box>
+        <Box sx={{ flex: 1, minWidth: 0 }}>
           <Typography
             component="div"
             variant="h1"
             sx={{
-              fontSize: "clamp(1.4rem, 2vw, 40px)",
+              fontSize: "clamp(1.35rem, 2vw, 2rem)",
               color: "rgba(108, 16, 188, 1)",
               fontWeight: "300",
-              lineHeight: "100%",
+              lineHeight: "120%",
             }}
           >
             {admissionScreenData.admissionAndFees.applyNow}
@@ -51,7 +51,7 @@ export const AdmissionAndFees = () => {
               display: "flex",
               alignItems: "flex-start",
               gap: "10px",
-              marginTop: { xs: "1rem", md: "2rem" },
+              marginTop: { xs: "1rem", md: "1.25rem" },
             }}
           >
             <Eligibility />
@@ -85,6 +85,9 @@ export const AdmissionAndFees = () => {
             backgroundColor: "#6C10BC",
             borderRadius: "8px",
             padding: { xs: "10px 20px", md: "15px 25px" },
+            alignSelf: { xs: "flex-start", md: "center" },
+            flexShrink: 0,
+            whiteSpace: "nowrap",
           }}
           href="https://apply.vedam.org/"
           target="_blank"
