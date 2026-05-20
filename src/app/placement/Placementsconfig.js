@@ -134,14 +134,13 @@ export const placementConfig = {
     internships: {
         heading: "Internships in First Year",
         subheading: "Real students. Real results. First year.",
-        // 7 pre-designed cards, desktop + mobile variant each
+        // 6 pre-designed cards, desktop + mobile variant each
         items: [
             { desktop: "/img/placement/intern6.webp", mobile: "/img/placement/intern1_mob.webp", heading: "Shubham Barik, intern at dues innovation", alt: "Shubham Barik — AI Engineer Intern" },
             { desktop: "/img/placement/intern2.webp", mobile: "/img/placement/intern2_mob.webp", heading: "Shivanch Ojha, intern at Finzie", alt: "Shivansh Ojha — Technical Program Intern" },
             { desktop: "/img/placement/intern1.webp", mobile: "/img/placement/intern3_mob.webp", heading: "Sharav Yadav, intern at Say labs", alt: "Sharav Yadav — Web Development Intern" },
             { desktop: "/img/placement/intern4.webp", mobile: "/img/placement/intern4_mob.webp", heading: "Ketan Bhamre, intern at Tantra AI Tech", alt: "Ketan Bhamre — Web Development Intern" },
             { desktop: "/img/placement/intern3.webp", mobile: "/img/placement/intern5_mob.webp", heading: "Sirwagya Shekhar, Intern at Herenow AI Labs", alt: "Sirwagya Shekhar — Full Stack Intern" },
-            { desktop: "/img/placement/intern5.webp", mobile: "/img/placement/intern6_mob.webp", heading: "Akash Anand, Intern at Kubestellar", alt: "Akash Anand — DevOps Intern" },
             { desktop: "/img/placement/intern7.webp", mobile: "/img/placement/intern7_mob.webp", heading: "Khushi Yadav, Intern at Alchemist AI", alt: "Khushi Yadav — Growth & Partnerships Intern" },
         ],
     },
