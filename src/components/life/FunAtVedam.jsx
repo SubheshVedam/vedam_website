@@ -79,6 +79,11 @@ export const FunAtVedam = () => {
             thumbnail: "/img/funAtVedam/img4.webp",
             videoUrl: "https://www.youtube.com/watch?v=C5j43mSP2mc"
         },
+        {
+            id: 5,
+            thumbnail: "https://img.youtube.com/vi/IGAGN9f2g9A/maxresdefault.jpg",
+            videoUrl: "https://youtu.be/IGAGN9f2g9A?si=ysupbAHGIzAD2ldd"
+        },
 
     ];
 
@@ -196,10 +201,9 @@ export const FunAtVedam = () => {
                                         height: "100%",
                                         position: "relative",
                                         backgroundImage: `url(${video.thumbnail})`,
-                                        backgroundSize: "contain",
+                                        backgroundSize: "cover",
                                         backgroundPosition: "center",
                                         backgroundRepeat: "no-repeat",
-                                        // backgroundColor: "#000",
                                     }}
                                 >
                                     <Box
