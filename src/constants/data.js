@@ -899,7 +899,7 @@ export const homeScreenData = {
         name: "Education Times",
         alt: "Vedam at Education Times",
         sourceLogo: "/img/inTheNews/ET.webp",
-        link: "https://timesofindia.indiatimes.com/business/india-business/vedam-school-of-technology-first-year-students-reportedly-secure-lfx-mentorship-cncf-karmada-with-rs-2-73-lakh-stipend-and-rs-4-5-lakh-via-bug-bounties-in-hackerone/articleshow/130394810.cms",
+        link: "https://www.educationtimes.com/article/featured-article/99741521/breaking-the-timeline-vedam-first-year-students-hit-global-tech-milestones-early",
       },
       {
         id: 2,
@@ -1004,7 +1004,7 @@ export const admissionScreenData = {
     applyNow: "Apply Now for the 2026 Intake",
     eligibilityStrong: "Eligibility Criteria: ",
     eligibilityText:
-      "2025, 2026 12th student with PCM (>50% in PCM & 12th boards Overall)",
+      "Candidates must have passed Class 12th with PCM in 2025 or 2026 with ≥50% aggregate and ≥50% in each of Physics, Chemistry, and Mathematics.",
   },
   keyDates: {
     subtitle: "Key Dates",

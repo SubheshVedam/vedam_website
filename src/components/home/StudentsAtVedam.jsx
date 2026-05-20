@@ -13,13 +13,19 @@ const outcomeSlides = [
         desktopSrc: "/img/studentSuccess/outcome_home_desktop_1.webp",
         mobileSrc: "/img/studentSuccess/outcome_home_mobile_1.webp",
         alt: "Achievements of 1st year students of Vedam school of technology",
+        desktopWidth: 3114,
         desktopHeight: 1386,
+        mobileWidth: 1800,
+        mobileHeight: 1674,
     },
     {
-        desktopSrc: "/img/studentSuccess/outcome_home_desktop_2.webp",
-        mobileSrc: "/img/studentSuccess/outcome_home_mobile_2.webp",
+        desktopSrc: "/img/studentSuccess/outcome_home_desktop_2_v2.webp",
+        mobileSrc: "/img/studentSuccess/outcome_home_mobile_2_v2.webp",
         alt: "Achievements of 1st year students of Vedam school of technology",
-        desktopHeight: 1383,
+        desktopWidth: 4152,
+        desktopHeight: 1856,
+        mobileWidth: 1216,
+        mobileHeight: 1116,
     },
 ];
 
@@ -78,100 +84,28 @@ export const StudentsAtVedam = () => {
             >
                 <Box
                     sx={{
-                    width: "100%",
-                    position: "relative",
-                    borderRadius: { xs: "0px", md: "16px" },
-                    overflow: "hidden",
-                }}
-            >
-                <Box
-                    sx={{
-                        display: "flex",
                         width: "100%",
-                        transform: `translateX(-${activeSlide * 100}%)`,
-                        transition: "transform 0.45s ease",
+                        position: "relative",
+                        borderRadius: { xs: "0px", md: "16px" },
+                        overflow: "hidden",
                     }}
                 >
-                    {outcomeSlides.map((slide) => (
-                        <Box
-                            key={slide.desktopSrc}
-                            sx={{
-                                flex: "0 0 100%",
-                                width: "100%",
-                            }}
-                        >
-                            <Box
-                                sx={{
-                                    display: { xs: "none", md: "block" },
-                                    width: "100%",
-                                }}
-                            >
-                                <Image
-                                    src={slide.desktopSrc}
-                                    alt={slide.alt}
-                                    width={3114}
-                                    height={slide.desktopHeight}
-                                    style={{ width: "100%", height: "auto", display: "block" }}
-                                />
-                            </Box>
-
-                            <Box
-                                sx={{
-                                    display: { xs: "block", md: "none" },
-                                    width: "100%",
-                                    borderRadius: "16px",
-                                    overflow: "hidden",
-                                }}
-                            >
-                                <Image
-                                    src={slide.mobileSrc}
-                                    alt={slide.alt}
-                                    width={1800}
-                                    height={1674}
-                                    style={{ width: "100%", height: "auto", display: "block" }}
-                                />
-                            </Box>
-                        </Box>
-                    ))}
-
                     <Box
-                        onClick={() => setPlayVideo(true)}
-                        onKeyDown={(e) => {
-                            if (e.key === "Enter" || e.key === " ") {
-                                setPlayVideo(true);
-                            }
-                        }}
-                        role="button"
-                        tabIndex={0}
-                        aria-label="Play Students at Vedam video"
                         sx={{
-                            flex: "0 0 100%",
+                            display: "flex",
                             width: "100%",
-                            position: "relative",
-                            cursor: playVideo ? "default" : "pointer",
-                            outline: "none",
+                            transform: `translateX(-${activeSlide * 100}%)`,
+                            transition: "transform 0.45s ease",
                         }}
                     >
-                        {playVideo ? (
+                        {outcomeSlides.map((slide) => (
                             <Box
+                                key={slide.desktopSrc}
                                 sx={{
+                                    flex: "0 0 100%",
                                     width: "100%",
-                                    height: { xs: "220px", md: "420px" },
-                                    position: "relative",
                                 }}
                             >
-                                <iframe
-                                    width="100%"
-                                    height="100%"
-                                    src="https://www.youtube.com/embed/XvTqUQL1JIY?autoplay=1&start=1"
-                                    title="YouTube video player"
-                                    frameBorder="0"
-                                    allow="autoplay; encrypted-media"
-                                    allowFullScreen
-                                />
-                            </Box>
-                        ) : (
-                            <>
                                 <Box
                                     sx={{
                                         display: { xs: "none", md: "block" },
@@ -179,10 +113,10 @@ export const StudentsAtVedam = () => {
                                     }}
                                 >
                                     <Image
-                                        src={videoThumbnail.desktopSrc}
-                                        alt={videoThumbnail.alt}
-                                        width={3114}
-                                        height={1383}
+                                        src={slide.desktopSrc}
+                                        alt={slide.alt}
+                                        width={slide.desktopWidth}
+                                        height={slide.desktopHeight}
                                         style={{ width: "100%", height: "auto", display: "block" }}
                                     />
                                 </Box>
@@ -191,83 +125,155 @@ export const StudentsAtVedam = () => {
                                     sx={{
                                         display: { xs: "block", md: "none" },
                                         width: "100%",
+                                        borderRadius: "16px",
+                                        overflow: "hidden",
                                     }}
                                 >
                                     <Image
-                                        src={videoThumbnail.mobileSrc}
-                                        alt={videoThumbnail.alt}
-                                        width={1800}
-                                        height={1674}
+                                        src={slide.mobileSrc}
+                                        alt={slide.alt}
+                                        width={slide.mobileWidth}
+                                        height={slide.mobileHeight}
                                         style={{ width: "100%", height: "auto", display: "block" }}
                                     />
                                 </Box>
-                            </>
-                        )}
+                            </Box>
+                        ))}
+
+                        <Box
+                            onClick={() => setPlayVideo(true)}
+                            onKeyDown={(e) => {
+                                if (e.key === "Enter" || e.key === " ") {
+                                    setPlayVideo(true);
+                                }
+                            }}
+                            role="button"
+                            tabIndex={0}
+                            aria-label="Play Students at Vedam video"
+                            sx={{
+                                flex: "0 0 100%",
+                                width: "100%",
+                                position: "relative",
+                                cursor: playVideo ? "default" : "pointer",
+                                outline: "none",
+                            }}
+                        >
+                            {playVideo ? (
+                                <Box
+                                    sx={{
+                                        width: "100%",
+                                        height: { xs: "220px", md: "420px" },
+                                        position: "relative",
+                                    }}
+                                >
+                                    <iframe
+                                        width="100%"
+                                        height="100%"
+                                        src="https://www.youtube.com/embed/XvTqUQL1JIY?autoplay=1&start=1"
+                                        title="YouTube video player"
+                                        frameBorder="0"
+                                        allow="autoplay; encrypted-media"
+                                        allowFullScreen
+                                    />
+                                </Box>
+                            ) : (
+                                <>
+                                    <Box
+                                        sx={{
+                                            display: { xs: "none", md: "block" },
+                                            width: "100%",
+                                        }}
+                                    >
+                                        <Image
+                                            src={videoThumbnail.desktopSrc}
+                                            alt={videoThumbnail.alt}
+                                            width={3114}
+                                            height={1383}
+                                            style={{ width: "100%", height: "auto", display: "block" }}
+                                        />
+                                    </Box>
+
+                                    <Box
+                                        sx={{
+                                            display: { xs: "block", md: "none" },
+                                            width: "100%",
+                                        }}
+                                    >
+                                        <Image
+                                            src={videoThumbnail.mobileSrc}
+                                            alt={videoThumbnail.alt}
+                                            width={1800}
+                                            height={1674}
+                                            style={{ width: "100%", height: "auto", display: "block" }}
+                                        />
+                                    </Box>
+                                </>
+                            )}
+                        </Box>
                     </Box>
                 </Box>
-            </Box>
 
-            <Box
-                sx={{
-                    mt: { xs: "10px", md: "16px" },
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    gap: { xs: 1.5, md: 2 },
-                }}
-            >
-                <IconButton
-                    onClick={() =>
-                        handleSlideChange((activeSlide - 1 + totalSlides) % totalSlides)
-                    }
-                    aria-label="Previous slide"
-                    size="small"
+                <Box
                     sx={{
-                        border: "1px solid #D9D9D9",
-                        width: 34,
-                        height: 34,
-                        color: "#1C1C1C",
+                        mt: { xs: "10px", md: "16px" },
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        gap: { xs: 1.5, md: 2 },
                     }}
                 >
-                    <KeyboardArrowLeftRoundedIcon />
-                </IconButton>
+                    <IconButton
+                        onClick={() =>
+                            handleSlideChange((activeSlide - 1 + totalSlides) % totalSlides)
+                        }
+                        aria-label="Previous slide"
+                        size="small"
+                        sx={{
+                            border: "1px solid #D9D9D9",
+                            width: 34,
+                            height: 34,
+                            color: "#1C1C1C",
+                        }}
+                    >
+                        <KeyboardArrowLeftRoundedIcon />
+                    </IconButton>
 
-                <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                    {Array.from({ length: totalSlides }).map((_, slideIndex) => (
-                        <Box
-                            key={slideIndex}
-                            component="button"
-                            type="button"
-                            onClick={() => handleSlideChange(slideIndex)}
-                            aria-label={`Go to slide ${slideIndex + 1}`}
-                            sx={{
-                                width: 10,
-                                height: 10,
-                                borderRadius: "50%",
-                                border: "none",
-                                padding: 0,
-                                cursor: "pointer",
-                                backgroundColor:
-                                    activeSlide === slideIndex ? "#FB7F05" : "#D0D0D0",
-                            }}
-                        />
-                    ))}
+                    <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                        {Array.from({ length: totalSlides }).map((_, slideIndex) => (
+                            <Box
+                                key={slideIndex}
+                                component="button"
+                                type="button"
+                                onClick={() => handleSlideChange(slideIndex)}
+                                aria-label={`Go to slide ${slideIndex + 1}`}
+                                sx={{
+                                    width: 10,
+                                    height: 10,
+                                    borderRadius: "50%",
+                                    border: "none",
+                                    padding: 0,
+                                    cursor: "pointer",
+                                    backgroundColor:
+                                        activeSlide === slideIndex ? "#FB7F05" : "#D0D0D0",
+                                }}
+                            />
+                        ))}
+                    </Box>
+
+                    <IconButton
+                        onClick={() => handleSlideChange((activeSlide + 1) % totalSlides)}
+                        aria-label="Next slide"
+                        size="small"
+                        sx={{
+                            border: "1px solid #D9D9D9",
+                            width: 34,
+                            height: 34,
+                            color: "#1C1C1C",
+                        }}
+                    >
+                        <KeyboardArrowRightRoundedIcon />
+                    </IconButton>
                 </Box>
-
-                <IconButton
-                    onClick={() => handleSlideChange((activeSlide + 1) % totalSlides)}
-                    aria-label="Next slide"
-                    size="small"
-                    sx={{
-                        border: "1px solid #D9D9D9",
-                        width: 34,
-                        height: 34,
-                        color: "#1C1C1C",
-                    }}
-                >
-                    <KeyboardArrowRightRoundedIcon />
-                </IconButton>
-            </Box>
             </Box>
         </Box>
     );

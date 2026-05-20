@@ -12,6 +12,8 @@ export const placementConfig = {
         title: "Your Tech Journey,",
         titleHighlight: "Powered by Vedam",
         subtitle: "Proven Placement & Tech Expertise for Global Outcomes",
+        videoId: "_ovyl2ZkLdQ",
+        videoThumbnail: "/img/placement/placement_page_landing.png",
     },
 
     // ── PLACEMENT EXPERTISE ───────────────────────────────────────────────────

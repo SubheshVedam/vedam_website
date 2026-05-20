@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Box, Typography } from "@mui/material";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import PlayArrowRoundedIcon from "@mui/icons-material/PlayArrowRounded";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Shared design tokens
@@ -343,6 +344,7 @@ export default function PlacementsPage({ config }) {
     const scrollRef = useRef(null);
     const [canScrollLeft, setCanScrollLeft] = useState(false);
     const [canScrollRight, setCanScrollRight] = useState(true);
+    const [playHeroVideo, setPlayHeroVideo] = useState(false);
 
     const { hero, placementExpertise, techExpertise, testimonials, globalOutcomes, internships } =
         config;
@@ -369,29 +371,73 @@ export default function PlacementsPage({ config }) {
                 }}
             >
                 <Box
-                    component="img"
-                    src={hero.bgDesktop}
-                    alt="Your Tech Journey, Powered by Vedam"
                     sx={{
-                        display: { xs: "none", md: "block" },
                         width: "100%",
-                        height: "auto",
-                        borderRadius: "24px",
-                        objectFit: "cover",
+                        aspectRatio: { xs: "16 / 9", md: "16 / 9" },
+                        borderRadius: { xs: "14px", md: "24px" },
+                        overflow: "hidden",
+                        bgcolor: "#000",
                     }}
-                />
-                <Box
-                    component="img"
-                    src={hero.bgMobile}
-                    alt="Your Tech Journey, Powered by Vedam"
-                    sx={{
-                        display: { xs: "block", md: "none" },
-                        width: "100%",
-                        height: "auto",
-                        borderRadius: "14px",
-                        objectFit: "cover",
-                    }}
-                />
+                >
+                    {playHeroVideo ? (
+                        <Box
+                            component="iframe"
+                            src={`https://www.youtube.com/embed/${hero.videoId}?autoplay=1&rel=0&modestbranding=1`}
+                            title="Your Tech Journey, Powered by Vedam"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen
+                            sx={{
+                                display: "block",
+                                width: "100%",
+                                height: "100%",
+                                border: 0,
+                            }}
+                        />
+                    ) : (
+                        <Box
+                            component="button"
+                            type="button"
+                            onClick={() => setPlayHeroVideo(true)}
+                            aria-label="Play placement video"
+                            sx={{
+                                width: "100%",
+                                height: "100%",
+                                border: 0,
+                                p: 0,
+                                cursor: "pointer",
+                                position: "relative",
+                                backgroundImage: `url(${hero.videoThumbnail})`,
+                                backgroundSize: "cover",
+                                backgroundPosition: "center",
+                                backgroundRepeat: "no-repeat",
+                            }}
+                        >
+                            <Box
+                                sx={{
+                                    position: "absolute",
+                                    top: "50%",
+                                    left: "50%",
+                                    transform: "translate(-50%, -50%)",
+                                    width: { xs: 58, md: 76 },
+                                    height: { xs: 58, md: 76 },
+                                    borderRadius: "50%",
+                                    bgcolor: "rgba(0,0,0,0.6)",
+                                    color: "#fff",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    transition: "all 0.25s ease",
+                                    "&:hover": {
+                                        bgcolor: "rgba(0,0,0,0.8)",
+                                        transform: "translate(-50%, -50%) scale(1.08)",
+                                    },
+                                }}
+                            >
+                                <PlayArrowRoundedIcon sx={{ fontSize: { xs: 40, md: 54 } }} />
+                            </Box>
+                        </Box>
+                    )}
+                </Box>
             </Box>
 
             {/* ── 2. PROVEN PLACEMENT EXPERTISE ───────────────────────────── */}

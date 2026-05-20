@@ -341,8 +341,8 @@ export const puneConfig = {
             { num: "#2", label: "Largest IT hub in Maharashtra" },
         ],
         statsRight: [
-            { num: "3200+", label: "Oxford of the East" },
-            { num: "#1", label: "India's education capital" },
+            { num: "3200+", label: "Registered Startups" },
+            { num: "Oxford of East ", label: "India's Education Capital" },
         ],
         img1: "/img/program/whypune1.webp",
         img2: "/img/program/whypune2.webp",
