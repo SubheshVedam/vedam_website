@@ -32,35 +32,72 @@ export const VideoWithText = ({ title, subtitle, isImg, videoUrl, imageUrl, imag
       />
 
       {/* Background Media */}
-      {!isImg ? <>
-        <Image
-          src="/img/college.webp"
-          alt={imageAlt}
-          fill
-          priority
-          style={{ objectFit: "cover", minWidth: "500px", minHeight: "400px" }}
-        />
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="none"
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            zIndex: 0,
-          }}
-          className="responsive-video"
-        >
-          <source src={videoUrl} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </> : (
+      {!isImg ? (
+        <>
+          {/* Mobile Poster Image */}
+          <Box
+            sx={{
+              display: { xs: "block", md: "none" },
+              position: "absolute",
+              inset: 0,
+              zIndex: 0,
+            }}
+          >
+            <Image
+              src="/img/college-poster.webp"
+              alt={imageAlt}
+              fill
+              priority
+              fetchPriority="high"
+              quality={70}
+              sizes="100vw"
+              style={{
+                objectFit: "cover",
+              }}
+            />
+          </Box>
+
+          {/* Desktop Video */}
+          <Box
+            sx={{
+              display: { xs: "none", md: "block" },
+              position: "absolute",
+              inset: 0,
+              zIndex: 0,
+            }}
+          >
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              poster="/img/college-poster.webp"
+              aria-hidden="true"
+              style={{
+                position: "absolute",
+                inset: 0,
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+              }}
+            >
+              {/* Optimized 20s Video Sources */}
+              <source
+                src="/vid/videoBgOptimized20s.webm"
+                type="video/webm"
+              />
+
+              <source
+                src="/vid/videoBgOptimized20s.mp4"
+                type="video/mp4"
+              />
+
+              Your browser does not support the video tag.
+            </video>
+          </Box>
+        </>
+      ) : (
         <img
           src={imageUrl || "/img/life_vedam_bg.webp"}
           fetchPriority="high"
@@ -169,11 +206,18 @@ export const VideoWithText = ({ title, subtitle, isImg, videoUrl, imageUrl, imag
               color: "#F9F9F9",
               order: { xs: 1, sm: 2 },
               backgroundColor: "#FF7829",
-              borderRadius: "1rem",
-              padding: { xs: "12px 24px", sm: "12px 35px" },
-              minWidth: { xs: "175px", sm: "auto" },
-              justifyContent: "center",
-              transition: "all 0.3s ease",
+              borderRadius: "14px",
+              padding: {
+                xs: "12px 28px",
+                sm: "14px 38px",
+              },
+              minWidth: {
+                xs: "190px",
+                sm: "auto",
+              },
+              textTransform: "none",
+              transition:
+                "transform 0.25s ease, background-color 0.25s ease",
               "&:hover": {
                 backgroundColor: "#e66820",
                 transform: "translateY(-2px)",
