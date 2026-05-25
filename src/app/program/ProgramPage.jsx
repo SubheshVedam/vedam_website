@@ -62,6 +62,81 @@ function StatsTile({ stats }) {
   );
 }
 
+function ProgramVideoSection({ videoSection }) {
+  const [playing, setPlaying] = useState(false);
+
+  return (
+    <Box sx={{ ...sectionPad, display: "flex", flexDirection: "column", gap: { xs: "10px", md: "20px" } }}>
+      <Typography component="h2" sx={gradientText}>{videoSection.title}</Typography>
+      <Box
+        sx={{
+          position: "relative",
+          width: "100%",
+          aspectRatio: "16 / 9",
+          borderRadius: { xs: "16px", md: "22px" },
+          overflow: "hidden",
+          bgcolor: "#000",
+          boxShadow: "0px 18px 38px rgba(0,0,0,0.12)",
+        }}
+      >
+        {playing ? (
+          <iframe
+            title={videoSection.title}
+            src={`${videoSection.embedUrl}?autoplay=1`}
+            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: 0 }}
+            loading="lazy"
+            allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+            sandbox="allow-scripts allow-same-origin allow-presentation allow-popups"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          />
+        ) : (
+          <Box
+            role="button"
+            tabIndex={0}
+            aria-label={`Play ${videoSection.title}`}
+            onClick={() => setPlaying(true)}
+            onKeyDown={(e) => e.key === "Enter" && setPlaying(true)}
+            sx={{ cursor: "pointer", width: "100%", height: "100%", position: "relative" }}
+          >
+            <Box
+              component="img"
+              src={videoSection.thumbnailSrc}
+              alt={videoSection.thumbnailAlt}
+              sx={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+            />
+            <Box
+              aria-hidden="true"
+              sx={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                background: "rgba(0,0,0,0.6)",
+                padding: "12px 16px",
+                borderRadius: "100px",
+                pointerEvents: "none",
+              }}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width={40}
+                height={40}
+                fill="#fff"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </Box>
+          </Box>
+        )}
+      </Box>
+    </Box>
+  );
+}
+
 // ─────────────────────────────────────────────────────────────────────────────
 // SemAccordion
 // ─────────────────────────────────────────────────────────────────────────────
@@ -309,6 +384,7 @@ export default function ProgramPage({ config }) {
     hero,
     statsBar,
     citySection,
+    videoSection,
     campusSection,
     accreditations,
     scholarships,
@@ -603,6 +679,10 @@ export default function ProgramPage({ config }) {
           </Box>
         </Box>
       </Box>
+
+      {videoSection && (
+        <ProgramVideoSection videoSection={videoSection} />
+      )}
 
       {/* ── 4. CAMPUS & AMENITIES ───────────────────────────────────────────── */}
       <Box sx={{ ...sectionPad, display: "flex", flexDirection: "column", gap: { xs: "10px", md: "20px" } }}>

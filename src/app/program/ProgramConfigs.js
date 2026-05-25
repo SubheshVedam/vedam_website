@@ -73,6 +73,13 @@ export const gurugramConfig = {
         ],
     },
 
+    videoSection: {
+        title: "Message from the VC",
+        thumbnailSrc: "/img/campuses/message_from_vc_gurugram.webp",
+        thumbnailAlt: "Message from the VC for VST Gurugram",
+        embedUrl: "https://www.youtube.com/embed/eIJ2w6i4bC0",
+    },
+
     campusSection: {
         description: "Sushant University's Gurugram campus is located minutes away from Cyber City, Golf Course Road, and the NCR startup corridor. The campus combines modern academic infrastructure with proximity to India's fastest-growing district.",
         images: [
