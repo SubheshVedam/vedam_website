@@ -280,7 +280,7 @@ export const homeScreenData = {
     background_video: "/vid/videoBgNew.mp4",
     title: "Learn Tech by Building\u00A0It",
     subtitle:
-      "Learn to build real products from Day 1. Vedam's 4-year on-campus CS & AI program prepares you for startups, innovation, and leadership with a B.Tech degree awarded by UGC-approved partner universities.",
+      "Learn to build real products from Day 1. Vedam's 4-year on-campus, new-age CS & AI program prepares you for startups, innovation, and leadership with a B.Tech degree awarded by UGC-approved partner universities.",
   },
   fromEducationToEntrance: {
     // title: "",
