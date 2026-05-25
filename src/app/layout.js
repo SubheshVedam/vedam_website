@@ -2,7 +2,6 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Suspense } from "react";
 import EmotionCacheProvider from "@/components/EmotionCacheProvider";
 import Layout from "@/components/Layout";
 import AnnouncementBanner from "@/components/AnnouncementBanner";
@@ -75,45 +74,19 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        {/* LCP Image Preload */}
         <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-        />
-        <link rel="icon" href="./favicon.ico" />
-        <Suspense fallback={null}>
-          {/* <GoogleAnalytics /> */}
-        </Suspense>
-        <Script
-          id="gtm"
-          strategy="lazyOnload"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','GTM-K7ZDF4K4');
-            `,
-          }}
+          rel="preload"
+          as="image"
+          href="/img/college-poster.webp"
         />
 
-        <Script
-          id="microsoft-clarity"
-          strategy="lazyOnload"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(c,l,a,r,i,t,y){
-                  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-              })(window, document, "clarity", "script", "r428jp90kq");
-            `,
-          }}
-        />
+        {/* Favicon */}
+        <link rel="icon" href="/favicon.ico" />
       </head>
-      <body>
+
+      <body className={inter.className}>
+        {/* GTM NoScript */}
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-K7ZDF4K4"
@@ -123,22 +96,31 @@ export default async function RootLayout({ children }) {
             title="gtm"
           ></iframe>
         </noscript>
+
+        {/* Microsoft Clarity */}
+        {/* Microsoft Clarity */}
         <Script
-          id="nopaperforms-tracker"
-          strategy="lazyOnload"
-          dangerouslySetInnerHTML={{
-            __html: `
-              var npf_d='https://apply.vedam.org'; 
-              var npf_c='6380'; 
-              var npf_m='1';
-              var s=document.createElement("script"); 
-              s.type="text/javascript";
-              s.async=true; 
-              s.src="https://track.nopaperforms.com/js/track.js";
-              document.body.appendChild(s);
-            `,
-          }}
-        />
+          id="microsoft-clarity"
+          strategy="afterInteractive"
+        >
+          {`
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){
+        (c[a].q=c[a].q||[]).push(arguments)
+      };
+
+      t=l.createElement(r);
+      t.async=1;
+      t.src="https://www.clarity.ms/tag/"+i;
+
+      y=l.getElementsByTagName(r)[0];
+      y.parentNode.insertBefore(t,y);
+
+    })(window, document, "clarity", "script", "r428jp90kq");
+  `}
+        </Script>
+
+        {/* App */}
         <EmotionCacheProvider>
           <AnnouncementBanner
             applicationClosingEndMs={vsatIntake?.applicationClosingEndMs}
@@ -149,6 +131,8 @@ export default async function RootLayout({ children }) {
             <Footer />
           </Layout>
         </EmotionCacheProvider>
+
+        {/* Analytics */}
         <Analytics />
       </body>
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
