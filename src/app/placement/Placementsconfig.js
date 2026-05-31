@@ -87,16 +87,6 @@ export const placementConfig = {
                     `"I wasted countless hours on DSA resources before landing under the guidance of a mentor. He is an experienced teacher and one who makes learning a delightful experience. Really mind-blowing. I wish the team all the best."`,
             },
             {
-                name: "Harshit Trehan",
-                role: "Software Developer",
-                company: "Atlassian",
-                heading: "Harshit Trehan - Software Developer, Atlassian",
-                companyLogo: "/img/placement/logos/atlassian.webp",
-                photo: "/img/placement/testimonials/harshit.webp",
-                quote:
-                    `"The curriculum is comprehensive, instructor is experienced, and in-depth learning helped me gain confidence. I started as a beginner and cracked multiple offers ultimately, mentor make a great team. Kudos to the mentor for taking this initiative."`,
-            },
-            {
                 name: "Jaivin Phogat",
                 role: "SDE",
                 company: "Directi",
