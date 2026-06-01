@@ -27,6 +27,12 @@ const NewsSection = () => {
   ];
 
   const activeItem = items[activeIndex];
+  const linkButtonSx = {
+    width: '36px', height: '36px', borderRadius: '50%', bgcolor: '#6C10BC',
+    display: 'flex', alignItems: 'center', justifyContent: 'center',
+    flexShrink: 0, cursor: 'pointer', transition: 'background 0.2s',
+    textDecoration: 'none', '&:hover': { bgcolor: '#5a0ea0' },
+  };
 
   return (
     <WidthContainer>
@@ -118,20 +124,29 @@ const NewsSection = () => {
                 </Typography>
               </Box>
 
-              <Box
-                component="a"
-                href={activeItem.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{
-                  width: '36px', height: '36px', borderRadius: '50%', bgcolor: '#6C10BC',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  flexShrink: 0, cursor: 'pointer', transition: 'background 0.2s',
-                  textDecoration: 'none', '&:hover': { bgcolor: '#5a0ea0' },
-                }}
-              >
-                <ArrowOutwardIcon sx={{ color: '#fff', fontSize: '18px' }} />
-              </Box>
+              {activeItem.link ? (
+                <Box
+                  component="a"
+                  href={activeItem.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={linkButtonSx}
+                >
+                  <ArrowOutwardIcon sx={{ color: '#fff', fontSize: '18px' }} />
+                </Box>
+              ) : (
+                <Box
+                  aria-hidden="true"
+                  sx={{
+                    ...linkButtonSx,
+                    cursor: 'default',
+                    opacity: 0.45,
+                    '&:hover': { bgcolor: '#6C10BC' },
+                  }}
+                >
+                  <ArrowOutwardIcon sx={{ color: '#fff', fontSize: '18px' }} />
+                </Box>
+              )}
             </Box>
           </Box>
 

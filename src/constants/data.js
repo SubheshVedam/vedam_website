@@ -894,6 +894,30 @@ export const homeScreenData = {
 
     data: [
       {
+        id: 12,
+        image: "/img/inTheNews/12.webp",
+        name: "Business Standard",
+        sourceName: "Business Standard",
+        alt: "Vedam at Business Standard",
+        objectPosition: "top",
+      },
+      {
+        id: 13,
+        image: "/img/inTheNews/13.webp",
+        name: "Press Trust of India",
+        sourceName: "Press Trust of India",
+        alt: "Vedam at Press Trust of India",
+        objectPosition: "top",
+      },
+      {
+        id: 14,
+        image: "/img/inTheNews/14.webp",
+        name: "The Wire",
+        sourceName: "The Wire",
+        alt: "Vedam at The Wire",
+        objectPosition: "top",
+      },
+      {
         id: 1,
         image: "/img/inTheNews/11.webp",
         name: "Education Times",

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, IconButton } from "@mui/material";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import PlayArrowRoundedIcon from "@mui/icons-material/PlayArrowRounded";
@@ -337,6 +337,195 @@ function TestimonialCard({ item }) {
     );
 }
 
+function getYouTubeVideoId(url = "") {
+    const patterns = [
+        /(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([^&?/]+)/,
+        /^([^&?/]+)$/,
+    ];
+
+    for (const pattern of patterns) {
+        const match = url.match(pattern);
+        if (match?.[1]) return match[1];
+    }
+
+    return null;
+}
+
+function getYouTubeEmbedUrl(url) {
+    const videoId = getYouTubeVideoId(url);
+    return videoId
+        ? `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&rel=0&modestbranding=1`
+        : null;
+}
+
+function getYouTubeThumbnailUrl(video) {
+    const videoId = getYouTubeVideoId(video.videoUrl);
+    return video.thumbnail ?? (videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : "");
+}
+
+function OutcomesVideoSection({ section }) {
+    const scrollRef = useRef(null);
+    const [activeVideo, setActiveVideo] = useState(null);
+
+    if (!section?.videos?.length) return null;
+
+    const scrollVideos = (dir) => {
+        scrollRef.current?.scrollBy({
+            left: dir === "left" ? -440 : 440,
+            behavior: "smooth",
+        });
+    };
+
+    return (
+        <Box
+            sx={{
+                ...sectionPad,
+                display: "flex",
+                flexDirection: "column",
+                gap: { xs: "12px", md: "24px" },
+            }}
+        >
+            <Typography component="h2" sx={gradientText}>
+                {section.heading}
+            </Typography>
+
+            <Box sx={{ position: "relative" }}>
+                <IconButton
+                    aria-label="Scroll outcomes videos left"
+                    onClick={() => scrollVideos("left")}
+                    sx={{
+                        display: { xs: "none", md: "flex" },
+                        position: "absolute",
+                        left: 0,
+                        top: "50%",
+                        transform: "translateY(-50%)",
+                        zIndex: 2,
+                        bgcolor: "#fff",
+                        boxShadow: "0 2px 12px rgba(0,0,0,0.15)",
+                        border: "1px solid rgba(108,16,188,0.2)",
+                        "&:hover": { bgcolor: "#fff" },
+                    }}
+                >
+                    <ChevronLeftIcon sx={{ color: "#6C10BC" }} />
+                </IconButton>
+
+                <IconButton
+                    aria-label="Scroll outcomes videos right"
+                    onClick={() => scrollVideos("right")}
+                    sx={{
+                        display: { xs: "none", md: "flex" },
+                        position: "absolute",
+                        right: 0,
+                        top: "50%",
+                        transform: "translateY(-50%)",
+                        zIndex: 2,
+                        bgcolor: "#fff",
+                        boxShadow: "0 2px 12px rgba(0,0,0,0.15)",
+                        border: "1px solid rgba(108,16,188,0.2)",
+                        "&:hover": { bgcolor: "#fff" },
+                    }}
+                >
+                    <ChevronRightIcon sx={{ color: "#6C10BC" }} />
+                </IconButton>
+
+                <Box
+                    ref={scrollRef}
+                    sx={{
+                        display: "flex",
+                        flexDirection: { xs: "column", md: "row" },
+                        gap: { xs: "12px", md: "20px" },
+                        overflowX: { xs: "visible", md: "auto" },
+                        scrollbarWidth: "none",
+                        msOverflowStyle: "none",
+                        "&::-webkit-scrollbar": { display: "none" },
+                        px: { xs: 0, md: "44px" },
+                    }}
+                >
+                    {section.videos.map((video) => {
+                        const embedUrl = getYouTubeEmbedUrl(video.videoUrl);
+                        const thumbnail = getYouTubeThumbnailUrl(video);
+                        const isActive = activeVideo === video.id;
+
+                        return (
+                            <Box
+                                key={video.id}
+                                sx={{
+                                    flexShrink: 0,
+                                    width: { xs: "100%", md: "420px" },
+                                    aspectRatio: "16 / 9",
+                                    borderRadius: { xs: "14px", md: "16px" },
+                                    overflow: "hidden",
+                                    bgcolor: "#000",
+                                    boxShadow: "0 10px 24px rgba(0,0,0,0.08)",
+                                }}
+                            >
+                                {isActive && embedUrl ? (
+                                    <Box
+                                        component="iframe"
+                                        src={embedUrl}
+                                        title={video.title}
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowFullScreen
+                                        sx={{
+                                            display: "block",
+                                            width: "100%",
+                                            height: "100%",
+                                            border: 0,
+                                        }}
+                                    />
+                                ) : (
+                                    <Box
+                                        component="button"
+                                        type="button"
+                                        onClick={() => setActiveVideo(video.id)}
+                                        aria-label={`Play ${video.title}`}
+                                        sx={{
+                                            width: "100%",
+                                            height: "100%",
+                                            border: 0,
+                                            p: 0,
+                                            cursor: "pointer",
+                                            position: "relative",
+                                            backgroundImage: `url(${thumbnail})`,
+                                            backgroundSize: "cover",
+                                            backgroundPosition: "center",
+                                            backgroundRepeat: "no-repeat",
+                                        }}
+                                    >
+                                        <Box
+                                            sx={{
+                                                position: "absolute",
+                                                top: "50%",
+                                                left: "50%",
+                                                transform: "translate(-50%, -50%)",
+                                                width: { xs: 58, md: 66 },
+                                                height: { xs: 58, md: 66 },
+                                                borderRadius: "50%",
+                                                bgcolor: "rgba(0,0,0,0.6)",
+                                                color: "#fff",
+                                                display: "flex",
+                                                alignItems: "center",
+                                                justifyContent: "center",
+                                                transition: "all 0.25s ease",
+                                                "&:hover": {
+                                                    bgcolor: "rgba(0,0,0,0.8)",
+                                                    transform: "translate(-50%, -50%) scale(1.08)",
+                                                },
+                                            }}
+                                        >
+                                            <PlayArrowRoundedIcon sx={{ fontSize: { xs: 40, md: 48 } }} />
+                                        </Box>
+                                    </Box>
+                                )}
+                            </Box>
+                        );
+                    })}
+                </Box>
+            </Box>
+        </Box>
+    );
+}
+
 // ─────────────────────────────────────────────────────────────────────────────
 // PlacementsPage
 // ─────────────────────────────────────────────────────────────────────────────
@@ -346,7 +535,7 @@ export default function PlacementsPage({ config }) {
     const [canScrollRight, setCanScrollRight] = useState(true);
     const [playHeroVideo, setPlayHeroVideo] = useState(false);
 
-    const { hero, placementExpertise, techExpertise, testimonials, globalOutcomes, internships } =
+    const { hero, placementExpertise, techExpertise, testimonials, outcomesInVedam, globalOutcomes, internships } =
         config;
 
     const handleScroll = (dir) => {
@@ -628,6 +817,8 @@ export default function PlacementsPage({ config }) {
                     </Box>
                 </Box>
             </Box>
+
+            <OutcomesVideoSection section={outcomesInVedam} />
 
             {/* ── 5. GLOBAL OUTCOMES ───────────────────────────────────────── */}
             <Box

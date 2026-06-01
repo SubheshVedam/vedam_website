@@ -99,6 +99,28 @@ export const placementConfig = {
         ],
     },
 
+    // ── OUTCOMES at VEDAM ────────────────────────────────────────────────────
+    outcomesInVedam: {
+        heading: "Outcomes at Vedam",
+        videos: [
+            {
+                id: "outcome-video-1",
+                title: "Outcomes at Vedam - Video 1",
+                videoUrl: "https://youtu.be/y90EQxzF6kU?si=Hzr97vGcV5TyAMt0",
+            },
+            {
+                id: "outcome-video-2",
+                title: "Outcomes at Vedam - Video 2",
+                videoUrl: "https://youtu.be/kbHPAsAfZUM?si=L6x2AXMsMZa0qc6t",
+            },
+            {
+                id: "outcome-video-3",
+                title: "Outcomes at Vedam - Video 3",
+                videoUrl: "https://youtu.be/Kuc4AjiKxKo?si=rZuSlmscSvEsKm6S",
+            },
+        ],
+    },
+
     // ── GLOBAL OUTCOMES ───────────────────────────────────────────────────────
     globalOutcomes: {
         heading: "Global Outcomes - Where Builders Turn into Global Talent",
