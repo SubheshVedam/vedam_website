@@ -128,8 +128,8 @@ export const placementConfig = {
         // Two side-by-side cards — each is a pre-designed image
         cards: [
             {
-                desktop: "/img/placement/outcome1.webp",
-                mobile: "/img/placement/outcome1_mob.webp",
+                desktop: "/img/placement/outcome1_v2.webp",
+                mobile: "/img/placement/outcome1_mob_v2.webp",
                 heading: "LFX Mentorship - Krishiv Mahajan",
                 alt: "LFX Mentorship — Krishiv Mahajan ₹2.73 Lakh Stipend",
             },
