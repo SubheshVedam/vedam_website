@@ -11,13 +11,13 @@ import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 // Data
 // ─────────────────────────────────────────────────────────────────────────────
 const stats = [
-  { num: "8+", label: "Paid Internships in Year 1" },
+  { num: "9+", label: "Paid Internships in Year 1" },
   { num: "10+", label: "Teams building at Innovation Lab" },
   { num: "6", label: "Student run clubs" },
   { num: "7", label: "JEE Mains 95+ %ilers" },
 ];
 const stats1 = [
-  { num: "8+", label: "Paid Internships in Year 1" },
+  { num: "9+", label: "Paid Internships in Year 1" },
   { num: "6", label: "Student run clubs" },
   { num: "10+", label: "Teams building at Innovation Lab" },
   { num: "7", label: "JEE Mains 95+ %ilers" },

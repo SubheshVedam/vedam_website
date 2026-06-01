@@ -74,10 +74,17 @@ export const gurugramConfig = {
     },
 
     videoSection: {
-        title: "Message from the VC",
+        title: "Hear It from the Hon'ble Vice Chancellor",
         thumbnailSrc: "/img/campuses/message_from_vc_gurugram.webp",
         thumbnailAlt: "Message from the VC for VST Gurugram",
         embedUrl: "https://www.youtube.com/embed/eIJ2w6i4bC0",
+    },
+
+    campusVideoSection: {
+        title: "Your Future Tech Campus for Next 4 Years",
+        thumbnailSrc: "https://img.youtube.com/vi/D5kIwMeysTU/maxresdefault.jpg",
+        thumbnailAlt: "Sushant University 3D renders video",
+        embedUrl: "https://www.youtube.com/embed/D5kIwMeysTU",
     },
 
     campusSection: {

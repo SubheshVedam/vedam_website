@@ -385,6 +385,7 @@ export default function ProgramPage({ config }) {
     statsBar,
     citySection,
     videoSection,
+    campusVideoSection,
     campusSection,
     accreditations,
     scholarships,
@@ -682,6 +683,10 @@ export default function ProgramPage({ config }) {
 
       {videoSection && (
         <ProgramVideoSection videoSection={videoSection} />
+      )}
+
+      {campusVideoSection && (
+        <ProgramVideoSection videoSection={campusVideoSection} />
       )}
 
       {/* ── 4. CAMPUS & AMENITIES ───────────────────────────────────────────── */}
