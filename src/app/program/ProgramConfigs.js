@@ -499,6 +499,10 @@ export const puneConfig = {
                         "Medical Aid: Doctor available on call (charges as per actuals).",
                         "Biometric / access-controlled entry.",
                     ],
+                    notesAction: {
+                        label: "Download Brochure",
+                        href: "https://drive.google.com/file/d/1j9Y-Mvz4-JT6RipuZ-RCbvtrEtI2d62b/view?usp=sharing",
+                    },
                 },
                 {
                     type: "inCampus",

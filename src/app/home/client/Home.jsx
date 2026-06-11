@@ -274,16 +274,43 @@ const Home = () => {
       subtitle: "Hear from our Co-Founder",
       render: () => (
         <LazySection fallbackHeight={580}>
-          <VideoCard
-            thumbnailSrc="/img/hear_from_founder_thumbnail.webp"
-            thumbnailAlt="Watch our Co-Founder talk about Vedam"
-            iframeTitle="Vedam Co-Founder video"
-            embedUrl="https://www.youtube.com/embed/kxkRisXZg8Y"
-            containerSx={{
-              borderRadius: { xs: "16px", md: "22px" },
-              boxShadow: "0px 18px 38px rgba(0,0,0,0.12)",
+          <Box
+            sx={{
+              display: "grid",
+              gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
+              gap: { xs: "16px", md: "20px" },
             }}
-          />
+          >
+            {[
+              {
+                thumbnailSrc: "/img/hear_from_founder_thumbnail.webp",
+                thumbnailAlt: "Watch our Co-Founder talk about Vedam",
+                iframeTitle: "Vedam Co-Founder video",
+                embedUrl: "https://www.youtube.com/embed/kxkRisXZg8Y",
+              },
+              {
+                thumbnailSrc: "https://img.youtube.com/vi/1t-h27svLSo/hqdefault.jpg",
+                thumbnailAlt: "Watch Prakhar talk about Vedam",
+                iframeTitle: "Prakhar's Vedam video",
+                embedUrl: "https://www.youtube.com/embed/1t-h27svLSo",
+              },
+            ].map((video) => (
+              <Box key={video.embedUrl} sx={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+                <VideoCard
+                  thumbnailSrc={video.thumbnailSrc}
+                  thumbnailAlt={video.thumbnailAlt}
+                  iframeTitle={video.iframeTitle}
+                  embedUrl={video.embedUrl}
+                  containerSx={{
+                    aspectRatio: "16 / 9",
+                    height: "auto",
+                    borderRadius: { xs: "16px", md: "22px" },
+                    boxShadow: "0px 18px 38px rgba(0,0,0,0.12)",
+                  }}
+                />
+              </Box>
+            ))}
+          </Box>
         </LazySection>
       ),
     },

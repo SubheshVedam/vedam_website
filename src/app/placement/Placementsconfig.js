@@ -104,6 +104,11 @@ export const placementConfig = {
         heading: "Outcomes at Vedam",
         videos: [
             {
+                id: "outcome-video-arsh-goel",
+                title: "Arsh Goel - Outcomes at Vedam",
+                videoUrl: "https://youtu.be/dla4BQFjp-U?si=dEJ6LOEkufOAxhtr",
+            },
+            {
                 id: "outcome-video-1",
                 title: "Outcomes at Vedam - Video 1",
                 videoUrl: "https://youtu.be/y90EQxzF6kU?si=Hzr97vGcV5TyAMt0",

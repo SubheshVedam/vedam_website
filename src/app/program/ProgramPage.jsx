@@ -188,7 +188,7 @@ function SemAccordion({ item, isOpen, onToggle }) {
 // ─────────────────────────────────────────────────────────────────────────────
 // Shared: renders a list of room-type cards + a notes block
 // ─────────────────────────────────────────────────────────────────────────────
-function RoomTypeCards({ roomTypes, notes }) {
+function RoomTypeCards({ roomTypes, notes, notesAction }) {
   return (
     <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: "16px", md: "20px" } }}>
       {roomTypes.map(({ type, rows }) => (
@@ -276,6 +276,33 @@ function RoomTypeCards({ roomTypes, notes }) {
               </Typography>
             </Box>
           ))}
+
+          {notesAction?.href && (
+            <Button
+              component="a"
+              href={notesAction.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="contained"
+              sx={{
+                alignSelf: "flex-start",
+                mt: { xs: "2px", md: "4px" },
+                bgcolor: "#6C10BC",
+                borderRadius: "8px",
+                px: { xs: "14px", md: "18px" },
+                py: { xs: "7px", md: "9px" },
+                fontFamily: "Inter, sans-serif",
+                fontWeight: 600,
+                fontSize: { xs: "10px", md: "12px" },
+                lineHeight: 1.4,
+                textTransform: "none",
+                boxShadow: "none",
+                "&:hover": { bgcolor: "#5a0ea0", boxShadow: "none" },
+              }}
+            >
+              {notesAction.label ?? "Download Brochure"}
+            </Button>
+          )}
         </Box>
       )}
     </Box>
@@ -285,7 +312,7 @@ function RoomTypeCards({ roomTypes, notes }) {
 function LegacyHostelSection({ hostelFees }) {
   return (
     <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: "16px", md: "24px" }, mt: { xs: "8px", md: 0 } }}>
-      <RoomTypeCards roomTypes={hostelFees.roomTypes} notes={hostelFees.notes} />
+      <RoomTypeCards roomTypes={hostelFees.roomTypes} notes={hostelFees.notes} notesAction={hostelFees.notesAction} />
     </Box>
   );
 }
@@ -323,7 +350,7 @@ function MultiTypeHostelSection({ hostelFees }) {
           }}>
             {activeHostel.title}
           </Typography>
-          <RoomTypeCards roomTypes={activeHostel.roomTypes} notes={activeHostel.notes} />
+          <RoomTypeCards roomTypes={activeHostel.roomTypes} notes={activeHostel.notes} notesAction={activeHostel.notesAction} />
         </>
       )}
     </Box>
