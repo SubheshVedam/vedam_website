@@ -4,7 +4,7 @@ import TelegramIcon from '@mui/icons-material/Telegram';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { keyframes } from '@emotion/react';
 
-const TELEGRAM_URL = "https://t.me/vedamschooloftechnology?utm_source=codesprint&utm_medium=homepage&utm_campaign=june_july";
+const TELEGRAM_URL = "https://bit.ly/4ogtkC2";
 
 const pulse = keyframes`
   0% { transform: scale(0.7); }
@@ -35,7 +35,7 @@ const FloatingButton = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "stretch",
-            width: { xs: "104px", md: "120px" },
+            width: { xs: "140px", md: "160px" },
             maxWidth: "calc(100vw - 16px)",
             color: "#229ED9",
             bgcolor: "#fff",
@@ -76,7 +76,7 @@ const FloatingButton = () => {
             }}
           >
             <TelegramIcon sx={{ fontSize: { xs: "20px", md: "24px" }, flexShrink: 0 }} />
-            Telegram
+            Join Telegram
           </Box>
           <Box
             className="telegram-image"
