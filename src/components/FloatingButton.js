@@ -18,6 +18,7 @@ const FloatingButton = () => {
       <Box
         component="aside"
         sx={{
+          display: { xs: "none", sm: "block" },
           position: "fixed",
           right: 0,
           top: { xs: "62%", sm: "50%" },
