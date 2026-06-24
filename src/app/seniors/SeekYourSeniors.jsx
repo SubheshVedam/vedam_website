@@ -14,13 +14,13 @@ const stats = [
   { num: "9+", label: "Paid Internships in Year 1" },
   { num: "10+", label: "Teams building at Innovation Lab" },
   { num: "6", label: "Student run clubs" },
-  { num: "7", label: "JEE Mains 95+ %ilers" },
+  { num: "7", label: "JEE Mains 95+ %ile" },
 ];
 const stats1 = [
   { num: "9+", label: "Paid Internships in Year 1" },
   { num: "6", label: "Student run clubs" },
   { num: "10+", label: "Teams building at Innovation Lab" },
-  { num: "7", label: "JEE Mains 95+ %ilers" },
+  { num: "7", label: "JEE Mains 95+ %ile" },
 
 ];
 const heroPhotos = [
@@ -45,6 +45,7 @@ const clubPresidents = [
 const seniorVideos = [
   { title: "Get upto 100% Scholarship!", duration: "", thumb: "/img/seniors/thumbnail1.webp", videoId: "cWqa2o0gD-M" },
   { title: "Explore Vedam School of Technology", duration: "", thumb: "/img/seniors/thumbnail2.webp", videoId: "jors40NYq-Y" },
+  { title: "GGN Campus Tour", duration: "", thumb: "https://img.youtube.com/vi/Mb8FYzqvJeQ/maxresdefault.jpg", videoId: "Mb8FYzqvJeQ" },
   { title: "How I cracked VSAT", duration: "", thumb: "/img/seniors/thumbnail3.webp", videoId: "-0isF9k7dgg" },
   { title: "Inside the VSAT Interview", duration: "", thumb: "/img/seniors/thumbnail4.webp", videoId: "ZQvmp9LwVTs" },
   { title: "JEE 97.16% to Vedam", duration: "", thumb: "/img/seniors/thumbnail5.webp", videoId: "XvTqUQL1JIY" },
@@ -787,7 +788,7 @@ export default function SeekYourSeniors() {
             {stats1.map(({ num, label }) => (
               <Box key={label} sx={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: "22px", color: "#FFF", lineHeight: 1 }}>{num}</Typography>
-                <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "11px", color: "#FFF", lineHeight: 1.3 }}>{label}</Typography>
+                <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "11px", color: "#FFF", lineHeight: 1.3, maxWidth: "96px" }}>{label}</Typography>
               </Box>
             ))}
           </Box>
@@ -828,7 +829,7 @@ export default function SeekYourSeniors() {
             {stats.map(({ num, label }) => (
               <Box key={label} sx={{ display: "flex", alignItems: "center", gap: "10px", flexShrink: 0 }}>
                 <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: "32px", color: "#6C10BC", lineHeight: 1 }}>{num}</Typography>
-                <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "16px", color: "#1E1E1E", lineHeight: 1.3 }}>{label}</Typography>
+                <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "16px", color: "#1E1E1E", lineHeight: 1.3, maxWidth: "150px" }}>{label}</Typography>
               </Box>
             ))}
           </Box>

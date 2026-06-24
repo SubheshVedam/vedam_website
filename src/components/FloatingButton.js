@@ -3,8 +3,7 @@ import { Box, Button } from '@mui/material';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { keyframes } from '@emotion/react';
-
-const TELEGRAM_URL = "https://bit.ly/4ogtkC2";
+import { TELEGRAM_COMMUNITY_URL } from '@/constants/links';
 
 const pulse = keyframes`
   0% { transform: scale(0.7); }
@@ -28,7 +27,7 @@ const FloatingButton = () => {
       >
         <Box
           component="a"
-          href={TELEGRAM_URL}
+          href={TELEGRAM_COMMUNITY_URL}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Join Vedam on Telegram"

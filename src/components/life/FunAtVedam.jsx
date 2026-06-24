@@ -57,34 +57,37 @@ export const FunAtVedam = () => {
     };
 
 
-    // Video data with dummy URLs (to be updated)
     const funVideos = [
         {
-            id: 1,
-            thumbnail: "/img/funAtVedam/img1.webp",
-            videoUrl: "https://www.youtube.com/watch?v=geINf3vdK5k"
+            id: "mtw",
+            title: "Mumbai Tech Week",
+            thumbnail: "https://img.youtube.com/vi/ihSGWbEOVaI/maxresdefault.jpg",
+            videoUrl: "https://youtu.be/ihSGWbEOVaI?si=WgbF5wJpz254vzPj"
         },
         {
-            id: 2,
-            thumbnail: "/img/funAtVedam/img2.webp",
-            videoUrl: "https://www.youtube.com/watch?v=qV7SaAdMabw"
-        },
-        {
-            id: 3,
-            thumbnail: "/img/funAtVedam/img3.webp",
-            videoUrl: "https://www.youtube.com/watch?v=ae-N-YGiGxo"
-        },
-        {
-            id: 4,
+            id: "24-hour-coding",
+            title: "24 Hours Coding",
             thumbnail: "/img/funAtVedam/img4.webp",
             videoUrl: "https://www.youtube.com/watch?v=C5j43mSP2mc"
         },
         {
-            id: 5,
+            id: "3d-printing",
+            title: "3D Printing",
             thumbnail: "https://img.youtube.com/vi/IGAGN9f2g9A/maxresdefault.jpg",
             videoUrl: "https://youtu.be/IGAGN9f2g9A?si=ysupbAHGIzAD2ldd"
         },
-
+        {
+            id: "vedotsav",
+            title: "Vedotsav",
+            thumbnail: "/img/funAtVedam/img2.webp",
+            videoUrl: "https://www.youtube.com/watch?v=qV7SaAdMabw"
+        },
+        {
+            id: "teachers-day",
+            title: "Teachers' Day",
+            thumbnail: "/img/funAtVedam/img1.webp",
+            videoUrl: "https://www.youtube.com/watch?v=geINf3vdK5k"
+        },
     ];
 
     const scrollLeft = () => {
@@ -189,7 +192,7 @@ export const FunAtVedam = () => {
                                         border: "none",
                                     }}
                                     src={embedUrl}
-                                    title="Video player"
+                                    title={video.title}
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     allowFullScreen
                                 />

@@ -21,8 +21,10 @@ import {
   Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import TelegramIcon from "@mui/icons-material/Telegram";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { navLinks } from "@/constants/data";
+import { TELEGRAM_COMMUNITY_URL } from "@/constants/links";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { usePathname } from "next/navigation";
 
@@ -456,13 +458,59 @@ export default function Navbar() {
                 </Box>
               </Box>
 
-              {/* Mobile Menu Button */}
-              <IconButton
-                sx={{ display: { xs: "block", sm: "none" } }}
-                onClick={handleDrawerToggle}
+              <Box
+                sx={{
+                  display: { xs: "flex", sm: "none" },
+                  alignItems: "center",
+                  gap: "6px",
+                  pr: "6px",
+                }}
               >
-                <MenuIcon />
-              </IconButton>
+                <Button
+                  component="a"
+                  href={TELEGRAM_COMMUNITY_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Join Vedam on Telegram"
+                  startIcon={<TelegramIcon sx={{ fontSize: "18px" }} />}
+                  sx={{
+                    minWidth: "auto",
+                    px: "9px",
+                    py: "5px",
+                    color: "#229ED9",
+                    bgcolor: "#FFFFFF",
+                    border: "1px solid rgba(34, 158, 217, 0.24)",
+                    borderRadius: "8px",
+                    boxShadow: "0 6px 16px rgba(17, 24, 39, 0.08)",
+                    fontFamily: "Inter",
+                    fontSize: "12px",
+                    fontWeight: 700,
+                    lineHeight: 1,
+                    letterSpacing: 0,
+                    textTransform: "none",
+                    whiteSpace: "nowrap",
+                    "& .MuiButton-startIcon": {
+                      mr: "4px",
+                      ml: 0,
+                    },
+                    "&:hover": {
+                      bgcolor: "#F4FBFF",
+                      borderColor: "rgba(34, 158, 217, 0.42)",
+                    },
+                  }}
+                >
+                  Join Telegram
+                </Button>
+
+                {/* Mobile Menu Button */}
+                <IconButton
+                  aria-label="Open navigation menu"
+                  sx={{ p: "8px" }}
+                  onClick={handleDrawerToggle}
+                >
+                  <MenuIcon />
+                </IconButton>
+              </Box>
             </Box>{/* end inner content wrapper */}
           </Toolbar>
 
