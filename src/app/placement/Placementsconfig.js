@@ -130,19 +130,13 @@ export const placementConfig = {
     globalOutcomes: {
         heading: "Global Outcomes - Where Builders Turn into Global Talent",
         subheading: "",
-        // Two side-by-side cards — each is a pre-designed image
+        // Pre-designed combined banner
         cards: [
             {
-                desktop: "/img/placement/outcome1_v2.webp",
-                mobile: "/img/placement/outcome1_mob_v2.webp",
-                heading: "LFX Mentorship - Krishiv Mahajan",
-                alt: "LFX Mentorship — Krishiv Mahajan ₹2.73 Lakh Stipend",
-            },
-            {
-                desktop: "/img/placement/outcome2.webp",
-                mobile: "/img/placement/outcome2_mob.webp",
-                heading: "HackerOne - Muhammad Sharief",
-                alt: "HackerOne — Muhammad Sharief ₹4.59 Lakh Bug Bounties",
+                desktop: "/img/placement/global_outcome_PP.webp",
+                mobile: "/img/placement/global_outcome_PP.webp",
+                heading: "LFX Mentorship and HackerOne Global Outcomes",
+                alt: "Global outcomes featuring LFX mentorship stipends and HackerOne bug bounty earnings",
             },
         ],
     },

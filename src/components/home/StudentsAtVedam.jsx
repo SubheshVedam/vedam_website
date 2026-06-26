@@ -10,13 +10,13 @@ const posterBackground = "#0C092F";
 
 const outcomeSlides = [
     {
-        desktopSrc: "/img/studentSuccess/outcome_home_desktop_1_v2.webp",
-        mobileSrc: "/img/studentSuccess/outcome_home_mobile_1_v2.webp",
+        desktopSrc: "/img/studentSuccess/global_outcome_homepage.webp",
+        mobileSrc: "/img/studentSuccess/global_outcome_homepage.webp",
         alt: "Achievements of 1st year students of Vedam school of technology",
-        desktopWidth: 4152,
-        desktopHeight: 1848,
-        mobileWidth: 1200,
-        mobileHeight: 1116,
+        desktopWidth: 6830,
+        desktopHeight: 2315,
+        mobileWidth: 6830,
+        mobileHeight: 2315,
     },
     {
         desktopSrc: "/img/studentSuccess/outcome_home_desktop_2_v2.webp",

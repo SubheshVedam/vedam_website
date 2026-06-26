@@ -270,8 +270,8 @@ export const gurugramConfig = {
     },
 
     cta: {
-        mobile: "/img/student1.webp",
-        desktop: "/img/student.webp",
+        mobile: "/img/program/campus_page_bottom.webp",
+        desktop: "/img/program/campus_page_bottom.webp",
         alt: "Vedam's first year students, global outcomes",
     },
 };
@@ -587,8 +587,8 @@ export const puneConfig = {
     },
 
     cta: {
-        mobile: "/img/student1.webp",
-        desktop: "/img/student.webp",
+        mobile: "/img/program/campus_page_bottom.webp",
+        desktop: "/img/program/campus_page_bottom.webp",
         alt: "Vedam's first-year students, global outcomes",
     },
 };
