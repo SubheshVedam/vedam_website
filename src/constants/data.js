@@ -1035,17 +1035,15 @@ export const admissionScreenData = {
     headerText: "Intake Dates",
     firstArray: [
       "VSAT Test",
-      "Last Date to Apply",
       "VSAT Result",
       "Personal Interview",
       "Final Offer",
     ],
     secondArray: [
-      "14th April 2026",
-      "13th April 2026",
-      "Within 2 Days of the Exam",
-      "Within 5 Days of the Exam",
-      "Within 15 Days, If selected",
+      "Give VSAT Today",
+      "Within 24 Hours",
+      "Within 2 days of the exam",
+      "Within 3 days of the exam, after counselling if selected",
     ],
   },
   admissionProcess: {
@@ -1063,8 +1061,7 @@ export const admissionScreenData = {
         step: "Step 1",
         title: "Apply Online",
         subtitle:
-          "Complete your profile and reserve your slot for the Vedam Scholastic Aptitude Test (VSAT).",
-        subtitle1: "Last date to apply for April Intake is 13th April",
+          "Complete your profile and attempt your Vedam Scholastic Aptitude Test (VSAT) today.",
         showButton: true,
       },
       {
@@ -1073,7 +1070,7 @@ export const admissionScreenData = {
         title: "Take the VSAT",
         subtitle:
           "It is an entrance test conducted online.",
-        subtitle1: "The next VSAT is on 14th April",
+        subtitle1: "Attempt your VSAT within 24 Hours",
         showButton: false,
       },
       {
@@ -1089,7 +1086,7 @@ export const admissionScreenData = {
         step: "Step 4",
         title: "Receive your Admission Results",
         subtitle:
-          "Result shall be announced in 10 days time of your interview, along with scholarships, in case you are eligible for any.",
+          "Result shall be announced in 3 days time of your interview, along with scholarships, in case you are eligible for any.",
         showButton: false,
       },
       {

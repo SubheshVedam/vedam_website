@@ -20,36 +20,8 @@ const Admission = ({
   feeStructureData = undefined,
   topSections = [],
   facilityAndAmenitiesProps = {},
-  vsatIntake = null,
 }) => {
   const linearGradient = "linear-gradient(90deg, #6C10BC 0%, #FB7F05 100%)";
-  const defaultKeyDatesRow = admissionScreenData.keyDates.secondArray;
-  const keyDatesSecondRow = vsatIntake
-    ? [
-        vsatIntake.vstDateDisplay,
-        vsatIntake.applicationClosingDisplay,
-        ...defaultKeyDatesRow.slice(2),
-      ]
-    : undefined;
-
-  const rightSideSteps = vsatIntake
-    ? admissionScreenData.admissionProcess.rightSideArray.map((step) => {
-        if (step.id === 0) {
-          return {
-            ...step,
-            subtitle1: `Last date to apply for this intake is ${vsatIntake.applicationClosingDisplay}`,
-          };
-        }
-        if (step.id === 1) {
-          return {
-            ...step,
-            subtitle1: `The next VSAT is on ${vsatIntake.vstDateDisplay}`,
-          };
-        }
-        return step;
-      })
-    : undefined;
-
   const normalizedTopSections = Array.isArray(topSections)
     ? topSections.filter(Boolean)
     : topSections
@@ -94,14 +66,12 @@ const Admission = ({
     {
       id: "key-dates",
       subtitle: admissionScreenData.keyDates.subtitle,
-      render: () => <KeyDates secondRowValues={keyDatesSecondRow} />,
+      render: () => <KeyDates />,
     },
     {
       id: "admission-process",
       subtitle: admissionScreenData.admissionProcess.subtitle,
-      render: () => (
-        <AdmissionProcess rightSideSteps={rightSideSteps} />
-      ),
+      render: () => <AdmissionProcess />,
     },
     {
       id: "direct-interview-route",

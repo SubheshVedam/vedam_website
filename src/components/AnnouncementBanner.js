@@ -135,7 +135,7 @@ export default function AnnouncementBanner({ applicationClosingEndMs }) {
           component="span"
           sx={{ fontSize: { xs: 11, sm: 16 }, whiteSpace: "nowrap" }}
         >
-          <strong>Admissions close in</strong>
+          <strong>Fasttrack your admission process. Give VSAT today!</strong>
         </Typography>
         {timerItems ? (
           <Stack
@@ -153,7 +153,6 @@ export default function AnnouncementBanner({ applicationClosingEndMs }) {
             component="span"
             sx={{ fontWeight: 600, fontSize: { xs: 11, sm: 16 } }}
           >
-            Admissions window closed
           </Typography>
         ) : null}
       </Stack>
